@@ -9,8 +9,9 @@
     <meta name="description" content="Купить металлопрокат (арматуру ГОСТ, профильную трубу), ЖБИ, ФБС, кольца, шлакоблоки и свежий цемент со склада в Невинномысске без посредников. Быстрая доставка манипулятором и Газелью. Оплата по факту!">
     <meta name="keywords" content="стройбаза невинномысск, металлопрокат невинномысск, купить арматуру, профильная труба цена, шлакоблок невинномысск, кольца жби, цемент м500 доставка, фбс блоки монтажная">
 
-    <!-- Иконка в браузере -->
+    <!-- Иконка в браузере (поддерживает оба регистра) -->
     <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="logo.PNG">
 
     <!-- Шрифт Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,23 +68,23 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-weight: 800;
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             letter-spacing: 0.02em;
             text-decoration: none;
             color: var(--text-color);
         }
 
         .logo img {
-            width: 30px;
-            height: 30px;
+            width: 34px;
+            height: 34px;
             object-fit: contain;
         }
 
         .logo-fallback {
-            width: 30px;
-            height: 30px;
+            width: 34px;
+            height: 34px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -103,11 +104,11 @@
             color: var(--text-color);
             text-decoration: none;
             font-weight: 800;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
         }
 
         .location-text {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
         }
 
@@ -183,7 +184,7 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 800;
             line-height: 1.15;
             letter-spacing: -0.04em;
@@ -191,19 +192,19 @@
         }
 
         .hero p {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             color: var(--text-secondary);
-            margin-bottom: 32px;
+            margin-bottom: 40px;
             font-weight: 300;
             line-height: 1.6;
         }
 
-        /* Правый блок с 3D кубом в Hero */
+        /* Правый блок в Hero (Теперь автоматически показывает ваш логотип) */
         .hero-visual {
             position: relative;
             border-radius: 16px;
             border: 1px solid var(--border-color);
-            height: 340px;
+            height: 380px;
             background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%);
             overflow: hidden;
             display: flex;
@@ -219,6 +220,16 @@
             background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
             background-size: 24px 24px;
             opacity: 0.3;
+        }
+
+        /* Настоящий логотип в 3D блоке (скроет куб, когда загрузится) */
+        .hero-visual-logo {
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
+            z-index: 6;
+            position: absolute;
+            filter: drop-shadow(0 0 30px rgba(255,255,255,0.15));
         }
 
         .hero-visual-cube {
@@ -270,7 +281,7 @@
             transform: translateY(-1px);
         }
 
-        /* Быстрые кнопки мессенджеров */
+        /* Быстрые мессенджеры */
         .quick-socials {
             display: flex;
             gap: 12px;
@@ -306,7 +317,7 @@
         .qs-wa { background-color: #128C7E; }
         .qs-tg { background-color: #0088cc; }
 
-        /* Блок с отзывами Яндекса и 2ГИС */
+        /* Виджеты рейтингов */
         .rating-widgets {
             display: flex;
             gap: 16px;
@@ -321,7 +332,7 @@
             background: transparent;
         }
 
-        /* БОЛЬШОЙ ИСПРАВЛЕННЫЙ БАННЕР ДЛЯ ВАШЕГО ФОТО */
+        /* Большой баннер */
         .hero-banner {
             grid-column: span 2;
             width: 100%;
@@ -553,7 +564,7 @@
             border-radius: 8px;
         }
 
-        /* СЕТКА СОЦСЕТЕЙ (Выровненная) */
+        /* СЕТКА СОЦСЕТЕЙ */
         .social-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -620,19 +631,18 @@
         }
 
         @media (max-width: 768px) {
-            /* Фикс шапки для мобильных телефонов */
             header {
                 padding: 12px 0;
             }
             .header-grid {
                 display: flex;
-                flex-direction: row; /* Горизонтально на мобильном */
+                flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
                 gap: 10px;
             }
             .logo {
-                font-size: 1rem; /* Чуть меньше шрифт */
+                font-size: 1rem;
                 gap: 8px;
             }
             .logo-fallback, .logo img {
@@ -643,9 +653,8 @@
                 gap: 10px;
             }
             .header-phone {
-                display: none; /* Скрываем телефон текстом на мобильном, чтобы не мешал */
+                display: none;
             }
-            /* Компактная кнопка звонка */
             .btn-header {
                 padding: 8px 14px;
                 font-size: 0.8rem;
@@ -682,7 +691,7 @@
 </head>
 <body>
 
-    <!-- Шапка сайта (Идеальная мобильная адаптация) -->
+    <!-- Шапка сайта -->
     <header>
         <div class="container header-grid">
             <a href="#" class="logo">
@@ -693,7 +702,8 @@
                         <path d="M12 12V22L20 17V7Z" fill="rgba(255,255,255,0.06)"/>
                     </svg>
                 </div>
-                <img src="logo.png" id="logo-img" style="display:none;" onload="document.getElementById('logo-svg').style.display='none'; this.style.display='block';" alt="СТРОЙБАЗА">
+                <!-- Автоматически пытается загрузить logo.png или logo.PNG. Если загрузка успешна — скроет векторный куб -->
+                <img src="logo.png" id="logo-img-1" style="display:none;" onerror="this.src='logo.PNG';" onload="document.getElementById('logo-svg').style.display='none'; this.style.display='block';" alt="СТРОЙБАЗА">
                 СТРОЙБАЗА
             </a>
             <div class="header-contacts">
@@ -701,7 +711,6 @@
                     <a href="tel:+79887328161" class="phone-link">+7 (988) 732-81-61</a>
                     <div class="location-text">Невинномысск, ул. Монтажная, 10</div>
                 </div>
-                <!-- Компактная и стильная кнопка звонка -->
                 <a href="tel:+79887328161" class="btn-header">
                     <svg viewBox="0 0 24 24" style="fill:currentColor;"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> 
                     Позвонить
@@ -733,16 +742,18 @@
                     </a>
                 </div>
 
-                <!-- Официальные виджеты рейтингов -->
+                <!-- Виджеты рейтингов -->
                 <div class="rating-widgets">
                     <iframe src="https://yandex.ru/sprav/widget/rating-badge/237893630120?type=rating&theme=dark" width="150" height="50" frameborder="0"></iframe>
                     <iframe src="https://widget.2gis.ru/api/widget?org_id=70000001114215364&amp;branch_id=70000001114215365&amp;size=medium&amp;theme=dark" width="150" height="50" frameborder="0"></iframe>
                 </div>
             </div>
 
-            <!-- Правый 3D куб -->
+            <!-- Правый блок в Hero (Теперь показывает ваш логотип, когда он загрузится) -->
             <div class="hero-visual">
-                <div class="hero-visual-cube">
+                <!-- Пытается загрузить logo.png или logo.PNG. Если загрузка успешна — скроет 3D-куб -->
+                <img src="logo.png" id="logo-img-2" class="hero-visual-logo" style="display:none;" onerror="this.src='logo.PNG';" onload="document.getElementById('hero-fallback-cube').style.display='none'; this.style.display='block';" alt="СТРОЙБАЗА">
+                <div class="hero-visual-cube" id="hero-fallback-cube">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:100%; height:100%;">
                         <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(255,255,255,0.04)"/>
                         <path d="M4 7V17L12 22V12Z" fill="rgba(255,255,255,0.01)"/>
@@ -751,7 +762,7 @@
                 </div>
             </div>
 
-            <!-- БАННЕР ДЛЯ ВАШЕГО ФОТО (banner.jpg) -->
+            <!-- Баннер (Подгрузится из файла banner.jpg) -->
             <div class="hero-banner">
                 <img src="banner.jpg" alt="База строительных материалов" onerror="this.parentNode.style.display='none';">
             </div>
