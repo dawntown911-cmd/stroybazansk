@@ -9,7 +9,7 @@
     <meta name="description" content="Купить металлопрокат (арматуру ГОСТ, профильную трубу), ЖБИ, ФБС, кольца, шлакоблоки и свежий цемент со склада в Невинномысске без посредников. Быстрая доставка манипулятором и Газелью. Оплата по факту!">
     <meta name="keywords" content="стройбаза невинномысск, металлопрокат невинномысск, купить арматуру, профильная труба цена, шлакоблок невинномысск, кольца жби, цемент м500 доставка, фбс блоки монтажная">
 
-    <!-- Иконка во вкладке браузера (Специально берет ЧЕРНЫЙ файл favicon.png, чтобы не сливаться с белой вкладкой) -->
+    <!-- Иконка во вкладке браузера -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="icon" type="image/png" href="favicon.PNG">
 
@@ -70,13 +70,12 @@
             align-items: center;
             gap: 14px;
             font-weight: 800;
-            font-size: 1.35rem; /* Увеличили размер шрифта названия */
+            font-size: 1.35rem;
             letter-spacing: 0.02em;
             text-decoration: none;
             color: var(--text-color);
         }
 
-        /* Увеличили логотип в шапке до 44px, чтобы соответствовал тексту */
         .logo img {
             width: 44px;
             height: 44px;
@@ -113,7 +112,6 @@
             color: var(--text-secondary);
         }
 
-        /* Крупная яркая кнопка Звонка */
         .btn-header {
             border: 1px solid var(--text-color);
             color: var(--bg-color);
@@ -201,7 +199,7 @@
             line-height: 1.6;
         }
 
-        /* Правый блок с логотипом в Hero */
+        /* Правый блок в Hero */
         .hero-visual {
             position: relative;
             border-radius: 16px;
@@ -224,7 +222,6 @@
             opacity: 0.3;
         }
 
-        /* Увеличили логотип в правом блоке до 190px */
         .hero-visual-logo {
             width: 190px;
             height: 190px;
@@ -318,21 +315,6 @@
 
         .qs-wa { background-color: #128C7E; }
         .qs-tg { background-color: #0088cc; }
-
-        /* Виджеты рейтингов */
-        .rating-widgets {
-            display: flex;
-            gap: 16px;
-            margin-top: 32px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .rating-widgets iframe {
-            border-radius: 8px;
-            overflow: hidden;
-            background: transparent;
-        }
 
         /* Большой баннер */
         .hero-banner {
@@ -546,6 +528,21 @@
             text-decoration: none;
         }
 
+        /* Виджеты рейтингов Яндекса и 2ГИС внизу */
+        .rating-widgets {
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .rating-widgets iframe {
+            border-radius: 8px;
+            overflow: hidden;
+            background: transparent;
+        }
+
         .map-wrapper {
             height: 440px;
             border: 1px solid var(--border-color);
@@ -566,7 +563,7 @@
             border-radius: 8px;
         }
 
-        /* СЕТКА СОЦСЕТЕЙ */
+        /* СЕТКА СОЦСЕТЕЙ (С поддержкой картинок-логотипов) */
         .social-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -602,9 +599,11 @@
             grid-column: span 2;
         }
 
-        .social-btn svg {
+        /* Стилизация картинок-иконок соцсетей */
+        .social-btn img {
             width: 24px;
             height: 24px;
+            object-fit: contain;
             flex-shrink: 0;
         }
 
@@ -644,11 +643,11 @@
                 gap: 10px;
             }
             .logo {
-                font-size: 1.15rem; /* Отрегулировали размер названия на мобильном */
+                font-size: 1.15rem;
                 gap: 8px;
             }
             .logo-fallback, .logo img {
-                width: 32px; /* Увеличили логотип на мобильном */
+                width: 32px;
                 height: 32px;
             }
             .header-contacts {
@@ -693,7 +692,7 @@
 </head>
 <body>
 
-    <!-- Шапка сайта (Увеличен логотип) -->
+    <!-- Шапка сайта -->
     <header>
         <div class="container header-grid">
             <a href="#" class="logo">
@@ -704,7 +703,6 @@
                         <path d="M12 12V22L20 17V7Z" fill="rgba(255,255,255,0.06)"/>
                     </svg>
                 </div>
-                <!-- Пытается загрузить белый logo.png или logo.PNG со своего сервера -->
                 <img src="logo.png" id="logo-img-1" style="display:none;" onerror="this.src='logo.PNG';" onload="document.getElementById('logo-svg').style.display='none'; this.style.display='block';" alt="СТРОЙБАЗА">
                 СТРОЙБАЗА
             </a>
@@ -743,17 +741,10 @@
                         <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.12 1.13-.64 4.2-1.03 6.32-.17.9-.5 1.2-.82 1.23-.7.06-1.23-.46-1.9-.9-1.05-.69-1.64-1.12-2.66-1.8-1.17-.78-.41-1.21.26-1.9.18-.17 3.22-2.95 3.28-3.2.01-.03.01-.15-.06-.21-.07-.06-.17-.04-.25-.02-.11.02-1.9 1.2-5.36 3.53-.51.35-.97.52-1.38.51-.45-.01-1.32-.26-1.97-.47-.79-.26-1.42-.4-1.37-.84.03-.23.35-.46.96-.71 3.76-1.63 6.27-2.71 7.53-3.23 3.58-1.48 4.32-1.74 4.81-1.75.11 0 .35.03.5.16.13.11.17.27.18.38-.01.07-.01.19-.02.26z"/></svg> Telegram
                     </a>
                 </div>
-
-                <!-- Виджеты рейтингов -->
-                <div class="rating-widgets">
-                    <iframe src="https://yandex.ru/sprav/widget/rating-badge/237893630120?type=rating&theme=dark" width="150" height="50" frameborder="0"></iframe>
-                    <iframe src="https://widget.2gis.ru/api/widget?org_id=70000001114215364&amp;branch_id=70000001114215365&amp;size=medium&amp;theme=dark" width="150" height="50" frameborder="0"></iframe>
-                </div>
             </div>
 
-            <!-- Правый блок в Hero (Крупный логотип) -->
+            <!-- Правый блок в Hero -->
             <div class="hero-visual">
-                <!-- Пытается загрузить logo.png или logo.PNG. Если успешно — скроет 3D-куб -->
                 <img src="logo.png" id="logo-img-2" class="hero-visual-logo" style="display:none;" onerror="this.src='logo.PNG';" onload="document.getElementById('hero-fallback-cube').style.display='none'; this.style.display='block';" alt="СТРОЙБАЗА">
                 <div class="hero-visual-cube" id="hero-fallback-cube">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:100%; height:100%;">
@@ -943,82 +934,67 @@
                         <p>Понедельник — Суббота: с 8:00 до 18:00<br>Воскресенье: Выходной</p>
                     </div>
 
-                    <!-- ОРИГИНАЛЬНЫЕ ВЕКТОРНЫЕ ЛОГОТИПЫ -->
+                    <!-- Виджеты рейтингов (Теперь аккуратно стоят здесь) -->
+                    <div class="contact-block">
+                        <h4>Наш рейтинг и отзывы</h4>
+                        <div class="rating-widgets">
+                            <iframe src="https://yandex.ru/sprav/widget/rating-badge/237893630120?type=rating&theme=dark" width="150" height="50" frameborder="0"></iframe>
+                            <iframe src="https://widget.2gis.ru/api/widget?org_id=70000001114215364&amp;branch_id=70000001114215365&amp;size=medium&amp;theme=dark" width="150" height="50" frameborder="0"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- ПЛАШКИ СОЦСЕТЕЙ (Ищут локальные файлы на сервере) -->
                     <div class="contact-block">
                         <h4>Мы на других площадках</h4>
                         <div class="social-grid">
                             
                             <!-- Яндекс Карты -->
                             <a href="https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120" target="_blank" class="social-btn">
-                                <svg viewBox="0 0 100 100" style="width:24px; height:24px; fill:none;">
-                                    <path d="M50 5C27.9 5 10 22.9 10 45c0 30.1 40 50 40 50s40-19.9 40-50C90 22.9 72.1 5 50 5zm0 54c-7.7 0-14-6.3-14-14s6.3-14 14-14 14 6.3 14 14-6.3 14-14 14z" fill="#fc3f1d"/>
-                                    <circle cx="50" cy="45" r="7" fill="#ffffff"/>
-                                </svg>
-                                Яндекс Карты
+                                <img src="icon-yandex.png" onerror="this.style.display='none';" alt="">
+                                <span>Яндекс Карты</span>
                             </a>
                             
                             <!-- 2ГИС -->
                             <a href="https://2gis.ru/nevinnomyssk/inside/19000196618797894/firm/70000001114215365" target="_blank" class="social-btn">
-                                <svg viewBox="0 0 100 100" style="width:24px; height:24px;">
-                                    <rect width="100" height="100" rx="22" fill="#00b55a"/>
-                                    <circle cx="50" cy="50" r="28" fill="none" stroke="#ffffff" stroke-width="8"/>
-                                    <circle cx="50" cy="50" r="12" fill="#ffffff"/>
-                                </svg>
-                                2ГИС
+                                <img src="icon-2gis.png" onerror="this.style.display='none';" alt="">
+                                <span>2ГИС</span>
                             </a>
                             
                             <!-- ВКонтакте -->
                             <a href="https://vk.com/stroybazansk" target="_blank" class="social-btn">
-                                <svg viewBox="0 0 100 100" style="width:24px; height:24px;">
-                                    <rect width="100" height="100" rx="22" fill="#0077ff"/>
-                                    <path d="M54.1 72c-19.8 0-31.1-13.6-31.6-36.1h9.9c.4 16.5 7.6 23.5 13.4 25V35.9h9.3v14.3c5.7-.6 11.6-7.1 13.6-14.3h9.3c-1.6 8.8-8.1 15.3-12.8 18 4.7 2.2 12.1 7.8 15.1 18H72.4c-2.4-7.4-8.3-13.1-14.9-13.8V72h-3.4z" fill="#ffffff"/>
-                                </svg>
-                                ВКонтакте
+                                <img src="icon-vk.png" onerror="this.style.display='none';" alt="">
+                                <span>ВКонтакте</span>
                             </a>
                             
                             <!-- Авито -->
                             <a href="https://www.avito.ru/brands/7b5d69d7938d3eb5a9ac6751ed5a9697" target="_blank" class="social-btn">
-                                <svg viewBox="0 0 100 100" style="width:24px; height:24px; fill:none;">
-                                    <circle cx="35" cy="40" r="15" fill="#90df00" />
-                                    <circle cx="68" cy="32" r="18" fill="#ff3333" />
-                                    <circle cx="66" cy="68" r="13" fill="#00aaef" />
-                                    <circle cx="36" cy="71" r="11" fill="#ffcc00" />
-                                </svg>
-                                Авито
+                                <img src="icon-avito.png" onerror="this.style.display='none';" alt="">
+                                <span>Авито</span>
                             </a>
                             
                             <!-- Telegram -->
                             <a href="https://t.me/stroybazansk" target="_blank" class="social-btn">
-                                <svg viewBox="0 0 100 100" style="width:24px; height:24px;">
-                                    <rect width="100" height="100" rx="22" fill="#24A1DE"/>
-                                    <path d="M78.3 27.2L66.7 81.8c-.8 3.8-3.1 4.7-6.3 2.9L42.7 64.9l-8.5 8.2c-.9.9-1.7 1.7-2 1.7L33.4 56l22.6-20.4c1-.9-.2-1.4-1.5-.5L26.5 52.7l-16.7-5.2c-3.6-1.1-3.7-3.6.8-5.3L75.9 20c3-1.1 5.6.7 2.4 7.2z" fill="#ffffff"/>
-                                </svg>
-                                Telegram
+                                <img src="icon-telegram.png" onerror="this.style.display='none';" alt="">
+                                <span>Telegram</span>
                             </a>
                             
                             <!-- YouTube -->
                             <a href="https://www.youtube.com/@stroybazansk" target="_blank" class="social-btn">
-                                <svg viewBox="0 0 100 100" style="width:24px; height:24px;">
-                                    <rect width="100" height="100" rx="22" fill="#ff0000"/>
-                                    <polygon points="40,33 68,50 40,67" fill="#ffffff"/>
-                                </svg>
-                                YouTube
+                                <img src="icon-youtube.png" onerror="this.style.display='none';" alt="">
+                                <span>YouTube</span>
                             </a>
 
                             <!-- Мессенджер MAX -->
                             <a href="https://max.ru/join/bM2VpgJxiwIve809sHURi8C1mrzORQCR-7u_elROpXw" target="_blank" class="social-btn social-btn-max">
-                                <svg viewBox="0 0 100 100" style="width:24px; height:24px;">
-                                    <rect width="100" height="100" rx="22" fill="#4CAF50"/>
-                                    <path d="M80 25H20c-4.4 0-8 3.6-8 8v34c0 4.4 3.6 8 8 8h50l18 13V33c0-4.4-3.6-8-8-8zM42 56H30V44h12v12zm18 0H48V44h12v12zm18 0H66V44h12v12z" fill="#ffffff"/>
-                                </svg>
-                                MAX: +7 (988) 732-81-61
+                                <img src="icon-max.png" onerror="this.style.display='none';" alt="">
+                                <span>MAX: +7 (988) 732-81-61</span>
                             </a>
 
                         </div>
                     </div>
                 </div>
 
-                <!-- Интерактивная карта (Яндекс с oid) -->
+                <!-- Интерактивная карта -->
                 <div class="map-wrapper-container">
                     <div class="map-wrapper">
                         <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=237893630120" width="100%" height="100%" frameborder="0"></iframe>
