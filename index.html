@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Мета-теги для Яндекса и Google -->
+    <!-- SEO Мета-теги -->
     <title>СТРОЙБАЗА на Монтажной — Металлопрокат, ЖБИ, шлакоблок и цемент в Невинномысске</title>
     <meta name="description" content="Купить металлопрокат (арматуру ГОСТ, профильную трубу), ЖБИ, ФБС, кольца, шлакоблоки и свежий цемент со склада в Невинномысске без посредников. Быстрая доставка манипулятором и Газелью. Оплата по факту!">
     <meta name="keywords" content="стройбаза невинномысск, металлопрокат невинномысск, купить арматуру, профильная труба цена, шлакоблок невинномысск, кольца жби, цемент м500 доставка, фбс блоки монтажная">
 
-    <!-- Иконка в браузере (Ваш логотип) -->
+    <!-- Иконка в браузере -->
     <link rel="icon" type="image/png" href="logo.png">
 
     <!-- Шрифт Inter -->
@@ -48,21 +48,20 @@
             padding: 0 24px;
         }
 
-        /* Шапка */
+        /* Безопасная шапка */
         header {
             border-bottom: 1px solid var(--border-color);
-            padding: 16px 0;
-            position: sticky;
-            top: 0;
-            background-color: rgba(11, 11, 15, 0.85);
-            backdrop-filter: blur(12px);
-            z-index: 100;
+            padding: 20px 0;
+            background-color: var(--bg-color);
+            position: relative;
         }
 
         .header-grid {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .logo {
@@ -86,6 +85,7 @@
             display: flex;
             align-items: center;
             gap: 24px;
+            flex-wrap: wrap;
         }
 
         .header-phone {
@@ -105,25 +105,27 @@
         }
 
         .btn-header {
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: var(--text-color);
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.85rem;
             transition: all 0.2s;
+            background: rgba(255, 255, 255, 0.02);
         }
 
         .btn-header:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-color: var(--text-secondary);
+            background-color: var(--accent-color);
+            color: var(--bg-color);
         }
 
         /* Главный экран (Hero) */
         .hero {
-            padding: 100px 0 80px 0;
+            padding: 80px 0;
             border-bottom: 1px solid var(--border-color);
+            text-align: left;
         }
 
         .hero-badge {
@@ -139,18 +141,18 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 800;
-            line-height: 1.15;
+            line-height: 1.2;
             letter-spacing: -0.03em;
             margin-bottom: 24px;
             max-width: 900px;
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--text-secondary);
-            max-width: 650px;
+            max-width: 700px;
             margin-bottom: 40px;
             font-weight: 300;
         }
@@ -192,7 +194,31 @@
             transform: translateY(-1px);
         }
 
-        /* О нас (Преимущества) */
+        /* Быстрые контакты (Мессенджеры) */
+        .quick-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .quick-social-btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .qs-wa { background-color: #25D366; }
+        .qs-tg { background-color: #0088cc; }
+        .qs-vk { background-color: #0077ff; }
+
+        /* Преимущества */
         .features {
             padding: 80px 0;
             border-bottom: 1px solid var(--border-color);
@@ -208,9 +234,6 @@
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .feature-card p {
@@ -244,7 +267,7 @@
 
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
         }
 
@@ -256,6 +279,7 @@
             transition: all 0.2s;
             display: flex;
             flex-direction: column;
+            min-height: 380px; /* Фиксированная минимальная высота */
         }
 
         .product-card:hover {
@@ -263,12 +287,12 @@
             transform: translateY(-2px);
         }
 
+        /* Исправленный контейнер для картинок */
         .product-image {
             width: 100%;
-            height: 200px;
-            background-color: rgba(255, 255, 255, 0.02);
+            height: 180px;
+            background: #14141a; /* Ровный темный фон, если картинки нет */
             position: relative;
-            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -276,21 +300,25 @@
         }
 
         .product-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            z-index: 2;
         }
 
-        /* Заглушка, если фото еще не загружено */
         .img-placeholder {
-            position: absolute;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-secondary);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 6px 12px;
+            letter-spacing: 0.08em;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
             border-radius: 4px;
+            z-index: 1;
         }
 
         .product-content {
@@ -309,13 +337,13 @@
         }
 
         .product-title {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
             line-height: 1.3;
         }
 
         .product-price {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 800;
             white-space: nowrap;
             background-color: rgba(255, 255, 255, 0.07);
@@ -344,6 +372,8 @@
         /* Контакты и Карта */
         .contacts {
             padding: 80px 0;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-top: 1px solid var(--border-color);
         }
 
         .contacts-grid {
@@ -386,7 +416,19 @@
             background-color: rgba(255, 255, 255, 0.01);
         }
 
-        /* Кнопки соцсетей и площадок */
+        .map-fallback-btn {
+            display: none;
+            margin-top: 12px;
+            text-align: center;
+            padding: 12px;
+            background-color: #ffcc00;
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 8px;
+        }
+
+        /* Кнопки площадок */
         .social-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -399,7 +441,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 10px;
+            padding: 12px;
             border-radius: 8px;
             border: 1px solid var(--border-color);
             color: var(--text-color);
@@ -427,7 +469,7 @@
         /* Адаптивность */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             .contacts-grid {
                 grid-template-columns: 1fr;
@@ -445,17 +487,20 @@
             .header-phone {
                 text-align: center;
             }
+            .map-fallback-btn {
+                display: block; /* Показываем кнопку на мобильных */
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Шапка сайта -->
+    <!-- Шапка сайта (Безопасная) -->
     <header>
         <div class="container header-grid">
             <a href="#" class="logo">
-                <img src="logo.png" alt="СТРОЙБАЗА">
-                СТРОЙБАЗА на Монтажной
+                <img src="logo.png" alt="СТРОЙБАЗА" onerror="this.style.display='none';">
+                СТРОЙБАЗА
             </a>
             <div class="header-contacts">
                 <div class="header-phone">
@@ -470,35 +515,43 @@
     <!-- Главный баннер (Hero) -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">Склад в Невинномысске • Работаем напрямую</div>
-            <h1>База строительных материалов без посредников</h1>
-            <p>Металлопрокат ГОСТ, ЖБИ, кольца, шлакоблок и свежий цемент всегда в наличии на складе. Быстрая погрузка, резка в размер и доставка на объект в день обращения.</p>
+            <div class="hero-badge">Склад в Невинномысске • Без перекупов</div>
+            <h1>СТРОЙБАЗА на Монтажной</h1>
+            <p>Реальный склад строительных материалов и оптово-розничная база комплектации в Невинномысске. Металлопрокат по ГОСТу, ЖБИ, ФБС и свежий цемент всегда в наличии. Быстро грузим, режем в размер и возим на объекты в день обращения!</p>
+            
             <div class="cta-buttons">
-                <a href="tel:+79887328161" class="btn btn-primary">Позвонить на базу</a>
-                <a href="http://wa.me/79887328161" class="btn btn-secondary" target="_blank">Рассчитать смету за 5 минут</a>
+                <a href="tel:+79887328161" class="btn btn-primary">Позвонить: +7 (988) 732-81-61</a>
+                <a href="http://wa.me/79887328161" class="btn btn-secondary" target="_blank">WhatsApp отдел продаж</a>
+            </div>
+
+            <!-- Быстрые соцсети под кнопками -->
+            <div class="quick-socials">
+                <a href="http://wa.me/79887328161" class="quick-social-btn qs-wa" target="_blank">💬 WhatsApp</a>
+                <a href="https://t.me/stroybazansk" class="quick-social-btn qs-tg" target="_blank">✈️ Telegram</a>
+                <a href="https://vk.com/stroybazansk" class="quick-social-btn qs-vk" target="_blank">📱 ВКонтакте</a>
             </div>
         </div>
     </section>
 
-    <!-- Преимущества (О нас) -->
+    <!-- Преимущества -->
     <section class="features">
         <div class="container">
             <div class="features-grid">
                 <div class="feature-card">
                     <h3>✔️ Честный металл</h3>
-                    <p>Никакой «фольги» под видом нормальной трубы. Если заявлена стенка 2 мм — значит, там ровно 2 мм. Продаем арматуру строго по ГОСТу с правильной геометрией.</p>
+                    <p>Никакой «фольги» под видом нормальной трубы. Если заявлена толщина стенки 2 мм — значит, там ровно 2 мм. Арматура с правильной геометрией и без глубокой ржавчины.</p>
                 </div>
                 <div class="feature-card">
                     <h3>✂️ Режем и экономим</h3>
-                    <p>Заводскую арматуру 11.7 м порежем пополам прямо на базе. Вам не придется нанимать дорогой длинномер — уплатите только за обычную Газель.</p>
+                    <p>Заводскую арматуру 11.7 м мы режем прямо на базе пополам (по 5.85 м). Вам не нужно нанимать длинномер, увозите всё на обычной Газели.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>🚛 Свой спецтранспорт</h3>
-                    <p>Доставляем собственными Газелями и тяжелыми манипуляторами. Собрали заказ, аккуратно погрузили и привезли на объект без опозданий.</p>
+                    <h3>🚛 Оперативная доставка</h3>
+                    <p>Не заставляем ждать сутками. Есть свой транспорт (Газели, манипуляторы). Собрали заказ, быстро загрузили и отправили на объект.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>💳 Оплата по факту</h3>
-                    <p>Никаких предоплат и рисков. Оплачивайте материалы наличными по факту выгрузки на объекте, переводом или безналичным расчетом для ИП.</p>
+                    <h3>💳 Удобная оплата</h3>
+                    <p>Оплата наличными по факту выгрузки на вашем объекте, перевод на карту или безналичный расчет для юрлиц (ИП без НДС).</p>
                 </div>
             </div>
         </div>
@@ -509,82 +562,181 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Материалы в наличии</h2>
-                <p class="section-subtitle">Оптово-розничные цены со склада на ул. Монтажной, 10</p>
+                <p class="section-subtitle">Оптово-розничный склад на ул. Монтажной, 10</p>
             </div>
             
             <div class="catalog-grid">
 
-                <!-- Товар 1: Арматура -->
+                <!-- Арматура -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="armatura.jpg" alt="Арматура рифленая">
-                        <span class="img-placeholder">арматура.jpg</span>
+                        <img src="armatura.jpg" alt="Арматура рифленая" onerror="this.style.display='none';">
+                        <span class="img-placeholder">armatura.jpg</span>
                     </div>
                     <div class="product-content">
                         <div class="product-header">
                             <h3 class="product-title">Арматура 12 мм рифленая А500С (ГОСТ)</h3>
                             <span class="product-price">46 ₽/м</span>
                         </div>
-                        <p class="product-description">Честный диаметр, без слоистой ржавчины. Идеальна для фундаментов, перекрытий и армопоясов. В наличии также диаметры 6, 8, 10, 14 и 16 мм.</p>
-                        <div class="product-meta">Режем хлысты 11.7 м пополам для экономии на доставке</div>
+                        <p class="product-description">Честный диаметр и строгая геометрия, без следов глубокой ржавчины. Для фундаментов, армопоясов и перекрытий. Всегда в наличии 6, 8, 10, 14 и 16 мм.</p>
+                        <div class="product-meta">Режем заводские хлысты (11.7 м) пополам</div>
                     </div>
                 </div>
 
-                <!-- Товар 2: Профильная труба -->
+                <!-- Профильная труба -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="truba.jpg" alt="Профильная труба">
+                        <img src="truba.jpg" alt="Профильная труба" onerror="this.style.display='none';">
                         <span class="img-placeholder">truba.jpg</span>
                     </div>
                     <div class="product-content">
                         <div class="product-header">
-                            <h3 class="product-title">Профильная труба 40х20, 40х40, 60х40</h3>
+                            <h3 class="product-title">Профильные трубы 40х20, 40х40, 60х40</h3>
                             <span class="product-price">от 112 ₽/м</span>
                         </div>
-                        <p class="product-description">Металлопрокат по честному ГОСТу. Строгая геометрия, ровный рез, легко варится. Длина хлыста — 6 м. Отлично подходит для заборов, каркасов и навесов.</p>
-                        <div class="product-meta">40х20х2 мм — 112 ₽ | 40х40х2 мм — 148 ₽ | Скидки на объем</div>
+                        <p class="product-description">Металлопрокат по честному ГОСТу. Строгая геометрия, ровный рез без замятий, отлично варится. Длина хлыста — 6 метров.</p>
+                        <div class="product-meta">40х20х2мм — 112₽ | 40х40х2мм — 148₽ | 60х40х3мм — 250₽</div>
                     </div>
                 </div>
 
-                <!-- Товар 3: Цемент -->
+                <!-- Цемент -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="cement.jpg" alt="Цемент М500">
+                        <img src="cement.jpg" alt="Цемент М500" onerror="this.style.display='none';">
                         <span class="img-placeholder">cement.jpg</span>
                     </div>
                     <div class="product-content">
                         <div class="product-header">
-                            <h3 class="product-title">Новороссийский цемент М500 (50 кг)</h3>
+                            <h3 class="product-title">Цемент Новороссийск М500 (50 кг)</h3>
                             <span class="product-price">560 ₽/мешок</span>
                         </div>
-                        <p class="product-description">Портландцемент заводского качества. Подходит для фундаментов, стяжек, кладки и бетонирования. На поддоне — 30 мешков.</p>
-                        <div class="product-meta">Погрузка вилочным погрузчиком за 5 минут</div>
+                        <p class="product-description">Заводской портландцемент М500 Д20. Свежий, идеален для фундаментов, стяжек, кладки кирпича и любых бетонных работ. На поддоне 30 мешков.</p>
+                        <div class="product-meta">Быстрая погрузка вилочным погрузчиком за 5 мин</div>
                     </div>
                 </div>
 
-                <!-- Товар 4: Шлакоблок -->
+                <!-- Шлакоблок -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="shlakoblok.jpg" alt="Шлакоблок стеновой">
+                        <img src="shlakoblok.jpg" alt="Шлакоблок стеновой" onerror="this.style.display='none';">
                         <span class="img-placeholder">shlakoblok.jpg</span>
                     </div>
                     <div class="product-content">
                         <div class="product-header">
-                            <h3 class="product-title">Шлакоблок стеновой 20×20×40 см</h3>
+                            <h3 class="product-title">Шлакоблок стеновой 20×20×40</h3>
                             <span class="product-price">48 ₽/шт</span>
                         </div>
-                        <p class="product-description">Вибропрессованный блок высокой прочности, хорошо пропарен в камере, не крошится. Точная геометрия экономит кладочный раствор. В поддоне 60 шт.</p>
+                        <p class="product-description">Вибропрессованный, отлично пропарен в камере. Прочный, не сыпется при разгрузке. Точная геометрия экономит раствор. В поддоне 60 шт.</p>
                         <div class="product-meta">Минимальный заказ — 300 шт. (5 поддонов)</div>
                     </div>
                 </div>
 
-                <!-- Товар 5: Кольца ЖБИ -->
+                <!-- Кольца ЖБИ -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="kolca.jpg" alt="Кольца ЖБИ">
+                        <img src="kolca.jpg" alt="Кольца ЖБИ" onerror="this.style.display='none';">
                         <span class="img-placeholder">kolca.jpg</span>
                     </div>
                     <div class="product-content">
                         <div class="product-header">
-                            <h3 class="product-title">Кольца ЖБИ, крышки и днища</h3>
+                            <h3 class="product-title">Кольца ЖБИ, крышки, днища</h3>
                             <span class="product-price">от 3 100 ₽</span>
+                        </div>
+                        <p class="product-description">Для септиков и колодцев. Прочный армированный бетон, не трескается при выгрузке. Размеры: 1 м (3200₽), 1.5 м (4200₽), 2 м (8000₽).</p>
+                        <div class="product-meta">Манипулятор сразу опустит кольца в вашу яму</div>
+                    </div>
+                </div>
+
+                <!-- ФБС -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="fbs.jpg" alt="Блоки ФБС" onerror="this.style.display='none';">
+                        <span class="img-placeholder">fbs.jpg</span>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3 class="product-title">Фундаментные блоки ФБС 24.4.6 и 24.3.6</h3>
+                            <span class="product-price">от 2 500 ₽</span>
+                        </div>
+                        <p class="product-description">Бетонные блоки для фундаментов, подвалов и стен. Заводское качество, края без сколов. Марка бетона строго соответствует ГОСТу.</p>
+                        <div class="product-meta">ФБС 24.3.6 — 2500 ₽ | ФБС 24.4.6 — 2700 ₽</div>
+                    </div>
+                </div>
+
+                <!-- Манипулятор -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="manipulator.jpg" alt="Услуги манипулятора" onerror="this.style.display='none';">
+                        <span class="img-placeholder">manipulator.jpg</span>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3 class="product-title">Услуги манипулятора (борт 15 т, стрела 5 т)</h3>
+                            <span class="product-price">3 000 ₽/ч</span>
+                        </div>
+                        <p class="product-description">Собственная техника для перевозки, разгрузки и монтажа блоков ФБС, колец, кирпича, бытовок. Кузов 6 м. Минимальный заказ по городу — 5000 ₽.</p>
+                        <div class="product-meta">Опытный водитель. Расчет по телефону</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты и Карта -->
+    <section class="contacts">
+        <div class="container">
+            <div class="contacts-grid">
+                <div class="contacts-info">
+                    <h2 class="section-title" style="margin-bottom:0; font-size: 2rem;">Контакты базы</h2>
+                    
+                    <div class="contact-block">
+                        <h4>Адрес склада</h4>
+                        <p>г. Невинномысск, ул. Монтажная, д. 10</p>
+                    </div>
+
+                    <div class="contact-block">
+                        <h4>Телефон отдела продаж</h4>
+                        <a href="tel:+79887328161">+7 (988) 732-81-61</a>
+                    </div>
+
+                    <div class="contact-block">
+                        <h4>Режим работы</h4>
+                        <p>Понедельник — Суббота: с 8:00 до 18:00<br>Воскресенье: Выходной</p>
+                    </div>
+
+                    <!-- Кнопки наших платформ -->
+                    <div class="contact-block">
+                        <h4>Мы на других площадках</h4>
+                        <div class="social-grid">
+                            <a href="https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120" target="_blank" class="social-btn">📍 Яндекс Карты</a>
+                            <a href="https://2gis.ru/nevinnomyssk/inside/19000196618797894/firm/70000001114215365" target="_blank" class="social-btn">🗺️ 2ГИС</a>
+                            <a href="https://vk.com/stroybazansk" target="_blank" class="social-btn">📱 ВКонтакте</a>
+                            <a href="https://www.avito.ru/brands/7b5d69d7938d3eb5a9ac6751ed5a9697" target="_blank" class="social-btn">📦 Авито</a>
+                            <a href="https://t.me/stroybazansk" target="_blank" class="social-btn">✈️ Telegram</a>
+                            <a href="https://www.youtube.com/@stroybazansk" target="_blank" class="social-btn">🎥 YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Интерактивная карта (Яндекс) -->
+                <div class="map-wrapper-container">
+                    <div class="map-wrapper">
+                        <iframe src="https://yandex.ru/map-widget/v1/?org=237893630120&ll=41.946725%2C44.648006&z=16" width="100%" height="100%" frameborder="0"></iframe>
+                    </div>
+                    <!-- Запасная кнопка для телефонов, если карта не загрузится из-за блокировщиков рекламы -->
+                    <a href="https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120" target="_blank" class="map-fallback-btn">Открыть на Яндекс Картах</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 СТРОЙБАЗА на Монтажной. г. Невинномысск. Все права защищены. <br> Цены и наличие материалов уточняйте по телефону.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
