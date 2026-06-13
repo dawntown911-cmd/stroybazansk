@@ -286,7 +286,7 @@
             transform: translateY(-1px);
         }
 
-        /* Быстрые кнопки мессенджеров (с поддержкой загружаемых логотипов) */
+        /* Быстрые кнопки мессенджеров */
         .quick-socials {
             display: flex;
             gap: 12px;
@@ -698,12 +698,11 @@
 </head>
 <body>
 
-    <!-- Шапка сайта (Логотип грузится сразу) -->
+    <!-- Шапка сайта (Логотип и авто-проверка регистра) -->
     <header>
         <div class="container header-grid">
             <a href="#" class="logo">
-                <!-- Пытается загрузить logo.png сразу. Если картинка битая (ее нет), то включит SVG-кубик -->
-                <img src="logo.png" id="logo-img-1" onerror="this.style.display='none'; document.getElementById('logo-fallback-header').style.display='flex';" alt="СТРОЙБАЗА">
+                <img src="logo.png" id="logo-img-header" onerror="if(this.src.indexOf('logo.PNG') === -1) { this.src='logo.PNG'; } else { this.style.display='none'; document.getElementById('logo-fallback-header').style.display='flex'; }" alt="СТРОЙБАЗА">
                 <div class="logo-fallback" id="logo-fallback-header" style="display:none;">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:100%; height:100%; color:#fff;">
                         <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(255,255,255,0.04)"/>
@@ -739,7 +738,7 @@
                     <a href="http://wa.me/79887328161" class="btn btn-secondary" target="_blank">Написать в WhatsApp</a>
                 </div>
 
-                <!-- Мессенджеры в первом экране (С поддержкой картинок-логотипов) -->
+                <!-- Мессенджеры в первом экране -->
                 <div class="quick-socials">
                     <a href="http://wa.me/79887328161" class="quick-social-btn qs-wa" target="_blank">
                         <img src="icon-whatsapp.png" onerror="this.style.display='none';" alt=""> WhatsApp
@@ -750,10 +749,9 @@
                 </div>
             </div>
 
-            <!-- Правый блок в Hero (Логотип грузится сразу) -->
+            <!-- Правый блок в Hero (Логотип грузится сразу, авто-проверка регистра) -->
             <div class="hero-visual">
-                <!-- Пытается загрузить logo.png сразу. Если картинки нет — покажет кубик -->
-                <img src="logo.png" id="logo-img-2" class="hero-visual-logo" onerror="this.style.display='none'; document.getElementById('hero-fallback-cube').style.display='block';" alt="СТРОЙБАЗА">
+                <img src="logo.png" id="logo-img-2" class="hero-visual-logo" onerror="if(this.src.indexOf('logo.PNG') === -1) { this.src='logo.PNG'; } else { this.style.display='none'; document.getElementById('hero-fallback-cube').style.display='block'; }" alt="СТРОЙБАЗА">
                 <div class="hero-visual-cube" id="hero-fallback-cube" style="display:none;">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:100%; height:100%;">
                         <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(255,255,255,0.04)"/>
@@ -798,7 +796,7 @@
     <section class="catalog">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Materials в наличии</h2>
+                <h2 class="section-title">Материалы в наличии</h2> <!-- Устранили опечатку "Materials" -->
                 <p class="section-subtitle">Оптово-розничный склад на ул. Монтажной, 10</p>
             </div>
             
@@ -942,7 +940,7 @@
                         <p>Понедельник — Суббота: с 8:00 до 18:00<br>Воскресенье: Выходной</p>
                     </div>
 
-                    <!-- Виджеты рейтингов -->
+                    <!-- Виджеты рейтингов (Теперь в самом низу) -->
                     <div class="contact-block">
                         <h4>Наш рейтинг и отзывы</h4>
                         <div class="rating-widgets">
@@ -951,7 +949,7 @@
                         </div>
                     </div>
 
-                    <!-- ПЛАШКИ СОЦСЕТЕЙ (Грузят локальные картинки) -->
+                    <!-- ПЛАШКИ СОЦСЕТЕЙ -->
                     <div class="contact-block">
                         <h4>Мы на других площадках</h4>
                         <div class="social-grid">
