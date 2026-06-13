@@ -9,13 +9,17 @@
     <meta name="description" content="Купить металлопрокат (арматуру ГОСТ, профильную трубу), ЖБИ, ФБС, кольца, шлакоблоки и свежий цемент со склада в Невинномысске без посредников. Быстрая доставка манипулятором и Газелью. Оплата по факту!">
     <meta name="keywords" content="стройбаза невинномысск, металлопрокат невинномысск, купить арматуру, профильная труба цена, шлакоблок невинномысск, кольца жби, цемент м500 доставка, фбс блоки монтажная">
 
+    <!-- Предподключение к серверам для ускорения загрузки в Safari -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://yandex.ru">
+    <link rel="preconnect" href="https://widget.2gis.ru">
+
     <!-- Иконка во вкладке браузера -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="icon" type="image/png" href="favicon.PNG">
 
     <!-- Шрифт Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -80,6 +84,7 @@
             width: 44px;
             height: 44px;
             object-fit: contain;
+            display: block;
         }
 
         .logo-fallback {
@@ -229,6 +234,7 @@
             z-index: 6;
             position: absolute;
             filter: drop-shadow(0 0 30px rgba(255,255,255,0.15));
+            display: block;
         }
 
         .hero-visual-cube {
@@ -280,7 +286,7 @@
             transform: translateY(-1px);
         }
 
-        /* Быстрые кнопки мессенджеров */
+        /* Быстрые кнопки мессенджеров (с поддержкой загружаемых логотипов) */
         .quick-socials {
             display: flex;
             gap: 12px;
@@ -289,7 +295,7 @@
         }
 
         .quick-social-btn {
-            padding: 10px 18px;
+            padding: 10px 20px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -297,7 +303,7 @@
             color: #fff;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             transition: transform 0.2s;
             border: 1px solid rgba(255,255,255,0.05);
         }
@@ -307,10 +313,11 @@
             opacity: 0.95;
         }
 
-        .quick-social-btn svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
+        .quick-social-btn img {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+            flex-shrink: 0;
         }
 
         .qs-wa { background-color: #128C7E; }
@@ -528,7 +535,7 @@
             text-decoration: none;
         }
 
-        /* Виджеты рейтингов Яндекса и 2ГИС внизу */
+        /* Виджеты рейтингов */
         .rating-widgets {
             display: flex;
             gap: 16px;
@@ -563,7 +570,7 @@
             border-radius: 8px;
         }
 
-        /* СЕТКА СОЦСЕТЕЙ (С поддержкой картинок-логотипов) */
+        /* СЕТКА СОЦСЕТЕЙ */
         .social-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -599,7 +606,6 @@
             grid-column: span 2;
         }
 
-        /* Стилизация картинок-иконок соцсетей */
         .social-btn img {
             width: 24px;
             height: 24px;
@@ -692,18 +698,19 @@
 </head>
 <body>
 
-    <!-- Шапка сайта -->
+    <!-- Шапка сайта (Логотип грузится сразу) -->
     <header>
         <div class="container header-grid">
             <a href="#" class="logo">
-                <div class="logo-fallback" id="logo-svg">
+                <!-- Пытается загрузить logo.png сразу. Если картинка битая (ее нет), то включит SVG-кубик -->
+                <img src="logo.png" id="logo-img-1" onerror="this.style.display='none'; document.getElementById('logo-fallback-header').style.display='flex';" alt="СТРОЙБАЗА">
+                <div class="logo-fallback" id="logo-fallback-header" style="display:none;">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:100%; height:100%; color:#fff;">
                         <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(255,255,255,0.04)"/>
                         <path d="M4 7V17L12 22V12Z" fill="rgba(255,255,255,0.01)"/>
                         <path d="M12 12V22L20 17V7Z" fill="rgba(255,255,255,0.06)"/>
                     </svg>
                 </div>
-                <img src="logo.png" id="logo-img-1" style="display:none;" onerror="this.src='logo.PNG';" onload="document.getElementById('logo-svg').style.display='none'; this.style.display='block';" alt="СТРОЙБАЗА">
                 СТРОЙБАЗА
             </a>
             <div class="header-contacts">
@@ -732,21 +739,22 @@
                     <a href="http://wa.me/79887328161" class="btn btn-secondary" target="_blank">Написать в WhatsApp</a>
                 </div>
 
-                <!-- Мессенджеры -->
+                <!-- Мессенджеры в первом экране (С поддержкой картинок-логотипов) -->
                 <div class="quick-socials">
                     <a href="http://wa.me/79887328161" class="quick-social-btn qs-wa" target="_blank">
-                        <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.758.459 3.414 1.259 4.865l-1.283 4.693 4.805-1.259c1.403.766 3.003 1.201 4.707 1.201 5.506 0 9.988-4.482 9.988-9.988 0-5.506-4.482-9.988-9.988-9.988zm4.84 14.153c-.266.746-1.352 1.348-1.859 1.434-.469.078-1.078.141-3.148-.711-2.645-1.09-4.328-3.793-4.461-3.973-.129-.18-1.078-1.434-1.078-2.738 0-1.305.672-1.945.914-2.203.242-.258.531-.324.711-.324h.508c.18 0 .422-.07.656.492.242.586.828 2.023.902 2.176.078.152.129.332.027.535-.102.203-.152.332-.305.508-.152.18-.32.402-.457.539-.152.152-.313.32-.133.629.18.309.801 1.316 1.719 2.133.1.09.2.148.3.176.355.297.871.742 1.254.852.383.109.852-.023 1.109-.32.258-.297 1.109-1.289 1.406-1.734.297-.445.594-.371.992-.223.398.148 2.527 1.191 2.527 1.191s.414.203.313.789z"/></svg> WhatsApp
+                        <img src="icon-whatsapp.png" onerror="this.style.display='none';" alt=""> WhatsApp
                     </a>
                     <a href="https://t.me/stroybazansk" class="quick-social-btn qs-tg" target="_blank">
-                        <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.12 1.13-.64 4.2-1.03 6.32-.17.9-.5 1.2-.82 1.23-.7.06-1.23-.46-1.9-.9-1.05-.69-1.64-1.12-2.66-1.8-1.17-.78-.41-1.21.26-1.9.18-.17 3.22-2.95 3.28-3.2.01-.03.01-.15-.06-.21-.07-.06-.17-.04-.25-.02-.11.02-1.9 1.2-5.36 3.53-.51.35-.97.52-1.38.51-.45-.01-1.32-.26-1.97-.47-.79-.26-1.42-.4-1.37-.84.03-.23.35-.46.96-.71 3.76-1.63 6.27-2.71 7.53-3.23 3.58-1.48 4.32-1.74 4.81-1.75.11 0 .35.03.5.16.13.11.17.27.18.38-.01.07-.01.19-.02.26z"/></svg> Telegram
+                        <img src="icon-telegram.png" onerror="this.style.display='none';" alt=""> Telegram
                     </a>
                 </div>
             </div>
 
-            <!-- Правый блок в Hero -->
+            <!-- Правый блок в Hero (Логотип грузится сразу) -->
             <div class="hero-visual">
-                <img src="logo.png" id="logo-img-2" class="hero-visual-logo" style="display:none;" onerror="this.src='logo.PNG';" onload="document.getElementById('hero-fallback-cube').style.display='none'; this.style.display='block';" alt="СТРОЙБАЗА">
-                <div class="hero-visual-cube" id="hero-fallback-cube">
+                <!-- Пытается загрузить logo.png сразу. Если картинки нет — покажет кубик -->
+                <img src="logo.png" id="logo-img-2" class="hero-visual-logo" onerror="this.style.display='none'; document.getElementById('hero-fallback-cube').style.display='block';" alt="СТРОЙБАЗА">
+                <div class="hero-visual-cube" id="hero-fallback-cube" style="display:none;">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:100%; height:100%;">
                         <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(255,255,255,0.04)"/>
                         <path d="M4 7V17L12 22V12Z" fill="rgba(255,255,255,0.01)"/>
@@ -755,9 +763,9 @@
                 </div>
             </div>
 
-            <!-- Баннер (Подгрузится из файла banner.jpg) -->
+            <!-- Баннер (Подгрузится «лениво» только при открытии экрана, сохраняя скорость) -->
             <div class="hero-banner">
-                <img src="banner.jpg" alt="База строительных материалов" onerror="this.parentNode.style.display='none';">
+                <img src="banner.jpg" alt="База строительных материалов" loading="lazy" onerror="this.parentNode.style.display='none';">
             </div>
         </div>
     </section>
@@ -790,7 +798,7 @@
     <section class="catalog">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Материалы в наличии</h2>
+                <h2 class="section-title">Materials в наличии</h2>
                 <p class="section-subtitle">Оптово-розничный склад на ул. Монтажной, 10</p>
             </div>
             
@@ -799,7 +807,7 @@
                 <!-- Арматура -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="armatura.jpg" alt="Арматура" onerror="this.style.display='none';">
+                        <img src="armatura.jpg" alt="Арматура" loading="lazy" onerror="this.style.display='none';">
                         <span class="img-placeholder">armatura.jpg</span>
                     </div>
                     <div class="product-content">
@@ -815,7 +823,7 @@
                 <!-- Профильная труба -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="truba.jpg" alt="Профильная труба" onerror="this.style.display='none';">
+                        <img src="truba.jpg" alt="Профильная труба" loading="lazy" onerror="this.style.display='none';">
                         <span class="img-placeholder">truba.jpg</span>
                     </div>
                     <div class="product-content">
@@ -831,7 +839,7 @@
                 <!-- Цемент -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="cement.jpg" alt="Цемент" onerror="this.style.display='none';">
+                        <img src="cement.jpg" alt="Цемент" loading="lazy" onerror="this.style.display='none';">
                         <span class="img-placeholder">cement.jpg</span>
                     </div>
                     <div class="product-content">
@@ -847,7 +855,7 @@
                 <!-- Шлакоблок -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="shlakoblok.jpg" alt="Шлакоблок" onerror="this.style.display='none';">
+                        <img src="shlakoblok.jpg" alt="Шлакоблок" loading="lazy" onerror="this.style.display='none';">
                         <span class="img-placeholder">shlakoblok.jpg</span>
                     </div>
                     <div class="product-content">
@@ -863,7 +871,7 @@
                 <!-- Кольца ЖБИ -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="kolca.jpg" alt="Кольца ЖБИ" onerror="this.style.display='none';">
+                        <img src="kolca.jpg" alt="Кольца ЖБИ" loading="lazy" onerror="this.style.display='none';">
                         <span class="img-placeholder">kolca.jpg</span>
                     </div>
                     <div class="product-content">
@@ -879,7 +887,7 @@
                 <!-- ФБС -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="fbs.jpg" alt="ФБС блоки" onerror="this.style.display='none';">
+                        <img src="fbs.jpg" alt="ФБС блоки" loading="lazy" onerror="this.style.display='none';">
                         <span class="img-placeholder">fbs.jpg</span>
                     </div>
                     <div class="product-content">
@@ -895,7 +903,7 @@
                 <!-- Манипулятор -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="manipulator.jpg" alt="Манипулятор" onerror="this.style.display='none';">
+                        <img src="manipulator.jpg" alt="Манипулятор" loading="lazy" onerror="this.style.display='none';">
                         <span class="img-placeholder">manipulator.jpg</span>
                     </div>
                     <div class="product-content">
@@ -934,59 +942,59 @@
                         <p>Понедельник — Суббота: с 8:00 до 18:00<br>Воскресенье: Выходной</p>
                     </div>
 
-                    <!-- Виджеты рейтингов (Теперь аккуратно стоят здесь) -->
+                    <!-- Виджеты рейтингов -->
                     <div class="contact-block">
                         <h4>Наш рейтинг и отзывы</h4>
                         <div class="rating-widgets">
-                            <iframe src="https://yandex.ru/sprav/widget/rating-badge/237893630120?type=rating&theme=dark" width="150" height="50" frameborder="0"></iframe>
-                            <iframe src="https://widget.2gis.ru/api/widget?org_id=70000001114215364&amp;branch_id=70000001114215365&amp;size=medium&amp;theme=dark" width="150" height="50" frameborder="0"></iframe>
+                            <iframe src="https://yandex.ru/sprav/widget/rating-badge/237893630120?type=rating&theme=dark" width="150" height="50" frameborder="0" loading="lazy"></iframe>
+                            <iframe src="https://widget.2gis.ru/api/widget?org_id=70000001114215364&amp;branch_id=70000001114215365&amp;size=medium&amp;theme=dark" width="150" height="50" frameborder="0" loading="lazy"></iframe>
                         </div>
                     </div>
 
-                    <!-- ПЛАШКИ СОЦСЕТЕЙ (Ищут локальные файлы на сервере) -->
+                    <!-- ПЛАШКИ СОЦСЕТЕЙ (Грузят локальные картинки) -->
                     <div class="contact-block">
                         <h4>Мы на других площадках</h4>
                         <div class="social-grid">
                             
                             <!-- Яндекс Карты -->
                             <a href="https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120" target="_blank" class="social-btn">
-                                <img src="icon-yandex.png" onerror="this.style.display='none';" alt="">
+                                <img src="icon-yandex.png" loading="lazy" onerror="this.style.display='none';" alt="">
                                 <span>Яндекс Карты</span>
                             </a>
                             
                             <!-- 2ГИС -->
                             <a href="https://2gis.ru/nevinnomyssk/inside/19000196618797894/firm/70000001114215365" target="_blank" class="social-btn">
-                                <img src="icon-2gis.png" onerror="this.style.display='none';" alt="">
+                                <img src="icon-2gis.png" loading="lazy" onerror="this.style.display='none';" alt="">
                                 <span>2ГИС</span>
                             </a>
                             
                             <!-- ВКонтакте -->
                             <a href="https://vk.com/stroybazansk" target="_blank" class="social-btn">
-                                <img src="icon-vk.png" onerror="this.style.display='none';" alt="">
+                                <img src="icon-vk.png" loading="lazy" onerror="this.style.display='none';" alt="">
                                 <span>ВКонтакте</span>
                             </a>
                             
                             <!-- Авито -->
                             <a href="https://www.avito.ru/brands/7b5d69d7938d3eb5a9ac6751ed5a9697" target="_blank" class="social-btn">
-                                <img src="icon-avito.png" onerror="this.style.display='none';" alt="">
+                                <img src="icon-avito.png" loading="lazy" onerror="this.style.display='none';" alt="">
                                 <span>Авито</span>
                             </a>
                             
                             <!-- Telegram -->
                             <a href="https://t.me/stroybazansk" target="_blank" class="social-btn">
-                                <img src="icon-telegram.png" onerror="this.style.display='none';" alt="">
+                                <img src="icon-telegram.png" loading="lazy" onerror="this.style.display='none';" alt="">
                                 <span>Telegram</span>
                             </a>
                             
                             <!-- YouTube -->
                             <a href="https://www.youtube.com/@stroybazansk" target="_blank" class="social-btn">
-                                <img src="icon-youtube.png" onerror="this.style.display='none';" alt="">
+                                <img src="icon-youtube.png" loading="lazy" onerror="this.style.display='none';" alt="">
                                 <span>YouTube</span>
                             </a>
 
                             <!-- Мессенджер MAX -->
                             <a href="https://max.ru/join/bM2VpgJxiwIve809sHURi8C1mrzORQCR-7u_elROpXw" target="_blank" class="social-btn social-btn-max">
-                                <img src="icon-max.png" onerror="this.style.display='none';" alt="">
+                                <img src="icon-max.png" loading="lazy" onerror="this.style.display='none';" alt="">
                                 <span>MAX: +7 (988) 732-81-61</span>
                             </a>
 
@@ -997,7 +1005,7 @@
                 <!-- Интерактивная карта -->
                 <div class="map-wrapper-container">
                     <div class="map-wrapper">
-                        <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=237893630120" width="100%" height="100%" frameborder="0"></iframe>
+                        <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=237893630120" width="100%" height="100%" frameborder="0" loading="lazy"></iframe>
                     </div>
                     <a href="https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120" target="_blank" class="map-fallback-btn">Открыть на Яндекс Картах</a>
                 </div>
