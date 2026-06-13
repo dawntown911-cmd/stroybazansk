@@ -49,10 +49,10 @@
             padding: 0 24px;
         }
 
-        /* Шапка */
+        /* Умная адаптивная шапка */
         header {
             border-bottom: 1px solid var(--border-color);
-            padding: 20px 0;
+            padding: 16px 0;
             background-color: var(--bg-color);
             position: relative;
             z-index: 10;
@@ -62,30 +62,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             font-weight: 800;
-            font-size: 1.25rem;
-            letter-spacing: 0.03em;
+            font-size: 1.15rem;
+            letter-spacing: 0.02em;
             text-decoration: none;
             color: var(--text-color);
         }
 
         .logo img {
-            width: 34px;
-            height: 34px;
+            width: 30px;
+            height: 30px;
             object-fit: contain;
         }
 
         .logo-fallback {
-            width: 34px;
-            height: 34px;
+            width: 30px;
+            height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -95,7 +93,6 @@
             display: flex;
             align-items: center;
             gap: 24px;
-            flex-wrap: wrap;
         }
 
         .header-phone {
@@ -106,24 +103,23 @@
             color: var(--text-color);
             text-decoration: none;
             font-weight: 800;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
         }
 
         .location-text {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-secondary);
         }
 
-        /* Кнопка Позвонить в шапке (крупная и акцентная) */
         .btn-header {
             border: 1px solid var(--text-color);
             color: var(--bg-color);
             background-color: var(--text-color);
-            padding: 12px 20px;
+            padding: 10px 18px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: all 0.2s;
             display: inline-flex;
             align-items: center;
@@ -138,7 +134,7 @@
 
         /* Главный экран (Hero) */
         .hero {
-            padding: 80px 0 100px 0;
+            padding: 60px 0 80px 0;
             border-bottom: 1px solid var(--border-color);
             position: relative;
         }
@@ -146,8 +142,8 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 20%;
-            left: 10%;
+            top: 10%;
+            left: 5%;
             width: 400px;
             height: 400px;
             background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0) 70%);
@@ -187,17 +183,17 @@
         }
 
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 800;
             line-height: 1.15;
             letter-spacing: -0.04em;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-secondary);
-            margin-bottom: 40px;
+            margin-bottom: 32px;
             font-weight: 300;
             line-height: 1.6;
         }
@@ -207,7 +203,7 @@
             position: relative;
             border-radius: 16px;
             border: 1px solid var(--border-color);
-            height: 380px;
+            height: 340px;
             background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%);
             overflow: hidden;
             display: flex;
@@ -226,8 +222,8 @@
         }
 
         .hero-visual-cube {
-            width: 140px;
-            height: 140px;
+            width: 120px;
+            height: 120px;
             position: relative;
             z-index: 5;
             filter: drop-shadow(0 0 30px rgba(255,255,255,0.08));
@@ -246,7 +242,7 @@
             gap: 10px;
             padding: 14px 28px;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             font-size: 1rem;
             transition: all 0.2s;
@@ -278,12 +274,12 @@
         .quick-socials {
             display: flex;
             gap: 12px;
-            margin-top: 32px;
+            margin-top: 24px;
             flex-wrap: wrap;
         }
 
         .quick-social-btn {
-            padding: 10px 20px;
+            padding: 10px 18px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -309,6 +305,41 @@
 
         .qs-wa { background-color: #128C7E; }
         .qs-tg { background-color: #0088cc; }
+
+        /* Блок с отзывами Яндекса и 2ГИС */
+        .rating-widgets {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .rating-widgets iframe {
+            border-radius: 8px;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        /* БОЛЬШОЙ ИСПРАВЛЕННЫЙ БАННЕР ДЛЯ ВАШЕГО ФОТО */
+        .hero-banner {
+            grid-column: span 2;
+            width: 100%;
+            height: 440px;
+            margin-top: 48px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.01);
+            position: relative;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
         /* Преимущества */
         .features {
@@ -382,7 +413,6 @@
             transform: translateY(-2px);
         }
 
-        /* Контейнер картинок со стильным фоном */
         .product-image {
             width: 100%;
             height: 220px;
@@ -523,13 +553,13 @@
             border-radius: 8px;
         }
 
-        /* ИСПРАВЛЕННЫЕ ПЛАШКИ СОЦСЕТЕЙ (Идеальная сетка, фиксированная высота) */
+        /* СЕТКА СОЦСЕТЕЙ (Выровненная) */
         .social-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 колонки одинаковой ширины */
+            grid-template-columns: repeat(2, 1fr);
             gap: 12px;
             margin-top: 16px;
-            max-width: 420px; /* Ограничение по ширине, чтобы не растягивались */
+            max-width: 440px;
         }
 
         .social-btn {
@@ -538,7 +568,7 @@
             justify-content: flex-start;
             gap: 12px;
             padding: 0 16px;
-            height: 50px; /* Жестко одинаковая высота для всех */
+            height: 50px;
             border-radius: 8px;
             border: 1px solid var(--border-color);
             color: var(--text-color);
@@ -547,7 +577,7 @@
             font-weight: 600;
             transition: all 0.2s;
             background: rgba(255, 255, 255, 0.02);
-            white-space: nowrap; /* Запрет переноса текста на две строки */
+            white-space: nowrap;
         }
 
         .social-btn:hover {
@@ -555,16 +585,14 @@
             background: rgba(255, 255, 255, 0.05);
         }
 
-        /* Исправленная кнопка MAX в общем списке (растянута на всю ширину) */
         .social-btn-max {
-            grid-column: span 2; /* Растягиваем на две колонки */
-            font-size: 0.8rem;
+            grid-column: span 2;
         }
 
         .social-btn svg {
             width: 24px;
             height: 24px;
-            flex-shrink: 0; /* Иконка никогда не сжимается */
+            flex-shrink: 0;
         }
 
         /* Подвал */
@@ -585,67 +613,98 @@
             .hero-visual {
                 display: none;
             }
+            .hero-banner {
+                grid-column: span 1;
+                height: 300px;
+            }
         }
 
         @media (max-width: 768px) {
+            /* Фикс шапки для мобильных телефонов */
+            header {
+                padding: 12px 0;
+            }
+            .header-grid {
+                display: flex;
+                flex-direction: row; /* Горизонтально на мобильном */
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+            }
+            .logo {
+                font-size: 1rem; /* Чуть меньше шрифт */
+                gap: 8px;
+            }
+            .logo-fallback, .logo img {
+                width: 26px;
+                height: 26px;
+            }
+            .header-contacts {
+                gap: 10px;
+            }
+            .header-phone {
+                display: none; /* Скрываем телефон текстом на мобильном, чтобы не мешал */
+            }
+            /* Компактная кнопка звонка */
+            .btn-header {
+                padding: 8px 14px;
+                font-size: 0.8rem;
+                border-radius: 6px;
+            }
+            .btn-header svg {
+                width: 14px;
+                height: 14px;
+            }
+
             .hero h1 {
-                font-size: 2.3rem;
+                font-size: 2.2rem;
             }
             .contacts-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            .header-grid {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
-            }
-            .header-contacts {
-                flex-direction: column;
-                gap: 12px;
-            }
-            .header-phone {
-                text-align: center;
-            }
             .map-fallback-btn {
                 display: block;
             }
             .social-grid {
-                grid-template-columns: 1fr; /* На мобильном в одну колонку */
+                grid-template-columns: 1fr;
                 max-width: 100%;
             }
             .social-btn-max {
                 grid-column: span 1;
+            }
+            .hero-banner {
+                height: 220px;
+                margin-top: 32px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Шапка сайта (Акцент на звонок) -->
+    <!-- Шапка сайта (Идеальная мобильная адаптация) -->
     <header>
         <div class="container header-grid">
             <a href="#" class="logo">
                 <div class="logo-fallback" id="logo-svg">
-                    <!-- Изометрический красивый куб, точная копия вашего логотипа -->
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:32px; height:32px; color:#fff;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:100%; height:100%; color:#fff;">
                         <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(255,255,255,0.04)"/>
                         <path d="M4 7V17L12 22V12Z" fill="rgba(255,255,255,0.01)"/>
                         <path d="M12 12V22L20 17V7Z" fill="rgba(255,255,255,0.06)"/>
                     </svg>
                 </div>
                 <img src="logo.png" id="logo-img" style="display:none;" onload="document.getElementById('logo-svg').style.display='none'; this.style.display='block';" alt="СТРОЙБАЗА">
-                СТРОЙБАЗА на Монтажной
+                СТРОЙБАЗА
             </a>
             <div class="header-contacts">
                 <div class="header-phone">
                     <a href="tel:+79887328161" class="phone-link">+7 (988) 732-81-61</a>
                     <div class="location-text">Невинномысск, ул. Монтажная, 10</div>
                 </div>
-                <!-- Крупная яркая кнопка Звонка в шапке -->
+                <!-- Компактная и стильная кнопка звонка -->
                 <a href="tel:+79887328161" class="btn-header">
-                    <svg viewBox="0 0 24 24" style="width:16px; height:16px; fill:currentColor; margin-right:4px;"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> 
-                    Позвонить на базу
+                    <svg viewBox="0 0 24 24" style="fill:currentColor;"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> 
+                    Позвонить
                 </a>
             </div>
         </div>
@@ -661,22 +720,27 @@
                 
                 <div class="cta-buttons">
                     <a href="tel:+79887328161" class="btn btn-primary">Позвонить: +7 (988) 732-81-61</a>
-                    <!-- Приоритетный WhatsApp вместо MAX -->
                     <a href="http://wa.me/79887328161" class="btn btn-secondary" target="_blank">Написать в WhatsApp</a>
                 </div>
 
-                <!-- Мессенджеры в первом экране -->
+                <!-- Мессенджеры -->
                 <div class="quick-socials">
                     <a href="http://wa.me/79887328161" class="quick-social-btn qs-wa" target="_blank">
-                        <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.758.459 3.414 1.259 4.865l-1.283 4.693 4.805-1.259c1.403.766 3.003 1.201 4.707 1.201 5.506 0 9.988-4.482 9.988-9.988 0-5.506-4.482-9.988-9.988-9.988zm4.84 14.153c-.266.746-1.352 1.348-1.859 1.434-.469.078-1.078.141-3.148-.711-2.645-1.09-4.328-3.793-4.461-3.973-.129-.18-1.078-1.434-1.078-2.738 0-1.305.672-1.945.914-2.203.242-.258.531-.324.711-.324h.508c.18 0 .422-.07.656.492.242.586.828 2.023.902 2.176.078.152.129.332.027.535-.102.203-.152.332-.305.508-.152.18-.32.402-.457.539-.152.152-.313.32-.133.629.18.309.801 1.316 1.719 2.133.1.09.2.148.3.176.355.297.871.742 1.254.852.383.109.852-.023 1.109-.32.258-.297 1.109-1.289 1.406-1.734.297-.445.594-.371.992-.223.398.148 2.527 1.191 2.527 1.191s.414.203.313.789z"/></svg> WhatsApp отдел продаж
+                        <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.758.459 3.414 1.259 4.865l-1.283 4.693 4.805-1.259c1.403.766 3.003 1.201 4.707 1.201 5.506 0 9.988-4.482 9.988-9.988 0-5.506-4.482-9.988-9.988-9.988zm4.84 14.153c-.266.746-1.352 1.348-1.859 1.434-.469.078-1.078.141-3.148-.711-2.645-1.09-4.328-3.793-4.461-3.973-.129-.18-1.078-1.434-1.078-2.738 0-1.305.672-1.945.914-2.203.242-.258.531-.324.711-.324h.508c.18 0 .422-.07.656.492.242.586.828 2.023.902 2.176.078.152.129.332.027.535-.102.203-.152.332-.305.508-.152.18-.32.402-.457.539-.152.152-.313.32-.133.629.18.309.801 1.316 1.719 2.133.1.09.2.148.3.176.355.297.871.742 1.254.852.383.109.852-.023 1.109-.32.258-.297 1.109-1.289 1.406-1.734.297-.445.594-.371.992-.223.398.148 2.527 1.191 2.527 1.191s.414.203.313.789z"/></svg> WhatsApp
                     </a>
                     <a href="https://t.me/stroybazansk" class="quick-social-btn qs-tg" target="_blank">
                         <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.12 1.13-.64 4.2-1.03 6.32-.17.9-.5 1.2-.82 1.23-.7.06-1.23-.46-1.9-.9-1.05-.69-1.64-1.12-2.66-1.8-1.17-.78-.41-1.21.26-1.9.18-.17 3.22-2.95 3.28-3.2.01-.03.01-.15-.06-.21-.07-.06-.17-.04-.25-.02-.11.02-1.9 1.2-5.36 3.53-.51.35-.97.52-1.38.51-.45-.01-1.32-.26-1.97-.47-.79-.26-1.42-.4-1.37-.84.03-.23.35-.46.96-.71 3.76-1.63 6.27-2.71 7.53-3.23 3.58-1.48 4.32-1.74 4.81-1.75.11 0 .35.03.5.16.13.11.17.27.18.38-.01.07-.01.19-.02.26z"/></svg> Telegram
                     </a>
                 </div>
+
+                <!-- Официальные виджеты рейтингов -->
+                <div class="rating-widgets">
+                    <iframe src="https://yandex.ru/sprav/widget/rating-badge/237893630120?type=rating&theme=dark" width="150" height="50" frameborder="0"></iframe>
+                    <iframe src="https://widget.2gis.ru/api/widget?org_id=70000001114215364&amp;branch_id=70000001114215365&amp;size=medium&amp;theme=dark" width="150" height="50" frameborder="0"></iframe>
+                </div>
             </div>
 
-            <!-- Правый визуальный 3D-блок с красивым вектором -->
+            <!-- Правый 3D куб -->
             <div class="hero-visual">
                 <div class="hero-visual-cube">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:100%; height:100%;">
@@ -685,6 +749,11 @@
                         <path d="M12 12V22L20 17V7Z" fill="rgba(255,255,255,0.06)"/>
                     </svg>
                 </div>
+            </div>
+
+            <!-- БАННЕР ДЛЯ ВАШЕГО ФОТО (banner.jpg) -->
+            <div class="hero-banner">
+                <img src="banner.jpg" alt="База строительных материалов" onerror="this.parentNode.style.display='none';">
             </div>
         </div>
     </section>
@@ -861,7 +930,7 @@
                         <p>Понедельник — Суббота: с 8:00 до 18:00<br>Воскресенье: Выходной</p>
                     </div>
 
-                    <!-- ОРИГИНАЛЬНЫЕ ВЕКТОРНЫЕ ЛОГОТИПЫ (Идеально одинаковые плашки) -->
+                    <!-- ОРИГИНАЛЬНЫЕ ВЕКТОРНЫЕ ЛОГОТИПЫ -->
                     <div class="contact-block">
                         <h4>Мы на других площадках</h4>
                         <div class="social-grid">
@@ -923,7 +992,7 @@
                                 YouTube
                             </a>
 
-                            <!-- Мессенджер MAX (просто как соцсеть, без принуждения писать) -->
+                            <!-- Мессенджер MAX -->
                             <a href="https://max.ru/join/bM2VpgJxiwIve809sHURi8C1mrzORQCR-7u_elROpXw" target="_blank" class="social-btn social-btn-max">
                                 <svg viewBox="0 0 100 100" style="width:24px; height:24px;">
                                     <rect width="100" height="100" rx="22" fill="#4CAF50"/>
@@ -936,10 +1005,10 @@
                     </div>
                 </div>
 
-                <!-- Интерактивная карта (Яндекс) -->
+                <!-- Интерактивная карта (Яндекс с oid) -->
                 <div class="map-wrapper-container">
                     <div class="map-wrapper">
-                        <iframe src="https://yandex.ru/map-widget/v1/?org=237893630120&ll=41.946725%2C44.648006&z=16" width="100%" height="100%" frameborder="0"></iframe>
+                        <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=237893630120" width="100%" height="100%" frameborder="0"></iframe>
                     </div>
                     <a href="https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120" target="_blank" class="map-fallback-btn">Открыть на Яндекс Картах</a>
                 </div>
