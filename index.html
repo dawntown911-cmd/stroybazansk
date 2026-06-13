@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стройбаза Невинномысск — Металлопрокат и стройматериалы</title>
+    <!-- Подключаем современный шрифт Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Базовые стили в стиле минимализма Stripe / OpenAI */
+        :root {
+            --bg-color: #0b0b0f;
+            --text-color: #ffffff;
+            --text-secondary: #8e8e93;
+            --accent-color: #ffffff;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Шапка сайта */
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .header-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .logo svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .contacts-header {
+            text-align: right;
+        }
+
+        .phone-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: opacity 0.2s;
+        }
+
+        .phone-link:hover {
+            opacity: 0.8;
+        }
+
+        .location-text {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Главный баннер (Hero) */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            transform: translateY(-1px);
+        }
+
+        /* Каталог (Сетка товаров) */
+        .catalog {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 32px;
+            transition: border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .card-footer {
+            font-size: 0.85rem;
+            color: var(--text-color);
+            font-weight: 600;
+            opacity: 0.7;
+        }
+
+        /* О нас и условия работы */
+        .info-section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+        }
+
+        .info-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .info-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Контакты и Карта */
+        .contacts {
+            padding: 80px 0;
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-row h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .contact-row p, .contact-row a {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            height: 350px;
+            background-color: #1a1a1a;
+        }
+
+        /* Подвал */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .contacts-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .header-grid {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .contacts-header {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container header-grid">
+            <div class="logo">
+                <!-- Минималистичная иконка куба из вашего логотипа -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+                СТРОЙБАЗА
+            </div>
+            <div class="contacts-header">
+                <a href="tel:+79000000000" class="phone-link">+7 (900) 000-00-00</a>
+                <div class="location-text">Невинномысск, ул. Примерная, 10</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главный баннер -->
+    <section class="hero">
+        <div class="container">
+            <h1>Металлопрокат и стройматериалы в Невинномысске</h1>
+            <p>Продажа арматуры, профильных труб и цемента оптом и в розницу. Быстрая загрузка и доставка в день заказа.</p>
+            <div class="cta-buttons">
+                <a href="tel:+79000000000" class="btn btn-primary">Позвонить на базу</a>
+                <a href="https://wa.me/79000000000" class="btn btn-secondary" target="_blank">Написать в WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Каталог продукции -->
+    <section class="catalog">
+        <div class="container">
+            <h2 class="section-title">Продукция в наличии</h2>
+            <div class="grid">
+                
+                <!-- Товар 1 -->
+                <div class="card">
+                    <h3>Арматура</h3>
+                    <p>Рифленая и гладкая, различных диаметров (от 6 до 25 мм). Продажа пачками и в розницу метражом.</p>
+                    <div class="card-footer">Режем в размер</div>
+                </div>
+
+                <!-- Товар 2 -->
+                <div class="card">
+                    <h3>Профильная труба</h3>
+                    <p>Квадратного и прямоугольного сечения для заборов, навесов и металлоконструкций.</p>
+                    <div class="card-footer">Все популярные размеры</div>
+                </div>
+
+                <!-- Товар 3 -->
+                <div class="card">
+                    <h3>Цемент и смеси</h3>
+                    <p>Качественный цемент марок М400 и М500 в мешках. Сухие строительные смеси для любых работ.</p>
+                    <div class="card-footer">Опт и розница</div>
+                </div>
+
+                <!-- Товар 4 -->
+                <div class="card">
+                    <h3>Листовой прокат</h3>
+                    <p>Листы горячекатаные и холоднокатаные, оцинкованный лист и профнастил для кровли и заборов.</p>
+                    <div class="card-footer">Резка по вашим чертежам</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Условия работы -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-item">
+                    <h4>Быстрая доставка</h4>
+                    <p>Собственный автопарк позволяет доставлять заказы по Невинномысску и ближайшим районам оперативно.</p>
+                </div>
+                <div class="info-item">
+                    <h4>Любые объемы</h4>
+                    <p>Работаем как с частными застройщиками (от 1 метра), так и с крупными строительными компаниями по договору.</p>
+                </div>
+                <div class="info-item">
+                    <h4>Оплата на месте</h4>
+                    <p>Возможен наличный расчет при получении товара, безналичный расчет для юрлиц (с НДС и без).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакты и адрес</h2>
+            <div class="contacts-grid">
+                <div class="contact-details">
+                    <div class="contact-row">
+                        <h4>Адрес базы</h4>
+                        <p>г. Невинномысск, ул. Примерная, д. 10</p>
+                    </div>
+                    <div class="contact-row">
+                        <h4>Телефон для заказа</h4>
+                        <a href="tel:+79000000000">+7 (900) 000-00-00</a>
+                    </div>
+                    <div class="contact-row">
+                        <h4>Режим работы</h4>
+                        <p>Пн–Сб: с 8:00 до 18:00, Вс: выходной</p>
+                    </div>
+                </div>
+                <!-- Интерактивная карта (Яндекс.Карты) -->
+                <div class="map-container">
+                    <!-- Замените эту ссылку на конструктор карт Яндекса, когда определитесь с точным адресом -->
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad79f8e7b95c64ad43c39df4a32fa89bfa8bcfbd98bdfb13be244d2d41b65b169&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Стройбаза Невинномысск. Все права защищены. Информация на сайте не является публичной офертой.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
