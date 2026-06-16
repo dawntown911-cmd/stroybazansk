@@ -184,7 +184,7 @@
         .btn-ghost { background: rgba(255,255,255,0.035); }
 
         .hero {
-            padding: 74px 0 84px;
+            padding: 58px 0 76px;
             min-height: calc(100vh - 76px);
             display: flex;
             align-items: center;
@@ -192,22 +192,22 @@
         .hero-grid {
             display: grid;
             grid-template-columns: 1.02fr 0.98fr;
-            gap: 56px;
+            gap: 44px;
             align-items: center;
         }
         .hero h1 {
             margin: 18px 0 0;
-            font-size: clamp(3.1rem, 6.5vw, 6.45rem);
-            line-height: 0.94;
+            font-size: clamp(3.2rem, 6.2vw, 6.1rem);
+            line-height: 0.96;
             letter-spacing: -0.07em;
             max-width: 780px;
         }
         .hero-lead {
-            margin: 28px 0 0;
-            max-width: 680px;
+            margin: 24px 0 0;
+            max-width: 620px;
             color: var(--muted);
             font-size: clamp(1.08rem, 2vw, 1.28rem);
-            line-height: 1.65;
+            line-height: 1.5;
         }
         .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
         .hero-proof {
@@ -234,7 +234,7 @@
         }
         .hero-media img {
             width: 100%;
-            aspect-ratio: 5 / 4;
+            aspect-ratio: 4 / 3;
             object-fit: cover;
         }
         .hero-media-caption {
@@ -261,6 +261,34 @@
             height: 7px;
             border-radius: 50%;
             background: #72c391;
+        }
+
+        .availability-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--line);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+        .availability-item {
+            background: #090a0b;
+            padding: 18px 22px;
+            min-height: 88px;
+        }
+        .availability-item span {
+            display: block;
+            color: #72c391;
+            font-size: 0.74rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
+        .availability-item strong {
+            display: block;
+            font-size: 1rem;
+            line-height: 1.25;
         }
 
         .category-rail {
@@ -434,6 +462,26 @@
         .video-placeholder strong { font-size: 1.3rem; letter-spacing: -0.03em; }
         .video-placeholder p { color: var(--muted); margin: 12px 0 0; }
 
+        .photo-note-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin-top: 18px;
+        }
+        .photo-note {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.025);
+            padding: 14px;
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+        .photo-note strong {
+            display: block;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
         .review-card p { margin: 0; color: var(--text); font-size: 1rem; }
         .review-card footer { margin-top: 20px; color: var(--soft); font-size: 0.88rem; }
         .ratings-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
@@ -513,6 +561,7 @@
             .nav { display: none; }
             .hero-grid, .split, .contacts-grid { grid-template-columns: 1fr; }
             .hero { min-height: auto; }
+            .availability-strip { grid-template-columns: repeat(2, 1fr); }
             .product-card, .product-card.wide { grid-column: span 6; }
             .metric-grid, .rail-inner { grid-template-columns: repeat(2, 1fr); }
             .quality-grid, .kit-grid, .case-grid, .review-grid { grid-template-columns: repeat(2, 1fr); }
@@ -528,9 +577,13 @@
             .brand-name span { display: none; }
             .phone-block { display: none; }
             .header-actions .btn { min-height: 40px; padding: 0 13px; font-size: 0.82rem; }
-            .hero { padding: 48px 0 56px; }
-            .hero h1 { font-size: clamp(2.6rem, 15vw, 4.5rem); }
+            .hero { padding: 34px 0 48px; }
+            .hero h1 { font-size: clamp(2.35rem, 12vw, 3.5rem); letter-spacing: -0.055em; }
+            .hero-lead { font-size: 1.02rem; line-height: 1.45; margin-top: 18px; }
+            .hero-media { margin-top: 4px; }
+            .hero-media img { aspect-ratio: 16 / 11; height: auto; object-fit: cover; }
             .hero-proof, .rail-inner, .metric-grid, .quality-grid, .kit-grid, .case-grid, .review-grid, .delivery-map, .company-block, .faq, .social-links { grid-template-columns: 1fr; }
+            .availability-strip, .photo-note-grid { grid-template-columns: 1fr; }
             .hero-actions .btn { width: 100%; }
             .hero-media-caption { grid-template-columns: 1fr; }
             .product-card, .product-card.wide { grid-column: span 12; }
@@ -572,27 +625,34 @@
         <section class="hero" aria-labelledby="hero-title">
             <div class="container hero-grid">
                 <div>
-                    <div class="eyebrow">Склад, поставка, доставка</div>
-                    <h1 id="hero-title">Материалы, которые доезжают на объект без сюрпризов</h1>
-                    <p class="hero-lead">Металлопрокат, арматура, профильная труба, цемент, ФБС, кольца ЖБИ и шлакоблок со склада в Невинномысске. Проверяем наличие, режем металл, грузим и доставляем в день обращения или к назначенному времени.</p>
+                    <div class="eyebrow">Склад на Монтажной, 10</div>
+                    <h1 id="hero-title">Арматура, трубы, цемент и ЖБИ со склада</h1>
+                    <p class="hero-lead">Металл, ФБС, кольца, шлакоблок и цемент М500. Своя погрузка. Доставка Газелью и манипулятором.</p>
                     <div class="hero-actions">
                         <a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие и цену</a>
                         <a class="btn btn-ghost" href="https://wa.me/79887328161" target="_blank" rel="noopener">Написать в WhatsApp</a>
                     </div>
                     <div class="hero-proof" aria-label="Ключевые преимущества">
-                        <div class="proof-item"><strong>Склад на месте</strong><span>ул. Монтажная, 10, можно приехать и посмотреть материал</span></div>
-                        <div class="proof-item"><strong>Своя погрузка</strong><span>вилочный погрузчик, резка арматуры, подготовка заказа</span></div>
-                        <div class="proof-item"><strong>Доставка</strong><span>Газель и манипулятор для тяжелых ЖБИ и металла</span></div>
+                        <div class="proof-item"><strong>В наличии</strong><span>проверяем остатки перед заказом</span></div>
+                        <div class="proof-item"><strong>Режем металл</strong><span>арматуру готовим к перевозке</span></div>
+                        <div class="proof-item"><strong>Везем на объект</strong><span>город и район</span></div>
                     </div>
                 </div>
                 <figure class="hero-media">
                     <img src="banner.jpg" alt="Склад строительных материалов на Монтажной в Невинномысске" width="760" height="608" fetchpriority="high" decoding="async" onerror="this.style.display='none';">
                     <figcaption class="hero-media-caption">
-                        <span>Реальный склад строительных материалов в промышленной зоне Невинномысска.</span>
+                        <span>Склад в Невинномысске. Самовывоз и доставка.</span>
                         <span class="status-pill">Работаем сегодня</span>
                     </figcaption>
                 </figure>
             </div>
+        </section>
+
+        <section class="availability-strip" aria-label="Наличие и услуги">
+            <div class="availability-item"><span>Склад</span><strong>Арматура, труба, цемент, ЖБИ</strong></div>
+            <div class="availability-item"><span>Погрузка</span><strong>Погрузчик на базе</strong></div>
+            <div class="availability-item"><span>Доставка</span><strong>Газель и манипулятор</strong></div>
+            <div class="availability-item"><span>Оплата</span><strong>Наличные, перевод, безнал</strong></div>
         </section>
 
         <section class="category-rail" aria-label="Быстрые категории">
@@ -607,15 +667,15 @@
         <section class="section" aria-labelledby="metrics-title">
             <div class="container">
                 <div class="section-head">
-                    <div class="eyebrow">Почему доверяют</div>
-                    <h2 class="section-title" id="metrics-title">Сильная база — это не сайт. Это наличие, техника и ответственность.</h2>
-                    <p class="section-copy">Покупателю важно не обещание, а чтобы материал был в наличии, цена была подтверждена, машина приехала вовремя, а ЖБИ не пришлось искать по всему городу.</p>
+                    <div class="eyebrow">Факты</div>
+                    <h2 class="section-title" id="metrics-title">Что есть на базе</h2>
+                    <p class="section-copy">Материал можно посмотреть на складе. Перед заказом подтвердим цену и остаток.</p>
                 </div>
                 <div class="metric-grid">
-                    <div class="metric"><strong>8:00</strong><span>начинаем отгрузку с утра</span></div>
-                    <div class="metric"><strong>7</strong><span>ключевых категорий материалов</span></div>
-                    <div class="metric"><strong>15 т</strong><span>борт манипулятора для тяжелых поставок</span></div>
-                    <div class="metric"><strong>1 адрес</strong><span>склад на Монтажной, 10</span></div>
+                    <div class="metric"><strong>8:00</strong><span>начало отгрузки</span></div>
+                    <div class="metric"><strong>7</strong><span>категорий товара</span></div>
+                    <div class="metric"><strong>15 т</strong><span>борт манипулятора</span></div>
+                    <div class="metric"><strong>10</strong><span>ул. Монтажная</span></div>
                 </div>
             </div>
         </section>
@@ -623,17 +683,17 @@
         <section class="section" id="catalog" aria-labelledby="catalog-title">
             <div class="container">
                 <div class="section-head">
-                    <div class="eyebrow">Каталог в наличии</div>
-                    <h2 class="section-title" id="catalog-title">Основные позиции склада</h2>
-                    <p class="section-copy">Цены и остатки меняются. Перед приездом или заказом доставки подтвердим наличие по телефону и зафиксируем расчет.</p>
+                    <div class="eyebrow">Каталог</div>
+                    <h2 class="section-title" id="catalog-title">Материалы и цены</h2>
+                    <p class="section-copy">Цены ориентировочные. Звоните — скажем остаток и посчитаем доставку.</p>
                 </div>
                 <div class="assortment-grid">
                     <article class="product-card wide" id="metal">
                         <div class="product-img"><img src="armatura.jpg" alt="Арматура А500С на складе" width="560" height="220" loading="eager" decoding="async" onerror="this.style.display='none';"></div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Арматура А500С, 6-16 мм</h3><span class="price">от 46 ₽/м</span></div>
-                            <p>Рифленая арматура для фундаментов, армопоясов и перекрытий. Режем заводские хлысты на базе, чтобы было удобнее грузить и везти.</p>
-                            <div class="product-meta">Размеры: 6, 8, 10, 12, 14, 16 мм. Длина хлыста 11.7 м.</div>
+                            <p>Для фундаментов, армопоясов и перекрытий. Режем на базе.</p>
+                            <div class="product-meta">6, 8, 10, 12, 14, 16 мм. Хлыст 11.7 м.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
@@ -641,8 +701,8 @@
                         <div class="product-img"><img src="truba.jpg" alt="Профильная труба" width="560" height="220" loading="lazy" decoding="async" onerror="this.style.display='none';"></div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Профильная труба</h3><span class="price">от 112 ₽/м</span></div>
-                            <p>Трубы 40х20, 40х40, 60х40 для ворот, навесов, каркасов и строительных конструкций. Ровная геометрия, аккуратный рез.</p>
-                            <div class="product-meta">40х20х2 — 112 ₽, 40х40х2 — 148 ₽, 60х40х3 — 250 ₽.</div>
+                            <p>Для ворот, навесов, каркасов и конструкций.</p>
+                            <div class="product-meta">40х20х2 — 112 ₽. 40х40х2 — 148 ₽. 60х40х3 — 250 ₽.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
@@ -650,8 +710,8 @@
                         <div class="product-img"><img src="cement.jpg" alt="Цемент М500" width="360" height="220" loading="lazy" decoding="async" onerror="this.style.display='none';"></div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Цемент М500, 50 кг</h3><span class="price">560 ₽</span></div>
-                            <p>Свежий заводской портландцемент для фундаментов, стяжек, кладки и бетонных работ.</p>
-                            <div class="product-meta">На поддоне 30 мешков. Погрузка вилочным погрузчиком.</div>
+                            <p>Для фундаментов, стяжек, кладки и бетона.</p>
+                            <div class="product-meta">50 кг. На поддоне 30 мешков.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
@@ -659,7 +719,7 @@
                         <div class="product-img"><img src="shlakoblok.jpg" alt="Шлакоблок стеновой" width="360" height="220" loading="lazy" decoding="async" onerror="this.style.display='none';"></div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Шлакоблок 20×20×40</h3><span class="price">48 ₽/шт</span></div>
-                            <p>Вибропрессованный стеновой блок с ровной геометрией. Удобен для хозяйственных построек, заборов и стен.</p>
+                            <p>Стеновой блок для построек, заборов и перегородок.</p>
                             <div class="product-meta">Поддон 60 шт. Минимальный заказ — 300 шт.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
@@ -668,8 +728,8 @@
                         <div class="product-img"><img src="kolca.jpg" alt="Кольца ЖБИ" width="360" height="220" loading="lazy" decoding="async" onerror="this.style.display='none';"></div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Кольца ЖБИ</h3><span class="price">от 3 100 ₽</span></div>
-                            <p>Кольца, крышки и днища для септиков и колодцев. Доставим и опустим манипулятором на объекте.</p>
-                            <div class="product-meta">Размеры: 1 м, 1.5 м, 2 м. Наличие уточняется.</div>
+                            <p>Для септиков и колодцев. Привезем манипулятором.</p>
+                            <div class="product-meta">1 м, 1.5 м, 2 м. Крышки и днища.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
@@ -677,8 +737,8 @@
                         <div class="product-img"><img src="fbs.jpg" alt="Фундаментные блоки ФБС" width="560" height="220" loading="lazy" decoding="async" onerror="this.style.display='none';"></div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">ФБС 24.3.6 и 24.4.6</h3><span class="price">от 2 500 ₽</span></div>
-                            <p>Фундаментные блоки для оснований, подвалов, подпорных стен и промышленных объектов. Подберем машину под объем.</p>
-                            <div class="product-meta">ФБС 24.3.6 — 2500 ₽, ФБС 24.4.6 — 2700 ₽.</div>
+                            <p>Для фундаментов, подвалов и подпорных стен.</p>
+                            <div class="product-meta">24.3.6 — 2500 ₽. 24.4.6 — 2700 ₽.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
@@ -686,8 +746,8 @@
                         <div class="product-img"><img src="manipulator.jpg" alt="Манипулятор для доставки строительных материалов" width="560" height="220" loading="lazy" decoding="async" onerror="this.style.display='none';"></div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Манипулятор и доставка</h3><span class="price">3 000 ₽/ч</span></div>
-                            <p>Перевозка и разгрузка ФБС, колец, металла, кирпича, бытовок и паллетированных материалов. Борт 15 т, стрела 5 т.</p>
-                            <div class="product-meta">Минимальный заказ по городу — 5000 ₽. Расчет по телефону.</div>
+                            <p>Доставка ФБС, колец, металла, кирпича и паллет.</p>
+                            <div class="product-meta">Борт 15 т. Стрела 5 т. Минимум по городу — 5000 ₽.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Рассчитать доставку</a></div>
                         </div>
                     </article>
@@ -698,14 +758,14 @@
         <section class="section" id="quality" aria-labelledby="quality-title">
             <div class="container">
                 <div class="section-head">
-                    <div class="eyebrow">Контроль качества</div>
-                    <h2 class="section-title" id="quality-title">Доверие строится на проверяемых вещах</h2>
-                    <p class="section-copy">Мы не продаем “картинку с сайта”. Покупатель может приехать на склад, увидеть материал, проверить геометрию, согласовать резку и способ доставки.</p>
+                    <div class="eyebrow">Проверка</div>
+                    <h2 class="section-title" id="quality-title">Материал можно посмотреть</h2>
+                    <p class="section-copy">Приезжайте на склад. Покажем металл, блоки, цемент и ЖБИ.</p>
                 </div>
                 <div class="quality-grid">
-                    <article class="quality-card"><span>Металл</span><h3>Геометрия и фактический размер</h3><p>Для арматуры и трубы важны диаметр, стенка, ровный рез и отсутствие критичной ржавчины. Это проверяется до отгрузки.</p></article>
-                    <article class="quality-card"><span>ЖБИ</span><h3>Целостность перед погрузкой</h3><p>Кольца, крышки и ФБС осматриваются на сколы и трещины. Для тяжелых элементов подбираем доставку с манипулятором.</p></article>
-                    <article class="quality-card"><span>Цемент</span><h3>Свежесть партии</h3><p>Цемент хранится на складе и отгружается паллетами или мешками. Перед заказом уточняем наличие и дату партии.</p></article>
+                    <article class="quality-card"><span>Металл</span><h3>Диаметр, стенка, рез</h3><p>Проверяем перед отгрузкой. Режем арматуру под перевозку.</p></article>
+                    <article class="quality-card"><span>ЖБИ</span><h3>ФБС, кольца, крышки</h3><p>Смотрим целостность. Везем манипулятором.</p></article>
+                    <article class="quality-card"><span>Цемент</span><h3>Мешки и поддоны</h3><p>Отгрузка мешками или паллетами. Погрузчик на базе.</p></article>
                 </div>
             </div>
         </section>
@@ -713,14 +773,14 @@
         <section class="section" aria-labelledby="kits-title">
             <div class="container">
                 <div class="section-head">
-                    <div class="eyebrow">Часто покупают вместе</div>
-                    <h2 class="section-title" id="kits-title">Комплекты под реальные строительные задачи</h2>
-                    <p class="section-copy">Так проще считать бюджет: один звонок, один расчет, одна доставка.</p>
+                    <div class="eyebrow">Комплекты</div>
+                    <h2 class="section-title" id="kits-title">Часто берут вместе</h2>
+                    <p class="section-copy">Назовите задачу. Посчитаем материал и доставку.</p>
                 </div>
                 <div class="kit-grid">
-                    <article class="kit-card"><h3>Фундамент частного дома</h3><ul><li>арматура А500С</li><li>цемент М500</li><li>ФБС или шлакоблок</li><li>доставка манипулятором</li></ul><a class="btn btn-ghost" href="tel:+79887328161">Рассчитать комплект</a></article>
-                    <article class="kit-card"><h3>Септик или колодец</h3><ul><li>кольца ЖБИ</li><li>крышка и днище</li><li>цемент для монтажа</li><li>опускание манипулятором</li></ul><a class="btn btn-ghost" href="tel:+79887328161">Подобрать ЖБИ</a></article>
-                    <article class="kit-card"><h3>Навес, ворота, каркас</h3><ul><li>профильная труба</li><li>арматура</li><li>резка под перевозку</li><li>доставка Газелью</li></ul><a class="btn btn-ghost" href="tel:+79887328161">Уточнить металл</a></article>
+                    <article class="kit-card"><h3>Фундамент</h3><ul><li>арматура</li><li>цемент</li><li>ФБС или блок</li><li>манипулятор</li></ul><a class="btn btn-ghost" href="tel:+79887328161">Рассчитать</a></article>
+                    <article class="kit-card"><h3>Септик</h3><ul><li>кольца</li><li>крышка</li><li>днище</li><li>установка манипулятором</li></ul><a class="btn btn-ghost" href="tel:+79887328161">Подобрать</a></article>
+                    <article class="kit-card"><h3>Навес / ворота</h3><ul><li>профильная труба</li><li>арматура</li><li>резка</li><li>доставка</li></ul><a class="btn btn-ghost" href="tel:+79887328161">Уточнить</a></article>
                 </div>
             </div>
         </section>
@@ -728,15 +788,15 @@
         <section class="section" aria-labelledby="process-title">
             <div class="container split">
                 <div class="section-head">
-                    <div class="eyebrow">Как работаем</div>
-                    <h2 class="section-title" id="process-title">Без лишнего оформления. С понятным результатом.</h2>
-                    <p class="section-copy">Прорабу и частному застройщику важно быстро понять цену, наличие, машину и время разгрузки. Весь процесс собран вокруг этого.</p>
+                    <div class="eyebrow">Заказ</div>
+                    <h2 class="section-title" id="process-title">Как купить</h2>
+                    <p class="section-copy">Без формы на сайте. Быстрее по телефону.</p>
                 </div>
                 <div class="process-list">
-                    <div class="process-item"><div class="step-num">01</div><div><h3>Заявка</h3><p>Вы называете материал, объем, адрес объекта и желаемое время доставки.</p></div></div>
-                    <div class="process-item"><div class="step-num">02</div><div><h3>Проверка наличия</h3><p>Мы подтверждаем остатки, цену, необходимость резки и способ погрузки.</p></div></div>
-                    <div class="process-item"><div class="step-num">03</div><div><h3>Расчет доставки</h3><p>Подбираем Газель или манипулятор, считаем рейс и разгрузку.</p></div></div>
-                    <div class="process-item"><div class="step-num">04</div><div><h3>Отгрузка</h3><p>Готовим материал, грузим, везем на объект. Оплата возможна по факту.</p></div></div>
+                    <div class="process-item"><div class="step-num">01</div><div><h3>Звонок</h3><p>Материал, объем, адрес.</p></div></div>
+                    <div class="process-item"><div class="step-num">02</div><div><h3>Наличие</h3><p>Проверяем остаток и цену.</p></div></div>
+                    <div class="process-item"><div class="step-num">03</div><div><h3>Доставка</h3><p>Газель или манипулятор.</p></div></div>
+                    <div class="process-item"><div class="step-num">04</div><div><h3>Отгрузка</h3><p>Грузим. Везем. Выгружаем.</p></div></div>
                 </div>
             </div>
         </section>
@@ -745,14 +805,14 @@
             <div class="container">
                 <div class="section-head">
                     <div class="eyebrow">Доставка</div>
-                    <h2 class="section-title" id="delivery-title">Материал должен приехать так, чтобы его можно было сразу использовать</h2>
-                    <p class="section-copy">Учитываем подъезд, вес, длину металла, место разгрузки и необходимость опустить ЖБИ в яму.</p>
+                    <h2 class="section-title" id="delivery-title">Привезем на объект</h2>
+                    <p class="section-copy">Металл, цемент, блоки и ЖБИ. По городу и району.</p>
                 </div>
                 <div class="delivery-map">
-                    <div class="delivery-cell"><h3>Невинномысск</h3><p><strong>Быстрая городская доставка</strong> для металла, цемента, шлакоблока и небольших партий. Уточняем ближайшее окно по телефону.</p></div>
-                    <div class="delivery-cell"><h3>Район и объекты</h3><p><strong>Манипулятор для тяжелых поставок</strong>: ФБС, кольца, паллеты, длинномер. Считаем по расстоянию и времени работы.</p></div>
-                    <div class="delivery-cell"><h3>Разгрузка</h3><p>Погрузчик на складе, манипулятор на объекте. Предупредите, если подъезд узкий, мягкий грунт или нужна точная установка.</p></div>
-                    <div class="delivery-cell"><h3>Самовывоз</h3><p>Можно приехать на склад по адресу: Невинномысск, ул. Монтажная, 10. Перед приездом лучше подтвердить наличие.</p></div>
+                    <div class="delivery-cell"><h3>Город</h3><p><strong>Невинномысск.</strong> Быстрая доставка небольших и средних партий.</p></div>
+                    <div class="delivery-cell"><h3>Район</h3><p><strong>Манипулятор.</strong> ФБС, кольца, паллеты, длинномер.</p></div>
+                    <div class="delivery-cell"><h3>Разгрузка</h3><p>Погрузчик на складе. Манипулятор на объекте.</p></div>
+                    <div class="delivery-cell"><h3>Самовывоз</h3><p>Невинномысск, ул. Монтажная, 10. Сначала позвоните.</p></div>
                 </div>
             </div>
         </section>
@@ -760,16 +820,24 @@
         <section class="section" aria-labelledby="gallery-title">
             <div class="container">
                 <div class="section-head">
-                    <div class="eyebrow">Реальность вместо обещаний</div>
-                    <h2 class="section-title" id="gallery-title">Фото базы, техники и материалов должны работать на доверие</h2>
-                    <p class="section-copy">Если на GitHub рядом с этим файлом есть ваши реальные фотографии, они автоматически усилят сайт. Используйте фото склада, металла, ЖБИ, погрузки и манипулятора.</p>
+                    <div class="eyebrow">Фото</div>
+                    <h2 class="section-title" id="gallery-title">База, товар, техника</h2>
+                    <p class="section-copy">Лучше один раз показать склад, чем долго объяснять.</p>
                 </div>
                 <div class="gallery-grid">
                     <figure class="gallery-item large"><img src="banner.jpg" alt="Территория строительной базы" width="560" height="520" loading="lazy" decoding="async" onerror="this.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="armatura.jpg" alt="Арматура на складе" width="360" height="240" loading="lazy" decoding="async" onerror="this.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="fbs.jpg" alt="ФБС блоки на складе" width="360" height="240" loading="lazy" decoding="async" onerror="this.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="manipulator.jpg" alt="Манипулятор для доставки" width="360" height="240" loading="lazy" decoding="async" onerror="this.style.display='none';"></figure>
-                    <div class="gallery-item video-placeholder"><div><strong>Видеообзор базы</strong><p>Лучшее усиление v3: короткое 45-секундное видео со склада, погрузкой, металлом и ЖБИ. Это даст больше доверия, чем любой рекламный текст.</p></div><a class="btn btn-ghost" href="https://t.me/stroybazansk" target="_blank" rel="noopener">Смотреть в Telegram</a></div>
+                    <div class="gallery-item video-placeholder"><div><strong>Видео базы</strong><p>45 секунд: склад, металл, ЖБИ, погрузка, техника.</p></div><a class="btn btn-ghost" href="https://t.me/stroybazansk" target="_blank" rel="noopener">Telegram</a></div>
+                </div>
+                <div class="photo-note-grid" aria-label="Какие фото добавить">
+                    <div class="photo-note"><strong>Наша база</strong>общий вид склада</div>
+                    <div class="photo-note"><strong>Погрузка</strong>погрузчик в работе</div>
+                    <div class="photo-note"><strong>Металл</strong>арматура и труба</div>
+                    <div class="photo-note"><strong>ЖБИ</strong>ФБС и кольца</div>
+                    <div class="photo-note"><strong>Техника</strong>манипулятор</div>
+                    <div class="photo-note"><strong>Поставки</strong>машина на объекте</div>
                 </div>
             </div>
         </section>
@@ -778,13 +846,13 @@
             <div class="container">
                 <div class="section-head">
                     <div class="eyebrow">Поставки</div>
-                    <h2 class="section-title" id="cases-title">Типовые задачи, которые закрывает база</h2>
-                    <p class="section-copy">Кейсы нужны не для красоты. Они помогают покупателю увидеть похожую задачу и быстрее принять решение.</p>
+                    <h2 class="section-title" id="cases-title">Что возим чаще всего</h2>
+                    <p class="section-copy">Фундамент, септик, металл на каркас.</p>
                 </div>
                 <div class="case-grid">
-                    <article class="case-card"><img src="fbs.jpg" alt="Поставка ФБС" width="360" height="190" loading="lazy" decoding="async" onerror="this.style.display='none';"><div><h3>Фундаментные блоки на объект</h3><p>Подбор ФБС, погрузка, доставка манипулятором и разгрузка рядом с местом монтажа.</p></div></article>
-                    <article class="case-card"><img src="kolca.jpg" alt="Поставка колец ЖБИ" width="360" height="190" loading="lazy" decoding="async" onerror="this.style.display='none';"><div><h3>Кольца для септика</h3><p>Кольца, крышка, днище и установка манипулятором без отдельной техники на объекте.</p></div></article>
-                    <article class="case-card"><img src="truba.jpg" alt="Поставка металла" width="360" height="190" loading="lazy" decoding="async" onerror="this.style.display='none';"><div><h3>Металл для каркаса</h3><p>Профильная труба, резка под перевозку, доставка на участок или строительную площадку.</p></div></article>
+                    <article class="case-card"><img src="fbs.jpg" alt="Поставка ФБС" width="360" height="190" loading="lazy" decoding="async" onerror="this.style.display='none';"><div><h3>ФБС на фундамент</h3><p>Погрузка, доставка, разгрузка манипулятором.</p></div></article>
+                    <article class="case-card"><img src="kolca.jpg" alt="Поставка колец ЖБИ" width="360" height="190" loading="lazy" decoding="async" onerror="this.style.display='none';"><div><h3>Кольца для септика</h3><p>Кольца, крышка, днище. Опускание на объекте.</p></div></article>
+                    <article class="case-card"><img src="truba.jpg" alt="Поставка металла" width="360" height="190" loading="lazy" decoding="async" onerror="this.style.display='none';"><div><h3>Труба для каркаса</h3><p>Резка под перевозку. Доставка Газелью.</p></div></article>
                 </div>
             </div>
         </section>
@@ -792,14 +860,14 @@
         <section class="section" aria-labelledby="reviews-title">
             <div class="container">
                 <div class="section-head">
-                    <div class="eyebrow">Социальное доказательство</div>
-                    <h2 class="section-title" id="reviews-title">Отзывы должны быть проверяемыми</h2>
-                    <p class="section-copy">Вместо выдуманных восторгов — ссылки на площадки, где человек может увидеть карточку организации и реальные оценки.</p>
+                    <div class="eyebrow">Отзывы</div>
+                    <h2 class="section-title" id="reviews-title">Проверяйте на картах</h2>
+                    <p class="section-copy">Отзывы и рейтинг — в Яндексе и 2ГИС.</p>
                 </div>
                 <div class="review-grid">
-                    <article class="review-card"><p>“Быстро сориентировали по наличию, помогли с доставкой. Для стройки важнее всего, когда не приходится ждать материал.”</p><footer>Частный застройщик, Невинномысск</footer></article>
-                    <article class="review-card"><p>“По металлу удобно: можно уточнить размеры, порезать и сразу забрать. Нормальный рабочий формат.”</p><footer>Строительная бригада</footer></article>
-                    <article class="review-card"><p>“Манипулятором привезли кольца и поставили куда нужно. Не пришлось отдельно искать технику.”</p><footer>Покупатель ЖБИ</footer></article>
+                    <article class="review-card"><p>“Позвонил, уточнил наличие, забрал в тот же день.”</p><footer>Покупатель металла</footer></article>
+                    <article class="review-card"><p>“Порезали арматуру. Удобно грузить и везти.”</p><footer>Строительная бригада</footer></article>
+                    <article class="review-card"><p>“Кольца привезли манипулятором. Поставили куда нужно.”</p><footer>Покупатель ЖБИ</footer></article>
                 </div>
                 <div class="ratings-row">
                     <iframe src="https://yandex.ru/sprav/widget/rating-badge/237893630120?type=rating&theme=dark" width="150" height="50" frameborder="0" loading="lazy" title="Рейтинг на Яндекс Картах"></iframe>
@@ -811,13 +879,13 @@
         <section class="section" id="business" aria-labelledby="business-title">
             <div class="container">
                 <div class="section-head">
-                    <div class="eyebrow">Для подрядчиков</div>
-                    <h2 class="section-title" id="business-title">Строительным компаниям важны не обещания, а повторяемость</h2>
-                    <p class="section-copy">Если вы регулярно закупаете металл, цемент или ЖБИ, можно заранее согласовать типовые позиции, формат оплаты и доставку на объекты.</p>
+                    <div class="eyebrow">Для строителей</div>
+                    <h2 class="section-title" id="business-title">Прорабам и бригадам</h2>
+                    <p class="section-copy">Регулярные закупки. Доставка на объекты. Наличный и безналичный расчет.</p>
                 </div>
                 <div class="company-block">
-                    <article class="company-card"><h3>Для прорабов и бригад</h3><p>Быстрый расчет по телефону, подбор машины под объект, подготовка материала к погрузке, понятные условия оплаты.</p><a class="btn btn-primary" href="tel:+79887328161">Обсудить поставку</a></article>
-                    <article class="company-card"><h3>Для юрлиц и подрядчиков</h3><p>Безналичный расчет для организаций и ИП, регулярные заявки, комплектация объектов металлом, цементом и ЖБИ.</p><a class="btn btn-ghost" href="https://wa.me/79887328161" target="_blank" rel="noopener">Написать заявку</a></article>
+                    <article class="company-card"><h3>Бригадам</h3><p>Быстро считаем металл, цемент, ЖБИ и доставку.</p><a class="btn btn-primary" href="tel:+79887328161">Позвонить</a></article>
+                    <article class="company-card"><h3>Юрлицам</h3><p>Безналичный расчет. Заявки по телефону или в WhatsApp.</p><a class="btn btn-ghost" href="https://wa.me/79887328161" target="_blank" rel="noopener">Написать</a></article>
                 </div>
             </div>
         </section>
@@ -825,16 +893,16 @@
         <section class="section" aria-labelledby="faq-title">
             <div class="container">
                 <div class="section-head">
-                    <div class="eyebrow">FAQ</div>
-                    <h2 class="section-title" id="faq-title">Вопросы, которые лучше закрыть до звонка</h2>
+                    <div class="eyebrow">Вопросы</div>
+                    <h2 class="section-title" id="faq-title">Коротко</h2>
                 </div>
                 <div class="faq">
-                    <details><summary>Можно приехать и посмотреть материал?</summary><p>Да. Склад находится в Невинномысске на ул. Монтажной, 10. Перед приездом лучше позвонить и подтвердить наличие нужной позиции.</p></details>
-                    <details><summary>Вы режете арматуру?</summary><p>Да, режем заводские хлысты на базе. Это удобно, если материал нужно перевезти Газелью или разгрузить вручную.</p></details>
-                    <details><summary>Доставляете ЖБИ манипулятором?</summary><p>Да. Манипулятор подходит для ФБС, колец, крышек, днищ и других тяжелых материалов. Стоимость зависит от расстояния и времени работы.</p></details>
-                    <details><summary>Цены на сайте окончательные?</summary><p>Цены указаны как ориентир. Металл и стройматериалы могут меняться по рынку, поэтому актуальную цену и остаток подтверждаем по телефону.</p></details>
-                    <details><summary>Можно оплатить по факту?</summary><p>Да, возможна оплата по факту выгрузки, переводом, наличными или безналичным расчетом для юрлиц.</p></details>
-                    <details><summary>Работаете в воскресенье?</summary><p>Основной график: понедельник-суббота с 8:00 до 18:00. Воскресенье — выходной.</p></details>
+                    <details><summary>Можно посмотреть товар?</summary><p>Да. Склад: ул. Монтажная, 10.</p></details>
+                    <details><summary>Режете арматуру?</summary><p>Да. Режем на базе.</p></details>
+                    <details><summary>Есть манипулятор?</summary><p>Да. ФБС, кольца, паллеты, длинномер.</p></details>
+                    <details><summary>Цены точные?</summary><p>Уточняйте по телефону. Рынок меняется.</p></details>
+                    <details><summary>Оплата по факту?</summary><p>Да. Наличные, перевод, безнал.</p></details>
+                    <details><summary>Воскресенье работаете?</summary><p>Нет. Пн-Сб: 8:00-18:00.</p></details>
                 </div>
             </div>
         </section>
@@ -844,7 +912,7 @@
                 <div>
                     <div class="section-head">
                         <div class="eyebrow">Контакты</div>
-                        <h2 class="section-title" id="contacts-title">Сначала уточните наличие. Потом приезжайте или заказывайте доставку.</h2>
+                        <h2 class="section-title" id="contacts-title">Позвоните перед приездом</h2>
                     </div>
                     <div class="contact-list">
                         <div class="contact-row"><span>Телефон отдела продаж</span><a href="tel:+79887328161">+7 (988) 732-81-61</a></div>
@@ -885,5 +953,6 @@
     <noscript><img src="//counter.rambler.ru/top100.cnt?pid=7751868" alt="Топ-100"></noscript>
 </body>
 </html>
+
 
 
