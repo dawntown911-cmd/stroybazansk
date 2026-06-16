@@ -188,68 +188,34 @@
         .btn-primary:hover { background: var(--accent-2); border-color: var(--accent-2); }
         .btn-ghost { background: rgba(255,255,255,0.035); }
 
-        /* Центрированный главный экран (Hero) */
+        /* Первый экран (Центрированный, чистый) */
         .hero {
             padding: 80px 0 100px;
-            text-align: center;
         }
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
+        .hero-grid {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
+            text-align: left;
+            max-width: 820px;
         }
         .hero h1 {
             margin: 18px 0 0;
-            font-size: clamp(3rem, 6vw, 5.2rem);
+            font-size: clamp(3rem, 6vw, 4.8rem);
             line-height: 1.05;
             letter-spacing: -0.05em;
             font-weight: 800;
         }
         .hero-lead {
-            margin: 24px auto 0;
-            max-width: 680px;
+            margin: 24px 0 0;
             color: var(--muted);
             font-size: clamp(1.1rem, 2vw, 1.3rem);
             line-height: 1.5;
         }
-        .hero-actions { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 14px; 
-            margin-top: 34px; 
-            justify-content: center; 
-        }
-        
-        /* Мессенджеры на первом экране */
-        .quick-socials {
-            display: flex;
-            gap: 12px;
-            margin-top: 28px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .quick-social-btn {
-            padding: 10px 18px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            color: #fff;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: transform 0.2s;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .quick-social-btn:hover { transform: translateY(-1px); opacity: 0.95; }
-        .quick-social-btn img { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
-        .qs-wa { background-color: #128C7E; }
-        .qs-tg { background-color: #0088cc; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
 
-        /* Сетка преимуществ в строгом стиле Codex */
-        .quality-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        /* Сетка преимуществ из Codex */
+        .quality-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
         .quality-card {
             padding: 26px;
             border: 1px solid var(--line);
@@ -264,15 +230,14 @@
         .quality-card h3 { margin: 16px 0 0; font-size: 1.25rem; letter-spacing: -0.03em; font-weight: 800; }
         .quality-card p { margin: 12px 0 0; color: var(--muted); font-size: 0.94rem; }
 
-        /* Каталог */
+        /* Каталог (Идеально ровные линии) */
         .assortment-grid {
             display: grid;
-            grid-template-columns: repeat(12, 1fr);
+            grid-template-columns: repeat(3, 1fr); /* Ровная сетка 3х3 */
             gap: 16px;
         }
         .product-card {
-            grid-column: span 4;
-            min-height: 100%;
+            min-height: 460px;
             border: 1px solid var(--line);
             border-radius: 10px;
             overflow: hidden;
@@ -282,7 +247,7 @@
             transition: border-color .18s, transform .18s;
         }
         .product-card:hover { border-color: var(--line-strong); transform: translateY(-2px); }
-        .product-card.wide { grid-column: span 6; }
+        
         .product-img {
             position: relative;
             background: #111;
@@ -290,14 +255,18 @@
             height: 220px;
         }
         .product-img img { width: 100%; height: 100%; object-fit: cover; }
+        
         .product-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
+        
+        /* Выравнивание заголовка по высоте для ровных строк */
         .product-top {
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
             gap: 18px;
+            min-height: 56px;
         }
-        .product-title { margin: 0; font-size: 1.18rem; line-height: 1.25; letter-spacing: -0.025em; }
+        .product-title { margin: 0; font-size: 1.15rem; line-height: 1.25; letter-spacing: -0.025em; font-weight: 700; }
         .price {
             flex: 0 0 auto;
             padding: 6px 10px;
@@ -308,7 +277,7 @@
             font-size: 0.94rem;
             white-space: nowrap;
         }
-        .product-body p { margin: 16px 0 0; color: var(--muted); font-size: 0.94rem; }
+        .product-body p { margin: 16px 0 0; color: var(--muted); font-size: 0.92rem; }
         .product-meta {
             margin-top: 20px;
             padding-top: 16px;
@@ -396,7 +365,7 @@
         }
         .rating-widgets iframe { border-radius: 8px; overflow: hidden; background: transparent; }
 
-        /* Фирменные плашки соцсетей */
+        /* Исправленные ОРИГИНАЛЬНЫЕ плашки соцсетей */
         .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px; }
         .social-links a {
             min-height: 50px;
@@ -441,8 +410,8 @@
             .nav { display: none; }
             .hero-grid, .contacts-grid, .company-block { grid-template-columns: 1fr; }
             .hero { min-height: auto; }
-            .product-card, .product-card.wide { grid-column: span 6; }
-            .quality-grid { grid-template-columns: repeat(2, 1fr); }
+            .assortment-grid { grid-template-columns: repeat(2, 1fr); }
+            .product-card { grid-column: span 1; }
         }
 
         @media (max-width: 760px) {
@@ -456,14 +425,12 @@
             .brand-name span, .phone-block { display: none; }
             .header-actions .btn { min-height: 40px; padding: 0 14px; font-size: 0.8rem; }
             
-            .hero { padding: 40px 0; }
+            .hero { padding: 34px 0 48px; }
             .hero h1 { font-size: clamp(2.35rem, 12vw, 3.5rem); letter-spacing: -0.055em; }
             .hero-lead { font-size: 1.02rem; line-height: 1.45; margin-top: 18px; }
             
-            .quality-grid { grid-template-columns: 1fr; gap: 12px; }
-            
-            .product-card, .product-card.wide { grid-column: span 12; }
-            .assortment-grid { gap: 14px; }
+            .assortment-grid { grid-template-columns: 1fr; gap: 14px; }
+            .product-card { grid-column: span 1; }
             .section { padding: 64px 0; }
             
             /* СВАЙПЕР ФОТОГРАФИЙ ДЛЯ ТЕЛЕФОНОВ (Убираем простыню фото) */
@@ -506,7 +473,7 @@
                         <path d="M12 12V22L20 17V7Z" fill="rgba(255,255,255,0.06)"/>
                     </svg>
                 </div>
-                <!-- Авто-проверка регистра: ищет logo.png, а если нет — logo.PNG -->
+                <!-- Фикс логотипа с проверкой регистра -->
                 <img src="logo.png" id="logo-img-header" style="display:none;" onerror="if(this.src.indexOf('logo.PNG') === -1) { this.src='logo.PNG'; } else { this.style.display='none'; document.getElementById('logo-svg-header').style.display='flex'; }" onload="document.getElementById('logo-svg-header').style.display='none'; this.style.display='block';" alt="Стройбаза на Монтажной" width="44" height="44">
                 <span class="brand-name"><strong>Стройбаза на Монтажной</strong><span>Невинномысск, ул. Монтажная, 10</span></span>
             </a>
@@ -526,25 +493,15 @@
     </header>
 
     <main id="top">
-        <!-- Первый экран (Центрированный, чистый, стильный) -->
+        <!-- Первый экран (Герой-блок со всеми вашими оригинальными кнопками) -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="container hero-content">
                 <div class="eyebrow">Склад на Монтажной, 10</div>
-                <h1 id="hero-title">Металлопрокат, ЖБИ и цемент со склада</h1>
-                <p class="hero-lead">Реальный склад металлопроката по ГОСТу, ФБС блоков, ЖБИ колец, шлакоблока и свежего цемента в Невинномысске. Своя погрузка. Резка арматуры на базе. Доставка Газелью и манипулятором в день заказа.</p>
+                <h1 id="hero-title">Арматура, трубы, цемент и ЖБИ со склада</h1>
+                <p class="hero-lead">Металл, ФБС, кольца, шлакоблок и цемент М500 со склада в Невинномысске. Своя погрузка. Резка арматуры на базе. Доставка Газелью и манипулятором в день заказа.</p>
                 <div class="hero-actions">
-                    <a class="btn btn-primary" href="tel:+79887328161">Позвонить: +7 (988) 732-81-61</a>
-                    <a class="btn btn-secondary" href="http://wa.me/79887328161" target="_blank" rel="noopener">Написать в WhatsApp</a>
-                </div>
-                
-                <!-- Мессенджеры на первом экране -->
-                <div class="quick-socials">
-                    <a href="http://wa.me/79887328161" class="quick-social-btn qs-wa" target="_blank">
-                        <img src="icon-whatsapp.png" onerror="this.style.display='none';" alt=""> WhatsApp
-                    </a>
-                    <a href="https://t.me/stroybazansk" class="quick-social-btn qs-tg" target="_blank">
-                        <img src="icon-telegram.png" onerror="this.style.display='none';" alt=""> Telegram
-                    </a>
+                    <a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие и цену</a>
+                    <a class="btn btn-ghost" href="https://wa.me/79887328161" target="_blank" rel="noopener">Написать в WhatsApp</a>
                 </div>
             </div>
         </section>
@@ -577,7 +534,7 @@
             </div>
         </section>
 
-        <!-- Каталог товаров (Чистые фото, без shlakoblok.jpg сверху) -->
+        <!-- Каталог товаров (Чистые фото, без shlakoblok.jpg сверху, идеально ровная сетка) -->
         <section class="section" id="catalog" aria-labelledby="catalog-title">
             <div class="container">
                 <div class="section-head">
@@ -665,15 +622,15 @@
                         </div>
                     </article>
 
-                    <!-- Манипулятор с ФОТОГРАФИЕЙ -->
+                    <!-- Манипулятор (С ФОТОГРАФИЕЙ) -->
                     <article class="product-card">
                         <div class="product-img">
-                            <img src="manipulator.jpg" alt="Услуги крана-манипулятора в Невинномысске" loading="lazy" decoding="async" onerror="this.style.display='none';">
+                            <img src="manipulator.jpg" alt="Манипулятор для доставки строительных материалов" loading="lazy" decoding="async" onerror="this.style.display='none';">
                         </div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Услуги манипулятора</h3><span class="price">3 000 ₽/ч</span></div>
-                            <p>Доставка ФБС блоков, колец ЖБИ, кирпича, металла и бытовок. Кузов 6 м.</p>
-                            <div class="product-meta">Борт 15 т. Стрела 5 т. Опытный водитель.</div>
+                            <p>Доставка ФБС, колец, металла, кирпича и паллет. Борт 15 т. Стрела 5 т.</p>
+                            <div class="product-meta">Минимум по городу — 5000 ₽. Опытный водитель.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать технику</a></div>
                         </div>
                     </article>
@@ -696,7 +653,7 @@
                     <figure class="gallery-item"><img src="manipulator.jpg" alt="Манипулятор для доставки" width="360" height="240" loading="lazy" decoding="async" onerror="this.style.display='none';"></figure>
                     <div class="gallery-item video-placeholder">
                         <div>
-                            <strong>Видео базы</strong>
+                            <strong>Video базы</strong>
                             <p>45 секунд: склад, металл, ЖБИ, погрузка, техника.</p>
                         </div>
                         <a class="btn btn-ghost" href="https://t.me/stroybazansk" target="_blank" rel="noopener">Telegram</a>
