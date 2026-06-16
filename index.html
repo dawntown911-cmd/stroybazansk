@@ -143,7 +143,7 @@
             height: 44px;
             border: 1px solid var(--line-strong);
             border-radius: 8px;
-            display: none;
+            display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
@@ -197,8 +197,8 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            align-items: flex-start;
+            text-align: left;
         }
         .hero h1 {
             margin: 18px 0 0;
@@ -208,47 +208,14 @@
             font-weight: 800;
         }
         .hero-lead {
-            margin: 24px auto 0;
-            max-width: 680px;
+            margin: 24px 0 0;
             color: var(--muted);
             font-size: clamp(1.1rem, 2vw, 1.3rem);
             line-height: 1.5;
         }
-        .hero-actions { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 14px; 
-            margin-top: 34px; 
-            justify-content: center; 
-        }
-        
-        /* Мессенджеры на первом экране */
-        .quick-socials {
-            display: flex;
-            gap: 12px;
-            margin-top: 28px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .quick-social-btn {
-            padding: 10px 18px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            color: #fff;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: transform 0.2s;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .quick-social-btn:hover { transform: translateY(-1px); opacity: 0.95; }
-        .quick-social-btn img { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
-        .qs-wa { background-color: #128C7E; }
-        .qs-tg { background-color: #0088cc; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
 
-        /* Сетка преимуществ в строгом стиле Codex */
+        /* Сетка преимуществ */
         .quality-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
         .quality-card {
             padding: 26px;
@@ -264,10 +231,10 @@
         .quality-card h3 { margin: 16px 0 0; font-size: 1.25rem; letter-spacing: -0.03em; font-weight: 800; }
         .quality-card p { margin: 12px 0 0; color: var(--muted); font-size: 0.94rem; }
 
-        /* Каталог (Идеально ровные линии) */
+        /* Каталог (Идеальное выравнивание линий) */
         .assortment-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Ровная симметричная сетка 3х3 */
+            grid-template-columns: repeat(3, 1fr);
             gap: 16px;
         }
         .product-card {
@@ -292,17 +259,14 @@
         
         .product-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
         
-        /* Выравнивание заголовка и цены */
         .product-top {
             display: flex;
-            align-items: center; /* Выравнивание строго по центру относительно друг друга */
+            align-items: center;
             justify-content: space-between;
             gap: 18px;
             min-height: 56px;
         }
         .product-title { margin: 0; font-size: 1.15rem; line-height: 1.25; letter-spacing: -0.025em; font-weight: 700; }
-        
-        /* Плашка цены никогда не сожмется */
         .price {
             flex: 0 0 auto;
             flex-shrink: 0; 
@@ -325,30 +289,45 @@
         .product-actions { margin-top: auto; padding-top: 18px; display: grid; grid-template-columns: 1fr; gap: 10px; }
         .product-actions .btn { min-height: 42px; font-size: 0.9rem; }
 
-        /* Фотогалерея */
+        /* НОВАЯ КАРУСЕЛЬ ФОТОГРАФИЙ (Прокрутка влево-вправо на всех экранах) */
         .gallery-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr 0.8fr;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
             gap: 16px;
+            padding-bottom: 16px;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
+        .gallery-grid::-webkit-scrollbar { display: none; }
+        
         .gallery-item {
+            flex: 0 0 360px; /* Фиксированная ширина карточки фото на компьютере */
+            scroll-snap-align: start;
             border: 1px solid var(--line);
             border-radius: 10px;
             overflow: hidden;
             background: var(--surface);
-            min-height: 240px;
+            min-height: 260px;
+            height: 260px;
             margin: 0;
+            flex-shrink: 0;
         }
-        .gallery-item.large { grid-row: span 2; }
-        .gallery-item img { width: 100%; height: 100%; min-height: 240px; object-fit: cover; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
         
         .video-placeholder {
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+            min-height: 260px;
+            height: 260px;
             padding: 28px;
-            min-height: 240px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            flex-shrink: 0;
         }
         .video-placeholder strong { font-size: 1.3rem; letter-spacing: -0.03em; }
         .video-placeholder p { color: var(--muted); margin: 12px 0 0; }
@@ -402,16 +381,11 @@
         }
         .rating-widgets iframe { border-radius: 8px; overflow: hidden; background: transparent; }
 
-        /* ИДЕАЛЬНО СИММЕТРИЧНЫЕ ПЛАШКИ СОЦСЕТЕЙ */
-        .social-links { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); /* 2 колонки */
-            gap: 10px; 
-            margin-top: 14px; 
-            max-width: 440px;
-        }
+        /* ИДЕАЛЬНО ВЫРОВНЕННЫЕ ПЛАШКИ СОЦСЕТЕЙ */
+        .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px; max-width: 440px;}
         .social-links a {
             min-height: 50px;
+            height: 50px;
             border: 1px solid var(--line);
             border-radius: 8px;
             display: flex;
@@ -424,9 +398,12 @@
             background: rgba(255,255,255,0.025);
             gap: 12px;
             white-space: nowrap;
+            line-height: 1; /* Обнулили высоту строки для выравнивания */
         }
         .social-links a:hover { border-color: rgba(255,255,255,0.3); }
-        .social-links a img { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; }
+        .social-links a img { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; display: block; }
+        .social-links a span { display: inline-block; margin-top: 1px; } /* Микро-корректировка текста */
+        .social-btn-max { grid-column: span 2; }
 
         .map-wrap {
             min-height: 520px;
@@ -447,12 +424,12 @@
         }
         .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 
-        /* Адаптивность и Свайпер картинок для телефонов */
+        /* Адаптивность */
         @media (max-width: 1080px) {
             .nav { display: none; }
             .hero-grid, .contacts-grid, .company-block { grid-template-columns: 1fr; }
             .hero { min-height: auto; }
-            .product-card { grid-column: span 6; }
+            .assortment-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 760px) {
@@ -472,34 +449,18 @@
             
             .quality-grid { grid-template-columns: 1fr; gap: 12px; }
             
-            .product-card { grid-column: span 12; }
-            .assortment-grid { gap: 14px; }
+            .assortment-grid { grid-template-columns: 1fr; gap: 14px; }
             .section { padding: 64px 0; }
             
-            /* СВАЙПЕР ФОТОГРАФИЙ ДЛЯ ТЕЛЕФОНОВ (Убираем простыню фото) */
-            .gallery-grid {
-                display: flex;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                gap: 12px;
-                padding-bottom: 12px;
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-            }
-            .gallery-grid::-webkit-scrollbar { display: none; }
-            .gallery-item {
-                flex: 0 0 85%;
-                scroll-snap-align: start;
-                min-height: 200px;
-            }
-            .gallery-item.large { grid-row: auto; flex: 0 0 85%; }
-            .gallery-item img { height: 200px; }
-            .video-placeholder { flex: 0 0 85%; min-height: 200px; }
+            /* Свайпер картинок адаптирован на ширину мобильного */
+            .gallery-item { flex: 0 0 85%; }
+            .video-placeholder { flex: 0 0 85%; }
             
             .map-fallback { display: inline-flex; }
             .footer-inner { display: grid; text-align: center; gap: 10px; }
             .faq { grid-template-columns: 1fr; }
             .social-links { grid-template-columns: 1fr; }
+            .social-btn-max { grid-column: span 1; }
         }
     </style>
 </head>
@@ -592,9 +553,9 @@
                             <img src="armatura.jpg" alt="Арматура А500С на складе" loading="lazy" decoding="async" onerror="this.style.display='none';">
                         </div>
                         <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Арматура А500С, 6-16 мм</h3><span class="price">от 46 ₽/м</span></div>
-                            <p>Для фундаментов, армопоясов и перекрытий. Режем на базе.</p>
-                            <div class="product-meta">6, 8, 10, 12, 14, 16 мм. Хлыст 11.7 м.</div>
+                            <div class="product-top"><h3 class="product-title">Арматура 12 мм рифленая А500С (ГОСТ)</h3><span class="price">46 ₽/м</span></div>
+                            <p>Честный диаметр и строгая геометрия, без следов глубокой ржавчины. Для фундаментов, армопоясов и перекрытий. Всегда в наличии 6, 8, 10, 14 и 16 мм.</p>
+                            <div class="product-meta">Длина хлыста 11.7 м. Подготовка к перевозке.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
@@ -606,8 +567,8 @@
                         </div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Профильная труба</h3><span class="price">от 112 ₽/м</span></div>
-                            <p>Для ворот, навесов, каркасов и конструкций.</p>
-                            <div class="product-meta">40х20х2 — 112 ₽. 40х40х2 — 148 ₽. 60х40х3 — 250 ₽.</div>
+                            <p>Для заборов, навесов, каркасов и металлоконструкций. Легко варится, строгая геометрия.</p>
+                            <div class="product-meta">40х20х2 — 112₽. 40х40х2 — 148₽. 60х40х3 — 250₽.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
@@ -618,9 +579,9 @@
                             <img src="cement.jpg" alt="Цемент М500" loading="lazy" decoding="async" onerror="this.style.display='none';">
                         </div>
                         <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Цемент М500, 50 кг</h3><span class="price">560 ₽</span></div>
-                            <p>Для фундаментов, стяжек, кладки и бетона.</p>
-                            <div class="product-meta">50 кг. На поддоне 30 мешков.</div>
+                            <div class="product-top"><h3 class="product-title">Цемент Новороссийск М500 (50 кг)</h3><span class="price">560 ₽</span></div>
+                            <p>Новороссийский портландцемент для ленточных фундаментов, стяжек, кладки и бетонирования.</p>
+                            <div class="product-meta">Свежий завоз. На поддоне 30 мешков. Погрузчик на базе.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
@@ -664,15 +625,15 @@
                         </div>
                     </article>
 
-                    <!-- Манипулятор (С ФОТОГРАФИЕЙ) -->
+                    <!-- Манипулятор (С ФОТОГРАФИЕЙ, идеально ровно встроен в общую сетку) -->
                     <article class="product-card">
                         <div class="product-img">
                             <img src="manipulator.jpg" alt="Манипулятор для доставки строительных материалов" loading="lazy" decoding="async" onerror="this.style.display='none';">
                         </div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Услуги манипулятора</h3><span class="price">3 000 ₽/ч</span></div>
-                            <p>Доставка ФБС, колец, металла, кирпича и паллет. Борт 15 т. Стрела 5 т.</p>
-                            <div class="product-meta">Минимум по городу — 5000 ₽. Опытный водитель.</div>
+                            <p>Доставка ФБС, колец, металла, кирпича и паллет. Собственная техника. Опытный водитель.</p>
+                            <div class="product-meta">Борт 15 т. Стрела 5 т. Минимум по городу — 5000 ₽.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать технику</a></div>
                         </div>
                     </article>
@@ -680,22 +641,50 @@
             </div>
         </section>
 
-        <!-- Фотогалерея (Теперь аккуратно свайпится на телефонах) -->
+        <!-- Фотогалерея (Теперь это бесконечная карусель на 30 фото, которая не превратится в простыню) -->
         <section class="section" id="gallery" aria-labelledby="gallery-title">
             <div class="container">
                 <div class="section-head">
                     <div class="eyebrow">Фото</div>
                     <h2 class="section-title" id="gallery-title">База, товар, техника</h2>
-                    <p class="section-copy">Лучше один раз показать склад, чем долго объяснять.</p>
+                    <p class="section-copy">Прокрутите вбок, чтобы посмотреть наш склад вживую. Монтажная, 10.</p>
                 </div>
                 <div class="gallery-grid">
-                    <figure class="gallery-item large"><img src="banner.jpg" alt="Территория строительной базы" width="560" height="520" loading="lazy" decoding="async" onerror="this.style.display='none';"></figure>
-                    <figure class="gallery-item"><img src="armatura.jpg" alt="Арматура на складе" width="360" height="240" loading="lazy" decoding="async" onerror="this.style.display='none';"></figure>
-                    <figure class="gallery-item"><img src="fbs.jpg" alt="ФБС блоки на складе" width="360" height="240" loading="lazy" decoding="async" onerror="this.style.display='none';"></figure>
-                    <figure class="gallery-item"><img src="manipulator.jpg" alt="Манипулятор для доставки" width="360" height="240" loading="lazy" decoding="async" onerror="this.style.display='none';"></figure>
-                    <div class="gallery-item video-placeholder">
+                    <!-- Заглушки для ваших будущих 30 фотографий. Если фото не загружено — оно просто не покажется -->
+                    <figure class="gallery-item"><img src="photo-1.jpg" alt="Фото базы 1" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-2.jpg" alt="Фото базы 2" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-3.jpg" alt="Фото базы 3" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-4.jpg" alt="Фото базы 4" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-5.jpg" alt="Фото базы 5" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-6.jpg" alt="Фото базы 6" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-7.jpg" alt="Фото базы 7" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-8.jpg" alt="Фото базы 8" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-9.jpg" alt="Фото базы 9" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-10.jpg" alt="Фото базы 10" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-11.jpg" alt="Фото базы 11" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-12.jpg" alt="Фото базы 12" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-13.jpg" alt="Фото базы 13" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-14.jpg" alt="Фото базы 14" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-15.jpg" alt="Фото базы 15" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-16.jpg" alt="Фото базы 16" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-17.jpg" alt="Фото базы 17" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-18.jpg" alt="Фото базы 18" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-19.jpg" alt="Фото базы 19" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-20.jpg" alt="Фото базы 20" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-21.jpg" alt="Фото базы 21" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-22.jpg" alt="Фото базы 22" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-23.jpg" alt="Фото базы 23" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-24.jpg" alt="Фото базы 24" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-25.jpg" alt="Фото базы 25" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-26.jpg" alt="Фото базы 26" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-27.jpg" alt="Фото базы 27" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-28.jpg" alt="Фото базы 28" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-29.jpg" alt="Фото базы 29" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    <figure class="gallery-item"><img src="photo-30.jpg" alt="Фото базы 30" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    
+                    <div class="video-placeholder">
                         <div>
-                            <strong>Видео базы</strong> <!-- Изменили "Video" на "Видео" -->
+                            <strong>Видео базы</strong> <!-- Исправлено Video на Видео -->
                             <p>45 секунд: склад, металл, ЖБИ, погрузка, техника.</p>
                         </div>
                         <a class="btn btn-ghost" href="https://t.me/stroybazansk" target="_blank" rel="noopener">Telegram</a>
@@ -753,7 +742,7 @@
                     </div>
                     <div class="contact-list">
                         <div class="contact-row"><span>Телефон отдела продаж</span><a href="tel:+79887328161">+7 (988) 732-81-61</a></div>
-                        <div class="contact-row"><span>Адрес склада</span><strong>Невинномысск, ул. Монтажная, d. 10</strong></div>
+                        <div class="contact-row"><span>Адрес склада</span><strong>Невинномысск, ул. Монтажная, д. 10</strong></div>
                         <div class="contact-row"><span>График</span><strong>Пн-Сб: 8:00-18:00, Вс: выходной</strong></div>
                         
                         <!-- Рейтинги карт под графиком -->
@@ -765,7 +754,7 @@
                             </div>
                         </div>
 
-                        <!-- ИДЕАЛЬНО РОВНЫЕ СИММЕТРИЧНЫЕ ПЛАШКИ СОЦСЕТЕЙ -->
+                        <!-- ИДЕАЛЬНО СИММЕТРИЧНАЯ СЕТКА СОЦСЕТЕЙ (3 ряда по 2 кнопки + MAX снизу) -->
                         <div class="contact-row">
                             <span>Мы на других площадках</span>
                             <div class="social-links">
@@ -788,6 +777,10 @@
                                 <a href="https://t.me/stroybazansk" target="_blank" rel="noopener">
                                     <img src="icon-telegram.png" loading="lazy" onerror="this.style.display='none';" alt="">
                                     <span>Telegram</span>
+                                </a>
+                                <a href="https://www.youtube.com/@stroybazansk" target="_blank" rel="noopener">
+                                    <img src="icon-youtube.png" loading="lazy" onerror="this.style.display='none';" alt="">
+                                    <span>YouTube</span>
                                 </a>
                                 <a href="https://max.ru/join/bM2VpgJxiwIve809sHURi8C1mrzORQCR-7u_elROpXw" target="_blank" rel="noopener" class="social-btn-max">
                                     <img src="icon-max.png" loading="lazy" onerror="this.style.display='none';" alt="">
@@ -821,11 +814,10 @@
             });
             var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); };
             s.type = "text/javascript";
-            s.async = true;
-            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//st.top100.ru/top100/top100.js";
+            s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//st.top100.ru/top100/top100.js";
             if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
         })(window, document, "_top100q");
     </script>
-    <noscript><img src="//counter.rambler.ru/top100.cnt?pid=7751868" alt="Топ-100"></noscript>
+    <noscript><img src="//counter.rambler.ru/top100.cnt?pid=7751868" alt="Tоп-100"></noscript>
 </body>
 </html>
