@@ -143,7 +143,7 @@
             height: 44px;
             border: 1px solid var(--line-strong);
             border-radius: 8px;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             font-weight: 800;
@@ -188,7 +188,7 @@
         .btn-primary:hover { background: var(--accent-2); border-color: var(--accent-2); }
         .btn-ghost { background: rgba(255,255,255,0.035); }
 
-        /* Первый экран (Центрированный, чистый) */
+        /* Первый экран */
         .hero {
             padding: 80px 0 100px;
         }
@@ -214,6 +214,32 @@
             line-height: 1.5;
         }
         .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+        
+        /* Мессенджеры на первом экране */
+        .quick-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .quick-social-btn {
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .quick-social-btn:hover { transform: translateY(-1px); opacity: 0.95; }
+        .quick-social-btn img { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
+        .qs-wa { background-color: #128C7E; }
+        .qs-tg { background-color: #0088cc; }
 
         /* Сетка преимуществ */
         .quality-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
@@ -231,7 +257,7 @@
         .quality-card h3 { margin: 16px 0 0; font-size: 1.25rem; letter-spacing: -0.03em; font-weight: 800; }
         .quality-card p { margin: 12px 0 0; color: var(--muted); font-size: 0.94rem; }
 
-        /* Каталог (Идеальное выравнивание линий) */
+        /* Каталог */
         .assortment-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -289,7 +315,7 @@
         .product-actions { margin-top: auto; padding-top: 18px; display: grid; grid-template-columns: 1fr; gap: 10px; }
         .product-actions .btn { min-height: 42px; font-size: 0.9rem; }
 
-        /* НОВАЯ КАРУСЕЛЬ ФОТОГРАФИЙ (Прокрутка влево-вправо на всех экранах) */
+        /* Карусель фотографий */
         .gallery-grid {
             display: flex;
             overflow-x: auto;
@@ -302,7 +328,7 @@
         .gallery-grid::-webkit-scrollbar { display: none; }
         
         .gallery-item {
-            flex: 0 0 360px; /* Фиксированная ширина карточки фото на компьютере */
+            flex: 0 0 360px;
             scroll-snap-align: start;
             border: 1px solid var(--line);
             border-radius: 10px;
@@ -382,14 +408,14 @@
         .rating-widgets iframe { border-radius: 8px; overflow: hidden; background: transparent; }
 
         /* ИДЕАЛЬНО ВЫРОВНЕННЫЕ ПЛАШКИ СОЦСЕТЕЙ */
-        .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px; max-width: 440px;}
+        .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px; max-width: 440px; }
         .social-links a {
             min-height: 50px;
             height: 50px;
             border: 1px solid var(--line);
             border-radius: 8px;
             display: flex;
-            align-items: center;
+            align-items: center; /* Выравнивание по центру по вертикали */
             justify-content: flex-start;
             padding: 0 16px;
             text-decoration: none;
@@ -398,11 +424,17 @@
             background: rgba(255,255,255,0.025);
             gap: 12px;
             white-space: nowrap;
-            line-height: 1; /* Обнулили высоту строки для выравнивания */
         }
         .social-links a:hover { border-color: rgba(255,255,255,0.3); }
         .social-links a img { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; display: block; }
-        .social-links a span { display: inline-block; margin-top: 1px; } /* Микро-корректировка текста */
+        
+        /* Идеальное центрирование текста относительно иконки */
+        .social-links a span { 
+            display: inline-flex; 
+            align-items: center; 
+            line-height: 1; 
+            height: 100%; 
+        }
         .social-btn-max { grid-column: span 2; }
 
         .map-wrap {
@@ -430,6 +462,7 @@
             .hero-grid, .contacts-grid, .company-block { grid-template-columns: 1fr; }
             .hero { min-height: auto; }
             .assortment-grid { grid-template-columns: repeat(2, 1fr); }
+            .product-card { grid-column: span 6; }
         }
 
         @media (max-width: 760px) {
@@ -450,9 +483,10 @@
             .quality-grid { grid-template-columns: 1fr; gap: 12px; }
             
             .assortment-grid { grid-template-columns: 1fr; gap: 14px; }
+            .product-card { grid-column: span 12; }
             .section { padding: 64px 0; }
             
-            /* Свайпер картинок адаптирован на ширину мобильного */
+            /* Свайпер картинок */
             .gallery-item { flex: 0 0 85%; }
             .video-placeholder { flex: 0 0 85%; }
             
@@ -468,7 +502,6 @@
     <header class="site-header">
         <div class="container header-inner">
             <a class="brand" href="#top" aria-label="Стройбаза на Монтажной">
-                <!-- Встроенная векторная иконка-куб на случай, если logo.png/logo.PNG еще нет -->
                 <div class="brand-fallback" id="logo-svg-header">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:100%; height:100%; color:#fff;">
                         <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(255,255,255,0.04)"/>
@@ -476,7 +509,6 @@
                         <path d="M12 12V22L20 17V7Z" fill="rgba(255,255,255,0.06)"/>
                     </svg>
                 </div>
-                <!-- Фикс логотипа с проверкой регистра -->
                 <img src="logo.png" id="logo-img-header" style="display:none;" onerror="if(this.src.indexOf('logo.PNG') === -1) { this.src='logo.PNG'; } else { this.style.display='none'; document.getElementById('logo-svg-header').style.display='flex'; }" onload="document.getElementById('logo-svg-header').style.display='none'; this.style.display='block';" alt="Стройбаза на Монтажной" width="44" height="44">
                 <span class="brand-name"><strong>Стройбаза на Монтажной</strong><span>Невинномысск, ул. Монтажная, 10</span></span>
             </a>
@@ -496,7 +528,7 @@
     </header>
 
     <main id="top">
-        <!-- Первый экран (Герой-блок со всеми вашими оригинальными кнопками) -->
+        <!-- Первый экран -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="container hero-content">
                 <div class="eyebrow">Склад на Монтажной, 10</div>
@@ -537,7 +569,7 @@
             </div>
         </section>
 
-        <!-- Каталог товаров (Чистые фото, идеально ровная сетка и выровненные цены) -->
+        <!-- Каталог товаров -->
         <section class="section" id="catalog" aria-labelledby="catalog-title">
             <div class="container">
                 <div class="section-head">
@@ -567,8 +599,8 @@
                         </div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Профильная труба</h3><span class="price">от 112 ₽/м</span></div>
-                            <p>Для заборов, навесов, каркасов и металлоконструкций. Легко варится, строгая геометрия.</p>
-                            <div class="product-meta">40х20х2 — 112₽. 40х40х2 — 148₽. 60х40х3 — 250₽.</div>
+                            <p>Для ворот, навесов, каркасов и конструкций.</p>
+                            <div class="product-meta">40х20х2 — 112 ₽. 40х40х2 — 148 ₽. 60х40х3 — 250 ₽.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
@@ -579,9 +611,9 @@
                             <img src="cement.jpg" alt="Цемент М500" loading="lazy" decoding="async" onerror="this.style.display='none';">
                         </div>
                         <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Цемент Новороссийск М500 (50 кг)</h3><span class="price">560 ₽</span></div>
-                            <p>Новороссийский портландцемент для ленточных фундаментов, стяжек, кладки и бетонирования.</p>
-                            <div class="product-meta">Свежий завоз. На поддоне 30 мешков. Погрузчик на базе.</div>
+                            <div class="product-top"><h3 class="product-title">Цемент М500, 50 кг</h3><span class="price">560 ₽</span></div>
+                            <p>Для фундаментов, стяжек, кладки и бетона.</p>
+                            <div class="product-meta">50 кг. На поддоне 30 мешков.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
@@ -625,15 +657,15 @@
                         </div>
                     </article>
 
-                    <!-- Манипулятор (С ФОТОГРАФИЕЙ, идеально ровно встроен в общую сетку) -->
+                    <!-- Манипулятор -->
                     <article class="product-card">
                         <div class="product-img">
                             <img src="manipulator.jpg" alt="Манипулятор для доставки строительных материалов" loading="lazy" decoding="async" onerror="this.style.display='none';">
                         </div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Услуги манипулятора</h3><span class="price">3 000 ₽/ч</span></div>
-                            <p>Доставка ФБС, колец, металла, кирпича и паллет. Собственная техника. Опытный водитель.</p>
-                            <div class="product-meta">Борт 15 т. Стрела 5 т. Минимум по городу — 5000 ₽.</div>
+                            <p>Доставка ФБС, колец, металла, кирпича и паллет. Борт 15 т. Стрела 5 т.</p>
+                            <div class="product-meta">Минимум по городу — 5000 ₽. Опытный водитель.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать технику</a></div>
                         </div>
                     </article>
@@ -641,7 +673,7 @@
             </div>
         </section>
 
-        <!-- Фотогалерея (Теперь это бесконечная карусель на 30 фото, которая не превратится в простыню) -->
+        <!-- Фотогалерея -->
         <section class="section" id="gallery" aria-labelledby="gallery-title">
             <div class="container">
                 <div class="section-head">
@@ -650,7 +682,6 @@
                     <p class="section-copy">Прокрутите вбок, чтобы посмотреть наш склад вживую. Монтажная, 10.</p>
                 </div>
                 <div class="gallery-grid">
-                    <!-- Заглушки для ваших будущих 30 фотографий. Если фото не загружено — оно просто не покажется -->
                     <figure class="gallery-item"><img src="photo-1.jpg" alt="Фото базы 1" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-2.jpg" alt="Фото базы 2" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-3.jpg" alt="Фото базы 3" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
@@ -681,10 +712,9 @@
                     <figure class="gallery-item"><img src="photo-28.jpg" alt="Фото базы 28" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-29.jpg" alt="Фото базы 29" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-30.jpg" alt="Фото базы 30" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
-                    
                     <div class="video-placeholder">
                         <div>
-                            <strong>Видео базы</strong> <!-- Исправлено Video на Видео -->
+                            <strong>Видео базы</strong>
                             <p>45 секунд: склад, металл, ЖБИ, погрузка, техника.</p>
                         </div>
                         <a class="btn btn-ghost" href="https://t.me/stroybazansk" target="_blank" rel="noopener">Telegram</a>
@@ -716,18 +746,38 @@
             </div>
         </section>
 
-        <!-- Вопросы FAQ -->
+        <!-- Расширенные Вопросы FAQ (Подробные ответы на основе ваших условий) -->
         <section class="section" aria-labelledby="faq-title">
             <div class="container">
                 <div class="section-head">
                     <div class="eyebrow">Вопросы</div>
-                    <h2 class="section-title" id="faq-title">Коротко о главном</h2>
+                    <h2 class="section-title" id="faq-title">Подробные условия работы</h2>
                 </div>
                 <div class="faq">
-                    <details><summary>Можно посмотреть товар?</summary><p>Да. Склад: ул. Монтажная, 10.</p></details>
-                    <details><summary>Режете арматуру?</summary><p>Да. Режем на базе под перевозку.</p></details>
-                    <details><summary>Есть манипулятор?</summary><p>Да. ФБС, кольца, паллеты, длинномер.</p></details>
-                    <details><summary>Оплата по факту?</summary><p>Да. Наличные, перевод, безнал.</p></details>
+                    <details>
+                        <summary>Какая у вас география и условия доставки?</summary>
+                        <p>Мы доставляем строительные материалы по Невинномысску, всему Ставропольскому краю и соседним республикам СКФО и ЮФО. По городу возим быстрыми «Газелями» (от 1000 ₽) или тяжелыми манипуляторами. В соседние районы и СНТ логистика рассчитывается индивидуально — наберите нас, мы подберем оптимальный транспорт под ваш объем за 2 минуты.</p>
+                    </details>
+                    <details>
+                        <summary>Как у вас принимается оплата? Работаете ли вы по безналу?</summary>
+                        <p>Мы работаем честно и прозрачно: без предоплат, скрытых комиссий и бюрократии. Оплата принимается по факту получения. Способы оплаты: наличными на базе при загрузке или на вашем объекте при выгрузке; быстрым переводом на карту по номеру телефона (Сбербанк, Т-Банк и другие); безналичный расчет для бизнеса (выставляем счета без задержек, перевод с ИП на ИП для строительных бригад и юрлиц).</p>
+                    </details>
+                    <details>
+                        <summary>Как вы гарантируете качество материалов и честный вес?</summary>
+                        <p>Мы дорожим репутацией и работаем без перекупщиков. Металлопрокат строго соответствует ГОСТу — у нас «честная» толщина стенки труб и правильная геометрия арматуры без слоистой ржавчины. Цемент поставляется напрямую с Новороссийского завода — он всегда свежий, сухой и хранится в крытом сухом боксе. Все ЖБИ (блоки ФБС, кольца) армированные и прочные, без трещин и сколов.</p>
+                    </details>
+                    <details>
+                        <summary>Можно ли приехать на базу и забрать материалы самовывозом?</summary>
+                        <p>Да, конечно. Наш склад находится по адресу: г. Невинномысск, ул. Монтажная, д. 10. Широкий заезд спроектирован под любой грузовой и легковой транспорт. На территории постоянно работает вилочный автопогрузчик — мы загрузим ваши поддоны с цементом или блоками за 5 минут. Перед выездом обязательно позвоните нам, чтобы мы подтвердили остаток товара.</p>
+                    </details>
+                    <details>
+                        <summary>Предусмотрены ли у вас скидки от объема заказа?</summary>
+                        <p>Наша база работает как в розницу, так и оптом. Мы комплектуем строительные объекты любого масштаба — от фундамента под частный дом до крупных коммерческих строек. Если вы заказываете большой объем (на дом, забор, крупную партию ЖБИ) или являетесь постоянным прорабом/бригадиром — мы сформируем для вас индивидуальные выгодные цены.</p>
+                    </details>
+                    <details>
+                        <summary>Режете ли вы металлопрокат и арматуру под размеры?</summary>
+                        <p>Да, мы режем арматуру прямо на базе. Например, стандартные заводские хлысты длиной 11.7 метров мы режем пополам (по 5.85 м). Благодаря этому вам не нужно переплачивать за спецтранспорт (длинномер) — весь металл легко поместится в обычную Газель, что существенно сэкономит ваши деньги на доставке.</p>
+                    </details>
                 </div>
             </div>
         </section>
@@ -738,7 +788,7 @@
                 <div>
                     <div class="section-head">
                         <div class="eyebrow">Контакты</div>
-                        <h2 class="section-title" id="contacts-title">Позвоните перед приездом</h2>
+                        <h2 class="section-title" id="contacts-title">Ждем вас на складе</h2>
                     </div>
                     <div class="contact-list">
                         <div class="contact-row"><span>Телефон отдела продаж</span><a href="tel:+79887328161">+7 (988) 732-81-61</a></div>
@@ -814,10 +864,11 @@
             });
             var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); };
             s.type = "text/javascript";
-            s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//st.top100.ru/top100/top100.js";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//st.top100.ru/top100/top100.js";
             if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
         })(window, document, "_top100q");
     </script>
-    <noscript><img src="//counter.rambler.ru/top100.cnt?pid=7751868" alt="Tоп-100"></noscript>
+    <noscript><img src="//counter.rambler.ru/top100.cnt?pid=7751868" alt="Топ-100"></noscript>
 </body>
 </html>
