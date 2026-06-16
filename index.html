@@ -143,7 +143,7 @@
             height: 44px;
             border: 1px solid var(--line-strong);
             border-radius: 8px;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             font-weight: 800;
@@ -192,12 +192,13 @@
         .hero {
             padding: 80px 0 100px;
         }
-        .hero-grid {
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            text-align: left;
-            max-width: 820px;
+            align-items: center;
+            text-align: center;
         }
         .hero h1 {
             margin: 18px 0 0;
@@ -207,14 +208,47 @@
             font-weight: 800;
         }
         .hero-lead {
-            margin: 24px 0 0;
+            margin: 24px auto 0;
+            max-width: 680px;
             color: var(--muted);
             font-size: clamp(1.1rem, 2vw, 1.3rem);
             line-height: 1.5;
         }
-        .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+        .hero-actions { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 14px; 
+            margin-top: 34px; 
+            justify-content: center; 
+        }
+        
+        /* Мессенджеры на первом экране */
+        .quick-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .quick-social-btn {
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .quick-social-btn:hover { transform: translateY(-1px); opacity: 0.95; }
+        .quick-social-btn img { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
+        .qs-wa { background-color: #128C7E; }
+        .qs-tg { background-color: #0088cc; }
 
-        /* Сетка преимуществ из Codex */
+        /* Сетка преимуществ в строгом стиле Codex */
         .quality-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
         .quality-card {
             padding: 26px;
@@ -233,7 +267,7 @@
         /* Каталог (Идеально ровные линии) */
         .assortment-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Ровная сетка 3х3 */
+            grid-template-columns: repeat(3, 1fr); /* Ровная симметричная сетка 3х3 */
             gap: 16px;
         }
         .product-card {
@@ -258,17 +292,20 @@
         
         .product-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
         
-        /* Выравнивание заголовка по высоте для ровных строк */
+        /* Выравнивание заголовка и цены */
         .product-top {
             display: flex;
-            align-items: flex-start;
+            align-items: center; /* Выравнивание строго по центру относительно друг друга */
             justify-content: space-between;
             gap: 18px;
             min-height: 56px;
         }
         .product-title { margin: 0; font-size: 1.15rem; line-height: 1.25; letter-spacing: -0.025em; font-weight: 700; }
+        
+        /* Плашка цены никогда не сожмется */
         .price {
             flex: 0 0 auto;
+            flex-shrink: 0; 
             padding: 6px 10px;
             border-radius: 6px;
             background: rgba(214,189,122,0.12);
@@ -365,8 +402,14 @@
         }
         .rating-widgets iframe { border-radius: 8px; overflow: hidden; background: transparent; }
 
-        /* Исправленные ОРИГИНАЛЬНЫЕ плашки соцсетей */
-        .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px; }
+        /* ИДЕАЛЬНО СИММЕТРИЧНЫЕ ПЛАШКИ СОЦСЕТЕЙ */
+        .social-links { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+            gap: 10px; 
+            margin-top: 14px; 
+            max-width: 440px;
+        }
         .social-links a {
             min-height: 50px;
             border: 1px solid var(--line);
@@ -384,7 +427,6 @@
         }
         .social-links a:hover { border-color: rgba(255,255,255,0.3); }
         .social-links a img { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; }
-        .social-btn-max { grid-column: span 2; }
 
         .map-wrap {
             min-height: 520px;
@@ -410,8 +452,7 @@
             .nav { display: none; }
             .hero-grid, .contacts-grid, .company-block { grid-template-columns: 1fr; }
             .hero { min-height: auto; }
-            .assortment-grid { grid-template-columns: repeat(2, 1fr); }
-            .product-card { grid-column: span 1; }
+            .product-card { grid-column: span 6; }
         }
 
         @media (max-width: 760px) {
@@ -425,12 +466,14 @@
             .brand-name span, .phone-block { display: none; }
             .header-actions .btn { min-height: 40px; padding: 0 14px; font-size: 0.8rem; }
             
-            .hero { padding: 34px 0 48px; }
+            .hero { padding: 40px 0; }
             .hero h1 { font-size: clamp(2.35rem, 12vw, 3.5rem); letter-spacing: -0.055em; }
             .hero-lead { font-size: 1.02rem; line-height: 1.45; margin-top: 18px; }
             
-            .assortment-grid { grid-template-columns: 1fr; gap: 14px; }
-            .product-card { grid-column: span 1; }
+            .quality-grid { grid-template-columns: 1fr; gap: 12px; }
+            
+            .product-card { grid-column: span 12; }
+            .assortment-grid { gap: 14px; }
             .section { padding: 64px 0; }
             
             /* СВАЙПЕР ФОТОГРАФИЙ ДЛЯ ТЕЛЕФОНОВ (Убираем простыню фото) */
@@ -457,7 +500,6 @@
             .footer-inner { display: grid; text-align: center; gap: 10px; }
             .faq { grid-template-columns: 1fr; }
             .social-links { grid-template-columns: 1fr; }
-            .social-btn-max { grid-column: span 1; }
         }
     </style>
 </head>
@@ -534,7 +576,7 @@
             </div>
         </section>
 
-        <!-- Каталог товаров (Чистые фото, без shlakoblok.jpg сверху, идеально ровная сетка) -->
+        <!-- Каталог товаров (Чистые фото, идеально ровная сетка и выровненные цены) -->
         <section class="section" id="catalog" aria-labelledby="catalog-title">
             <div class="container">
                 <div class="section-head">
@@ -653,7 +695,7 @@
                     <figure class="gallery-item"><img src="manipulator.jpg" alt="Манипулятор для доставки" width="360" height="240" loading="lazy" decoding="async" onerror="this.style.display='none';"></figure>
                     <div class="gallery-item video-placeholder">
                         <div>
-                            <strong>Video базы</strong>
+                            <strong>Видео базы</strong> <!-- Изменили "Video" на "Видео" -->
                             <p>45 секунд: склад, металл, ЖБИ, погрузка, техника.</p>
                         </div>
                         <a class="btn btn-ghost" href="https://t.me/stroybazansk" target="_blank" rel="noopener">Telegram</a>
@@ -711,7 +753,7 @@
                     </div>
                     <div class="contact-list">
                         <div class="contact-row"><span>Телефон отдела продаж</span><a href="tel:+79887328161">+7 (988) 732-81-61</a></div>
-                        <div class="contact-row"><span>Адрес склада</span><strong>Невинномысск, ул. Монтажная, 10</strong></div>
+                        <div class="contact-row"><span>Адрес склада</span><strong>Невинномысск, ул. Монтажная, d. 10</strong></div>
                         <div class="contact-row"><span>График</span><strong>Пн-Сб: 8:00-18:00, Вс: выходной</strong></div>
                         
                         <!-- Рейтинги карт под графиком -->
@@ -723,7 +765,7 @@
                             </div>
                         </div>
 
-                        <!-- Оригинальные плашки соцсетей -->
+                        <!-- ИДЕАЛЬНО РОВНЫЕ СИММЕТРИЧНЫЕ ПЛАШКИ СОЦСЕТЕЙ -->
                         <div class="contact-row">
                             <span>Мы на других площадках</span>
                             <div class="social-links">
