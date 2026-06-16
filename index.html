@@ -208,12 +208,19 @@
             font-weight: 800;
         }
         .hero-lead {
-            margin: 24px 0 0;
+            margin: 24px auto 0;
+            max-width: 680px;
             color: var(--muted);
             font-size: clamp(1.1rem, 2vw, 1.3rem);
             line-height: 1.5;
         }
-        .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+        .hero-actions { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 14px; 
+            margin-top: 34px; 
+            justify-content: center; 
+        }
         
         /* Мессенджеры на первом экране */
         .quick-socials {
@@ -315,17 +322,37 @@
         .product-actions { margin-top: auto; padding-top: 18px; display: grid; grid-template-columns: 1fr; gap: 10px; }
         .product-actions .btn { min-height: 42px; font-size: 0.9rem; }
 
-        /* Карусель фотографий */
+        /* КАРАУСЕЛЬ ФОТОГРАФИЙ (С красивым скроллбаром на ПК) */
         .gallery-grid {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             gap: 16px;
             padding-bottom: 16px;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
         }
-        .gallery-grid::-webkit-scrollbar { display: none; }
+        
+        /* Скроллбар для ПК (Мышка/Тачпад) */
+        @media (min-width: 769px) {
+            .gallery-grid {
+                -ms-overflow-style: auto;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255,255,255,0.2) transparent;
+            }
+            .gallery-grid::-webkit-scrollbar {
+                display: block;
+                height: 6px;
+            }
+            .gallery-grid::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .gallery-grid::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.15);
+                border-radius: 10px;
+            }
+            .gallery-grid::-webkit-scrollbar-thumb:hover {
+                background: rgba(255, 255, 255, 0.35);
+            }
+        }
         
         .gallery-item {
             flex: 0 0 360px;
@@ -415,7 +442,7 @@
             border: 1px solid var(--line);
             border-radius: 8px;
             display: flex;
-            align-items: center; /* Выравнивание по центру по вертикали */
+            align-items: center; /* Центрирование по вертикали */
             justify-content: flex-start;
             padding: 0 16px;
             text-decoration: none;
@@ -428,12 +455,11 @@
         .social-links a:hover { border-color: rgba(255,255,255,0.3); }
         .social-links a img { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; display: block; }
         
-        /* Идеальное центрирование текста относительно иконки */
+        /* Исправлено вертикальное выравнивание шрифта Inter на пиксельном уровне */
         .social-links a span { 
-            display: inline-flex; 
-            align-items: center; 
+            display: block; 
             line-height: 1; 
-            height: 100%; 
+            transform: translateY(1.5px); 
         }
         .social-btn-max { grid-column: span 2; }
 
@@ -486,7 +512,13 @@
             .product-card { grid-column: span 12; }
             .section { padding: 64px 0; }
             
-            /* Свайпер картинок */
+            /* Скроллбар скрыт на мобильных устройствах */
+            .gallery-grid {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .gallery-grid::-webkit-scrollbar { display: none; }
+            
             .gallery-item { flex: 0 0 85%; }
             .video-placeholder { flex: 0 0 85%; }
             
@@ -502,6 +534,7 @@
     <header class="site-header">
         <div class="container header-inner">
             <a class="brand" href="#top" aria-label="Стройбаза на Монтажной">
+                <!-- Встроенная векторная иконка-куб на случай, если logo.png/logo.PNG еще нет -->
                 <div class="brand-fallback" id="logo-svg-header">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:100%; height:100%; color:#fff;">
                         <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(255,255,255,0.04)"/>
@@ -509,6 +542,7 @@
                         <path d="M12 12V22L20 17V7Z" fill="rgba(255,255,255,0.06)"/>
                     </svg>
                 </div>
+                <!-- Фикс логотипа с проверкой регистра -->
                 <img src="logo.png" id="logo-img-header" style="display:none;" onerror="if(this.src.indexOf('logo.PNG') === -1) { this.src='logo.PNG'; } else { this.style.display='none'; document.getElementById('logo-svg-header').style.display='flex'; }" onload="document.getElementById('logo-svg-header').style.display='none'; this.style.display='block';" alt="Стройбаза на Монтажной" width="44" height="44">
                 <span class="brand-name"><strong>Стройбаза на Монтажной</strong><span>Невинномысск, ул. Монтажная, 10</span></span>
             </a>
@@ -528,7 +562,7 @@
     </header>
 
     <main id="top">
-        <!-- Первый экран -->
+        <!-- Первый экран (Герой-блок со всеми вашими оригинальными кнопками) -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="container hero-content">
                 <div class="eyebrow">Склад на Монтажной, 10</div>
@@ -569,7 +603,7 @@
             </div>
         </section>
 
-        <!-- Каталог товаров -->
+        <!-- Каталог товаров (Чистые фото, идеально ровная сетка и выровненные цены) -->
         <section class="section" id="catalog" aria-labelledby="catalog-title">
             <div class="container">
                 <div class="section-head">
@@ -657,7 +691,7 @@
                         </div>
                     </article>
 
-                    <!-- Манипулятор -->
+                    <!-- Манипулятор (С ФОТОГРАФИЕЙ) -->
                     <article class="product-card">
                         <div class="product-img">
                             <img src="manipulator.jpg" alt="Манипулятор для доставки строительных материалов" loading="lazy" decoding="async" onerror="this.style.display='none';">
@@ -673,7 +707,7 @@
             </div>
         </section>
 
-        <!-- Фотогалерея -->
+        <!-- Фотогалерея (Карусель на 30 фото, адаптированная под ПК и мобильные) -->
         <section class="section" id="gallery" aria-labelledby="gallery-title">
             <div class="container">
                 <div class="section-head">
@@ -682,6 +716,7 @@
                     <p class="section-copy">Прокрутите вбок, чтобы посмотреть наш склад вживую. Монтажная, 10.</p>
                 </div>
                 <div class="gallery-grid">
+                    <!-- Заглушки для ваших будущих 30 фотографий -->
                     <figure class="gallery-item"><img src="photo-1.jpg" alt="Фото базы 1" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-2.jpg" alt="Фото базы 2" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-3.jpg" alt="Фото базы 3" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
@@ -714,7 +749,7 @@
                     <figure class="gallery-item"><img src="photo-30.jpg" alt="Фото базы 30" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <div class="video-placeholder">
                         <div>
-                            <strong>Видео базы</strong>
+                            <strong>Видео базы</strong> <!-- Исправлено Video на Видео -->
                             <p>45 секунд: склад, металл, ЖБИ, погрузка, техника.</p>
                         </div>
                         <a class="btn btn-ghost" href="https://t.me/stroybazansk" target="_blank" rel="noopener">Telegram</a>
@@ -788,7 +823,7 @@
                 <div>
                     <div class="section-head">
                         <div class="eyebrow">Контакты</div>
-                        <h2 class="section-title" id="contacts-title">Ждем вас на складе</h2>
+                        <h2 class="section-title" id="contacts-title">Позвоните перед приездом</h2>
                     </div>
                     <div class="contact-list">
                         <div class="contact-row"><span>Телефон отдела продаж</span><a href="tel:+79887328161">+7 (988) 732-81-61</a></div>
