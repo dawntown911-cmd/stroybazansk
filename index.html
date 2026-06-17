@@ -76,7 +76,6 @@
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
             overflow-x: hidden;
-            letter-spacing: -0.01em;
         }
         img { max-width: 100%; display: block; }
         a { color: inherit; }
@@ -144,7 +143,7 @@
             height: 44px;
             border: 1px solid var(--line-strong);
             border-radius: 8px;
-            display: none;
+            display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
@@ -189,16 +188,17 @@
         .btn-primary:hover { background: var(--accent-2); border-color: var(--accent-2); }
         .btn-ghost { background: rgba(255,255,255,0.035); }
 
-        /* Первый экран (Идеальное выравнивание по левому краю) */
+        /* Первый экран */
         .hero {
             padding: 80px 0 100px;
         }
         .hero-content {
-            max-width: 820px;
+            max-width: 900px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            text-align: left; /* Строго левый край для идеального выравнивания */
+            text-align: left;
         }
         .hero h1 {
             margin: 18px 0 0;
@@ -208,7 +208,8 @@
             font-weight: 800;
         }
         .hero-lead {
-            margin: 24px 0 0;
+            margin: 24px auto 0;
+            max-width: 680px;
             color: var(--muted);
             font-size: clamp(1.1rem, 2vw, 1.3rem);
             line-height: 1.5;
@@ -218,7 +219,7 @@
             flex-wrap: wrap; 
             gap: 14px; 
             margin-top: 34px; 
-            justify-content: flex-start; /* Выравнивание кнопок по левому краю */
+            justify-content: center; 
         }
         
         /* Мессенджеры на первом экране */
@@ -227,7 +228,7 @@
             gap: 12px;
             margin-top: 24px;
             flex-wrap: wrap;
-            justify-content: flex-start;
+            justify-content: center;
         }
         .quick-social-btn {
             padding: 10px 18px;
@@ -263,7 +264,7 @@
         .quality-card h3 { margin: 16px 0 0; font-size: 1.25rem; letter-spacing: -0.03em; font-weight: 800; }
         .quality-card p { margin: 12px 0 0; color: var(--muted); font-size: 0.94rem; }
 
-        /* Каталог (Идеальное выравнивание линий) */
+        /* Каталог (Идеяльное выравнивание линий) */
         .assortment-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -367,13 +368,13 @@
         }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* Исправлена карточка конца карусели */
+        /* ИСПРАВЛЕНА КАРТОЧКА КОНЦА КАРУСЕЛИ (Больше не съезжает) */
         .video-placeholder {
             flex: 0 0 300px;
             scroll-snap-align: start;
             min-height: 260px;
             height: 260px;
-            padding: 28px;
+            padding: 22px; /* Изменено с 28px до 22px для устранения перекоса */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -382,8 +383,17 @@
             border-radius: 10px;
             flex-shrink: 0;
         }
-        .video-placeholder strong { font-size: 1.3rem; letter-spacing: -0.03em; }
-        .video-placeholder p { color: var(--muted); margin: 12px 0 24px; } /* Добавлен отступ снизу, чтобы текст не лип к кнопке */
+        .video-placeholder strong { 
+            font-size: 1.2rem; /* Уменьшено на 0.1rem, чтобы заголовок не занимал лишнее место */
+            letter-spacing: -0.03em; 
+            display: block;
+        }
+        .video-placeholder p { 
+            color: var(--muted); 
+            margin: 10px 0 14px; /* Оптимальные и ровные отступы */
+            font-size: 0.9rem;
+            line-height: 1.45;
+        }
 
         /* Строителям B2B */
         .company-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -397,7 +407,7 @@
         .company-card p { margin: 12px 0 0; color: var(--muted); font-size: 0.94rem; }
         .company-card .btn { margin-top: 22px; width: 100%; }
 
-        /* Вопросы FAQ (Повышено качество и глубина отображения) */
+        /* Вопросы FAQ */
         .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         details {
             border: 1px solid var(--line);
@@ -415,7 +425,6 @@
         }
         summary { cursor: pointer; font-weight: 800; letter-spacing: -0.02em; outline: none; user-select: none; }
         
-        /* Исправлен провал текста - теперь он четко структурирован золотой рамкой слева */
         details p { 
             margin: 14px 0 0; 
             color: var(--muted); 
@@ -459,7 +468,7 @@
             border: 1px solid var(--line);
             border-radius: 8px;
             display: flex;
-            align-items: center; /* Центрирование по вертикали */
+            align-items: center;
             justify-content: flex-start;
             padding: 0 16px;
             text-decoration: none;
@@ -472,7 +481,7 @@
         .social-links a:hover { border-color: rgba(255,255,255,0.3); }
         .social-links a img { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; display: block; }
         
-        /* Исправлено вертикальное выравнивание шрифта Inter на пиксельном уровне */
+        /* Идеальное центрирование текста относительно иконки */
         .social-links a span { 
             display: block; 
             line-height: 1; 
@@ -529,7 +538,7 @@
             .product-card { grid-column: span 12; }
             .section { padding: 64px 0; }
             
-            /* Скроллбар скрыт на мобильных устройствах */
+            /* Свайпер картинок */
             .gallery-grid {
                 -ms-overflow-style: none;
                 scrollbar-width: none;
@@ -579,7 +588,7 @@
     </header>
 
     <main id="top">
-        <!-- Первый экран (Герой-блок со всеми вашими оригинальными кнопками) -->
+        <!-- Первый экран -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="container hero-content">
                 <div class="eyebrow">Склад на Монтажной, 10</div>
@@ -620,10 +629,10 @@
             </div>
         </section>
 
-        <!-- Каталог товаров (Чистые фото, идеально ровная сетка и выровненные цены) -->
+        <!-- Каталог товаров -->
         <section class="section" id="catalog" aria-labelledby="catalog-title">
             <div class="container">
-                <div class="section-head">
+                <div class="section-header">
                     <div class="eyebrow">Каталог</div>
                     <h2 class="section-title" id="catalog-title">Материалы и цены</h2>
                     <p class="section-copy">Цены ориентировочные. Звоните — скажем остаток и посчитаем доставку.</p>
@@ -764,9 +773,10 @@
                     <figure class="gallery-item"><img src="photo-28.jpg" alt="Фото базы 28" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-29.jpg" alt="Фото базы 29" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-30.jpg" alt="Фото базы 30" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    
                     <div class="video-placeholder">
                         <div>
-                            <strong>Больше фото — в нашем сообществе</strong> <!-- Изменено ВК-сообщество -->
+                            <strong>Больше фото — в нашем сообществе</strong>
                             <p>Все фотографии нашего склада, товаров и рабочих моментов смотрите в сообществе ВКонтакте.</p>
                         </div>
                         <a class="btn btn-ghost" href="https://vk.com/stroybazansk" target="_blank" rel="noopener">ВКонтакте</a>
