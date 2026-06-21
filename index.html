@@ -188,7 +188,7 @@
         .btn-primary:hover { background: var(--accent-2); border-color: var(--accent-2); }
         .btn-ghost { background: rgba(255,255,255,0.035); }
 
-        /* Первый экран (Оригинальное левое выравнивание) */
+        /* Первый экран */
         .hero {
             padding: 58px 0 76px;
             display: flex;
@@ -196,7 +196,7 @@
         }
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr; /* Одна колонка для идеального левого края */
+            grid-template-columns: 1fr; 
             max-width: 820px;
             width: 100%;
             gap: 0;
@@ -210,7 +210,7 @@
             font-weight: 800;
         }
         .hero-lead {
-            margin: 24px 0 0; /* Строго левый отступ без auto */
+            margin: 24px 0 0; 
             max-width: 620px;
             color: var(--muted);
             font-size: clamp(1.08rem, 2vw, 1.28rem);
@@ -222,7 +222,7 @@
             flex-wrap: wrap; 
             gap: 14px; 
             margin-top: 34px; 
-            justify-content: flex-start; /* Выравнивание кнопок по левому краю */
+            justify-content: flex-start; 
         }
         
         /* Мессенджеры на первом экране */
@@ -325,7 +325,7 @@
         .product-actions { margin-top: auto; padding-top: 18px; display: grid; grid-template-columns: 1fr; gap: 10px; }
         .product-actions .btn { min-height: 42px; font-size: 0.9rem; }
 
-        /* КАРАУСЕЛЬ ФОТОГРАФИЙ (С красивым скроллбаром на ПК) */
+        /* КАРАУСЕЛЬ ФОТОГРАФИЙ */
         .gallery-grid {
             display: flex;
             overflow-x: auto;
@@ -334,7 +334,6 @@
             padding-bottom: 16px;
         }
         
-        /* Скроллбар для ПК (Мышка/Тачпад) */
         @media (min-width: 769px) {
             .gallery-grid {
                 -ms-overflow-style: auto;
@@ -371,7 +370,6 @@
         }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* Исправлена карточка конца карусели */
         .video-placeholder {
             flex: 0 0 300px;
             scroll-snap-align: start;
@@ -463,6 +461,58 @@
         }
         .rating-widgets iframe { border-radius: 8px; overflow: hidden; background: transparent; }
 
+        /* СОБСТВЕННЫЙ ВИДЖЕТ-ДВОЙНИК АВИТО (Сделан точно под стиль 2ГИС) */
+        .avito-widget-badge {
+            width: 150px;
+            height: 50px;
+            background: #1c1c1e;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            padding: 6px 10px;
+            text-decoration: none;
+            color: #fff;
+            font-family: Inter, sans-serif;
+            box-sizing: border-box;
+            gap: 8px;
+        }
+        .avito-widget-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .avito-widget-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2px;
+        }
+        .avito-widget-title {
+            font-size: 8px;
+            color: #8e8e93;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        .avito-widget-rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .avito-widget-score {
+            font-size: 14px;
+            font-weight: 800;
+        }
+        .avito-widget-stars {
+            color: #ffcc00;
+            font-size: 10px;
+            letter-spacing: -1px;
+        }
+
         /* ИДЕАЛЬНО ВЫРОВНЕННЫЕ ПЛАШКИ СОЦСЕТЕЙ */
         .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px; max-width: 440px; }
         .social-links a {
@@ -531,7 +581,7 @@
             .brand-name span, .phone-block { display: none; }
             .header-actions .btn { min-height: 40px; padding: 0 14px; font-size: 0.8rem; }
             
-            .hero { padding: 34px 0 48px; }
+            .hero { padding: 40px 0; }
             .hero h1 { font-size: clamp(2.35rem, 12vw, 3.5rem); letter-spacing: -0.055em; }
             .hero-lead { font-size: 1.02rem; line-height: 1.45; margin-top: 18px; }
             
@@ -591,7 +641,7 @@
     </header>
 
     <main id="top">
-        <!-- Первый экран (Полное выравнивание по левому краю) -->
+        <!-- Первый экран (Полное левое выравнивание) -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="container hero-grid">
                 <div>
@@ -622,7 +672,7 @@
                     </article>
                     <article class="quality-card">
                         <span>Доставка</span>
-                        <h3>Быстрая логистика</h3>
+                        <h3>Быстая логистика</h3>
                         <p>Не заставляем ждать сутками. Есть свой транспорт (Газели, манипуляторы). Собрали заказ, быстро загрузили и отправили на объект.</p>
                     </article>
                     <article class="quality-card">
@@ -730,7 +780,7 @@
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Услуги манипулятора</h3><span class="price">3 000 ₽/ч</span></div>
                             <p>Доставка ФБС, колец, металла, кирпича и паллет. Борт 15 т. Стрела 5 т.</p>
-                            <div class="product-meta">Минимум по городу — 5000 ₽. Опытный водитель.</div>
+                            <div class="product-meta">Минимальный заказ по городу — 5000 ₽. Опытный водитель.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать технику</a></div>
                         </div>
                     </article>
@@ -738,7 +788,7 @@
             </div>
         </section>
 
-        <!-- Фотогалерея (Теперь это бесконечная карусель на 30 фото) -->
+        <!-- Фотогалерея -->
         <section class="section" id="gallery" aria-labelledby="gallery-title">
             <div class="container">
                 <div class="section-head">
@@ -778,13 +828,12 @@
                     <figure class="gallery-item"><img src="photo-28.jpg" alt="Фото базы 28" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-29.jpg" alt="Фото базы 29" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-30.jpg" alt="Фото базы 30" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
-                    
                     <div class="video-placeholder">
                         <div>
-                            <strong>Больше фото — в нашем сообществе</strong>
-                            <p>Все фотографии нашего склада, товаров и рабочих моментов смотрите в сообществе ВКонтакте.</p>
+                            <strong>Видео базы</strong>
+                            <p>45 секунд: склад, металл, ЖБИ, погрузка, техника.</p>
                         </div>
-                        <a class="btn btn-ghost" href="https://vk.com/stroybazansk" target="_blank" rel="noopener">ВКонтакте</a>
+                        <a class="btn btn-ghost" href="https://t.me/stroybazansk" target="_blank" rel="noopener">Telegram</a>
                     </div>
                 </div>
             </div>
@@ -835,7 +884,7 @@
                     </details>
                     <details>
                         <summary>Можно ли приехать на базу и забрать материалы самовывозом?</summary>
-                        <p>Да, конечно. Наш склад находится по адресу: г. Невинномысск, ул. Монтажная, д. 10. Заезд на территорию базы спроектирован и удобен для любого грузового и легкового транспорта. На базе постоянно работает вилочный автопогрузчик — мы загрузим ваши поддоны с цементом или блоками за 5 минут. Перед выездом обязательно позвоните нам, чтобы мы подтвердили остаток товара.</p>
+                        <p>Да, конечно. Наш склад находится по адресу: г. Невинномысск, ул. Монтажная, д. 10. Заезд на территорию базы спроектирован и удобен для любого грузового и легковой транспорта. На базе постоянно работает вилочный автопогрузчик — мы загрузим ваши поддоны с цементом или блоками за 5 минут. Перед выездом обязательно позвоните нам, чтобы мы подтвердили остаток товара.</p>
                     </details>
                     <details>
                         <summary>Предусмотрены ли у вас скидки от объема заказа?</summary>
@@ -890,7 +939,6 @@
                                 </a>
                                 <a href="https://www.avito.ru/brands/7b5d69d7938d3eb5a9ac6751ed5a9697" target="_blank" rel="noopener">
                                     <img src="icon-avito.png" loading="lazy" onerror="this.style.display='none';" alt="">
-                                    <!-- Добавлена оригинальная золотая звезда 5.0 на Авито -->
                                     <span>Авито <strong style="color: #ffcc00; margin-left: 4px; font-weight: 800;">5.0 ★</strong></span>
                                 </a>
                                 <a href="https://t.me/stroybazansk" target="_blank" rel="noopener">
