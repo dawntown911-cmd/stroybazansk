@@ -143,7 +143,7 @@
             height: 44px;
             border: 1px solid var(--line-strong);
             border-radius: 8px;
-            display: none;
+            display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
@@ -188,19 +188,17 @@
         .btn-primary:hover { background: var(--accent-2); border-color: var(--accent-2); }
         .btn-ghost { background: rgba(255,255,255,0.035); }
 
-        /* Первый экран (Идеальное выравнивание по левому краю) */
+        /* Первый экран */
         .hero {
-            padding: 58px 0 76px;
-            display: flex;
-            align-items: center;
+            padding: 80px 0 100px;
         }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr; /* Одна колонка на ПК для идеального левого края */
-            max-width: 820px;
-            width: 100%;
-            gap: 0;
-            align-items: center;
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
         }
         .hero h1 {
             margin: 18px 0 0;
@@ -209,24 +207,19 @@
             letter-spacing: -0.05em;
             font-weight: 800;
         }
-        
-        /* Исправлен левый край описания на ПК */
         .hero-lead {
-            margin: 24px 0 0; 
-            max-width: 620px;
+            margin: 24px auto 0;
+            max-width: 680px;
             color: var(--muted);
-            font-size: clamp(1.08rem, 2vw, 1.28rem);
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
             line-height: 1.5;
-            text-align: left;
         }
-        
-        /* Исправлен левый край кнопок на ПК */
         .hero-actions { 
             display: flex; 
             flex-wrap: wrap; 
             gap: 14px; 
             margin-top: 34px; 
-            justify-content: flex-start; 
+            justify-content: center; 
         }
         
         /* Мессенджеры на первом экране */
@@ -235,7 +228,7 @@
             gap: 12px;
             margin-top: 24px;
             flex-wrap: wrap;
-            justify-content: flex-start;
+            justify-content: center;
         }
         .quick-social-btn {
             padding: 10px 18px;
@@ -271,7 +264,7 @@
         .quality-card h3 { margin: 16px 0 0; font-size: 1.25rem; letter-spacing: -0.03em; font-weight: 800; }
         .quality-card p { margin: 12px 0 0; color: var(--muted); font-size: 0.94rem; }
 
-        /* Каталог (Идеальное выравнивание линий) */
+        /* Каталог */
         .assortment-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -595,17 +588,15 @@
     </header>
 
     <main id="top">
-        <!-- Первый экран (Полное выравнивание по левому краю) -->
+        <!-- Первый экран (Герой-блок со всеми вашими оригинальными кнопками) -->
         <section class="hero" aria-labelledby="hero-title">
-            <div class="container hero-grid">
-                <div>
-                    <div class="eyebrow">Склад на Монтажной, 10</div>
-                    <h1 id="hero-title">Арматура, трубы, цемент и ЖБИ со склада</h1>
-                    <p class="hero-lead">Металл, ФБС, кольца, шлакоблок и цемент М500 со склада в Невинномысске. Своя погрузка. Резка арматуры на базе. Доставка Газелью и манипулятором в день заказа.</p>
-                    <div class="hero-actions">
-                        <a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие и цену</a>
-                        <a class="btn btn-ghost" href="https://wa.me/79887328161" target="_blank" rel="noopener">Написать в WhatsApp</a>
-                    </div>
+            <div class="container hero-content">
+                <div class="eyebrow">Склад на Монтажной, 10</div>
+                <h1 id="hero-title">Арматура, трубы, цемент и ЖБИ со склада</h1>
+                <p class="hero-lead">Металл, ФБС, кольца, шлакоблок и цемент М500 со склада в Невинномысске. Своя погрузка. Резка арматуры на базе. Доставка Газелью и манипулятором в день заказа.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие и цену</a>
+                    <a class="btn btn-ghost" href="https://wa.me/79887328161" target="_blank" rel="noopener">Написать в WhatsApp</a>
                 </div>
             </div>
         </section>
@@ -726,7 +717,7 @@
                         </div>
                     </article>
 
-                    <!-- Манипулятор -->
+                    <!-- Манипулятор (С ФОТОГРАФИЕЙ, идеально ровно встроен в общую сетку) -->
                     <article class="product-card">
                         <div class="product-img">
                             <img src="manipulator.jpg" alt="Манипулятор для доставки строительных материалов" loading="lazy" decoding="async" onerror="this.style.display='none';">
@@ -782,9 +773,10 @@
                     <figure class="gallery-item"><img src="photo-28.jpg" alt="Фото базы 28" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-29.jpg" alt="Фото базы 29" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-30.jpg" alt="Фото базы 30" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
+                    
                     <div class="video-placeholder">
                         <div>
-                            <strong>Больше фото — в нашем сообществе</strong>
+                            <strong>Больше фото — в нашем сообществе</strong> <!-- Изменено ВК-сообщество -->
                             <p>Все фотографии нашего склада, товаров и рабочих моментов смотрите в сообществе ВКонтакте.</p>
                         </div>
                         <a class="btn btn-ghost" href="https://vk.com/stroybazansk" target="_blank" rel="noopener">ВКонтакте</a>
@@ -834,11 +826,11 @@
                     </details>
                     <details>
                         <summary>Как вы гарантируете качество материалов и честный вес?</summary>
-                        <p>Мы дорожим репутацией и работаем без перекупщиков. Металлопрокат строго соответствует ГОСТу — у нас «честная» толщина стенки труб и правильная геометрия арматуры без слоистой ржавчины. Цемент поставляется напрямую с Новороссийского завода — он всегда свежий, сухой и хранится в крытом сухом боксе. Все ЖБИ (блоки ФБС, кольца) армированные и прочные, без трещин и сколов.</p>
+                        <p>Мы дорожим репутацией и работаем без перекупщиков. Металлопрокат (арматура, профильная труба) строго соответствует ГОСТу — у нас честная толщина стенки без «фольги» и занижения веса. Цемент всегда свежего завоза, сухой и рассыпчатый, хранится в правильных условиях. Все ЖБИ изделия (кольца, ФБС) поставляются без сколов, трещин и скрытых дефектов.</p>
                     </details>
                     <details>
                         <summary>Можно ли приехать на базу и забрать материалы самовывозом?</summary>
-                        <p>Да, конечно. Наш склад находится по адресу: г. Невинномысск, ул. Монтажная, д. 10. Широкий заезд спроектирован под любой грузовой и легковой транспорт. На территории постоянно работает вилочный автопогрузчик — мы загрузим ваши поддоны с цементом или блоками за 5 минут. Перед выездом обязательно позвоните нам, чтобы мы подтвердили остаток товара.</p>
+                        <p>Да, конечно. Наш склад находится по адресу: г. Невинномысск, ул. Монтажная, д. 10. Заезд на территорию базы спроектирован и удобен для любого грузового и легкового транспорта. На базе постоянно работает вилочный автопогрузчик — мы загрузим ваши поддоны с цементом или блоками за 5 минут. Перед выездом обязательно позвоните нам, чтобы мы подтвердили остаток товара.</p>
                     </details>
                     <details>
                         <summary>Предусмотрены ли у вас скидки от объема заказа?</summary>
@@ -862,6 +854,7 @@
                     </div>
                     <div class="contact-list">
                         <div class="contact-row"><span>Телефон отдела продаж</span><a href="tel:+79887328161">+7 (988) 732-81-61</a></div>
+                        <div class="contact-row"><span>Электронная почта</span><a href="mailto:stroybazansk@mail.ru">stroybazansk@mail.ru</a></div>
                         <div class="contact-row"><span>Адрес склада</span><strong>Невинномысск, ул. Монтажная, д. 10</strong></div>
                         <div class="contact-row"><span>График</span><strong>Пн-Сб: 8:00-18:00, Вс: выходной</strong></div>
                         
@@ -874,7 +867,7 @@
                             </div>
                         </div>
 
-                        <!-- ИДЕАЛЬНО СИММЕТРИЧНАЯ СЕТКА СОЦСЕТЕЙ (3 ряда по 2 кнопки + MAX снизу) -->
+                        <!-- ИДЕАЛЬНО СИММЕТРИЧНАЯ СЕТКА СОЦСЕТЕЙ -->
                         <div class="contact-row">
                             <span>Мы на других площадках</span>
                             <div class="social-links">
@@ -934,8 +927,7 @@
             });
             var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); };
             s.type = "text/javascript";
-            s.async = true;
-            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//st.top100.ru/top100/top100.js";
+            s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//st.top100.ru/top100/top100.js";
             if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
         })(window, document, "_top100q");
     </script>
