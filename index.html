@@ -188,17 +188,19 @@
         .btn-primary:hover { background: var(--accent-2); border-color: var(--accent-2); }
         .btn-ghost { background: rgba(255,255,255,0.035); }
 
-        /* Первый экран */
+        /* Первый экран (Идеальное выравнивание по левому краю) */
         .hero {
-            padding: 80px 0 100px;
-        }
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
+            padding: 58px 0 76px;
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            text-align: left;
+            align-items: center;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Одна колонка на ПК для идеального левого края */
+            max-width: 820px;
+            width: 100%;
+            gap: 0;
+            align-items: center;
         }
         .hero h1 {
             margin: 18px 0 0;
@@ -207,19 +209,24 @@
             letter-spacing: -0.05em;
             font-weight: 800;
         }
+        
+        /* Исправлен левый край описания на ПК */
         .hero-lead {
-            margin: 24px auto 0;
-            max-width: 680px;
+            margin: 24px 0 0; 
+            max-width: 620px;
             color: var(--muted);
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            font-size: clamp(1.08rem, 2vw, 1.28rem);
             line-height: 1.5;
+            text-align: left;
         }
+        
+        /* Исправлен левый край кнопок на ПК */
         .hero-actions { 
             display: flex; 
             flex-wrap: wrap; 
             gap: 14px; 
             margin-top: 34px; 
-            justify-content: center; 
+            justify-content: flex-start; 
         }
         
         /* Мессенджеры на первом экране */
@@ -228,7 +235,7 @@
             gap: 12px;
             margin-top: 24px;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-start;
         }
         .quick-social-btn {
             padding: 10px 18px;
@@ -264,7 +271,7 @@
         .quality-card h3 { margin: 16px 0 0; font-size: 1.25rem; letter-spacing: -0.03em; font-weight: 800; }
         .quality-card p { margin: 12px 0 0; color: var(--muted); font-size: 0.94rem; }
 
-        /* Каталог */
+        /* Каталог (Идеальное выравнивание линий) */
         .assortment-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -460,65 +467,6 @@
         }
         .rating-widgets iframe { border-radius: 8px; overflow: hidden; background: transparent; }
 
-        /* СОБСТВЕННЫЙ ВИДЖЕТ-ДВОЙНИК АВИТО (Сделан точно под стиль 2ГИС) */
-        .avito-widget-badge {
-            width: 150px;
-            height: 50px;
-            background: #1c1c1e;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 10px;
-            text-decoration: none;
-            color: #fff;
-            font-family: Inter, sans-serif;
-            box-sizing: border-box;
-            gap: 8px;
-            vertical-align: middle;
-        }
-        .avito-widget-icon {
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .avito-widget-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 2px;
-            text-align: left;
-        }
-        .avito-widget-title {
-            font-size: 8px;
-            color: #8e8e93;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 600;
-            line-height: 1;
-        }
-        .avito-widget-rating {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            line-height: 1;
-        }
-        .avito-widget-score {
-            font-size: 14px;
-            font-weight: 800;
-            color: #fff;
-            line-height: 1;
-        }
-        .avito-widget-stars {
-            color: #ffcc00;
-            font-size: 10px;
-            letter-spacing: -1px;
-            line-height: 1;
-        }
-
         /* ИДЕАЛЬНО ВЫРОВНЕННЫЕ ПЛАШКИ СОЦСЕТЕЙ */
         .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px; max-width: 440px; }
         .social-links a {
@@ -647,7 +595,7 @@
     </header>
 
     <main id="top">
-        <!-- Первый экран (Полное левое выравнивание) -->
+        <!-- Первый экран (Герой-блок со всеми вашими оригинальными кнопками) -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="container hero-grid">
                 <div>
@@ -834,7 +782,6 @@
                     <figure class="gallery-item"><img src="photo-28.jpg" alt="Фото базы 28" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-29.jpg" alt="Фото базы 29" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-30.jpg" alt="Фото базы 30" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
-                    
                     <div class="video-placeholder">
                         <div>
                             <strong>Больше фото — в нашем сообществе</strong>
@@ -887,7 +834,7 @@
                     </details>
                     <details>
                         <summary>Как вы гарантируете качество материалов и честный вес?</summary>
-                        <p>Мы дорожим репутацией и работаем без перекупщиков. Металлопрокат (арматура, профильная труба) строго соответствует ГОСТу — у нас честная толщина стенки труб и правильная геометрия арматуры без слоистой ржавчины. Цемент поставляется напрямую с Новороссийского завода — он всегда свежий, сухой и хранится в крытом сухом боксе. Все ЖБИ изделия (кольца, ФБС) поставляются без сколов, трещин и скрытых дефектов.</p>
+                        <p>Мы дорожим репутацией и работаем без перекупщиков. Металлопрокат (арматура, профильная труба) строго соответствует ГОСТу — у нас честная толщина стенки труб и правильная геометрия арматуры без слоистой ржавчины. Цемент поставляется напрямую с Новороссийского завода — он всегда свежий, сухой и хранится в правильных условиях. Все ЖБИ изделия (кольца, ФБС) поставляются без сколов, трещин и скрытых дефектов.</p>
                     </details>
                     <details>
                         <summary>Можно ли приехать на базу и забрать материалы самовывозом?</summary>
@@ -925,29 +872,10 @@
                             <div class="rating-widgets">
                                 <iframe src="https://yandex.ru/sprav/widget/rating-badge/237893630120?type=rating&theme=dark" width="150" height="50" frameborder="0" loading="lazy" title="Рейтинг Яндекс"></iframe>
                                 <iframe src="https://widget.2gis.ru/api/widget?org_id=70000001114215364&amp;branch_id=70000001114215365&amp;size=medium&amp;theme=dark" width="150" height="50" frameborder="0" loading="lazy" title="Рейтинг 2ГИС"></iframe>
-                                
-                                <!-- ЭФФЕКТНЫЙ ФИРМЕННЫЙ ДВОЙНИК-ВИДЖЕТ АВИТО (Точно под размер 2ГИС) -->
-                                <a href="https://www.avito.ru/brands/7b5d69d7938d3eb5a9ac6751ed5a9697" target="_blank" rel="noopener" class="avito-widget-badge">
-                                    <div class="avito-widget-icon">
-                                        <svg viewBox="0 0 100 100" style="width:100%; height:100%;">
-                                            <circle cx="35" cy="40" r="14" fill="#90df00" />
-                                            <circle cx="68" cy="32" r="17" fill="#ff3333" />
-                                            <circle cx="66" cy="68" r="12" fill="#00aaef" />
-                                            <circle cx="36" cy="71" r="10" fill="#ffcc00" />
-                                        </svg>
-                                    </div>
-                                    <div class="avito-widget-info">
-                                        <span class="avito-widget-title">Оценка на Авито</span>
-                                        <div class="avito-widget-rating">
-                                            <span class="avito-widget-score">5.0</span>
-                                            <span class="avito-widget-stars">★★★★★</span>
-                                        </div>
-                                    </div>
-                                </a>
                             </div>
                         </div>
 
-                        <!-- ИДЕАЛЬНО СИММЕТРИЧНАЯ СЕТКА СОЦСЕТЕЙ -->
+                        <!-- ИДЕАЛЬНО СИММЕТРИЧНАЯ СЕТКА СОЦСЕТЕЙ (3 ряда по 2 кнопки + MAX снизу) -->
                         <div class="contact-row">
                             <span>Мы на других площадках</span>
                             <div class="social-links">
@@ -965,7 +893,7 @@
                                 </a>
                                 <a href="https://www.avito.ru/brands/7b5d69d7938d3eb5a9ac6751ed5a9697" target="_blank" rel="noopener">
                                     <img src="icon-avito.png" loading="lazy" onerror="this.style.display='none';" alt="">
-                                    <span>Авито</span>
+                                    <span>Авито <strong style="color: #ffcc00; margin-left: 4px; font-weight: 800;">5.0 ★</strong></span>
                                 </a>
                                 <a href="https://t.me/stroybazansk" target="_blank" rel="noopener">
                                     <img src="icon-telegram.png" loading="lazy" onerror="this.style.display='none';" alt="">
