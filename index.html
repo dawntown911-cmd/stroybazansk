@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Стройбаза на Монтажной | Металл, ЖБИ и цемент в Невинномысске</title>
     <meta name="description" content="Стройбаза на Монтажной в Невинномысске: металлопрокат, арматура, профильные трубы, цемент М500, ФБС, кольца ЖБИ и шлакоблок со склада. Резка, погрузка, доставка Газелью и манипулятором.">
-    <meta name="theme-color" content="#070809">
+    <meta name="theme-color" content="#090a0f">
     <meta property="og:title" content="Стройбаза на Монтажной">
     <meta property="og:description" content="Металл, ЖБИ, цемент и доставка со склада на ул. Монтажной, 10 в Невинномысске.">
     <meta property="og:type" content="website">
@@ -13,11 +13,9 @@
     <meta property="og:locale" content="ru_RU">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://yandex.ru">
-    <link rel="preconnect" href="https://widget.2gis.ru">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="icon" type="image/png" href="favicon.PNG">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">
     {
@@ -49,20 +47,24 @@
     </script>
 
     <style>
+        /* GPTRON DESIGN SYSTEM STYLES */
         :root {
-            --bg: #070809;
-            --surface: #0d0f11;
-            --surface-2: #13161a;
-            --text: #f7f7f2;
-            --muted: #b9b8ad;
-            --soft: #85857b;
-            --line: rgba(255,255,255,0.12);
-            --line-strong: rgba(255,255,255,0.2);
+            --bg: #090a0f;
+            --surface: rgba(255, 255, 255, 0.03);
+            --surface-hover: rgba(255, 255, 255, 0.06);
+            --surface-card: rgba(18, 20, 29, 0.7);
+            --text: #f3f4f6;
+            --muted: #9ca3af;
+            --soft: #6b7280;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(214, 189, 122, 0.3);
             --accent: #d6bd7a;
-            --accent-2: #f0e4be;
-            --max: 1180px;
-            --radius: 8px;
-            --shadow: 0 24px 80px rgba(0,0,0,0.34);
+            --accent-glow: rgba(214, 189, 122, 0.25);
+            --accent-cyan: #38bdf8;
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 10px;
+            --max-w: 1200px;
         }
 
         * { box-sizing: border-box; }
@@ -71,512 +73,398 @@
             margin: 0;
             background: var(--bg);
             color: var(--text);
-            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            line-height: 1.55;
+            font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            text-rendering: optimizeLegibility;
             overflow-x: hidden;
-        }
-        img { max-width: 100%; display: block; }
-        a { color: inherit; }
-        .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
-        
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--accent-2);
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-        .eyebrow::before {
-            content: "";
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px rgba(214,189,122,0.12);
-        }
-        .section { padding: 92px 0; border-top: 1px solid var(--line); }
-        .section-head { max-width: 760px; margin-bottom: 38px; }
-        .section-title {
-            margin: 12px 0 0;
-            font-size: clamp(2rem, 4vw, 3.4rem);
-            line-height: 1.02;
-            letter-spacing: -0.045em;
-        }
-        .section-copy {
-            margin: 18px 0 0;
-            color: var(--muted);
-            font-size: clamp(1.02rem, 1.6vw, 1.18rem);
-            max-width: 700px;
+            position: relative;
         }
 
-        /* Шапка сайта */
+        /* Ambient Glow Background Blobs like GPTRON */
+        .glow-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .glow-1 {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(214, 189, 122, 0.12) 0%, rgba(9, 10, 15, 0) 70%);
+            filter: blur(80px);
+        }
+        .glow-2 {
+            position: absolute;
+            top: 40%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(9, 10, 15, 0) 70%);
+            filter: blur(100px);
+        }
+
+        img { max-width: 100%; display: block; }
+        a { color: inherit; text-decoration: none; }
+        .container { width: min(var(--max-w), calc(100% - 48px)); margin: 0 auto; }
+
+        /* GPTRON Pill Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 9999px;
+            background: rgba(214, 189, 122, 0.08);
+            border: 1px solid rgba(214, 189, 122, 0.2);
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+        }
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 10px var(--accent);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.8); }
+        }
+
+        /* Typography & Titles */
+        .section { padding: 100px 0; border-top: 1px solid var(--border); }
+        .section-head { text-align: center; max-width: 700px; margin: 0 auto 50px; }
+        .section-title {
+            margin: 16px 0 0;
+            font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            background: linear-gradient(180deg, #ffffff 0%, #9ca3af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-copy { margin-top: 16px; color: var(--muted); font-size: 1.1rem; }
+
+        /* GPTRON Sticky Header */
         .site-header {
             position: sticky;
             top: 0;
-            z-index: 30;
-            background: rgba(7,8,9,0.88);
-            backdrop-filter: blur(18px);
-            border-bottom: 1px solid var(--line);
+            z-index: 50;
+            background: rgba(9, 10, 15, 0.75);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
         }
         .header-inner {
-            height: 76px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 24px;
+            gap: 20px;
         }
-        .brand {
+        .brand { display: flex; align-items: center; gap: 12px; }
+        .brand-logo-fallback {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(214,189,122,0.2), rgba(255,255,255,0.05));
+            border: 1px solid var(--border);
             display: flex;
             align-items: center;
-            gap: 14px;
-            text-decoration: none;
-            min-width: 220px;
-        }
-        .brand img { width: 44px; height: 44px; object-fit: contain; }
-        .brand-fallback {
-            width: 44px;
-            height: 44px;
-            border: 1px solid var(--line-strong);
-            border-radius: 8px;
-            display: none;
-            align-items: center;
             justify-content: center;
-            font-weight: 800;
-            color: var(--accent);
         }
-        .brand-name { display: grid; gap: 2px; }
-        .brand-name strong { font-size: 1.15rem; line-height: 1.1; letter-spacing: -0.02em; }
-        .brand-name span { color: var(--soft); font-size: 0.8rem; }
+        .brand-name strong { display: block; font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; }
+        .brand-name span { color: var(--soft); font-size: 0.78rem; }
         
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 22px;
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-        .nav a { text-decoration: none; transition: color .18s; }
-        .nav a:hover { color: var(--text); }
-        .header-actions { display: flex; align-items: center; gap: 14px; }
+        .nav { display: flex; gap: 32px; color: var(--muted); font-size: 0.92rem; font-weight: 600; }
+        .nav a { transition: color 0.2s; }
+        .nav a:hover { color: #fff; }
+
+        .header-actions { display: flex; align-items: center; gap: 20px; }
         .phone-block { text-align: right; }
-        .phone-block a { display: block; font-weight: 800; text-decoration: none; letter-spacing: -0.02em; }
-        .phone-block span { display: block; color: var(--soft); font-size: 0.76rem; margin-top: 1px; }
-        
+        .phone-block a { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; }
+        .phone-block span { color: var(--soft); font-size: 0.75rem; }
+
+        /* GPTRON Buttons */
         .btn {
-            min-height: 46px;
-            padding: 0 18px;
-            border-radius: var(--radius);
-            border: 1px solid var(--line-strong);
+            height: 48px;
+            padding: 0 24px;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.95rem;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 9px;
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 0.94rem;
-            transition: transform .18s, background .18s, border-color .18s, color .18s;
-        }
-        .btn:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.34); }
-        .btn-primary { background: var(--text); color: #08090b; border-color: var(--text); }
-        .btn-primary:hover { background: var(--accent-2); border-color: var(--accent-2); }
-        .btn-ghost { background: rgba(255,255,255,0.035); }
-
-        /* Первый экран (Идеальное выравнивание по левому краю) */
-        .hero {
-            padding: 58px 0 76px;
-            display: flex;
-            align-items: center;
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr; /* Одна колонка на ПК для идеального левого края */
-            max-width: 820px;
-            width: 100%;
-            gap: 0;
-            align-items: center;
-        }
-        .hero h1 {
-            margin: 18px 0 0;
-            font-size: clamp(3rem, 6vw, 4.8rem);
-            line-height: 1.05;
-            letter-spacing: -0.05em;
-            font-weight: 800;
-        }
-        
-        /* Исправлен левый край описания на ПК */
-        .hero-lead {
-            margin: 24px 0 0; 
-            max-width: 620px;
-            color: var(--muted);
-            font-size: clamp(1.08rem, 2vw, 1.28rem);
-            line-height: 1.5;
-            text-align: left;
-        }
-        
-        /* Исправлен левый край кнопок на ПК */
-        .hero-actions { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 14px; 
-            margin-top: 34px; 
-            justify-content: flex-start; 
-        }
-        
-        /* Мессенджеры на первом экране */
-        .quick-socials {
-            display: flex;
-            gap: 12px;
-            margin-top: 24px;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-        }
-        .quick-social-btn {
-            padding: 10px 18px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            color: #fff;
-            display: inline-flex;
-            align-items: center;
             gap: 10px;
-            transition: transform 0.2s;
-            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
         }
-        .quick-social-btn:hover { transform: translateY(-1px); opacity: 0.95; }
-        .quick-social-btn img { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
-        .qs-wa { background-color: #128C7E; }
-        .qs-tg { background-color: #0088cc; }
-
-        /* Сетка преимуществ */
-        .quality-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
-        .quality-card {
-            padding: 26px;
-            border: 1px solid var(--line);
-            border-radius: 10px;
+        .btn-primary {
+            background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%);
+            color: #090a0f;
+            box-shadow: 0 0 25px rgba(214, 189, 122, 0.25);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 35px rgba(214, 189, 122, 0.4);
+        }
+        .btn-ghost {
             background: var(--surface);
-            min-height: 220px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
+            border: 1px solid var(--border);
+            color: var(--text);
+            backdrop-filter: blur(10px);
         }
-        .quality-card span { color: var(--accent-2); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
-        .quality-card h3 { margin: 16px 0 0; font-size: 1.25rem; letter-spacing: -0.03em; font-weight: 800; }
-        .quality-card p { margin: 12px 0 0; color: var(--muted); font-size: 0.94rem; }
+        .btn-ghost:hover {
+            background: var(--surface-hover);
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
 
-        /* Каталог (Идеальное выравнивание линий) */
-        .assortment-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-        .product-card {
-            min-height: 460px;
-            border: 1px solid var(--line);
-            border-radius: 10px;
-            overflow: hidden;
-            background: var(--surface);
-            display: flex;
-            flex-direction: column;
-            transition: border-color .18s, transform .18s;
-        }
-        .product-card:hover { border-color: var(--line-strong); transform: translateY(-2px); }
-        
-        .product-img {
+        /* Hero Section (Centered High-Tech SaaS Layout) */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
             position: relative;
-            background: #111;
-            border-bottom: 1px solid var(--line);
-            height: 220px;
+        }
+        .hero-content { max-width: 860px; margin: 0 auto; }
+        .hero h1 {
+            margin: 24px 0 0;
+            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-lead {
+            margin: 24px auto 0;
+            max-width: 680px;
+            color: var(--muted);
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+        }
+        .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 36px; }
+
+        /* Quality Features Grid */
+        .quality-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .quality-card {
+            padding: 32px 28px;
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(16px);
+            transition: all 0.3s ease;
+        }
+        .quality-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .quality-card span { color: var(--accent); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+        .quality-card h3 { margin: 16px 0 0; font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; }
+        .quality-card p { margin: 12px 0 0; color: var(--muted); font-size: 0.95rem; }
+
+        /* GPTRON Product Catalog Grid */
+        .assortment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .product-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(16px);
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+        .product-img {
+            height: 200px;
+            position: relative;
+            background: #11131a;
+            border-bottom: 1px solid var(--border);
         }
         .product-img img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .product-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
-        
-        .product-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 18px;
-            min-height: 56px;
-        }
-        .product-title { margin: 0; font-size: 1.15rem; line-height: 1.25; letter-spacing: -0.025em; font-weight: 700; }
+        .product-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+        .product-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+        .product-title { margin: 0; font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; }
         .price {
-            flex: 0 0 auto;
-            flex-shrink: 0; 
-            padding: 6px 10px;
-            border-radius: 6px;
-            background: rgba(214,189,122,0.12);
-            color: var(--accent-2);
+            padding: 6px 14px;
+            border-radius: 9999px;
+            background: rgba(214, 189, 122, 0.12);
+            border: 1px solid rgba(214, 189, 122, 0.25);
+            color: var(--accent);
             font-weight: 800;
-            font-size: 0.94rem;
+            font-size: 0.9rem;
             white-space: nowrap;
         }
-        .product-body p { margin: 16px 0 0; color: var(--muted); font-size: 0.92rem; }
-        .product-meta {
-            margin-top: 20px;
-            padding-top: 16px;
-            border-top: 1px solid var(--line);
-            color: var(--soft);
-            font-size: 0.86rem;
-        }
-        .product-actions { margin-top: auto; padding-top: 18px; display: grid; grid-template-columns: 1fr; gap: 10px; }
-        .product-actions .btn { min-height: 42px; font-size: 0.9rem; }
+        .product-body p { margin: 14px 0 0; color: var(--muted); font-size: 0.92rem; }
+        .product-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); color: var(--soft); font-size: 0.85rem; }
+        .product-actions { margin-top: auto; padding-top: 20px; }
+        .product-actions .btn { width: 100%; border-radius: var(--radius-md); height: 44px; }
 
-        /* КАРАУСЕЛЬ ФОТОГРАФИЙ (С красивым скроллбаром на ПК) */
+        /* Horizontal Carousel Gallery */
         .gallery-grid {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            gap: 16px;
-            padding-bottom: 16px;
+            gap: 20px;
+            padding-bottom: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) transparent;
         }
-        
-        /* Скроллбар для ПК (Мышка/Тачпад) */
-        @media (min-width: 769px) {
-            .gallery-grid {
-                -ms-overflow-style: auto;
-                scrollbar-width: thin;
-                scrollbar-color: rgba(255,255,255,0.2) transparent;
-            }
-            .gallery-grid::-webkit-scrollbar {
-                display: block;
-                height: 6px;
-            }
-            .gallery-grid::-webkit-scrollbar-track {
-                background: transparent;
-            }
-            .gallery-grid::-webkit-scrollbar-thumb {
-                background: rgba(255, 255, 255, 0.15);
-                border-radius: 10px;
-            }
-            .gallery-grid::-webkit-scrollbar-thumb:hover {
-                background: rgba(255, 255, 255, 0.35);
-            }
-        }
-        
         .gallery-item {
-            flex: 0 0 360px;
+            flex: 0 0 340px;
+            height: 240px;
             scroll-snap-align: start;
-            border: 1px solid var(--line);
-            border-radius: 10px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
             overflow: hidden;
-            background: var(--surface);
-            min-height: 260px;
-            height: 260px;
+            background: var(--surface-card);
             margin: 0;
-            flex-shrink: 0;
         }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-        
-        /* Исправлена карточка конца карусели */
         .video-placeholder {
             flex: 0 0 300px;
+            height: 240px;
             scroll-snap-align: start;
-            min-height: 260px;
-            height: 260px;
-            padding: 22px; 
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            background: var(--surface-card);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background: var(--surface);
-            border: 1px solid var(--line);
-            border-radius: 10px;
-            flex-shrink: 0;
-        }
-        .video-placeholder strong { 
-            font-size: 1.2rem; 
-            letter-spacing: -0.03em; 
-            display: block;
-        }
-        .video-placeholder p { 
-            color: var(--muted); 
-            margin: 10px 0 14px; 
-            font-size: 0.9rem;
-            line-height: 1.45;
         }
 
-        /* Строителям B2B */
-        .company-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        /* B2B Grid */
+        .company-block { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .company-card {
-            padding: 26px;
-            border: 1px solid var(--line);
-            border-radius: 10px;
-            background: var(--surface);
+            padding: 36px;
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(16px);
         }
-        .company-card h3 { margin-top: 0; font-size: 1.25rem; }
-        .company-card p { margin: 12px 0 0; color: var(--muted); font-size: 0.94rem; }
-        .company-card .btn { margin-top: 22px; width: 100%; }
+        .company-card h3 { margin: 0; font-size: 1.4rem; font-weight: 700; }
+        .company-card p { margin: 12px 0 0; color: var(--muted); }
+        .company-card .btn { margin-top: 24px; width: 100%; border-radius: var(--radius-md); }
 
-        /* Вопросы FAQ */
-        .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        /* FAQ Accordion in GPTRON Style */
+        .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         details {
-            border: 1px solid var(--line);
-            border-radius: 10px;
-            background: var(--surface);
-            padding: 20px 22px;
-            transition: border-color 0.2s, background 0.2s;
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            backdrop-filter: blur(16px);
+            transition: all 0.2s ease;
         }
-        details:hover {
-            border-color: var(--accent);
-        }
-        details[open] {
-            border-color: var(--accent);
-            background: var(--surface-2);
-        }
-        summary { cursor: pointer; font-weight: 800; letter-spacing: -0.02em; outline: none; user-select: none; }
-        
-        details p { 
-            margin: 14px 0 0; 
-            color: var(--muted); 
-            font-size: 0.95rem;
-            line-height: 1.6;
-            border-left: 2px solid var(--accent);
-            padding-left: 14px;
-        }
+        details[open] { border-color: var(--border-glow); background: rgba(22, 26, 38, 0.8); }
+        summary { cursor: pointer; font-weight: 700; outline: none; user-select: none; font-size: 1.05rem; }
+        details p { margin: 16px 0 0; color: var(--muted); font-size: 0.95rem; line-height: 1.6; border-left: 2px solid var(--accent); padding-left: 16px; }
 
-        /* Контакты */
-        .contacts-grid {
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 28px;
-        }
-        .contact-list { display: grid; gap: 14px; }
+        /* Contacts & Social Networks */
+        .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .contact-list { display: grid; gap: 16px; }
         .contact-row {
-            border: 1px solid var(--line);
-            border-radius: 10px;
-            background: var(--surface);
-            padding: 20px;
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            backdrop-filter: blur(16px);
         }
-        .contact-row span { color: var(--soft); display: block; font-size: 0.84rem; margin-bottom: 6px; }
-        .contact-row strong, .contact-row a { font-size: 1.08rem; font-weight: 800; text-decoration: none; }
+        .contact-row span { color: var(--soft); display: block; font-size: 0.85rem; margin-bottom: 4px; }
+        .contact-row strong, .contact-row a { font-size: 1.1rem; font-weight: 700; }
         
-        /* Виджеты отзывов */
-        .rating-widgets {
-            display: flex;
-            gap: 16px;
-            margin-top: 12px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .rating-widgets iframe { border-radius: 8px; overflow: hidden; background: transparent; }
-
-        /* ИДЕАЛЬНО ВЫРОВНЕННЫЕ ПЛАШКИ СОЦСЕТЕЙ */
-        .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px; max-width: 440px; }
+        .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 14px; }
         .social-links a {
-            min-height: 50px;
-            height: 50px;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            display: flex;
-            align-items: center; /* Центрирование по вертикали */
-            justify-content: flex-start;
+            height: 48px;
             padding: 0 16px;
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 700;
-            background: rgba(255,255,255,0.025);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
             gap: 12px;
-            white-space: nowrap;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
         }
-        .social-links a:hover { border-color: rgba(255,255,255,0.3); }
-        .social-links a img { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; display: block; }
-        
-        /* Исправлено вертикальное выравнивание шрифта Inter на пиксельном уровне (Смещение на 1.5px вниз для идеального центра) */
-        .social-links a span { 
-            display: block; 
-            line-height: 1; 
-            transform: translateY(1.5px); 
-        }
+        .social-links a:hover { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.06); }
+        .social-links a img { width: 20px; height: 20px; object-fit: contain; }
         .social-btn-max { grid-column: span 2; }
 
         .map-wrap {
-            min-height: 520px;
-            border: 1px solid var(--line);
-            border-radius: 10px;
+            height: 100%;
+            min-height: 480px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
             overflow: hidden;
-            background: var(--surface);
+            background: var(--surface-card);
         }
-        .map-wrap iframe { width: 100%; height: 100%; min-height: 520px; border: 0; }
-        .map-fallback { display: none; margin-top: 12px; width: 100%; }
+        .map-wrap iframe { width: 100%; height: 100%; min-height: 480px; border: 0; }
+        .map-fallback { display: none; margin-top: 16px; width: 100%; }
 
-        /* Подвал */
-        .site-footer {
-            border-top: 1px solid var(--line);
-            padding: 34px 0;
-            color: var(--soft);
-            font-size: 0.86rem;
-        }
-        .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+        /* Footer */
+        .site-footer { padding: 40px 0; border-top: 1px solid var(--border); color: var(--soft); font-size: 0.9rem; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; }
 
-        /* Адаптивность */
-        @media (max-width: 1080px) {
+        /* Mobile Adaptability */
+        @media (max-width: 1024px) {
             .nav { display: none; }
-            .hero-grid, .contacts-grid, .company-block { grid-template-columns: 1fr; }
-            .hero { min-height: auto; }
             .assortment-grid { grid-template-columns: repeat(2, 1fr); }
-            .product-card { grid-column: span 6; }
+            .contacts-grid, .company-block, .faq { grid-template-columns: 1fr; }
         }
-
-        @media (max-width: 760px) {
-            .container { width: min(100% - 32px, var(--max)); }
-            
-            /* Фикс шапки на мобильном */
-            .site-header { position: relative; }
-            .header-inner { height: auto; padding: 14px 0; display: flex; flex-direction: row; justify-content: space-between; }
-            .brand { min-width: 0; gap: 10px; }
-            .brand-name strong { font-size: 1rem; }
-            .brand-name span, .phone-block { display: none; }
-            .header-actions .btn { min-height: 40px; padding: 0 14px; font-size: 0.8rem; }
-            
-            .hero { padding: 40px 0; }
-            .hero h1 { font-size: clamp(2.35rem, 12vw, 3.5rem); letter-spacing: -0.055em; }
-            .hero-lead { font-size: 1.02rem; line-height: 1.45; margin-top: 18px; }
-            
-            .quality-grid { grid-template-columns: 1fr; gap: 12px; }
-            
-            .assortment-grid { grid-template-columns: 1fr; gap: 14px; }
-            .product-card { grid-column: span 12; }
-            .section { padding: 64px 0; }
-            
-            /* Скроллбар скрыт на мобильных устройствах */
-            .gallery-grid {
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-            }
-            .gallery-grid::-webkit-scrollbar { display: none; }
-            
-            .gallery-item { flex: 0 0 85%; }
-            .video-placeholder { flex: 0 0 85%; }
-            
-            .map-fallback { display: inline-flex; }
-            .footer-inner { display: grid; text-align: center; gap: 10px; }
-            .faq { grid-template-columns: 1fr; }
+        @media (max-width: 640px) {
+            .container { width: min(100% - 32px, var(--max-w)); }
+            .hero h1 { font-size: 2.4rem; }
+            .assortment-grid { grid-template-columns: 1fr; }
             .social-links { grid-template-columns: 1fr; }
             .social-btn-max { grid-column: span 1; }
+            .header-actions .phone-block { display: none; }
+            .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
+            .map-fallback { display: flex; }
         }
     </style>
 </head>
 <body>
+
+    <!-- Ambient Glow Effects -->
+    <div class="glow-bg">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+    </div>
+
+    <!-- Header -->
     <header class="site-header">
         <div class="container header-inner">
             <a class="brand" href="#top" aria-label="Стройбаза на Монтажной">
-                <!-- Встроенная векторная иконка-куб на случай, если logo.png/logo.PNG еще нет -->
-                <div class="brand-fallback" id="logo-svg-header">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:100%; height:100%; color:#fff;">
-                        <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(255,255,255,0.04)"/>
-                        <path d="M4 7V17L12 22V12Z" fill="rgba(255,255,255,0.01)"/>
-                        <path d="M12 12V22L20 17V7Z" fill="rgba(255,255,255,0.06)"/>
+                <div class="brand-logo-fallback" id="logo-svg-header">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:24px; height:24px; color:var(--accent);">
+                        <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(214,189,122,0.2)"/>
+                        <path d="M4 7V17L12 22V12Z"/>
+                        <path d="M12 12V22L20 17V7Z"/>
                     </svg>
                 </div>
-                <!-- Фикс логотипа с проверкой регистра -->
-                <img src="logo.png" id="logo-img-header" style="display:none;" onerror="if(this.src.indexOf('logo.PNG') === -1) { this.src='logo.PNG'; } else { this.style.display='none'; document.getElementById('logo-svg-header').style.display='flex'; }" onload="document.getElementById('logo-svg-header').style.display='none'; this.style.display='block';" alt="Стройбаза на Монтажной" width="44" height="44">
+                <img src="logo.png" id="logo-img-header" style="display:none;" onerror="if(this.src.indexOf('logo.PNG') === -1) { this.src='logo.PNG'; } else { this.style.display='none'; document.getElementById('logo-svg-header').style.display='flex'; }" onload="document.getElementById('logo-svg-header').style.display='none'; this.style.display='block';" alt="Стройбаза на Монтажной" width="42" height="42">
                 <span class="brand-name"><strong>Стройбаза на Монтажной</strong><span>Невинномысск, ул. Монтажная, 10</span></span>
             </a>
             <nav class="nav" aria-label="Основная навигация">
@@ -595,23 +483,21 @@
     </header>
 
     <main id="top">
-        <!-- Первый экран (Полное выравнивание по левому краю) -->
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="container hero-grid">
-                <div>
-                    <div class="eyebrow">Склад на Монтажной, 10</div>
-                    <h1 id="hero-title">Арматура, трубы, цемент и ЖБИ со склада</h1>
-                    <p class="hero-lead">Металл, ФБС, кольца, шлакоблок и цемент М500 со склада в Невинномысске. Своя погрузка. Резка арматуры на базе. Доставка Газелью и манипулятором в день заказа.</p>
-                    <div class="hero-actions">
-                        <a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие и цену</a>
-                        <a class="btn btn-ghost" href="https://wa.me/79887328161" target="_blank" rel="noopener">Написать в WhatsApp</a>
-                    </div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="badge"><span class="badge-dot"></span> Склад на Монтажной, 10</div>
+                <h1>Арматура, трубы, цемент и ЖБИ со склада</h1>
+                <p class="hero-lead">Металл, ФБС, кольца, шлакоблок и цемент М500 в Невинномысске. Своя погрузка. Резка арматуры на базе. Доставка Газелью и манипулятором в день заказа.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие и цену</a>
+                    <a class="btn btn-ghost" href="https://wa.me/79887328161" target="_blank" rel="noopener">Написать в WhatsApp</a>
                 </div>
             </div>
         </section>
 
-        <!-- Преимущества в строгом стиле Codex (Без смайликов) -->
-        <section class="section" aria-label="Преимущества базы">
+        <!-- Features Grid -->
+        <section class="section">
             <div class="container">
                 <div class="quality-grid">
                     <article class="quality-card">
@@ -638,34 +524,26 @@
             </div>
         </section>
 
-        <!-- Каталог товаров (Чистые фото, идеально ровная сетка и выровненные цены) -->
-        <section class="section" id="catalog" aria-labelledby="catalog-title">
+        <!-- Product Catalog -->
+        <section class="section" id="catalog">
             <div class="container">
                 <div class="section-head">
-                    <div class="eyebrow">Каталог</div>
-                    <h2 class="section-title" id="catalog-title">Материалы и цены</h2>
+                    <div class="badge"><span class="badge-dot"></span> Каталог</div>
+                    <h2 class="section-title">Материалы и цены</h2>
                     <p class="section-copy">Цены ориентировочные. Звоните — скажем остаток и посчитаем доставку.</p>
                 </div>
                 <div class="assortment-grid">
-                    
-                    <!-- Арматура -->
                     <article class="product-card">
-                        <div class="product-img">
-                            <img src="armatura.jpg" alt="Арматура А500С на складе" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        </div>
+                        <div class="product-img"><img src="armatura.jpg" alt="Арматура А500С" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Арматура 12 мм рифленая А500С (ГОСТ)</h3><span class="price">46 ₽/м</span></div>
-                            <p>Честный диаметр и строгая геометрия, без следов глубокой ржавчины. Для фундаментов, армопоясов и перекрытий. Всегда в наличии 6, 8, 10, 14 и 16 мм.</p>
+                            <div class="product-top"><h3 class="product-title">Арматура 12 мм А500С (ГОСТ)</h3><span class="price">46 ₽/м</span></div>
+                            <p>Честный диаметр и геометрия. Для фундаментов и перекрытий. В наличии 6, 8, 10, 14 и 16 мм.</p>
                             <div class="product-meta">Длина хлыста 11.7 м. Подготовка к перевозке.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
-
-                    <!-- Профильная труба -->
                     <article class="product-card">
-                        <div class="product-img">
-                            <img src="truba.jpg" alt="Профильная труба" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        </div>
+                        <div class="product-img"><img src="truba.jpg" alt="Профильная труба" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Профильная труба</h3><span class="price">от 112 ₽/м</span></div>
                             <p>Для ворот, навесов, каркасов и конструкций.</p>
@@ -673,12 +551,8 @@
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
-
-                    <!-- Цемент -->
                     <article class="product-card">
-                        <div class="product-img">
-                            <img src="cement.jpg" alt="Цемент М500" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        </div>
+                        <div class="product-img"><img src="cement.jpg" alt="Цемент М500" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Цемент М500, 50 кг</h3><span class="price">560 ₽</span></div>
                             <p>Для фундаментов, стяжек, кладки и бетона.</p>
@@ -686,25 +560,17 @@
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
-
-                    <!-- Шлакоблок -->
                     <article class="product-card">
-                        <div class="product-img">
-                            <img src="shlakoblok.jpg" alt="Шлакоблок стеновой" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        </div>
+                        <div class="product-img"><img src="shlakoblok.jpg" alt="Шлакоблок" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Шлакоблок 20×20×40</h3><span class="price">48 ₽/шт</span></div>
                             <p>Стеновой блок для построек, заборов и перегородок.</p>
-                            <div class="product-meta">Поддон 60 шт. Минимальный заказ — 300 шт.</div>
+                            <div class="product-meta">Поддон 60 шт. Мин. заказ — 300 шт.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
-
-                    <!-- Кольца ЖБИ -->
                     <article class="product-card">
-                        <div class="product-img">
-                            <img src="kolca.jpg" alt="Кольца ЖБИ" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        </div>
+                        <div class="product-img"><img src="kolca.jpg" alt="Кольца ЖБИ" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Кольца ЖБИ</h3><span class="price">от 3 100 ₽</span></div>
                             <p>Для септиков и колодцев. Привезем манипулятором.</p>
@@ -712,12 +578,8 @@
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
-
-                    <!-- ФБС -->
                     <article class="product-card">
-                        <div class="product-img">
-                            <img src="fbs.jpg" alt="Фундаментные блоки ФБС" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        </div>
+                        <div class="product-img"><img src="fbs.jpg" alt="ФБС" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">ФБС 24.3.6 и 24.4.6</h3><span class="price">от 2 500 ₽</span></div>
                             <p>Для фундаментов, подвалов и подпорных стен.</p>
@@ -725,16 +587,12 @@
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие</a></div>
                         </div>
                     </article>
-
-                    <!-- Манипулятор -->
                     <article class="product-card">
-                        <div class="product-img">
-                            <img src="manipulator.jpg" alt="Манипулятор для доставки строительных материалов" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        </div>
+                        <div class="product-img"><img src="manipulator.jpg" alt="Манипулятор" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Услуги манипулятора</h3><span class="price">3 000 ₽/ч</span></div>
                             <p>Доставка ФБС, колец, металла, кирпича и паллет. Борт 15 т. Стрела 5 т.</p>
-                            <div class="product-meta">Минимум по городу — 5000 ₽. Опытный водитель.</div>
+                            <div class="product-meta">Минимум по городу — 5000 ₽.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать технику</a></div>
                         </div>
                     </article>
@@ -742,16 +600,15 @@
             </div>
         </section>
 
-        <!-- Фотогалерея (Теперь это бесконечная карусель на 30 фото) -->
-        <section class="section" id="gallery" aria-labelledby="gallery-title">
+        <!-- Carousel Gallery -->
+        <section class="section" id="gallery">
             <div class="container">
                 <div class="section-head">
-                    <div class="eyebrow">Фото</div>
-                    <h2 class="section-title" id="gallery-title">База, товар, техника</h2>
+                    <div class="badge"><span class="badge-dot"></span> Фотогалерея</div>
+                    <h2 class="section-title">База, товар, техника</h2>
                     <p class="section-copy">Прокрутите вбок, чтобы посмотреть наш склад вживую. Монтажная, 10.</p>
                 </div>
                 <div class="gallery-grid">
-                    <!-- Заглушки для ваших будущих 30 фотографий -->
                     <figure class="gallery-item"><img src="photo-1.jpg" alt="Фото базы 1" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-2.jpg" alt="Фото базы 2" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <figure class="gallery-item"><img src="photo-3.jpg" alt="Фото базы 3" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
@@ -784,27 +641,27 @@
                     <figure class="gallery-item"><img src="photo-30.jpg" alt="Фото базы 30" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
                     <div class="video-placeholder">
                         <div>
-                            <strong>Больше фото — в нашем сообществе</strong>
-                            <p>Все фотографии нашего склада, товаров и рабочих моментов смотрите в сообществе ВКонтакте.</p>
+                            <strong style="font-size: 1.1rem;">Больше фото — в VK</strong>
+                            <p style="color:var(--muted); font-size: 0.9rem; margin-top:8px;">Смотрите фотографии нашего склада и рабочих моментов в ВКонтакте.</p>
                         </div>
-                        <a class="btn btn-ghost" href="https://vk.com/stroybazansk" target="_blank" rel="noopener">ВКонтакте</a>
+                        <a class="btn btn-ghost" href="https://vk.com/stroybazansk" target="_blank" rel="noopener">Открыть VK</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Строителям B2B -->
-        <section class="section" id="business" aria-labelledby="business-title">
+        <!-- B2B Section -->
+        <section class="section" id="business">
             <div class="container">
                 <div class="section-head">
-                    <div class="eyebrow">Для строителей</div>
-                    <h2 class="section-title" id="business-title">Прорабам и бригадам</h2>
+                    <div class="badge"><span class="badge-dot"></span> B2B Строителям</div>
+                    <h2 class="section-title">Прорабам и бригадам</h2>
                     <p class="section-copy">Регулярные закупки. Доставка на объекты. Наличный и безналичный расчет.</p>
                 </div>
                 <div class="company-block">
                     <article class="company-card">
                         <h3>Бригадам</h3>
-                        <p>Быстро считаем металл, цемент, ЖБИ и доставку.</p>
+                        <p>Быстро считаем металл, цемент, ЖБИ и доставку под объект.</p>
                         <a class="btn btn-primary" href="tel:+79887328161">Позвонить</a>
                     </article>
                     <article class="company-card">
@@ -816,103 +673,74 @@
             </div>
         </section>
 
-        <!-- Расширенные Вопросы FAQ (Подробные ответы на основе ваших условий) -->
-        <section class="section" aria-labelledby="faq-title">
+        <!-- FAQ -->
+        <section class="section">
             <div class="container">
                 <div class="section-head">
-                    <div class="eyebrow">Вопросы</div>
-                    <h2 class="section-title" id="faq-title">Подробные условия работы</h2>
+                    <div class="badge"><span class="badge-dot"></span> FAQ</div>
+                    <h2 class="section-title">Условия работы</h2>
                 </div>
                 <div class="faq">
                     <details>
                         <summary>Какая у вас география и условия доставки?</summary>
-                        <p>Мы доставляем строительные материалы по Невинномысску, всему Ставропольскому краю и соседним республикам СКФО и ЮФО. По городу возим быстрыми «Газелями» (от 1000 ₽) или тяжелыми манипуляторами. В соседние районы и СНТ логистика рассчитывается индивидуально — наберите нас, мы подберем оптимальный транспорт под ваш объем за 2 минуты.</p>
+                        <p>Доставляем по Невинномысску, Ставропольскому краю и СКФО. По городу возим «Газелями» (от 1000 ₽) или манипуляторами. Логистика в СНТ и районы рассчитывается индивидуально.</p>
                     </details>
                     <details>
-                        <summary>Как у вас принимается оплата? Работаете ли вы по безналу?</summary>
-                        <p>Мы работаем честно и прозрачно: без предоплат, скрытых комиссий и бюрократии. Оплата принимается по факту получения. Способы оплаты: наличными на базе при загрузке или на вашем объекте при выгрузке; быстрым переводом на карту по номеру телефона (Сбербанк, Т-Банк и другие); безналичный расчет для бизнеса (выставляем счета без задержек, перевод с ИП на ИП для строительных бригад и юрлиц).</p>
+                        <summary>Как у вас принимается оплата? Работаете по безналу?</summary>
+                        <p>Оплата по факту получения. Наличными на базе/объекте, переводом на карту или безналичным расчетом без НДС для юрлиц и ИП.</p>
                     </details>
                     <details>
-                        <summary>Как вы гарантируете качество материалов и честный вес?</summary>
-                        <p>Мы дорожим репутацией и работаем без перекупщиков. Металлопрокат строго соответствует ГОСТу — у нас «честная» толщина стенки труб и правильная геометрия арматуры без слоистой ржавчины. Цемент поставляется напрямую с Новороссийского завода — он всегда свежий, сухой и хранится в крытом сухом боксе. Все ЖБИ (блоки ФБС, кольца) армированные и прочные, без трещин и сколов.</p>
+                        <summary>Как гарантируете качество материалов и честный вес?</summary>
+                        <p>Металлопрокат строго по ГОСТу — честная толщина стенок и геометрия. Цемент свежий прямо с Новороссийского завода, хранится в сухом боксе.</p>
                     </details>
                     <details>
                         <summary>Можно ли приехать на базу и забрать материалы самовывозом?</summary>
-                        <p>Да, конечно. Наш склад находится по адресу: г. Невинномысск, ул. Монтажная, д. 10. Широкий заезд спроектирован под любой грузовой и легковой транспорт. На территории постоянно работает вилочный автопогрузчик — мы загрузим ваши поддоны с цементом или блоками за 5 минут. Перед выездом обязательно позвоните нам, чтобы мы подтвердили остаток товара.</p>
+                        <p>Да. Наш склад: Невинномысск, ул. Монтажная, 10. Заезд под любой грузовой транспорт, есть вилочный погрузчик.</p>
                     </details>
                     <details>
-                        <summary>Предусмотрены ли у вас скидки от объема заказа?</summary>
-                        <p>Наша база работает как в розницу, так и оптом. Мы комплектуем строительные объекты любого масштаба — от фундамента под частный дом до крупных коммерческих строек. Если вы заказываете большой объем (на дом, забор, крупную партию ЖБИ) или являетесь постоянным прорабом/бригадиром — мы сформируем для вас индивидуальные выгодные цены.</p>
+                        <summary>Предусмотрены ли скидки от объема заказа?</summary>
+                        <p>Работаем в розницу и оптом. Для крупных объектов и постоянных строительных бригад формируем специальные цены.</p>
                     </details>
                     <details>
                         <summary>Режете ли вы металлопрокат и арматуру под размеры?</summary>
-                        <p>Да, мы режем арматуру прямо на базе. Например, стандартные заводские хлысты длиной 11.7 метров мы режем пополам (по 5.85 м). Благодаря этому вам не нужно переплачивать за спецтранспорт (длинномер) — весь металл легко поместится в обычную Газель, что существенно сэкономит ваши деньги на доставке.</p>
+                        <p>Да, режем арматуру 11.7 м пополам (по 5.85 м) прямо на базе. Металл легко помещается в обычную Газель без заказа длинномера.</p>
                     </details>
                 </div>
             </div>
         </section>
 
-        <!-- Контакты, Карты и оригинальные значки -->
-        <section class="section" id="contacts" aria-labelledby="contacts-title">
+        <!-- Contacts -->
+        <section class="section" id="contacts">
             <div class="container contacts-grid">
                 <div>
-                    <div class="section-head">
-                        <div class="eyebrow">Контакты</div>
-                        <h2 class="section-title" id="contacts-title">Позвоните перед приездом</h2>
+                    <div class="section-head" style="text-align: left; margin-bottom: 24px;">
+                        <div class="badge"><span class="badge-dot"></span> Контакты</div>
+                        <h2 class="section-title">Ждем вас на базе</h2>
                     </div>
                     <div class="contact-list">
                         <div class="contact-row"><span>Телефон отдела продаж</span><a href="tel:+79887328161">+7 (988) 732-81-61</a></div>
                         <div class="contact-row"><span>Электронная почта</span><a href="mailto:stroybazansk@mail.ru">stroybazansk@mail.ru</a></div>
                         <div class="contact-row"><span>Адрес склада</span><strong>Невинномысск, ул. Монтажная, д. 10</strong></div>
-                        <div class="contact-row"><span>График</span><strong>Пн-Сб: 8:00-18:00, Вс: выходной</strong></div>
+                        <div class="contact-row"><span>График работы</span><strong>Пн-Сб: 8:00-18:00, Вс: выходной</strong></div>
                         
-                        <!-- Рейтинги карт под графиком -->
                         <div class="contact-row">
-                            <span>Наш рейтинг на картах</span>
-                            <div class="rating-widgets">
-                                <iframe src="https://yandex.ru/sprav/widget/rating-badge/237893630120?type=rating&theme=dark" width="150" height="50" frameborder="0" loading="lazy" title="Рейтинг Яндекс"></iframe>
-                                <iframe src="https://widget.2gis.ru/api/widget?org_id=70000001114215364&amp;branch_id=70000001114215365&amp;size=medium&amp;theme=dark" width="150" height="50" frameborder="0" loading="lazy" title="Рейтинг 2ГИС"></iframe>
-                            </div>
-                        </div>
-
-                        <!-- ИДЕАЛЬНО СИММЕТРИЧНАЯ СЕТКА СОЦСЕТЕЙ (3 ряда по 2 кнопки + MAX снизу) -->
-                        <div class="contact-row">
-                            <span>Мы на других площадках</span>
+                            <span>Наши соцсети и карты</span>
                             <div class="social-links">
-                                <a href="https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120" target="_blank" rel="noopener">
-                                    <img src="icon-yandex.png" loading="lazy" onerror="this.style.display='none';" alt="">
-                                    <span>Яндекс Карты</span>
-                                </a>
-                                <a href="https://2gis.ru/nevinnomyssk/inside/19000196618797894/firm/70000001114215365" target="_blank" rel="noopener">
-                                    <img src="icon-2gis.png" loading="lazy" onerror="this.style.display='none';" alt="">
-                                    <span>2ГИС</span>
-                                </a>
-                                <a href="https://vk.com/stroybazansk" target="_blank" rel="noopener">
-                                    <img src="icon-vk.png" loading="lazy" onerror="this.style.display='none';" alt="">
-                                    <span>ВКонтакте</span>
-                                </a>
-                                <a href="https://www.avito.ru/brands/7b5d69d7938d3eb5a9ac6751ed5a9697" target="_blank" rel="noopener">
-                                    <img src="icon-avito.png" loading="lazy" onerror="this.style.display='none';" alt="">
-                                    <span>Авито</span>
-                                </a>
-                                <a href="https://t.me/stroybazansk" target="_blank" rel="noopener">
-                                    <img src="icon-telegram.png" loading="lazy" onerror="this.style.display='none';" alt="">
-                                    <span>Telegram</span>
-                                </a>
-                                <a href="https://www.youtube.com/@stroybazansk" target="_blank" rel="noopener">
-                                    <img src="icon-youtube.png" loading="lazy" onerror="this.style.display='none';" alt="">
-                                    <span>YouTube</span>
-                                </a>
-                                <a href="https://max.ru/join/bM2VpgJxiwIve809sHURi8C1mrzORQCR-7u_elROpXw" target="_blank" rel="noopener" class="social-btn-max">
-                                    <img src="icon-max.png" loading="lazy" onerror="this.style.display='none';" alt="">
-                                    <span>MAX: +7 (988) 732-81-61</span>
-                                </a>
+                                <a href="https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120" target="_blank" rel="noopener"><img src="icon-yandex.png" alt="" onerror="this.style.display='none';"><span>Яндекс Карты</span></a>
+                                <a href="https://2gis.ru/nevinnomyssk/inside/19000196618797894/firm/70000001114215365" target="_blank" rel="noopener"><img src="icon-2gis.png" alt="" onerror="this.style.display='none';"><span>2ГИС</span></a>
+                                <a href="https://vk.com/stroybazansk" target="_blank" rel="noopener"><img src="icon-vk.png" alt="" onerror="this.style.display='none';"><span>ВКонтакте</span></a>
+                                <a href="https://www.avito.ru/brands/7b5d69d7938d3eb5a9ac6751ed5a9697" target="_blank" rel="noopener"><img src="icon-avito.png" alt="" onerror="this.style.display='none';"><span>Авито</span></a>
+                                <a href="https://t.me/stroybazansk" target="_blank" rel="noopener"><img src="icon-telegram.png" alt="" onerror="this.style.display='none';"><span>Telegram</span></a>
+                                <a href="https://www.youtube.com/@stroybazansk" target="_blank" rel="noopener"><img src="icon-youtube.png" alt="" onerror="this.style.display='none';"><span>YouTube</span></a>
+                                <a href="https://max.ru/join/bM2VpgJxiwIve809sHURi8C1mrzORQCR-7u_elROpXw" target="_blank" rel="noopener" class="social-btn-max"><img src="icon-max.png" alt="" onerror="this.style.display='none';"><span>MAX: +7 (988) 732-81-61</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <div class="map-wrap"><iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=237893630120" loading="lazy" title="Стройбаза на Монтажной на карте"></iframe></div>
+                    <div class="map-wrap">
+                        <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=237893630120" title="Стройбаза на Монтажной"></iframe>
+                    </div>
                     <a class="btn btn-primary map-fallback" href="https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120" target="_blank" rel="noopener">Открыть на Яндекс Картах</a>
                 </div>
             </div>
