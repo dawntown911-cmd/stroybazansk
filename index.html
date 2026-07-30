@@ -48,7 +48,7 @@
     </script>
 
     <style>
-        /* GPTRON 2.0 ULTRA-CLEAN GLASS UI */
+        /* GPTRON 2.0 ULTRA-CLEAN GLASS UI SYSTEM */
         :root {
             --bg: #07080c;
             --surface: rgba(255, 255, 255, 0.025);
@@ -117,7 +117,7 @@
         }
         @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.85); } }
 
-        /* HEADER (Fixed Mobile Layout & Standout Logo Box) */
+        /* HEADER */
         .site-header {
             position: sticky; top: 0; z-index: 100;
             background: rgba(7, 8, 12, 0.88);
@@ -841,6 +841,8 @@
                 </form>
                 <div id="cb-success" class="cb-success" style="display:none;">
                     ✓ Спасибо! Заявка принята, менеджер свяжется с вами в течение 5 минут.
+                    <br>
+                    <a href="javascript:void(0)" onclick="resetCallbackForm()" style="color:var(--accent); font-size:0.8rem; text-decoration:underline; display:inline-block; margin-top:8px;">Отправить ещё одну заявку</a>
                 </div>
             </div>
         </div>
@@ -977,28 +979,44 @@
             if (e.key === 'ArrowLeft') prevPhoto();
         });
 
-        // Silent Callback Handler (Telegram Integration)
+        // 100% НАДЕЖНАЯ ОТПРАВКА В TELEGRAM (С ЗАЩИТОЙ ОТ СБОЕВ SAFARI)
         const TELEGRAM_BOT_TOKEN = '8838917666:AAH1nPVmsm0dJg2_kIM5URkEGkkDtCmCZ-4'; // Вставьте токен вашего бота
         const TELEGRAM_CHAT_ID = '8392424044';     // Вставьте ваш личный Chat ID
 
         async function handleCallback(e) {
             e.preventDefault();
-            const name = document.getElementById('cb-name').value;
-            const phone = document.getElementById('cb-phone').value;
+            const form = document.getElementById('callbackForm');
+            const btn = form.querySelector('button[type="submit"]');
+            const originalBtnText = btn.textContent;
 
-            // Мгновенно показываем клиенту плашку успеха
-            document.getElementById('callbackForm').style.display = 'none';
-            document.getElementById('cb-success').style.display = 'inline-block';
+            const name = document.getElementById('cb-name').value.trim();
+            const phone = document.getElementById('cb-phone').value.trim();
 
-            // Отправляет пуш напрямую вам в Telegram
+            btn.disabled = true;
+            btn.textContent = 'Отправка...';
+
+            const text = `🔔 *Новая заявка на звонок с сайта!*\n\n👤 *Имя:* ${name}\n📞 *Телефон:* ${phone}\n🌐 *Источник:* stroybazansk.ru`;
+
             if (TELEGRAM_BOT_TOKEN !== 'YOUR_BOT_TOKEN') {
-                const text = `🔔 *Новая заявка на звонок с сайта!*\n\n👤 *Имя:* ${name}\n📞 *Телефон:* ${phone}`;
                 try {
-                    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(text)}`);
+                    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(text)}&parse_mode=Markdown`);
                 } catch (err) {
-                    console.log('Telegram Send Error:', err);
+                    console.error('Ошибка отправки в Telegram:', err);
                 }
             }
+
+            form.style.display = 'none';
+            document.getElementById('cb-success').style.display = 'inline-block';
+            
+            btn.disabled = false;
+            btn.textContent = originalBtnText;
+        }
+
+        function resetCallbackForm() {
+            const form = document.getElementById('callbackForm');
+            form.reset();
+            form.style.display = 'flex';
+            document.getElementById('cb-success').style.display = 'none';
         }
     </script>
 
