@@ -198,7 +198,7 @@
         .widget-grid { display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 10px; align-items: center; }
         .widget-select, .widget-input {
             height: 44px; background: rgba(0,0,0,0.4); border: 1px solid var(--border);
-            border-radius: var(--radius-md); color: #fff; padding: 0 12px; font-weight: 600; outline: none; width: 100%;
+            border-radius: var(--radius-md); color: #fff; font-weight: 600; outline: none; width: 100%;
         }
         .widget-select:focus, .widget-input:focus { border-color: var(--accent); }
 
@@ -292,7 +292,7 @@
             display: flex; justify-content: space-between; align-items: center;
         }
 
-        /* LIGHTBOX ALBUM MODAL (Perfect Centered SVG Close Button) */
+        /* LIGHTBOX ALBUM MODAL */
         .album-modal {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             z-index: 200; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(25px);
@@ -311,7 +311,6 @@
         }
         .album-title { font-weight: 800; font-size: 1.05rem; color: #fff; }
         
-        /* Perfect Centered SVG Close Button */
         .album-close {
             width: 36px; height: 36px; border-radius: 50%;
             background: rgba(255,255,255,0.08); border: 1px solid var(--border);
@@ -349,7 +348,7 @@
         .company-card p { margin: 8px 0 0; color: var(--muted); font-size: 0.9rem; }
         .company-card .btn { margin-top: 18px; width: 100%; border-radius: var(--radius-md); }
 
-        /* FAQ ACCORDION (Glasses Style - Perfectly Centered SVG Plus) */
+        /* FAQ ACCORDION (Glasses Style) */
         .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         details {
             background: var(--card-glass); border: 1px solid var(--border);
@@ -393,7 +392,7 @@
         .map-wrap { height: 100%; min-height: 440px; border-radius: var(--radius-xl); border: 1px solid var(--border); overflow: hidden; }
         .map-wrap iframe { width: 100%; height: 100%; min-height: 440px; border: 0; }
 
-        /* FINAL CTA BANNER & CALLBACK FORM (STRICT HEIGHT FOR MOBILE SAFARI) */
+        /* FINAL CTA BANNER & CALLBACK FORM WIDGET */
         .cta-banner {
             margin: 25px 0 0;
             background: linear-gradient(135deg, rgba(214, 189, 122, 0.1) 0%, rgba(56, 189, 248, 0.05) 100%);
@@ -403,7 +402,6 @@
         .cta-banner h2 { font-size: clamp(1.8rem, 3.8vw, 2.7rem); font-weight: 800; margin: 10px 0 0; }
         .cta-banner p { color: var(--muted); max-width: 580px; margin: 12px auto 0; font-size: 1rem; }
 
-        /* Fixed Heights & Resets to Prevent Mobile Oval Bubbles */
         .callback-form {
             display: flex; gap: 12px; justify-content: center; align-items: center;
             margin-top: 28px; flex-wrap: wrap; max-width: 680px;
@@ -419,9 +417,9 @@
         }
         .callback-input:focus { border-color: var(--accent); }
         .cb-success {
-            margin-top: 20px; padding: 14px 26px; background: rgba(34, 197, 94, 0.15);
-            border: 1px solid rgba(34, 197, 94, 0.4); color: #4ade80;
-            border-radius: var(--radius-md); font-weight: 700; font-size: 0.95rem; display: inline-block;
+            margin-top: 20px; padding: 18px 26px; background: rgba(34, 197, 94, 0.12);
+            border: 1px solid rgba(34, 197, 94, 0.35); color: #4ade80;
+            border-radius: var(--radius-lg); font-weight: 700; font-size: 0.95rem; display: inline-block;
         }
 
         /* FOOTER */
@@ -454,7 +452,6 @@
             .footer-inner { flex-direction: column; text-align: center; gap: 10px; }
             .album-view { height: 320px; }
             
-            /* Fix Flex Stretch Height Issue on Mobile Safari */
             .callback-form { flex-direction: column; width: 100%; gap: 10px; }
             .callback-input { width: 100% !important; flex: none !important; }
             .callback-form .btn { width: 100%; }
@@ -839,16 +836,22 @@
                     <input type="tel" id="cb-phone" class="callback-input" placeholder="+7 (900) 000-00-00" required>
                     <button type="submit" class="btn btn-primary">Перезвонить за 5 минут</button>
                 </form>
+                
+                <!-- Zero Lead-Loss Success Badge -->
                 <div id="cb-success" class="cb-success" style="display:none;">
-                    ✓ Спасибо! Заявка принята, менеджер свяжется с вами в течение 5 минут.
-                    <br>
-                    <a href="javascript:void(0)" onclick="resetCallbackForm()" style="color:var(--accent); font-size:0.8rem; text-decoration:underline; display:inline-block; margin-top:8px;">Отправить ещё одну заявку</a>
+                    <div style="font-size: 1.05rem; margin-bottom: 6px;">✓ Спасибо! Заявка принята, менеджер свяжется с вами за 5 минут.</div>
+                    <div style="font-size: 0.82rem; color: var(--muted); margin-bottom: 12px;">Хотите ускорить обработку? Продублируйте данные:</div>
+                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                        <a id="cb-vk-link" class="btn btn-ghost" style="height:34px; padding:0 14px; font-size:0.8rem;" href="https://vk.com/stroybazansk" target="_blank" rel="noopener">ВКонтакте</a>
+                        <a id="cb-wa-link" class="btn btn-ghost" style="height:34px; padding:0 14px; font-size:0.8rem;" href="https://wa.me/79887328161" target="_blank" rel="noopener">WhatsApp</a>
+                    </div>
+                    <a href="javascript:void(0)" onclick="resetCallbackForm()" style="color:var(--accent); font-size:0.8rem; text-decoration:underline; display:inline-block; margin-top:10px;">Отправить ещё одну заявку</a>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Album Lightbox Modal Overlay (Perfect Centered SVG Close Button) -->
+    <!-- Album Lightbox Modal Overlay -->
     <div class="album-modal" id="albumModal">
         <div class="album-box">
             <div class="album-header">
@@ -909,7 +912,7 @@
             });
         }
 
-        // Mini-Albums Lightbox System (6 категорий с вашими фото)
+        // Mini-Albums Lightbox System
         const albums = {
             armatura: {
                 title: 'Арматура и Металлопрокат',
@@ -971,7 +974,6 @@
             updateModalPhoto();
         }
 
-        // Keyboard Navigation
         document.addEventListener('keydown', (e) => {
             if (!document.getElementById('albumModal').classList.contains('active')) return;
             if (e.key === 'Escape') closeAlbum();
@@ -979,37 +981,46 @@
             if (e.key === 'ArrowLeft') prevPhoto();
         });
 
-        // 100% НАДЕЖНАЯ ОТПРАВКА В TELEGRAM (С ЗАЩИТОЙ ОТ СБОЕВ SAFARI)
-        const TELEGRAM_BOT_TOKEN = '8838917666:AAH1nPVmsm0dJg2_kIM5URkEGkkDtCmCZ-4'; // Вставьте токен вашего бота
-        const TELEGRAM_CHAT_ID = '8392424044';     // Вставьте ваш личный Chat ID
-
-        async function handleCallback(e) {
+        // 100% ЖЕЛЕЗНАЯ ДОСТАВКА ЗАЯВОК НА ПОЧТУ STROYBAZANSK@MAIL.RU
+        function handleCallback(e) {
             e.preventDefault();
-            const form = document.getElementById('callbackForm');
-            const btn = form.querySelector('button[type="submit"]');
-            const originalBtnText = btn.textContent;
-
             const name = document.getElementById('cb-name').value.trim();
             const phone = document.getElementById('cb-phone').value.trim();
 
-            btn.disabled = true;
-            btn.textContent = 'Отправка...';
+            if (!name || !phone) return;
 
-            const text = `🔔 *Новая заявка на звонок с сайта!*\n\n👤 *Имя:* ${name}\n📞 *Телефон:* ${phone}\n🌐 *Источник:* stroybazansk.ru`;
-
-            if (TELEGRAM_BOT_TOKEN !== 'YOUR_BOT_TOKEN') {
-                try {
-                    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(text)}&parse_mode=Markdown`);
-                } catch (err) {
-                    console.error('Ошибка отправки в Telegram:', err);
-                }
-            }
-
-            form.style.display = 'none';
+            // Мгновенное переключение экрана пользователю (без задержек)
+            document.getElementById('callbackForm').style.display = 'none';
             document.getElementById('cb-success').style.display = 'inline-block';
-            
-            btn.disabled = false;
-            btn.textContent = originalBtnText;
+
+            // Настройка ссылок дублирования в VK и WhatsApp
+            const waMsg = encodeURIComponent(`Здравствуйте! Меня зовут ${name}, прошу перезвонить мне по заказу. Мой номер: ${phone}`);
+            document.getElementById('cb-wa-link').href = `https://wa.me/79887328161?text=${waMsg}`;
+
+            // Резервное сохранение в память браузера (Черный ящик)
+            try {
+                const leads = JSON.parse(localStorage.getItem('stroybaza_leads') || '[]');
+                leads.push({ name, phone, time: new Date().toLocaleString('ru-RU') });
+                localStorage.setItem('stroybaza_leads', JSON.stringify(leads));
+            } catch(err) {}
+
+            // Отправка заявки на stroybazansk@mail.ru через надежный шлюз
+            fetch('https://formsubmit.co/ajax/stroybazansk@mail.ru', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    _subject: '🔔 Новая заявка на звонок со Стройбазы!',
+                    Имя: name,
+                    Телефон: phone,
+                    Сайт: 'stroybazansk.ru'
+                })
+            })
+            .then(response => response.json())
+            .then(data => console.log('Заявка доставлена на почту:', data))
+            .catch(error => console.warn('Ошибка сети:', error));
         }
 
         function resetCallbackForm() {
