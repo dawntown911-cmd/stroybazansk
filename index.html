@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Стройбаза на Монтажной | Металл, ЖБИ и цемент в Невинномысске</title>
     <meta name="description" content="Стройбаза на Монтажной в Невинномысске: металлопрокат, арматура, профильные трубы, цемент М500, ФБС, кольца ЖБИ и шлакоблок со склада. Резка, погрузка, доставка Газелью и манипулятором.">
-    <meta name="theme-color" content="#090a0f">
+    <meta name="theme-color" content="#07080c">
     <meta property="og:title" content="Стройбаза на Монтажной">
     <meta property="og:description" content="Металл, ЖБИ, цемент и доставка со склада на ул. Монтажной, 10 в Невинномысске.">
     <meta property="og:type" content="website">
@@ -41,30 +41,31 @@
         "https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120",
         "https://2gis.ru/nevinnomyssk/inside/19000196618797894/firm/70000001114215365",
         "https://vk.com/stroybazansk",
-        "https://t.me/stroybazansk"
+        "https://t.me/stroybazansk",
+        "https://instagram.com/stroybazansk"
       ]
     }
     </script>
 
     <style>
-        /* GPTRON 2.0 ARCHITECTURE & UI SYSTEM */
+        /* GPTRON 2.0 ULTRA-CLEAN GLASS UI */
         :root {
-            --bg: #08090d;
-            --surface: rgba(255, 255, 255, 0.03);
-            --surface-hover: rgba(255, 255, 255, 0.06);
-            --card-bg: rgba(16, 18, 27, 0.75);
-            --text: #f3f4f6;
-            --muted: #9ca3af;
-            --soft: #6b7280;
+            --bg: #07080c;
+            --surface: rgba(255, 255, 255, 0.025);
+            --surface-hover: rgba(255, 255, 255, 0.05);
+            --card-bg: rgba(15, 17, 26, 0.65);
+            --card-glass: rgba(255, 255, 255, 0.03);
+            --text: #f4f4f5;
+            --muted: #a1a1aa;
+            --soft: #71717a;
             --border: rgba(255, 255, 255, 0.08);
             --border-glow: rgba(214, 189, 122, 0.35);
             --accent: #d6bd7a;
             --accent-light: #f0e4be;
-            --accent-cyan: #38bdf8;
-            --radius-xl: 24px;
-            --radius-lg: 18px;
+            --radius-xl: 22px;
+            --radius-lg: 16px;
             --radius-md: 12px;
-            --max-w: 1220px;
+            --max-w: 1200px;
         }
 
         * { box-sizing: border-box; }
@@ -73,325 +74,281 @@
             margin: 0;
             background: var(--bg);
             color: var(--text);
-            font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+            font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
             line-height: 1.55;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Ambient Glow System */
+        /* Ambient Glow Background System */
         .glow-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             z-index: -1; pointer-events: none; overflow: hidden;
         }
         .glow-top {
-            position: absolute; top: -150px; left: 50%; transform: translateX(-50%);
-            width: 900px; height: 500px;
-            background: radial-gradient(circle, rgba(214, 189, 122, 0.12) 0%, rgba(8, 9, 13, 0) 70%);
+            position: absolute; top: -140px; left: 50%; transform: translateX(-50%);
+            width: 850px; height: 480px;
+            background: radial-gradient(circle, rgba(214, 189, 122, 0.11) 0%, rgba(7, 8, 12, 0) 70%);
             filter: blur(90px);
         }
-        .glow-middle {
-            position: absolute; top: 45%; right: -200px;
-            width: 700px; height: 700px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.07) 0%, rgba(8, 9, 13, 0) 70%);
-            filter: blur(120px);
+        .glow-bottom {
+            position: absolute; bottom: 10%; left: -100px;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.06) 0%, rgba(7, 8, 12, 0) 70%);
+            filter: blur(110px);
         }
 
         img { max-width: 100%; display: block; }
         a { color: inherit; text-decoration: none; }
-        .container { width: min(var(--max-w), calc(100% - 40px)); margin: 0 auto; }
+        .container { width: min(var(--max-w), calc(100% - 36px)); margin: 0 auto; }
 
         /* GPTRON Pill Badges */
         .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
-            border-radius: 9999px;
-            background: rgba(214, 189, 122, 0.08);
-            border: 1px solid rgba(214, 189, 122, 0.22);
-            color: var(--accent);
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            backdrop-filter: blur(12px);
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 5px 14px; border-radius: 9999px;
+            background: rgba(214, 189, 122, 0.08); border: 1px solid rgba(214, 189, 122, 0.22);
+            color: var(--accent); font-size: 0.76rem; font-weight: 700;
+            letter-spacing: 0.06em; text-transform: uppercase; backdrop-filter: blur(12px);
         }
         .badge-dot {
-            width: 7px; height: 7px; border-radius: 50%;
-            background: var(--accent);
-            box-shadow: 0 0 10px var(--accent);
-            animation: pulse 2s infinite;
+            width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+            box-shadow: 0 0 10px var(--accent); animation: pulse 2s infinite;
         }
-        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.8); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.85); } }
 
-        /* HEADER (Fixed Mobile Layout) */
+        /* HEADER (Fixed Mobile Alignment - No Overflow) */
         .site-header {
             position: sticky; top: 0; z-index: 100;
-            background: rgba(8, 9, 13, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(7, 8, 12, 0.85);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
         .header-inner {
-            height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
+            height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
         }
         .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            min-width: 0; /* Prevents text overflow bug */
-            flex-shrink: 1;
+            display: flex; align-items: center; gap: 10px;
+            min-width: 0; flex-shrink: 1; overflow: hidden;
         }
         .brand-icon {
-            width: 40px; height: 40px; border-radius: 10px;
-            background: linear-gradient(135deg, rgba(214,189,122,0.25), rgba(255,255,255,0.03));
+            width: 38px; height: 38px; border-radius: 10px;
+            background: linear-gradient(135deg, rgba(214,189,122,0.22), rgba(255,255,255,0.03));
             border: 1px solid var(--border);
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
         .brand-name {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-width: 0;
-            line-height: 1.25;
+            display: flex; flex-direction: column; justify-content: center;
+            min-width: 0; line-height: 1.2; overflow: hidden;
         }
         .brand-name strong {
-            font-size: 1.02rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            color: #ffffff;
-            white-space: nowrap;
+            font-size: 0.98rem; font-weight: 800; letter-spacing: -0.02em; color: #ffffff;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         }
         .brand-name span {
-            color: var(--soft);
-            font-size: 0.74rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            color: var(--soft); font-size: 0.72rem; white-space: nowrap;
+            overflow: hidden; text-overflow: ellipsis;
         }
 
-        .nav { display: flex; gap: 28px; color: var(--muted); font-size: 0.9rem; font-weight: 600; }
+        .nav { display: flex; gap: 28px; color: var(--muted); font-size: 0.88rem; font-weight: 600; }
         .nav a { transition: color 0.2s; }
         .nav a:hover { color: #fff; }
 
-        .header-actions { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+        .header-actions { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
         .phone-block { text-align: right; }
-        .phone-block a { font-weight: 800; font-size: 0.98rem; letter-spacing: -0.01em; display: block; }
-        .phone-block span { color: var(--soft); font-size: 0.72rem; display: block; }
+        .phone-block a { font-weight: 800; font-size: 0.95rem; letter-spacing: -0.01em; display: block; }
+        .phone-block span { color: var(--soft); font-size: 0.7rem; display: block; }
 
-        /* GPTRON Buttons */
+        /* Buttons */
         .btn {
-            height: 44px;
-            padding: 0 22px;
-            border-radius: 9999px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            display: inline-flex; align-items: center; justify-content: center;
-            gap: 8px; transition: all 0.25s ease; cursor: pointer; border: 1px solid transparent;
-            white-space: nowrap;
+            height: 42px; padding: 0 20px; border-radius: 9999px;
+            font-weight: 700; font-size: 0.88rem; display: inline-flex; align-items: center;
+            justify-content: center; gap: 8px; transition: all 0.25s ease; cursor: pointer;
+            border: 1px solid transparent; white-space: nowrap;
         }
         .btn-primary {
             background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%);
-            color: #08090d;
-            box-shadow: 0 0 20px rgba(214, 189, 122, 0.22);
+            color: #07080c; box-shadow: 0 0 20px rgba(214, 189, 122, 0.2);
         }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(214, 189, 122, 0.38); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(214, 189, 122, 0.35); }
         .btn-ghost { background: var(--surface); border: 1px solid var(--border); color: var(--text); }
         .btn-ghost:hover { background: var(--surface-hover); border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
 
         /* HERO SECTION */
-        .hero { padding: 80px 0 60px; text-align: center; }
-        .hero-content { max-width: 860px; margin: 0 auto; }
+        .hero { padding: 70px 0 50px; text-align: center; }
+        .hero-content { max-width: 840px; margin: 0 auto; }
         .hero h1 {
-            margin: 22px 0 0;
-            font-size: clamp(2.5rem, 5.5vw, 4.4rem);
+            margin: 20px 0 0; font-size: clamp(2.3rem, 5.2vw, 4.2rem);
             font-weight: 800; line-height: 1.08; letter-spacing: -0.04em;
-            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.75) 100%);
+            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .hero-lead { margin: 20px auto 0; max-width: 660px; color: var(--muted); font-size: clamp(1rem, 1.8vw, 1.2rem); }
-        .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+        .hero-lead { margin: 18px auto 0; max-width: 640px; color: var(--muted); font-size: clamp(0.98rem, 1.8vw, 1.15rem); }
+        .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 
-        /* GPTRON Interactive Hero Widget (Quick Calculator Bar) */
+        /* GPTron Interactive Quick Calculator Bar */
         .hero-widget {
-            margin-top: 48px;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-xl);
-            padding: 24px;
-            backdrop-filter: blur(20px);
-            max-width: 800px;
-            margin-left: auto; margin-right: auto;
-            text-align: left;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            margin-top: 42px; background: var(--card-bg); border: 1px solid var(--border);
+            border-radius: var(--radius-xl); padding: 20px 24px; backdrop-filter: blur(20px);
+            max-width: 780px; margin-left: auto; margin-right: auto; text-align: left;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
-        .widget-title { font-size: 0.88rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 14px; }
-        .widget-grid { display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 12px; align-items: center; }
+        .widget-title { font-size: 0.8rem; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+        .widget-grid { display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 10px; align-items: center; }
         .widget-select, .widget-input {
-            height: 46px; background: rgba(0,0,0,0.4); border: 1px solid var(--border);
-            border-radius: var(--radius-md); color: #fff; padding: 0 14px; font-weight: 600; outline: none;
-            width: 100%;
+            height: 44px; background: rgba(0,0,0,0.4); border: 1px solid var(--border);
+            border-radius: var(--radius-md); color: #fff; padding: 0 12px; font-weight: 600; outline: none; width: 100%;
         }
         .widget-select:focus, .widget-input:focus { border-color: var(--accent); }
 
-        /* STATS TICKER BAR */
+        /* STATS TICKER BAR (Corrected Stats) */
         .stats-bar {
-            margin: 40px 0;
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+            margin: 36px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
         }
         .stat-card {
             background: var(--card-bg); border: 1px solid var(--border);
-            border-radius: var(--radius-lg); padding: 20px; text-align: center;
-            backdrop-filter: blur(12px);
+            border-radius: var(--radius-lg); padding: 18px; text-align: center; backdrop-filter: blur(12px);
         }
-        .stat-card strong { display: block; font-size: 1.8rem; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; }
-        .stat-card span { color: var(--muted); font-size: 0.85rem; }
+        .stat-card strong { display: block; font-size: 1.65rem; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; }
+        .stat-card span { color: var(--muted); font-size: 0.82rem; }
 
         /* BENTO GRID (FEATURES) */
-        .section { padding: 90px 0; border-top: 1px solid var(--border); }
-        .section-head { text-align: center; max-width: 700px; margin: 0 auto 48px; }
+        .section { padding: 80px 0; border-top: 1px solid var(--border); }
+        .section-head { text-align: center; max-width: 680px; margin: 0 auto 42px; }
         .section-title {
-            margin: 14px 0 0; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800;
-            letter-spacing: -0.03em; background: linear-gradient(180deg, #ffffff 0%, #9ca3af 100%);
+            margin: 12px 0 0; font-size: clamp(1.9rem, 3.8vw, 3rem); font-weight: 800;
+            letter-spacing: -0.03em; background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .section-copy { margin-top: 12px; color: var(--muted); font-size: 1.05rem; }
+        .section-copy { margin-top: 10px; color: var(--muted); font-size: 1rem; }
 
-        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
         .bento-card {
             background: var(--card-bg); border: 1px solid var(--border);
-            border-radius: var(--radius-xl); padding: 30px; backdrop-filter: blur(16px);
+            border-radius: var(--radius-xl); padding: 28px; backdrop-filter: blur(16px);
             transition: all 0.3s ease; position: relative; overflow: hidden;
         }
-        .bento-card:hover { border-color: var(--border-glow); transform: translateY(-4px); }
+        .bento-card:hover { border-color: var(--border-glow); transform: translateY(-3px); }
         .bento-span-2 { grid-column: span 2; }
-        .bento-tag { color: var(--accent); font-weight: 800; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
-        .bento-card h3 { margin: 12px 0 0; font-size: 1.35rem; font-weight: 800; }
-        .bento-card p { margin: 10px 0 0; color: var(--muted); font-size: 0.95rem; }
-        .bento-list { margin-top: 18px; padding: 0; list-style: none; display: grid; gap: 8px; }
-        .bento-list li { display: flex; align-items: center; gap: 10px; color: var(--text); font-size: 0.9rem; font-weight: 600; }
+        .bento-tag { color: var(--accent); font-weight: 800; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        .bento-card h3 { margin: 10px 0 0; font-size: 1.25rem; font-weight: 800; }
+        .bento-card p { margin: 8px 0 0; color: var(--muted); font-size: 0.92rem; }
+        .bento-list { margin-top: 16px; padding: 0; list-style: none; display: grid; gap: 8px; }
+        .bento-list li { display: flex; align-items: center; gap: 10px; color: var(--text); font-size: 0.88rem; font-weight: 600; }
         .bento-list li::before { content: "✓"; color: var(--accent); font-weight: 900; }
 
         /* CATEGORIZED CATALOG (GPTRON TABS) */
-        .tabs-nav { display: flex; justify-content: center; gap: 10px; margin-bottom: 36px; flex-wrap: wrap; }
+        .tabs-nav { display: flex; justify-content: center; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
         .tab-btn {
-            padding: 10px 20px; border-radius: 9999px; background: var(--surface);
-            border: 1px solid var(--border); color: var(--muted); font-weight: 700; font-size: 0.88rem;
+            padding: 8px 18px; border-radius: 9999px; background: var(--surface);
+            border: 1px solid var(--border); color: var(--muted); font-weight: 700; font-size: 0.85rem;
             cursor: pointer; transition: all 0.2s ease;
         }
         .tab-btn.active, .tab-btn:hover { background: rgba(214, 189, 122, 0.12); border-color: var(--accent); color: var(--accent); }
 
-        .assortment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .assortment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
         .product-card {
             background: var(--card-bg); border: 1px solid var(--border);
             border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column;
             backdrop-filter: blur(16px); transition: all 0.3s ease;
         }
-        .product-card:hover { border-color: var(--border-glow); transform: translateY(-4px); }
-        .product-img { height: 190px; background: #11131a; border-bottom: 1px solid var(--border); position: relative; }
+        .product-card:hover { border-color: var(--border-glow); transform: translateY(-3px); }
+        .product-img { height: 180px; background: #11131a; border-bottom: 1px solid var(--border); position: relative; }
         .product-img img { width: 100%; height: 100%; object-fit: cover; }
-        .product-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
-        .product-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-        .product-title { margin: 0; font-size: 1.15rem; font-weight: 700; }
+        .product-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+        .product-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+        .product-title { margin: 0; font-size: 1.1rem; font-weight: 700; }
         .price {
-            padding: 5px 12px; border-radius: 9999px; background: rgba(214, 189, 122, 0.12);
-            border: 1px solid rgba(214, 189, 122, 0.25); color: var(--accent); font-weight: 800; font-size: 0.88rem;
+            padding: 4px 10px; border-radius: 9999px; background: rgba(214, 189, 122, 0.12);
+            border: 1px solid rgba(214, 189, 122, 0.25); color: var(--accent); font-weight: 800; font-size: 0.85rem;
             white-space: nowrap;
         }
-        .product-body p { margin: 12px 0 0; color: var(--muted); font-size: 0.9rem; }
-        .product-meta { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); color: var(--soft); font-size: 0.82rem; }
-        .product-actions { margin-top: auto; padding-top: 18px; }
+        .product-body p { margin: 10px 0 0; color: var(--muted); font-size: 0.88rem; }
+        .product-meta { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border); color: var(--soft); font-size: 0.8rem; }
+        .product-actions { margin-top: auto; padding-top: 16px; }
         .product-actions .btn { width: 100%; border-radius: var(--radius-md); }
 
-        /* PROCESS STEPS (HOW IT WORKS) */
-        .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-        .process-card {
-            background: var(--card-bg); border: 1px solid var(--border);
-            border-radius: var(--radius-lg); padding: 24px; position: relative;
+        /* GALLERY SHOWCASE (GPTRON STYLE) */
+        .gallery-head-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .gallery-card {
+            position: relative; height: 210px; border-radius: var(--radius-lg);
+            border: 1px solid var(--border); overflow: hidden; background: var(--card-bg);
+            transition: all 0.3s ease;
         }
-        .process-num { font-size: 2.2rem; font-weight: 800; color: rgba(255,255,255,0.1); line-height: 1; margin-bottom: 12px; }
-        .process-card h4 { margin: 0; font-size: 1.1rem; font-weight: 700; }
-        .process-card p { margin: 8px 0 0; color: var(--muted); font-size: 0.88rem; }
-
-        /* GALLERY CAROUSEL */
-        .gallery-grid {
-            display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
-            gap: 16px; padding-bottom: 16px; scrollbar-width: thin; scrollbar-color: var(--border) transparent;
-        }
-        .gallery-item {
-            flex: 0 0 320px; height: 220px; scroll-snap-align: start;
-            border-radius: var(--radius-lg); border: 1px solid var(--border); overflow: hidden; margin: 0;
-        }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-        .video-placeholder {
-            flex: 0 0 280px; height: 220px; scroll-snap-align: start; padding: 20px;
-            border-radius: var(--radius-lg); border: 1px solid var(--border); background: var(--card-bg);
-            display: flex; flex-direction: column; justify-content: space-between;
+        .gallery-card:hover { border-color: var(--border-glow); transform: scale(1.02); }
+        .gallery-card img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-overlay {
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 12px;
+            background: linear-gradient(180deg, transparent 0%, rgba(7, 8, 12, 0.9) 100%);
+            font-size: 0.78rem; font-weight: 700; color: #fff;
         }
 
         /* B2B CARDS */
-        .company-block { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .company-card { padding: 32px; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-xl); }
-        .company-card h3 { margin: 0; font-size: 1.3rem; }
-        .company-card p { margin: 10px 0 0; color: var(--muted); }
-        .company-card .btn { margin-top: 20px; width: 100%; border-radius: var(--radius-md); }
+        .company-block { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .company-card { padding: 28px; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-xl); }
+        .company-card h3 { margin: 0; font-size: 1.25rem; }
+        .company-card p { margin: 8px 0 0; color: var(--muted); font-size: 0.9rem; }
+        .company-card .btn { margin-top: 18px; width: 100%; border-radius: var(--radius-md); }
 
-        /* FAQ ACCORDION */
+        /* FAQ ACCORDION (Glasses Style - No Ugly Arrows) */
         .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         details {
-            background: var(--card-bg); border: 1px solid var(--border);
-            border-radius: var(--radius-md); padding: 18px 22px; backdrop-filter: blur(16px);
+            background: var(--card-glass); border: 1px solid var(--border);
+            border-radius: var(--radius-md); padding: 18px 20px; backdrop-filter: blur(16px);
+            transition: all 0.25s ease;
         }
-        details[open] { border-color: var(--border-glow); background: rgba(22, 26, 38, 0.85); }
-        summary { cursor: pointer; font-weight: 700; outline: none; user-select: none; font-size: 1rem; }
-        details p { margin: 14px 0 0; color: var(--muted); font-size: 0.92rem; border-left: 2px solid var(--accent); padding-left: 14px; }
+        details summary::-webkit-details-marker { display: none; }
+        details summary { list-style: none; }
+        details[open] { border-color: var(--border-glow); background: rgba(20, 23, 34, 0.85); }
+        summary {
+            cursor: pointer; font-weight: 700; outline: none; user-select: none; font-size: 0.98rem;
+            display: flex; justify-content: space-between; align-items: center; gap: 12px;
+        }
+        .faq-icon {
+            width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,0.05);
+            display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--accent);
+            transition: transform 0.3s ease; flex-shrink: 0;
+        }
+        details[open] .faq-icon { transform: rotate(45deg); color: #fff; }
+        details p { margin: 12px 0 0; color: var(--muted); font-size: 0.9rem; border-left: 2px solid var(--accent); padding-left: 12px; line-height: 1.6; }
 
-        /* CONTACTS & SOCIALS */
-        .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-        .contact-list { display: grid; gap: 14px; }
-        .contact-row { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px 22px; }
-        .contact-row span { color: var(--soft); display: block; font-size: 0.82rem; margin-bottom: 4px; }
-        .contact-row strong, .contact-row a { font-size: 1.05rem; font-weight: 700; }
+        /* CONTACTS & SOCIALS (With Instagram Added) */
+        .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .contact-list { display: grid; gap: 12px; }
+        .contact-row { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px 20px; }
+        .contact-row span { color: var(--soft); display: block; font-size: 0.8rem; margin-bottom: 2px; }
+        .contact-row strong, .contact-row a { font-size: 1rem; font-weight: 700; }
         
-        .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px; }
+        /* Balanced Socials Grid (8 Items = 4 Perfect Rows) */
+        .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px; }
         .social-links a {
-            height: 44px; padding: 0 14px; background: rgba(255,255,255,0.03);
+            height: 42px; padding: 0 12px; background: rgba(255,255,255,0.03);
             border: 1px solid var(--border); border-radius: var(--radius-sm);
-            display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.88rem;
+            display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.85rem;
+            transition: all 0.2s ease;
         }
-        .social-links a:hover { border-color: rgba(255,255,255,0.25); }
-        .social-links a img { width: 18px; height: 18px; object-fit: contain; }
-        .social-btn-max { grid-column: span 2; }
+        .social-links a:hover { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.06); }
+        .social-links a img { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
 
-        .map-wrap { height: 100%; min-height: 460px; border-radius: var(--radius-xl); border: 1px solid var(--border); overflow: hidden; }
-        .map-wrap iframe { width: 100%; height: 100%; min-height: 460px; border: 0; }
+        .map-wrap { height: 100%; min-height: 440px; border-radius: var(--radius-xl); border: 1px solid var(--border); overflow: hidden; }
+        .map-wrap iframe { width: 100%; height: 100%; min-height: 440px; border: 0; }
 
         /* FINAL CTA NEON BANNER */
         .cta-banner {
-            margin: 80px 0 0;
-            background: linear-gradient(135deg, rgba(214, 189, 122, 0.12) 0%, rgba(56, 189, 248, 0.08) 100%);
-            border: 1px solid var(--border-glow);
-            border-radius: var(--radius-xl);
-            padding: 60px 40px;
-            text-align: center;
-            box-shadow: 0 0 50px rgba(214, 189, 122, 0.15);
+            margin: 70px 0 0;
+            background: linear-gradient(135deg, rgba(214, 189, 122, 0.1) 0%, rgba(56, 189, 248, 0.05) 100%);
+            border: 1px solid var(--border-glow); border-radius: var(--radius-xl);
+            padding: 50px 30px; text-align: center; box-shadow: 0 0 40px rgba(214, 189, 122, 0.12);
         }
-        .cta-banner h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 12px 0 0; }
-        .cta-banner p { color: var(--muted); max-width: 600px; margin: 14px auto 0; font-size: 1.1rem; }
+        .cta-banner h2 { font-size: clamp(1.8rem, 3.8vw, 2.8rem); font-weight: 800; margin: 10px 0 0; }
+        .cta-banner p { color: var(--muted); max-width: 580px; margin: 12px auto 0; font-size: 1.02rem; }
 
         /* FOOTER */
-        .site-footer { padding: 40px 0; border-top: 1px solid var(--border); color: var(--soft); font-size: 0.88rem; }
+        .site-footer { padding: 36px 0; border-top: 1px solid var(--border); color: var(--soft); font-size: 0.85rem; }
         .footer-inner { display: flex; justify-content: space-between; align-items: center; }
 
-        /* RESPONSIVE BREAKPOINTS */
+        /* MOBILE FIXES (No text overflow) */
         @media (max-width: 1024px) {
             .nav { display: none; }
             .widget-grid { grid-template-columns: 1fr 1fr; }
@@ -399,20 +356,19 @@
             .bento-grid { grid-template-columns: 1fr; }
             .bento-span-2 { grid-column: span 1; }
             .assortment-grid { grid-template-columns: repeat(2, 1fr); }
-            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             .contacts-grid, .company-block, .faq { grid-template-columns: 1fr; }
         }
         @media (max-width: 640px) {
-            .container { width: min(100% - 28px, var(--max-w)); }
-            .header-inner { height: 64px; }
-            .brand-name span { display: none; } /* MOBILE HEADER BUG FIX */
-            .brand-name strong { font-size: 0.92rem; }
+            .container { width: min(100% - 24px, var(--max-w)); }
+            .header-inner { height: 60px; }
+            .brand-name span { display: none !important; } /* ABSOLUTE FIX FOR MOBILE HEADER BUG */
+            .brand-name strong { font-size: 0.9rem; }
             .widget-grid { grid-template-columns: 1fr; }
             .stats-bar { grid-template-columns: 1fr; }
-            .assortment-grid, .process-grid { grid-template-columns: 1fr; }
+            .assortment-grid, .gallery-grid { grid-template-columns: 1fr; }
             .social-links { grid-template-columns: 1fr; }
-            .social-btn-max { grid-column: span 1; }
-            .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
+            .footer-inner { flex-direction: column; text-align: center; gap: 10px; }
         }
     </style>
 </head>
@@ -421,21 +377,21 @@
     <!-- Ambient Glow Background -->
     <div class="glow-bg">
         <div class="glow-top"></div>
-        <div class="glow-middle"></div>
+        <div class="glow-bottom"></div>
     </div>
 
-    <!-- Header (Fixed Mobile Overflow) -->
+    <!-- Header (Fixed Mobile Header Bug) -->
     <header class="site-header">
         <div class="container header-inner">
             <a class="brand" href="#top" aria-label="Стройбаза на Монтажной">
                 <div class="brand-icon" id="logo-svg-header">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:22px; height:22px; color:var(--accent);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:20px; height:20px; color:var(--accent);">
                         <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(214,189,122,0.25)"/>
                         <path d="M4 7V17L12 22V12Z"/>
                         <path d="M12 12V22L20 17V7Z"/>
                     </svg>
                 </div>
-                <img src="logo.png" id="logo-img-header" style="display:none;" onerror="if(this.src.indexOf('logo.PNG') === -1) { this.src='logo.PNG'; } else { this.style.display='none'; document.getElementById('logo-svg-header').style.display='flex'; }" onload="document.getElementById('logo-svg-header').style.display='none'; this.style.display='block';" alt="Стройбаза на Монтажной" width="40" height="40">
+                <img src="logo.png" id="logo-img-header" style="display:none;" onerror="if(this.src.indexOf('logo.PNG') === -1) { this.src='logo.PNG'; } else { this.style.display='none'; document.getElementById('logo-svg-header').style.display='flex'; }" onload="document.getElementById('logo-svg-header').style.display='none'; this.style.display='block';" alt="Стройбаза на Монтажной" width="38" height="38">
                 <span class="brand-name">
                     <strong>Стройбаза на Монтажной</strong>
                     <span>Невинномысск, ул. Монтажная, 10</span>
@@ -463,7 +419,7 @@
             <div class="container hero-content">
                 <div class="badge"><span class="badge-dot"></span> Склад открыт • Невинномысск</div>
                 <h1>Арматура, трубы, цемент и ЖБИ со склада</h1>
-                <p class="hero-lead">Металл по ГОСТу, ФБС, кольца, шлакоблок и цемент М500. Своя погрузка. Резка арматуры на базе. Доставка Газелью и манипулятором в день заказа.</p>
+                <p class="hero-lead">Металл по ГОСТу, ФБС, кольца, шлакоблок и цемент М500. Своя погрузка. Резка арматуры на базе. Доставка Газелью и манипулятором за 1.5 часа.</p>
                 <div class="hero-actions">
                     <a class="btn btn-primary" href="tel:+79887328161">Уточнить наличие и цену</a>
                     <a class="btn btn-ghost" href="https://wa.me/79887328161" target="_blank" rel="noopener">Написать в WhatsApp</a>
@@ -474,25 +430,25 @@
                     <div class="widget-title">⚡ Быстрый экспресс-расчет стоимости</div>
                     <div class="widget-grid">
                         <select class="widget-select" id="calc-item">
-                            <option value="46">Арматура 12 мм (46 ₽/м)</option>
-                            <option value="112">Профильная труба 40х20 (112 ₽/м)</option>
-                            <option value="560">Цемент М500 50кг (560 ₽/мешок)</option>
+                            <option value="60">Арматура 12 мм (60 ₽/м)</option>
+                            <option value="115">Профильная труба 40х20 (115 ₽/м)</option>
+                            <option value="580">Цемент М500 50кг (580 ₽/мешок)</option>
                             <option value="48">Шлакоблок 20х20х40 (48 ₽/шт)</option>
                         </select>
                         <input type="number" class="widget-input" id="calc-qty" value="100" placeholder="Кол-во">
-                        <div style="font-weight: 800; color: var(--accent); font-size: 1.1rem;" id="calc-total">4 600 ₽</div>
+                        <div style="font-weight: 800; color: var(--accent); font-size: 1.1rem;" id="calc-total">6 000 ₽</div>
                         <a class="btn btn-primary" href="tel:+79887328161">Заказать</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Stats Bar -->
+        <!-- Corrected Real Stats Bar -->
         <div class="container">
             <div class="stats-bar">
-                <div class="stat-card"><strong>15 000+ т</strong><span>Металла на складе</span></div>
-                <div class="stat-card"><strong>100% ГОСТ</strong><span>Гарантия толщины</span></div>
-                <div class="stat-card"><strong>2 часа</strong><span>Средняя доставка</span></div>
+                <div class="stat-card"><strong>30+ тонн</strong><span>Арматуры всегда на складе</span></div>
+                <div class="stat-card"><strong>100% ГОСТ</strong><span>Гарантия толщины стенки</span></div>
+                <div class="stat-card"><strong>1.5 часа</strong><span>Среднее время доставки</span></div>
                 <div class="stat-card"><strong>0 ₽</strong><span>Резка арматуры пополам</span></div>
             </div>
         </div>
@@ -503,23 +459,23 @@
                 <div class="section-head">
                     <div class="badge"><span class="badge-dot"></span> Платформа и сервис</div>
                     <h2 class="section-title">Почему покупают у нас</h2>
-                    <p class="section-copy">Прямые поставки завода-изготовителя, собственная техника и честный контроль.</p>
+                    <p class="section-copy">Розничные и полуоптовые продажи. Честный металл и быстрая погрузка.</p>
                 </div>
                 <div class="bento-grid">
                     <div class="bento-card bento-span-2">
                         <span class="bento-tag">ГОСТ Контроль</span>
                         <h3>Честный металлопрокат без подделок</h3>
-                        <p>Никакой «фольги» под видом нормальной трубы. Если заявлена стенка 2 мм — значит, там ровно 2 мм. Все партии сопровождаются сертификатами.</p>
+                        <p>Никакой «фольги» под видом нормальной трубы. Если заявлена стенка 2 мм — значит, там ровно 2 мм. Продаем арматуру строго по ГОСТу.</p>
                         <ul class="bento-list">
                             <li>Строгое соответствие заявленному диаметру</li>
                             <li>Отсутствие глубокой ржавчины и дефектов</li>
-                            <li>Хранение в условиях сухого склада</li>
+                            <li>Хранение на собственной обустроенной базе</li>
                         </ul>
                     </div>
                     <div class="bento-card">
                         <span class="bento-tag">Экономия</span>
                         <h3>Резка в размер на базе</h3>
-                        <p>Заводскую арматуру 11.7 м режем пополам прямо на базе. Вам не нужно оплачивать длинномер.</p>
+                        <p>Заводскую арматуру 11.7 м режем пополам прямо у нас. Вам не нужно оплачивать дорогой длинномер.</p>
                     </div>
                     <div class="bento-card">
                         <span class="bento-tag">Логистика</span>
@@ -527,15 +483,15 @@
                         <p>Быстрые Газели для мелких заказов и манипуляторы бортом 15т для колец и блоков ФБС.</p>
                     </div>
                     <div class="bento-card bento-span-2">
-                        <span class="bento-tag">Гибкость</span>
-                        <h3>Удобный расчет и оплата при получении</h3>
+                        <span class="bento-tag">Удобство</span>
+                        <h3>Расчет и оплата при получении</h3>
                         <p>Никакого риска: платите наличными или переводом по факту привоза на ваш объект. Для юрлиц и прорабов доступен безналичный расчет с ИП.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Catalog with Filter Tabs -->
+        <!-- Catalog with Filter Tabs (Updated Prices) -->
         <section class="section" id="catalog">
             <div class="container">
                 <div class="section-head">
@@ -557,9 +513,9 @@
                     <article class="product-card" data-cat="metal">
                         <div class="product-img"><img src="armatura.jpg" alt="Арматура А500С" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Арматура 12 мм А500С (ГОСТ)</h3><span class="price">46 ₽/м</span></div>
+                            <div class="product-top"><h3 class="product-title">Арматура 12 мм А500С (ГОСТ)</h3><span class="price">60 ₽/м</span></div>
                             <p>Честный диаметр и геометрия. Для фундаментов, армопоясов и перекрытий. В наличии 6–16 мм.</p>
-                            <div class="product-meta">Длина хлыста 11.7 м. Подготовка к перевозке.</div>
+                            <div class="product-meta">Длина хлыста 11.7 м. Бесплатная резка пополам.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать</a></div>
                         </div>
                     </article>
@@ -567,9 +523,9 @@
                     <article class="product-card" data-cat="metal">
                         <div class="product-img"><img src="truba.jpg" alt="Профильная труба" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Профильная труба</h3><span class="price">от 112 ₽/м</span></div>
+                            <div class="product-top"><h3 class="product-title">Профильная труба</h3><span class="price">от 115 ₽/м</span></div>
                             <p>Для ворот, навесов, каркасов и заборов.</p>
-                            <div class="product-meta">40х20х2 — 112 ₽. 40х40х2 — 148 ₽. 60х40х3 — 250 ₽.</div>
+                            <div class="product-meta">40х20х2 — 115 ₽. 40х40х2 — 160 ₽. 60х40х3 — 260 ₽.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать</a></div>
                         </div>
                     </article>
@@ -577,9 +533,9 @@
                     <article class="product-card" data-cat="cement">
                         <div class="product-img"><img src="cement.jpg" alt="Цемент М500" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Цемент М500, 50 кг</h3><span class="price">560 ₽</span></div>
+                            <div class="product-top"><h3 class="product-title">Цемент М500, 50 кг</h3><span class="price">580 ₽</span></div>
                             <p>Свежий заводской цемент для фундаментов, стяжек и кладки.</p>
-                            <div class="product-meta">50 кг. На поддоне 30 мешков.</div>
+                            <div class="product-meta">50 кг. На поддоне 30 мешков. Хранение в сухом боксе.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать</a></div>
                         </div>
                     </article>
@@ -607,9 +563,9 @@
                     <article class="product-card" data-cat="concrete">
                         <div class="product-img"><img src="fbs.jpg" alt="ФБС" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">ФБС 24.3.6 и 24.4.6</h3><span class="price">от 2 500 ₽</span></div>
+                            <div class="product-top"><h3 class="product-title">ФБС 24.3.6 и 24.4.6</h3><span class="price">от 2 600 ₽</span></div>
                             <p>Фундаментные блоки для цоколей и подпорных стен.</p>
-                            <div class="product-meta">24.3.6 — 2500 ₽. 24.4.6 — 2700 ₽.</div>
+                            <div class="product-meta">24.3.6 — 2 600 ₽. 24.4.6 — 2 800 ₽.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать</a></div>
                         </div>
                     </article>
@@ -619,7 +575,7 @@
                         <div class="product-body">
                             <div class="product-top"><h3 class="product-title">Услуги манипулятора</h3><span class="price">3 000 ₽/ч</span></div>
                             <p>Перевозка и разгрузка ФБС, колец, поддонов и металла. Стрела 5 т, борт 15 т.</p>
-                            <div class="product-meta">Минимум по городу — 5000 ₽.</div>
+                            <div class="product-meta">Минимум по городу — 5000 ₽. Опытный водитель.</div>
                             <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать технику</a></div>
                         </div>
                     </article>
@@ -627,33 +583,33 @@
             </div>
         </section>
 
-        <!-- Step-by-Step Pipeline (How it works) -->
+        <!-- Upgraded Gallery Showcase -->
         <section class="section">
             <div class="container">
-                <div class="section-head">
-                    <div class="badge"><span class="badge-dot"></span> Процесс</div>
-                    <h2 class="section-title">4 шага к получению стройматериалов</h2>
+                <div class="gallery-head-bar">
+                    <div>
+                        <div class="badge"><span class="badge-dot"></span> Фотогалерея</div>
+                        <h2 class="section-title" style="margin-top:8px;">База, товар и техника вживую</h2>
+                    </div>
+                    <a class="btn btn-ghost" href="https://vk.com/stroybazansk" target="_blank" rel="noopener">Все 30+ фото в VK</a>
                 </div>
-                <div class="process-grid">
-                    <div class="process-card">
-                        <div class="process-num">01</div>
-                        <h4>Звонок или заявка</h4>
-                        <p>Вы звоните нам или пишете в WhatsApp. Сообщаете требуемые позиции и адрес.</p>
+
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img src="photo-1.jpg" alt="Склад металла" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <div class="gallery-overlay">Территория склада</div>
                     </div>
-                    <div class="process-card">
-                        <div class="process-num">02</div>
-                        <h4>Точный расчет</h4>
-                        <p>Менеджер за 2 минуты считает точный объем, стоимость резки и логистику.</p>
+                    <div class="gallery-card">
+                        <img src="photo-2.jpg" alt="Арматура ГОСТ" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <div class="gallery-overlay">Партия арматуры</div>
                     </div>
-                    <div class="process-card">
-                        <div class="process-num">03</div>
-                        <h4>Погрузка на базе</h4>
-                        <p>Быстро загружаем поддоны автопогрузчиком или режем металл в размер.</p>
+                    <div class="gallery-card">
+                        <img src="photo-3.jpg" alt="Профильные трубы" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <div class="gallery-overlay">Профильная труба</div>
                     </div>
-                    <div class="process-card">
-                        <div class="process-num">04</div>
-                        <h4>Доставка и расчет</h4>
-                        <p>Привозим товар на ваш объект. Вы проверяете качество и оплачиваете водителю.</p>
+                    <div class="gallery-card">
+                        <img src="photo-4.jpg" alt="Погрузка техники" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <div class="gallery-overlay">Быстрая погрузка</div>
                     </div>
                 </div>
             </div>
@@ -681,37 +637,7 @@
             </div>
         </section>
 
-        <!-- Gallery Grid -->
-        <section class="section">
-            <div class="container">
-                <div class="section-head">
-                    <div class="badge"><span class="badge-dot"></span> Фото базы</div>
-                    <h2 class="section-title">Наш склад и техника</h2>
-                    <p class="section-copy">Прокрутите вбок для просмотра склада в Невинномысске.</p>
-                </div>
-                <div class="gallery-grid">
-                    <figure class="gallery-item"><img src="photo-1.jpg" alt="Фото базы 1" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
-                    <figure class="gallery-item"><img src="photo-2.jpg" alt="Фото базы 2" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
-                    <figure class="gallery-item"><img src="photo-3.jpg" alt="Фото базы 3" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
-                    <figure class="gallery-item"><img src="photo-4.jpg" alt="Фото базы 4" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
-                    <figure class="gallery-item"><img src="photo-5.jpg" alt="Фото базы 5" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
-                    <figure class="gallery-item"><img src="photo-6.jpg" alt="Фото базы 6" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
-                    <figure class="gallery-item"><img src="photo-7.jpg" alt="Фото базы 7" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
-                    <figure class="gallery-item"><img src="photo-8.jpg" alt="Фото базы 8" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
-                    <figure class="gallery-item"><img src="photo-9.jpg" alt="Фото базы 9" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
-                    <figure class="gallery-item"><img src="photo-10.jpg" alt="Фото базы 10" loading="lazy" onerror="this.parentNode.style.display='none';"></figure>
-                    <div class="video-placeholder">
-                        <div>
-                            <strong>Больше фото в VK</strong>
-                            <p style="color:var(--muted); font-size:0.88rem; margin-top:8px;">Смотрите фото и видео работы в нашей группе.</p>
-                        </div>
-                        <a class="btn btn-ghost" href="https://vk.com/stroybazansk" target="_blank" rel="noopener">Открыть VK</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ -->
+        <!-- FAQ in Glasses Style (No Ugly Arrows) -->
         <section class="section">
             <div class="container">
                 <div class="section-head">
@@ -720,30 +646,42 @@
                 </div>
                 <div class="faq">
                     <details>
-                        <summary>Какая у вас география и условия доставки?</summary>
+                        <summary>
+                            <span>Какая у вас география и условия доставки?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
                         <p>Возим по Невинномысску, Ставропольскому краю и соседним республикам. Есть «Газели» (от 1000 ₽) и тяжелые манипуляторы.</p>
                     </details>
                     <details>
-                        <summary>Как принимается оплата?</summary>
+                        <summary>
+                            <span>Как принимается оплата?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
                         <p>Оплата по факту выгрузки: наличными водителю, быстрым переводом на карту или по безналичному расчету для организаций.</p>
                     </details>
                     <details>
-                        <summary>Как гарантируете качество материалов?</summary>
+                        <summary>
+                            <span>Как гарантируете качество материалов?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
                         <p>Металл соответствует ГОСТу (без тонких стенок). Цемент поставляется прямо с Новороссийского завода и хранится в крытом сухом складе.</p>
                     </details>
                     <details>
-                        <summary>Можно ли забрать материалы самовывозом?</summary>
+                        <summary>
+                            <span>Можно ли забрать материалы самовывозом?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
                         <p>Да. Невинномысск, ул. Монтажная, д. 10. Широкий заезд, работаем с 8:00 до 18:00 (Пн-Сб). Погрузим погрузчиком за 5 минут.</p>
                     </details>
                 </div>
             </div>
         </section>
 
-        <!-- Contacts -->
+        <!-- Contacts & Social Networks (Instagram Added) -->
         <section class="section" id="contacts">
             <div class="container contacts-grid">
                 <div>
-                    <div class="section-head" style="text-align: left; margin-bottom: 24px;">
+                    <div class="section-head" style="text-align: left; margin-bottom: 20px;">
                         <div class="badge"><span class="badge-dot"></span> Контакты</div>
                         <h2 class="section-title">Ждем вас на базе</h2>
                     </div>
@@ -753,16 +691,18 @@
                         <div class="contact-row"><span>Адрес склада</span><strong>Невинномысск, ул. Монтажная, д. 10</strong></div>
                         <div class="contact-row"><span>График работы</span><strong>Пн-Сб: 8:00-18:00, Вс: выходной</strong></div>
                         
+                        <!-- Socials Grid with Instagram -->
                         <div class="contact-row">
                             <span>Социальные сети и карты</span>
                             <div class="social-links">
                                 <a href="https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120" target="_blank" rel="noopener"><img src="icon-yandex.png" alt="" onerror="this.style.display='none';"><span>Яндекс Карты</span></a>
                                 <a href="https://2gis.ru/nevinnomyssk/inside/19000196618797894/firm/70000001114215365" target="_blank" rel="noopener"><img src="icon-2gis.png" alt="" onerror="this.style.display='none';"><span>2ГИС</span></a>
                                 <a href="https://vk.com/stroybazansk" target="_blank" rel="noopener"><img src="icon-vk.png" alt="" onerror="this.style.display='none';"><span>ВКонтакте</span></a>
+                                <a href="https://instagram.com/stroybazansk" target="_blank" rel="noopener"><img src="icon-instagram.png" alt="" onerror="this.style.display='none';"><span>Instagram</span></a>
                                 <a href="https://www.avito.ru/brands/7b5d69d7938d3eb5a9ac6751ed5a9697" target="_blank" rel="noopener"><img src="icon-avito.png" alt="" onerror="this.style.display='none';"><span>Авито</span></a>
                                 <a href="https://t.me/stroybazansk" target="_blank" rel="noopener"><img src="icon-telegram.png" alt="" onerror="this.style.display='none';"><span>Telegram</span></a>
                                 <a href="https://www.youtube.com/@stroybazansk" target="_blank" rel="noopener"><img src="icon-youtube.png" alt="" onerror="this.style.display='none';"><span>YouTube</span></a>
-                                <a href="https://max.ru/join/bM2VpgJxiwIve809sHURi8C1mrzORQCR-7u_elROpXw" target="_blank" rel="noopener" class="social-btn-max"><img src="icon-max.png" alt="" onerror="this.style.display='none';"><span>MAX: +7 (988) 732-81-61</span></a>
+                                <a href="https://max.ru/join/bM2VpgJxiwIve809sHURi8C1mrzORQCR-7u_elROpXw" target="_blank" rel="noopener"><img src="icon-max.png" alt="" onerror="this.style.display='none';"><span>MAX</span></a>
                             </div>
                         </div>
                     </div>
@@ -775,13 +715,13 @@
             </div>
         </section>
 
-        <!-- Final GPTRON CTA Banner -->
+        <!-- Final CTA Neon Banner -->
         <div class="container">
             <div class="cta-banner">
                 <div class="badge"><span class="badge-dot"></span> Экспресс Заказ</div>
                 <h2>Готовы укомплектовать стройку?</h2>
                 <p>Позвоните нам прямо сейчас или напишите список товаров в WhatsApp — посчитаем смету и согласуем время доставки за 2 минуты.</p>
-                <div style="display:flex; justify-content:center; gap:16px; margin-top:28px; flex-wrap:wrap;">
+                <div style="display:flex; justify-content:center; gap:14px; margin-top:24px; flex-wrap:wrap;">
                     <a class="btn btn-primary" href="tel:+79887328161">Позвонить: +7 (988) 732-81-61</a>
                     <a class="btn btn-ghost" href="https://wa.me/79887328161" target="_blank" rel="noopener">Написать в WhatsApp</a>
                 </div>
@@ -790,7 +730,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer" style="margin-top: 80px;">
+    <footer class="site-footer" style="margin-top: 70px;">
         <div class="container footer-inner">
             <span>© 2026 Стройбаза на Монтажной, Невинномысск</span>
             <span>Цены и наличие уточняйте по телефону перед заказом.</span>
@@ -799,7 +739,7 @@
 
     <!-- Interactive JS Scripts -->
     <script>
-        // Hero Calculator Widget logic
+        // Hero Calculator Widget
         const itemSelect = document.getElementById('calc-item');
         const qtyInput = document.getElementById('calc-qty');
         const totalDisplay = document.getElementById('calc-total');
