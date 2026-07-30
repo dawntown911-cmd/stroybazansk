@@ -101,7 +101,7 @@
 
         img { max-width: 100%; display: block; }
         a { color: inherit; text-decoration: none; }
-        .container { width: min(var(--max-w), calc(100% - 36px)); margin: 0 auto; }
+        .container { width: min(var(--max-w), calc(100% - 32px)); margin: 0 auto; }
 
         /* GPTRON Pill Badges */
         .badge {
@@ -117,19 +117,19 @@
         }
         @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.85); } }
 
-        /* HEADER (Fixed Mobile Alignment - No Overflow) */
+        /* HEADER (Fixed Mobile Layout - Zero Truncation) */
         .site-header {
             position: sticky; top: 0; z-index: 100;
-            background: rgba(7, 8, 12, 0.85);
+            background: rgba(7, 8, 12, 0.88);
             backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
         .header-inner {
-            height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+            height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
         }
         .brand {
             display: flex; align-items: center; gap: 10px;
-            min-width: 0; flex-shrink: 1; overflow: hidden;
+            min-width: 0; flex: 1; overflow: hidden;
         }
         .brand-icon {
             width: 38px; height: 38px; border-radius: 10px;
@@ -139,7 +139,7 @@
         }
         .brand-name {
             display: flex; flex-direction: column; justify-content: center;
-            min-width: 0; line-height: 1.2; overflow: hidden;
+            min-width: 0; line-height: 1.25; overflow: hidden;
         }
         .brand-name strong {
             font-size: 0.98rem; font-weight: 800; letter-spacing: -0.02em; color: #ffffff;
@@ -201,7 +201,7 @@
         }
         .widget-select:focus, .widget-input:focus { border-color: var(--accent); }
 
-        /* STATS TICKER BAR (Corrected Stats) */
+        /* STATS TICKER BAR */
         .stats-bar {
             margin: 36px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
         }
@@ -268,20 +268,72 @@
         .product-actions { margin-top: auto; padding-top: 16px; }
         .product-actions .btn { width: 100%; border-radius: var(--radius-md); }
 
-        /* GALLERY SHOWCASE (GPTRON STYLE) */
+        /* GALLERY SHOWCASE (WITH MINI-ALBUMS) */
         .gallery-head-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
         .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
         .gallery-card {
             position: relative; height: 210px; border-radius: var(--radius-lg);
             border: 1px solid var(--border); overflow: hidden; background: var(--card-bg);
-            transition: all 0.3s ease;
+            transition: all 0.3s ease; cursor: pointer;
         }
         .gallery-card:hover { border-color: var(--border-glow); transform: scale(1.02); }
         .gallery-card img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-badge {
+            position: absolute; top: 12px; right: 12px;
+            padding: 4px 10px; border-radius: 9999px; background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px); border: 1px solid var(--border);
+            font-size: 0.72rem; font-weight: 700; color: var(--accent);
+        }
         .gallery-overlay {
-            position: absolute; bottom: 0; left: 0; right: 0; padding: 12px;
-            background: linear-gradient(180deg, transparent 0%, rgba(7, 8, 12, 0.9) 100%);
-            font-size: 0.78rem; font-weight: 700; color: #fff;
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 14px 12px 12px;
+            background: linear-gradient(180deg, transparent 0%, rgba(7, 8, 12, 0.92) 100%);
+            font-size: 0.82rem; font-weight: 700; color: #fff;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        /* LIGHTBOX ALBUM MODAL */
+        .album-modal {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 200; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(25px);
+            display: none; align-items: center; justify-content: center; padding: 20px;
+        }
+        .album-modal.active { display: flex; }
+        .album-box {
+            max-width: 900px; width: 100%; background: var(--card-bg);
+            border: 1px solid var(--border-glow); border-radius: var(--radius-xl);
+            overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+            position: relative; display: flex; flex-direction: column;
+        }
+        .album-header {
+            padding: 16px 20px; border-bottom: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .album-title { font-weight: 800; font-size: 1.05rem; color: #fff; }
+        .album-close {
+            width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.08);
+            border: 1px solid var(--border); color: #fff; font-size: 1.2rem; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+        }
+        .album-close:hover { background: rgba(255,255,255,0.2); }
+        .album-view {
+            position: relative; height: 480px; background: #000;
+            display: flex; align-items: center; justify-content: center; overflow: hidden;
+        }
+        .album-view img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .album-nav {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 44px; height: 44px; border-radius: 50%; background: rgba(0,0,0,0.6);
+            border: 1px solid var(--border); color: #fff; font-size: 1.4rem; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; backdrop-filter: blur(10px);
+            transition: all 0.2s; z-index: 10;
+        }
+        .album-nav:hover { background: var(--accent); color: #000; }
+        .album-prev { left: 16px; }
+        .album-next { right: 16px; }
+        .album-footer {
+            padding: 14px 20px; border-top: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.85rem; color: var(--muted);
         }
 
         /* B2B CARDS */
@@ -291,7 +343,7 @@
         .company-card p { margin: 8px 0 0; color: var(--muted); font-size: 0.9rem; }
         .company-card .btn { margin-top: 18px; width: 100%; border-radius: var(--radius-md); }
 
-        /* FAQ ACCORDION (Glasses Style - No Ugly Arrows) */
+        /* FAQ ACCORDION (Glasses Style - Perfectly Centered SVG Plus) */
         .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         details {
             background: var(--card-glass); border: 1px solid var(--border);
@@ -306,11 +358,12 @@
             display: flex; justify-content: space-between; align-items: center; gap: 12px;
         }
         .faq-icon {
-            width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,0.05);
-            display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--accent);
-            transition: transform 0.3s ease; flex-shrink: 0;
+            width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;
+            color: var(--accent); flex-shrink: 0; transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
         }
-        details[open] .faq-icon { transform: rotate(45deg); color: #fff; }
+        details[open] .faq-icon { transform: rotate(45deg); color: #ffffff; background: rgba(214, 189, 122, 0.2); border-color: var(--accent); }
+        .faq-icon svg { width: 12px; height: 12px; display: block; }
         details p { margin: 12px 0 0; color: var(--muted); font-size: 0.9rem; border-left: 2px solid var(--accent); padding-left: 12px; line-height: 1.6; }
 
         /* CONTACTS & SOCIALS (With Instagram Added) */
@@ -320,7 +373,6 @@
         .contact-row span { color: var(--soft); display: block; font-size: 0.8rem; margin-bottom: 2px; }
         .contact-row strong, .contact-row a { font-size: 1rem; font-weight: 700; }
         
-        /* Balanced Socials Grid (8 Items = 4 Perfect Rows) */
         .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px; }
         .social-links a {
             height: 42px; padding: 0 12px; background: rgba(255,255,255,0.03);
@@ -348,7 +400,7 @@
         .site-footer { padding: 36px 0; border-top: 1px solid var(--border); color: var(--soft); font-size: 0.85rem; }
         .footer-inner { display: flex; justify-content: space-between; align-items: center; }
 
-        /* MOBILE FIXES (No text overflow) */
+        /* PERFECT MOBILE LAYOUT FIXES */
         @media (max-width: 1024px) {
             .nav { display: none; }
             .widget-grid { grid-template-columns: 1fr 1fr; }
@@ -361,14 +413,18 @@
         }
         @media (max-width: 640px) {
             .container { width: min(100% - 24px, var(--max-w)); }
-            .header-inner { height: 60px; }
-            .brand-name span { display: none !important; } /* ABSOLUTE FIX FOR MOBILE HEADER BUG */
-            .brand-name strong { font-size: 0.9rem; }
+            .header-inner { height: 60px; justify-content: space-between; gap: 8px; }
+            .phone-block { display: none !important; } /* Hides raw phone text on mobile -> Zero truncation! */
+            .brand { flex: 1; min-width: 0; }
+            .brand-name span { display: none !important; }
+            .brand-name strong { font-size: 0.92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+            .header-actions .btn { height: 36px; padding: 0 14px; font-size: 0.82rem; }
             .widget-grid { grid-template-columns: 1fr; }
             .stats-bar { grid-template-columns: 1fr; }
             .assortment-grid, .gallery-grid { grid-template-columns: 1fr; }
             .social-links { grid-template-columns: 1fr; }
             .footer-inner { flex-direction: column; text-align: center; gap: 10px; }
+            .album-view { height: 320px; }
         }
     </style>
 </head>
@@ -380,7 +436,7 @@
         <div class="glow-bottom"></div>
     </div>
 
-    <!-- Header (Fixed Mobile Header Bug) -->
+    <!-- Header (Fixed Mobile Overflow - No Truncation) -->
     <header class="site-header">
         <div class="container header-inner">
             <a class="brand" href="#top" aria-label="Стройбаза на Монтажной">
@@ -459,7 +515,7 @@
                 <div class="section-head">
                     <div class="badge"><span class="badge-dot"></span> Платформа и сервис</div>
                     <h2 class="section-title">Почему покупают у нас</h2>
-                    <p class="section-copy">Розничные и полуоптовые продажи. Честный металл и быстрая погрузка.</p>
+                    <p class="section-copy">Розничные и оптовые продажи. Честный металл и быстрая погрузка.</p>
                 </div>
                 <div class="bento-grid">
                     <div class="bento-card bento-span-2">
@@ -583,7 +639,7 @@
             </div>
         </section>
 
-        <!-- Upgraded Gallery Showcase -->
+        <!-- Upgraded Gallery Showcase with Mini-Albums Modal -->
         <section class="section">
             <div class="container">
                 <div class="gallery-head-bar">
@@ -591,25 +647,29 @@
                         <div class="badge"><span class="badge-dot"></span> Фотогалерея</div>
                         <h2 class="section-title" style="margin-top:8px;">База, товар и техника вживую</h2>
                     </div>
-                    <a class="btn btn-ghost" href="https://vk.com/stroybazansk" target="_blank" rel="noopener">Все 30+ фото в VK</a>
+                    <a class="btn btn-ghost" href="https://vk.com/stroybazansk" target="_blank" rel="noopener">Все фото и видео в VK</a>
                 </div>
 
                 <div class="gallery-grid">
-                    <div class="gallery-card">
-                        <img src="photo-1.jpg" alt="Склад металла" loading="lazy" onerror="this.parentNode.style.display='none';">
-                        <div class="gallery-overlay">Территория склада</div>
+                    <div class="gallery-card" onclick="openAlbum('armatura')">
+                        <img src="armatura.jpg" alt="Арматура" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <div class="gallery-badge">Альбом</div>
+                        <div class="gallery-overlay"><span>Арматура и Металл</span><span>🔍 Посмотреть</span></div>
                     </div>
-                    <div class="gallery-card">
-                        <img src="photo-2.jpg" alt="Арматура ГОСТ" loading="lazy" onerror="this.parentNode.style.display='none';">
-                        <div class="gallery-overlay">Партия арматуры</div>
+                    <div class="gallery-card" onclick="openAlbum('truba')">
+                        <img src="truba.jpg" alt="Трубы" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <div class="gallery-badge">Альбом</div>
+                        <div class="gallery-overlay"><span>Профильные трубы</span><span>🔍 Посмотреть</span></div>
                     </div>
-                    <div class="gallery-card">
-                        <img src="photo-3.jpg" alt="Профильные трубы" loading="lazy" onerror="this.parentNode.style.display='none';">
-                        <div class="gallery-overlay">Профильная труба</div>
+                    <div class="gallery-card" onclick="openAlbum('sklad')">
+                        <img src="photo-1.jpg" alt="База" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <div class="gallery-badge">Альбом</div>
+                        <div class="gallery-overlay"><span>Территория склада</span><span>🔍 Посмотреть</span></div>
                     </div>
-                    <div class="gallery-card">
-                        <img src="photo-4.jpg" alt="Погрузка техники" loading="lazy" onerror="this.parentNode.style.display='none';">
-                        <div class="gallery-overlay">Быстрая погрузка</div>
+                    <div class="gallery-card" onclick="openAlbum('tech')">
+                        <img src="manipulator.jpg" alt="Техника" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <div class="gallery-badge">Альбом</div>
+                        <div class="gallery-overlay"><span>Спецтехника и Погрузка</span><span>🔍 Посмотреть</span></div>
                     </div>
                 </div>
             </div>
@@ -637,7 +697,7 @@
             </div>
         </section>
 
-        <!-- FAQ in Glasses Style (No Ugly Arrows) -->
+        <!-- FAQ in Glasses Style (Perfect Centered SVG Plus) -->
         <section class="section">
             <div class="container">
                 <div class="section-head">
@@ -648,28 +708,36 @@
                     <details>
                         <summary>
                             <span>Какая у вас география и условия доставки?</span>
-                            <span class="faq-icon">+</span>
+                            <span class="faq-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            </span>
                         </summary>
                         <p>Возим по Невинномысску, Ставропольскому краю и соседним республикам. Есть «Газели» (от 1000 ₽) и тяжелые манипуляторы.</p>
                     </details>
                     <details>
                         <summary>
                             <span>Как принимается оплата?</span>
-                            <span class="faq-icon">+</span>
+                            <span class="faq-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            </span>
                         </summary>
                         <p>Оплата по факту выгрузки: наличными водителю, быстрым переводом на карту или по безналичному расчету для организаций.</p>
                     </details>
                     <details>
                         <summary>
                             <span>Как гарантируете качество материалов?</span>
-                            <span class="faq-icon">+</span>
+                            <span class="faq-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            </span>
                         </summary>
                         <p>Металл соответствует ГОСТу (без тонких стенок). Цемент поставляется прямо с Новороссийского завода и хранится в крытом сухом складе.</p>
                     </details>
                     <details>
                         <summary>
                             <span>Можно ли забрать материалы самовывозом?</span>
-                            <span class="faq-icon">+</span>
+                            <span class="faq-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            </span>
                         </summary>
                         <p>Да. Невинномысск, ул. Монтажная, д. 10. Широкий заезд, работаем с 8:00 до 18:00 (Пн-Сб). Погрузим погрузчиком за 5 минут.</p>
                     </details>
@@ -729,6 +797,25 @@
         </div>
     </main>
 
+    <!-- Album Lightbox Modal Overlay -->
+    <div class="album-modal" id="albumModal">
+        <div class="album-box">
+            <div class="album-header">
+                <div class="album-title" id="albumTitle">Альбом фото</div>
+                <button class="album-close" onclick="closeAlbum()">✕</button>
+            </div>
+            <div class="album-view">
+                <button class="album-nav album-prev" onclick="prevPhoto()">‹</button>
+                <img id="albumImg" src="" alt="Фото альбома">
+                <button class="album-nav album-next" onclick="nextPhoto()">›</button>
+            </div>
+            <div class="album-footer">
+                <span id="albumCounter">Фото 1 из 1</span>
+                <span>Нажимайте стрелочки для просмотра</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="site-footer" style="margin-top: 70px;">
         <div class="container footer-inner">
@@ -768,6 +855,68 @@
                 }
             });
         }
+
+        // Mini-Albums Lightbox System (Вы можете добавлять любые фото сюда!)
+        const albums = {
+            armatura: {
+                title: 'Арматура и Металлопрокат',
+                photos: ['armatura.jpg', 'photo-1.jpg', 'photo-2.jpg']
+            },
+            truba: {
+                title: 'Профильные трубы на складе',
+                photos: ['truba.jpg', 'photo-3.jpg', 'photo-4.jpg']
+            },
+            sklad: {
+                title: 'Территория базы на Монтажной',
+                photos: ['photo-1.jpg', 'photo-5.jpg', 'photo-6.jpg', 'photo-7.jpg']
+            },
+            tech: {
+                title: 'Автопарк и Спецтехника',
+                photos: ['manipulator.jpg', 'photo-8.jpg', 'photo-9.jpg', 'photo-10.jpg']
+            }
+        };
+
+        let currentAlbumKey = '';
+        let currentPhotoIndex = 0;
+
+        function openAlbum(albumKey) {
+            if (!albums[albumKey]) return;
+            currentAlbumKey = albumKey;
+            currentPhotoIndex = 0;
+            updateModalPhoto();
+            document.getElementById('albumModal').classList.add('active');
+        }
+
+        function closeAlbum() {
+            document.getElementById('albumModal').classList.remove('active');
+        }
+
+        function updateModalPhoto() {
+            const album = albums[currentAlbumKey];
+            document.getElementById('albumTitle').textContent = album.title;
+            document.getElementById('albumImg').src = album.photos[currentPhotoIndex];
+            document.getElementById('albumCounter').textContent = `Фото ${currentPhotoIndex + 1} из ${album.photos.length}`;
+        }
+
+        function nextPhoto() {
+            const album = albums[currentAlbumKey];
+            currentPhotoIndex = (currentPhotoIndex + 1) % album.photos.length;
+            updateModalPhoto();
+        }
+
+        function prevPhoto() {
+            const album = albums[currentAlbumKey];
+            currentPhotoIndex = (currentPhotoIndex - 1 + album.photos.length) % album.photos.length;
+            updateModalPhoto();
+        }
+
+        // Keyboard Navigation for Lightbox
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('albumModal').classList.contains('active')) return;
+            if (e.key === 'Escape') closeAlbum();
+            if (e.key === 'ArrowRight') nextPhoto();
+            if (e.key === 'ArrowLeft') prevPhoto();
+        });
     </script>
 
     <!-- Rambler Counter -->
