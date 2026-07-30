@@ -117,7 +117,7 @@
         }
         @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.85); } }
 
-        /* HEADER (Fixed Mobile Layout - Zero Truncation) */
+        /* HEADER (Fixed Mobile Layout & Standout Logo Box) */
         .site-header {
             position: sticky; top: 0; z-index: 100;
             background: rgba(7, 8, 12, 0.88);
@@ -125,28 +125,29 @@
             border-bottom: 1px solid var(--border);
         }
         .header-inner {
-            height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+            height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
         }
         .brand {
-            display: flex; align-items: center; gap: 10px;
+            display: flex; align-items: center; gap: 12px;
             min-width: 0; flex: 1; overflow: hidden;
         }
         .brand-icon {
-            width: 38px; height: 38px; border-radius: 10px;
-            background: linear-gradient(135deg, rgba(214,189,122,0.22), rgba(255,255,255,0.03));
-            border: 1px solid var(--border);
+            width: 42px; height: 42px; border-radius: 12px;
+            background: rgba(214, 189, 122, 0.12);
+            border: 1px solid rgba(214, 189, 122, 0.3);
             display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+            padding: 7px; box-shadow: 0 0 15px rgba(214, 189, 122, 0.1);
         }
         .brand-name {
             display: flex; flex-direction: column; justify-content: center;
             min-width: 0; line-height: 1.25; overflow: hidden;
         }
         .brand-name strong {
-            font-size: 0.98rem; font-weight: 800; letter-spacing: -0.02em; color: #ffffff;
+            font-size: 1rem; font-weight: 800; letter-spacing: -0.02em; color: #ffffff;
             white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         }
         .brand-name span {
-            color: var(--soft); font-size: 0.72rem; white-space: nowrap;
+            color: var(--soft); font-size: 0.74rem; white-space: nowrap;
             overflow: hidden; text-overflow: ellipsis;
         }
 
@@ -161,7 +162,7 @@
 
         /* Buttons */
         .btn {
-            height: 42px; padding: 0 20px; border-radius: 9999px;
+            height: 44px; padding: 0 22px; border-radius: 9999px;
             font-weight: 700; font-size: 0.88rem; display: inline-flex; align-items: center;
             justify-content: center; gap: 8px; transition: all 0.25s ease; cursor: pointer;
             border: 1px solid transparent; white-space: nowrap;
@@ -213,8 +214,8 @@
         .stat-card span { color: var(--muted); font-size: 0.82rem; }
 
         /* BENTO GRID (FEATURES) */
-        .section { padding: 80px 0; border-top: 1px solid var(--border); }
-        .section-head { text-align: center; max-width: 680px; margin: 0 auto 42px; }
+        .section { padding: 75px 0; border-top: 1px solid var(--border); }
+        .section-head { text-align: center; max-width: 680px; margin: 0 auto 40px; }
         .section-title {
             margin: 12px 0 0; font-size: clamp(1.9rem, 3.8vw, 3rem); font-weight: 800;
             letter-spacing: -0.03em; background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
@@ -268,11 +269,11 @@
         .product-actions { margin-top: auto; padding-top: 16px; }
         .product-actions .btn { width: 100%; border-radius: var(--radius-md); }
 
-        /* GALLERY SHOWCASE (WITH MINI-ALBUMS) */
+        /* GALLERY SHOWCASE (6 CATEGORIZED ALBUMS) */
         .gallery-head-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
         .gallery-card {
-            position: relative; height: 210px; border-radius: var(--radius-lg);
+            position: relative; height: 220px; border-radius: var(--radius-lg);
             border: 1px solid var(--border); overflow: hidden; background: var(--card-bg);
             transition: all 0.3s ease; cursor: pointer;
         }
@@ -280,14 +281,14 @@
         .gallery-card img { width: 100%; height: 100%; object-fit: cover; }
         .gallery-badge {
             position: absolute; top: 12px; right: 12px;
-            padding: 4px 10px; border-radius: 9999px; background: rgba(0,0,0,0.7);
+            padding: 4px 10px; border-radius: 9999px; background: rgba(0,0,0,0.75);
             backdrop-filter: blur(8px); border: 1px solid var(--border);
             font-size: 0.72rem; font-weight: 700; color: var(--accent);
         }
         .gallery-overlay {
             position: absolute; bottom: 0; left: 0; right: 0; padding: 14px 12px 12px;
-            background: linear-gradient(180deg, transparent 0%, rgba(7, 8, 12, 0.92) 100%);
-            font-size: 0.82rem; font-weight: 700; color: #fff;
+            background: linear-gradient(180deg, transparent 0%, rgba(7, 8, 12, 0.95) 100%);
+            font-size: 0.85rem; font-weight: 700; color: #fff;
             display: flex; justify-content: space-between; align-items: center;
         }
 
@@ -366,7 +367,8 @@
         .faq-icon svg { width: 12px; height: 12px; display: block; }
         details p { margin: 12px 0 0; color: var(--muted); font-size: 0.9rem; border-left: 2px solid var(--accent); padding-left: 12px; line-height: 1.6; }
 
-        /* CONTACTS & SOCIALS (With Instagram Added) */
+        /* CONTACTS & MAPS (Reduced Bottom Air) */
+        #contacts { padding-bottom: 25px; }
         .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .contact-list { display: grid; gap: 12px; }
         .contact-row { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px 20px; }
@@ -386,15 +388,34 @@
         .map-wrap { height: 100%; min-height: 440px; border-radius: var(--radius-xl); border: 1px solid var(--border); overflow: hidden; }
         .map-wrap iframe { width: 100%; height: 100%; min-height: 440px; border: 0; }
 
-        /* FINAL CTA NEON BANNER */
+        /* FINAL CTA NEON BANNER & INSTANT CALLBACK WIDGET */
         .cta-banner {
-            margin: 70px 0 0;
+            margin: 25px 0 0;
             background: linear-gradient(135deg, rgba(214, 189, 122, 0.1) 0%, rgba(56, 189, 248, 0.05) 100%);
             border: 1px solid var(--border-glow); border-radius: var(--radius-xl);
-            padding: 50px 30px; text-align: center; box-shadow: 0 0 40px rgba(214, 189, 122, 0.12);
+            padding: 48px 28px; text-align: center; box-shadow: 0 0 40px rgba(214, 189, 122, 0.12);
         }
-        .cta-banner h2 { font-size: clamp(1.8rem, 3.8vw, 2.8rem); font-weight: 800; margin: 10px 0 0; }
-        .cta-banner p { color: var(--muted); max-width: 580px; margin: 12px auto 0; font-size: 1.02rem; }
+        .cta-banner h2 { font-size: clamp(1.8rem, 3.8vw, 2.7rem); font-weight: 800; margin: 10px 0 0; }
+        .cta-banner p { color: var(--muted); max-width: 580px; margin: 12px auto 0; font-size: 1rem; }
+
+        /* Callback Form Widget */
+        .callback-form {
+            display: flex; gap: 10px; justify-content: center;
+            margin-top: 28px; flex-wrap: wrap; max-width: 660px;
+            margin-left: auto; margin-right: auto;
+        }
+        .callback-input {
+            height: 46px; padding: 0 18px; background: rgba(0,0,0,0.45);
+            border: 1px solid var(--border); border-radius: 9999px;
+            color: #fff; font-weight: 600; font-size: 0.9rem; outline: none;
+            flex: 1; min-width: 200px;
+        }
+        .callback-input:focus { border-color: var(--accent); }
+        .cb-success {
+            margin-top: 20px; padding: 12px 22px; background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.4); color: #4ade80;
+            border-radius: 9999px; font-weight: 700; font-size: 0.92rem; display: inline-block;
+        }
 
         /* FOOTER */
         .site-footer { padding: 36px 0; border-top: 1px solid var(--border); color: var(--soft); font-size: 0.85rem; }
@@ -425,6 +446,8 @@
             .social-links { grid-template-columns: 1fr; }
             .footer-inner { flex-direction: column; text-align: center; gap: 10px; }
             .album-view { height: 320px; }
+            .callback-form { flex-direction: column; }
+            .callback-input { width: 100%; }
         }
     </style>
 </head>
@@ -441,13 +464,13 @@
         <div class="container header-inner">
             <a class="brand" href="#top" aria-label="Стройбаза на Монтажной">
                 <div class="brand-icon" id="logo-svg-header">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:20px; height:20px; color:var(--accent);">
-                        <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(214,189,122,0.25)"/>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:22px; height:22px; color:var(--accent);">
+                        <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(214,189,122,0.3)"/>
                         <path d="M4 7V17L12 22V12Z"/>
                         <path d="M12 12V22L20 17V7Z"/>
                     </svg>
                 </div>
-                <img src="logo.png" id="logo-img-header" style="display:none;" onerror="if(this.src.indexOf('logo.PNG') === -1) { this.src='logo.PNG'; } else { this.style.display='none'; document.getElementById('logo-svg-header').style.display='flex'; }" onload="document.getElementById('logo-svg-header').style.display='none'; this.style.display='block';" alt="Стройбаза на Монтажной" width="38" height="38">
+                <img src="logo.png" id="logo-img-header" style="display:none;" onerror="if(this.src.indexOf('logo.PNG') === -1) { this.src='logo.PNG'; } else { this.style.display='none'; document.getElementById('logo-svg-header').style.display='flex'; }" onload="document.getElementById('logo-svg-header').style.display='none'; this.style.display='block';" alt="Стройбаза на Монтажной" width="42" height="42">
                 <span class="brand-name">
                     <strong>Стройбаза на Монтажной</strong>
                     <span>Невинномысск, ул. Монтажная, 10</span>
@@ -547,7 +570,7 @@
             </div>
         </section>
 
-        <!-- Catalog with Filter Tabs (Updated Prices) -->
+        <!-- Catalog with Filter Tabs -->
         <section class="section" id="catalog">
             <div class="container">
                 <div class="section-head">
@@ -639,7 +662,7 @@
             </div>
         </section>
 
-        <!-- Upgraded Gallery Showcase with Mini-Albums Modal -->
+        <!-- Upgraded Gallery Showcase with 6 Mini-Albums Modal -->
         <section class="section">
             <div class="container">
                 <div class="gallery-head-bar">
@@ -647,7 +670,7 @@
                         <div class="badge"><span class="badge-dot"></span> Фотогалерея</div>
                         <h2 class="section-title" style="margin-top:8px;">База, товар и техника вживую</h2>
                     </div>
-                    <a class="btn btn-ghost" href="https://vk.com/stroybazansk" target="_blank" rel="noopener">Все фото и видео в VK</a>
+                    <a class="btn btn-ghost" href="https://vk.com/stroybazansk" target="_blank" rel="noopener">Больше фото в VK</a>
                 </div>
 
                 <div class="gallery-grid">
@@ -661,10 +684,20 @@
                         <div class="gallery-badge">Альбом</div>
                         <div class="gallery-overlay"><span>Профильные трубы</span><span>🔍 Посмотреть</span></div>
                     </div>
-                    <div class="gallery-card" onclick="openAlbum('sklad')">
-                        <img src="photo-1.jpg" alt="База" loading="lazy" onerror="this.parentNode.style.display='none';">
+                    <div class="gallery-card" onclick="openAlbum('cement')">
+                        <img src="cement.jpg" alt="Цемент" loading="lazy" onerror="this.parentNode.style.display='none';">
                         <div class="gallery-badge">Альбом</div>
-                        <div class="gallery-overlay"><span>Территория склада</span><span>🔍 Посмотреть</span></div>
+                        <div class="gallery-overlay"><span>Цемент М500 в мешках</span><span>🔍 Посмотреть</span></div>
+                    </div>
+                    <div class="gallery-card" onclick="openAlbum('zhbi')">
+                        <img src="kolca.jpg" alt="Кольца ЖБИ" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <div class="gallery-badge">Альбом</div>
+                        <div class="gallery-overlay"><span>Кольца ЖБИ и Септики</span><span>🔍 Посмотреть</span></div>
+                    </div>
+                    <div class="gallery-card" onclick="openAlbum('fbs')">
+                        <img src="fbs.jpg" alt="Блоки ФБС" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <div class="gallery-badge">Альбом</div>
+                        <div class="gallery-overlay"><span>Блоки ФБС</span><span>🔍 Посмотреть</span></div>
                     </div>
                     <div class="gallery-card" onclick="openAlbum('tech')">
                         <img src="manipulator.jpg" alt="Техника" loading="lazy" onerror="this.parentNode.style.display='none';">
@@ -745,7 +778,7 @@
             </div>
         </section>
 
-        <!-- Contacts & Social Networks (Instagram Added) -->
+        <!-- Contacts & Maps (Air Reduced) -->
         <section class="section" id="contacts">
             <div class="container contacts-grid">
                 <div>
@@ -759,7 +792,7 @@
                         <div class="contact-row"><span>Адрес склада</span><strong>Невинномысск, ул. Монтажная, д. 10</strong></div>
                         <div class="contact-row"><span>График работы</span><strong>Пн-Сб: 8:00-18:00, Вс: выходной</strong></div>
                         
-                        <!-- Socials Grid with Instagram -->
+                        <!-- Socials Grid -->
                         <div class="contact-row">
                             <span>Социальные сети и карты</span>
                             <div class="social-links">
@@ -783,15 +816,21 @@
             </div>
         </section>
 
-        <!-- Final CTA Neon Banner -->
+        <!-- FINAL CTA NEON BANNER & INSTANT CALLBACK FORM WIDGET -->
         <div class="container">
             <div class="cta-banner">
-                <div class="badge"><span class="badge-dot"></span> Экспресс Заказ</div>
-                <h2>Готовы укомплектовать стройку?</h2>
-                <p>Позвоните нам прямо сейчас или напишите список товаров в WhatsApp — посчитаем смету и согласуем время доставки за 2 минуты.</p>
-                <div style="display:flex; justify-content:center; gap:14px; margin-top:24px; flex-wrap:wrap;">
-                    <a class="btn btn-primary" href="tel:+79887328161">Позвонить: +7 (988) 732-81-61</a>
-                    <a class="btn btn-ghost" href="https://wa.me/79887328161" target="_blank" rel="noopener">Написать в WhatsApp</a>
+                <div class="badge"><span class="badge-dot"></span> Быстрый звонок за 5 минут</div>
+                <h2>Не любите звонить сами?</h2>
+                <p>Оставьте номер телефона и имя — мы перезвоним вам в течение 5 минут, ответим на все вопросы и проконсультируем по остаткам на складе.</p>
+
+                <!-- Callback Widget Form -->
+                <form class="callback-form" id="callbackForm" onsubmit="handleCallback(event)">
+                    <input type="text" id="cb-name" class="callback-input" placeholder="Как к вам обращаться?" required>
+                    <input type="tel" id="cb-phone" class="callback-input" placeholder="+7 (___) ___-__-__" required>
+                    <button type="submit" class="btn btn-primary">Перезвонить за 5 минут</button>
+                </form>
+                <div id="cb-success" class="cb-success" style="display:none;">
+                    ✓ Заявка принята! Менеджер перезванивает вам прямо сейчас...
                 </div>
             </div>
         </div>
@@ -817,7 +856,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="site-footer" style="margin-top: 70px;">
+    <footer class="site-footer" style="margin-top: 50px;">
         <div class="container footer-inner">
             <span>© 2026 Стройбаза на Монтажной, Невинномысск</span>
             <span>Цены и наличие уточняйте по телефону перед заказом.</span>
@@ -856,7 +895,7 @@
             });
         }
 
-        // Mini-Albums Lightbox System (Вы можете добавлять любые фото сюда!)
+        // Mini-Albums Lightbox System (6 категорий с вашими фото)
         const albums = {
             armatura: {
                 title: 'Арматура и Металлопрокат',
@@ -866,13 +905,21 @@
                 title: 'Профильные трубы на складе',
                 photos: ['truba.jpg', 'photo-3.jpg', 'photo-4.jpg']
             },
-            sklad: {
-                title: 'Территория базы на Монтажной',
-                photos: ['photo-1.jpg', 'photo-5.jpg', 'photo-6.jpg', 'photo-7.jpg']
+            cement: {
+                title: 'Свежий Цемент М500 в мешках',
+                photos: ['cement.jpg', 'photo-5.jpg', 'photo-6.jpg']
+            },
+            zhbi: {
+                title: 'Кольца ЖБИ для септиков и колодцев',
+                photos: ['kolca.jpg', 'photo-7.jpg', 'photo-8.jpg']
+            },
+            fbs: {
+                title: 'Блоки ФБС для фундамента',
+                photos: ['fbs.jpg', 'photo-9.jpg', 'photo-10.jpg']
             },
             tech: {
-                title: 'Автопарк и Спецтехника',
-                photos: ['manipulator.jpg', 'photo-8.jpg', 'photo-9.jpg', 'photo-10.jpg']
+                title: 'Автопарк, Манипулятор и Погрузка',
+                photos: ['manipulator.jpg', 'photo-11.jpg', 'photo-12.jpg']
             }
         };
 
@@ -910,13 +957,29 @@
             updateModalPhoto();
         }
 
-        // Keyboard Navigation for Lightbox
+        // Keyboard Navigation
         document.addEventListener('keydown', (e) => {
             if (!document.getElementById('albumModal').classList.contains('active')) return;
             if (e.key === 'Escape') closeAlbum();
             if (e.key === 'ArrowRight') nextPhoto();
             if (e.key === 'ArrowLeft') prevPhoto();
         });
+
+        // Instant Callback Handler
+        function handleCallback(e) {
+            e.preventDefault();
+            const name = document.getElementById('cb-name').value;
+            const phone = document.getElementById('cb-phone').value;
+
+            document.getElementById('callbackForm').style.display = 'none';
+            document.getElementById('cb-success').style.display = 'inline-block';
+
+            // Автоматическая отправка уведомления в WhatsApp менеджеру
+            const text = encodeURIComponent(`Здравствуйте! Меня зовут ${name}, прошу перезвонить мне по заказу стройматериалов. Мой номер: ${phone}`);
+            setTimeout(() => {
+                window.open(`https://wa.me/79887328161?text=${text}`, '_blank');
+            }, 1200);
+        }
     </script>
 
     <!-- Rambler Counter -->
