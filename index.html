@@ -292,7 +292,7 @@
             display: flex; justify-content: space-between; align-items: center;
         }
 
-        /* LIGHTBOX ALBUM MODAL (Perfect Centered Close Button) */
+        /* LIGHTBOX ALBUM MODAL (Perfect Centered SVG Close Button) */
         .album-modal {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             z-index: 200; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(25px);
@@ -372,7 +372,7 @@
         .faq-icon svg { width: 12px; height: 12px; display: block; }
         details p { margin: 12px 0 0; color: var(--muted); font-size: 0.9rem; border-left: 2px solid var(--accent); padding-left: 12px; line-height: 1.6; }
 
-        /* CONTACTS & MAPS (Air Reduced) */
+        /* CONTACTS & MAPS */
         #contacts { padding-bottom: 25px; }
         .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .contact-list { display: grid; gap: 12px; }
@@ -393,7 +393,7 @@
         .map-wrap { height: 100%; min-height: 440px; border-radius: var(--radius-xl); border: 1px solid var(--border); overflow: hidden; }
         .map-wrap iframe { width: 100%; height: 100%; min-height: 440px; border: 0; }
 
-        /* FINAL CTA BANNER & SPACIOUS CALLBACK FORM WIDGET */
+        /* FINAL CTA BANNER & CALLBACK FORM (STRICT HEIGHT FOR MOBILE SAFARI) */
         .cta-banner {
             margin: 25px 0 0;
             background: linear-gradient(135deg, rgba(214, 189, 122, 0.1) 0%, rgba(56, 189, 248, 0.05) 100%);
@@ -403,23 +403,25 @@
         .cta-banner h2 { font-size: clamp(1.8rem, 3.8vw, 2.7rem); font-weight: 800; margin: 10px 0 0; }
         .cta-banner p { color: var(--muted); max-width: 580px; margin: 12px auto 0; font-size: 1rem; }
 
-        /* Spacious Callback Form Widget */
+        /* Fixed Heights & Resets to Prevent Mobile Oval Bubbles */
         .callback-form {
-            display: flex; gap: 12px; justify-content: center;
-            margin-top: 28px; flex-wrap: wrap; max-width: 720px;
+            display: flex; gap: 12px; justify-content: center; align-items: center;
+            margin-top: 28px; flex-wrap: wrap; max-width: 680px;
             margin-left: auto; margin-right: auto;
         }
         .callback-input {
-            height: 48px; padding: 0 20px; background: rgba(0,0,0,0.5);
-            border: 1px solid var(--border); border-radius: 9999px;
+            height: 48px !important; min-height: 48px !important; max-height: 48px !important;
+            padding: 0 20px; background: rgba(0,0,0,0.5);
+            border: 1px solid var(--border); border-radius: var(--radius-md);
             color: #fff; font-weight: 600; font-size: 0.95rem; outline: none;
-            flex: 1 1 220px; min-width: 200px;
+            flex: 1 1 200px; min-width: 180px; box-sizing: border-box;
+            -webkit-appearance: none; appearance: none;
         }
         .callback-input:focus { border-color: var(--accent); }
         .cb-success {
             margin-top: 20px; padding: 14px 26px; background: rgba(34, 197, 94, 0.15);
             border: 1px solid rgba(34, 197, 94, 0.4); color: #4ade80;
-            border-radius: 9999px; font-weight: 700; font-size: 0.95rem; display: inline-block;
+            border-radius: var(--radius-md); font-weight: 700; font-size: 0.95rem; display: inline-block;
         }
 
         /* FOOTER */
@@ -451,8 +453,11 @@
             .social-links { grid-template-columns: 1fr; }
             .footer-inner { flex-direction: column; text-align: center; gap: 10px; }
             .album-view { height: 320px; }
-            .callback-form { flex-direction: column; }
-            .callback-input { width: 100%; }
+            
+            /* Fix Flex Stretch Height Issue on Mobile Safari */
+            .callback-form { flex-direction: column; width: 100%; gap: 10px; }
+            .callback-input { width: 100% !important; flex: none !important; }
+            .callback-form .btn { width: 100%; }
         }
     </style>
 </head>
@@ -783,7 +788,7 @@
             </div>
         </section>
 
-        <!-- Contacts & Maps (Air Reduced) -->
+        <!-- Contacts & Maps -->
         <section class="section" id="contacts">
             <div class="container contacts-grid">
                 <div>
@@ -972,32 +977,24 @@
             if (e.key === 'ArrowLeft') prevPhoto();
         });
 
-        // Silent Callback Handler (Telegram Integration Ready)
-        const TELEGRAM_BOT_TOKEN = '8838917666:AAH1nPVmsm0dJg2_kIM5URkEGkkDtCmCZ-4'; // Вставьте токен вашего бота
-        const TELEGRAM_CHAT_ID = '8392424044';     // Вставьте ваш Chat ID
+        // Silent Callback Handler (Telegram Integration)
+        const TELEGRAM_BOT_TOKEN = '8838917666'; // Вставьте токен вашего бота
+        const TELEGRAM_CHAT_ID = '8392424044';     // Вставьте ваш личный Chat ID
 
         async function handleCallback(e) {
             e.preventDefault();
             const name = document.getElementById('cb-name').value;
             const phone = document.getElementById('cb-phone').value;
 
-            // Мгновенно показываем клиенту плашку успеха (без перезагрузок и редиректов!)
+            // Мгновенно показываем клиенту плашку успеха
             document.getElementById('callbackForm').style.display = 'none';
             document.getElementById('cb-success').style.display = 'inline-block';
 
-            // Если заполнено — отправляет пуш напрямую вам в Telegram
+            // Отправляет пуш напрямую вам в Telegram
             if (TELEGRAM_BOT_TOKEN !== 'YOUR_BOT_TOKEN') {
                 const text = `🔔 *Новая заявка на звонок с сайта!*\n\n👤 *Имя:* ${name}\n📞 *Телефон:* ${phone}`;
                 try {
-                    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            chat_id: TELEGRAM_CHAT_ID,
-                            text: text,
-                            parse_mode: 'Markdown'
-                        })
-                    });
+                    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(text)}`);
                 } catch (err) {
                     console.log('Telegram Send Error:', err);
                 }
