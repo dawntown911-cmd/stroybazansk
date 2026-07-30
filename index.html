@@ -292,7 +292,7 @@
             display: flex; justify-content: space-between; align-items: center;
         }
 
-        /* LIGHTBOX ALBUM MODAL */
+        /* LIGHTBOX ALBUM MODAL (Perfect Centered Close Button) */
         .album-modal {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             z-index: 200; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(25px);
@@ -310,12 +310,17 @@
             display: flex; justify-content: space-between; align-items: center;
         }
         .album-title { font-weight: 800; font-size: 1.05rem; color: #fff; }
+        
+        /* Perfect Centered SVG Close Button */
         .album-close {
-            width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.08);
-            border: 1px solid var(--border); color: #fff; font-size: 1.2rem; cursor: pointer;
-            display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+            width: 36px; height: 36px; border-radius: 50%;
+            background: rgba(255,255,255,0.08); border: 1px solid var(--border);
+            color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
+            transition: all 0.2s ease; padding: 0; flex-shrink: 0;
         }
-        .album-close:hover { background: rgba(255,255,255,0.2); }
+        .album-close:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.4); }
+        .album-close svg { width: 14px; height: 14px; display: block; }
+
         .album-view {
             position: relative; height: 480px; background: #000;
             display: flex; align-items: center; justify-content: center; overflow: hidden;
@@ -367,7 +372,7 @@
         .faq-icon svg { width: 12px; height: 12px; display: block; }
         details p { margin: 12px 0 0; color: var(--muted); font-size: 0.9rem; border-left: 2px solid var(--accent); padding-left: 12px; line-height: 1.6; }
 
-        /* CONTACTS & MAPS (Reduced Bottom Air) */
+        /* CONTACTS & MAPS (Air Reduced) */
         #contacts { padding-bottom: 25px; }
         .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .contact-list { display: grid; gap: 12px; }
@@ -388,7 +393,7 @@
         .map-wrap { height: 100%; min-height: 440px; border-radius: var(--radius-xl); border: 1px solid var(--border); overflow: hidden; }
         .map-wrap iframe { width: 100%; height: 100%; min-height: 440px; border: 0; }
 
-        /* FINAL CTA NEON BANNER & INSTANT CALLBACK WIDGET */
+        /* FINAL CTA BANNER & SPACIOUS CALLBACK FORM WIDGET */
         .cta-banner {
             margin: 25px 0 0;
             background: linear-gradient(135deg, rgba(214, 189, 122, 0.1) 0%, rgba(56, 189, 248, 0.05) 100%);
@@ -398,23 +403,23 @@
         .cta-banner h2 { font-size: clamp(1.8rem, 3.8vw, 2.7rem); font-weight: 800; margin: 10px 0 0; }
         .cta-banner p { color: var(--muted); max-width: 580px; margin: 12px auto 0; font-size: 1rem; }
 
-        /* Callback Form Widget */
+        /* Spacious Callback Form Widget */
         .callback-form {
-            display: flex; gap: 10px; justify-content: center;
-            margin-top: 28px; flex-wrap: wrap; max-width: 660px;
+            display: flex; gap: 12px; justify-content: center;
+            margin-top: 28px; flex-wrap: wrap; max-width: 720px;
             margin-left: auto; margin-right: auto;
         }
         .callback-input {
-            height: 46px; padding: 0 18px; background: rgba(0,0,0,0.45);
+            height: 48px; padding: 0 20px; background: rgba(0,0,0,0.5);
             border: 1px solid var(--border); border-radius: 9999px;
-            color: #fff; font-weight: 600; font-size: 0.9rem; outline: none;
-            flex: 1; min-width: 200px;
+            color: #fff; font-weight: 600; font-size: 0.95rem; outline: none;
+            flex: 1 1 220px; min-width: 200px;
         }
         .callback-input:focus { border-color: var(--accent); }
         .cb-success {
-            margin-top: 20px; padding: 12px 22px; background: rgba(34, 197, 94, 0.15);
+            margin-top: 20px; padding: 14px 26px; background: rgba(34, 197, 94, 0.15);
             border: 1px solid rgba(34, 197, 94, 0.4); color: #4ade80;
-            border-radius: 9999px; font-weight: 700; font-size: 0.92rem; display: inline-block;
+            border-radius: 9999px; font-weight: 700; font-size: 0.95rem; display: inline-block;
         }
 
         /* FOOTER */
@@ -435,7 +440,7 @@
         @media (max-width: 640px) {
             .container { width: min(100% - 24px, var(--max-w)); }
             .header-inner { height: 60px; justify-content: space-between; gap: 8px; }
-            .phone-block { display: none !important; } /* Hides raw phone text on mobile -> Zero truncation! */
+            .phone-block { display: none !important; }
             .brand { flex: 1; min-width: 0; }
             .brand-name span { display: none !important; }
             .brand-name strong { font-size: 0.92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -816,7 +821,7 @@
             </div>
         </section>
 
-        <!-- FINAL CTA NEON BANNER & INSTANT CALLBACK FORM WIDGET -->
+        <!-- FINAL CTA BANNER & INSTANT CALLBACK FORM WIDGET -->
         <div class="container">
             <div class="cta-banner">
                 <div class="badge"><span class="badge-dot"></span> Быстрый звонок за 5 минут</div>
@@ -826,22 +831,24 @@
                 <!-- Callback Widget Form -->
                 <form class="callback-form" id="callbackForm" onsubmit="handleCallback(event)">
                     <input type="text" id="cb-name" class="callback-input" placeholder="Как к вам обращаться?" required>
-                    <input type="tel" id="cb-phone" class="callback-input" placeholder="+7 (___) ___-__-__" required>
+                    <input type="tel" id="cb-phone" class="callback-input" placeholder="+7 (900) 000-00-00" required>
                     <button type="submit" class="btn btn-primary">Перезвонить за 5 минут</button>
                 </form>
                 <div id="cb-success" class="cb-success" style="display:none;">
-                    ✓ Заявка принята! Менеджер перезванивает вам прямо сейчас...
+                    ✓ Спасибо! Заявка принята, менеджер свяжется с вами в течение 5 минут.
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Album Lightbox Modal Overlay -->
+    <!-- Album Lightbox Modal Overlay (Perfect Centered SVG Close Button) -->
     <div class="album-modal" id="albumModal">
         <div class="album-box">
             <div class="album-header">
                 <div class="album-title" id="albumTitle">Альбом фото</div>
-                <button class="album-close" onclick="closeAlbum()">✕</button>
+                <button class="album-close" onclick="closeAlbum()" aria-label="Закрыть">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
             </div>
             <div class="album-view">
                 <button class="album-nav album-prev" onclick="prevPhoto()">‹</button>
@@ -965,20 +972,36 @@
             if (e.key === 'ArrowLeft') prevPhoto();
         });
 
-        // Instant Callback Handler
-        function handleCallback(e) {
+        // Silent Callback Handler (Telegram Integration Ready)
+        const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN'; // Вставьте токен вашего бота
+        const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID';     // Вставьте ваш Chat ID
+
+        async function handleCallback(e) {
             e.preventDefault();
             const name = document.getElementById('cb-name').value;
             const phone = document.getElementById('cb-phone').value;
 
+            // Мгновенно показываем клиенту плашку успеха (без перезагрузок и редиректов!)
             document.getElementById('callbackForm').style.display = 'none';
             document.getElementById('cb-success').style.display = 'inline-block';
 
-            // Автоматическая отправка уведомления в WhatsApp менеджеру
-            const text = encodeURIComponent(`Здравствуйте! Меня зовут ${name}, прошу перезвонить мне по заказу стройматериалов. Мой номер: ${phone}`);
-            setTimeout(() => {
-                window.open(`https://wa.me/79887328161?text=${text}`, '_blank');
-            }, 1200);
+            // Если заполнено — отправляет пуш напрямую вам в Telegram
+            if (TELEGRAM_BOT_TOKEN !== 'YOUR_BOT_TOKEN') {
+                const text = `🔔 *Новая заявка на звонок с сайта!*\n\n👤 *Имя:* ${name}\n📞 *Телефон:* ${phone}`;
+                try {
+                    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            chat_id: TELEGRAM_CHAT_ID,
+                            text: text,
+                            parse_mode: 'Markdown'
+                        })
+                    });
+                } catch (err) {
+                    console.log('Telegram Send Error:', err);
+                }
+            }
         }
     </script>
 
