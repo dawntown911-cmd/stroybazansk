@@ -1,0 +1,32 @@
+# Разрешение для всех поисковиков (Google, Сбер GigaChat, Mail.ru и др.)
+User-agent: *
+Allow: /
+
+# Яндекс и нейросеть «Яндекс Нейро»
+User-agent: Yandex
+Allow: /
+
+# Google и нейросеть Gemini
+User-agent: Googlebot
+Allow: /
+
+# ChatGPT (OpenAI - поиск и обучение)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Claude (Anthropic)
+User-agent: ClaudeBot
+Allow: /
+
+# Grok (xAI)
+User-agent: GrokBot
+Allow: /
+
+# Ссылка на карту вашего сайта
+Sitemap: https://stroybazansk.ru/sitemap.xml
