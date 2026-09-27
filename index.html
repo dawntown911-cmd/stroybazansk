@@ -5,12 +5,12 @@
     <meta name="yandex-verification" content="8c23554cf9d10973" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Стройбаза на Монтажной | Металл, ЖБИ и калькулятор стройки в Невинномысске</title>
-    <meta name="description" content="Стройбаза в Невинномысске: металлопрокат, профильная труба, арматура, цемент М500, ФБС со склада на ул. Монтажная, 10. Онлайн-калькулятор навесов, заборов и фундаментов. Доставка за 1.5 часа.">
+    <title>Стройбаза на Монтажной | Металлопрокат, ЖБИ, цемент в Невинномысске</title>
+    <meta name="description" content="Стройбаза в Невинномысске на ул. Монтажная, 10. Металлопрокат по ГОСТу: арматура от 21 ₽/м, профильная труба от 115 ₽/м, цемент М500 570 ₽, блоки ФБС и шлакоблок. Расчет металла за 5 минут. Доставка манипулятором.">
     <link rel="canonical" href="https://stroybazansk.ru/">
     <meta name="theme-color" content="#07080c">
-    <meta property="og:title" content="Стройбаза на Монтажной | Онлайн расчет металла и стройматериалов">
-    <meta property="og:description" content="Рассчитайте металл на навес, забор или фундамент за 1 минуту. Склад на ул. Монтажной, 10 в Невинномысске.">
+    <meta property="og:title" content="Стройбаза на Монтажной — металлопрокат и стройматериалы в Невинномысске">
+    <meta property="og:description" content="Арматура, профильные трубы, цемент Новороссийский М500, ФБС и шлакоблок со склада на Монтажной, 10. Онлайн-калькулятор навесов, заборов и фундаментов.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="banner.jpg">
     <meta property="og:url" content="https://stroybazansk.ru">
@@ -28,7 +28,7 @@
   "@type": "HardwareStore",
   "name": "Стройбаза на Монтажной",
   "legalName": "ИП Кардава Тимур Кукуриевич",
-  "description": "Металлопрокат, ЖБИ, цемент, ФБС, кольца и шлакоблок со склада в Невинномысске. Расчет металла под навесы, заборы и фундаменты.",
+  "description": "База металлопроката и стройматериалов в Невинномысске: трубы ГОСТ, арматура А500С, цемент Новороссийский М500, ФБС, шлакоблок.",
   "url": "https://stroybazansk.ru",
   "telephone": "+79887328161",
   "email": "stroybazansk@mail.ru",
@@ -41,19 +41,12 @@
     "addressRegion": "Ставропольский край",
     "addressCountry": "RU"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 44.6435,
-    "longitude": 41.9355
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "08:00",
-      "closes": "18:00"
-    }
-  ],
+  "geo": { "@type": "GeoCoordinates", "latitude": 44.6435, "longitude": 41.9355 },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "08:00", "closes": "18:00"
+  }],
   "sameAs": [
     "https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120",
     "https://2gis.ru/nevinnomyssk/inside/19000196618797894/firm/70000001114215365",
@@ -69,510 +62,231 @@
 
     <style>
         :root {
-            --bg: #07080c;
-            --surface: rgba(255, 255, 255, 0.025);
-            --surface-hover: rgba(255, 255, 255, 0.05);
-            --card-bg: rgba(15, 17, 26, 0.65);
-            --card-glass: rgba(255, 255, 255, 0.03);
-            --text: #f4f4f5;
-            --muted: #a1a1aa;
-            --soft: #71717a;
-            --border: rgba(255, 255, 255, 0.08);
-            --border-glow: rgba(214, 189, 122, 0.35);
-            --accent: #d6bd7a;
-            --accent-light: #f0e4be;
-            --radius-xl: 22px;
-            --radius-lg: 16px;
-            --radius-md: 12px;
-            --max-w: 1200px;
+            --bg: #07080c; --surface: rgba(255, 255, 255, 0.025); --surface-hover: rgba(255, 255, 255, 0.05);
+            --card-bg: rgba(15, 17, 26, 0.65); --card-glass: rgba(255, 255, 255, 0.03);
+            --text: #f4f4f5; --muted: #a1a1aa; --soft: #71717a;
+            --border: rgba(255, 255, 255, 0.08); --border-glow: rgba(214, 189, 122, 0.35);
+            --accent: #d6bd7a; --accent-light: #f0e4be;
+            --radius-xl: 22px; --radius-lg: 16px; --radius-md: 12px; --max-w: 1200px;
         }
-
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
-            line-height: 1.55;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-            position: relative;
+            margin: 0; background: var(--bg); color: var(--text);
+            font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+            line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden; position: relative;
         }
-
-        .glow-bg {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            z-index: -1; pointer-events: none; overflow: hidden;
-        }
-        .glow-top {
-            position: absolute; top: -140px; left: 50%; transform: translateX(-50%);
-            width: 850px; height: 480px;
-            background: radial-gradient(circle, rgba(214, 189, 122, 0.11) 0%, rgba(7, 8, 12, 0) 70%);
-            filter: blur(90px);
-        }
-        .glow-bottom {
-            position: absolute; bottom: 10%; left: -100px;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.06) 0%, rgba(7, 8, 12, 0) 70%);
-            filter: blur(110px);
-        }
-
+        .glow-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; }
+        .glow-top { position: absolute; top: -140px; left: 50%; transform: translateX(-50%); width: 850px; height: 480px; background: radial-gradient(circle, rgba(214, 189, 122, 0.11) 0%, rgba(7, 8, 12, 0) 70%); filter: blur(90px); }
+        .glow-bottom { position: absolute; bottom: 10%; left: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(56, 189, 248, 0.06) 0%, rgba(7, 8, 12, 0) 70%); filter: blur(110px); }
         img { max-width: 100%; display: block; }
         a { color: inherit; text-decoration: none; }
         .container { width: min(var(--max-w), calc(100% - 32px)); margin: 0 auto; }
-
         .badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 5px 14px; border-radius: 9999px;
+            display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 9999px;
             background: rgba(214, 189, 122, 0.08); border: 1px solid rgba(214, 189, 122, 0.22);
-            color: var(--accent); font-size: 0.76rem; font-weight: 700;
-            letter-spacing: 0.06em; text-transform: uppercase; backdrop-filter: blur(12px);
+            color: var(--accent); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
         }
-        .badge-dot {
-            width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
-            box-shadow: 0 0 10px var(--accent); animation: pulse 2s infinite;
-        }
-        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.85); } }
-
+        .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
         .site-header {
-            position: sticky; top: 0; z-index: 100;
-            background: rgba(7, 8, 12, 0.88);
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 100; background: rgba(7, 8, 12, 0.88);
+            backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
         }
-        .header-inner {
-            height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
-        }
-        .brand {
-            display: flex; align-items: center; gap: 12px;
-            min-width: 0; flex: 1; overflow: hidden;
-        }
+        .header-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .brand { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1; overflow: hidden; }
         .brand-icon {
-            width: 42px; height: 42px; border-radius: 12px;
-            background: rgba(214, 189, 122, 0.12);
-            border: 1px solid rgba(214, 189, 122, 0.3);
-            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-            padding: 7px; box-shadow: 0 0 15px rgba(214, 189, 122, 0.1);
+            width: 42px; height: 42px; border-radius: 12px; background: rgba(214, 189, 122, 0.12);
+            border: 1px solid rgba(214, 189, 122, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
-        .brand-name {
-            display: flex; flex-direction: column; justify-content: center;
-            min-width: 0; line-height: 1.25; overflow: hidden;
-        }
-        .brand-name strong {
-            font-size: 1rem; font-weight: 800; letter-spacing: -0.02em; color: #ffffff;
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-        }
-        .brand-name span {
-            color: var(--soft); font-size: 0.74rem; white-space: nowrap;
-            overflow: hidden; text-overflow: ellipsis;
-        }
-
-        .nav { display: flex; gap: 20px; color: var(--muted); font-size: 0.88rem; font-weight: 600; }
-        .nav a { transition: color 0.2s; white-space: nowrap; }
-        .nav a:hover { color: #fff; }
-        .nav a.highlight-nav { color: var(--accent); }
-
+        .brand-name strong { font-size: 1rem; font-weight: 800; color: #fff; display: block; white-space: nowrap; }
+        .brand-name span { color: var(--soft); font-size: 0.74rem; display: block; white-space: nowrap; }
+        .nav { display: flex; gap: 18px; color: var(--muted); font-size: 0.88rem; font-weight: 600; }
+        .nav a:hover, .nav a.highlight-nav { color: var(--accent); }
         .header-actions { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
         .phone-block { text-align: right; }
-        .phone-block a { font-weight: 800; font-size: 0.95rem; letter-spacing: -0.01em; display: block; }
-        .phone-block span { color: var(--soft); font-size: 0.7rem; display: block; }
-
+        .phone-block a { font-weight: 800; font-size: 0.95rem; }
+        .phone-block span { color: var(--soft); font-size: 0.7rem; }
         .btn {
-            height: 44px; padding: 0 20px; border-radius: 9999px;
-            font-weight: 700; font-size: 0.88rem; display: inline-flex; align-items: center;
-            justify-content: center; gap: 8px; transition: all 0.25s ease; cursor: pointer;
-            border: 1px solid transparent; white-space: nowrap; text-align: center;
+            height: 44px; padding: 0 20px; border-radius: 9999px; font-weight: 700; font-size: 0.88rem;
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; border: 1px solid transparent;
         }
-        .btn-primary {
-            background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%);
-            color: #07080c; box-shadow: 0 0 20px rgba(214, 189, 122, 0.2);
-        }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(214, 189, 122, 0.35); }
+        .btn-primary { background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%); color: #07080c; }
         .btn-ghost { background: var(--surface); border: 1px solid var(--border); color: var(--text); }
-        .btn-ghost:hover { background: var(--surface-hover); border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
-        
         .btn-wa { background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.4); color: #4ade80; }
-        .btn-wa:hover { background: rgba(34, 197, 94, 0.25); transform: translateY(-2px); }
         .btn-tg { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; }
-        .btn-tg:hover { background: rgba(56, 189, 248, 0.25); transform: translateY(-2px); }
-
         .hero { padding: 65px 0 45px; text-align: center; }
         .hero-content { max-width: 860px; margin: 0 auto; }
         .hero h1 {
-            margin: 20px 0 0; font-size: clamp(2.2rem, 5vw, 3.8rem);
-            font-weight: 800; line-height: 1.1; letter-spacing: -0.04em;
+            margin: 20px 0 0; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1;
             background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.72) 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
         .hero-lead { margin: 18px auto 0; max-width: 680px; color: var(--muted); font-size: clamp(0.98rem, 1.8vw, 1.12rem); }
         .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
-
         .hero-widget {
             margin-top: 36px; background: var(--card-bg); border: 1px solid var(--border);
-            border-radius: var(--radius-xl); padding: 20px 24px; backdrop-filter: blur(20px);
-            max-width: 780px; margin-left: auto; margin-right: auto; text-align: left;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            border-radius: var(--radius-xl); padding: 20px 24px; max-width: 800px; margin-left: auto; margin-right: auto; text-align: left;
         }
-        .widget-title { font-size: 0.8rem; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
-        .widget-grid { display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 10px; align-items: center; }
+        .widget-title { font-size: 0.8rem; font-weight: 800; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+        .widget-grid { display: grid; grid-template-columns: 2.2fr 1fr 1fr auto; gap: 10px; align-items: center; }
         .widget-select, .widget-input {
             height: 44px; background: rgba(0,0,0,0.4); border: 1px solid var(--border);
             border-radius: var(--radius-md); color: #fff; font-weight: 600; outline: none; width: 100%; padding: 0 12px;
         }
-        .widget-select:focus, .widget-input:focus { border-color: var(--accent); }
-
         .stats-bar { margin: 32px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-        .stat-card {
-            background: var(--card-bg); border: 1px solid var(--border);
-            border-radius: var(--radius-lg); padding: 18px; text-align: center; backdrop-filter: blur(12px);
-        }
-        .stat-card strong { display: block; font-size: 1.65rem; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; }
+        .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px; text-align: center; }
+        .stat-card strong { display: block; font-size: 1.65rem; font-weight: 800; color: var(--accent); }
         .stat-card span { color: var(--muted); font-size: 0.82rem; }
-
         .section { padding: 70px 0; border-top: 1px solid var(--border); }
         .section-head { text-align: center; max-width: 740px; margin: 0 auto 36px; }
-        .section-title {
-            margin: 12px 0 0; font-size: clamp(1.85rem, 3.6vw, 2.8rem); font-weight: 800;
-            letter-spacing: -0.03em; background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
+        .section-title { margin: 12px 0 0; font-size: clamp(1.85rem, 3.6vw, 2.8rem); font-weight: 800; color: #fff; }
         .section-copy { margin-top: 10px; color: var(--muted); font-size: 0.98rem; }
-
-        /* КАЛЬКУЛЯТОРЫ */
-        .calc-wrapper {
-            background: var(--card-bg); border: 1px solid var(--border-glow);
-            border-radius: var(--radius-xl); padding: 32px; backdrop-filter: blur(20px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-        }
+        .calc-wrapper { background: var(--card-bg); border: 1px solid var(--border-glow); border-radius: var(--radius-xl); padding: 32px; }
         .calc-tabs { display: flex; gap: 10px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap; }
         .calc-tab-btn {
-            padding: 10px 22px; border-radius: 9999px; background: var(--surface);
-            border: 1px solid var(--border); color: var(--muted); font-weight: 700; font-size: 0.9rem;
-            cursor: pointer; transition: all 0.2s ease;
+            padding: 10px 22px; border-radius: 9999px; background: var(--surface); border: 1px solid var(--border);
+            color: var(--muted); font-weight: 700; cursor: pointer;
         }
-        .calc-tab-btn.active, .calc-tab-btn:hover {
-            background: rgba(214, 189, 122, 0.15); border-color: var(--accent); color: #fff;
-        }
+        .calc-tab-btn.active { background: rgba(214, 189, 122, 0.15); border-color: var(--accent); color: #fff; }
         .calc-body { display: none; }
-        .calc-body.active { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: start; }
-
+        .calc-body.active { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; }
         .calc-inputs { display: grid; gap: 16px; }
-        .input-group label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+        .input-group label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; }
         .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .calc-field {
             width: 100%; height: 46px; background: rgba(0,0,0,0.5); border: 1px solid var(--border);
-            border-radius: var(--radius-md); color: #fff; font-weight: 700; font-size: 1rem; padding: 0 14px; outline: none;
+            border-radius: var(--radius-md); color: #fff; font-weight: 700; padding: 0 14px; outline: none;
         }
-        .calc-field:focus { border-color: var(--accent); }
-
-        .calc-results {
-            background: rgba(0, 0, 0, 0.45); border: 1px solid var(--border);
-            border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; gap: 14px;
-        }
+        .calc-results { background: rgba(0, 0, 0, 0.45); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; gap: 14px; }
         .calc-results h4 { margin: 0; font-size: 1.05rem; font-weight: 800; color: var(--accent); }
-        .result-item {
-            display: flex; justify-content: space-between; align-items: center;
-            padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.9rem;
-        }
-        .result-item span:first-child { color: var(--muted); }
-        .result-item span:last-child { font-weight: 700; color: #fff; text-align: right; }
-        
-        .result-total {
-            margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--border-glow);
-            display: flex; justify-content: space-between; align-items: baseline;
-        }
-        .result-total .total-label { font-size: 1.05rem; font-weight: 800; }
+        .result-item { display: flex; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.9rem; }
+        .result-item span:last-child { font-weight: 700; color: #fff; }
+        .result-total { margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--border-glow); display: flex; justify-content: space-between; align-items: baseline; }
         .result-total .total-val { font-size: 1.7rem; font-weight: 800; color: var(--accent); }
-
-        .calc-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-        .calc-disclaimer { font-size: 0.76rem; color: var(--soft); line-height: 1.4; margin-top: 6px; }
-
-        /* ОТПРАВЬТЕ ЧЕРТЕЖ */
+        .calc-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .calc-disclaimer { font-size: 0.76rem; color: var(--soft); line-height: 1.4; }
         .blueprint-card {
             background: linear-gradient(135deg, rgba(214, 189, 122, 0.08) 0%, rgba(56, 189, 248, 0.06) 100%);
-            border: 1px solid var(--border-glow); border-radius: var(--radius-xl);
-            padding: 38px 32px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center;
+            border: 1px solid var(--border-glow); border-radius: var(--radius-xl); padding: 38px 32px;
+            display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center;
         }
-        .blueprint-info h3 { margin: 10px 0 0; font-size: 1.75rem; font-weight: 800; line-height: 1.2; }
+        .blueprint-info h3 { margin: 10px 0 0; font-size: 1.75rem; font-weight: 800; }
         .blueprint-info p { color: var(--muted); font-size: 0.95rem; margin-top: 12px; }
         .blueprint-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
-        .bp-badge {
-            background: rgba(255,255,255,0.04); border: 1px solid var(--border);
-            padding: 4px 12px; border-radius: 9999px; font-size: 0.78rem; font-weight: 600; color: var(--text);
-        }
+        .bp-badge { background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 4px 12px; border-radius: 9999px; font-size: 0.78rem; font-weight: 600; }
         .blueprint-buttons { display: flex; flex-direction: column; gap: 12px; }
-
-        /* SEO ЗАДАЧИ */
         .solutions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-        .solution-card {
-            background: var(--card-bg); border: 1px solid var(--border);
-            border-radius: var(--radius-lg); padding: 24px; backdrop-filter: blur(16px);
-            transition: all 0.3s ease; display: flex; flex-direction: column;
-        }
-        .solution-card:hover { border-color: var(--border-glow); transform: translateY(-3px); }
-        .solution-card h3 { margin: 10px 0 0; font-size: 1.2rem; font-weight: 800; line-height: 1.3; }
-        .solution-card p { margin: 10px 0 0; color: var(--muted); font-size: 0.9rem; flex: 1; }
-        .solution-table {
-            margin: 16px 0; background: rgba(0,0,0,0.3); border-radius: var(--radius-md);
-            padding: 12px; border: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem;
-        }
-        .sol-row { display: flex; justify-content: space-between; padding: 4px 0; color: var(--text); }
+        .solution-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; }
+        .solution-card:hover { border-color: var(--border-glow); }
+        .solution-card h3 { margin: 10px 0 0; font-size: 1.18rem; font-weight: 800; color: #fff; }
+        .solution-card p { margin: 10px 0 0; color: var(--muted); font-size: 0.88rem; flex: 1; }
+        .solution-table { margin: 16px 0; background: rgba(0,0,0,0.3); border-radius: var(--radius-md); padding: 12px; font-size: 0.84rem; }
+        .sol-row { display: flex; justify-content: space-between; padding: 4px 0; }
         .sol-row span:first-child { color: var(--soft); }
-
-        /* ПРЕИМУЩЕСТВА */
-        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-        .bento-card {
-            background: var(--card-bg); border: 1px solid var(--border);
-            border-radius: var(--radius-xl); padding: 28px; backdrop-filter: blur(16px);
-            transition: all 0.3s ease; position: relative; overflow: hidden;
-        }
-        .bento-card:hover { border-color: var(--border-glow); transform: translateY(-3px); }
-        .bento-span-2 { grid-column: span 2; }
-        .bento-tag { color: var(--accent); font-weight: 800; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
-        .bento-card h3 { margin: 10px 0 0; font-size: 1.25rem; font-weight: 800; }
-        .bento-card p { margin: 8px 0 0; color: var(--muted); font-size: 0.92rem; }
-        .bento-list { margin-top: 16px; padding: 0; list-style: none; display: grid; gap: 8px; }
-        .bento-list li { display: flex; align-items: center; gap: 10px; color: var(--text); font-size: 0.88rem; font-weight: 600; }
-        .bento-list li::before { content: "✓"; color: var(--accent); font-weight: 900; }
-
-        /* КАТАЛОГ */
         .tabs-nav { display: flex; justify-content: center; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
-        .tab-btn {
-            padding: 8px 18px; border-radius: 9999px; background: var(--surface);
-            border: 1px solid var(--border); color: var(--muted); font-weight: 700; font-size: 0.85rem;
-            cursor: pointer; transition: all 0.2s ease;
-        }
-        .tab-btn.active, .tab-btn:hover { background: rgba(214, 189, 122, 0.12); border-color: var(--accent); color: var(--accent); }
-
+        .tab-btn { padding: 8px 18px; border-radius: 9999px; background: var(--surface); border: 1px solid var(--border); color: var(--muted); font-weight: 700; cursor: pointer; }
+        .tab-btn.active { background: rgba(214, 189, 122, 0.12); border-color: var(--accent); color: var(--accent); }
         .assortment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-        .product-card {
-            background: var(--card-bg); border: 1px solid var(--border);
-            border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column;
-            backdrop-filter: blur(16px); transition: all 0.3s ease;
-        }
-        .product-card:hover { border-color: var(--border-glow); transform: translateY(-3px); }
-        .product-img { height: 180px; background: #11131a; border-bottom: 1px solid var(--border); position: relative; }
+        .product-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
+        .product-card:hover { border-color: var(--border-glow); }
+        .product-img { height: 180px; background: #11131a; border-bottom: 1px solid var(--border); }
         .product-img img { width: 100%; height: 100%; object-fit: cover; }
         .product-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
         .product-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
-        .product-title { margin: 0; font-size: 1.1rem; font-weight: 700; }
-        .price {
-            padding: 4px 10px; border-radius: 9999px; background: rgba(214, 189, 122, 0.12);
-            border: 1px solid rgba(214, 189, 122, 0.25); color: var(--accent); font-weight: 800; font-size: 0.85rem;
-            white-space: nowrap;
-        }
-        .product-body p { margin: 10px 0 0; color: var(--muted); font-size: 0.88rem; }
-        .product-meta { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border); color: var(--soft); font-size: 0.8rem; }
+        .product-title { margin: 0; font-size: 1.05rem; font-weight: 800; }
+        .price { padding: 4px 10px; border-radius: 9999px; background: rgba(214, 189, 122, 0.12); border: 1px solid rgba(214, 189, 122, 0.25); color: var(--accent); font-weight: 800; font-size: 0.85rem; }
+        .product-body p { margin: 10px 0 0; color: var(--muted); font-size: 0.86rem; }
+        .product-specs { margin-top: 12px; padding: 10px; background: rgba(0,0,0,0.25); border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--muted); display: grid; gap: 4px; }
+        .product-specs div { display: flex; justify-content: space-between; }
+        .product-specs span:first-child { color: var(--soft); }
         .product-actions { margin-top: auto; padding-top: 16px; }
         .product-actions .btn { width: 100%; border-radius: var(--radius-md); }
-
-        /* ГАЛЕРЕЯ */
-        .gallery-head-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-        .gallery-card {
-            position: relative; height: 220px; border-radius: var(--radius-lg);
-            border: 1px solid var(--border); overflow: hidden; background: var(--card-bg);
-            transition: all 0.3s ease; cursor: pointer;
-        }
-        .gallery-card:hover { border-color: var(--border-glow); transform: scale(1.02); }
-        .gallery-card img { width: 100%; height: 100%; object-fit: cover; }
-        .gallery-badge {
-            position: absolute; top: 12px; right: 12px;
-            padding: 4px 10px; border-radius: 9999px; background: rgba(0,0,0,0.75);
-            backdrop-filter: blur(8px); border: 1px solid var(--border);
-            font-size: 0.72rem; font-weight: 700; color: var(--accent);
-        }
-        .gallery-overlay {
-            position: absolute; bottom: 0; left: 0; right: 0; padding: 14px 12px 12px;
-            background: linear-gradient(180deg, transparent 0%, rgba(7, 8, 12, 0.95) 100%);
-            font-size: 0.85rem; font-weight: 700; color: #fff;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-
-        /* МОДАЛКА */
-        .album-modal {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            z-index: 200; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(25px);
-            display: none; align-items: center; justify-content: center; padding: 20px;
-        }
-        .album-modal.active { display: flex; }
-        .album-box {
-            max-width: 900px; width: 100%; background: var(--card-bg);
-            border: 1px solid var(--border-glow); border-radius: var(--radius-xl);
-            overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.8);
-            position: relative; display: flex; flex-direction: column;
-        }
-        .album-header {
-            padding: 16px 20px; border-bottom: 1px solid var(--border);
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .album-title { font-weight: 800; font-size: 1.05rem; color: #fff; }
-        .album-close {
-            width: 36px; height: 36px; border-radius: 50%;
-            background: rgba(255,255,255,0.08); border: 1px solid var(--border);
-            color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
-            transition: all 0.2s ease; padding: 0; flex-shrink: 0;
-        }
-        .album-close:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.4); }
-        .album-close svg { width: 14px; height: 14px; display: block; }
-
-        .album-view {
-            position: relative; height: 480px; background: #000;
-            display: flex; align-items: center; justify-content: center; overflow: hidden;
-        }
-        .album-view img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        .album-nav {
-            position: absolute; top: 50%; transform: translateY(-50%);
-            width: 44px; height: 44px; border-radius: 50%; background: rgba(0,0,0,0.6);
-            border: 1px solid var(--border); color: #fff; font-size: 1.4rem; cursor: pointer;
-            display: flex; align-items: center; justify-content: center; backdrop-filter: blur(10px);
-            transition: all 0.2s; z-index: 10;
-        }
-        .album-nav:hover { background: var(--accent); color: #000; }
-        .album-prev { left: 16px; }
-        .album-next { right: 16px; }
-        .album-footer {
-            padding: 14px 20px; border-top: 1px solid var(--border);
-            display: flex; justify-content: space-between; align-items: center;
-            font-size: 0.85rem; color: var(--muted);
-        }
-
-        /* B2B */
-        .company-block { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-        .company-card { padding: 28px; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-xl); }
-        .company-card h3 { margin: 0; font-size: 1.25rem; }
-        .company-card p { margin: 8px 0 0; color: var(--muted); font-size: 0.9rem; }
-        .company-card .btn { margin-top: 18px; width: 100%; border-radius: var(--radius-md); }
-
-        /* FAQ */
-        .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-        details {
-            background: var(--card-glass); border: 1px solid var(--border);
-            border-radius: var(--radius-md); padding: 18px 20px; backdrop-filter: blur(16px);
-            transition: all 0.25s ease;
-        }
-        details summary::-webkit-details-marker { display: none; }
-        details summary { list-style: none; }
-        details[open] { border-color: var(--border-glow); background: rgba(20, 23, 34, 0.85); }
-        summary {
-            cursor: pointer; font-weight: 700; outline: none; user-select: none; font-size: 0.98rem;
-            display: flex; justify-content: space-between; align-items: center; gap: 12px;
-        }
-        .faq-icon {
-            width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;
-            color: var(--accent); flex-shrink: 0; transition: transform 0.3s ease;
-        }
-        details[open] .faq-icon { transform: rotate(45deg); color: #ffffff; background: rgba(214, 189, 122, 0.2); border-color: var(--accent); }
-        .faq-icon svg { width: 12px; height: 12px; display: block; }
-        details p { margin: 12px 0 0; color: var(--muted); font-size: 0.9rem; border-left: 2px solid var(--accent); padding-left: 12px; line-height: 1.6; }
-
-        /* КОНТАКТЫ */
         #contacts { padding-bottom: 25px; }
         .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .contact-list { display: grid; gap: 12px; }
         .contact-row { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px 20px; }
         .contact-row span { color: var(--soft); display: block; font-size: 0.8rem; margin-bottom: 2px; }
         .contact-row strong, .contact-row a { font-size: 1rem; font-weight: 700; }
-        
         .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px; }
         .social-links a {
-            height: 42px; padding: 0 12px; background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border); border-radius: var(--radius-sm);
-            display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.85rem;
-            transition: all 0.2s ease;
+            height: 42px; padding: 0 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.85rem;
         }
         .social-links a:hover { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.06); }
         .social-links a img { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
         .social-links a img[src*="instagram"] { transform: scale(2.0); }
-
         .map-wrap { height: 100%; min-height: 440px; border-radius: var(--radius-xl); border: 1px solid var(--border); overflow: hidden; }
         .map-wrap iframe { width: 100%; height: 100%; min-height: 440px; border: 0; }
-
-        /* ОБРАТНЫЙ ЗВОНОК */
-        .cta-banner {
-            margin: 25px 0 0;
-            background: linear-gradient(135deg, rgba(214, 189, 122, 0.1) 0%, rgba(56, 189, 248, 0.05) 100%);
-            border: 1px solid var(--border-glow); border-radius: var(--radius-xl);
-            padding: 48px 28px; text-align: center; box-shadow: 0 0 40px rgba(214, 189, 122, 0.12);
-        }
+        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .bento-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 28px; }
+        .bento-span-2 { grid-column: span 2; }
+        .bento-tag { color: var(--accent); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; }
+        .bento-card h3 { margin: 10px 0 0; font-size: 1.25rem; font-weight: 800; }
+        .bento-card p { margin: 8px 0 0; color: var(--muted); font-size: 0.92rem; }
+        .bento-list { margin-top: 16px; padding: 0; list-style: none; display: grid; gap: 8px; }
+        .bento-list li { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 600; }
+        .bento-list li::before { content: "✓"; color: var(--accent); font-weight: 900; }
+        .gallery-head-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .gallery-card { position: relative; height: 220px; border-radius: var(--radius-lg); border: 1px solid var(--border); overflow: hidden; background: var(--card-bg); cursor: pointer; }
+        .gallery-card img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-badge { position: absolute; top: 12px; right: 12px; padding: 4px 10px; border-radius: 9999px; background: rgba(0,0,0,0.75); font-size: 0.72rem; font-weight: 700; color: var(--accent); }
+        .gallery-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 14px 12px 12px; background: linear-gradient(180deg, transparent 0%, rgba(7, 8, 12, 0.95) 100%); font-size: 0.85rem; font-weight: 700; color: #fff; display: flex; justify-content: space-between; }
+        .company-block { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .company-card { padding: 28px; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-xl); }
+        .company-card h3 { margin: 0; font-size: 1.25rem; }
+        .company-card p { margin: 8px 0 0; color: var(--muted); font-size: 0.9rem; }
+        .company-card .btn { margin-top: 18px; width: 100%; border-radius: var(--radius-md); }
+        .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        details { background: var(--card-glass); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px 20px; }
+        details summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 0.98rem; display: flex; justify-content: space-between; align-items: center; }
+        .faq-icon { width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: var(--accent); }
+        details[open] .faq-icon { transform: rotate(45deg); color: #fff; background: rgba(214, 189, 122, 0.2); }
+        details[open] .faq-icon svg { width: 12px; height: 12px; }
+        details p { margin: 12px 0 0; color: var(--muted); font-size: 0.9rem; border-left: 2px solid var(--accent); padding-left: 12px; }
+        .album-modal { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 200; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(25px); display: none; align-items: center; justify-content: center; padding: 20px; }
+        .album-modal.active { display: flex; }
+        .album-box { max-width: 900px; width: 100%; background: var(--card-bg); border: 1px solid var(--border-glow); border-radius: var(--radius-xl); overflow: hidden; position: relative; }
+        .album-header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-weight: 800; }
+        .album-close { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid var(--border); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .album-view { position: relative; height: 480px; background: #000; display: flex; align-items: center; justify-content: center; }
+        .album-view img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .album-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(0,0,0,0.6); color: #fff; font-size: 1.4rem; cursor: pointer; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); }
+        .album-prev { left: 16px; } .album-next { right: 16px; }
+        .album-footer { padding: 14px 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--muted); }
+        .cta-banner { margin: 25px 0 0; background: linear-gradient(135deg, rgba(214, 189, 122, 0.1) 0%, rgba(56, 189, 248, 0.05) 100%); border: 1px solid var(--border-glow); border-radius: var(--radius-xl); padding: 48px 28px; text-align: center; }
         .cta-banner h2 { font-size: clamp(1.8rem, 3.8vw, 2.7rem); font-weight: 800; margin: 10px 0 0; }
         .cta-banner p { color: var(--muted); max-width: 580px; margin: 12px auto 0; font-size: 1rem; }
-
-        .callback-form {
-            display: flex; gap: 12px; justify-content: center; align-items: center;
-            margin-top: 28px; flex-wrap: wrap; max-width: 680px;
-            margin-left: auto; margin-right: auto;
-        }
-        .callback-input {
-            height: 48px !important; min-height: 48px !important; max-height: 48px !important;
-            padding: 0 20px; background: rgba(0,0,0,0.5);
-            border: 1px solid var(--border); border-radius: var(--radius-md);
-            color: #fff; font-weight: 600; font-size: 0.95rem; outline: none;
-            flex: 1 1 200px; min-width: 180px; box-sizing: border-box;
-        }
-        .callback-input:focus { border-color: var(--accent); }
-        .cb-success {
-            margin-top: 20px; padding: 18px 26px; background: rgba(34, 197, 94, 0.12);
-            border: 1px solid rgba(34, 197, 94, 0.35); color: #4ade80;
-            border-radius: var(--radius-lg); font-weight: 700; font-size: 0.95rem; display: inline-block;
-        }
-
+        .callback-form { display: flex; gap: 12px; justify-content: center; align-items: center; margin-top: 28px; flex-wrap: wrap; max-width: 680px; margin-left: auto; margin-right: auto; }
+        .callback-input { height: 48px !important; padding: 0 20px; background: rgba(0,0,0,0.5); border: 1px solid var(--border); border-radius: var(--radius-md); color: #fff; font-weight: 600; min-width: 180px; }
+        .cb-success { margin-top: 20px; padding: 18px 26px; background: rgba(34, 197, 94, 0.12); border: 1px solid rgba(34, 197, 94, 0.35); color: #4ade80; border-radius: var(--radius-lg); font-weight: 700; display: inline-block; }
         .site-footer { padding: 36px 0; border-top: 1px solid var(--border); color: var(--soft); font-size: 0.85rem; }
         .footer-inner { display: flex; justify-content: space-between; align-items: center; }
-
         @media (max-width: 1024px) {
-            .nav { display: none; }
-            .widget-grid { grid-template-columns: 1fr 1fr; }
-            .stats-bar { grid-template-columns: repeat(2, 1fr); }
-            .bento-grid { grid-template-columns: 1fr; }
-            .bento-span-2 { grid-column: span 1; }
-            .assortment-grid { grid-template-columns: repeat(2, 1fr); }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .contacts-grid, .company-block, .faq, .solutions-grid { grid-template-columns: 1fr; }
-            .calc-body.active { grid-template-columns: 1fr; }
-            .blueprint-card { grid-template-columns: 1fr; }
+            .nav { display: none; } .widget-grid { grid-template-columns: 1fr 1fr; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); } .bento-grid { grid-template-columns: 1fr; }
+            .bento-span-2 { grid-column: span 1; } .assortment-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); } .contacts-grid, .company-block, .faq, .solutions-grid { grid-template-columns: 1fr; }
+            .calc-body.active, .blueprint-card { grid-template-columns: 1fr; }
         }
         @media (max-width: 640px) {
-            .container { width: min(100% - 24px, var(--max-w)); }
-            .header-inner { height: 60px; justify-content: space-between; gap: 8px; }
-            .phone-block { display: none !important; }
-            .brand { flex: 1; min-width: 0; }
-            .brand-name span { display: none !important; }
-            .brand-name strong { font-size: 0.92rem; }
-            .header-actions .btn { height: 36px; padding: 0 14px; font-size: 0.82rem; }
-            .widget-grid { grid-template-columns: 1fr; }
-            .stats-bar { grid-template-columns: 1fr; }
-            .assortment-grid, .gallery-grid { grid-template-columns: 1fr; }
-            .social-links { grid-template-columns: 1fr; }
-            .footer-inner { flex-direction: column; text-align: center; gap: 10px; }
-            .album-view { height: 320px; }
-            .input-row { grid-template-columns: 1fr; }
-            .calc-actions { grid-template-columns: 1fr; }
-            .calc-wrapper { padding: 20px 16px; }
-            
-            .callback-form { flex-direction: column; width: 100%; gap: 10px; }
-            .callback-input { width: 100% !important; flex: none !important; }
-            .callback-form .btn { width: 100%; }
+            .container { width: min(100% - 24px, var(--max-w)); } .header-inner { height: 60px; }
+            .phone-block { display: none !important; } .brand-name span { display: none !important; }
+            .widget-grid, .stats-bar, .assortment-grid, .gallery-grid, .social-links, .input-row, .calc-actions { grid-template-columns: 1fr; }
+            .footer-inner, .callback-form { flex-direction: column; text-align: center; gap: 10px; }
+            .album-view { height: 320px; } .calc-wrapper { padding: 20px 16px; }
+            .callback-input, .callback-form .btn { width: 100% !important; }
         }
     </style>
 </head>
 <body>
-
-    <div class="glow-bg">
-        <div class="glow-top"></div>
-        <div class="glow-bottom"></div>
-    </div>
-
-    <!-- Header -->
+    <div class="glow-bg"><div class="glow-top"></div><div class="glow-bottom"></div></div>
     <header class="site-header">
         <div class="container header-inner">
             <a class="brand" href="#top" aria-label="Стройбаза на Монтажной">
                 <div class="brand-icon" id="logo-svg-header">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:22px; height:22px; color:var(--accent);">
-                        <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(214,189,122,0.3)"/>
-                        <path d="M4 7V17L12 22V12Z"/>
-                        <path d="M12 12V22L20 17V7Z"/>
+                        <path d="M12 2L20 7L12 12L4 7Z" fill="rgba(214,189,122,0.3)"/><path d="M4 7V17L12 22V12Z"/><path d="M12 12V22L20 17V7Z"/>
                     </svg>
                 </div>
                 <img src="logo.png" id="logo-img-header" style="display:none;" onerror="if(this.src.indexOf('logo.PNG') === -1) { this.src='logo.PNG'; } else { this.style.display='none'; document.getElementById('logo-svg-header').style.display='flex'; }" onload="document.getElementById('logo-svg-header').style.display='none'; this.style.display='block';" alt="Стройбаза на Монтажной" width="42" height="42">
@@ -582,9 +296,9 @@
                 </span>
             </a>
             <nav class="nav">
-                <a href="#calculator" class="highlight-nav">⚡ Калькулятор стройки</a>
-                <a href="#blueprint">Отправить чертёж</a>
-                <a href="#solutions">Задачи стройки</a>
+                <a href="#kalkulyator" class="highlight-nav">⚡ Калькулятор стройки</a>
+                <a href="#chertezh">Отправить чертёж</a>
+                <a href="#zadachi">Задачи стройки</a>
                 <a href="#catalog">Каталог</a>
                 <a href="#contacts">Контакты</a>
             </nav>
@@ -599,54 +313,58 @@
     </header>
 
     <main id="top">
-        <!-- Hero Section -->
         <section class="hero">
             <div class="container hero-content">
                 <div class="badge"><span class="badge-dot"></span> Склад открыт • Невинномысск</div>
-                <h1>Арматура, трубы, цемент и ЖБИ со склада</h1>
-                <p class="hero-lead">Металл по ГОСТу, ФБС, кольца, шлакоблок и цемент М500. Бесплатный точный расчет металлокаркаса под ваш навес, забор или фундамент за 5 минут.</p>
+                <h1>Арматура, профильные трубы, цемент и ЖБИ со склада</h1>
+                <p class="hero-lead">Металлопрокат по ГОСТу с контролем толщины стенки, Новороссийский цемент М500, ФБС, кольца и шлакоблок. Бесплатный расчет каркасов навесов, заборов и фундаментов за 5 минут.</p>
                 <div class="hero-actions">
-                    <a class="btn btn-primary" href="#calculator">Рассчитать объект онлайн</a>
+                    <a class="btn btn-primary" href="#kalkulyator">Рассчитать объект онлайн</a>
                     <a class="btn btn-wa" href="https://wa.me/79887328161" target="_blank" rel="noopener">Написать в WhatsApp</a>
                     <a class="btn btn-tg" href="https://t.me/TimurSB" target="_blank" rel="noopener">Telegram менеджера</a>
                 </div>
 
-                <!-- Hero Quick Calculator Bar -->
                 <div class="hero-widget">
-                    <div class="widget-title">⚡ Быстрый экспресс-расчет стоимости</div>
+                    <div class="widget-title">⚡ Быстрый экспресс-расчет стоимости со склада</div>
                     <div class="widget-grid">
                         <select class="widget-select" id="calc-item">
-                            <option value="60">Арматура 12 мм (60 ₽/м)</option>
-                            <option value="115">Профильная труба 40х20х2 (115 ₽/м)</option>
-                            <option value="160">Профильная труба 40х40х2 (160 ₽/м)</option>
-                            <option value="260">Профильная труба 60х40х3 (260 ₽/м)</option>
-                            <option value="580">Цемент М500 50кг (580 ₽/мешок)</option>
-                            <option value="48">Шлакоблок 20х20х40 (48 ₽/шт)</option>
+                            <option value="56">Арматура 12 мм А500С (56 ₽/м)</option>
+                            <option value="45">Арматура 10 мм А500С (45 ₽/м)</option>
+                            <option value="30">Арматура 8 мм А500С (30 ₽/м)</option>
+                            <option value="21">Арматура 6 мм А240/А500С (21 ₽/м)</option>
+                            <option value="115">Профильная труба 40х20х2 мм (115 ₽/м)</option>
+                            <option value="160">Профильная труба 40х40х2 мм (160 ₽/м)</option>
+                            <option value="260">Профильная труба 60х40х3 мм (260 ₽/м)</option>
+                            <option value="460">Профильная труба 80х80х3 мм (460 ₽/м)</option>
+                            <option value="570">Цемент М500 50 кг (570 ₽/мешок)</option>
+                            <option value="48">Шлакоблок 390х190х190 (48 ₽/шт)</option>
+                            <option value="2600">Блок ФБС 24.3.6 (2 600 ₽/шт)</option>
+                            <option value="2800">Блок ФБС 24.4.6 (2 800 ₽/шт)</option>
                         </select>
                         <input type="number" class="widget-input" id="calc-qty" value="100" placeholder="Кол-во">
-                        <div style="font-weight: 800; color: var(--accent); font-size: 1.1rem;" id="calc-total">6 000 ₽</div>
+                        <div style="font-weight: 800; color: var(--accent); font-size: 1.1rem;" id="calc-total">5 600 ₽</div>
                         <a class="btn btn-primary" href="tel:+79887328161">Заказать</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Stats Bar -->
         <div class="container">
             <div class="stats-bar">
-                <div class="stat-card"><strong>30+ тонн</strong><span>Арматуры всегда на складе</span></div>
-                <div class="stat-card"><strong>100% ГОСТ</strong><span>Честная толщина стенки трубы</span></div>
-                <div class="stat-card"><strong>1.5 часа</strong><span>Среднее время доставки по городу</span></div>
-                <div class="stat-card"><strong>0 ₽</strong><span>Резка металлопроката пополам</span></div>
+                <div class="stat-card"><strong>30+ тонн</strong><span>Арматуры и труб на складе</span></div>
+                <div class="stat-card"><strong>100% ГОСТ</strong><span>Толщина стенки без обмана</span></div>
+                <div class="stat-card"><strong>1.5 часа</strong><span>Доставка по Невинномысску</span></div>
+                <div class="stat-card"><strong>0 ₽</strong><span>Бесплатная резка пополам</span></div>
             </div>
         </div>
+
         <!-- 1. ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР ОБЪЕКТОВ -->
-        <section class="section" id="calculator">
+        <section class="section" id="kalkulyator">
             <div class="container">
                 <div class="section-head">
                     <div class="badge"><span class="badge-dot"></span> Онлайн-расчет</div>
-                    <h2 class="section-title">Калькулятор металла под вашу задачу</h2>
-                    <p class="section-copy">Выберите, что вы планируете строить. Калькулятор посчитает необходимый сортамент профильной трубы, арматуры и цемента из наличия на складе.</p>
+                    <h2 class="section-title">Калькулятор металлопроката под вашу задачу</h2>
+                    <p class="section-copy">Рассчитайте точный объем профильной трубы, арматуры и цемента строго по прайсу базы на Монтажной, 10.</p>
                 </div>
 
                 <div class="calc-wrapper">
@@ -656,7 +374,7 @@
                         <button class="calc-tab-btn" onclick="switchCalc('foundation', this)">🏗️ Ленточный фундамент</button>
                     </div>
 
-                    <!-- НАВЕС -->
+                    <!-- КАЛЬКУЛЯТОР НАВЕСА -->
                     <div class="calc-body active" id="calc-canopy">
                         <div class="calc-inputs">
                             <div class="input-row">
@@ -675,36 +393,25 @@
                                     <input type="number" id="canopy-height" class="calc-field" value="2.5" min="2" max="6" step="0.1" oninput="calculateCanopy()">
                                 </div>
                                 <div class="input-group">
-                                    <label>Шаг стоек вдоль (м)</label>
-                                    <select id="canopy-step" class="calc-field" onchange="calculateCanopy()">
-                                        <option value="3" selected>3.0 метра (стандарт)</option>
-                                        <option value="2">2.0 метра (усиленный)</option>
+                                    <label>Труба на столбы</label>
+                                    <select id="canopy-pillar-type" class="calc-field" onchange="calculateCanopy()">
+                                        <option value="60" selected>60×40×3 мм (260 ₽/м)</option>
+                                        <option value="80">80×80×3 мм мощная (460 ₽/м)</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="calc-disclaimer">
-                                * Расчет включает: стойки и балки из трубы 60×40×3 мм, кровельную обрешетку из трубы 40×20×2 мм с шагом 60 см. Кровля (профлист/поликарбонат) рассчитывается отдельно.
+                                * Стойки и силовые балки: труба 60×40×3 мм (или 80×80×3). Обрешетка: труба 40×20×2 мм с шагом 60 см (115 ₽/м).
                             </div>
                         </div>
 
                         <div class="calc-results">
-                            <h4>📋 Необходимые материалы с базы:</h4>
-                            <div class="result-item">
-                                <span>Стойки и ригели (60х40х3 мм):</span>
-                                <span id="res-canopy-6040">39 м • 10 140 ₽</span>
-                            </div>
-                            <div class="result-item">
-                                <span>Обрешетка (40х20х2 мм):</span>
-                                <span id="res-canopy-4020">48 м • 5 520 ₽</span>
-                            </div>
-                            <div class="result-item">
-                                <span>Примерный общий вес металла:</span>
-                                <span id="res-canopy-weight">~228 кг</span>
-                            </div>
-                            <div class="result-total">
-                                <span class="total-label">Итого металл:</span>
-                                <span class="total-val" id="res-canopy-total">15 660 ₽</span>
-                            </div>
+                            <h4>📋 Комплектация со склада в Невинномысске:</h4>
+                            <div class="result-item"><span>Стойки опорные:</span><span id="res-canopy-pillars">15 м • 3 900 ₽</span></div>
+                            <div class="result-item"><span>Балки и фермы (60х40х3 мм):</span><span id="res-canopy-beams">24 м • 6 240 ₽</span></div>
+                            <div class="result-item"><span>Обрешетка (40х20х2 мм):</span><span id="res-canopy-4020">48 м • 5 520 ₽</span></div>
+                            <div class="result-item"><span>Примерная масса металлокаркаса:</span><span id="res-canopy-weight">~248 кг</span></div>
+                            <div class="result-total"><span class="total-label">Итого металл:</span><span class="total-val" id="res-canopy-total">15 660 ₽</span></div>
                             <div class="calc-actions">
                                 <button class="btn btn-wa" onclick="sendCanopyOrder('wa')">Заказать в WhatsApp</button>
                                 <button class="btn btn-tg" onclick="sendCanopyOrder('tg')">Заказать в Telegram</button>
@@ -712,7 +419,7 @@
                         </div>
                     </div>
 
-                    <!-- ЗАБОР -->
+                    <!-- КАЛЬКУЛЯТОР ЗАБОРА -->
                     <div class="calc-body" id="calc-fence">
                         <div class="calc-inputs">
                             <div class="input-row">
@@ -727,10 +434,10 @@
                             </div>
                             <div class="input-row">
                                 <div class="input-group">
-                                    <label>Количество горизонтальных лаг</label>
+                                    <label>Количество лаг</label>
                                     <select id="fence-rails" class="calc-field" onchange="calculateFence()">
-                                        <option value="2" selected>2 ряда (до 1.8 м высоты)</option>
-                                        <option value="3">3 ряда (усиленный, от 2.0 м)</option>
+                                        <option value="2" selected>2 ряда (до 1.8 м)</option>
+                                        <option value="3">3 ряда (от 2.0 м)</option>
                                     </select>
                                 </div>
                                 <div class="input-group">
@@ -742,28 +449,16 @@
                                 </div>
                             </div>
                             <div class="calc-disclaimer">
-                                * Столбы рассчитываются с шагом 2.5 м и заглублением в грунт на 0.8 м. На каждый столб заложен цемент М500 на бетонирование (по 0.5 мешка).
+                                * Шаг столбов 2.5 м, заглубление 0.8 м. Лаги: труба 40×20×2 мм (115 ₽/м). Цемент Новороссийский М500 (570 ₽/мешок).
                             </div>
                         </div>
 
                         <div class="calc-results">
-                            <h4>📋 Необходимые материалы с базы:</h4>
-                            <div class="result-item">
-                                <span>Столбы (шаг 2.5 м):</span>
-                                <span id="res-fence-pillars">13 шт (36.4 м) • 5 824 ₽</span>
-                            </div>
-                            <div class="result-item">
-                                <span>Лаги (проф. труба 40х20х2):</span>
-                                <span id="res-fence-rails">63 м • 7 245 ₽</span>
-                            </div>
-                            <div class="result-item">
-                                <span>Цемент М500 на бетонирование:</span>
-                                <span id="res-fence-cement">7 мешков • 4 060 ₽</span>
-                            </div>
-                            <div class="result-total">
-                                <span class="total-label">Итого материалы:</span>
-                                <span class="total-val" id="res-fence-total">17 129 ₽</span>
-                            </div>
+                            <h4>📋 Комплектация со склада в Невинномысске:</h4>
+                            <div class="result-item"><span>Столбы (шаг 2.5 м):</span><span id="res-fence-pillars">13 шт (36.4 м) • 5 824 ₽</span></div>
+                            <div class="result-item"><span>Лаги (40х20х2 мм ГОСТ):</span><span id="res-fence-rails">63 м • 7 245 ₽</span></div>
+                            <div class="result-item"><span>Цемент Новороссийский М500:</span><span id="res-fence-cement">7 мешков • 3 990 ₽</span></div>
+                            <div class="result-total"><span class="total-label">Итого материалы:</span><span class="total-val" id="res-fence-total">17 059 ₽</span></div>
                             <div class="calc-actions">
                                 <button class="btn btn-wa" onclick="sendFenceOrder('wa')">Заказать в WhatsApp</button>
                                 <button class="btn btn-tg" onclick="sendFenceOrder('tg')">Заказать в Telegram</button>
@@ -771,49 +466,49 @@
                         </div>
                     </div>
 
-                    <!-- ФУНДАМЕНТ -->
+                    <!-- КАЛЬКУЛЯТОР ФУНДАМЕНТА -->
                     <div class="calc-body" id="calc-foundation">
                         <div class="calc-inputs">
                             <div class="input-row">
                                 <div class="input-group">
-                                    <label>Общий периметр ленты (м)</label>
-                                    <input type="number" id="found-perimeter" class="calc-field" value="40" min="10" max="500" step="1" oninput="calculateFoundation()" placeholder="Например 40 для дома 10х10">
+                                    <label>Периметр ленты (м)</label>
+                                    <input type="number" id="found-perimeter" class="calc-field" value="40" min="10" max="500" step="1" oninput="calculateFoundation()">
                                 </div>
                                 <div class="input-group">
-                                    <label>Продольных прутков арматуры</label>
-                                    <select id="found-bars" class="calc-field" onchange="calculateFoundation()">
-                                        <option value="4" selected>4 прутка (2 сверху + 2 снизу)</option>
-                                        <option value="6">6 прутков (для высоких лент)</option>
+                                    <label>Рабочая арматура</label>
+                                    <select id="found-arm-dia" class="calc-field" onchange="calculateFoundation()">
+                                        <option value="12" selected>12 мм А500С (56 ₽/м)</option>
+                                        <option value="10">10 мм А500С (45 ₽/м)</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="input-group">
-                                <label>Ширина ленты фундамента (м)</label>
-                                <input type="number" id="found-width" class="calc-field" value="0.4" min="0.2" max="1.5" step="0.05" oninput="calculateFoundation()">
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Прутков продольных</label>
+                                    <select id="found-bars" class="calc-field" onchange="calculateFoundation()">
+                                        <option value="4" selected>4 прутка</option>
+                                        <option value="6">6 прутков</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label>Хомуты</label>
+                                    <select id="found-clamps-dia" class="calc-field" onchange="calculateFoundation()">
+                                        <option value="6" selected>6 мм (21 ₽/м)</option>
+                                        <option value="8">8 мм (30 ₽/м)</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="calc-disclaimer">
-                                * Расчет включает арматуру рифленую 12 мм А500С (ГОСТ) с запасом на нахлест и углы 15%, а также вязальную проволоку. Резка по 5.85 м бесплатно.
+                                * Рифленая арматура А500С по ГОСТу с запасом 15% на нахлесты. Бесплатная резка хлыстов 11.7 м пополам для транспортировки Газелью.
                             </div>
                         </div>
 
                         <div class="calc-results">
-                            <h4>📋 Необходимые материалы с базы:</h4>
-                            <div class="result-item">
-                                <span>Арматура 12 мм А500С (рабочая):</span>
-                                <span id="res-found-arm">184 м (163 кг) • 11 040 ₽</span>
-                            </div>
-                            <div class="result-item">
-                                <span>Арматура 6–8 мм на хомуты:</span>
-                                <span id="res-found-clamps">~120 м • 4 200 ₽</span>
-                            </div>
-                            <div class="result-item">
-                                <span>Вязальная проволока:</span>
-                                <span>1 бухта (5 кг) • 650 ₽</span>
-                            </div>
-                            <div class="result-total">
-                                <span class="total-label">Итого арматура:</span>
-                                <span class="total-val" id="res-found-total">15 890 ₽</span>
-                            </div>
+                            <h4>📋 Комплектация со склада в Невинномысске:</h4>
+                            <div class="result-item"><span>Рабочая арматура:</span><span id="res-found-arm">184 м (163 кг) • 10 304 ₽</span></div>
+                            <div class="result-item"><span>Хомуты (шаг 30 см):</span><span id="res-found-clamps">~160 м • 3 360 ₽</span></div>
+                            <div class="result-item"><span>Вязальная проволока:</span><span>1 бухта (5 кг) • 650 ₽</span></div>
+                            <div class="result-total"><span class="total-label">Итого арматура:</span><span class="total-val" id="res-found-total">14 314 ₽</span></div>
                             <div class="calc-actions">
                                 <button class="btn btn-wa" onclick="sendFoundOrder('wa')">Заказать в WhatsApp</button>
                                 <button class="btn btn-tg" onclick="sendFoundOrder('tg')">Заказать в Telegram</button>
@@ -825,13 +520,13 @@
         </section>
 
         <!-- 2. ОТПРАВИТЬ ЧЕРТЕЖ -->
-        <section class="section" id="blueprint" style="padding-top: 10px;">
+        <section class="section" id="chertezh" style="padding-top: 10px;">
             <div class="container">
                 <div class="blueprint-card">
                     <div class="blueprint-info">
                         <div class="badge"><span class="badge-dot"></span> Смета за 10 минут</div>
                         <h3>Есть готовый проект или набросок от руки?</h3>
-                        <p>Сфотографируйте чертеж, спецификацию или рисунок с размерами и отправьте нам. Мы пересчитаем сортамент по ГОСТу, подберем раскрой без лишних обрезков и озвучим точную цену со склада в Невинномысске.</p>
+                        <p>Сфотографируйте чертеж, спецификацию или рисунок с размерами и отправьте нам. Мы пересчитаем сортамент по ГОСТу, подберем раскрой без лишних остатков и озвучим точную стоимость со склада на Монтажной, 10.</p>
                         <div class="blueprint-badges">
                             <span class="bp-badge">✓ Бесплатный расчет</span>
                             <span class="bp-badge">✓ Раскрой без остатков</span>
@@ -844,212 +539,431 @@
                             📱 Прислать фото в WhatsApp
                         </a>
                         <a class="btn btn-tg" style="height: 50px; font-size: 0.95rem;" href="https://t.me/TimurSB" target="_blank" rel="noopener">
-                            ✈️ Отправить чертёж в Telegram
+                            ✈️ Отправить чертёж в Telegram (@TimurSB)
                         </a>
-                        <a class="btn btn-ghost" style="height: 44px; font-size: 0.85rem;" href="https://max.ru/u/f9LHodD0cOJgEGUfceKjPXOhw1ajmlHZF5pe890mjoOkuseg4apIEfzh6g8" target="_blank" rel="noopener">
-                            💬 Написать через мессенджер MAX
+                        <a class="btn btn-ghost" style="height: 44px; font-size: 0.85rem;" href="https://max.ru/join/bM2VpgJxiwIve809sHURi8C1mrzORQCR-7u_elROpXw" target="_blank" rel="noopener">
+                            💬 Написать через MAX
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- 3. SEO ЗАДАЧИ СТРОЙКИ -->
-        <section class="section" id="solutions">
+        <!-- 3. ЗАДАЧИ СТРОЙКИ В НЕВИННОМЫССКЕ (14 РЕШЕНИЙ) -->
+        <section class="section" id="zadachi">
             <div class="container">
                 <div class="section-head">
-                    <div class="badge"><span class="badge-dot"></span> База знаний</div>
-                    <h2 class="section-title">Типовые строительные задачи в Невинномысске</h2>
-                    <p class="section-copy">Разбираем реальные расходы материалов для частного строительства в Ставропольском крае. Никаких переплат за лишний металл.</p>
+                    <div class="badge"><span class="badge-dot"></span> Справочник застройщика</div>
+                    <h2 class="section-title">14 типовых задач частного строительства в Невинномысске</h2>
+                    <p class="section-copy">Готовые ведомости материалов с актуальными ценами металлопроката и ЖБИ. Точный сортамент без переплаты за лишний металл.</p>
                 </div>
 
                 <div class="solutions-grid">
                     <article class="solution-card">
-                        <span class="bento-tag">Металлокаркас</span>
-                        <h3>Сколько трубы нужно на навес 6×4 м для авто?</h3>
-                        <p>Для односкатного или арочного навеса 6х4 оптимальна ферменная конструкция. Стойки и продольные балки берутся из профиля 60х40х3 мм, а для связей и обрешетки под профлист достаточно трубы 40х20х2 мм.</p>
+                        <span class="bento-tag">Навесы</span>
+                        <h3>Сколько трубы нужно на навес 6×4 м под автомобиль?</h3>
+                        <p>Оптимальная схема: стойки и балки из трубы 60х40х3 мм (или 80х80х3), стропильная обрешетка под профнастил из трубы 40х20х2 мм с шагом 60–65 см.</p>
                         <div class="solution-table">
-                            <div class="sol-row"><span>Стойки 60×40 (h=2.5м, 6 шт):</span><span>15 м</span></div>
-                            <div class="sol-row"><span>Балки/ригели 60×40:</span><span>24 м</span></div>
-                            <div class="sol-row"><span>Обрешетка 40×20 (шаг 65 см):</span><span>48 м</span></div>
-                            <div class="sol-row" style="font-weight:700; color:var(--accent); border-top:1px solid rgba(255,255,255,0.1); margin-top:4px; padding-top:4px;">
-                                <span>Бюджет металла со склада:</span><span>от 15 660 ₽</span>
-                            </div>
+                            <div class="sol-row"><span>Стойки 60×40×3 (6 шт по 2.5 м):</span><span>15 м (3 900 ₽)</span></div>
+                            <div class="sol-row"><span>Балки/ригели 60×40×3 мм:</span><span>24 м (6 240 ₽)</span></div>
+                            <div class="sol-row"><span>Обрешетка 40×20×2 мм:</span><span>48 м (5 520 ₽)</span></div>
+                            <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Каркас со склада базы:</span><span>15 660 ₽</span></div>
                         </div>
-                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B0%20%D0%BD%D0%B0%20%D0%BD%D0%B0%D0%B2%D0%B5%D1%81%206%D1%854%20%D0%BC.">Заказать комплект на навес</a>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%20%D0%BD%D0%B0%20%D0%BD%D0%B0%D0%B2%D0%B5%D1%81%206%D1%854.">Заказать комплект на навес</a>
                     </article>
 
                     <article class="solution-card">
-                        <span class="bento-tag">Ограждения</span>
-                        <h3>Какой металл взять на забор 30–50 метров?</h3>
-                        <p>Чтобы забор из профлиста не парусил на ветру, столбы ставят с шагом 2.5 м. Оптимально использовать трубу 40х40х2 мм или 60х40х3 мм. В качестве горизонтальных направляющих (лаг) применяют трубу 40х20х2 мм в 2 ряда.</p>
+                        <span class="bento-tag">Большие навесы</span>
+                        <h3>Навес 8×6 м для двух машин: расчет усиленного металла</h3>
+                        <p>Большой пролет требует мощных стоек 80х80х3 мм и усиленных стропильных ферм из профильной трубы 60х40х3 мм под снеговые нагрузки.</p>
                         <div class="solution-table">
-                            <div class="sol-row"><span>Столбы на 30 м (13 шт по 2.8 м):</span><span>36.4 м</span></div>
-                            <div class="sol-row"><span>Лаги 40×20 в 2 ряда:</span><span>63 м</span></div>
-                            <div class="sol-row"><span>Цемент М500 на лунки:</span><span>7 мешков</span></div>
-                            <div class="sol-row" style="font-weight:700; color:var(--accent); border-top:1px solid rgba(255,255,255,0.1); margin-top:4px; padding-top:4px;">
-                                <span>Комплект металла и цемента:</span><span>от 17 129 ₽</span>
-                            </div>
+                            <div class="sol-row"><span>Стойки 80×80×3 мм (8 шт по 3 м):</span><span>24 м (11 040 ₽)</span></div>
+                            <div class="sol-row"><span>Фермы и балки 60×40×3 мм:</span><span>64 м (16 640 ₽)</span></div>
+                            <div class="sol-row"><span>Обрешетка 40×20×2 мм:</span><span>96 м (11 040 ₽)</span></div>
+                            <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Итого усиленный металл:</span><span>38 720 ₽</span></div>
                         </div>
-                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%B0%20%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%B1%D0%BE%D1%80.">Заказать комплект на забор</a>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%BE%D1%81%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BD%D0%B0%D0%B2%D0%B5%D1%81%208%D1%856.">Заказать расчет в WhatsApp</a>
+                    </article>
+
+                    <article class="solution-card">
+                        <span class="bento-tag">Заборы</span>
+                        <h3>Забор из профнастила 30 метров: столбы, лаги и цемент</h3>
+                        <p>Для забора h=2.0 м с шагом 2.5 м: столбы из трубы 40х40х2 (или 60х40х3), 2 ряда лаг из трубы 40х20х2 и цемент Новороссийский М500 для лунок.</p>
+                        <div class="solution-table">
+                            <div class="sol-row"><span>Столбы 40×40×2 (13 шт по 2.8 м):</span><span>36.4 м (5 824 ₽)</span></div>
+                            <div class="sol-row"><span>Лаги 40×20×2 мм в 2 ряда:</span><span>63 м (7 245 ₽)</span></div>
+                            <div class="sol-row"><span>Цемент М500 на лунки (7 мешков):</span><span>3 990 ₽</span></div>
+                            <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Комплект металла и цемента:</span><span>17 059 ₽</span></div>
+                        </div>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%20%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%B1%D0%BE%D1%80%2030%20%D0%BC.">Заказать забор 30 м</a>
+                    </article>
+
+                    <article class="solution-card">
+                        <span class="bento-tag">Заборы</span>
+                        <h3>Забор 50 метров по периметру участка</h3>
+                        <p>Периметр 50 м требует 21 столб. Рекомендуется брать трубу 60х40х3 на ветровые стороны и цемент М500 Д20 для гарантированной фиксации столба в грунте.</p>
+                        <div class="solution-table">
+                            <div class="sol-row"><span>Столбы 40×40×2 (21 шт по 2.8 м):</span><span>58.8 м (9 408 ₽)</span></div>
+                            <div class="sol-row"><span>Лаги 40×20×2 мм (2 ряда):</span><span>105 м (12 075 ₽)</span></div>
+                            <div class="sol-row"><span>Цемент М500 Д20 (11 мешков):</span><span>6 270 ₽</span></div>
+                            <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Комплект на 50 метров:</span><span>27 753 ₽</span></div>
+                        </div>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82%20%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%B1%D0%BE%D1%80%2050%20%D0%BC.">Заказать забор 50 м</a>
                     </article>
 
                     <article class="solution-card">
                         <span class="bento-tag">Фундамент</span>
-                        <h3>Сколько арматуры нужно на фундамент 10×10 м?</h3>
-                        <p>Для стандартной ленты под дом 10×10 м (периметр 40 м + внутренняя несущая стена 10 м = 50 м ленты) в 4 продольных прутка требуется рифленая арматура 12 мм А500С по ГОСТу с учетом нахлестов 15%.</p>
+                        <h3>Ленточный фундамент под дом 10×10 м (арматура 12 мм)</h3>
+                        <p>Периметр 40 м + внутренняя перемычка 10 м = 50 м ленты. При схеме в 4 продольных прутка закладывается арматура 12 мм А500С и хомуты из арматуры 6 мм.</p>
                         <div class="solution-table">
-                            <div class="sol-row"><span>Арматура 12 мм А500С:</span><span>230 м (~204 кг)</span></div>
-                            <div class="sol-row"><span>Арматура 8 мм (хомуты шаг 30 см):</span><span>150 м</span></div>
-                            <div class="sol-row"><span>Вязальная проволока:</span><span>5 кг</span></div>
-                            <div class="sol-row" style="font-weight:700; color:var(--accent); border-top:1px solid rgba(255,255,255,0.1); margin-top:4px; padding-top:4px;">
-                                <span>Арматурный каркас:</span><span>от 19 850 ₽</span>
-                            </div>
+                            <div class="sol-row"><span>Арматура 12 мм А500С (с нахлестом):</span><span>230 м (12 880 ₽)</span></div>
+                            <div class="sol-row"><span>Арматура 6 мм на хомуты (шаг 30 см):</span><span>200 м (4 200 ₽)</span></div>
+                            <div class="sol-row"><span>Вязальная проволока (5 кг):</span><span>650 ₽</span></div>
+                            <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Арматурный каркас:</span><span>17 730 ₽</span></div>
                         </div>
-                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%B0%D1%80%D0%BC%D0%B0%D1%82%D1%83%D1%80%D0%B0%2012%20%D0%BC%D0%BC%20%D0%BD%D0%B0%20%D1%84%D1%83%D0%BD%D0%B4%D0%B0%D0%BC%D0%B5%D0%BD%D1%82.">Заказать арматуру на объект</a>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%B0%D1%80%D0%BC%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BD%D0%B0%20%D1%84%D1%83%D0%BD%D0%B4%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%2010%D1%8510.">Купить арматуру на фундамент</a>
                     </article>
 
                     <article class="solution-card">
-                        <span class="bento-tag">ЖБИ Сравнение</span>
-                        <h3>Блоки ФБС или монолитный бетон: что выгоднее?</h3>
-                        <p>Для цоколей и подвалов в грунтовых условиях Невинномысска блоки ФБС 24.3.6 и 24.4.6 экономят до 30% бюджета по сравнению с монолитом. Не нужна аренда опалубки, а монтаж манипулятором занимает всего 1 день.</p>
+                        <span class="bento-tag">Фундамент</span>
+                        <h3>Ленточный фундамент под дом 8×10 м с арматурой 10 и 12 мм</h3>
+                        <p>Экономичный вариант для одноэтажного дома: 44 м ленты. Рабочая арматура 12 мм в нижнем поясе и 10 мм в верхнем.</p>
                         <div class="solution-table">
-                            <div class="sol-row"><span>Блок ФБС 24.3.6:</span><span>2 600 ₽/шт</span></div>
-                            <div class="sol-row"><span>Блок ФБС 24.4.6:</span><span>2 800 ₽/шт</span></div>
-                            <div class="sol-row"><span>Манипулятор 15 т:</span><span>3 000 ₽/час</span></div>
-                            <div class="sol-row" style="font-weight:700; color:var(--accent); border-top:1px solid rgba(255,255,255,0.1); margin-top:4px; padding-top:4px;">
-                                <span>Монтаж в день привоза:</span><span>за 1 смену</span>
-                            </div>
+                            <div class="sol-row"><span>Арматура 12 мм А500С (2 прутка):</span><span>102 м (5 712 ₽)</span></div>
+                            <div class="sol-row"><span>Арматура 10 мм А500С (2 прутка):</span><span>102 м (4 590 ₽)</span></div>
+                            <div class="sol-row"><span>Хомуты из арматуры 6 мм:</span><span>170 м (3 570 ₽)</span></div>
+                            <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Итого арматура:</span><span>13 872 ₽</span></div>
                         </div>
-                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE%D0%B2%20%D0%A4%D0%91%D0%A1%20%D0%B8%20%D0%BC%D0%B0%D0%BD%D0%B8%D0%BF%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%B0.">Заказать ФБС с доставкой</a>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%BE%D1%81%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D1%82%D0%B5%20%D1%84%D1%83%D0%BD%D0%B4%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%208%D1%8510.">Заказать расчет фундамента</a>
+                    </article>
+
+                    <article class="solution-card">
+                        <span class="bento-tag">Армопояс</span>
+                        <h3>Монолитный сейсмопояс (армопояс) под мауэрлат и плиты</h3>
+                        <p>Обязателен в домах из блоков и кирпича. Армируется в 4 прутка арматурой 10 мм А500С с заливкой цементом М500 Д0 без добавок.</p>
+                        <div class="solution-table">
+                            <div class="sol-row"><span>Арматура 10 мм А500С (на 40 м пояса):</span><span>184 м (8 280 ₽)</span></div>
+                            <div class="sol-row"><span>Арматура 6 мм на рамки (шаг 25 см):</span><span>140 м (2 940 ₽)</span></div>
+                            <div class="sol-row"><span>Цемент М500 Д0 (ЦЕМ I 42.5Н):</span><span>18 мешков (10 260 ₽)</span></div>
+                            <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Комплект на армопояс:</span><span>21 480 ₽</span></div>
+                        </div>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82%20%D0%BD%D0%B0%20%D0%B0%D1%80%D0%BC%D0%BE%D0%BF%D0%BE%D1%8F%D1%81.">Заказать металл и цемент</a>
+                    </article>
+
+                    <article class="solution-card">
+                        <span class="bento-tag">ЖБИ Фундамент</span>
+                        <h3>Цокольный этаж и фундамент из блоков ФБС 24.4.6</h3>
+                        <p>Монтаж сборного фундамента манипулятором 15 тонн прямо в траншею. Блоки 2400×400×600 мм экономят недели ожидания по сравнению с бетоном.</p>
+                        <div class="solution-table">
+                            <div class="sol-row"><span>ФБС 24.4.6 на дом 10×10 (2 ряда):</span><span>36 шт (100 800 ₽)</span></div>
+                            <div class="sol-row"><span>Доставка манипулятором 15т (3 рейса):</span><span>от 15 000 ₽</span></div>
+                            <div class="sol-row"><span>Монтаж стрелой 5 тонн в котлован:</span><span>Включено</span></div>
+                            <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Срок готовности:</span><span>1–2 дня</span></div>
+                        </div>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%20%D0%A4%D0%91%D0%A1%2024.4.6%20%D1%81%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BE%D0%BC.">Заказать ФБС с монтажом</a>
+                    </article>
+
+                    <article class="solution-card">
+                        <span class="bento-tag">Гаражи</span>
+                        <h3>Капитальный гараж 6×4 м из стенового шлакоблока</h3>
+                        <p>Для стен гаража h=2.6 м (периметр 20 м без ворот): стеновой шлакоблок 390х190х190 мм и цемент Новороссийский М500.</p>
+                        <div class="solution-table">
+                            <div class="sol-row"><span>Шлакоблок стеновой 390х190х190:</span><span>620 шт (29 760 ₽)</span></div>
+                            <div class="sol-row"><span>Цемент М500 на кладку:</span><span>16 мешков (9 120 ₽)</span></div>
+                            <div class="sol-row"><span>Арматура 8 мм в кладочные швы:</span><span>80 м (2 400 ₽)</span></div>
+                            <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Стеновые материалы под ключ:</span><span>41 280 ₽</span></div>
+                        </div>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%BE%D1%81%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D1%82%D0%B5%20%D1%88%D0%BB%D0%B0%D0%BA%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%BD%D0%B0%20%D0%B3%D0%B0%D1%80%D0%B0%D0%B6%206%D1%854.">Заказать шлакоблок на гараж</a>
+                    </article>
+
+                    <article class="solution-card">
+                        <span class="bento-tag">Ворота</span>
+                        <h3>Распашные ворота 4×2 м с калиткой из профильной трубы</h3>
+                        <p>Столбы из трубы 80х80х3 мм, силовой каркас створок из 60х40х3 мм и внутренний притвор под профлист из 40х20х2 мм.</p>
+                        <div class="solution-table">
+                            <div class="sol-row"><span>Столбы воротные 80×80×3 (2 шт по 3 м):</span><span>6 м (2 760 ₽)</span></div>
+                            <div class="sol-row"><span>Рама створок и калитки 60×40×3:</span><span>26 м (6 760 ₽)</span></div>
+                            <div class="sol-row"><span>Внутреннее ребро 40×20×2 мм:</span><span>24 м (2 760 ₽)</span></div>
+                            <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Металл на ворота и калитку:</span><span>12 280 ₽</span></div>
+                        </div>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%20%D0%BD%D0%B0%20%D0%B2%D0%BE%D1%80%D0%BE%D1%82%D0%B0%20%D0%B8%20%D0%BA%D0%B0%D0%BB%D0%B8%D1%82%D0%BA%D1%83.">Купить трубу на ворота</a>
+                    </article>
+
+                    <article class="solution-card">
+                        <span class="bento-tag">Монолитная плита</span>
+                        <h3>Монолитная фундаментная плита 100 м² (толщина 25 см)</h3>
+                        <p>Двойная арматурная сетка с ячейкой 200×200 мм из арматуры 12 мм и 10 мм А500С для высоких нагрузок.</p>
+                        <div class="solution-table">
+                            <div class="sol-row"><span>Арматура 12 мм (нижняя сетка):</span><span>1 050 м (58 800 ₽)</span></div>
+                            <div class="sol-row"><span>Арматура 10 мм (верхняя сетка):</span><span>1 050 м (47 250 ₽)</span></div>
+                            <div class="sol-row"><span>Лягушки из арматуры 8 мм:</span><span>250 м (7 500 ₽)</span></div>
+                            <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Итого армирование плиты:</span><span>113 550 ₽</span></div>
+                        </div>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%BE%D1%81%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D1%82%D0%B5%20%D0%B0%D1%80%D0%BC%D0%B0%D1%82%D1%83%D1%80%D1%83%20%D0%BD%D0%B0%20%D0%BF%D0%BB%D0%B8%D1%82%D1%83%20100%20%D0%BC2.">Заказать арматуру на плиту</a>
+                    </article>
+
+                    <article class="solution-card">
+                        <span class="bento-tag">Стяжка и отмостка</span>
+                        <h3>Бетонная отмостка вокруг дома и армированная стяжка</h3>
+                        <p>Ширина 1 м по периметру 40 м (40 м²). Защищает фундамент от воды. Армируется арматурой 6 или 8 мм, заливается на М500 Д20.</p>
+                        <div class="solution-table">
+                            <div class="sol-row"><span>Арматура 8 мм А500С (сетка 20х20):</span><span>380 м (11 400 ₽)</span></div>
+                            <div class="sol-row"><span>Цемент Новороссийский М500 Д20:</span><span>24 мешка (13 680 ₽)</span></div>
+                            <div class="sol-row"><span>Вязальная проволока:</span><span>1 бухта (650 ₽)</span></div>
+                            <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Материалы на отмостку:</span><span>25 730 ₽</span></div>
+                        </div>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D1%86%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%20%D0%B8%20%D0%B0%D1%80%D0%BC%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BD%D0%B0%20%D0%BE%D1%82%D0%BC%D0%BE%D1%81%D1%82%D0%BA%D1%83.">Купить цемент и арматуру</a>
+                    </article>
+
+                    <article class="solution-card">
+                        <span class="bento-tag">ЖБИ Канализация</span>
+                        <h3>Канализационный двухкамерный септик из колец ЖБИ</h3>
+                        <p>4 кольца ЖБИ КС 15.9 диаметром 1.5 м, 2 плиты перекрытия с люками и донное кольцо. Доставка и опускание манипулятором.</p>
+                        <div class="solution-table">
+                            <div class="sol-row"><span>Кольца ЖБИ стеновые КС 15.9 (4 шт):</span><span>от 15 600 ₽</span></div>
+                            <div class="sol-row"><span>Крышки с люками и днища:</span><span>от 9 200 ₽</span></div>
+                            <div class="sol-row"><span>Монтаж стрелой 5 тонн в котлован:</span><span>Включено</span></div>
+                            <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Срок монтажа:</span><span>2 часа</span></div>
+                        </div>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D1%8E%D1%82%20%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%B0%20%D0%96%D0%91%D0%98%20%D0%BD%D0%B0%20%D1%81%D0%B5%D0%BF%D1%82%D0%B8%D0%BA.">Заказать кольца ЖБИ</a>
+                    </article>
+
+                    <article class="solution-card">
+                        <span class="bento-tag">Металлокаркас</span>
+                        <h3>Хозблок или мастерская 6×3 м на металлическом каркасе</h3>
+                        <p>Стойки 60х40х3, фермы перекрытия 40х40х2 и перемычки стен из 40х20х2 мм под обшивку профлистом.</p>
+                        <div class="solution-table">
+                            <div class="sol-row"><span>Стойки 60×40×3 (6 шт по 2.5 м):</span><span>15 м (3 900 ₽)</span></div>
+                            <div class="sol-row"><span>Фермы и балки 40×40×2 мм:</span><span>30 м (4 800 ₽)</span></div>
+                            <div class="sol-row"><span>Прожилины стен 40×20×2 мм:</span><span>60 м (6 900 ₽)</span></div>
+                            <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Металл со склада базы:</span><span>15 600 ₽</span></div>
+                        </div>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%BE%D1%81%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D1%82%D0%B5%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%20%D0%BD%D0%B0%20%D1%85%D0%BE%D0%B7%D0%B1%D0%BB%D0%BE%D0%BA%206%D1%853.">Заказать металл на хозблок</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Bento Grid Features -->
-        <section class="section" id="features">
-            <div class="container">
-                <div class="section-head">
-                    <div class="badge"><span class="badge-dot"></span> Платформа и сервис</div>
-                    <h2 class="section-title">Почему покупают у нас</h2>
-                    <p class="section-copy">Розничные и оптовые продажи. Честный металл и быстрая погрузка.</p>
-                </div>
-                <div class="bento-grid">
-                    <div class="bento-card bento-span-2">
-                        <span class="bento-tag">ГОСТ Контроль</span>
-                        <h3>Честный металлопрокат без подделок</h3>
-                        <p>Никакой «фольги» под видом нормальной трубы. Если заявлена стенка 2 мм — значит, там ровно 2 мм. Продаем арматуру строго по ГОСТу.</p>
-                        <ul class="bento-list">
-                            <li>Строгое соответствие заявленному диаметру</li>
-                            <li>Отсутствие глубокой ржавчины и дефектов</li>
-                            <li>Хранение на собственной обустроенной базе</li>
-                        </ul>
-                    </div>
-                    <div class="bento-card">
-                        <span class="bento-tag">Экономия</span>
-                        <h3>Резка в размер на базе</h3>
-                        <p>Заводскую арматуру 11.7 м режем пополам прямо у нас. Вам не нужно оплачивать дорогой длинномер.</p>
-                    </div>
-                    <div class="bento-card">
-                        <span class="bento-tag">Логистика</span>
-                        <h3>Собственный автопарк</h3>
-                        <p>Быстрые Газели для мелких заказов и манипуляторы бортом 15т для колец и блоков ФБС.</p>
-                    </div>
-                    <div class="bento-card bento-span-2">
-                        <span class="bento-tag">Удобство</span>
-                        <h3>Расчет и оплата при получении</h3>
-                        <p>Никакого риска: платите наличными или переводом по факту привоза на ваш объект. Для юрлиц и прорабов доступен безналичный расчет с ИП.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Каталог товаров -->
+        <!-- 4. КАТАЛОГ С ТОЧНЫМИ ЦЕНАМИ ИЗ ВАШЕГО YML -->
         <section class="section" id="catalog">
             <div class="container">
                 <div class="section-head">
-                    <div class="badge"><span class="badge-dot"></span> Ассортимент</div>
-                    <h2 class="section-title">Каталог товаров и услуг</h2>
-                    <p class="section-copy">Выбирайте нужные позиции. Наличие и индивидуальную доставку уточняйте по телефону.</p>
+                    <div class="badge"><span class="badge-dot"></span> Складской прайс</div>
+                    <h2 class="section-title">Каталог металлопроката, ЖБИ и цемента</h2>
+                    <p class="section-copy">Цены склада на ул. Монтажная, 10. Честный ГОСТ, проверка толщины стенки штангенциркулем.</p>
                 </div>
 
                 <div class="tabs-nav">
                     <button class="tab-btn active" onclick="filterCatalog('all', this)">Все товары</button>
                     <button class="tab-btn" onclick="filterCatalog('metal', this)">Металлопрокат</button>
+                    <button class="tab-btn" onclick="filterCatalog('cement', this)">Цемент М500</button>
                     <button class="tab-btn" onclick="filterCatalog('concrete', this)">ЖБИ и Блоки</button>
-                    <button class="tab-btn" onclick="filterCatalog('cement', this)">Цемент</button>
                     <button class="tab-btn" onclick="filterCatalog('service', this)">Спецтехника</button>
                 </div>
 
                 <div class="assortment-grid">
                     <article class="product-card" data-cat="metal">
-                        <div class="product-img"><img src="armatura.jpg" alt="Арматура А500С" loading="lazy" onerror="this.style.display='none';"></div>
+                        <div class="product-img"><img src="armatura.jpg" alt="Арматура рифленая 12 мм А500С" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Арматура 12 мм А500С (ГОСТ)</h3><span class="price">60 ₽/м</span></div>
-                            <p>Честный диаметр и геометрия. Для фундаментов, армопоясов и перекрытий. В наличии 6–16 мм.</p>
-                            <div class="product-meta">Длина хлыста 11.7 м. Бесплатная резка пополам.</div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать</a></div>
+                            <div class="product-top"><h3 class="product-title">Арматура 12 мм А500С (ГОСТ 34028-2016)</h3><span class="price">56 ₽/м</span></div>
+                            <p>Рабочая арматура для ленточных фундаментов, монолитных плит и балок перекрытия капитальных домов.</p>
+                            <div class="product-specs">
+                                <div><span>Сталь / ГОСТ:</span><strong>А500С / 34028-2016</strong></div>
+                                <div><span>Вес метра:</span><strong>~0.888 кг/м</strong></div>
+                                <div><span>Хлыст:</span><strong>11.7 м (резка пополам 0 ₽)</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать арматуру 12 мм</a></div>
                         </div>
                     </article>
 
                     <article class="product-card" data-cat="metal">
-                        <div class="product-img"><img src="truba.jpg" alt="Профильная труба" loading="lazy" onerror="this.style.display='none';"></div>
+                        <div class="product-img"><img src="armatura.jpg" alt="Арматура 10 мм А500С" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Профильная труба ГОСТ</h3><span class="price">от 115 ₽/м</span></div>
-                            <p>Для ворот, навесов, каркасов и заборов.</p>
-                            <div class="product-meta">40х20х2 — 115 ₽. 40х40х2 — 160 ₽. 60х40х3 — 260 ₽.</div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать</a></div>
+                            <div class="product-top"><h3 class="product-title">Арматура 10 мм А500С (ГОСТ)</h3><span class="price">45 ₽/м</span></div>
+                            <p>Для армирования монолитного сейсмопояса (армопояса) под плиты и мауэрлат, фундаментов гаражей и пристроек.</p>
+                            <div class="product-specs">
+                                <div><span>Класс:</span><strong>А500С рифленая</strong></div>
+                                <div><span>Вес метра:</span><strong>~0.617 кг/м</strong></div>
+                                <div><span>Длина:</span><strong>11.7 м / резка 5.85 м</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать арматуру 10 мм</a></div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="metal">
+                        <div class="product-img"><img src="armatura.jpg" alt="Арматура 8 мм А500С" loading="lazy" onerror="this.style.display='none';"></div>
+                        <div class="product-body">
+                            <div class="product-top"><h3 class="product-title">Арматура 8 мм А500С (ГОСТ)</h3><span class="price">30 ₽/м</span></div>
+                            <p>Для стяжек пола, бетонных дорожек, отмосток вокруг дома, перемычек и усиленных хомутов фундаментных лент.</p>
+                            <div class="product-specs">
+                                <div><span>Класс:</span><strong>А500С рифленая</strong></div>
+                                <div><span>Вес метра:</span><strong>~0.395 кг/м</strong></div>
+                                <div><span>Применение:</span><strong>Стяжка, хомуты</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать арматуру 8 мм</a></div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="metal">
+                        <div class="product-img"><img src="armatura.jpg" alt="Арматура 6 мм" loading="lazy" onerror="this.style.display='none';"></div>
+                        <div class="product-body">
+                            <div class="product-top"><h3 class="product-title">Арматура стальная 6 мм (ГОСТ)</h3><span class="price">21 ₽/м</span></div>
+                            <p>Отлично гнется на 90° и 180° без трещин. Изготовление хомутов (рамок) для пространственных каркасов фундамента и колонн.</p>
+                            <div class="product-specs">
+                                <div><span>Класс:</span><strong>А240 / А500С ГОСТ</strong></div>
+                                <div><span>Назначение:</span><strong>Хомуты для каркасов</strong></div>
+                                <div><span>Резка:</span><strong>Бесплатно пополам</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать арматуру 6 мм</a></div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="metal">
+                        <div class="product-img"><img src="truba.jpg" alt="Труба 80х80х3 мм" loading="lazy" onerror="this.style.display='none';"></div>
+                        <div class="product-body">
+                            <div class="product-top"><h3 class="product-title">Труба 80х80х3 мм несущая (6 м)</h3><span class="price">460 ₽/м</span></div>
+                            <p>Мощная несущая труба под серьезные нагрузки: опорные столбы больших навесов, воротные колонны и силовые балки.</p>
+                            <div class="product-specs">
+                                <div><span>Стенка:</span><strong>Честные 3.0 мм (ГОСТ)</strong></div>
+                                <div><span>Вес метра:</span><strong>~7.1 кг/м</strong></div>
+                                <div><span>Хлыст:</span><strong>6.0 метров</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать трубу 80х80</a></div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="metal">
+                        <div class="product-img"><img src="truba.jpg" alt="Труба 60х40х3 мм" loading="lazy" onerror="this.style.display='none';"></div>
+                        <div class="product-body">
+                            <div class="product-top"><h3 class="product-title">Труба 60х40х3 мм усиленная (6 м)</h3><span class="price">260 ₽/м</span></div>
+                            <p>Усиленная труба с честной стенкой 3 мм. Не прогорает при сварке. Для ферм навесов, каркасов распашных и откатных ворот.</p>
+                            <div class="product-specs">
+                                <div><span>Стенка:</span><strong>3.0 мм ГОСТ</strong></div>
+                                <div><span>Вес метра:</span><strong>~4.3 кг/м</strong></div>
+                                <div><span>Хлыст:</span><strong>6.0 метров</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать трубу 60х40</a></div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="metal">
+                        <div class="product-img"><img src="truba.jpg" alt="Труба 40х40х2 мм" loading="lazy" onerror="this.style.display='none';"></div>
+                        <div class="product-body">
+                            <div class="product-top"><h3 class="product-title">Труба 40х40х2 мм ГОСТ (6 м)</h3><span class="price">160 ₽/м</span></div>
+                            <p>Идеальна для столбов забора из профнастила, 3D-панелей, каркасов калиток, легких навесов, шпалер и беседок.</p>
+                            <div class="product-specs">
+                                <div><span>Стенка:</span><strong>2.0 мм ГОСТ</strong></div>
+                                <div><span>Вес метра:</span><strong>~2.35 кг/м</strong></div>
+                                <div><span>Назначение:</span><strong>Столбы забора, калитки</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать трубу 40х40</a></div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="metal">
+                        <div class="product-img"><img src="truba.jpg" alt="Труба 40х20х2 мм" loading="lazy" onerror="this.style.display='none';"></div>
+                        <div class="product-body">
+                            <div class="product-top"><h3 class="product-title">Труба 40х20х2 мм ГОСТ (6 м)</h3><span class="price">115 ₽/м</span></div>
+                            <p>Главный материал для лаг (прожилин) забора из профлиста, кровельной обрешетки навесов, каркасов теплиц и ограждений.</p>
+                            <div class="product-specs">
+                                <div><span>Стенка:</span><strong>2.0 мм ГОСТ</strong></div>
+                                <div><span>Вес метра:</span><strong>~1.70 кг/м</strong></div>
+                                <div><span>Назначение:</span><strong>Лаги забора, обрешетка</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать трубу 40х20</a></div>
                         </div>
                     </article>
 
                     <article class="product-card" data-cat="cement">
-                        <div class="product-img"><img src="cement.jpg" alt="Цемент М500" loading="lazy" onerror="this.style.display='none';"></div>
+                        <div class="product-img"><img src="cement.jpg" alt="Цемент Новороссийский М500 Д0" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Цемент М500, 50 кг</h3><span class="price">580 ₽</span></div>
-                            <p>Свежий заводской цемент для фундаментов, стяжек и кладки.</p>
-                            <div class="product-meta">50 кг. На поддоне 30 мешков. Хранение в сухом боксе.</div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать</a></div>
+                            <div class="product-top"><h3 class="product-title">Цемент Новороссийский М500 Д0 (50 кг)</h3><span class="price">570 ₽</span></div>
+                            <p>Бездобавочный портландцемент ЦЕМ I 42,5Н из чистого клинкера. Высочайшая прочность (52.6 МПа) для монолитных фундаментов и армопояса.</p>
+                            <div class="product-specs">
+                                <div><span>Марка:</span><strong>М500 Д0 (без добавок)</strong></div>
+                                <div><span>Завод:</span><strong>ОАО Новоросцемент</strong></div>
+                                <div><span>Хранение:</span><strong>Сухой крытый склад</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать цемент М500 Д0</a></div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="cement">
+                        <div class="product-img"><img src="cement.jpg" alt="Цемент Новороссийский М500 Д20" loading="lazy" onerror="this.style.display='none';"></div>
+                        <div class="product-body">
+                            <div class="product-top"><h3 class="product-title">Цемент Новороссийский М500 Д20 (50 кг)</h3><span class="price">570 ₽</span></div>
+                            <p>Универсальный цемент по ГОСТ 31108-2020. Для стяжки пола, отмосток, кладки кирпича и шлакоблока, бетонирования столбов.</p>
+                            <div class="product-specs">
+                                <div><span>Марка:</span><strong>М500 Д20 (50 кг)</strong></div>
+                                <div><span>Поддон:</span><strong>30 мешков (1.5 т)</strong></div>
+                                <div><span>Погрузка:</span><strong>Погрузчиком за 5 минут</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать цемент М500 Д20</a></div>
                         </div>
                     </article>
 
                     <article class="product-card" data-cat="concrete">
-                        <div class="product-img"><img src="shlakoblok.jpg" alt="Шлакоблок" loading="lazy" onerror="this.style.display='none';"></div>
+                        <div class="product-img"><img src="shlakoblok.jpg" alt="Шлакоблок стеновой" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Шлакоблок 20×20×40</h3><span class="price">48 ₽/шт</span></div>
-                            <p>Стеновой прочный блок для построек, заборов и гаражей.</p>
-                            <div class="product-meta">Поддон 60 шт. Минимальный заказ — 300 шт.</div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать</a></div>
+                            <div class="product-top"><h3 class="product-title">Шлакоблок стеновой (390×190×190 мм)</h3><span class="price">48 ₽/шт</span></div>
+                            <p>Плотный пропаренный стеновой блок. Высокая прочность, морозостойкость. Для стен домов, гаражей, мастерских и заборов.</p>
+                            <div class="product-specs">
+                                <div><span>Размер:</span><strong>390х190х190 мм пустотелый</strong></div>
+                                <div><span>Поддон:</span><strong>60 шт (мин. заказ 300 шт)</strong></div>
+                                <div><span>Производитель:</span><strong>Ставропольский комбинат</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать шлакоблок</a></div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="concrete">
+                        <div class="product-img"><img src="fbs.jpg" alt="Блоки ФБС 24.3.6" loading="lazy" onerror="this.style.display='none';"></div>
+                        <div class="product-body">
+                            <div class="product-top"><h3 class="product-title">Блоки ФБС 24.3.6 (ГОСТ 13579-78)</h3><span class="price">2 600 ₽</span></div>
+                            <p>Тяжелый пропаренный бетон. 2400×300×600 мм (толщина 30 см), масса ~970 кг. Для фундаментов гаражей, бань и внутренних стен подвалов.</p>
+                            <div class="product-specs">
+                                <div><span>Размеры / вес:</span><strong>2380×300×580 мм / ~970 кг</strong></div>
+                                <div><span>Монтаж:</span><strong>Манипулятором без крана</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать ФБС 24.3.6</a></div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="concrete">
+                        <div class="product-img"><img src="fbs.jpg" alt="Блоки ФБС 24.4.6" loading="lazy" onerror="this.style.display='none';"></div>
+                        <div class="product-body">
+                            <div class="product-top"><h3 class="product-title">Блоки ФБС 24.4.6 (ГОСТ 13579-78)</h3><span class="price">2 800 ₽</span></div>
+                            <p>Золотой стандарт частного домостроения. Ширина 40 см идеально подходит под кладку стен из блока и кирпича. Масса ~1300 кг.</p>
+                            <div class="product-specs">
+                                <div><span>Размеры / вес:</span><strong>2380×400×580 мм / ~1300 кг</strong></div>
+                                <div><span>Доставка:</span><strong>Манипулятор 15 т со стрелой 5 т</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать ФБС 24.4.6</a></div>
                         </div>
                     </article>
 
                     <article class="product-card" data-cat="concrete">
                         <div class="product-img"><img src="kolca.jpg" alt="Кольца ЖБИ" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Кольца ЖБИ</h3><span class="price">от 3 100 ₽</span></div>
-                            <p>Для септиков, выгребных ям и колодцев. Крышки и днища в наличии.</p>
-                            <div class="product-meta">1 м, 1.5 м, 2 м. Доставка манипулятором.</div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать</a></div>
-                        </div>
-                    </article>
-
-                    <article class="product-card" data-cat="concrete">
-                        <div class="product-img"><img src="fbs.jpg" alt="ФБС" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">ФБС 24.3.6 и 24.4.6</h3><span class="price">от 2 600 ₽</span></div>
-                            <p>Фундаментные блоки для цоколей и подпорных стен.</p>
-                            <div class="product-meta">24.3.6 — 2 600 ₽. 24.4.6 — 2 800 ₽.</div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать</a></div>
+                            <div class="product-top"><h3 class="product-title">Кольца ЖБИ для септиков</h3><span class="price">от 3 100 ₽</span></div>
+                            <p>Для септиков, выгребных ям и колодцев. Диаметры 1 м, 1.5 м, 2 м. Крышки, днища и люки в наличии на складе.</p>
+                            <div class="product-specs">
+                                <div><span>Диаметры:</span><strong>1.0 м, 1.5 м, 2.0 м</strong></div>
+                                <div><span>Монтаж:</span><strong>Опускание стрелой манипулятора</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать кольца ЖБИ</a></div>
                         </div>
                     </article>
 
                     <article class="product-card" data-cat="service">
                         <div class="product-img"><img src="manipulator.jpg" alt="Манипулятор" loading="lazy" onerror="this.style.display='none';"></div>
                         <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Услуги манипулятора</h3><span class="price">3 000 ₽/ч</span></div>
-                            <p>Перевозка и разгрузка ФБС, колец, поддонов и металла. Стрела 5 т, борт 15 т.</p>
-                            <div class="product-meta">Минимум по городу — 5000 ₽. Опытный водитель.</div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать технику</a></div>
+                            <div class="product-top"><h3 class="product-title">Услуги манипулятора 15 тонн</h3><span class="price">3 000 ₽/ч</span></div>
+                            <p>Перевозка и точный монтаж ФБС, колец, поддонов с цементом и металлопроката. Стрела 5 т, борт 15 т. Опытный водитель.</p>
+                            <div class="product-specs">
+                                <div><span>Характеристики:</span><strong>Стрела 5 т / борт 15 т</strong></div>
+                                <div><span>Минимум по городу:</span><strong>5 000 ₽</strong></div>
+                            </div>
+                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать манипулятор</a></div>
                         </div>
                     </article>
                 </div>
@@ -1062,7 +976,7 @@
                 <div class="gallery-head-bar">
                     <div>
                         <div class="badge"><span class="badge-dot"></span> Фотогалерея</div>
-                        <h2 class="section-title" style="margin-top:8px;">База, товар и техника вживую</h2>
+                        <h2 class="section-title" style="margin-top:8px;">База, склад и техника вживую</h2>
                     </div>
                     <a class="btn btn-ghost" href="https://vk.com/stroybazansk" target="_blank" rel="noopener">Больше фото в VK</a>
                 </div>
@@ -1071,12 +985,12 @@
                     <div class="gallery-card" onclick="openAlbum('armatura')">
                         <img src="armatura.jpg" alt="Арматура" loading="lazy" onerror="this.parentNode.style.display='none';">
                         <div class="gallery-badge">Альбом</div>
-                        <div class="gallery-overlay"><span>Арматура и Металл</span><span>🔍 Посмотреть</span></div>
+                        <div class="gallery-overlay"><span>Арматура 6–16 мм А500С</span><span>🔍 Посмотреть</span></div>
                     </div>
                     <div class="gallery-card" onclick="openAlbum('truba')">
                         <img src="truba.jpg" alt="Трубы" loading="lazy" onerror="this.parentNode.style.display='none';">
                         <div class="gallery-badge">Альбом</div>
-                        <div class="gallery-overlay"><span>Профильные трубы</span><span>🔍 Посмотреть</span></div>
+                        <div class="gallery-overlay"><span>Профильные трубы ГОСТ</span><span>🔍 Посмотреть</span></div>
                     </div>
                     <div class="gallery-card" onclick="openAlbum('cement')">
                         <img src="cement.jpg" alt="Цемент" loading="lazy" onerror="this.parentNode.style.display='none';">
@@ -1091,7 +1005,7 @@
                     <div class="gallery-card" onclick="openAlbum('fbs')">
                         <img src="fbs.jpg" alt="Блоки ФБС" loading="lazy" onerror="this.parentNode.style.display='none';">
                         <div class="gallery-badge">Альбом</div>
-                        <div class="gallery-overlay"><span>Блоки ФБС</span><span>🔍 Посмотреть</span></div>
+                        <div class="gallery-overlay"><span>Блоки ФБС 24.3.6 и 24.4.6</span><span>🔍 Посмотреть</span></div>
                     </div>
                     <div class="gallery-card" onclick="openAlbum('tech')">
                         <img src="manipulator.jpg" alt="Техника" loading="lazy" onerror="this.parentNode.style.display='none';">
@@ -1102,22 +1016,22 @@
             </div>
         </section>
 
-        <!-- Для бизнеса -->
+        <!-- B2B блок -->
         <section class="section" id="business">
             <div class="container">
                 <div class="section-head">
                     <div class="badge"><span class="badge-dot"></span> Для бизнеса</div>
-                    <h2 class="section-title">Специальные условия прорабам</h2>
+                    <h2 class="section-title">Специальные условия прорабам и бригадам</h2>
                 </div>
                 <div class="company-block">
                     <div class="company-card">
                         <h3>Строительным бригадам</h3>
-                        <p>Комплектуем объекты любой сложности: от фундамента дома до заборов. Быстрый просчет сметы по проекту.</p>
+                        <p>Комплектуем объекты любой сложности: от фундамента до крыши. Быстрый расчет сметы по проекту, отгрузка без очередей, спеццены при постоянных объемах.</p>
                         <a class="btn btn-primary" href="tel:+79887328161">Позвонить менеджеру</a>
                     </div>
                     <div class="company-card">
-                        <h3>Юридическим лицам</h3>
-                        <p>Безналичный расчет с ИП (без НДС). Полный пакет сопроводительных документов и отгрузка в срок.</p>
+                        <h3>Юридическим лицам и ИП</h3>
+                        <p>Безналичный расчет с ИП (без НДС). Полный пакет сопроводительных документов, паспорта качества и сертификаты соответствия ГОСТ.</p>
                         <a class="btn btn-ghost" href="https://wa.me/79887328161" target="_blank" rel="noopener">Написать в WhatsApp</a>
                     </div>
                 </div>
@@ -1135,44 +1049,36 @@
                     <details>
                         <summary>
                             <span>Какая у вас география и условия доставки?</span>
-                            <span class="faq-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                            </span>
+                            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
                         </summary>
-                        <p>Возим по Невинномысску, Кочубеевскому району, Ставропольскому краю и соседним республикам. Есть «Газели» (от 1000 ₽) и тяжелые манипуляторы 15 т.</p>
+                        <p>Возим по Невинномысску, Кочубеевскому району, Ставропольскому краю и соседним республикам. Доставка Газелью (от 1000 ₽) и тяжелыми манипуляторами 15 т.</p>
                     </details>
                     <details>
                         <summary>
                             <span>Как принимается оплата?</span>
-                            <span class="faq-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                            </span>
+                            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
                         </summary>
-                        <p>Оплата по факту выгрузки: наличными водителю, быстрым переводом на карту или по безналичному расчету для организаций.</p>
+                        <p>Оплата строго по факту выгрузки и замера толщины металла: наличными водителю, переводом на карту или по безналичному расчету для организаций.</p>
                     </details>
                     <details>
                         <summary>
-                            <span>Как гарантируете качество материалов?</span>
-                            <span class="faq-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                            </span>
+                            <span>Как гарантируете соответствие ГОСТу?</span>
+                            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
                         </summary>
-                        <p>Металл строго по ГОСТу (без занижения толщины стенки). Цемент поставляется прямо с Новороссийского завода и хранится в сухом боксе.</p>
+                        <p>Мы не продаем тонкостенную трубу под видом ГОСТа. Предоставляем штангенциркуль на складе и при выгрузке. Цемент Новороссийский хранится в сухом боксе.</p>
                     </details>
                     <details>
                         <summary>
                             <span>Можно ли забрать материалы самовывозом?</span>
-                            <span class="faq-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                            </span>
+                            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
                         </summary>
-                        <p>Да. Невинномысск, ул. Монтажная, д. 10. Удобный подъезд для длинномеров и легковых с прицепом. Работаем с 8:00 до 18:00 (Пн-Сб). Погрузка бесплатно.</p>
+                        <p>Да. Невинномысск, ул. Монтажная, д. 10. Удобный подъезд для длинномеров. Погрузка погрузчиком за 5 минут бесплатно. Резка арматуры по 5.85 м бесплатно.</p>
                     </details>
                 </div>
             </div>
         </section>
 
-        <!-- Контакты -->
+        <!-- 5. КОНТАКТЫ И СОЦИАЛЬНЫЕ СЕТИ (ОРИГИНАЛЬНАЯ СТРУКТУРА С ИКОНКАМИ) -->
         <section class="section" id="contacts">
             <div class="container contacts-grid">
                 <div>
@@ -1182,22 +1088,22 @@
                     </div>
                     <div class="contact-list">
                         <div class="contact-row"><span>Телефон отдела продаж</span><a href="tel:+79887328161">+7 (988) 732-81-61</a></div>
-                        <div class="contact-row"><span>Telegram менеджера (Тимур)</span><a href="https://t.me/TimurSB" target="_blank" rel="noopener">@TimurSB (нажмите для связи)</a></div>
                         <div class="contact-row"><span>Электронная почта</span><a href="mailto:stroybazansk@mail.ru">stroybazansk@mail.ru</a></div>
                         <div class="contact-row"><span>Адрес склада</span><strong>Невинномысск, ул. Монтажная, д. 10</strong></div>
                         <div class="contact-row"><span>График работы</span><strong>Пн-Сб: 8:00-18:00, Вс: выходной</strong></div>
                         
+                        <!-- Точный исходный блок соцсетей со всеми картинками и ссылками -->
                         <div class="contact-row">
-                            <span>Мессенджеры и социальные сети</span>
+                            <span>Социальные сети и карты</span>
                             <div class="social-links">
-                                <a href="https://wa.me/79887328161" target="_blank" rel="noopener"><span>WhatsApp</span></a>
-                                <a href="https://t.me/TimurSB" target="_blank" rel="noopener"><span>Telegram (@TimurSB)</span></a>
-                                <a href="https://max.ru/u/f9LHodD0cOJgEGUfceKjPXOhw1ajmlHZF5pe890mjoOkuseg4apIEfzh6g8" target="_blank" rel="noopener"><span>Мессенджер MAX</span></a>
-                                <a href="https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120" target="_blank" rel="noopener"><img src="icon-yandex.png" alt="Яндекс" onerror="this.style.display='none';"><span>Яндекс Карты</span></a>
-                                <a href="https://2gis.ru/nevinnomyssk/inside/19000196618797894/firm/70000001114215365" target="_blank" rel="noopener"><img src="icon-2gis.png" alt="2ГИС" onerror="this.style.display='none';"><span>2ГИС</span></a>
-                                <a href="https://vk.com/stroybazansk" target="_blank" rel="noopener"><img src="icon-vk.png" alt="VK" onerror="this.style.display='none';"><span>ВКонтакте</span></a>
-                                <a href="https://www.avito.ru/brands/7b5d69d7938d3eb5a9ac6751ed5a9697" target="_blank" rel="noopener"><img src="icon-avito.png" alt="Авито" onerror="this.style.display='none';"><span>Авито магазин</span></a>
-                                <a href="https://www.youtube.com/@stroybazansk" target="_blank" rel="noopener"><img src="icon-youtube.png" alt="YouTube" onerror="this.style.display='none';"><span>YouTube</span></a>
+                                <a href="https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120" target="_blank" rel="noopener"><img src="icon-yandex.png" alt="Яндекс Карты" onerror="this.style.display='none';"><span>Яндекс Карты</span></a>
+                                <a href="https://2gis.ru/nevinnomyssk/inside/19000196618797894/firm/70000001114215365" target="_blank" rel="noopener"><img src="icon-2gis.png" alt="2ГИС Невинномысск" onerror="this.style.display='none';"><span>2ГИС</span></a>
+                                <a href="https://vk.com/stroybazansk" target="_blank" rel="noopener"><img src="icon-vk.png" alt="Группа ВКонтакте" onerror="this.style.display='none';"><span>ВКонтакте</span></a>
+                                <a href="https://instagram.com/stroybazansk" target="_blank" rel="noopener"><img src="icon-instagram.png" alt="Инстаграм базы" onerror="this.style.display='none';"><span>Instagram</span></a>
+                                <a href="https://www.avito.ru/brands/7b5d69d7938d3eb5a9ac6751ed5a9697" target="_blank" rel="noopener"><img src="icon-avito.png" alt="Авито магазин" onerror="this.style.display='none';"><span>Авито</span></a>
+                                <a href="https://t.me/stroybazansk" target="_blank" rel="noopener"><img src="icon-telegram.png" alt="Телеграм канал" onerror="this.style.display='none';"><span>Telegram</span></a>
+                                <a href="https://www.youtube.com/@stroybazansk" target="_blank" rel="noopener"><img src="icon-youtube.png" alt="YouTube канал" onerror="this.style.display='none';"><span>YouTube</span></a>
+                                <a href="https://max.ru/join/bM2VpgJxiwIve809sHURi8C1mrzORQCR-7u_elROpXw" target="_blank" rel="noopener"><img src="icon-max.png" alt="Мессенджер MAX" onerror="this.style.display='none';"><span>MAX</span></a>
                             </div>
                         </div>
                     </div>
@@ -1215,7 +1121,7 @@
             <div class="cta-banner">
                 <div class="badge"><span class="badge-dot"></span> Быстрый звонок за 5 минут</div>
                 <h2>Не любите звонить сами?</h2>
-                <p>Оставьте номер телефона и имя — мы перезвоним в течение 5 минут, ответим на вопросы и рассчитаем заказ по оптовой цене.</p>
+                <p>Оставьте номер телефона и имя — мы перезвоним вам в течение 5 минут, ответим на вопросы и рассчитаем заказ по оптовой цене.</p>
 
                 <form class="callback-form" id="callbackForm" onsubmit="handleCallback(event)">
                     <input type="text" id="cb-name" class="callback-input" placeholder="Как к вам обращаться?" required>
@@ -1225,7 +1131,7 @@
                 
                 <div id="cb-success" class="cb-success" style="display:none;">
                     <div style="font-size: 1.05rem; margin-bottom: 6px;">✓ Спасибо! Заявка принята, менеджер свяжется с вами за 5 минут.</div>
-                    <div style="font-size: 0.82rem; color: var(--muted); margin-bottom: 12px;">Хотите отправить чертеж прямо сейчас?</div>
+                    <div style="font-size: 0.82rem; color: var(--muted); margin-bottom: 12px;">Хотите ускорить обработку? Продублируйте данные:</div>
                     <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
                         <a id="cb-wa-link" class="btn btn-ghost" style="height:34px; padding:0 14px; font-size:0.8rem;" href="https://wa.me/79887328161" target="_blank" rel="noopener">WhatsApp</a>
                         <a class="btn btn-ghost" style="height:34px; padding:0 14px; font-size:0.8rem;" href="https://t.me/TimurSB" target="_blank" rel="noopener">Telegram (@TimurSB)</a>
@@ -1242,7 +1148,7 @@
             <div class="album-header">
                 <div class="album-title" id="albumTitle">Альбом фото</div>
                 <button class="album-close" onclick="closeAlbum()" aria-label="Закрыть">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </button>
             </div>
             <div class="album-view">
@@ -1257,15 +1163,14 @@
         </div>
     </div>
 
-    <!-- Подвал -->
     <footer class="site-footer" style="margin-top: 50px;">
         <div class="container footer-inner">
             <span>© 2026 Стройбаза на Монтажной, Невинномысск</span>
-            <span>Цены и наличие уточняйте перед заказом. Резка и быстрая погрузка на базе.</span>
+            <span>Цены и наличие уточняйте перед заказом. Резка и погрузка на базе.</span>
         </div>
     </footer>
 
-    <!-- Скрипты калькуляторов и логики -->
+    <!-- Интерактивные скрипты -->
     <script>
         const itemSelect = document.getElementById('calc-item');
         const qtyInput = document.getElementById('calc-qty');
@@ -1296,38 +1201,44 @@
             const L = parseFloat(document.getElementById('canopy-length').value) || 6;
             const W = parseFloat(document.getElementById('canopy-width').value) || 4;
             const H = parseFloat(document.getElementById('canopy-height').value) || 2.5;
-            const step = parseFloat(document.getElementById('canopy-step').value) || 3;
+            const pillarType = document.getElementById('canopy-pillar-type').value;
 
-            const numPairs = Math.ceil(L / step) + 1;
+            const numPairs = Math.ceil(L / 3) + 1;
             const numPillars = numPairs * 2;
             const pillarsMeters = numPillars * H;
-            const beamsMeters = (L * 2) + (numPairs * W);
-            const total6040 = Math.round(pillarsMeters + beamsMeters);
-            const cost6040 = total6040 * 260;
+            
+            const pillarPrice = (pillarType === '80') ? 460 : 260;
+            const pillarName = (pillarType === '80') ? '80х80х3 мм' : '60х40х3 мм';
+            const costPillars = Math.round(pillarsMeters * pillarPrice);
+
+            const beamsMeters = Math.round((L * 2) + (numPairs * W));
+            const costBeams = beamsMeters * 260;
 
             const numLines = Math.ceil(W / 0.65) + 1;
             const total4020 = Math.round(numLines * L);
             const cost4020 = total4020 * 115;
 
-            const totalWeight = Math.round((total6040 * 4.3) + (total4020 * 1.7));
-            const grandTotal = cost6040 + cost4020;
+            const totalWeight = Math.round((pillarsMeters * (pillarType === '80' ? 7.1 : 4.3)) + (beamsMeters * 4.3) + (total4020 * 1.7));
+            const grandTotal = costPillars + costBeams + cost4020;
 
-            document.getElementById('res-canopy-6040').textContent = `${total6040} м • ${cost6040.toLocaleString('ru-RU')} ₽`;
+            document.getElementById('res-canopy-pillars').textContent = `${pillarsMeters} м (${pillarName}) • ${costPillars.toLocaleString('ru-RU')} ₽`;
+            document.getElementById('res-canopy-beams').textContent = `${beamsMeters} м (60х40х3) • ${costBeams.toLocaleString('ru-RU')} ₽`;
             document.getElementById('res-canopy-4020').textContent = `${total4020} м • ${cost4020.toLocaleString('ru-RU')} ₽`;
             document.getElementById('res-canopy-weight').textContent = `~${totalWeight} кг`;
             document.getElementById('res-canopy-total').textContent = `${grandTotal.toLocaleString('ru-RU')} ₽`;
 
-            currentCanopyData = { L, W, H, total6040, total4020, totalWeight, grandTotal };
+            currentCanopyData = { L, W, H, pillarName, pillarsMeters, beamsMeters, total4020, totalWeight, grandTotal };
         }
 
         function sendCanopyOrder(target) {
             const d = currentCanopyData;
-            const text = `Здравствуйте! Посчитал на сайте материалы на навес ${d.L}х${d.W}м (h=${d.H}м):
-- Труба 60х40х3: ${d.total6040} м
-- Труба 40х20х2: ${d.total4020} м
-- Вес: ~${d.totalWeight} кг
-Ориентир по сумме: ${d.grandTotal.toLocaleString('ru-RU')} ₽.
-Уточните, пожалуйста, наличие на Монтажной и доставку!`;
+            const text = `Здравствуйте! Посчитал на сайте материалы на навес ${d.L}х${d.W}м:
+- Стойки ${d.pillarName}: ${d.pillarsMeters} м
+- Балки 60х40х3: ${d.beamsMeters} м
+- Обрешетка 40х20х2: ${d.total4020} м
+- Вес каркаса: ~${d.totalWeight} кг
+Сумма: ~${d.grandTotal.toLocaleString('ru-RU')} ₽.
+Прошу подтвердить наличие на Монтажной, 10 и возможность доставки!`;
 
             if (target === 'wa') {
                 window.open(`https://wa.me/79887328161?text=${encodeURIComponent(text)}`, '_blank');
@@ -1355,7 +1266,7 @@
             const costRails = totalRails * 115;
 
             const cementBags = Math.ceil(numPillars * 0.5);
-            const costCement = cementBags * 580;
+            const costCement = cementBags * 570;
 
             const grandTotal = costPillars + costRails + costCement;
 
@@ -1371,10 +1282,10 @@
             const d = currentFenceData;
             const text = `Здравствуйте! Посчитал на сайте материалы на забор длиной ${d.L} м (h=${d.H} м):
 - Столбы ${d.pillarTypeName}: ${d.numPillars} шт (${d.totalPillarsMeters} м)
-- Лаги 40х20: ${d.totalRails} м
-- Цемент М500: ${d.cementBags} мешков
-Сумма: ~${d.grandTotal.toLocaleString('ru-RU')} ₽.
-Прошу подтвердить наличие на складе на Монтажной.`;
+- Лаги 40х20х2: ${d.totalRails} м
+- Цемент Новороссийский М500: ${d.cementBags} мешков
+Сумма со склада: ~${d.grandTotal.toLocaleString('ru-RU')} ₽.
+Уточните, пожалуйста, доставку по городу.`;
 
             if (target === 'wa') {
                 window.open(`https://wa.me/79887328161?text=${encodeURIComponent(text)}`, '_blank');
@@ -1385,34 +1296,39 @@
 
         function calculateFoundation() {
             const P = parseFloat(document.getElementById('found-perimeter').value) || 40;
+            const armDia = parseInt(document.getElementById('found-arm-dia').value) || 12;
             const bars = parseInt(document.getElementById('found-bars').value) || 4;
+            const clampDia = parseInt(document.getElementById('found-clamps-dia').value) || 6;
 
-            const totalArm12 = Math.round(P * bars * 1.15);
-            const weight12 = Math.round(totalArm12 * 0.888);
-            const costArm12 = totalArm12 * 60;
+            const totalArm = Math.round(P * bars * 1.15);
+            const armPriceMeter = (armDia === 12) ? 56 : 45;
+            const armWeightMeter = (armDia === 12) ? 0.888 : 0.617;
+            const weightArm = Math.round(totalArm * armWeightMeter);
+            const costArm = totalArm * armPriceMeter;
 
             const numClamps = Math.ceil(P / 0.3);
             const clampPerimeter = 1.2;
             const totalClampsMeters = Math.round(numClamps * clampPerimeter);
-            const costClamps = Math.round(totalClampsMeters * 35);
+            const clampPriceMeter = (clampDia === 6) ? 21 : 30;
+            const costClamps = Math.round(totalClampsMeters * clampPriceMeter);
 
             const wireCost = 650;
-            const grandTotal = costArm12 + costClamps + wireCost;
+            const grandTotal = costArm + costClamps + wireCost;
 
-            document.getElementById('res-found-arm').textContent = `${totalArm12} м (${weight12} кг) • ${costArm12.toLocaleString('ru-RU')} ₽`;
-            document.getElementById('res-found-clamps').textContent = `~${totalClampsMeters} м • ${costClamps.toLocaleString('ru-RU')} ₽`;
+            document.getElementById('res-found-arm').textContent = `${totalArm} м (${weightArm} кг, ${armDia} мм) • ${costArm.toLocaleString('ru-RU')} ₽`;
+            document.getElementById('res-found-clamps').textContent = `~${totalClampsMeters} м (${clampDia} мм) • ${costClamps.toLocaleString('ru-RU')} ₽`;
             document.getElementById('res-found-total').textContent = `${grandTotal.toLocaleString('ru-RU')} ₽`;
 
-            currentFoundData = { P, bars, totalArm12, weight12, totalClampsMeters, grandTotal };
+            currentFoundData = { P, armDia, totalArm, weightArm, clampDia, totalClampsMeters, grandTotal };
         }
 
         function sendFoundOrder(target) {
             const d = currentFoundData;
-            const text = `Здравствуйте! Посчитал на сайте арматуру на ленточный фундамент (периметр ${d.P} м, в ${d.bars} прутка):
-- Арматура 12 мм А500С: ${d.totalArm12} м (~${d.weight12} кг)
-- Арматура на хомуты: ~${d.totalClampsMeters} м + проволока
-Ориентир по металлу: ~${d.grandTotal.toLocaleString('ru-RU')} ₽.
-Можно ли сделать бесплатную резку пополам и привезти?`;
+            const text = `Здравствуйте! Посчитал на сайте арматуру на ленточный фундамент (периметр ${d.P} м):
+- Арматура ${d.armDia} мм А500С: ${d.totalArm} м (~${d.weightArm} кг)
+- Арматура ${d.clampDia} мм на хомуты: ~${d.totalClampsMeters} м + проволока
+Сумма со склада: ~${d.grandTotal.toLocaleString('ru-RU')} ₽.
+Порежете хлысты по 5.85 м под доставку Газелью?`;
 
             if (target === 'wa') {
                 window.open(`https://wa.me/79887328161?text=${encodeURIComponent(text)}`, '_blank');
@@ -1440,30 +1356,12 @@
         }
 
         const albums = {
-            armatura: {
-                title: 'Арматура и Металлопрокат',
-                photos: ['armatura.jpg', 'photo-1.jpg', 'photo-2.jpg']
-            },
-            truba: {
-                title: 'Профильные трубы на складе',
-                photos: ['truba.jpg', 'photo-3.jpg', 'photo-4.jpg']
-            },
-            cement: {
-                title: 'Свежий Цемент М500 в мешках',
-                photos: ['cement.jpg', 'photo-5.jpg', 'photo-6.jpg']
-            },
-            zhbi: {
-                title: 'Кольца ЖБИ для септиков и колодцев',
-                photos: ['kolca.jpg', 'photo-7.jpg', 'photo-8.jpg']
-            },
-            fbs: {
-                title: 'Блоки ФБС для фундамента',
-                photos: ['fbs.jpg', 'photo-9.jpg', 'photo-10.jpg']
-            },
-            tech: {
-                title: 'Автопарк, Манипулятор и Погрузка',
-                photos: ['manipulator.jpg', 'photo-11.jpg', 'photo-12.jpg']
-            }
+            armatura: { title: 'Арматура рифленая А500С (6–16 мм)', photos: ['armatura.jpg', 'photo-1.jpg', 'photo-2.jpg'] },
+            truba: { title: 'Профильные трубы 40х20, 40х40, 60х40, 80х80', photos: ['truba.jpg', 'photo-3.jpg', 'photo-4.jpg'] },
+            cement: { title: 'Новороссийский Цемент М500 Д0 и Д20', photos: ['cement.jpg', 'photo-5.jpg', 'photo-6.jpg'] },
+            zhbi: { title: 'Кольца ЖБИ для септиков и колодцев', photos: ['kolca.jpg', 'photo-7.jpg', 'photo-8.jpg'] },
+            fbs: { title: 'Фундаментные блоки ФБС 24.3.6 и 24.4.6', photos: ['fbs.jpg', 'photo-9.jpg', 'photo-10.jpg'] },
+            tech: { title: 'Автопарк: манипуляторы 15 т и Газели', photos: ['manipulator.jpg', 'photo-11.jpg', 'photo-12.jpg'] }
         };
 
         let currentAlbumKey = '';
@@ -1511,7 +1409,6 @@
             e.preventDefault();
             const name = document.getElementById('cb-name').value.trim();
             const phone = document.getElementById('cb-phone').value.trim();
-
             if (!name || !phone) return;
 
             document.getElementById('callbackForm').style.display = 'none';
@@ -1528,20 +1425,12 @@
 
             fetch('https://formsubmit.co/ajax/stroybazansk@mail.ru', {
                 method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: JSON.stringify({
                     _subject: '🔔 Новая заявка на расчет со Стройбазы!',
-                    Имя: name,
-                    Телефон: phone,
-                    Сайт: 'stroybazansk.ru'
+                    Имя: name, Телефон: phone, Сайт: 'stroybazansk.ru'
                 })
-            })
-            .then(response => response.json())
-            .then(data => console.log('Заявка отправлена на почту:', data))
-            .catch(error => console.warn('Ошибка отправки:', error));
+            });
         }
 
         function resetCallbackForm() {
