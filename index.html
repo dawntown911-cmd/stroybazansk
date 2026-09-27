@@ -88,24 +88,39 @@
             color: var(--accent); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
         }
         .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+
+        /* ИСПРАВЛЕННАЯ ШАПКА */
         .site-header {
-            position: sticky; top: 0; z-index: 100; background: rgba(7, 8, 12, 0.88);
+            position: sticky; top: 0; z-index: 100; background: rgba(7, 8, 12, 0.92);
             backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
         }
-        .header-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-        .brand { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1; overflow: hidden; }
+        .header-inner {
+            min-height: 72px; padding: 8px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+        }
+        .brand { display: flex; align-items: center; gap: 12px; min-width: 0; flex-shrink: 0; }
         .brand-icon {
             width: 42px; height: 42px; border-radius: 12px; background: rgba(214, 189, 122, 0.12);
             border: 1px solid rgba(214, 189, 122, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
-        .brand-name strong { font-size: 1rem; font-weight: 800; color: #fff; display: block; white-space: nowrap; }
-        .brand-name span { color: var(--soft); font-size: 0.74rem; display: block; white-space: nowrap; }
+        .brand-name { display: flex; flex-direction: column; justify-content: center; line-height: 1.3; }
+        .brand-name strong { font-size: 1.05rem; font-weight: 800; color: #fff; display: block; line-height: 1.25; }
+        .brand-name span { color: var(--soft); font-size: 0.76rem; display: block; line-height: 1.25; margin-top: 2px; }
+        
         .nav { display: flex; gap: 18px; color: var(--muted); font-size: 0.88rem; font-weight: 600; }
         .nav a:hover, .nav a.highlight-nav { color: var(--accent); }
-        .header-actions { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
-        .phone-block { text-align: right; }
-        .phone-block a { font-weight: 800; font-size: 0.95rem; }
-        .phone-block span { color: var(--soft); font-size: 0.7rem; }
+        .header-actions { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+        
+        /* ИСПРАВЛЕННЫЙ БЛОК ТЕЛЕФОНА (СТРОГО ДВЕ СТРОКИ) */
+        .phone-block {
+            text-align: right; display: flex; flex-direction: column; align-items: flex-end; justify-content: center;
+        }
+        .phone-block a {
+            font-weight: 800; font-size: 0.96rem; color: #fff; display: block !important; line-height: 1.25;
+        }
+        .phone-block span {
+            color: var(--soft); font-size: 0.72rem; display: block !important; line-height: 1.25; margin-top: 2px;
+        }
+
         .btn {
             height: 44px; padding: 0 20px; border-radius: 9999px; font-weight: 700; font-size: 0.88rem;
             display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; border: 1px solid transparent;
@@ -114,6 +129,7 @@
         .btn-ghost { background: var(--surface); border: 1px solid var(--border); color: var(--text); }
         .btn-wa { background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.4); color: #4ade80; }
         .btn-tg { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; }
+        
         .hero { padding: 65px 0 45px; text-align: center; }
         .hero-content { max-width: 860px; margin: 0 auto; }
         .hero h1 {
@@ -194,7 +210,14 @@
         .product-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
         .product-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
         .product-title { margin: 0; font-size: 1.05rem; font-weight: 800; }
-        .price { padding: 4px 10px; border-radius: 9999px; background: rgba(214, 189, 122, 0.12); border: 1px solid rgba(214, 189, 122, 0.25); color: var(--accent); font-weight: 800; font-size: 0.85rem; }
+
+        /* ИСПРАВЛЕННЫЙ КЛАСС ЦЕНЫ (НИКАКИХ ПЕРЕНОСОВ) */
+        .price {
+            padding: 5px 12px; border-radius: 9999px; background: rgba(214, 189, 122, 0.12);
+            border: 1px solid rgba(214, 189, 122, 0.25); color: var(--accent); font-weight: 800; font-size: 0.85rem;
+            white-space: nowrap !important; display: inline-block; flex-shrink: 0;
+        }
+
         .product-body p { margin: 10px 0 0; color: var(--muted); font-size: 0.86rem; }
         .product-specs { margin-top: 12px; padding: 10px; background: rgba(0,0,0,0.25); border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--muted); display: grid; gap: 4px; }
         .product-specs div { display: flex; justify-content: space-between; }
@@ -270,7 +293,7 @@
             .calc-body.active, .blueprint-card { grid-template-columns: 1fr; }
         }
         @media (max-width: 640px) {
-            .container { width: min(100% - 24px, var(--max-w)); } .header-inner { height: 60px; }
+            .container { width: min(100% - 24px, var(--max-w)); } .header-inner { height: auto; min-height: 60px; padding: 10px 0; }
             .phone-block { display: none !important; } .brand-name span { display: none !important; }
             .widget-grid, .stats-bar, .assortment-grid, .gallery-grid, .social-links, .input-row, .calc-actions { grid-template-columns: 1fr; }
             .footer-inner, .callback-form { flex-direction: column; text-align: center; gap: 10px; }
@@ -659,7 +682,7 @@
                             <div class="sol-row"><span>Монтаж стрелой 5 тонн в котлован:</span><span>Включено</span></div>
                             <div class="sol-row" style="font-weight:700; color:var(--accent);"><span>Срок готовности:</span><span>1–2 дня</span></div>
                         </div>
-                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%20%D0%A4%D0%91%D0%A1%2024.4.6%20%D1%81%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BE%D0%BC.">Заказать ФБС с монтажом</a>
+                        <a class="btn btn-ghost" href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D1%8E%D1%82%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%20%D0%A4%D0%91%D0%A1%2024.4.6%20%D1%81%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BE%D0%BC.">Заказать ФБС с монтажом</a>
                     </article>
 
                     <article class="solution-card">
