@@ -22,44 +22,87 @@
     <link rel="icon" type="image/png" href="favicon.PNG">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Schema.org Microdata -->
+    <!-- Schema.org: Организация со звездами рейтинга + Разметка FAQPage для Яндекс Нейро -->
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HardwareStore",
-  "name": "Стройбаза на Монтажной",
-  "legalName": "ИП Кардава Тимур Кукуриевич",
-  "description": "База металлопроката и стройматериалов в Невинномысске: трубы ГОСТ, арматура А500С, цемент Новороссийский М500, ФБС, шлакоблок.",
-  "url": "https://stroybazansk.ru",
-  "telephone": "+79887328161",
-  "email": "stroybazansk@mail.ru",
-  "priceRange": "₽₽",
-  "image": "https://stroybazansk.ru/banner.jpg",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "ул. Монтажная, 10",
-    "addressLocality": "Невинномысск",
-    "addressRegion": "Ставропольский край",
-    "addressCountry": "RU"
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": 44.6435, "longitude": 41.9355 },
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    "opens": "08:00", "closes": "18:00"
-  }],
-  "sameAs": [
-    "https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120",
-    "https://2gis.ru/nevinnomyssk/inside/19000196618797894/firm/70000001114215365",
-    "https://vk.com/stroybazansk",
-    "https://t.me/stroybazansk",
-    "https://t.me/TimurSB",
-    "https://instagram.com/stroybazansk",
-    "https://www.avito.ru/brands/7b5d69d7938d3eb5a9ac6751ed5a9697",
-    "https://www.youtube.com/@stroybazansk"
-  ]
-}
-</script>
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "HardwareStore",
+        "name": "Стройбаза на Монтажной",
+        "legalName": "ИП Кардава Тимур Кукуриевич",
+        "description": "База металлопроката и стройматериалов в Невинномысске: трубы ГОСТ, арматура А500С, цемент Новороссийский М500, ФБС, шлакоблок.",
+        "url": "https://stroybazansk.ru",
+        "telephone": "+79887328161",
+        "email": "stroybazansk@mail.ru",
+        "priceRange": "₽₽",
+        "image": "https://stroybazansk.ru/banner.jpg",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "48"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Монтажная, 10",
+          "addressLocality": "Невинномысск",
+          "addressRegion": "Ставропольский край",
+          "addressCountry": "RU"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 44.6435, "longitude": 41.9355 },
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00", "closes": "18:00"
+        }],
+        "sameAs": [
+          "https://yandex.ru/maps/org/stroybaza_na_montazhnoy/237893630120",
+          "https://2gis.ru/nevinnomyssk/inside/19000196618797894/firm/70000001114215365",
+          "https://vk.com/stroybazansk",
+          "https://t.me/stroybazansk",
+          "https://t.me/TimurSB",
+          "https://www.avito.ru/brands/7b5d69d7938d3eb5a9ac6751ed5a9697"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Какая у вас география и условия доставки со склада?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Доставляем металлопрокат и стройматериалы по Невинномысску, Кочубеевскому району и Ставропольскому краю собственным транспортом: удлиненными Газелями 6м (от 1000 руб) и тяжелыми манипуляторами 15 тонн со стрелой 5 тонн в день заказа."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как принимается оплата за металл и стройматериалы?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Оплата производится строго по факту выгрузки и проверки товара на объекте водителю (наличными или переводом). Для организаций доступен безналичный расчет по счету с закрывающими документами."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как гарантируете соответствие ГОСТу и толщину стенки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Отгружаем сертифицированный прокат строго по ГОСТу без занижения толщины стенки. Предоставляем штангенциркуль для контрольного замера на складе и при выгрузке. Цемент хранится в сухом крытом боксе."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно ли забрать стройматериалы самовывозом со склада на Монтажной 10?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да, самовывоз осуществляется со склада: г. Невинномысск, ул. Монтажная, д. 10. Удобный подъезд для длинномеров и прицепов. Быстрая механизированная погрузка автопогрузчиком за 5 минут бесплатно."
+            }
+          }
+        ]
+      }
+    ]
+    </script>
 
     <style>
         :root {
@@ -1491,23 +1534,27 @@
             document.getElementById('callbackForm').style.display = 'none';
             document.getElementById('cb-success').style.display = 'inline-block';
 
-            const waMsg = encodeURIComponent(`Здравствуйте! Меня зовут ${name}, прошу перезвонить мне по заказу стройматериалов. Номер: ${phone}`);
-            document.getElementById('cb-wa-link').href = `https://wa.me/79887328161?text=${waMsg}`;
+            // Отправка в Telegram-бот базы мгновенно
+            const tgMsg = "🔥 ПЕРЕЗВОНИТЬ КЛИЕНТУ ЗА 5 МИНУТ!\\n\\n" +
+                          "👤 Имя: " + name + "\\n" +
+                          "📞 Телефон: " + phone + "\\n" +
+                          "🌐 Источник: Основной сайт stroybazansk.ru (Реклама Директ)";
 
-            try {
-                const leads = JSON.parse(localStorage.getItem('stroybaza_leads') || '[]');
-                leads.push({ name, phone, time: new Date().toLocaleString('ru-RU') });
-                localStorage.setItem('stroybaza_leads', JSON.stringify(leads));
-            } catch(err) {}
+            fetch("https://api.telegram.org/bot8986406404:AAE6S2SU891B1KCyByQwi3RC3N7ITQ-w7s4/sendMessage", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    chat_id: "1988546771",
+                    text: tgMsg
+                })
+            }).catch(err => console.log(err));
 
+            // Запасная отправка на почту
             fetch('https://formsubmit.co/ajax/stroybazansk@mail.ru', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({
-                    _subject: '🔔 Новая заявка на расчет со Стройбазы!',
-                    Имя: name, Телефон: phone, Сайт: 'stroybazansk.ru'
-                })
-            });
+                body: JSON.stringify({ Имя: name, Телефон: phone, Сайт: 'stroybazansk.ru' })
+            }).catch(err => console.log(err));
         }
 
         function resetCallbackForm() {
