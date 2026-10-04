@@ -11,6 +11,12 @@
     {
       "@context": "https://schema.org/",
       "@type": "Product",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "28"
+  },
+
   "brand": {
     "@type": "Brand",
     "name": "Стройбаза на Монтажной 10"
@@ -21,6 +27,24 @@
       "description": "Стеновые фундаментные блоки ФБС 24.4.6 по ГОСТ 13579-78 со склада ЖБИ в Невинномысске.",
       "offers": {
         "@type": "Offer", "priceCurrency": "RUB", "price": "2800.00", "availability": "https://schema.org/InStock",
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "RU",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 14,
+      "returnMethod": "https://schema.org/ReturnInStore",
+      "returnFees": "https://schema.org/FreeReturn"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": { "@type": "MonetaryAmount", "value": "1000", "currency": "RUB" },
+      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "RU" },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "DAY" },
+        "transitTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2, "unitCode": "DAY" }
+      }
+    },
         "seller": { "@type": "Organization", "name": "Стройбаза на Монтажной" }
       }
     }
