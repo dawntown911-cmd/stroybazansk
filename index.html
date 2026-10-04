@@ -1075,32 +1075,32 @@
 
                 <div class="gallery-grid">
                     <div class="gallery-card" onclick="openAlbum('armatura')">
-                        <img src="armatura.jpg" alt="Арматура" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <img src="armatura-1.jpg" alt="Арматура" loading="lazy" onerror="this.parentNode.style.display='none';">
                         <div class="gallery-badge">Альбом</div>
                         <div class="gallery-overlay"><span>Арматура 6–16 мм А500С</span><span>🔍 Посмотреть</span></div>
                     </div>
                     <div class="gallery-card" onclick="openAlbum('truba')">
-                        <img src="truba.jpg" alt="Трубы" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <img src="truba-1.jpg" alt="Трубы" loading="lazy" onerror="this.parentNode.style.display='none';">
                         <div class="gallery-badge">Альбом</div>
                         <div class="gallery-overlay"><span>Профильные трубы ГОСТ</span><span>🔍 Посмотреть</span></div>
                     </div>
                     <div class="gallery-card" onclick="openAlbum('cement')">
-                        <img src="cement.jpg" alt="Цемент" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <img src="cement-1.jpg" alt="Цемент" loading="lazy" onerror="this.parentNode.style.display='none';">
                         <div class="gallery-badge">Альбом</div>
                         <div class="gallery-overlay"><span>Цемент М500 в мешках</span><span>🔍 Посмотреть</span></div>
                     </div>
                     <div class="gallery-card" onclick="openAlbum('zhbi')">
-                        <img src="kolca.jpg" alt="Кольца ЖБИ" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <img src="kolca-1.jpg" alt="Кольца ЖБИ" loading="lazy" onerror="this.parentNode.style.display='none';">
                         <div class="gallery-badge">Альбом</div>
                         <div class="gallery-overlay"><span>Кольца ЖБИ и Септики</span><span>🔍 Посмотреть</span></div>
                     </div>
                     <div class="gallery-card" onclick="openAlbum('fbs')">
-                        <img src="fbs.jpg" alt="Блоки ФБС" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <img src="fbs-1.jpg" alt="Блоки ФБС" loading="lazy" onerror="this.parentNode.style.display='none';">
                         <div class="gallery-badge">Альбом</div>
                         <div class="gallery-overlay"><span>Блоки ФБС 24.3.6 и 24.4.6</span><span>🔍 Посмотреть</span></div>
                     </div>
                     <div class="gallery-card" onclick="openAlbum('tech')">
-                        <img src="manipulator.jpg" alt="Техника" loading="lazy" onerror="this.parentNode.style.display='none';">
+                        <img src="tech-1.jpg" alt="Техника" loading="lazy" onerror="this.parentNode.style.display='none';">
                         <div class="gallery-badge">Альбом</div>
                         <div class="gallery-overlay"><span>Спецтехника и Погрузка</span><span>🔍 Посмотреть</span></div>
                     </div>
@@ -1489,12 +1489,31 @@
         }
 
         const albums = {
-            armatura: { title: 'Арматура рифленая А500С (6–16 мм)', photos: ['armatura.jpg', 'photo-1.jpg', 'photo-2.jpg'] },
-            truba: { title: 'Профильные трубы 40х20, 40х40, 60х40, 80х80', photos: ['truba.jpg', 'photo-3.jpg', 'photo-4.jpg'] },
-            cement: { title: 'Новороссийский Цемент М500 Д0 и Д20', photos: ['cement.jpg', 'photo-5.jpg', 'photo-6.jpg'] },
-            zhbi: { title: 'Кольца ЖБИ для септиков и колодцев', photos: ['kolca.jpg', 'photo-7.jpg', 'photo-8.jpg'] },
-            fbs: { title: 'Фундаментные блоки ФБС 24.3.6 и 24.4.6', photos: ['fbs.jpg', 'photo-9.jpg', 'photo-10.jpg'] },
-            tech: { title: 'Автопарк: манипуляторы 15 т и Газели', photos: ['manipulator.jpg', 'photo-11.jpg', 'photo-12.jpg'] }
+            const albums = {
+            armatura: { 
+                title: 'Арматура рифленая А500С (6–16 мм)', 
+                photos: ['armatura-1.jpg', 'armatura-2.jpg', 'armatura-3.jpg', 'armatura-4.jpg', 'armatura-5.jpg'] 
+            },
+            truba: { 
+                title: 'Профильные трубы 40х20, 40х40, 60х40, 80х80', 
+                photos: ['truba-1.jpg', 'truba-2.jpg', 'truba-3.jpg', 'truba-4.jpg', 'truba-5.jpg'] 
+            },
+            cement: { 
+                title: 'Новороссийский Цемент М500 Д0 и Д20', 
+                photos: ['cement-1.jpg', 'cement-2.jpg', 'cement-3.jpg', 'cement-4.jpg', 'cement-5.jpg', 'cement-6.jpg', 'cement-7.jpg', 'cement-8.jpg', 'cement-9.jpg'] 
+            },
+            zhbi: { 
+                title: 'Кольца ЖБИ для септиков и колодцев', 
+                photos: ['kolca-1.jpg', 'kolca-2.jpg', 'kolca-3.jpg', 'kolca-4.jpg'] 
+            },
+            fbs: { 
+                title: 'Фундаментные блоки ФБС 24.3.6 и 24.4.6', 
+                photos: ['fbs-1.jpg', 'fbs-2.jpg', 'fbs-3.jpg', 'fbs-4.jpg', 'fbs-5.jpg'] 
+            },
+            tech: { 
+                title: 'Автопарк: манипуляторы 15 т и Газели', 
+                photos: ['tech-1.jpg', 'tech-2.jpg', 'tech-3.jpg', 'tech-4.jpg'] 
+            }
         };
 
         let currentAlbumKey = '';
