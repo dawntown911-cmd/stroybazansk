@@ -381,7 +381,683 @@
             .album-view { height: 320px; } .calc-wrapper { padding: 20px 16px; }
             .callback-input, .callback-form .btn { width: 100% !important; }
         }
+        /* ==========================================================================
+   ИНЖЕНЕРНЫЙ СПРАВОЧНИК И КАЛЬКУЛЯТОР МЕТАЛЛОПРОКАТА
+   Стилизовано строго под дизайн-систему stroybazansk.ru
+   ========================================================================== */
+
+#spravochnik {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  color: var(--text);
+  box-sizing: border-box;
+}
+
+/* Шапка секции */
+.eng-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 40px auto;
+}
+
+.eng-badge-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(214, 189, 122, 0.1);
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-md);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.eng-title {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 16px 0;
+}
+
+.eng-title span {
+  color: var(--accent);
+}
+
+.eng-subtitle {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Контейнер вкладок (Табы) */
+.eng-tabs-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 6px;
+  margin-bottom: 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.eng-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.eng-tab-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  white-space: nowrap;
+}
+
+.eng-tab-btn:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.eng-tab-btn.is-active {
+  background: rgba(214, 189, 122, 0.15);
+  color: var(--accent-light);
+  border-color: var(--border-glow);
+  box-shadow: 0 0 15px rgba(214, 189, 122, 0.1);
+}
+
+/* Контентные панели табов */
+.eng-tab-panel {
+  display: none;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.eng-tab-panel.is-active {
+  display: block;
+  animation: engFadeIn 0.3s ease-in-out;
+}
+
+@keyframes engFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Подсказка горизонтального скролла для мобильных */
+.eng-scroll-hint {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--accent);
+  background: rgba(214, 189, 122, 0.08);
+  border: 1px dashed var(--border-glow);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+}
+
+@media (max-width: 900px) {
+  .eng-scroll-hint {
+    display: inline-flex;
+  }
+}
+
+/* Обертка адаптивных таблиц */
+.eng-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Кастомный тонкий скроллбар */
+.eng-table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+
+.eng-table-responsive::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+.eng-table-responsive::-webkit-scrollbar-thumb {
+  background: var(--border-glow);
+  border-radius: 4px;
+}
+
+/* Таблицы нормативной базы */
+.eng-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+  font-size: 14px;
+  min-width: 720px;
+}
+
+.eng-table thead th {
+  position: sticky;
+  top: 0;
+  background: #0f111a;
+  color: var(--accent-light);
+  font-weight: 700;
+  padding: 14px 18px;
+  border-bottom: 2px solid var(--border-glow);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  z-index: 2;
+}
+
+.eng-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.eng-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.eng-table tbody tr:hover {
+  background: rgba(214, 189, 122, 0.06);
+}
+
+.eng-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.eng-table td.col-val {
+  font-family: monospace, monospace;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* Выделение флагмана */
+.eng-row-flagship {
+  background: rgba(214, 189, 122, 0.08) !important;
+  border-left: 3px solid var(--accent);
+}
+
+.eng-badge-flagship {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--accent);
+  color: #07080c;
+  border-radius: 4px;
+  margin-left: 8px;
+  text-transform: uppercase;
+}
+
+/* Статусы наличия и цены */
+.eng-price-val {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 15px;
+}
+
+.eng-status-order {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 12px;
+  color: var(--soft);
+  background: rgba(113, 113, 122, 0.15);
+  border: 1px solid var(--soft);
+  border-radius: var(--radius-md);
+}
+
+/* Футер таблицы с нормативным примечанием */
+.eng-table-note {
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.eng-table-note strong {
+  color: var(--accent-light);
+}
+
+/* ==========================================================================
+   ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР-КОНВЕРТЕР (ТАБ 4)
+   ========================================================================== */
+.eng-calc-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .eng-calc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eng-calc-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.eng-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eng-form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-light);
+}
+
+.eng-select,
+.eng-input {
+  width: 100%;
+  background: #0b0d14;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  padding: 12px 14px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.eng-select:focus,
+.eng-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--border-glow);
+}
+
+.eng-calc-inputs-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 480px) {
+  .eng-calc-inputs-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eng-calc-results {
+  background: #090b10;
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.eng-res-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.eng-res-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border);
+  font-size: 14px;
+}
+
+.eng-res-label {
+  color: var(--muted);
+}
+
+.eng-res-value {
+  font-weight: 700;
+  color: var(--text);
+  font-family: monospace, monospace;
+  font-size: 15px;
+}
+
+.eng-res-row.highlight {
+  border-bottom: none;
+  padding-top: 6px;
+}
+
+.eng-res-row.highlight .eng-res-label {
+  font-weight: 700;
+  color: var(--accent-light);
+  font-size: 15px;
+}
+
+.eng-res-row.highlight .eng-res-value {
+  color: var(--accent);
+  font-size: 22px;
+}
+
+.eng-calc-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eng-calc-cta-info {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.eng-btn-order {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 20px;
+  background: var(--accent);
+  color: #07080c;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.eng-btn-order:hover {
+  background: var(--accent-light);
+  transform: translateY(-1px);
+}
     </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WholesaleStore",
+      "@id": "https://stroybazansk.ru/#store",
+      "name": "Стройбаза на Монтажной",
+      "url": "https://stroybazansk.ru",
+      "telephone": "+7-988-732-81-61",
+      "priceRange": "RUB",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Монтажная, д. 10",
+        "addressLocality": "Невинномысск",
+        "addressRegion": "Ставропольский край",
+        "postalCode": "357107",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 44.6435,
+        "longitude": 41.9355
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://stroybazansk.ru/#metall-dataset",
+      "name": "Инженерные таблицы веса и параметров металлопроката и ЖБИ по ГОСТ",
+      "description": "Официальные нормативные данные: вес погонного метра, сколько метров в тонне, теоретическая масса по ГОСТ 34028-2016, ГОСТ 8645-68, ГОСТ 8639-82, ГОСТ 13579-78 и цены металлобазы на Монтажной 10 в Невинномысске с контрольным замером толщины стенки штангенциркулем.",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creator": {
+        "@id": "https://stroybazansk.ru/#store"
+      },
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Невинномысск, Ставропольский край, склад на Монтажной 10"
+      },
+      "variableMeasured": [
+        "Теоретическая масса по ГОСТ",
+        "Вес погонного метра",
+        "Метров в тонне",
+        "Цена за погонный метр на складе"
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://stroybazansk.ru/#price-list-normative",
+      "name": "Сортамент металлопроката и ЖБИ на складе в Невинномысске",
+      "itemListElement": [
+        {
+          "@type": "Product",
+          "position": 1,
+          "name": "Арматура 6 мм А500С / А240 ГОСТ 34028-2016",
+          "description": "Вес 1 м = 0.222 кг, 4 504 метров в тонне. Теоретическая масса по ГОСТ.",
+          "offers": {
+            "@type": "Offer",
+            "price": "21",
+            "priceCurrency": "RUB",
+            "unitCode": "MTR",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 2,
+          "name": "Арматура 8 мм А500С / А240 ГОСТ 34028-2016",
+          "description": "Вес 1 м = 0.395 кг, 2 531 метров в тонне. Отгрузка со склада на Монтажной 10.",
+          "offers": {
+            "@type": "Offer",
+            "price": "30",
+            "priceCurrency": "RUB",
+            "unitCode": "MTR",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 3,
+          "name": "Арматура 10 мм А500С / А240 ГОСТ 34028-2016",
+          "description": "Вес 1 м = 0.617 кг, 1 620 метров в тонне. Контрольный замер диаметра.",
+          "offers": {
+            "@type": "Offer",
+            "price": "45",
+            "priceCurrency": "RUB",
+            "unitCode": "MTR",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 4,
+          "name": "Арматура 12 мм А500С ГОСТ 34028-2016 (Флагман продаж)",
+          "description": "Вес 1 м = 0.888 кг, 1 126 метров в тонне. Флагман строительного проката.",
+          "offers": {
+            "@type": "Offer",
+            "price": "56",
+            "priceCurrency": "RUB",
+            "unitCode": "MTR",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 5,
+          "name": "Арматура 14 мм А500С ГОСТ 34028-2016",
+          "description": "Вес 1 м = 1.210 кг, 826 метров в тонне. Поставка под заказ.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "RUB",
+            "availability": "https://schema.org/PreOrder"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 6,
+          "name": "Арматура 16 мм А500С ГОСТ 34028-2016",
+          "description": "Вес 1 м = 1.580 кг, 633 метров в тонне. Поставка под заказ.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "RUB",
+            "availability": "https://schema.org/PreOrder"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 7,
+          "name": "Труба профильная 40х20х2.0 ГОСТ 8645-68",
+          "description": "Вес 1 м = 1.70 кг, 588 метров в тонне. Проверка толщины стенки штангенциркулем.",
+          "offers": {
+            "@type": "Offer",
+            "price": "115",
+            "priceCurrency": "RUB",
+            "unitCode": "MTR",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 8,
+          "name": "Труба профильная 40х40х2.0 ГОСТ 8639-82",
+          "description": "Вес 1 м = 2.35 кг, 425 метров в тонне.",
+          "offers": {
+            "@type": "Offer",
+            "price": "160",
+            "priceCurrency": "RUB",
+            "unitCode": "MTR",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 9,
+          "name": "Труба профильная 60х40х3.0 ГОСТ 8645-68",
+          "description": "Вес 1 м = 4.30 кг, 232 метров в тонне.",
+          "offers": {
+            "@type": "Offer",
+            "price": "260",
+            "priceCurrency": "RUB",
+            "unitCode": "MTR",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 10,
+          "name": "Труба профильная 60х60х3.0 ГОСТ 8639-82",
+          "description": "Вес 1 м = 5.25 кг, 190 метров в тонне. Под заказ.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "RUB",
+            "availability": "https://schema.org/PreOrder"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 11,
+          "name": "Труба профильная 80х80х3.0 ГОСТ 8639-82",
+          "description": "Вес 1 м = 7.10 кг, 140 метров в тонне. В наличии на складе в Невинномысске.",
+          "offers": {
+            "@type": "Offer",
+            "price": "460",
+            "priceCurrency": "RUB",
+            "unitCode": "MTR",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 12,
+          "name": "Блок фундаментный ФБС 24.3.6 ГОСТ 13579-78",
+          "description": "Габариты 2380х300х580 мм, вес ~970 кг, объем бетона ~0.406 м³.",
+          "offers": {
+            "@type": "Offer",
+            "price": "2600",
+            "priceCurrency": "RUB",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 13,
+          "name": "Блок фундаментный ФБС 24.4.6 ГОСТ 13579-78",
+          "description": "Габариты 2380х400х580 мм, вес ~1300 кг, объем бетона ~0.543 м³.",
+          "offers": {
+            "@type": "Offer",
+            "price": "2800",
+            "priceCurrency": "RUB",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 14,
+          "name": "Шлакоблок стеновой ГОСТ 6133-2019",
+          "description": "Габариты 390х190х190 мм, вес ~18 кг, 71 шт/м³.",
+          "offers": {
+            "@type": "Offer",
+            "price": "48",
+            "priceCurrency": "RUB",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          "position": 15,
+          "name": "Цемент Новороссийский М500 (50 кг)",
+          "description": "Заводской мешок 50 кг, поддон 30 шт (1.5 т). ГОСТ 31108-2020.",
+          "offers": {
+            "@type": "Offer",
+            "price": "570",
+            "priceCurrency": "RUB",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
     <div class="glow-bg"><div class="glow-top"></div><div class="glow-bottom"></div></div>
@@ -397,6 +1073,7 @@
             <nav class="nav">
                 <a href="#catalog">Каталог</a>
                 <a href="#kalkulyator" class="highlight-nav">⚡ Калькулятор стройки</a>
+                <a href="#spravochnik">📊 Справочник ГОСТ и веса</a>
                 <a href="#chertezh">Отправить чертёж</a>
                 <a href="#zadachi">Задачи стройки</a>
                 <a href="#contacts">Контакты</a>
@@ -855,7 +1532,317 @@
                 </div>
             </div>
         </section>
+<section class="section" id="spravochnik" aria-labelledby="spravochnik-heading">
+  <!-- Шапка секции со встроенными LSI ключами -->
+  <div class="eng-header">
+    <div class="eng-badge-top">Техническая база • Невинномысск</div>
+    <h2 class="eng-title" id="spravochnik-heading">
+      Инженерный справочник ГОСТ и <span>калькулятор веса</span>
+    </h2>
+    <p class="eng-subtitle">
+      Рассчитайте теоретическую массу по ГОСТ, точный вес погонного метра и узнайте, сколько метров в тонне проката. 
+      Отгрузка металлопродукции осуществляется со склада на Монтажной 10. Перед взвешиванием и отпуском клиенту 
+      выполняется обязательный контрольный замер толщины стенки штангенциркулем на поверенном оборудовании.
+    </p>
+  </div>
 
+  <!-- Навигация по вкладкам -->
+  <div class="eng-tabs-nav" role="tablist" aria-label="Справочные таблицы и конвертер">
+    <button class="eng-tab-btn is-active" role="tab" aria-selected="true" aria-controls="panel-rebar" id="tab-rebar">
+      Арматура (ГОСТ 34028-2016)
+    </button>
+    <button class="eng-tab-btn" role="tab" aria-selected="false" aria-controls="panel-pipe" id="tab-pipe">
+      Профильная труба (ГОСТ 8645/8639)
+    </button>
+    <button class="eng-tab-btn" role="tab" aria-selected="false" aria-controls="panel-fbs" id="tab-fbs">
+      Блоки ФБС и стеновые блоки
+    </button>
+    <button class="eng-tab-btn" role="tab" aria-selected="false" aria-controls="panel-calc" id="tab-calc">
+      Калькулятор перевода (метры ⇄ тонны)
+    </button>
+  </div>
+
+  <!-- ТАБ 1: Арматура -->
+  <div class="eng-tab-panel is-active" id="panel-rebar" role="tabpanel" aria-labelledby="tab-rebar">
+    <div class="eng-scroll-hint">Листайте таблицу вправо →</div>
+    <div class="eng-table-responsive">
+      <table class="eng-table">
+        <thead>
+          <tr>
+            <th scope="col">Номинальный диаметр</th>
+            <th scope="col">Класс стали</th>
+            <th scope="col">Вес погонного метра (кг)</th>
+            <th scope="col">Сколько метров в тонне (м)</th>
+            <th scope="col">ГОСТ стандарта</th>
+            <th scope="col">Цена на складе в Невинномысске</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>6 мм</strong></td>
+            <td>А500С / А240</td>
+            <td class="col-val">0.222 кг</td>
+            <td class="col-val">4 504 м</td>
+            <td>ГОСТ 34028-2016</td>
+            <td><span class="eng-price-val">21 ₽/м</span></td>
+          </tr>
+          <tr>
+            <td><strong>8 мм</strong></td>
+            <td>А500С / А240</td>
+            <td class="col-val">0.395 кг</td>
+            <td class="col-val">2 531 м</td>
+            <td>ГОСТ 34028-2016</td>
+            <td><span class="eng-price-val">30 ₽/м</span></td>
+          </tr>
+          <tr>
+            <td><strong>10 мм</strong></td>
+            <td>А500С / А240</td>
+            <td class="col-val">0.617 кг</td>
+            <td class="col-val">1 620 м</td>
+            <td>ГОСТ 34028-2016</td>
+            <td><span class="eng-price-val">45 ₽/м</span></td>
+          </tr>
+          <tr class="eng-row-flagship">
+            <td>
+              <strong>12 мм</strong>
+              <span class="eng-badge-flagship">Флагман продаж</span>
+            </td>
+            <td>А500С</td>
+            <td class="col-val">0.888 кг</td>
+            <td class="col-val">1 126 м</td>
+            <td>ГОСТ 34028-2016</td>
+            <td><span class="eng-price-val">56 ₽/м</span></td>
+          </tr>
+          <tr>
+            <td><strong>14 мм</strong></td>
+            <td>А500С</td>
+            <td class="col-val">1.210 кг</td>
+            <td class="col-val">826 м</td>
+            <td>ГОСТ 34028-2016</td>
+            <td><span class="eng-status-order">под заказ</span></td>
+          </tr>
+          <tr>
+            <td><strong>16 мм</strong></td>
+            <td>А500С</td>
+            <td class="col-val">1.580 кг</td>
+            <td class="col-val">633 м</td>
+            <td>ГОСТ 34028-2016</td>
+            <td><span class="eng-status-order">под заказ</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="eng-table-note">
+      * Таблица отражает <strong>теоретическую массу по ГОСТ 34028-2016</strong>. Реальный вес погонного метра партии 
+      подтверждается сертификатом металлургического комбината. Прутки нарезаются по 11.7 м или реализуются мотками/бухтами 
+      со склада на Монтажной 10.
+    </p>
+  </div>
+
+  <!-- ТАБ 2: Профильная труба -->
+  <div class="eng-tab-panel" id="panel-pipe" role="tabpanel" aria-labelledby="tab-pipe">
+    <div class="eng-scroll-hint">Листайте таблицу вправо →</div>
+    <div class="eng-table-responsive">
+      <table class="eng-table">
+        <thead>
+          <tr>
+            <th scope="col">Сечение и стенка (мм)</th>
+            <th scope="col">Типоразмер</th>
+            <th scope="col">Вес погонного метра (кг)</th>
+            <th scope="col">Сколько метров в тонне (м)</th>
+            <th scope="col">Нормативный ГОСТ</th>
+            <th scope="col">Цена на складе в Невинномысске</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>40х20х2.0</strong></td>
+            <td>Прямоугольная</td>
+            <td class="col-val">1.70 кг</td>
+            <td class="col-val">588 м</td>
+            <td>ГОСТ 8645-68</td>
+            <td><span class="eng-price-val">115 ₽/м</span></td>
+          </tr>
+          <tr>
+            <td><strong>40х40х2.0</strong></td>
+            <td>Квадратная</td>
+            <td class="col-val">2.35 кг</td>
+            <td class="col-val">425 м</td>
+            <td>ГОСТ 8639-82</td>
+            <td><span class="eng-price-val">160 ₽/м</span></td>
+          </tr>
+          <tr>
+            <td><strong>60х40х3.0</strong></td>
+            <td>Прямоугольная</td>
+            <td class="col-val">4.30 кг</td>
+            <td class="col-val">232 м</td>
+            <td>ГОСТ 8645-68</td>
+            <td><span class="eng-price-val">260 ₽/м</span></td>
+          </tr>
+          <tr>
+            <td><strong>60х60х3.0</strong></td>
+            <td>Квадратная</td>
+            <td class="col-val">5.25 кг</td>
+            <td class="col-val">190 м</td>
+            <td>ГОСТ 8639-82</td>
+            <td><span class="eng-status-order">под заказ</span></td>
+          </tr>
+          <tr>
+            <td><strong>80х80х3.0</strong></td>
+            <td>Квадратная</td>
+            <td class="col-val">7.10 кг</td>
+            <td class="col-val">140 м</td>
+            <td>ГОСТ 8639-82</td>
+            <td><span class="eng-price-val">460 ₽/м</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="eng-table-note">
+      * При приемке труб на складе по адресу ул. Монтажная, 10 осуществляется строгий 
+      <strong>контрольный замер толщины стенки штангенциркулем</strong> для исключения некондиции и ТУ-занижений.
+    </p>
+  </div>
+
+  <!-- ТАБ 3: Блоки ФБС и стеновые блоки -->
+  <div class="eng-tab-panel" id="panel-fbs" role="tabpanel" aria-labelledby="tab-fbs">
+    <div class="eng-scroll-hint">Листайте таблицу вправо →</div>
+    <div class="eng-table-responsive">
+      <table class="eng-table">
+        <thead>
+          <tr>
+            <th scope="col">Наименование продукции</th>
+            <th scope="col">Габариты (ДхШхВ, мм)</th>
+            <th scope="col">Нормативный вес единицы</th>
+            <th scope="col">Объем бетона / Норма расхода</th>
+            <th scope="col">ГОСТ стандарта</th>
+            <th scope="col">Цена за шт / мешок</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ФБС 24.3.6</strong></td>
+            <td>2380х300х580</td>
+            <td class="col-val">~970 кг</td>
+            <td class="col-val">~0.406 м³</td>
+            <td>ГОСТ 13579-78</td>
+            <td><span class="eng-price-val">2 600 ₽/шт</span></td>
+          </tr>
+          <tr>
+            <td><strong>ФБС 24.4.6</strong></td>
+            <td>2380х400х580</td>
+            <td class="col-val">~1300 кг</td>
+            <td class="col-val">~0.543 м³</td>
+            <td>ГОСТ 13579-78</td>
+            <td><span class="eng-price-val">2 800 ₽/шт</span></td>
+          </tr>
+          <tr>
+            <td><strong>Шлакоблок стеновой</strong></td>
+            <td>390х190х190</td>
+            <td class="col-val">~18 кг</td>
+            <td class="col-val">71 шт / м³</td>
+            <td>ГОСТ 6133-2019</td>
+            <td><span class="eng-price-val">48 ₽/шт</span></td>
+          </tr>
+          <tr>
+            <td><strong>Цемент Новороссийский М500</strong></td>
+            <td>Мешок заводской</td>
+            <td class="col-val">50 кг</td>
+            <td class="col-val">Поддон 30 шт (1.5 т)</td>
+            <td>ГОСТ 31108-2020</td>
+            <td><span class="eng-price-val">570 ₽/мешок</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="eng-table-note">
+      * Все железобетонные и стеновые изделия пропарены в заводских камерах и имеют паспорта качества. 
+      Погрузка манипулятором и самовывоз со склада на Монтажной 10 осуществляются в рабочие часы без очередей.
+    </p>
+  </div>
+
+  <!-- ТАБ 4: Интерактивный калькулятор -->
+  <div class="eng-tab-panel" id="panel-calc" role="tabpanel" aria-labelledby="tab-calc">
+    <div class="eng-calc-grid">
+      <div class="eng-calc-controls">
+        <div class="eng-form-group">
+          <label class="eng-form-label" for="eng-product-select">Выберите номенклатуру металлопроката:</label>
+          <select id="eng-product-select" class="eng-select">
+            <optgroup label="Арматура А500С / А240 (ГОСТ 34028-2016)">
+              <option value="rebar-6">Арматура 6 мм (0.222 кг/м | 21 ₽/м)</option>
+              <option value="rebar-8">Арматура 8 мм (0.395 кг/м | 30 ₽/м)</option>
+              <option value="rebar-10">Арматура 10 мм (0.617 кг/м | 45 ₽/м)</option>
+              <option value="rebar-12" selected>Арматура 12 мм [Флагман] (0.888 кг/м | 56 ₽/м)</option>
+              <option value="rebar-14">Арматура 14 мм (1.210 кг/м | Под заказ)</option>
+              <option value="rebar-16">Арматура 16 мм (1.580 кг/м | Под заказ)</option>
+            </optgroup>
+            <optgroup label="Профильная труба (ГОСТ 8645-68 / 8639-82)">
+              <option value="pipe-40-20-2">Труба 40х20х2.0 (1.70 кг/м | 115 ₽/м)</option>
+              <option value="pipe-40-40-2">Труба 40х40х2.0 (2.35 кг/м | 160 ₽/м)</option>
+              <option value="pipe-60-40-3">Труба 60х40х3.0 (4.30 кг/м | 260 ₽/м)</option>
+              <option value="pipe-60-60-3">Труба 60х60х3.0 (5.25 кг/м | Под заказ)</option>
+              <option value="pipe-80-80-3">Труба 80х80х3.0 (7.10 кг/м | 460 ₽/м)</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="eng-calc-inputs-row">
+          <div class="eng-form-group">
+            <label class="eng-form-label" for="eng-input-meters">Длина (погонные метры):</label>
+            <input type="number" id="eng-input-meters" class="eng-input" min="0" step="any" placeholder="Например: 100" value="100">
+          </div>
+          <div class="eng-form-group">
+            <label class="eng-form-label" for="eng-input-tons">Масса (тонны):</label>
+            <input type="number" id="eng-input-tons" class="eng-input" min="0" step="any" placeholder="Например: 0.088">
+          </div>
+        </div>
+
+        <p class="eng-table-note" style="margin: 0;">
+          Введите метраж или тоннаж: пересчет по нормативной теоретической массе ГОСТ происходит мгновенно 
+          в обе стороны с контрольной привязкой к складским ценам.
+        </p>
+      </div>
+
+      <div class="eng-calc-results">
+        <div class="eng-res-list">
+          <div class="eng-res-row">
+            <span class="eng-res-label">Выбранный прокат:</span>
+            <span class="eng-res-value" id="eng-res-name">Арматура 12 мм</span>
+          </div>
+          <div class="eng-res-row">
+            <span class="eng-res-label">Нормативный вес 1 м:</span>
+            <span class="eng-res-value" id="eng-res-linear-weight">0.888 кг</span>
+          </div>
+          <div class="eng-res-row">
+            <span class="eng-res-label">Метров в 1 тонне (ГОСТ):</span>
+            <span class="eng-res-value" id="eng-res-m-per-ton">1 126 м</span>
+          </div>
+          <div class="eng-res-row">
+            <span class="eng-res-label">Итоговая масса (кг / т):</span>
+            <span class="eng-res-value" id="eng-res-weight">88.8 кг (0.089 т)</span>
+          </div>
+          <div class="eng-res-row">
+            <span class="eng-res-label">Итоговый метраж:</span>
+            <span class="eng-res-value" id="eng-res-meters">100.00 м</span>
+          </div>
+          <div class="eng-res-row highlight">
+            <span class="eng-res-label">Ориентировочная сумма:</span>
+            <span class="eng-res-value" id="eng-res-price">5 600 ₽</span>
+          </div>
+        </div>
+
+        <div class="eng-calc-cta">
+          <div class="eng-calc-cta-info">
+            Самовывоз со склада: г. Невинномысск, ул. Монтажная, 10. Доставка по Ставропольскому краю собственным транспортом.
+          </div>
+          <a href="tel:+79887328161" class="eng-btn-order" id="eng-order-btn">
+            Заказать по телефону: +7 (988) 732-81-61
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
         <!-- 3. ОТПРАВИТЬ ЧЕРТЕЖ -->
         <section class="section" id="chertezh" style="padding-top: 10px;">
             <div class="container">
@@ -1615,6 +2602,202 @@
             form.style.display = 'flex';
             document.getElementById('cb-success').style.display = 'none';
         }
+        document.addEventListener('DOMContentLoaded', () => {
+  // 1. БАЗА ДАННЫХ НОРМАТИВОВ И ЦЕН (СТРОГО ПО СПЕЦИФИКАЦИИ)
+  const METALL_DB = {
+    'rebar-6': {
+      name: 'Арматура А500С/А240 6 мм',
+      weightMeter: 0.222,
+      metersTon: 4504,
+      priceMeter: 21,
+      isCustom: false
+    },
+    'rebar-8': {
+      name: 'Арматура А500С/А240 8 мм',
+      weightMeter: 0.395,
+      metersTon: 2531,
+      priceMeter: 30,
+      isCustom: false
+    },
+    'rebar-10': {
+      name: 'Арматура А500С/А240 10 мм',
+      weightMeter: 0.617,
+      metersTon: 1620,
+      priceMeter: 45,
+      isCustom: false
+    },
+    'rebar-12': {
+      name: 'Арматура А500С 12 мм [Флагман]',
+      weightMeter: 0.888,
+      metersTon: 1126,
+      priceMeter: 56,
+      isCustom: false
+    },
+    'rebar-14': {
+      name: 'Арматура А500С 14 мм',
+      weightMeter: 1.210,
+      metersTon: 826,
+      priceMeter: null,
+      isCustom: true
+    },
+    'rebar-16': {
+      name: 'Арматура А500С 16 мм',
+      weightMeter: 1.580,
+      metersTon: 633,
+      priceMeter: null,
+      isCustom: true
+    },
+    'pipe-40-20-2': {
+      name: 'Труба профильная 40х20х2.0',
+      weightMeter: 1.70,
+      metersTon: 588,
+      priceMeter: 115,
+      isCustom: false
+    },
+    'pipe-40-40-2': {
+      name: 'Труба профильная 40х40х2.0',
+      weightMeter: 2.35,
+      metersTon: 425,
+      priceMeter: 160,
+      isCustom: false
+    },
+    'pipe-60-40-3': {
+      name: 'Труба профильная 60х40х3.0',
+      weightMeter: 4.30,
+      metersTon: 232,
+      priceMeter: 260,
+      isCustom: false
+    },
+    'pipe-60-60-3': {
+      name: 'Труба профильная 60х60х3.0',
+      weightMeter: 5.25,
+      metersTon: 190,
+      priceMeter: null,
+      isCustom: true
+    },
+    'pipe-80-80-3': {
+      name: 'Труба профильная 80х80х3.0',
+      weightMeter: 7.10,
+      metersTon: 140,
+      priceMeter: 460,
+      isCustom: false
+    }
+  };
+
+  // 2. УПРАВЛЕНИЕ ТАБАМИ
+  const tabButtons = document.querySelectorAll('.eng-tab-btn');
+  const tabPanels = document.querySelectorAll('.eng-tab-panel');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('aria-controls');
+
+      tabButtons.forEach(b => {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-selected', 'false');
+      });
+
+      tabPanels.forEach(p => {
+        p.classList.remove('is-active');
+      });
+
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('is-active');
+      }
+    });
+  });
+
+  // 3. ЛОГИКА ДВУНАПРАВЛЕННОГО КАЛЬКУЛЯТОРА
+  const productSelect = document.getElementById('eng-product-select');
+  const inputMeters = document.getElementById('eng-input-meters');
+  const inputTons = document.getElementById('eng-input-tons');
+
+  const resName = document.getElementById('eng-res-name');
+  const resLinearWeight = document.getElementById('eng-res-linear-weight');
+  const resMPerTon = document.getElementById('eng-res-m-per-ton');
+  const resWeight = document.getElementById('eng-res-weight');
+  const resMeters = document.getElementById('eng-res-meters');
+  const resPrice = document.getElementById('eng-res-price');
+
+  let activeSource = 'meters'; // отслеживаем последнее поле ввода: 'meters' или 'tons'
+
+  const formatNumber = (num, decimals = 2) => {
+    return new Intl.NumberFormat('ru-RU', {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: decimals
+    }).format(num);
+  };
+
+  const calculate = () => {
+    const itemKey = productSelect.value;
+    const item = METALL_DB[itemKey];
+
+    if (!item) return;
+
+    let meters = 0;
+    let tons = 0;
+
+    if (activeSource === 'meters') {
+      meters = parseFloat(inputMeters.value) || 0;
+      if (meters < 0) meters = 0;
+      const totalKg = meters * item.weightMeter;
+      tons = totalKg / 1000;
+      if (document.activeElement !== inputTons) {
+        inputTons.value = meters > 0 ? (tons >= 0.001 ? tons.toFixed(3) : tons.toFixed(5)) : '';
+      }
+    } else {
+      tons = parseFloat(inputTons.value) || 0;
+      if (tons < 0) tons = 0;
+      const totalKg = tons * 1000;
+      meters = item.weightMeter > 0 ? (totalKg / item.weightMeter) : 0;
+      if (document.activeElement !== inputMeters) {
+        inputMeters.value = tons > 0 ? meters.toFixed(2) : '';
+      }
+    }
+
+    // Отображение статических параметров профиля
+    resName.textContent = item.name;
+    resLinearWeight.textContent = `${item.weightMeter} кг`;
+    resMPerTon.textContent = `${formatNumber(item.metersTon, 0)} м`;
+
+    // Отображение динамических результатов
+    const finalKg = meters * item.weightMeter;
+    const finalTons = finalKg / 1000;
+
+    resWeight.textContent = `${formatNumber(finalKg, 2)} кг (${formatNumber(finalTons, 3)} т)`;
+    resMeters.textContent = `${formatNumber(meters, 2)} м`;
+
+    // Расчет стоимости
+    if (item.isCustom || item.priceMeter === null) {
+      resPrice.textContent = 'Под заказ (уточняйте)';
+      resPrice.style.fontSize = '17px';
+    } else {
+      const totalPrice = Math.round(meters * item.priceMeter);
+      resPrice.textContent = `${formatNumber(totalPrice, 0)} ₽`;
+      resPrice.style.fontSize = '22px';
+    }
+  };
+
+  // Слушатели событий
+  productSelect.addEventListener('change', calculate);
+
+  inputMeters.addEventListener('input', () => {
+    activeSource = 'meters';
+    calculate();
+  });
+
+  inputTons.addEventListener('input', () => {
+    activeSource = 'tons';
+    calculate();
+  });
+
+  // Первичный расчет при загрузке
+  calculate();
+});
     </script>
 
     <!-- Rambler Counter -->
