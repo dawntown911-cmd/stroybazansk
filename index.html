@@ -6,8 +6,8 @@
     <meta name="zen-verification" content="HUIMuBGLs2upM3mUS7e5ppeqmCLayFGvfSEHCTC6HWCZrKxoDhpCslDwXZhAQH0M" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Стройбаза на Монтажной | Металлопрокат, ЖБИ, цемент в Невинномысске</title>
-    <meta name="description" content="Стройбаза в Невинномысске на ул. Монтажная, 10. Металлопрокат по ГОСТу: арматура от 21 ₽/м, профильная труба от 115 ₽/м, цемент М500 570 ₽, блоки ФБС и шлакоблок. Расчет металла за 5 минут. Доставка манипулятором.">
+    <title>Купить арматуру и металлопрокат в Невинномысске — цены от 21 ₽/м по ГОСТу | Стройбаза на Монтажной</title>
+    <meta name="description" content="Купить арматуру по ГОСТ 34028-2016 в Невинномысске на ул. Монтажная, 10. Рифленая А500С и гладкая А240 от 6 до 20 мм от 21 ₽/м со склада. Бесплатная резка хлыстов, доставка манипулятором за 1.5 часа.">
     <link rel="canonical" href="https://stroybazansk.ru/">
     <meta name="theme-color" content="#07080c">
     <meta property="og:title" content="Стройбаза на Монтажной — металлопрокат и стройматериалы в Невинномысске">
@@ -1119,11 +1119,111 @@ body.sb-drawer-is-open .sb-drawer {
   border-color: rgba(56, 189, 248, 0.4);
 }
 
-@media (max-width: 640px) {
+/* ИСПРАВЛЕННЫЕ ПОЛОСКИ И КНОПКА КАТАЛОГА */
+.sb-catalog-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(214, 189, 122, 0.12);
+  color: var(--accent);
+  border: 1px solid var(--border-glow);
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.sb-catalog-toggle:hover {
+  background: var(--accent);
+  color: #07080c;
+  box-shadow: 0 0 16px rgba(214, 189, 122, 0.25);
+}
+
+/* Ровные одинаковые полоски (высота 12px, полосы по 2px) */
+.sb-burger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 18px;
+  height: 12px;
+}
+
+.sb-burger-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+/* МОБИЛЬНАЯ ВЕРСТКА ШАПКИ (БЕЗ НАЕЗДОВ И С БУРГЕРОМ СЛЕВА) */
+@media (max-width: 768px) {
+  .header-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    padding: 6px 0 !important;
+    min-height: 52px !important;
+  }
+
+  /* 1. Кнопка «Каталог» встает первой, слева */
   .sb-catalog-toggle {
-    padding: 0 12px;
-    height: 36px;
-    font-size: 0.8rem;
+    width: 38px !important;
+    height: 38px !important;
+    padding: 0 !important;
+    justify-content: center !important;
+    border-radius: 10px !important;
+    order: 1 !important;
+  }
+
+  /* Прячем текст «Каталог» на телефоне, оставляем только полоски */
+  .sb-catalog-btn-text {
+    display: none !important;
+  }
+
+  /* 2. Логотип встает вторым, по центру, не перекрываясь */
+  .brand {
+    order: 2 !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    margin: 0 4px !important;
+    gap: 8px !important;
+  }
+
+  .brand-icon {
+    display: none !important;
+  }
+
+  .brand-name strong {
+    font-size: 0.85rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: block !important;
+  }
+
+  .brand-name span,
+  .phone-block {
+    display: none !important;
+  }
+
+  /* 3. Кнопка звонка встает третьей, справа */
+  .header-actions {
+    order: 3 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .header-actions .btn {
+    height: 34px !important;
+    padding: 0 12px !important;
+    font-size: 0.78rem !important;
   }
 }
     </style>
@@ -1390,31 +1490,35 @@ body.sb-drawer-is-open .sb-drawer {
     <div class="glow-bg"><div class="glow-top"></div><div class="glow-bottom"></div></div>
     <header class="site-header">
         <div class="container header-inner">
+            <!-- Кнопка вызова меню (на ПК рядом с логотипом, на мобилке — слева) -->
+            <button type="button" class="sb-catalog-toggle" id="sbCatalogOpenBtn" aria-label="Открыть каталог стройматериалов" aria-expanded="false" aria-controls="sbDrawerMenu">
+                <span class="sb-burger-icon" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <span class="sb-catalog-btn-text">Каталог</span>
+            </button>
+
+            <!-- Логотип базы -->
             <a class="brand" href="#top" aria-label="Стройбаза на Монтажной">
-                <img src="logo.png" alt="Стройбаза на Монтажной" width="42" height="42" style="border-radius: 12px; object-fit: contain; flex-shrink: 0; display: block;" onerror="if(!this.tried){this.tried=true; this.src='logo.PNG';}">
+                <img src="logo.png" alt="Стройбаза на Монтажной" width="40" height="40" style="border-radius: 10px; object-fit: contain; flex-shrink: 0; display: block;" onerror="if(!this.tried){this.tried=true; this.src='logo.PNG';}">
                 <span class="brand-name">
                     <strong>Стройбаза на Монтажной</strong>
                     <span>Невинномысск, ул. Монтажная, 10</span>
                 </span>
             </a>
-            <!-- КНОПКА ОТКРЫТИЯ ВЫЕЗЖАЮЩЕГО МЕНЮ (ШТОРКИ) -->
-        <button type="button" class="sb-catalog-toggle" id="sbCatalogOpenBtn" aria-label="Открыть каталог стройматериалов" aria-expanded="false" aria-controls="sbDrawerMenu">
-          <span class="sb-burger-icon" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-          <span class="sb-catalog-btn-text">Каталог</span>
-        </button>
+
+            <!-- Навигация ПК (дублирующее слово «Каталог» удалено!) -->
             <nav class="nav">
-    <a href="#catalog">Каталог</a>
-    <a href="#kalkulyator" class="highlight-nav">⚡ Калькулятор</a>
-    <a href="#spravochnik">📊 Таблицы ГОСТ</a>
-    <a href="#chertezh">Чертёж</a>
-    <a href="#zadachi">Задачи</a>
-    <a href="#contacts">Контакты</a>
-    <a href="https://metall-26.ru" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700;">Склад metall-26 ↗</a>
-</nav>
+                <a href="#kalkulyator" class="highlight-nav">⚡ Калькулятор</a>
+                <a href="#spravochnik">📊 Таблицы ГОСТ</a>
+                <a href="#chertezh">Чертёж</a>
+                <a href="#zadachi">Задачи</a>
+                <a href="#contacts">Контакты</a>
+                <a href="https://metall-26.ru" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700;">Склад metall-26 ↗</a>
+            </nav>
+
             <div class="header-actions">
                 <div class="phone-block">
                     <a href="tel:+79887328161">+7 (988) 732-81-61</a>
