@@ -2825,13 +2825,13 @@ body {
   }
 
   .pass-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 14px;
-    gap: 10px;
-  }
-
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  gap: 8px;
+  flex-wrap: wrap; /* Разрешаем перенос, если экрану тесно */
+}
   .pass-title-group {
     display: flex;
     align-items: baseline;
@@ -2853,14 +2853,15 @@ body {
   }
 
   .pass-badge {
-    font-size: 0.72rem;
-    font-weight: 700;
-    padding: 3px 9px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    white-space: nowrap;
-  }
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: normal; /* Разрешаем перенос длинных слов */
+  max-width: 100%;
+}
 
   .pass-badge-gold {
     background: linear-gradient(135deg, #d6bd7a, #a98f48);
