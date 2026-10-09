@@ -1191,27 +1191,31 @@ body.sb-drawer-is-open .sb-drawer {
   /* 2. Логотип встает вторым, по центру, не перекрываясь */
   .brand {
     order: 2 !important;
-    flex: 1 !important;
+    flex: 1 1 auto !important;
     min-width: 0 !important;
+    overflow: hidden !important;
     margin: 0 4px !important;
-    gap: 8px !important;
+    gap: 6px !important;
   }
 
-  .brand-icon {
-    display: none !important;
+  .brand img {
+    width: 26px !important;
+    height: 26px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .brand-name {
+    min-width: 0 !important;
+    overflow: hidden !important;
   }
 
   .brand-name strong {
-    font-size: 0.85rem !important;
+    font-size: 0.78rem !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
+    max-width: 130px !important;
     display: block !important;
-  }
-
-  .brand-name span,
-  .phone-block {
-    display: none !important;
   }
 
   /* 3. Кнопка звонка встает третьей, справа */
