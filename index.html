@@ -799,6 +799,333 @@
   background: var(--accent-light);
   transform: translateY(-1px);
 }
+    /* ==========================================================================
+   OFF-CANVAS DRAWER MENU (stroybazansk.ru Dark Design System)
+   ========================================================================== */
+
+:root {
+  --sb-bg-dark: #07080c;
+  --sb-card-bg: rgba(15, 17, 26, 0.98);
+  --sb-accent-gold: #d6bd7a;
+  --sb-accent-gold-hover: #e8d194;
+  --sb-text-light: #f4f4f5;
+  --sb-text-muted: #9ca3af;
+  --sb-border-subtle: rgba(255, 255, 255, 0.08);
+  --sb-drawer-width: 420px;
+}
+
+/* 1. Кнопка «Каталог» в шапке */
+.sb-catalog-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(214, 189, 122, 0.08);
+  color: var(--sb-accent-gold);
+  border: 1px solid rgba(214, 189, 122, 0.35);
+  padding: 9px 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.sb-catalog-toggle:hover {
+  background: var(--sb-accent-gold);
+  color: #07080c;
+  border-color: var(--sb-accent-gold);
+  box-shadow: 0 0 16px rgba(214, 189, 122, 0.25);
+}
+
+.sb-burger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 16px;
+  height: 13px;
+}
+
+.sb-burger-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* 2. Затемняющий Backdrop Overlay */
+.sb-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 7, 12, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  z-index: 9998;
+}
+
+/* 3. Выдвижная панель слева */
+.sb-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(var(--sb-drawer-width), 100vw);
+  background: var(--sb-card-bg);
+  border-right: 1px solid var(--sb-border-subtle);
+  transform: translateX(-100%);
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 12px 0 40px rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+}
+
+/* Состояние при открытии */
+body.sb-drawer-is-open {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+body.sb-drawer-is-open .sb-drawer-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.sb-drawer-is-open .sb-drawer {
+  transform: translateX(0);
+}
+
+/* 4. Шапка меню */
+.sb-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--sb-border-subtle);
+  background: rgba(7, 8, 12, 0.95);
+  flex-shrink: 0;
+}
+
+.sb-drawer-logo {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--sb-text-light);
+}
+
+.sb-drawer-address {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--sb-accent-gold);
+  margin-top: 3px;
+}
+
+.sb-drawer-close {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--sb-border-subtle);
+  color: var(--sb-text-muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.sb-drawer-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--sb-text-light);
+  transform: rotate(90deg);
+}
+
+/* 5. Тело каталога со скроллом */
+.sb-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 18px 14px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(214, 189, 122, 0.3) transparent;
+}
+
+.sb-drawer-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sb-drawer-body::-webkit-scrollbar-thumb {
+  background: rgba(214, 189, 122, 0.25);
+  border-radius: 10px;
+}
+
+.sb-menu-group {
+  margin-bottom: 22px;
+}
+
+.sb-group-title {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--sb-accent-gold);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  padding-left: 8px;
+}
+
+.sb-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sb-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.sb-menu-item:hover {
+  background: rgba(214, 189, 122, 0.08);
+  border-color: rgba(214, 189, 122, 0.25);
+  transform: translateX(4px);
+}
+
+.sb-item-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.sb-item-marker {
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.sb-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sb-item-title {
+  color: var(--sb-text-light);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.sb-menu-item:hover .sb-item-title {
+  color: var(--sb-accent-gold-hover);
+}
+
+.sb-item-desc {
+  font-size: 11px;
+  color: var(--sb-text-muted);
+  margin-top: 2px;
+}
+
+.sb-arrow-icon {
+  stroke: var(--sb-text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s ease, stroke 0.2s ease;
+}
+
+.sb-menu-item:hover .sb-arrow-icon {
+  transform: translateX(3px);
+  stroke: var(--sb-accent-gold);
+}
+
+.sb-menu-item-simple {
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+/* 6. Нижняя панель со связью */
+.sb-drawer-footer {
+  padding: 14px 16px;
+  border-top: 1px solid var(--sb-border-subtle);
+  background: rgba(7, 8, 12, 0.98);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.sb-btn-call {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%);
+  color: #07080c;
+  padding: 11px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s ease;
+}
+
+.sb-btn-call:hover {
+  opacity: 0.9;
+}
+
+.sb-messengers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.sb-btn-messenger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--sb-text-light);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--sb-border-subtle);
+}
+
+.sb-wa:hover {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.sb-tg:hover {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+@media (max-width: 640px) {
+  .sb-catalog-toggle {
+    padding: 0 12px;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+}
     </style>
 <script type="application/ld+json">
 {
@@ -1070,6 +1397,15 @@
                     <span>Невинномысск, ул. Монтажная, 10</span>
                 </span>
             </a>
+            <!-- КНОПКА ОТКРЫТИЯ ВЫЕЗЖАЮЩЕГО МЕНЮ (ШТОРКИ) -->
+        <button type="button" class="sb-catalog-toggle" id="sbCatalogOpenBtn" aria-label="Открыть каталог стройматериалов" aria-expanded="false" aria-controls="sbDrawerMenu">
+          <span class="sb-burger-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="sb-catalog-btn-text">Каталог</span>
+        </button>
             <nav class="nav">
     <a href="#catalog">Каталог</a>
     <a href="#kalkulyator" class="highlight-nav">⚡ Калькулятор</a>
@@ -2800,6 +3136,151 @@
 });
     </script>
 
+    <!-- Затемняющий оверлей с размытием -->
+<div class="sb-drawer-overlay" id="sbDrawerOverlay" aria-hidden="true"></div>
+
+<!-- Выезжающая панель-шторка (Drawer) -->
+<aside class="sb-drawer" id="sbDrawerMenu" aria-label="Боковое меню навигации и каталог" aria-hidden="true">
+  <!-- 1. Шапка меню -->
+  <div class="sb-drawer-header">
+    <div class="sb-drawer-brand">
+      <div class="sb-drawer-logo">Стройбаза на Монтажной</div>
+      <div class="sb-drawer-address">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span>г. Невинномысск, ул. Монтажная, 10</span>
+      </div>
+    </div>
+    <button type="button" class="sb-drawer-close" id="sbDrawerCloseBtn" aria-label="Закрыть каталог">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <!-- Контентная область -->
+  <div class="sb-drawer-body">
+    <!-- 2. Каталог стройматериалов -->
+    <div class="sb-menu-group">
+      <div class="sb-group-title">КАТАЛОГ СТРОЙМАТЕРИАЛОВ</div>
+      <nav class="sb-menu-list">
+        <a href="armatura.html" class="sb-menu-item">
+          <div class="sb-item-left">
+            <span class="sb-item-marker">🔹</span>
+            <div class="sb-item-info">
+              <span class="sb-item-title">Арматура</span>
+              <span class="sb-item-desc">А500С, А240, Катанка, стеклопластиковая, хомуты</span>
+            </div>
+          </div>
+          <svg class="sb-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+
+        <a href="truby.html" class="sb-menu-item">
+          <div class="sb-item-left">
+            <span class="sb-item-marker">🔹</span>
+            <div class="sb-item-info">
+              <span class="sb-item-title">Профильные трубы</span>
+              <span class="sb-item-desc">40х20, 40х40, 60х40, 80х80</span>
+            </div>
+          </div>
+          <svg class="sb-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+
+        <a href="tsement-m500.html" class="sb-menu-item">
+          <div class="sb-item-left">
+            <span class="sb-item-marker">🔹</span>
+            <div class="sb-item-info">
+              <span class="sb-item-title">Цемент Новороссийский М500</span>
+              <span class="sb-item-desc">Д0 без добавок, Д20</span>
+            </div>
+          </div>
+          <svg class="sb-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+
+        <a href="fbs-shlakoblok.html" class="sb-menu-item">
+          <div class="sb-item-left">
+            <span class="sb-item-marker">🔹</span>
+            <div class="sb-item-info">
+              <span class="sb-item-title">Блоки ФБС и Шлакоблок</span>
+              <span class="sb-item-desc">ФБС 24.3.6, 24.4.6, стеновой блок</span>
+            </div>
+          </div>
+          <svg class="sb-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+
+        <a href="koltsa-zhbi.html" class="sb-menu-item">
+          <div class="sb-item-left">
+            <span class="sb-item-marker">🔹</span>
+            <div class="sb-item-info">
+              <span class="sb-item-title">Кольца ЖБИ для септиков</span>
+              <span class="sb-item-desc">КС 10, КС 15, КС 20, крышки, люки</span>
+            </div>
+          </div>
+          <svg class="sb-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+      </nav>
+    </div>
+
+    <!-- 3. Онлайн-расчеты и сервисы -->
+    <div class="sb-menu-group">
+      <div class="sb-group-title">ОНЛАЙН-РАСЧЕТЫ И СЕРВИСЫ</div>
+      <nav class="sb-menu-list">
+        <a href="#kalkulyator" class="sb-menu-item sb-menu-item-simple">
+          <span class="sb-item-marker">⚡</span>
+          <span class="sb-item-title">Калькулятор навеса для авто</span>
+        </a>
+        <a href="#kalkulyator" class="sb-menu-item sb-menu-item-simple">
+          <span class="sb-item-marker">🚧</span>
+          <span class="sb-item-title">Расчет забора из профнастила</span>
+        </a>
+        <a href="#kalkulyator" class="sb-menu-item sb-menu-item-simple">
+          <span class="sb-item-marker">🏗️</span>
+          <span class="sb-item-title">Расчет арматуры фундамента</span>
+        </a>
+        <a href="#spravochnik" class="sb-menu-item sb-menu-item-simple">
+          <span class="sb-item-marker">📊</span>
+          <span class="sb-item-title">Инженерные таблицы ГОСТ и весов</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- 4. Информация и сервис -->
+    <div class="sb-menu-group">
+      <div class="sb-group-title">ИНФОРМАЦИЯ И СЕРВИС</div>
+      <nav class="sb-menu-list">
+        <a href="#business" class="sb-menu-item sb-menu-item-simple">
+          <span class="sb-item-marker">🚚</span>
+          <span class="sb-item-title">Доставка манипулятором и Газелью по краю</span>
+        </a>
+        <a href="#faq" class="sb-menu-item sb-menu-item-simple">
+          <span class="sb-item-marker">💳</span>
+          <span class="sb-item-title">Оплата при выгрузке</span>
+        </a>
+        <a href="#spravochnik" class="sb-menu-item sb-menu-item-simple">
+          <span class="sb-item-marker">📄</span>
+          <span class="sb-item-title">Сертификаты ГОСТ и контроль штангенциркулем</span>
+        </a>
+        <a href="#contacts" class="sb-menu-item sb-menu-item-simple">
+          <span class="sb-item-marker">📍</span>
+          <span class="sb-item-title">Контакты и база на карте</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- 5. Футер шторки -->
+  <div class="sb-drawer-footer">
+    <a href="tel:+79887328161" class="sb-btn-call">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+      <span>+7 (988) 732-81-61</span>
+    </a>
+    <div class="sb-messengers">
+      <a href="https://wa.me/79887328161" target="_blank" rel="noopener noreferrer" class="sb-btn-messenger sb-wa">
+        <span>WhatsApp</span>
+      </a>
+      <a href="https://t.me/TimurSB" target="_blank" rel="noopener noreferrer" class="sb-btn-messenger sb-tg">
+        <span>Telegram</span>
+      </a>
+    </div>
+  </div>
+</aside>
     <!-- Rambler Counter -->
     <script>
         (function (w, d, c) {
