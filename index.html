@@ -1162,13 +1162,13 @@ body.sb-drawer-is-open .sb-drawer {
   border-radius: 2px;
 }
 
-/* МОБИЛЬНАЯ ВЕРСТКА ШАПКИ (БЕЗ НАЕЗДОВ И С БУРГЕРОМ СЛЕВА) */
+/* МОБИЛЬНАЯ ВЕРСТКА ШАПКИ (БЕЗ ТОЧЕК И БЕЗ ОБРЕЗАНИЙ) */
 @media (max-width: 768px) {
   .header-inner {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    gap: 10px !important;
+    gap: 8px !important;
     padding: 8px 0 !important;
     min-height: 52px !important;
   }
@@ -1188,20 +1188,20 @@ body.sb-drawer-is-open .sb-drawer {
     display: none !important;
   }
 
-  /* 2. Логотип и название: идеальный оптический центр */
+  /* 2. Логотип и полное название без обрезания */
   .brand {
     order: 2 !important;
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 6px !important;
     flex: 1 1 auto !important;
     min-width: 0 !important;
     margin: 0 !important;
   }
 
   .brand img {
-    width: 28px !important;
-    height: 28px !important;
+    width: 26px !important;
+    height: 26px !important;
     flex-shrink: 0 !important;
     border-radius: 6px !important;
   }
@@ -1213,13 +1213,11 @@ body.sb-drawer-is-open .sb-drawer {
     justify-content: center !important;
   }
 
-  /* Нормальный, хорошо читаемый размер (больше не мелко!) */
+  /* Текст помещается целиком, точки убраны навсегда */
   .brand-name strong {
-    font-size: 0.86rem !important;
+    font-size: 0.80rem !important;
     font-weight: 800 !important;
     white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
     color: #fff !important;
     line-height: 1.2 !important;
     display: block !important;
@@ -1230,7 +1228,7 @@ body.sb-drawer-is-open .sb-drawer {
     display: none !important;
   }
 
-  /* 3. Кнопка звонка справа: тоже ровно 36px (полная симметрия с левой!) */
+  /* 3. Кнопка звонка справа: ровно 36px */
   .header-actions {
     order: 3 !important;
     flex-shrink: 0 !important;
@@ -1238,8 +1236,8 @@ body.sb-drawer-is-open .sb-drawer {
 
   .header-actions .btn {
     height: 36px !important;
-    padding: 0 14px !important;
-    font-size: 0.82rem !important;
+    padding: 0 12px !important;
+    font-size: 0.80rem !important;
     font-weight: 700 !important;
   }
 }
