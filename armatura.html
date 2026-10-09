@@ -1447,29 +1447,57 @@ body {
     /* ==========================================================================
        RESPONSIVE ADJUSTMENTS
        ========================================================================== */
-    @media (max-width: 768px) {
-      .header-nav {
-        display: none;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
-      .catalog-grid {
-        grid-template-columns: 1fr;
-      }
-      .card-actions {
-        grid-template-columns: 1fr;
-      }
-      .topbar-info {
-        gap: 10px;
-      }
-      .topbar-badge {
-        display: none;
-      }
-      .expert-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    /* ИДЕАЛЬНАЯ МОБИЛЬНАЯ ШАПКА БЕЗ СДВИГА ВПРАВО */
+@media (max-width: 600px) {
+  .header-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 8px 12px !important;
+    gap: 8px !important;
+  }
+
+  .logo {
+    max-width: 55% !important; /* Логотип занимает левую половину */
+    gap: 8px !important;
+  }
+
+  .logo-title {
+    font-size: 0.88rem !important; /* Уменьшаем шрифт, чтобы не лез на контакты */
+    line-height: 1.15 !important;
+  }
+
+  .logo-subtitle {
+    font-size: 0.6rem !important;
+  }
+
+  .header-actions {
+    max-width: 45% !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+
+  .phone-number {
+    font-size: 0.82rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* Скрываем на мобилках длинную фразу "Оплата строго при выгрузке" из шапки — 
+     она перегружала экран и вызывала наложение */
+  .phone-hint {
+    display: none !important;
+  }
+
+  /* На смартфонах в кнопке WhatsApp прячем слово "WhatsApp", 
+     оставляя только аккуратную круглую зеленую иконку */
+  .btn-wa-header {
+    padding: 7px 9px !important;
+  }
+  .btn-wa-header span {
+    display: none !important;
+  }
+}
   </style>
 
   <!-- ==========================================================================
@@ -1661,13 +1689,13 @@ body {
        ========================================================================== -->
   <header class="header">
     <div class="container header-container">
-      <a href="https://stroybazansk.ru/" class="logo" title="На главную базу stroybazansk.ru">
-        <img src="images/logo.png" alt="Стройбаза на Монтажной" class="site-logo-img">
-        <div class="logo-text">
-          <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
-          <span class="logo-subtitle">Невинномысск • Металлопрокат</span>
-        </div>
-      </a>
+      <a href="https://stroybazansk.ru/" class="logo" title="Стройбаза на Монтажной">
+  <img src="logo.png" alt="Стройбаза на Монтажной" class="site-logo-img">
+  <div class="logo-text">
+    <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
+    <span class="logo-subtitle">Невинномысск • Металлопрокат</span>
+  </div>
+</a>
 
       <nav class="header-nav">
         <a href="#catalog" class="catalog-btn">
@@ -3415,14 +3443,12 @@ body {
       <div class="footer-grid">
         <div class="footer-col">
           <div class="logo" style="margin-bottom: 16px;">
-            <div class="logo-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="3"/><line x1="20" y1="21" x2="20" y2="3"/><line x1="4" y1="7" x2="20" y2="5"/><line x1="4" y1="12" x2="20" y2="10"/><line x1="4" y1="17" x2="20" y2="15"/></svg>
-            </div>
-            <div class="logo-text">
-              <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
-              <span class="logo-subtitle">Невинномысск • stroybazansk.ru</span>
-            </div>
-          </div>
+  <img src="logo.png" alt="Стройбаза на Монтажной" class="site-logo-img">
+  <div class="logo-text">
+    <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
+    <span class="logo-subtitle">Невинномысск • stroybazansk.ru</span>
+  </div>
+</div>
           <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; max-width: 320px;">
             Оптово-розничная металлобаза в г. Невинномысск. Прямые поставки арматуры, профильной трубы, балки, швеллера и кровельных материалов с комбинатов России.
           </p>
