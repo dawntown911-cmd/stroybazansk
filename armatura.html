@@ -2626,6 +2626,781 @@
         </div>
       </div>
     </section>
+  <!-- ==========================================================================
+     ИНЖЕНЕРНО-ТЕХНИЧЕСКИЕ МОДУЛИ ДЛЯ ARMATURA.HTML
+     БАЗА: г. Невинномысск, ул. Монтажная, 10 (stroybazansk.ru)
+     ========================================================================== -->
+
+<style>
+  /* Специфичные стили для экспертных блоков */
+  .pto-expert-wrap {
+    color: #f4f4f5;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.65;
+    margin: 40px 0;
+  }
+
+  .pto-expert-wrap * {
+    box-sizing: border-box;
+  }
+
+  .pto-section-head {
+    margin-bottom: 28px;
+  }
+
+  .pto-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(214, 189, 122, 0.12);
+    border: 1px solid rgba(214, 189, 122, 0.35);
+    color: #d6bd7a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+  .pto-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    font-weight: 800;
+    line-height: 1.25;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+  }
+
+  .pto-title span {
+    background: linear-gradient(135deg, #d6bd7a 0%, #f5e7be 50%, #bfa157 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .pto-subtitle {
+    color: #9ca3af;
+    font-size: 0.98rem;
+    max-width: 860px;
+    margin-top: 6px;
+  }
+
+  /* БЛОК 1: Сетка экспертного описания */
+  .pto-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 22px;
+    margin-bottom: 40px;
+  }
+
+  .pto-info-card {
+    background: rgba(15, 17, 26, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 26px;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pto-info-card:hover {
+    border-color: rgba(214, 189, 122, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(214, 189, 122, 0.08);
+  }
+
+  .pto-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .pto-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(214, 189, 122, 0.1);
+    border: 1px solid rgba(214, 189, 122, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d6bd7a;
+    flex-shrink: 0;
+  }
+
+  .pto-card-header h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+  }
+
+  .pto-info-card p {
+    font-size: 0.9rem;
+    color: #a1a1aa;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .pto-callout {
+    margin-top: auto;
+    background: rgba(10, 12, 18, 0.85);
+    border-left: 3px solid #d6bd7a;
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.84rem;
+    color: #e4e4e7;
+  }
+
+  .pto-callout strong {
+    color: #d6bd7a;
+  }
+
+  /* БЛОК 2: Карточки-паспорта диаметров */
+  .passports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+  }
+
+  .pass-card {
+    background: rgba(15, 17, 26, 0.78);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.25s ease;
+  }
+
+  .pass-card:hover {
+    border-color: rgba(214, 189, 122, 0.55);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.8), 0 0 25px rgba(214, 189, 122, 0.1);
+  }
+
+  .pass-card.flagship-card {
+    border-color: rgba(214, 189, 122, 0.4);
+    background: linear-gradient(180deg, rgba(214, 189, 122, 0.08) 0%, rgba(15, 17, 26, 0.85) 35%);
+  }
+
+  .pass-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    gap: 10px;
+  }
+
+  .pass-title-group {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .pass-diam-num {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+  }
+
+  .pass-diam-label {
+    font-size: 0.86rem;
+    color: #d6bd7a;
+    font-weight: 600;
+  }
+
+  .pass-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .pass-badge-gold {
+    background: linear-gradient(135deg, #d6bd7a, #a98f48);
+    color: #07080c;
+  }
+
+  .pass-badge-std {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #9ca3af;
+  }
+
+  .pass-specs-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: rgba(8, 10, 16, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    text-align: center;
+    gap: 4px;
+  }
+
+  .pass-spec-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pass-spec-key {
+    font-size: 0.68rem;
+    color: #71717a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .pass-spec-val {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #e4e4e7;
+    margin-top: 2px;
+  }
+
+  .pass-content-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #d6bd7a;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .pass-text {
+    font-size: 0.88rem;
+    color: #a1a1aa;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+
+  .pass-use-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .pass-use-item {
+    font-size: 0.84rem;
+    color: #d4d4d8;
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    line-height: 1.4;
+  }
+
+  .pass-use-item::before {
+    content: "•";
+    color: #d6bd7a;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .pass-bottom {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .pass-price-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pass-price-main {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+  }
+
+  .pass-price-main small {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #9ca3af;
+  }
+
+  .pass-price-ton {
+    font-size: 0.74rem;
+    color: #a1a1aa;
+    margin-top: 2px;
+  }
+
+  .pass-btn-wa {
+    background: rgba(37, 211, 102, 0.12);
+    border: 1px solid rgba(37, 211, 102, 0.35);
+    color: #25d366;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .pass-btn-wa:hover {
+    background: #25d366;
+    color: #07080c;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+  }
+
+  @media (max-width: 640px) {
+    .pass-specs-bar {
+      grid-template-columns: 1fr;
+      text-align: left;
+      gap: 6px;
+    }
+    .pass-spec-col {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+</style>
+
+<div class="pto-expert-wrap">
+  <div class="container">
+
+    <!-- ======================================================================
+         БЛОК 1: ОБЩЕЕ ЭКСПЕРТНОЕ ОПИСАНИЕ КАТЕГОРИИ (SEO & ИНЖЕНЕРНЫЙ РЕГЛАМЕНТ)
+         ====================================================================== -->
+    <section class="pto-section-head">
+      <span class="pto-badge">Инженерный регламент ПТО • ГОСТ 34028-2016</span>
+      <h2 class="pto-title">
+        Строительная арматура в Невинномысске: <span>физика работы и грунтовая специфика</span>
+      </h2>
+      <p class="pto-subtitle">
+        Металлопрокат для монолитных работ в долине рек Кубань и Большой Зеленчук: конструктивные требования к бетону, нейтрализация растягивающих напряжений и регламенты сейсмостойкого строительства Ставрополья.
+      </p>
+    </section>
+
+    <div class="pto-overview-grid">
+      <!-- 1. Физика железобетона -->
+      <article class="pto-info-card">
+        <div class="pto-card-header">
+          <div class="pto-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V3M20 21V3M4 7h16M4 12h16M4 17h16"/></svg>
+          </div>
+          <h3>Совместная работа бетона и стали</h3>
+        </div>
+        <p>
+          Бетон обладает колоссальной прочностью на осевое сжатие, однако его прочность на растяжение и изгиб в 10–15 раз ниже. Без внутреннего стального скелета любая фундаментная балка ломается под весом стен при минимальной подвижке основания.
+        </p>
+        <p>
+          Строительная арматура воспринимает на себя растягивающие усилия в нижнем и верхнем поясах монолита, а вертикальные поперечные хомуты компенсируют касательные срезающие напряжения по наклонным трещинам в приопорных зонах.
+        </p>
+        <div class="pto-callout">
+          <strong>Коэффициент линейного расширения:</strong> у стали (12×10⁻⁶ °C⁻¹) и тяжелого бетона (10×10⁻⁶ °C⁻¹) показатели практически идентичны. Это гарантирует монолитность при перепадах температур от -25°C до +40°C без отслоений.
+        </div>
+      </article>
+
+      <!-- 2. Специфика Невинномысска (Сейсмика + Лессы) -->
+      <article class="pto-info-card">
+        <div class="pto-card-header">
+          <div class="pto-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+          </div>
+          <h3>Грунты Невинномысска и сейсмика 7–8 баллов</h3>
+        </div>
+        <p>
+          По нормам <strong>СП 14.13330.2018</strong> территория Невинномысска отнесена к сейсмоопасной зоне с расчетными колебаниями 7–8 баллов. В сочетании с просадочными лессовидными суглинками I–II типа, характерными для поймы Кубани, локальное замачивание грунта вызывает неравномерную усадку углов фундамента.
+        </p>
+        <p>
+          Для предотвращения раскрытия трещин на блоках и кирпичной кладке обязателен <strong>неразрывный сейсмопояс (армопояс)</strong> по внешним и несущим стенам под плиты и мауэрлат с рабочим диаметром стержней не менее 10–12 мм (А500С).
+        </p>
+        <div class="pto-callout">
+          <strong>Угловые узлы:</strong> перекрестия арматуры в углах армопояса и ростверка запрещено соединять простым нахлестом. Обязательны Г- и П-образные анкерные лапки с перехлестом не менее 40–50 диаметров прутка.
+        </div>
+      </article>
+
+      <!-- 3. Классы А500С vs А240 -->
+      <article class="pto-info-card">
+        <div class="pto-card-header">
+          <div class="pto-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Классы проката: А500С против А240</h3>
+        </div>
+        <p>
+          <strong>Класс А500С:</strong> горячекатаный термомеханически упрочненный прокат с серповидным рифленым профилем. Отсутствие продольного реберного контакта исключает концентраторы механических напряжений. Индекс «С» регламентирует свариваемость без охрупчивания околошовных зон (предел текучести ≥500 МПа).
+        </p>
+        <p>
+          <strong>Класс А240 (катанка):</strong> гладкий горячекатаный пруток из углеродистой стали Ст3сп/пс с текучестью 240 МПа. Обладает предельной пластичностью для холодной гибки замкнутых рамок, хомутов и распределительных связей без образования микротрещин.
+        </p>
+        <div class="pto-callout">
+          <strong>Замена стали:</strong> применение устаревшей стали 35ГС (класс А400 с кольцевым профилем) запрещено при дуговой электросварке — стыки дают хрупкий излом при сейсмоударе.
+        </div>
+      </article>
+
+      <!-- 4. Честный ГОСТ против заниженного ТУ -->
+      <article class="pto-info-card">
+        <div class="pto-card-header">
+          <div class="pto-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>ГОСТ 34028-2016 vs Минусовое ТУ</h3>
+        </div>
+        <p>
+          Фальсифицированная арматура, прокатываемая по заниженным ТУ («облегченка»), продается на 3–5% дешевле за метр, но имеет заниженное сечение тела на 15–22%. Например, пруток «12 мм ТУ» по факту имеет сердечник 10.4–10.7 мм, что приводит к дефициту несущей способности плиты или ленты.
+        </p>
+        <p>
+          Металлобаза на ул. Монтажная, 10 поставляет сертифицированный ГОСТ со сплошным контролем массы метра. Перед погрузкой клиенту бесплатно предоставляется штангенциркуль для контрольного замера тела проката (по гладкой части между ребрами).
+        </p>
+        <div class="pto-callout">
+          <strong>Входной контроль:</strong> весы базы на Монтажной проходят государственную поверку. При покупке тоннажа вы платите за честную массу металла без скрытого недовеса.
+        </div>
+      </article>
+    </div>
+
+    <!-- ======================================================================
+         БЛОК 2: ПОДРОБНЫЕ ПАСПОРТА ПРИМЕНЕНИЯ ДИАМЕТРОВ (6 — 16 ММ)
+         ====================================================================== -->
+    <section class="pto-section-head" style="margin-top: 50px;">
+      <span class="pto-badge" style="border-color: rgba(16, 185, 129, 0.4); color: #10b981;">Технологические карты ПТО</span>
+      <h2 class="pto-title">
+        Паспорта применения арматуры <span>по диаметрам (6–16 мм)</span>
+      </h2>
+      <p class="pto-subtitle">
+        Точные технические параметры погонного веса, метража в тонне, марок сталей и нормативных узлов использования согласно строительным правилам СП 63.13330.2018.
+      </p>
+    </section>
+
+    <div class="passports-grid">
+
+      <!-- ДИАМЕТР 6 ММ -->
+      <article class="pass-card">
+        <div class="pass-head">
+          <div class="pass-title-group">
+            <span class="pass-diam-num">Ø 6 мм</span>
+            <span class="pass-diam-label">А240 / А500С</span>
+          </div>
+          <span class="pass-badge pass-badge-std">Катанка / Пруток</span>
+        </div>
+
+        <div class="pass-specs-bar">
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Вес 1 метра</span>
+            <span class="pass-spec-val">0.222 кг</span>
+          </div>
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Метров в тонне</span>
+            <span class="pass-spec-val">≈ 4 504 м</span>
+          </div>
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Марка стали</span>
+            <span class="pass-spec-val">Ст3сп / Ст3пс</span>
+          </div>
+        </div>
+
+        <div class="pass-content-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Инженерное назначение:
+        </div>
+        <p class="pass-text">
+          Пластичный гладкий или рифленый прокат. Идеально поддается холодной гибке ручными арматурогибами на 90° и 180° без микротрещин внутреннего радиуса. Формирует жесткий пространственный каркас.
+        </p>
+
+        <ul class="pass-use-list">
+          <li class="pass-use-item">Гнутые хомуты (рамки) для балок фундамента, колонн и армопояса с шагом 200–300 мм;</li>
+          <li class="pass-use-item">Связывание продольных рабочих стержней 12–16 мм в единый объемный каркас;</li>
+          <li class="pass-use-item">Вязаная сетка для стяжки теплых полов и придомовых пешеходных дорожек.</li>
+        </ul>
+
+        <div class="pass-bottom">
+          <div class="pass-price-box">
+            <span class="pass-price-main">21 ₽ <small>/ метр</small></span>
+            <span class="pass-price-ton">59 000 ₽ / тонна</span>
+          </div>
+          <a href="https://wa.me/79887328161?text=Здравствуйте!%20Хочу%20заказать%20арматуру%206%20мм%20со%20склада%20на%20Монтажной%2010" target="_blank" rel="noopener" class="pass-btn-wa">
+            Заказать 6 мм
+          </a>
+        </div>
+      </article>
+
+      <!-- ДИАМЕТР 8 ММ -->
+      <article class="pass-card">
+        <div class="pass-head">
+          <div class="pass-title-group">
+            <span class="pass-diam-num">Ø 8 мм</span>
+            <span class="pass-diam-label">А500С Рифленая</span>
+          </div>
+          <span class="pass-badge pass-badge-std">Периодический профиль</span>
+        </div>
+
+        <div class="pass-specs-bar">
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Вес 1 метра</span>
+            <span class="pass-spec-val">0.395 кг</span>
+          </div>
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Метров в тонне</span>
+            <span class="pass-spec-val">≈ 2 531 м</span>
+          </div>
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Хлыст 11.7 м</span>
+            <span class="pass-spec-val">4.62 кг</span>
+          </div>
+        </div>
+
+        <div class="pass-content-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Инженерное назначение:
+        </div>
+        <p class="pass-text">
+          Оптимальный прокат для плоского поверхностного армирования. Серповидное рифление обеспечивает надежную анкеровку в бетонах марок В15–В25, воспринимая растяжение при пучении грунта.
+        </p>
+
+        <ul class="pass-use-list">
+          <li class="pass-use-item">Армирование монолитной бетонной отмостки вокруг дома толщиной 100–120 мм;</li>
+          <li class="pass-use-item">Капитальная стяжка пола по грунту под гаражи и въездные площадки для авто;</li>
+          <li class="pass-use-item">Усиленные хомуты для фундаментных балок высотой более 800 мм.</li>
+        </ul>
+
+        <div class="pass-bottom">
+          <div class="pass-price-box">
+            <span class="pass-price-main">30 ₽ <small>/ метр</small></span>
+            <span class="pass-price-ton">53 000 ₽ / тонна</span>
+          </div>
+          <a href="https://wa.me/79887328161?text=Здравствуйте!%20Хочу%20заказать%20арматуру%208%20мм%20А500С%20со%20склада%20на%20Монтажной%2010" target="_blank" rel="noopener" class="pass-btn-wa">
+            Заказать 8 мм
+          </a>
+        </div>
+      </article>
+
+      <!-- ДИАМЕТР 10 ММ -->
+      <article class="pass-card">
+        <div class="pass-head">
+          <div class="pass-title-group">
+            <span class="pass-diam-num">Ø 10 мм</span>
+            <span class="pass-diam-label">А500С Рифленая</span>
+          </div>
+          <span class="pass-badge pass-badge-std">Сейсмопояс / Лента</span>
+        </div>
+
+        <div class="pass-specs-bar">
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Вес 1 метра</span>
+            <span class="pass-spec-val">0.617 кг</span>
+          </div>
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Метров в тонне</span>
+            <span class="pass-spec-val">≈ 1 620 м</span>
+          </div>
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Хлыст 11.7 м</span>
+            <span class="pass-spec-val">7.22 кг</span>
+          </div>
+        </div>
+
+        <div class="pass-content-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Инженерное назначение:
+        </div>
+        <p class="pass-text">
+          Основной рабочий профиль для малоэтажных хозпостроек и верхних поясов лент. Сохраняет высокую прочность на разрыв при удобном весе хлыста, позволяя вести монтаж силами 1–2 рабочих.
+        </p>
+
+        <ul class="pass-use-list">
+          <li class="pass-use-item">Монолитный сейсмопояс (армопояс) по газобетону/кирпичу под деревянные перекрытия и мауэрлат;</li>
+          <li class="pass-use-item">Ленточные монолитные фундаменты под гаражи, бани, летние кухни и хозблоки;</li>
+          <li class="pass-use-item">Конструктивный верхний пояс мелкозаглубленных лент для одноэтажных легких домов.</li>
+        </ul>
+
+        <div class="pass-bottom">
+          <div class="pass-price-box">
+            <span class="pass-price-main">45 ₽ <small>/ метр</small></span>
+            <span class="pass-price-ton">51 500 ₽ / тонна</span>
+          </div>
+          <a href="https://wa.me/79887328161?text=Здравствуйте!%20Хочу%20заказать%20арматуру%2010%20мм%20А500С%20со%20склада%20на%20Монтажной%2010" target="_blank" rel="noopener" class="pass-btn-wa">
+            Заказать 10 мм
+          </a>
+        </div>
+      </article>
+
+      <!-- ДИАМЕТР 12 ММ (ФЛАГМАН) -->
+      <article class="pass-card flagship-card">
+        <div class="pass-head">
+          <div class="pass-title-group">
+            <span class="pass-diam-num" style="color: #f5e7be;">Ø 12 мм</span>
+            <span class="pass-diam-label">А500С ★ Флагман</span>
+          </div>
+          <span class="pass-badge pass-badge-gold">Хит фундаментов</span>
+        </div>
+
+        <div class="pass-specs-bar" style="border-color: rgba(214,189,122,0.25);">
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Вес 1 метра</span>
+            <span class="pass-spec-val" style="color: #f5e7be;">0.888 кг</span>
+          </div>
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Метров в тонне</span>
+            <span class="pass-spec-val">≈ 1 126 м</span>
+          </div>
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Хлыст 11.7 м</span>
+            <span class="pass-spec-val">10.39 кг</span>
+          </div>
+        </div>
+
+        <div class="pass-content-title" style="color: #ffffff;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Золотой стандарт частного домостроения:
+        </div>
+        <p class="pass-text">
+          Главный диаметр для капитального строительства в регионе. По СП 63.13330 при длине грани фундамента более 3 метров именно 12 мм стержни обеспечивают нормативное минимальное армирование (не менее 0.1% площади сечения бетона).
+        </p>
+
+        <ul class="pass-use-list">
+          <li class="pass-use-item"><strong style="color:#fff;">Ленточные фундаменты:</strong> рабочие нижние и верхние пояса домов из кирпича, пеплоблока и газобетона;</li>
+          <li class="pass-use-item"><strong style="color:#fff;">Плитные фундаменты:</strong> нижняя и верхняя сетка монолитных плит толщиной 200–250 мм (шаг 200×200 мм);</li>
+          <li class="pass-use-item"><strong style="color:#fff;">Буронабивные сваи:</strong> вертикальные пространственные каркасы сопряжения с ростверком.</li>
+        </ul>
+
+        <div class="pass-bottom">
+          <div class="pass-price-box">
+            <span class="pass-price-main" style="color: #d6bd7a;">56 ₽ <small>/ метр</small></span>
+            <span class="pass-price-ton"><strong style="color:#fff;">48 700 ₽</strong> / тонна (Опт)</span>
+          </div>
+          <a href="https://wa.me/79887328161?text=Здравствуйте!%20Хочу%20заказать%20арматуру%2012%20мм%20А500С%20со%20склада%20на%20Монтажной%2010" target="_blank" rel="noopener" class="pass-btn-wa" style="background:#25d366; color:#07080c; font-weight:700;">
+            Заказать 12 мм
+          </a>
+        </div>
+      </article>
+
+      <!-- ДИАМЕТР 14 ММ -->
+      <article class="pass-card">
+        <div class="pass-head">
+          <div class="pass-title-group">
+            <span class="pass-diam-num">Ø 14 мм</span>
+            <span class="pass-diam-label">А500С Рифленая</span>
+          </div>
+          <span class="pass-badge pass-badge-std">Усиленная / Высокие нагрузки</span>
+        </div>
+
+        <div class="pass-specs-bar">
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Вес 1 метра</span>
+            <span class="pass-spec-val">1.210 кг</span>
+          </div>
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Метров в тонне</span>
+            <span class="pass-spec-val">≈ 826 м</span>
+          </div>
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Хлыст 11.7 м</span>
+            <span class="pass-spec-val">14.16 кг</span>
+          </div>
+        </div>
+
+        <div class="pass-content-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Инженерное назначение:
+        </div>
+        <p class="pass-text">
+          Увеличенное сечение для участков с высокими расчетными моментами изгиба. Применяется при возведении 2–3 этажных тяжелых коттеджей с монолитными перекрытиями на проблемных грунтах с высоким УГВ.
+        </p>
+
+        <ul class="pass-use-list">
+          <li class="pass-use-item">Фундаменты тяжелых двухэтажных кирпичных домов на пучинистых суглинках;</li>
+          <li class="pass-use-item">Монолитные межэтажные перекрытия с пролетами более 4.5–6 метров;</li>
+          <li class="pass-use-item">Чаши заглубленных монолитных бассейнов и резервуаров с гидростатическим давлением.</li>
+        </ul>
+
+        <div class="pass-bottom">
+          <div class="pass-price-box">
+            <span class="pass-price-main">76 ₽ <small>/ метр</small></span>
+            <span class="pass-price-ton">51 000 ₽ / тонна</span>
+          </div>
+          <a href="https://wa.me/79887328161?text=Здравствуйте!%20Хочу%20заказать%20арматуру%2014%20мм%20А500С%20со%20склада%20на%20Монтажной%2010" target="_blank" rel="noopener" class="pass-btn-wa">
+            Заказать 14 мм
+          </a>
+        </div>
+      </article>
+
+      <!-- ДИАМЕТР 16 ММ -->
+      <article class="pass-card">
+        <div class="pass-head">
+          <div class="pass-title-group">
+            <span class="pass-diam-num">Ø 16 мм</span>
+            <span class="pass-diam-label">А500С Рифленая</span>
+          </div>
+          <span class="pass-badge pass-badge-std">Тяжелый монолит</span>
+        </div>
+
+        <div class="pass-specs-bar">
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Вес 1 метра</span>
+            <span class="pass-spec-val">1.580 кг</span>
+          </div>
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Метров в тонне</span>
+            <span class="pass-spec-val">≈ 633 м</span>
+          </div>
+          <div class="pass-spec-col">
+            <span class="pass-spec-key">Хлыст 11.7 м</span>
+            <span class="pass-spec-val">18.49 кг</span>
+          </div>
+        </div>
+
+        <div class="pass-content-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Инженерное назначение:
+        </div>
+        <p class="pass-text">
+          Мощный сортовой прокат для высокоответственных железобетонных элементов. Обладает высочайшим сопротивлением поперечному срезу и динамическим циклическим нагрузкам.
+        </p>
+
+        <ul class="pass-use-list">
+          <li class="pass-use-item">Высоконагруженные цокольные этажи, монолитные подпорные стены и рампы;</li>
+          <li class="pass-use-item">Несущие ригели, колонны, прогоны и балки перекрытий производственных зданий;</li>
+          <li class="pass-use-item">Фундаменты под промышленные ангары, склады, зернохранилища и автосервисы.</li>
+        </ul>
+
+        <div class="pass-bottom">
+          <div class="pass-price-box">
+            <span class="pass-price-main">98 ₽ <small>/ метр</small></span>
+            <span class="pass-price-ton">50 800 ₽ / тонна</span>
+          </div>
+          <a href="https://wa.me/79887328161?text=Здравствуйте!%20Хочу%20заказать%20арматуру%2016%20мм%20А500С%20со%20склада%20на%20Монтажной%2010" target="_blank" rel="noopener" class="pass-btn-wa">
+            Заказать 16 мм
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
+<!-- КОНЕЦ ИНЖЕНЕРНО-ТЕХНИЧЕСКИХ МОДУЛЕЙ -->
   </main>
 
   <!-- ==========================================================================
