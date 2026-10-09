@@ -69,23 +69,36 @@
     }
 
     html {
-      scroll-behavior: smooth;
-      color-scheme: dark;
-    }
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      background-image: 
-        radial-gradient(circle at 15% 10%, rgba(214, 189, 122, 0.05) 0%, transparent 45%),
-        radial-gradient(circle at 85% 60%, rgba(56, 189, 248, 0.03) 0%, transparent 40%),
-        radial-gradient(circle at 50% 90%, rgba(214, 189, 122, 0.04) 0%, transparent 50%);
-      background-attachment: fixed;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  background-image: 
+    radial-gradient(circle at 15% 10%, rgba(214, 189, 122, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 85% 60%, rgba(56, 189, 248, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(214, 189, 122, 0.04) 0%, transparent 50%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ВОТ ПРАВИЛО ДЛЯ ВАШЕГО ЛОГОТИПА: */
+.site-logo-img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
 
     a {
       color: inherit;
@@ -590,7 +603,7 @@
 
     .catalog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 22px;
     }
 
@@ -1649,16 +1662,7 @@
   <header class="header">
     <div class="container header-container">
       <a href="https://stroybazansk.ru/" class="logo" title="На главную базу stroybazansk.ru">
-        <div class="logo-icon">
-          <!-- Rebar profile icon -->
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-            <line x1="4" y1="21" x2="4" y2="3"/>
-            <line x1="20" y1="21" x2="20" y2="3"/>
-            <line x1="4" y1="7" x2="20" y2="5"/>
-            <line x1="4" y1="12" x2="20" y2="10"/>
-            <line x1="4" y1="17" x2="20" y2="15"/>
-          </svg>
-        </div>
+        <img src="images/logo.png" alt="Стройбаза на Монтажной" class="site-logo-img">
         <div class="logo-text">
           <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
           <span class="logo-subtitle">Невинномысск • Металлопрокат</span>
