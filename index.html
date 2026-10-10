@@ -2057,243 +2057,165 @@ body.sb-drawer-is-open .sb-drawer {
             </div>
         </div>
 
-        <!-- 1. КАТАЛОГ С ТОЧНЫМИ ЦЕНАМИ ИЗ ВАШЕГО YML -->
-        <section class="section" id="catalog">
-            <div class="container">
-                <div class="section-head">
-                    <div class="badge"><span class="badge-dot"></span> Складской прайс</div>
-                    <h2 class="section-title">Каталог металлопроката, ЖБИ и цемента</h2>
-                    <p class="section-copy">Цены склада на ул. Монтажная, 10. Честный ГОСТ, проверка толщины стенки штангенциркулем.</p>
-                </div>
-                <!-- Карточка перехода на специализированный склад metall-26.ru -->
-                <div style="margin: 0 auto 32px; max-width: 900px; background: linear-gradient(135deg, rgba(214, 189, 122, 0.12) 0%, rgba(15, 17, 26, 0.85) 100%); border: 1px solid var(--border-glow); border-radius: var(--radius-xl); padding: 22px 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-                    <div>
-                        <div class="badge" style="margin-bottom: 6px;"><span class="badge-dot"></span> Онлайн-склад с доставкой</div>
-                        <div style="font-size: 1.15rem; font-weight: 800; color: #fff;">Специализированная база металлопроката: metall-26.ru</div>
-                        <div style="color: var(--muted); font-size: 0.86rem; margin-top: 4px;">6 000+ позиций труб и арматуры, онлайн-корзина и доставка манипулятором в любой хутор Ставрополья.</div>
-                    </div>
-                    <a class="btn btn-primary" href="https://metall-26.ru" target="_blank" rel="noopener" style="white-space: nowrap; height: 42px;">
-                        Открыть metall-26.ru ↗
-                    </a>
-                </div>
+        <!-- ==========================================================================
+     КАТАЛОГ-ВИТРИНА: 5 КЛЮЧЕВЫХ НАПРАВЛЕНИЙ БАЗЫ НА МОНТАЖНОЙ 10
+     ========================================================================== -->
+<section class="section" id="catalog">
+  <div class="container">
+    <div class="section-head">
+      <div class="badge"><span class="badge-dot"></span> Складской сортамент</div>
+      <h2 class="section-title">Каталог стройматериалов и металлопроката</h2>
+      <p class="section-copy">
+        Собственный склад в Невинномысске на ул. Монтажная, 10. Бесплатная погрузка автопогрузчиком, честный ГОСТ без занижения толщины стенки, доставка за 1.5–2 часа с оплатой при выгрузке.
+      </p>
+    </div>
 
-                <div class="tabs-nav">
-                    <button class="tab-btn active" onclick="filterCatalog('all', this)">Все товары</button>
-                    <button class="tab-btn" onclick="filterCatalog('metal', this)">Металлопрокат</button>
-                    <button class="tab-btn" onclick="filterCatalog('cement', this)">Цемент М500</button>
-                    <button class="tab-btn" onclick="filterCatalog('concrete', this)">ЖБИ и Блоки</button>
-                    <button class="tab-btn" onclick="filterCatalog('service', this)">Спецтехника</button>
-                </div>
+    <!-- 5 Ключевых Хабов -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 30px;">
+      
+      <!-- ХАБ 1: АРМАТУРА -->
+      <article class="product-card" style="border-color: rgba(214, 189, 122, 0.35); background: linear-gradient(180deg, rgba(214, 189, 122, 0.08) 0%, rgba(15, 17, 26, 0.9) 35%);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span class="price">★ В наличии 30+ тонн</span>
+          <span style="font-size: 0.78rem; color: #4ade80; font-weight: 700;">ГОСТ 34028-2016</span>
+        </div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 6px;">Арматура строительная</h3>
+        <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">
+          Рифленая А500С и гладкая А240 диаметром 6, 8, 10, 12, 14, 16 мм. Для ленточных фундаментов, сейсмопояса и плит.
+        </p>
+        <div style="background: rgba(0,0,0,0.35); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; font-size: 0.85rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span style="color: var(--muted);">Флагман 12 мм:</span>
+            <strong style="color: var(--accent);">56 ₽/м (48 700 ₽/т)</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--muted);">Резка пополам (5.85 м):</span>
+            <strong style="color: #4ade80;">Бесплатно 0 ₽</strong>
+          </div>
+        </div>
+        <a href="armatura.html" class="btn btn-primary" style="width: 100%; border-radius: 8px;">
+          Перейти в каталог арматуры (6–16 мм) →
+        </a>
+      </article>
 
-                <div class="assortment-grid">
-                    <article class="product-card" data-cat="metal">
-                        <div class="product-img"><img src="armatura-12.jpg" alt="Арматура рифленая 12 мм А500С" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Арматура 12 мм А500С (ГОСТ 34028-2016)</h3><span class="price">56 ₽/м</span></div>
-                            <p>Рабочая арматура для ленточных фундаментов, монолитных плит и балок перекрытия капитальных домов.</p>
-                            <div class="product-specs">
-                                <div><span>Сталь / ГОСТ:</span><strong>А500С / 34028-2016</strong></div>
-                                <div><span>Вес метра:</span><strong>~0.888 кг/м</strong></div>
-                                <div><span>Хлыст:</span><strong>11.7 м (резка пополам 0 ₽)</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать арматуру 12 мм</a></div>
-                        </div>
-                    </article>
+      <!-- ХАБ 2: ПРОФИЛЬНЫЕ ТРУБЫ -->
+      <article class="product-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span class="price">Честная стенка 2–3 мм</span>
+          <span style="font-size: 0.78rem; color: var(--accent); font-weight: 700;">ГОСТ 8645 / 8639</span>
+        </div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 6px;">Профильные трубы</h3>
+        <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">
+          Прямоугольные и квадратные трубы 40х20, 40х40, 60х40, 60х60, 80х80 мм. Под ветровые нагрузки («армавирец»).
+        </p>
+        <div style="background: rgba(0,0,0,0.35); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; font-size: 0.85rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span style="color: var(--muted);">Заборная 40х20х2:</span>
+            <strong style="color: var(--accent);">115 ₽/м</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--muted);">Навесы 60х40х3:</span>
+            <strong style="color: var(--accent);">260 ₽/м</strong>
+          </div>
+        </div>
+        <a href="truby.html" class="btn btn-primary" style="width: 100%; border-radius: 8px;">
+          Перейти в каталог профильных труб →
+        </a>
+      </article>
 
-                    <article class="product-card" data-cat="metal">
-                        <div class="product-img"><img src="armatura-10.jpg" alt="Арматура 10 мм А500С" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Арматура 10 мм А500С (ГОСТ)</h3><span class="price">45 ₽/м</span></div>
-                            <p>Для армирования монолитного сейсмопояса (армопояса) под плиты и мауэрлат, фундаментов гаражей и пристроек.</p>
-                            <div class="product-specs">
-                                <div><span>Класс:</span><strong>А500С рифленая</strong></div>
-                                <div><span>Вес метра:</span><strong>~0.617 кг/м</strong></div>
-                                <div><span>Длина:</span><strong>11.7 м / резка 5.85 м</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать арматуру 10 мм</a></div>
-                        </div>
-                    </article>
+      <!-- ХАБ 3: ЦЕМЕНТ М500 -->
+      <article class="product-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span class="price">ОАО «Новоросцемент»</span>
+          <span style="font-size: 0.78rem; color: #4ade80; font-weight: 700;">ГОСТ 31108-2020</span>
+        </div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 6px;">Цемент Новороссийск М500</h3>
+        <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">
+          Заводской портландцемент в мешках по 50 кг. Д0 (без добавок) для монолита и Д20 для кладки и стяжки. Сухой склад.
+        </p>
+        <div style="background: rgba(0,0,0,0.35); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; font-size: 0.85rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span style="color: var(--muted);">Мешок 50 кг:</span>
+            <strong style="color: var(--accent);">570 ₽</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--muted);">Поддон (30 шт / 1.5 т):</span>
+            <strong style="color: var(--accent);">17 100 ₽</strong>
+          </div>
+        </div>
+        <a href="tsement-m500.html" class="btn btn-primary" style="width: 100%; border-radius: 8px;">
+          Перейти в каталог цемента М500 →
+        </a>
+      </article>
 
-                    <article class="product-card" data-cat="metal">
-                        <div class="product-img"><img src="armatura-8.jpg" alt="Арматура 8 мм А500С" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Арматура 8 мм А500С (ГОСТ)</h3><span class="price">30 ₽/м</span></div>
-                            <p>Для стяжек пола, бетонных дорожек, отмосток вокруг дома, перемычек и усиленных хомутов фундаментных лент.</p>
-                            <div class="product-specs">
-                                <div><span>Класс:</span><strong>А500С рифленая</strong></div>
-                                <div><span>Вес метра:</span><strong>~0.395 кг/м</strong></div>
-                                <div><span>Применение:</span><strong>Стяжка, хомуты</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать арматуру 8 мм</a></div>
-                        </div>
-                    </article>
+      <!-- ХАБ 4: БЛОКИ ФБС И ШЛАКОБЛОК -->
+      <article class="product-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span class="price">Монтаж в котлован</span>
+          <span style="font-size: 0.78rem; color: var(--accent); font-weight: 700;">ГОСТ 13579 / 6133</span>
+        </div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 6px;">Блоки ФБС и Шлакоблок</h3>
+        <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">
+          Тяжелые блоки ФБС 24.4.6 и 24.3.6 (монтаж стрелой прямо в траншею), стеновой шлакоблок 390х190х190 для стен и цоколей.
+        </p>
+        <div style="background: rgba(0,0,0,0.35); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; font-size: 0.85rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span style="color: var(--muted);">ФБС 24.4.6 (1.3 т):</span>
+            <strong style="color: var(--accent);">2 800 ₽/шт</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--muted);">Шлакоблок М75:</span>
+            <strong style="color: #4ade80;">48 ₽/шт</strong>
+          </div>
+        </div>
+        <a href="fbs-shlakoblok.html" class="btn btn-primary" style="width: 100%; border-radius: 8px;">
+          Каталог блоков ФБС и шлакоблока →
+        </a>
+      </article>
 
-                    <article class="product-card" data-cat="metal">
-                        <div class="product-img"><img src="armatura-6.jpg" alt="Арматура 6 мм" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Арматура стальная 6 мм (ГОСТ)</h3><span class="price">21 ₽/м</span></div>
-                            <p>Отлично гнется на 90° и 180° без трещин. Изготовление хомутов (рамок) для пространственных каркасов фундамента и колонн.</p>
-                            <div class="product-specs">
-                                <div><span>Класс:</span><strong>А240 / А500С ГОСТ</strong></div>
-                                <div><span>Назначение:</span><strong>Хомуты для каркасов</strong></div>
-                                <div><span>Резка:</span><strong>Бесплатно пополам</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать арматуру 6 мм</a></div>
-                        </div>
-                    </article>
+      <!-- ХАБ 5: КОЛЬЦА ЖБИ -->
+      <article class="product-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span class="price">Септик под ключ</span>
+          <span style="font-size: 0.78rem; color: #4ade80; font-weight: 700;">ГОСТ 8020-90</span>
+        </div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 6px;">Кольца ЖБИ для септиков</h3>
+        <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">
+          Колодезные кольца КС 10.9, КС 15.9, КС 20.9, плиты перекрытия ПП с люками и днища ПН. Монтаж стрелой в котлован за 1.5 часа.
+        </p>
+        <div style="background: rgba(0,0,0,0.35); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; font-size: 0.85rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span style="color: var(--muted);">Кольцо КС 15.9 (1.5 м):</span>
+            <strong style="color: var(--accent);">3 900 ₽</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--muted);">Монтаж манипулятором:</span>
+            <strong style="color: #4ade80;">В яму стрелой</strong>
+          </div>
+        </div>
+        <a href="koltsa-zhbi.html" class="btn btn-primary" style="width: 100%; border-radius: 8px;">
+          Каталог колец ЖБИ для септиков →
+        </a>
+      </article>
 
-                    <article class="product-card" data-cat="metal">
-                        <div class="product-img"><img src="truba-80.jpg" alt="Труба 80х80х3 мм" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Труба 80х80х3 мм несущая (6 м)</h3><span class="price">460 ₽/м</span></div>
-                            <p>Мощная несущая труба под серьезные нагрузки: опорные столбы больших навесов, воротные колонны и силовые балки.</p>
-                            <div class="product-specs">
-                                <div><span>Стенка:</span><strong>Честные 3.0 мм (ГОСТ)</strong></div>
-                                <div><span>Вес метра:</span><strong>~7.1 кг/м</strong></div>
-                                <div><span>Хлыст:</span><strong>6.0 метров</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать трубу 80х80</a></div>
-                        </div>
-                    </article>
+    </div>
 
-                    <article class="product-card" data-cat="metal">
-                        <div class="product-img"><img src="truba-60-40.jpg" alt="Труба 60х40х3 мм" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Труба 60х40х3 мм усиленная (6 м)</h3><span class="price">260 ₽/м</span></div>
-                            <p>Усиленная труба с честной стенкой 3 мм. Не прогорает при сварке. Для ферм навесов, каркасов распашных и откатных ворот.</p>
-                            <div class="product-specs">
-                                <div><span>Стенка:</span><strong>3.0 мм ГОСТ</strong></div>
-                                <div><span>Вес метра:</span><strong>~4.3 кг/м</strong></div>
-                                <div><span>Хлыст:</span><strong>6.0 метров</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать трубу 60х40</a></div>
-                        </div>
-                    </article>
+    <!-- Блок Манипулятора 15 тонн -->
+    <div id="manipulator" style="background: linear-gradient(135deg, rgba(22, 26, 38, 0.95), rgba(11, 13, 20, 0.95)); border: 1px solid var(--border-glow); border-radius: var(--radius-xl); padding: 28px 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+      <div>
+        <div class="badge" style="margin-bottom: 8px;"><span class="badge-dot"></span> Автопарк базы на Монтажной 10</div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff; margin: 0 0 6px;">Доставка манипулятором 15 тонн (стрела 5 тонн)</h3>
+        <p style="color: var(--muted); font-size: 0.92rem; margin: 0; max-width: 680px;">
+          Перевозка длинномеров 6м и 11.7м, поддонов с цементом, блоков ФБС и монтаж колец ЖБИ прямо в котлован без аренды автокрана.
+        </p>
+      </div>
+      <a href="tel:+79887328161" class="btn btn-wa" style="white-space: nowrap; height: 46px;">
+        Заказать манипулятор: 3 000 ₽/ч
+      </a>
+    </div>
 
-                    <article class="product-card" data-cat="metal">
-                        <div class="product-img"><img src="truba-40-40.jpg" alt="Труба 40х40х2 мм" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Труба 40х40х2 мм ГОСТ (6 м)</h3><span class="price">160 ₽/м</span></div>
-                            <p>Идеальна для столбов забора из профнастила, 3D-панелей, каркасов калиток, легких навесов, шпалер и беседок.</p>
-                            <div class="product-specs">
-                                <div><span>Стенка:</span><strong>2.0 мм ГОСТ</strong></div>
-                                <div><span>Вес метра:</span><strong>~2.35 кг/м</strong></div>
-                                <div><span>Назначение:</span><strong>Столбы забора, калитки</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать трубу 40х40</a></div>
-                        </div>
-                    </article>
-
-                    <article class="product-card" data-cat="metal">
-                        <div class="product-img"><img src="truba-40-20.jpg" alt="Труба 40х20х2 мм" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Труба 40х20х2 мм ГОСТ (6 м)</h3><span class="price">115 ₽/м</span></div>
-                            <p>Главный материал для лаг (прожилин) забора из профлиста, кровельной обрешетки навесов, каркасов теплиц и ограждений.</p>
-                            <div class="product-specs">
-                                <div><span>Стенка:</span><strong>2.0 мм ГОСТ</strong></div>
-                                <div><span>Вес метра:</span><strong>~1.70 кг/м</strong></div>
-                                <div><span>Назначение:</span><strong>Лаги забора, обрешетка</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать трубу 40х20</a></div>
-                        </div>
-                    </article>
-
-                    <article class="product-card" data-cat="cement">
-                        <div class="product-img"><img src="cement-d0.jpg" alt="Цемент Новороссийский М500 Д0" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Цемент Новороссийский М500 Д0 (50 кг)</h3><span class="price">570 ₽</span></div>
-                            <p>Бездобавочный портландцемент ЦЕМ I 42,5Н из чистого клинкера. Высочайшая прочность (52.6 МПа) для монолитных фундаментов и армопояса.</p>
-                            <div class="product-specs">
-                                <div><span>Марка:</span><strong>М500 Д0 (без добавок)</strong></div>
-                                <div><span>Завод:</span><strong>ОАО Новоросцемент</strong></div>
-                                <div><span>Хранение:</span><strong>Сухой крытый склад</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать цемент М500 Д0</a></div>
-                        </div>
-                    </article>
-
-                    <article class="product-card" data-cat="cement">
-                        <div class="product-img"><img src="cement-d20.jpg" alt="Цемент Новороссийский М500 Д20" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Цемент Новороссийский М500 Д20 (50 кг)</h3><span class="price">570 ₽</span></div>
-                            <p>Универсальный цемент по ГОСТ 31108-2020. Для стяжки пола, отмосток, кладки кирпича и шлакоблока, бетонирования столбов.</p>
-                            <div class="product-specs">
-                                <div><span>Марка:</span><strong>М500 Д20 (50 кг)</strong></div>
-                                <div><span>Поддон:</span><strong>30 мешков (1.5 т)</strong></div>
-                                <div><span>Погрузка:</span><strong>Погрузчиком за 5 минут</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать цемент М500 Д20</a></div>
-                        </div>
-                    </article>
-
-                    <article class="product-card" data-cat="concrete">
-                        <div class="product-img"><img src="shlakoblok.jpg" alt="Шлакоблок стеновой" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Шлакоблок стеновой (390×190×190 мм)</h3><span class="price">48 ₽/шт</span></div>
-                            <p>Плотный пропаренный стеновой блок. Высокая прочность, морозостойкость. Для стен домов, гаражей, мастерских и заборов.</p>
-                            <div class="product-specs">
-                                <div><span>Размер:</span><strong>390х190х190 мм пустотелый</strong></div>
-                                <div><span>Поддон:</span><strong>60 шт (мин. заказ 300 шт)</strong></div>
-                                <div><span>Производитель:</span><strong>Ставропольский комбинат</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать шлакоблок</a></div>
-                        </div>
-                    </article>
-
-                    <article class="product-card" data-cat="concrete">
-                        <div class="product-img"><img src="fbs-24-3-6.jpg" alt="Блоки ФБС 24.3.6" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Блоки ФБС 24.3.6 (ГОСТ 13579-78)</h3><span class="price">2 600 ₽</span></div>
-                            <p>Тяжелый пропаренный бетон. 2400×300×600 мм (толщина 30 см), масса ~970 кг. Для фундаментов гаражей, бань и внутренних стен подвалов.</p>
-                            <div class="product-specs">
-                                <div><span>Размеры / вес:</span><strong>2380×300×580 мм / ~970 кг</strong></div>
-                                <div><span>Монтаж:</span><strong>Манипулятором без крана</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать ФБС 24.3.6</a></div>
-                        </div>
-                    </article>
-
-                    <article class="product-card" data-cat="concrete">
-                        <div class="product-img"><img src="fbs.jpg" alt="Блоки ФБС 24.4.6" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Блоки ФБС 24.4.6 (ГОСТ 13579-78)</h3><span class="price">2 800 ₽</span></div>
-                            <p>Золотой стандарт частного домостроения. Ширина 40 см идеально подходит под кладку стен из блока и кирпича. Масса ~1300 кг.</p>
-                            <div class="product-specs">
-                                <div><span>Размеры / вес:</span><strong>2380×400×580 мм / ~1300 кг</strong></div>
-                                <div><span>Доставка:</span><strong>Манипулятор 15 т со стрелой 5 т</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать ФБС 24.4.6</a></div>
-                        </div>
-                    </article>
-
-                    <article class="product-card" data-cat="concrete">
-                        <div class="product-img"><img src="kolca.jpg" alt="Кольца ЖБИ" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Кольца ЖБИ для септиков</h3><span class="price">от 3 100 ₽</span></div>
-                            <p>Для септиков, выгребных ям и колодцев. Диаметры 1 м, 1.5 м, 2 м. Крышки, днища и люки в наличии на складе.</p>
-                            <div class="product-specs">
-                                <div><span>Диаметры:</span><strong>1.0 м, 1.5 м, 2.0 м</strong></div>
-                                <div><span>Монтаж:</span><strong>Опускание стрелой манипулятора</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать кольца ЖБИ</a></div>
-                        </div>
-                    </article>
-
-                    <article class="product-card" data-cat="service">
-                        <div class="product-img"><img src="manipulator.jpg" alt="Манипулятор" loading="lazy" onerror="this.style.display='none';"></div>
-                        <div class="product-body">
-                            <div class="product-top"><h3 class="product-title">Услуги манипулятора 15 тонн</h3><span class="price">3 000 ₽/ч</span></div>
-                            <p>Перевозка и точный монтаж ФБС, колец, поддонов с цементом и металлопроката. Стрела 5 т, борт 15 т. Опытный водитель.</p>
-                            <div class="product-specs">
-                                <div><span>Характеристики:</span><strong>Стрела 5 т / борт 15 т</strong></div>
-                                <div><span>Минимум по городу:</span><strong>5 000 ₽</strong></div>
-                            </div>
-                            <div class="product-actions"><a class="btn btn-primary" href="tel:+79887328161">Заказать манипулятор</a></div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+  </div>
+</section>
         <!-- 2. ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР ОБЪЕКТОВ -->
         <section class="section" id="kalkulyator">
             <div class="container">
