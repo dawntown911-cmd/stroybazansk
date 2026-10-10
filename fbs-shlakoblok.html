@@ -2830,19 +2830,21 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <div class="logo" style="margin-bottom: 16px;">
-            <div class="logo-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <rect x="3" y="4" width="18" height="6" rx="1"/>
-                <rect x="3" y="14" width="8" height="6" rx="1"/>
-                <rect x="13" y="14" width="8" height="6" rx="1"/>
-              </svg>
-            </div>
-            <div class="logo-text">
-              <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
-              <span class="logo-subtitle">Невинномысск • stroybazansk.ru</span>
-            </div>
-          </div>
+          <!-- СТАЛО (с реальным логотипом logo.png): -->
+<a href="index.html" class="logo" style="margin-bottom: 16px;">
+  <img src="logo.png" alt="Стройбаза на Монтажной" class="logo-img" onerror="this.style.display='none'; document.getElementById('footerLogoFallback').style.display='flex';">
+  <div class="logo-icon" id="footerLogoFallback" style="display:none;">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <rect x="3" y="4" width="18" height="6" rx="1"/>
+      <rect x="3" y="14" width="8" height="6" rx="1"/>
+      <rect x="13" y="14" width="8" height="6" rx="1"/>
+    </svg>
+  </div>
+  <div class="logo-text">
+    <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
+    <span class="logo-subtitle">Невинномысск • stroybazansk.ru</span>
+  </div>
+</a>
           <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; max-width: 320px;">
             Оптово-розничный склад ЖБИ конструкций, стенового шлакоблока, цемента и металлопроката. ИП Кардава Т.К. Доставка и монтаж манипулятором по Ставропольскому краю.
           </p>
