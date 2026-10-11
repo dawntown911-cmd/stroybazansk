@@ -1601,73 +1601,77 @@
        RESPONSIVE & MOBILE 36PX HEADER ADJUSTMENTS
        ========================================================================== */
     @media (max-width: 992px) {
-      .header-nav {
-        display: none !important;
-      }
-      .header-container {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 8px 12px !important;
-        width: 100% !important;
-        gap: 8px !important;
-      }
-      .sb-catalog-toggle {
-        width: 36px !important;
-        height: 36px !important;
-        min-width: 36px !important;
-        padding: 0 !important;
-        border-radius: 8px !important;
-        justify-content: center !important;
-        flex-shrink: 0 !important;
-      }
-      .sb-catalog-btn-text {
-        display: none !important;
-      }
-      .logo {
-        display: flex !important;
-        align-items: center !important;
-        gap: 8px !important;
-        flex: 1 1 auto !important;
-        min-width: 0 !important;
-        margin: 0 !important;
-      }
-      .site-logo-img {
-        height: 28px !important;
-      }
-      .logo-title {
-        font-size: 0.80rem !important;
-        line-height: 1.15 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        white-space: nowrap !important;
-      }
-      .logo-title span {
-        display: block !important;
-      }
-      .logo-subtitle,
-      .phone-hint {
-        display: none !important;
-      }
-      .header-actions {
-        display: flex !important;
-        align-items: center !important;
-        gap: 6px !important;
-        flex-shrink: 0 !important;
-      }
-      .header-actions .btn-wa-header span {
-        display: none !important;
-      }
-      .header-actions .btn-wa-header {
-        padding: 6px 8px !important;
-        height: 36px !important;
-      }
-      .header-actions .phone-number {
-        font-size: 0.80rem !important;
-        font-weight: 700 !important;
-        white-space: nowrap !important;
-      }
-    }
+  .header-nav {
+    display: none !important;
+  }
+  .header-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 8px 10px !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+  .sb-catalog-toggle {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    padding: 0 !important;
+    border-radius: 8px !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+  .sb-catalog-btn-text {
+    display: none !important;
+  }
+  .logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+  .site-logo-img {
+    height: 28px !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+  }
+  .logo-title {
+    font-size: 0.76rem !important;
+    line-height: 1.15 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    white-space: nowrap !important;
+  }
+  .logo-title span {
+    display: block !important;
+  }
+  .logo-subtitle,
+  .phone-hint {
+    display: none !important;
+  }
+  .header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+  }
+  .header-actions .btn-wa-header span {
+    display: none !important;
+  }
+  .header-actions .btn-wa-header {
+    padding: 6px 8px !important;
+    height: 36px !important;
+  }
+  .header-actions .phone-number {
+    font-size: 0.76rem !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+  }
+}
 
     @media (max-width: 768px) {
       .catalog-grid {
@@ -1865,14 +1869,12 @@
       </button>
 
       <a href="https://stroybazansk.ru/" class="logo" title="На главную базу stroybazansk.ru">
-        <div class="logo-icon">
-          <img src="logo.png" alt="Стройбаза на Монтажной" class="site-logo-img">
-        </div>
-        <div class="logo-text">
-          <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
-          <span class="logo-subtitle">Невинномысск • ЖБИ &amp; Септики</span>
-        </div>
-      </a>
+  <img src="logo.png" alt="Стройбаза на Монтажной" class="site-logo-img">
+  <div class="logo-text">
+    <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
+    <span class="logo-subtitle">Невинномысск • ЖБИ &amp; Септики</span>
+  </div>
+</a>
 
       <nav class="header-nav">
         <a href="#catalog" class="nav-link">Каталог колец</a>
