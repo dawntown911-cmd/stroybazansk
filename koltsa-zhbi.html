@@ -197,30 +197,21 @@
       gap: 16px;
     }
 
+    /* ЛОГОТИП — СТРОГИЕ РАЗМЕРЫ ДЛЯ ДЕСКТОПА */
     .logo {
       display: flex;
       align-items: center;
       gap: 12px;
-    }
-
-    .logo-icon {
-      width: 44px;
-      height: 44px;
-      background: linear-gradient(135deg, rgba(214, 189, 122, 0.15), rgba(214, 189, 122, 0.05));
-      border: 1px solid var(--border-gold);
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      overflow: hidden;
       flex-shrink: 0;
     }
 
-    .logo-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .site-logo-img {
+      height: 38px !important;
+      width: auto !important;
+      max-height: 38px !important;
+      object-fit: contain !important;
+      display: block !important;
+      flex-shrink: 0 !important;
     }
 
     .logo-text {
@@ -250,10 +241,16 @@
       letter-spacing: 0.06em;
     }
 
+    /* КНОПКА КАТАЛОГА ДЛЯ ШТОРКИ: СКРЫТА НА ПК */
+    .sb-catalog-toggle {
+      display: none;
+    }
+
     .header-nav {
       display: flex;
       align-items: center;
       gap: 20px;
+      flex-shrink: 1;
     }
 
     .nav-link {
@@ -263,6 +260,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      white-space: nowrap;
     }
 
     .nav-link:hover, .nav-link.active {
@@ -283,6 +281,7 @@
       cursor: pointer;
       transition: var(--transition);
       user-select: none;
+      white-space: nowrap;
     }
 
     .catalog-btn:hover {
@@ -295,6 +294,7 @@
       display: flex;
       align-items: center;
       gap: 14px;
+      flex-shrink: 0;
     }
 
     .phone-block {
@@ -542,7 +542,7 @@
     }
 
     /* ==========================================================================
-       HERO & TITLE SECTION
+       HERO & ADVANTAGES
        ========================================================================== */
     .hero-section {
       padding: 24px 0 32px;
@@ -1601,77 +1601,83 @@
        RESPONSIVE & MOBILE 36PX HEADER ADJUSTMENTS
        ========================================================================== */
     @media (max-width: 992px) {
-  .header-nav {
-    display: none !important;
-  }
-  .header-container {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 8px 10px !important;
-    width: 100% !important;
-    gap: 8px !important;
-  }
-  .sb-catalog-toggle {
-    width: 36px !important;
-    height: 36px !important;
-    min-width: 36px !important;
-    padding: 0 !important;
-    border-radius: 8px !important;
-    justify-content: center !important;
-    flex-shrink: 0 !important;
-  }
-  .sb-catalog-btn-text {
-    display: none !important;
-  }
-  .logo {
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    flex: 0 1 auto !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-  }
-  .site-logo-img {
-    height: 28px !important;
-    width: auto !important;
-    flex-shrink: 0 !important;
-    display: block !important;
-  }
-  .logo-title {
-    font-size: 0.76rem !important;
-    line-height: 1.15 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    white-space: nowrap !important;
-  }
-  .logo-title span {
-    display: block !important;
-  }
-  .logo-subtitle,
-  .phone-hint {
-    display: none !important;
-  }
-  .header-actions {
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    flex-shrink: 0 !important;
-    margin-left: auto !important;
-  }
-  .header-actions .btn-wa-header span {
-    display: none !important;
-  }
-  .header-actions .btn-wa-header {
-    padding: 6px 8px !important;
-    height: 36px !important;
-  }
-  .header-actions .phone-number {
-    font-size: 0.76rem !important;
-    font-weight: 700 !important;
-    white-space: nowrap !important;
-  }
-}
+      .header-nav {
+        display: none !important;
+      }
+      .header-container {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 8px 10px !important;
+        width: 100% !important;
+        gap: 8px !important;
+      }
+      /* Мобильная кнопка каталога 36px */
+      .sb-catalog-toggle {
+        display: inline-flex !important;
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        padding: 0 !important;
+        border-radius: 8px !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
+      }
+      .sb-catalog-btn-text {
+        display: none !important;
+      }
+
+      .logo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        flex: 0 1 auto !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+      }
+      .site-logo-img {
+        height: 28px !important;
+        max-height: 28px !important;
+        width: auto !important;
+        flex-shrink: 0 !important;
+        display: block !important;
+      }
+      .logo-title {
+        font-size: 0.76rem !important;
+        line-height: 1.15 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        white-space: nowrap !important;
+      }
+      .logo-title span {
+        display: block !important;
+      }
+      .logo-subtitle,
+      .phone-hint {
+        display: none !important;
+      }
+
+      .header-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        flex-shrink: 0 !important;
+        margin-left: auto !important;
+      }
+      .header-actions .btn-wa-header span {
+        display: none !important;
+      }
+      .header-actions .btn-wa-header {
+        padding: 6px 8px !important;
+        height: 36px !important;
+      }
+      .header-actions .phone-number {
+        font-size: 0.76rem !important;
+        font-weight: 700 !important;
+        white-space: nowrap !important;
+      }
+    }
 
     @media (max-width: 768px) {
       .catalog-grid {
@@ -1858,32 +1864,37 @@
   </div>
 
   <!-- ==========================================================================
-       MAIN HEADER (С КНОПКОЙ КАТАЛОГА ПЕРЕД ЛОГОТИПОМ)
+       MAIN HEADER
        ========================================================================== -->
   <header class="header">
     <div class="container header-container">
-      <!-- Кнопка каталога для Drawer перед логотипом -->
+      <!-- Мобильная кнопка вызова шторки (видна только на экранах <= 992px) -->
       <button type="button" class="catalog-btn sb-catalog-toggle" id="sbCatalogOpenBtn" aria-label="Открыть каталог стройматериалов">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        <span class="sb-catalog-btn-text">Каталог</span>
       </button>
 
+      <!-- Логотип базы (аккуратный размер 38px без рамки) -->
       <a href="https://stroybazansk.ru/" class="logo" title="На главную базу stroybazansk.ru">
-  <img src="logo.png" alt="Стройбаза на Монтажной" class="site-logo-img">
-  <div class="logo-text">
-    <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
-    <span class="logo-subtitle">Невинномысск • ЖБИ &amp; Септики</span>
-  </div>
-</a>
+        <img src="logo.png" alt="Стройбаза на Монтажной" class="site-logo-img">
+        <div class="logo-text">
+          <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
+          <span class="logo-subtitle">Невинномысск • ЖБИ &amp; Септики</span>
+        </div>
+      </a>
 
+      <!-- Меню для ПК -->
       <nav class="header-nav">
-        <a href="#catalog" class="nav-link">Каталог колец</a>
+        <button type="button" class="catalog-btn" id="sbCatalogOpenBtnDesktop">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          Каталог колец
+        </button>
         <a href="#calculator" class="nav-link">Калькулятор септика</a>
         <a href="#gost-table" class="nav-link">Таблица ГОСТ</a>
         <a href="#expert-advice" class="nav-link">Схема канализации</a>
         <a href="#contacts" class="nav-link">Контакты склада</a>
       </nav>
 
+      <!-- Контакты в шапке -->
       <div class="header-actions">
         <div class="phone-block">
           <a href="tel:+79887328161" class="phone-number">+7 (988) 732-81-61</a>
@@ -1945,7 +1956,7 @@
 
           <div class="adv-pill">
             <div class="adv-pill-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             </div>
             <div>
               <div class="adv-pill-title">Монтаж с колес в яму</div>
@@ -2822,7 +2833,7 @@
   </main>
 
   <!-- ==========================================================================
-       ЕДИНЫЙ ПОДВАЛ-МАТРИЦА (SEO SPIDERWEB FOOTER)
+       SEO SPIDERWEB FOOTER
        ========================================================================== -->
   <footer class="footer" id="contacts">
     <div class="container">
@@ -3048,10 +3059,11 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // 1. Drawer Logic (Шторка каталога)
-      const sbDrawerOpenBtn  = document.getElementById('sbCatalogOpenBtn');
-      const sbDrawer         = document.getElementById('sbDrawer');
-      const sbDrawerOverlay  = document.getElementById('sbDrawerOverlay');
-      const sbDrawerCloseBtn = document.getElementById('sbDrawerCloseBtn');
+      const sbDrawerOpenBtnMobile  = document.getElementById('sbCatalogOpenBtn');
+      const sbDrawerOpenBtnDesktop = document.getElementById('sbCatalogOpenBtnDesktop');
+      const sbDrawer               = document.getElementById('sbDrawer');
+      const sbDrawerOverlay        = document.getElementById('sbDrawerOverlay');
+      const sbDrawerCloseBtn       = document.getElementById('sbDrawerCloseBtn');
 
       function openDrawer() {
         if (!sbDrawer || !sbDrawerOverlay) return;
@@ -3069,9 +3081,10 @@
         document.body.style.overflow = '';
       }
 
-      if (sbDrawerOpenBtn) sbDrawerOpenBtn.addEventListener('click', openDrawer);
-      if (sbDrawerCloseBtn) sbDrawerCloseBtn.addEventListener('click', closeDrawer);
-      if (sbDrawerOverlay) sbDrawerOverlay.addEventListener('click', closeDrawer);
+      if (sbDrawerOpenBtnMobile)  sbDrawerOpenBtnMobile.addEventListener('click', openDrawer);
+      if (sbDrawerOpenBtnDesktop) sbDrawerOpenBtnDesktop.addEventListener('click', openDrawer);
+      if (sbDrawerCloseBtn)       sbDrawerCloseBtn.addEventListener('click', closeDrawer);
+      if (sbDrawerOverlay)        sbDrawerOverlay.addEventListener('click', closeDrawer);
 
       document.querySelectorAll('.sb-drawer-link').forEach(link => {
         link.addEventListener('click', closeDrawer);
@@ -3110,7 +3123,7 @@
       const resPriceTotal   = document.getElementById('resPriceTotal');
       const calcWaBtn       = document.getElementById('calcWaBtn');
 
-      let currentMode = 'two'; // 'two' | 'one'
+      let currentMode = 'two';
 
       if (btnModeTwo && btnModeOne) {
         btnModeTwo.addEventListener('click', function() {
@@ -3169,7 +3182,6 @@
             ];
           }
         } else {
-          // One chamber
           if (people <= 3) {
             configText = '1 накопительная шахта из КС 15.9';
             items = [
@@ -3199,7 +3211,6 @@
 
         resConfigVal.textContent = configText;
 
-        // Render Specification rows
         calcSpecList.innerHTML = '';
         let totalCost = 0;
         let waSpecList = '';
@@ -3217,7 +3228,6 @@
 
         resPriceTotal.innerHTML = totalCost.toLocaleString('ru-RU') + ' <small>₽</small>';
 
-        // Update WhatsApp Order Button
         const craneText = (calcCraneOption && calcCraneOption.checked) ? ' с доставкой и опусканием в яму манипулятором' : ' самовывоз со склада';
         const typeName = currentMode === 'two' ? 'Двухкамерный септик с переливом' : 'Однокамерный септик-накопитель';
 
@@ -3237,7 +3247,6 @@
       if (calcPeople) calcPeople.addEventListener('change', updateCalculator);
       if (calcCraneOption) calcCraneOption.addEventListener('change', updateCalculator);
 
-      // Initial run
       updateCalculator();
 
       // 4. Interactive Filter Chips
@@ -3266,7 +3275,6 @@
         });
       });
 
-      // Quick filter from footer links
       document.querySelectorAll('a[data-cat-filter]').forEach(link => {
         link.addEventListener('click', function(e) {
           const f = this.getAttribute('data-cat-filter');
