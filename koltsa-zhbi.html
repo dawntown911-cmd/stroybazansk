@@ -23,7 +23,7 @@
 
   <style>
     /* ==========================================================================
-       CSS RESET & VARIABLES (СТРОГО ПО СТИЛЮ armatura.html)
+       CSS RESET & VARIABLES
        ========================================================================== */
     :root {
       --bg-dark: #07080c;
@@ -282,6 +282,7 @@
       font-size: 0.9rem;
       cursor: pointer;
       transition: var(--transition);
+      user-select: none;
     }
 
     .catalog-btn:hover {
@@ -336,6 +337,167 @@
     .btn-wa-header:hover {
       filter: brightness(1.1);
       transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       CATALOG DRAWER (ВЫКАТНАЯ ШТОРКА)
+       ========================================================================== */
+    .sb-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .sb-drawer-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .sb-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: min(390px, 88vw);
+      background: #0b0d14;
+      border-right: 1px solid var(--border-gold);
+      box-shadow: 20px 0 50px rgba(0, 0, 0, 0.85);
+      z-index: 999;
+      transform: translateX(-100%);
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .sb-drawer.active {
+      transform: translateX(0);
+    }
+
+    .sb-drawer-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: rgba(15, 17, 26, 0.95);
+    }
+
+    .sb-drawer-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sb-drawer-title span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .sb-drawer-close {
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .sb-drawer-close:hover {
+      background: rgba(214, 189, 122, 0.15);
+      border-color: var(--border-gold);
+      color: #fff;
+    }
+
+    .sb-drawer-body {
+      padding: 20px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-gold) transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .sb-drawer-group-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sb-drawer-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sb-drawer-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      background: rgba(18, 21, 32, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      color: var(--text-main);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .sb-drawer-link:hover, .sb-drawer-link.current {
+      background: rgba(214, 189, 122, 0.12);
+      border-color: var(--border-gold);
+      color: var(--gold-light);
+      padding-left: 18px;
+    }
+
+    .sb-drawer-badge {
+      font-size: 0.7rem;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+    }
+
+    .sb-drawer-link:hover .sb-drawer-badge {
+      background: rgba(214, 189, 122, 0.25);
+      color: var(--gold);
+    }
+
+    .sb-drawer-footer {
+      margin-top: auto;
+      padding: 16px 20px;
+      border-top: 1px solid var(--border-subtle);
+      background: rgba(11, 13, 20, 0.95);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     /* ==========================================================================
@@ -430,7 +592,6 @@
       margin-bottom: 24px;
     }
 
-    /* Advantages pills */
     .hero-advantages {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -481,7 +642,7 @@
     }
 
     /* ==========================================================================
-       FILTER CHIPS (ТАКСОНОМИЯ metall-dk.ru style)
+       FILTER CHIPS
        ========================================================================== */
     .chips-section {
       margin-bottom: 32px;
@@ -595,7 +756,6 @@
       gap: 22px;
     }
 
-    /* Individual Product Card */
     .product-card {
       background: var(--bg-surface);
       backdrop-filter: blur(14px);
@@ -641,7 +801,6 @@
       background: var(--gold-gradient);
     }
 
-    /* Card Top Badge Group */
     .card-top {
       display: flex;
       justify-content: space-between;
@@ -697,7 +856,6 @@
       background: var(--accent-green);
     }
 
-    /* Visual illustration of well rings */
     .card-visual {
       height: 110px;
       background: rgba(11, 13, 20, 0.7);
@@ -729,7 +887,6 @@
       min-height: 20px;
     }
 
-    /* Specs mini table */
     .card-specs {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -759,7 +916,6 @@
       font-weight: 600;
     }
 
-    /* Price box */
     .card-price-box {
       margin-top: auto;
       padding-top: 16px;
@@ -800,7 +956,6 @@
       font-weight: 600;
     }
 
-    /* Buttons inside card */
     .card-actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -970,7 +1125,6 @@
       box-shadow: 0 0 0 3px rgba(214, 189, 122, 0.15);
     }
 
-    /* Mode switcher: Two-chamber vs One-chamber */
     .mode-switch-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1029,7 +1183,6 @@
       color: var(--accent-green);
     }
 
-    /* Results box */
     .calc-results-card {
       background: rgba(11, 13, 20, 0.85);
       border: 1px solid var(--border-subtle);
@@ -1317,7 +1470,7 @@
        TRUST & LOGISTICS BANNER
        ========================================================================== */
     .trust-banner {
-      margin: 40px 0 80px;
+      margin: 40px 0 20px;
       background: linear-gradient(135deg, rgba(22, 26, 38, 0.95), rgba(11, 13, 20, 0.95));
       border: 1px solid var(--border-gold);
       border-radius: var(--radius-xl);
@@ -1361,7 +1514,7 @@
     }
 
     /* ==========================================================================
-       FOOTER
+       SEO SPIDERWEB FOOTER
        ========================================================================== */
     .footer {
       background: rgba(4, 5, 8, 0.98);
@@ -1445,21 +1598,78 @@
     }
 
     /* ==========================================================================
-       RESPONSIVE ADJUSTMENTS (ТОЧНО КАК В armatura.html)
+       RESPONSIVE & MOBILE 36PX HEADER ADJUSTMENTS
        ========================================================================== */
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       .header-nav {
-        display: none;
+        display: none !important;
       }
-      .btn-wa-header {
-        display: none;
+      .header-container {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 8px 12px !important;
+        width: 100% !important;
+        gap: 8px !important;
+      }
+      .sb-catalog-toggle {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        padding: 0 !important;
+        border-radius: 8px !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+      }
+      .sb-catalog-btn-text {
+        display: none !important;
+      }
+      .logo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+      }
+      .site-logo-img {
+        height: 28px !important;
+      }
+      .logo-title {
+        font-size: 0.80rem !important;
+        line-height: 1.15 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        white-space: nowrap !important;
+      }
+      .logo-title span {
+        display: block !important;
+      }
+      .logo-subtitle,
+      .phone-hint {
+        display: none !important;
       }
       .header-actions {
-        gap: 0;
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        flex-shrink: 0 !important;
       }
-      .phone-number {
-        font-size: 0.95rem;
+      .header-actions .btn-wa-header span {
+        display: none !important;
       }
+      .header-actions .btn-wa-header {
+        padding: 6px 8px !important;
+        height: 36px !important;
+      }
+      .header-actions .phone-number {
+        font-size: 0.80rem !important;
+        font-weight: 700 !important;
+        white-space: nowrap !important;
+      }
+    }
+
+    @media (max-width: 768px) {
       .catalog-grid {
         grid-template-columns: 1fr;
       }
@@ -1476,96 +1686,6 @@
         grid-template-columns: 1fr;
       }
     }
-  /* ==========================================================================
-   ФИКС ДЛЯ ЧАЙНИКА: ЗАЩИТА ОТ ГОРИЗОНТАЛЬНОГО СКРОЛЛА И ШАПКА 36px
-   ========================================================================== */
-html, body {
-  max-width: 100% !important;
-  overflow-x: hidden !important;
-  width: 100% !important;
-  position: relative !important;
-  box-sizing: border-box !important;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box !important;
-}
-
-.site-logo-img {
-  height: 40px !important;
-  width: auto !important;
-  object-fit: contain !important;
-  display: block !important;
-}
-
-@media (max-width: 992px) {
-  .header-nav {
-    display: none !important;
-  }
-  .header-container {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 8px 12px !important;
-    width: 100% !important;
-    gap: 8px !important;
-  }
-  .sb-catalog-toggle {
-    width: 36px !important;
-    height: 36px !important;
-    min-width: 36px !important;
-    padding: 0 !important;
-    border-radius: 8px !important;
-    justify-content: center !important;
-    flex-shrink: 0 !important;
-  }
-  .sb-catalog-btn-text {
-    display: none !important;
-  }
-  .logo {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    flex: 1 1 auto !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-  }
-  .site-logo-img {
-    height: 28px !important;
-  }
-  .logo-title {
-    font-size: 0.80rem !important;
-    line-height: 1.15 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    white-space: nowrap !important;
-  }
-  .logo-title span {
-    display: block !important;
-  }
-  .logo-subtitle,
-  .phone-hint {
-    display: none !important;
-  }
-  .header-actions {
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    flex-shrink: 0 !important;
-  }
-  .header-actions .btn-wa-header span {
-    display: none !important;
-  }
-  .header-actions .btn-wa-header {
-    padding: 6px 8px !important;
-    height: 36px !important;
-  }
-  .header-actions .phone-number {
-    font-size: 0.80rem !important;
-    font-weight: 700 !important;
-    white-space: nowrap !important;
-  }
-}
   </style>
 
   <!-- ==========================================================================
@@ -1588,7 +1708,7 @@ html, body {
             "@type": "ListItem",
             "position": 2,
             "name": "Каталог ЖБИ",
-            "item": "https://stroybazansk.ru/catalog.html"
+            "item": "https://stroybazansk.ru/index.html#catalog"
           },
           {
             "@type": "ListItem",
@@ -1734,13 +1854,19 @@ html, body {
   </div>
 
   <!-- ==========================================================================
-       MAIN HEADER (СТРУКТУРА ТОЧНО КАК В armatura.html)
+       MAIN HEADER (С КНОПКОЙ КАТАЛОГА ПЕРЕД ЛОГОТИПОМ)
        ========================================================================== -->
   <header class="header">
     <div class="container header-container">
+      <!-- Кнопка каталога для Drawer перед логотипом -->
+      <button type="button" class="catalog-btn sb-catalog-toggle" id="sbCatalogOpenBtn" aria-label="Открыть каталог стройматериалов">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <span class="sb-catalog-btn-text">Каталог</span>
+      </button>
+
       <a href="https://stroybazansk.ru/" class="logo" title="На главную базу stroybazansk.ru">
         <div class="logo-icon">
-          <img src="logo.png" alt="Стройбаза на Монтажной">
+          <img src="logo.png" alt="Стройбаза на Монтажной" class="site-logo-img">
         </div>
         <div class="logo-text">
           <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
@@ -1749,10 +1875,7 @@ html, body {
       </a>
 
       <nav class="header-nav">
-        <a href="#catalog" class="catalog-btn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          Каталог колец
-        </a>
+        <a href="#catalog" class="nav-link">Каталог колец</a>
         <a href="#calculator" class="nav-link">Калькулятор септика</a>
         <a href="#gost-table" class="nav-link">Таблица ГОСТ</a>
         <a href="#expert-advice" class="nav-link">Схема канализации</a>
@@ -1780,7 +1903,7 @@ html, body {
       <ul class="breadcrumbs">
         <li><a href="https://stroybazansk.ru/">Главная</a></li>
         <li class="breadcrumbs-separator">/</li>
-        <li><a href="https://stroybazansk.ru/catalog.html">Каталог ЖБИ</a></li>
+        <li><a href="index.html#catalog">Каталог ЖБИ</a></li>
         <li class="breadcrumbs-separator">/</li>
         <li class="breadcrumbs-current">Кольца для септиков в Невинномысске</li>
       </ul>
@@ -1820,7 +1943,7 @@ html, body {
 
           <div class="adv-pill">
             <div class="adv-pill-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             </div>
             <div>
               <div class="adv-pill-title">Монтаж с колес в яму</div>
@@ -1849,9 +1972,7 @@ html, body {
           </div>
         </div>
 
-        <!-- ==========================================================================
-             FILTER CHIPS (ТАКСОНОМИЯ metall-dk.ru style)
-             ========================================================================== -->
+        <!-- FILTER CHIPS -->
         <div class="chips-section">
           <div class="chips-label">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
@@ -2287,7 +2408,6 @@ html, body {
           </div>
 
           <div class="calc-grid">
-            <!-- Left inputs form -->
             <div class="calc-inputs">
               <div class="calc-group">
                 <label class="calc-label" for="calcPeople">
@@ -2305,7 +2425,6 @@ html, body {
                 </select>
               </div>
 
-              <!-- Switch mode: Two-chamber vs One-chamber -->
               <div class="calc-group">
                 <span class="calc-label">Тип канализационной системы</span>
                 <div class="mode-switch-wrap">
@@ -2314,7 +2433,6 @@ html, body {
                 </div>
               </div>
 
-              <!-- Manipulator delivery & lowering option -->
               <label class="cutting-option">
                 <input type="checkbox" id="calcCraneOption" checked>
                 <div class="cutting-option-text">
@@ -2324,7 +2442,6 @@ html, body {
               </label>
             </div>
 
-            <!-- Right results panel -->
             <div class="calc-results-card">
               <div class="calc-res-row">
                 <span class="calc-res-key">Рекомендуемый полезный объем:</span>
@@ -2335,7 +2452,6 @@ html, body {
                 <span class="calc-res-val" id="resConfigVal" style="color: var(--gold-light);">2 шахты из колец КС 15.9</span>
               </div>
 
-              <!-- Specification list -->
               <div class="calc-spec-list" id="calcSpecList">
                 <div class="calc-spec-item">
                   <span>Дно монолитное ПН 15:</span>
@@ -2607,59 +2723,62 @@ html, body {
             </div>
           </article>
         </div>
-
-        <!-- БЛОК ПЕРЕЛИНКОВКИ: ДЛЯ СЕПТИКА И КОММУНИКАЦИЙ -->
-<section class="table-section" style="padding-top: 10px;">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <h2 class="section-title">Вместе с кольцами ЖБИ <span>покупают в один рейс</span></h2>
-        <p class="section-subtitle">Манипулятор 15т со стрелой 5т доставит кольца и сопутствующие стройматериалы</p>
       </div>
-    </div>
+    </section>
 
-    <div class="catalog-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-      <article class="product-card">
-        <span class="badge-flagship" style="width: fit-content; margin-bottom: 8px;">Гидроизоляция стыков</span>
-        <h3 class="card-title">Цемент М500 Д0 Новороссийск</h3>
-        <div class="card-purpose">ЦЕМ I • 100% чистый клинкер</div>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">
-          Для приготовления гидроизоляционного раствора швов между кольцами и монолитным дном ПН 15.
-        </p>
-        <div class="card-price-box">
-          <div class="price-row-main"><div class="price-meter-val">570 ₽<small>/ мешок 50 кг</small></div></div>
+    <!-- ==========================================================================
+         БЛОК ПЕРЕЛИНКОВКИ: ВМЕСТЕ С КОЛЬЦАМИ ПОКУПАЮТ
+         ========================================================================== -->
+    <section class="table-section" style="padding-top: 10px; padding-bottom: 20px;">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Вместе с кольцами ЖБИ <span>покупают в один рейс</span></h2>
+            <p class="section-subtitle">Манипулятор 15т со стрелой 5т доставит кольца и сопутствующие стройматериалы</p>
+          </div>
         </div>
-        <a href="tsement-m500.html" class="btn-card-call" style="width: 100%;">Купить цемент М500 →</a>
-      </article>
 
-      <article class="product-card">
-        <span class="badge-standard" style="width: fit-content; margin-bottom: 8px;">Коммуникации и забор</span>
-        <h3 class="card-title">Профильные трубы 40х40 и 60х40</h3>
-        <div class="card-purpose">ГОСТ 8639 / 8645 • Стенка 2–3 мм</div>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">
-          Для защитных гильз водопровода, ограждений септика и каркасов смотровых люков.
-        </p>
-        <div class="card-price-box">
-          <div class="price-row-main"><div class="price-meter-val">160 ₽<small>/ м (40х40)</small></div></div>
-        </div>
-        <a href="truby.html" class="btn-card-call" style="width: 100%;">Каталог профильных труб →</a>
-      </article>
+        <div class="catalog-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <article class="product-card">
+            <span class="badge-flagship" style="width: fit-content; margin-bottom: 8px;">Гидроизоляция стыков</span>
+            <h3 class="card-title">Цемент М500 Д0 Новороссийск</h3>
+            <div class="card-purpose">ЦЕМ I • 100% чистый клинкер</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">
+              Для приготовления гидроизоляционного раствора швов между кольцами и монолитным дном ПН 15.
+            </p>
+            <div class="card-price-box">
+              <div class="price-row-main"><div class="price-meter-val">570 ₽<small>/ мешок 50 кг</small></div></div>
+            </div>
+            <a href="tsement-m500.html" class="btn-card-call" style="width: 100%;">Купить цемент М500 →</a>
+          </article>
 
-      <article class="product-card">
-        <span class="badge-standard" style="width: fit-content; margin-bottom: 8px;">Фундамент дома</span>
-        <h3 class="card-title">Блоки ФБС 24.4.6 и 24.3.6</h3>
-        <div class="card-purpose">ГОСТ 13579 • Монтаж манипулятором</div>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">
-          Комплектуйте объект целиком: привезем кольца для канализации и блоки на фундамент в один день.
-        </p>
-        <div class="card-price-box">
-          <div class="price-row-main"><div class="price-meter-val">2 800 ₽<small>/ шт</small></div></div>
+          <article class="product-card">
+            <span class="badge-standard" style="width: fit-content; margin-bottom: 8px;">Коммуникации и забор</span>
+            <h3 class="card-title">Профильные трубы 40х40 и 60х40</h3>
+            <div class="card-purpose">ГОСТ 8639 / 8645 • Стенка 2–3 мм</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">
+              Для защитных гильз водопровода, ограждений септика и каркасов смотровых люков.
+            </p>
+            <div class="card-price-box">
+              <div class="price-row-main"><div class="price-meter-val">160 ₽<small>/ м (40х40)</small></div></div>
+            </div>
+            <a href="truby.html" class="btn-card-call" style="width: 100%;">Каталог профильных труб →</a>
+          </article>
+
+          <article class="product-card">
+            <span class="badge-standard" style="width: fit-content; margin-bottom: 8px;">Фундамент дома</span>
+            <h3 class="card-title">Блоки ФБС 24.4.6 и 24.3.6</h3>
+            <div class="card-purpose">ГОСТ 13579 • Монтаж манипулятором</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">
+              Комплектуйте объект целиком: привезем кольца для канализации и блоки на фундамент в один день.
+            </p>
+            <div class="card-price-box">
+              <div class="price-row-main"><div class="price-meter-val">2 800 ₽<small>/ шт</small></div></div>
+            </div>
+            <a href="fbs-shlakoblok.html" class="btn-card-call" style="width: 100%;">Блоки ФБС на складе →</a>
+          </article>
         </div>
-        <a href="fbs-shlakoblok.html" class="btn-card-call" style="width: 100%;">Блоки ФБС на складе →</a>
-      </article>
-    </div>
-  </div>
-</section>
+
         <!-- Trust and Logistics banner -->
         <div class="trust-banner">
           <div class="trust-banner-grid">
@@ -2701,112 +2820,268 @@ html, body {
   </main>
 
   <!-- ==========================================================================
-     ЕДИНЫЙ ПОДВАЛ-МАТРИЦА (SEO SPIDERWEB FOOTER)
-     ========================================================================== -->
-<footer class="footer" id="contacts">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <a href="index.html" class="logo" style="margin-bottom: 16px;">
-          <img src="logo.png" alt="Стройбаза на Монтажной" class="site-logo-img">
-          <div class="logo-text">
-            <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
-            <span class="logo-subtitle">Невинномысск • stroybazansk.ru</span>
-          </div>
-        </a>
-        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; max-width: 320px;">
-          Оптово-розничный склад металлопроката, ЖБИ и стройматериалов в г. Невинномысск (ИП Кардава Т.К.). Прямые поставки арматуры, труб, цемента М500 и блоков ФБС с заводов РФ. Срочная доставка манипулятором за 1.5–2 часа с оплатой при выгрузке.
-        </p>
-      </div>
+       ЕДИНЫЙ ПОДВАЛ-МАТРИЦА (SEO SPIDERWEB FOOTER)
+       ========================================================================== -->
+  <footer class="footer" id="contacts">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="margin-bottom: 16px;">
+            <img src="logo.png" alt="Стройбаза на Монтажной" class="site-logo-img">
+            <div class="logo-text">
+              <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
+              <span class="logo-subtitle">Невинномысск • stroybazansk.ru</span>
+            </div>
+          </a>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; max-width: 320px;">
+            Оптово-розничный склад металлопроката, ЖБИ и стройматериалов в г. Невинномысск (ИП Кардава Т.К.). Прямые поставки арматуры, труб, цемента М500 и блоков ФБС с заводов РФ. Срочная доставка манипулятором за 1.5–2 часа с оплатой при выгрузке.
+          </p>
+        </div>
 
-      <div class="footer-col">
-        <h5>Каталог стройматериалов</h5>
-        <ul class="footer-links">
-          <li><a href="armatura.html">Арматура строительная (6–20 мм)</a></li>
-          <li><a href="truby.html">Профильные трубы (40х20–80х80)</a></li>
-          <li><a href="tsement-m500.html">Цемент Новороссийский М500</a></li>
-          <li><a href="fbs-shlakoblok.html">Фундаментные блоки ФБС</a></li>
-          <li><a href="fbs-shlakoblok.html#shlakoblok">Шлакоблок стеновой 390х190х190</a></li>
-          <li><a href="koltsa-zhbi.html">Кольца ЖБИ для септиков и колодцев</a></li>
-        </ul>
-      </div>
+        <div class="footer-col">
+          <h5>Каталог стройматериалов</h5>
+          <ul class="footer-links">
+            <li><a href="armatura.html">Арматура строительная (6–20 мм)</a></li>
+            <li><a href="truby.html">Профильные трубы (40х20–80х80)</a></li>
+            <li><a href="tsement-m500.html">Цемент Новороссийский М500</a></li>
+            <li><a href="fbs-shlakoblok.html">Фундаментные блоки ФБС</a></li>
+            <li><a href="fbs-shlakoblok.html#shlakoblok">Шлакоблок стеновой 390х190х190</a></li>
+            <li><a href="koltsa-zhbi.html">Кольца ЖБИ для септиков и колодцев</a></li>
+          </ul>
+        </div>
 
-      <div class="footer-col">
-        <h5>Калькуляторы и сервисы</h5>
-        <ul class="footer-links">
-          <li><a href="index.html#kalkulyator">Калькулятор навесов и заборов</a></li>
-          <li><a href="armatura.html#calculator">Калькулятор веса арматуры</a></li>
-          <li><a href="truby.html#calculator">Калькулятор профильной трубы</a></li>
-          <li><a href="tsement-m500.html#calculator">Калькулятор расхода бетона</a></li>
-          <li><a href="fbs-shlakoblok.html#calculator">Калькулятор блоков ФБС</a></li>
-          <li><a href="koltsa-zhbi.html#calculator">Расчет септика из колец ЖБИ</a></li>
-          <li><a href="index.html#spravochnik">Таблицы ГОСТ и нормативы</a></li>
-        </ul>
-      </div>
+        <div class="footer-col">
+          <h5>Калькуляторы и сервисы</h5>
+          <ul class="footer-links">
+            <li><a href="index.html#kalkulyator">Калькулятор навесов и заборов</a></li>
+            <li><a href="armatura.html#calculator">Калькулятор веса арматуры</a></li>
+            <li><a href="truby.html#calculator">Калькулятор профильной трубы</a></li>
+            <li><a href="tsement-m500.html#calculator">Калькулятор расхода бетона</a></li>
+            <li><a href="fbs-shlakoblok.html#calculator">Калькулятор блоков ФБС</a></li>
+            <li><a href="koltsa-zhbi.html#calculator">Расчет септика из колец ЖБИ</a></li>
+            <li><a href="index.html#spravochnik">Таблицы ГОСТ и нормативы</a></li>
+          </ul>
+        </div>
 
-      <div class="footer-col">
-        <h5>Контакты склада</h5>
-        <div class="footer-contacts-list">
-          <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            <span>г. Невинномысск, ул. Монтажная, 10</span>
-          </div>
-          <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <a href="tel:+79887328161" style="color: #fff; font-weight: 700;">+7 (988) 732-81-61</a>
-          </div>
-          <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            <a href="https://wa.me/79887328161" target="_blank" rel="noopener" style="color: #25d366; font-weight: 600;">Написать в WhatsApp</a>
-          </div>
-          <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>Пн–Сб: 8:00 – 18:00 (Вс: отгрузка по звонку)</span>
+        <div class="footer-col">
+          <h5>Контакты склада</h5>
+          <div class="footer-contacts-list">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <span>г. Невинномысск, ул. Монтажная, 10</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+79887328161" style="color: #fff; font-weight: 700;">+7 (988) 732-81-61</a>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <a href="https://wa.me/79887328161" target="_blank" rel="noopener" style="color: #25d366; font-weight: 600;">Написать в WhatsApp</a>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Пн–Сб: 8:00 – 18:00 (Вс: отгрузка по звонку)</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- SEO Паутина быстрых тегов (без единого 404) -->
-    <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 24px 0 16px; margin-top: 20px;">
-      <div style="font-size: 0.8rem; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.04em;">
-        Быстрый выбор позиций со склада на Монтажной 10:
+      <!-- SEO Паутина быстрых тегов (без единого 404) -->
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 24px 0 16px; margin-top: 20px;">
+        <div style="font-size: 0.8rem; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.04em;">
+          Быстрый выбор позиций со склада на Монтажной 10:
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 0.82rem; color: var(--text-muted);">
+          <a href="armatura.html#catalog" style="color: var(--text-main); text-decoration: underline;">Арматура 12 мм</a> •
+          <a href="armatura.html#catalog" style="color: var(--text-main); text-decoration: underline;">Арматура 10 мм</a> •
+          <a href="armatura.html#catalog" style="color: var(--text-main); text-decoration: underline;">Арматура 8 мм</a> •
+          <a href="armatura.html#catalog" style="color: var(--text-main); text-decoration: underline;">Катанка 6 мм</a> •
+          <a href="truby.html#catalog" style="color: var(--text-main); text-decoration: underline;">Труба 40х20х2 на лаги</a> •
+          <a href="truby.html#catalog" style="color: var(--text-main); text-decoration: underline;">Труба 40х40х2 на столбы</a> •
+          <a href="truby.html#catalog" style="color: var(--text-main); text-decoration: underline;">Труба 60х40х3 усиленная</a> •
+          <a href="truby.html#catalog" style="color: var(--text-main); text-decoration: underline;">Труба 80х80х3 на ворота</a> •
+          <a href="tsement-m500.html#catalog" style="color: var(--text-main); text-decoration: underline;">Цемент М500 Д0 (ЦЕМ I)</a> •
+          <a href="tsement-m500.html#catalog" style="color: var(--text-main); text-decoration: underline;">Цемент М500 Д20 (ЦЕМ II)</a> •
+          <a href="fbs-shlakoblok.html#fbs-24-4-6" style="color: var(--text-main); text-decoration: underline;">Блоки ФБС 24.4.6</a> •
+          <a href="fbs-shlakoblok.html#fbs-24-3-6" style="color: var(--text-main); text-decoration: underline;">Блоки ФБС 24.3.6</a> •
+          <a href="fbs-shlakoblok.html#shlakoblok" style="color: var(--text-main); text-decoration: underline;">Шлакоблок 390х190х190</a> •
+          <a href="koltsa-zhbi.html#catalog" style="color: var(--text-main); text-decoration: underline;">Кольца ЖБИ КС 15.9</a> •
+          <a href="koltsa-zhbi.html#catalog" style="color: var(--text-main); text-decoration: underline;">Кольца КС 10.9</a> •
+          <a href="koltsa-zhbi.html#catalog" style="color: var(--text-main); text-decoration: underline;">Кольца КС 20.9</a> •
+          <a href="koltsa-zhbi.html#catalog" style="color: var(--text-main); text-decoration: underline;">Крышки ПП 15 и днища ПН 15</a> •
+          <a href="index.html#manipulator" style="color: var(--accent-green); text-decoration: underline;">Манипулятор 15 тонн стрела 5т</a>
+        </div>
       </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 0.82rem; color: var(--text-muted);">
-        <a href="armatura.html#catalog" style="color: var(--text-main); text-decoration: underline;">Арматура 12 мм</a> •
-        <a href="armatura.html#catalog" style="color: var(--text-main); text-decoration: underline;">Арматура 10 мм</a> •
-        <a href="armatura.html#catalog" style="color: var(--text-main); text-decoration: underline;">Арматура 8 мм</a> •
-        <a href="armatura.html#catalog" style="color: var(--text-main); text-decoration: underline;">Катанка 6 мм</a> •
-        <a href="truby.html#catalog" style="color: var(--text-main); text-decoration: underline;">Труба 40х20х2 на лаги</a> •
-        <a href="truby.html#catalog" style="color: var(--text-main); text-decoration: underline;">Труба 40х40х2 на столбы</a> •
-        <a href="truby.html#catalog" style="color: var(--text-main); text-decoration: underline;">Труба 60х40х3 усиленная</a> •
-        <a href="truby.html#catalog" style="color: var(--text-main); text-decoration: underline;">Труба 80х80х3 на ворота</a> •
-        <a href="tsement-m500.html#catalog" style="color: var(--text-main); text-decoration: underline;">Цемент М500 Д0 (ЦЕМ I)</a> •
-        <a href="tsement-m500.html#catalog" style="color: var(--text-main); text-decoration: underline;">Цемент М500 Д20 (ЦЕМ II)</a> •
-        <a href="fbs-shlakoblok.html#fbs-24-4-6" style="color: var(--text-main); text-decoration: underline;">Блоки ФБС 24.4.6</a> •
-        <a href="fbs-shlakoblok.html#fbs-24-3-6" style="color: var(--text-main); text-decoration: underline;">Блоки ФБС 24.3.6</a> •
-        <a href="fbs-shlakoblok.html#shlakoblok" style="color: var(--text-main); text-decoration: underline;">Шлакоблок 390х190х190</a> •
-        <a href="koltsa-zhbi.html#catalog" style="color: var(--text-main); text-decoration: underline;">Кольца ЖБИ КС 15.9</a> •
-        <a href="koltsa-zhbi.html#catalog" style="color: var(--text-main); text-decoration: underline;">Кольца КС 10.9</a> •
-        <a href="koltsa-zhbi.html#catalog" style="color: var(--text-main); text-decoration: underline;">Кольца КС 20.9</a> •
-        <a href="koltsa-zhbi.html#catalog" style="color: var(--text-main); text-decoration: underline;">Крышки ПП 15 и днища ПН 15</a> •
-        <a href="index.html#manipulator" style="color: var(--accent-green); text-decoration: underline;">Манипулятор 15 тонн стрела 5т</a>
-      </div>
-    </div>
 
-    <div class="footer-bottom">
-      <div>© 2026 Стройбаза на Монтажной (stroybazansk.ru). Все права защищены. г. Невинномысск.</div>
-      <div>Склад стройматериалов и металлопроката ГОСТ. Цены актуальны на сегодня. Оплата при выгрузке.</div>
+      <div class="footer-bottom">
+        <div>© 2026 Стройбаза на Монтажной (stroybazansk.ru). Все права защищены. г. Невинномысск.</div>
+        <div>Склад стройматериалов и металлопроката ГОСТ. Цены актуальны на сегодня. Оплата при выгрузке.</div>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
   <!-- ==========================================================================
-       JAVASCRIPT: CALCULATOR LOGIC & INTERACTIVE FILTERS
+       CATALOG DRAWER MODAL (МЕНЮ-ШТОРКА)
+       ========================================================================== -->
+  <div class="sb-drawer-overlay" id="sbDrawerOverlay"></div>
+
+  <div class="sb-drawer" id="sbDrawer" aria-hidden="true" role="dialog" aria-label="Каталог стройматериалов">
+    <div class="sb-drawer-header">
+      <div class="sb-drawer-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--gold);"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <span>Каталог базы</span>
+      </div>
+      <button type="button" class="sb-drawer-close" id="sbDrawerCloseBtn" aria-label="Закрыть меню">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="sb-drawer-body">
+      <div>
+        <div class="sb-drawer-group-title">Стройматериалы в наличии</div>
+        <ul class="sb-drawer-nav">
+          <li>
+            <a href="armatura.html" class="sb-drawer-link">
+              <span>Арматура строительная</span>
+              <span class="sb-drawer-badge">6–20 мм</span>
+            </a>
+          </li>
+          <li>
+            <a href="truby.html" class="sb-drawer-link">
+              <span>Профильные трубы</span>
+              <span class="sb-drawer-badge">40х20–80х80</span>
+            </a>
+          </li>
+          <li>
+            <a href="tsement-m500.html" class="sb-drawer-link">
+              <span>Цемент М500 Новороссийск</span>
+              <span class="sb-drawer-badge">50 кг</span>
+            </a>
+          </li>
+          <li>
+            <a href="fbs-shlakoblok.html" class="sb-drawer-link">
+              <span>Фундаментные блоки ФБС</span>
+              <span class="sb-drawer-badge">ГОСТ</span>
+            </a>
+          </li>
+          <li>
+            <a href="fbs-shlakoblok.html#shlakoblok" class="sb-drawer-link">
+              <span>Шлакоблок стеновой</span>
+              <span class="sb-drawer-badge">390х190</span>
+            </a>
+          </li>
+          <li>
+            <a href="koltsa-zhbi.html" class="sb-drawer-link current">
+              <span>Кольца ЖБИ для септиков</span>
+              <span class="sb-drawer-badge" style="background: rgba(214,189,122,0.25); color: var(--gold);">★ Вы здесь</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="sb-drawer-group-title">Калькуляторы и расчеты</div>
+        <ul class="sb-drawer-nav">
+          <li>
+            <a href="index.html#kalkulyator" class="sb-drawer-link">
+              <span>Калькулятор заборов и навесов</span>
+            </a>
+          </li>
+          <li>
+            <a href="armatura.html#calculator" class="sb-drawer-link">
+              <span>Калькулятор веса арматуры</span>
+            </a>
+          </li>
+          <li>
+            <a href="truby.html#calculator" class="sb-drawer-link">
+              <span>Калькулятор профильной трубы</span>
+            </a>
+          </li>
+          <li>
+            <a href="tsement-m500.html#calculator" class="sb-drawer-link">
+              <span>Калькулятор бетона и раствора</span>
+            </a>
+          </li>
+          <li>
+            <a href="fbs-shlakoblok.html#calculator" class="sb-drawer-link">
+              <span>Калькулятор блоков ФБС</span>
+            </a>
+          </li>
+          <li>
+            <a href="#calculator" class="sb-drawer-link">
+              <span>Калькулятор септика (жильцы)</span>
+              <span class="sb-drawer-badge">СНиП</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="sb-drawer-group-title">На этой странице</div>
+        <ul class="sb-drawer-nav">
+          <li><a href="#catalog" class="sb-drawer-link">Каталог колец КС 10, 15, 20</a></li>
+          <li><a href="#calculator" class="sb-drawer-link">Инженерный калькулятор</a></li>
+          <li><a href="#gost-table" class="sb-drawer-link">Таблица размеров ГОСТ 8020-90</a></li>
+          <li><a href="#expert-advice" class="sb-drawer-link">Схема септика и монтаж</a></li>
+          <li><a href="#contacts" class="sb-drawer-link">Контакты склада на Монтажной</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sb-drawer-footer">
+      <a href="tel:+79887328161" class="btn-card-call" style="width: 100%; text-align: center;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +7 (988) 732-81-61
+      </a>
+      <a href="https://wa.me/79887328161?text=Здравствуйте!%20Хочу%20уточнить%20наличие%20колец%20ЖБИ" target="_blank" rel="noopener" class="btn-card-wa" style="width: 100%; text-align: center;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span>Написать в WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT: DRAWER, CALCULATOR LOGIC & INTERACTIVE FILTERS
        ========================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // 1. Prices Dictionary
+      // 1. Drawer Logic (Шторка каталога)
+      const sbDrawerOpenBtn  = document.getElementById('sbCatalogOpenBtn');
+      const sbDrawer         = document.getElementById('sbDrawer');
+      const sbDrawerOverlay  = document.getElementById('sbDrawerOverlay');
+      const sbDrawerCloseBtn = document.getElementById('sbDrawerCloseBtn');
+
+      function openDrawer() {
+        if (!sbDrawer || !sbDrawerOverlay) return;
+        sbDrawer.classList.add('active');
+        sbDrawerOverlay.classList.add('active');
+        sbDrawer.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        if (!sbDrawer || !sbDrawerOverlay) return;
+        sbDrawer.classList.remove('active');
+        sbDrawerOverlay.classList.remove('active');
+        sbDrawer.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      if (sbDrawerOpenBtn) sbDrawerOpenBtn.addEventListener('click', openDrawer);
+      if (sbDrawerCloseBtn) sbDrawerCloseBtn.addEventListener('click', closeDrawer);
+      if (sbDrawerOverlay) sbDrawerOverlay.addEventListener('click', closeDrawer);
+
+      document.querySelectorAll('.sb-drawer-link').forEach(link => {
+        link.addEventListener('click', closeDrawer);
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sbDrawer && sbDrawer.classList.contains('active')) {
+          closeDrawer();
+        }
+      });
+
+      // 2. Prices Dictionary
       const prices = {
         ks10: 3100,
         ks15: 3900,
@@ -2821,7 +3096,7 @@ html, body {
         manipulatorRate: 2500
       };
 
-      // 2. Calculator DOM References
+      // 3. Calculator DOM References
       const calcPeople      = document.getElementById('calcPeople');
       const btnModeTwo      = document.getElementById('btnModeTwo');
       const btnModeOne      = document.getElementById('btnModeOne');
@@ -2835,23 +3110,27 @@ html, body {
 
       let currentMode = 'two'; // 'two' | 'one'
 
-      btnModeTwo.addEventListener('click', function() {
-        if (currentMode === 'two') return;
-        currentMode = 'two';
-        btnModeTwo.classList.add('active');
-        btnModeOne.classList.remove('active');
-        updateCalculator();
-      });
+      if (btnModeTwo && btnModeOne) {
+        btnModeTwo.addEventListener('click', function() {
+          if (currentMode === 'two') return;
+          currentMode = 'two';
+          btnModeTwo.classList.add('active');
+          btnModeOne.classList.remove('active');
+          updateCalculator();
+        });
 
-      btnModeOne.addEventListener('click', function() {
-        if (currentMode === 'one') return;
-        currentMode = 'one';
-        btnModeOne.classList.add('active');
-        btnModeTwo.classList.remove('active');
-        updateCalculator();
-      });
+        btnModeOne.addEventListener('click', function() {
+          if (currentMode === 'one') return;
+          currentMode = 'one';
+          btnModeOne.classList.add('active');
+          btnModeTwo.classList.remove('active');
+          updateCalculator();
+        });
+      }
 
       function updateCalculator() {
+        if (!calcPeople || !resVolumeVal || !resConfigVal || !calcSpecList || !resPriceTotal || !calcWaBtn) return;
+
         const people = parseInt(calcPeople.value, 10);
         const neededVol = (people * 0.6).toFixed(1);
         resVolumeVal.textContent = neededVol + ' м³';
@@ -2937,7 +3216,7 @@ html, body {
         resPriceTotal.innerHTML = totalCost.toLocaleString('ru-RU') + ' <small>₽</small>';
 
         // Update WhatsApp Order Button
-        const craneText = calcCraneOption.checked ? ' с доставкой и опусканием в яму манипулятором' : ' самовывоз со склада';
+        const craneText = (calcCraneOption && calcCraneOption.checked) ? ' с доставкой и опусканием в яму манипулятором' : ' самовывоз со склада';
         const typeName = currentMode === 'two' ? 'Двухкамерный септик с переливом' : 'Однокамерный септик-накопитель';
 
         const waMsg = encodeURIComponent(
@@ -2953,13 +3232,13 @@ html, body {
         calcWaBtn.href = `https://wa.me/79887328161?text=${waMsg}`;
       }
 
-      calcPeople.addEventListener('change', updateCalculator);
-      calcCraneOption.addEventListener('change', updateCalculator);
+      if (calcPeople) calcPeople.addEventListener('change', updateCalculator);
+      if (calcCraneOption) calcCraneOption.addEventListener('change', updateCalculator);
 
       // Initial run
       updateCalculator();
 
-      // 3. Interactive Filter Chips
+      // 4. Interactive Filter Chips
       const filterButtons = document.querySelectorAll('#chipsNav .chip-btn[data-filter]');
       const productCards = document.querySelectorAll('.product-card');
 
