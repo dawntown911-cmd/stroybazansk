@@ -2758,26 +2758,14 @@
             document.getElementById('callbackForm').style.display = 'none';
             document.getElementById('cb-success').style.display = 'inline-block';
 
-            // Отправка в Telegram-бот базы мгновенно
-            const tgMsg = "🔥 ПЕРЕЗВОНИТЬ КЛИЕНТУ ЗА 5 МИНУТ!\n\n" +
-                          "👤 Имя: " + name + "\n" +
-                          "📞 Телефон: " + phone + "\n" +
-                          "🌐 Источник: Основной сайт stroybazansk.ru (Реклама Директ)";
+            // Отправка через надежный мост Google (работает в 100% браузеров без VPN)
+            const webAppUrl = "https://script.google.com/macros/s/AKfycbwJYhnZdgVJFjzk2L7kFlD-GD90Sy7p03V0NKmxp-1KAJM_sPAI1_Agc9jQwyB0HgiEGA/exec";
 
-            fetch("https://api.telegram.org/bot8986406404:AAE6S2SU891B1KCyByQwi3RC3N7ITQ-w7s4/sendMessage", {
+            fetch(webAppUrl, {
                 method: "POST",
+                mode: "no-cors",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    chat_id: "1988546771",
-                    text: tgMsg
-                })
-            }).catch(err => console.log(err));
-
-            // Запасная отправка на почту
-            fetch('https://formsubmit.co/ajax/stroybazansk@mail.ru', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({ Имя: name, Телефон: phone, Сайт: 'stroybazansk.ru' })
+                body: JSON.stringify({ name: name, phone: phone })
             }).catch(err => console.log(err));
         }
 
