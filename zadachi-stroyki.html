@@ -903,6 +903,38 @@
             .solution-actions { grid-template-columns: 1fr; }
             .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
         }
+    /* Фикс адаптивности блока чертежа на мобильных */
+.blueprint-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+.blueprint-buttons {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.blueprint-buttons .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    height: auto !important;
+    min-height: 48px !important;
+    padding: 10px 16px !important;
+    text-align: center !important;
+    line-height: 1.35 !important;
+}
+
+@media (max-width: 640px) {
+    .blueprint-card {
+        padding: 24px 16px !important;
+        gap: 20px !important;
+        margin: 28px 0 16px !important;
+    }
+    .blueprint-info h3 {
+        font-size: 1.3rem !important;
+        line-height: 1.25 !important;
+    }
+}
     </style>
 </head>
 <body>
