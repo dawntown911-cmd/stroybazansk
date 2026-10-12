@@ -1,0 +1,2456 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Таблицы веса металлопроката по ГОСТ — расчет веса 1 метра арматуры и труб | Справочник базы в Невинномысске</title>
+  <meta name="description" content="Официальные таблицы теоретического веса по ГОСТ: масса погонного метра арматуры А500С и профильных труб, расчет метров в тонне, размеры блоков ФБС. Онлайн-конвертер перевода единиц со склада на Монтажной 10.">
+  <meta name="keywords" content="вес арматуры гост, вес погонного метра трубы, таблица веса металлопроката, арматура 12 мм вес метра, калькулятор металла невинномысск, блоки фбс вес, труба профильная гост 8645, стройбаза на монтажной">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://stroybazansk.ru/spravochnik-gost.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Таблицы веса металлопроката по ГОСТ — расчет веса 1 метра арматуры и труб">
+  <meta property="og:description" content="Официальный инженерный справочник ГОСТ и онлайн-калькулятор перевода метров в тонны металлопроката. Склад: Невинномысск, ул. Монтажная, 10.">
+  <meta property="og:url" content="https://stroybazansk.ru/spravochnik-gost.html">
+  <meta property="og:site_name" content="Стройбаза на Монтажной">
+  <meta property="og:image" content="https://stroybazansk.ru/logo.png">
+
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="RU-STA">
+  <meta name="geo.placename" content="Невинномысск">
+  <meta name="geo.position" content="44.697800;41.944300">
+  <meta name="ICBM" content="44.697800, 41.944300">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Reset & Core Variables */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-main: #07080c;
+      --bg-card: rgba(15, 17, 26, 0.78);
+      --bg-card-hover: rgba(22, 26, 40, 0.9);
+      --bg-input: #0b0d14;
+      --border-color: rgba(214, 189, 122, 0.16);
+      --border-light: rgba(255, 255, 255, 0.08);
+      --border-accent: #d6bd7a;
+      --gold: #d6bd7a;
+      --gold-light: #f3e5be;
+      --gold-dark: #b89b4f;
+      --text-main: #f4f4f5;
+      --text-muted: #9ca3af;
+      --text-dark: #07080c;
+      --badge-bg: rgba(214, 189, 122, 0.12);
+      --success: #10b981;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background:
+        radial-gradient(ellipse at 50% -15%, rgba(214, 189, 122, 0.09), transparent 60%),
+        radial-gradient(circle at 90% 40%, rgba(26, 32, 53, 0.4), transparent 50%),
+        #07080c;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button, input, select {
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+      outline: none;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 24px;
+      }
+    }
+
+    /* Header */
+    .sb-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 8, 12, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-color);
+      height: 64px;
+      display: flex;
+      align-items: center;
+    }
+
+    .sb-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .sb-nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* 36px Burger Button */
+    .sb-catalog-toggle {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: 8px;
+      background: rgba(214, 189, 122, 0.1);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--gold);
+      transition: var(--transition);
+      padding: 0;
+    }
+
+    .sb-catalog-toggle:hover,
+    .sb-catalog-toggle:focus {
+      background: rgba(214, 189, 122, 0.2);
+      border-color: var(--gold);
+    }
+
+    .sb-logo-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sb-logo-img {
+      height: 34px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .sb-logo-text {
+      display: none;
+      flex-direction: column;
+    }
+
+    .sb-logo-title {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .sb-logo-title span {
+      color: var(--gold);
+    }
+
+    .sb-logo-subtitle {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: 640px) {
+      .sb-logo-text {
+        display: flex;
+      }
+    }
+
+    /* Desktop Navigation */
+    .sb-desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .sb-nav-link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #d1d5db;
+    }
+
+    .sb-nav-link:hover,
+    .sb-nav-link.active {
+      color: var(--gold);
+    }
+
+    @media (min-width: 992px) {
+      .sb-desktop-nav {
+        display: flex;
+      }
+    }
+
+    /* Header Right Actions */
+    .sb-header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sb-header-phone {
+      display: none;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .sb-phone-val {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      font-family: var(--font-heading);
+    }
+
+    .sb-phone-label {
+      font-size: 0.7rem;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .sb-phone-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--success);
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    @media (min-width: 768px) {
+      .sb-header-phone {
+        display: flex;
+      }
+    }
+
+    /* 36px Call Button */
+    .sb-btn-call {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #d6bd7a 0%, #b89b4f 100%);
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(214, 189, 122, 0.25);
+      transition: var(--transition);
+      border: none;
+    }
+
+    .sb-btn-call:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(214, 189, 122, 0.4);
+    }
+
+    /* Mobile Drawer */
+    .sb-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .sb-drawer-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .sb-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 280px;
+      max-width: 85%;
+      height: 100%;
+      background: #0b0d14;
+      border-right: 1px solid var(--border-color);
+      z-index: 2001;
+      transform: translateX(-100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      padding: 24px 20px;
+    }
+
+    .sb-drawer.active {
+      transform: translateX(0);
+    }
+
+    .sb-drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 16px;
+    }
+
+    .sb-drawer-close {
+      width: 32px;
+      height: 32px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sb-drawer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: auto;
+    }
+
+    .sb-drawer-link {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-main);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .sb-drawer-link:hover {
+      color: var(--gold);
+    }
+
+    .sb-drawer-footer {
+      border-top: 1px solid var(--border-light);
+      padding-top: 16px;
+    }
+
+    /* Breadcrumbs */
+    .sb-breadcrumbs {
+      padding: 14px 0;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .sb-bc-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .sb-bc-item a {
+      color: var(--text-muted);
+    }
+
+    .sb-bc-item a:hover {
+      color: var(--gold);
+    }
+
+    .sb-bc-sep {
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 0.75rem;
+    }
+
+    .sb-bc-current {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* Hero Section */
+    .sb-hero {
+      padding: 20px 0 32px;
+    }
+
+    .sb-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--badge-bg);
+      border: 1px solid var(--border-color);
+      color: var(--gold);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .sb-hero-h1 {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+
+    .sb-hero-h1 span {
+      background: linear-gradient(135deg, #f4f4f5 20%, #d6bd7a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .sb-hero-desc {
+      font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+      color: #d1d5db;
+      max-width: 880px;
+      margin-bottom: 24px;
+      line-height: 1.65;
+    }
+
+    .sb-hero-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .sb-feature-pill {
+      background: rgba(15, 17, 26, 0.6);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sb-feature-pill-icon {
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .sb-feature-pill-text {
+      font-size: 0.85rem;
+      color: #e4e4e7;
+      line-height: 1.35;
+    }
+
+    /* Chips Quick Nav */
+    .sb-chips-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      margin-bottom: 28px;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .sb-chip {
+      white-space: nowrap;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-light);
+      color: #d1d5db;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .sb-chip:hover {
+      background: rgba(214, 189, 122, 0.12);
+      border-color: var(--border-color);
+      color: var(--gold);
+    }
+
+    .sb-chip.catalog-chip {
+      border-color: rgba(214, 189, 122, 0.3);
+      color: var(--gold-light);
+    }
+
+    /* Section Global */
+    .sb-section {
+      padding: 32px 0;
+    }
+
+    .sb-section-head {
+      margin-bottom: 24px;
+    }
+
+    .sb-section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sb-section-subtitle {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 760px;
+    }
+
+    /* Calculator Section */
+    .sb-calc-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .sb-calc-card {
+        padding: 32px;
+      }
+    }
+
+    .sb-calc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 992px) {
+      .sb-calc-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    .sb-form-group {
+      margin-bottom: 18px;
+    }
+
+    .sb-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .sb-select, .sb-input {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      padding: 12px 14px;
+      color: #ffffff;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .sb-select:focus, .sb-input:focus {
+      border-color: var(--border-accent);
+      background: rgba(18, 22, 34, 0.95);
+      box-shadow: 0 0 0 3px rgba(214, 189, 122, 0.15);
+    }
+
+    .sb-input-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 600px) {
+      .sb-input-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .sb-input-wrap {
+      position: relative;
+    }
+
+    .sb-input-unit {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .sb-input.has-unit {
+      padding-right: 52px;
+    }
+
+    .sb-quick-presets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .sb-preset-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-light);
+      color: #d1d5db;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .sb-preset-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(214, 189, 122, 0.1);
+    }
+
+    /* Calculator Output Display */
+    .sb-calc-summary {
+      background: rgba(7, 8, 12, 0.75);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sb-summary-header {
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .sb-summary-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .sb-summary-item-name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text-main);
+    }
+
+    .sb-results-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .sb-result-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .sb-rb-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .sb-rb-val {
+      font-family: var(--font-mono);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .sb-rb-val.highlight {
+      color: var(--gold);
+    }
+
+    .sb-total-cost-box {
+      background: linear-gradient(135deg, rgba(214, 189, 122, 0.15), rgba(184, 155, 79, 0.05));
+      border: 1px solid var(--gold);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+    }
+
+    .sb-total-cost-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #e4e4e7;
+    }
+
+    .sb-total-cost-val {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--gold-light);
+      line-height: 1.1;
+      margin-top: 4px;
+    }
+
+    .sb-calc-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sb-btn-order {
+      background: linear-gradient(135deg, #d6bd7a 0%, #b89b4f 100%);
+      color: var(--text-dark);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 18px;
+      border-radius: 9px;
+      border: none;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(214, 189, 122, 0.25);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .sb-btn-order:hover {
+      box-shadow: 0 6px 20px rgba(214, 189, 122, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .sb-calc-disclaimer {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* Tabs Architecture */
+    .sb-tabs-wrapper {
+      margin-bottom: 30px;
+    }
+
+    .sb-tabs-nav {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-light);
+      margin-bottom: 24px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .sb-tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sb-tab-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .sb-tab-btn.active {
+      background: rgba(214, 189, 122, 0.12);
+      border-color: var(--border-color);
+      color: var(--gold);
+    }
+
+    .sb-tab-pane {
+      display: none;
+    }
+
+    .sb-tab-pane.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive Data Tables */
+    .sb-table-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .sb-table-header-meta {
+      padding: 16px 20px;
+      background: rgba(214, 189, 122, 0.05);
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .sb-gost-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--gold);
+      background: rgba(214, 189, 122, 0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(214, 189, 122, 0.2);
+    }
+
+    .sb-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .sb-data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+      min-width: 640px;
+    }
+
+    .sb-data-table th {
+      background: rgba(11, 13, 20, 0.9);
+      color: var(--gold-light);
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    .sb-data-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      color: #e4e4e7;
+    }
+
+    .sb-data-table tbody tr:hover {
+      background: rgba(214, 189, 122, 0.04);
+    }
+
+    .sb-data-table td.mono {
+      font-family: var(--font-mono);
+      font-weight: 500;
+    }
+
+    .sb-data-table td.strong {
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .sb-flagship-tag {
+      background: rgba(214, 189, 122, 0.15);
+      color: var(--gold);
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+
+    .sb-btn-table-action {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-light);
+      color: #d1d5db;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .sb-btn-table-action:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* Expert SEO Section */
+    .sb-expert-section {
+      background: rgba(15, 17, 26, 0.5);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      padding: 48px 0;
+      margin: 40px 0;
+    }
+
+    .sb-expert-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 850px) {
+      .sb-expert-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .sb-expert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sb-expert-card:hover {
+      border-color: var(--border-color);
+    }
+
+    .sb-expert-card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(214, 189, 122, 0.12);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .sb-expert-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .sb-expert-card-text {
+      font-size: 0.88rem;
+      color: #a1a1aa;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .sb-formula-box {
+      background: #090b10;
+      border: 1px dashed var(--border-color);
+      border-radius: 8px;
+      padding: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--gold-light);
+      margin-top: auto;
+    }
+
+    /* Interlinking Catalog Section */
+    .sb-catalog-links {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    @media (min-width: 768px) {
+      .sb-catalog-links {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .sb-cat-link-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .sb-cat-link-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .sb-cat-link-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
+      background: var(--bg-card-hover);
+    }
+
+    .sb-cat-link-card:hover::before {
+      opacity: 1;
+    }
+
+    .sb-cat-link-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .sb-cat-link-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .sb-cat-link-btn {
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* FAQ Section */
+    .sb-faq-section {
+      margin-bottom: 48px;
+    }
+
+    .sb-faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sb-faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .sb-faq-item.active {
+      border-color: var(--border-color);
+    }
+
+    .sb-faq-question {
+      padding: 18px 20px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      gap: 12px;
+    }
+
+    .sb-faq-icon {
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .sb-faq-item.active .sb-faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .sb-faq-answer {
+      display: none;
+      padding: 0 20px 20px;
+      font-size: 0.88rem;
+      color: #a1a1aa;
+      line-height: 1.6;
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .sb-faq-item.active .sb-faq-answer {
+      display: block;
+    }
+
+    /* Warehouse Map & Contact Block */
+    .sb-wh-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 48px;
+    }
+
+    @media (min-width: 768px) {
+      .sb-wh-block {
+        padding: 32px;
+      }
+    }
+
+    .sb-wh-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    @media (min-width: 850px) {
+      .sb-wh-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .sb-wh-info h3 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .sb-wh-details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+
+    .sb-wh-detail-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #d1d5db;
+    }
+
+    .sb-wh-detail-row svg {
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .sb-wh-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sb-wh-badge {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-light);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      color: #e4e4e7;
+    }
+
+    /* Footer */
+    .sb-footer {
+      background: #040508;
+      border-top: 1px solid var(--border-color);
+      padding: 40px 0 24px;
+      margin-top: auto;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .sb-footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    @media (min-width: 768px) {
+      .sb-footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+    }
+
+    .sb-footer-col h4 {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      color: #ffffff;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .sb-footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sb-footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .sb-footer-bottom {
+      border-top: 1px solid var(--border-light);
+      padding-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.78rem;
+    }
+
+    /* SVGs and Utilities */
+    .icon {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+  <!-- Schema.org Microdata -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://stroybazansk.ru/#organization",
+        "name": "Стройбаза на Монтажной (ИП Кардава Т.К.)",
+        "url": "https://stroybazansk.ru/",
+        "logo": "https://stroybazansk.ru/logo.png",
+        "telephone": "+7-988-732-81-61",
+        "priceRange": "₽₽",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Монтажная, д. 10",
+          "addressLocality": "Невинномысск",
+          "addressRegion": "Ставропольский край",
+          "postalCode": "357107",
+          "addressCountry": "RU"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 44.697800,
+          "longitude": 41.944300
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "08:00",
+            "closes": "18:00"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://stroybazansk.ru/spravochnik-gost.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "https://stroybazansk.ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Сервисы и расчеты",
+            "item": "https://stroybazansk.ru/#services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Инженерный справочник ГОСТ",
+            "item": "https://stroybazansk.ru/spravochnik-gost.html"
+          }
+        ]
+      },
+      {
+        "@type": "Dataset",
+        "name": "Таблица теоретического веса и параметров металлопроката по ГОСТ РФ",
+        "description": "Справочные данные массы погонного метра арматуры А500С/А240 (ГОСТ 34028-2016), профильных труб (ГОСТ 8645-68, ГОСТ 8639-82), блоков ФБС (ГОСТ 13579-78) на складе в Невинномысске.",
+        "creator": {
+          "@type": "Organization",
+          "name": "Стройбаза на Монтажной"
+        },
+        "spatialCoverage": "Невинномысск, Ставропольский край"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "По какой формуле рассчитывается теоретический вес погонного метра арматуры?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Масса 1 метра круглого стального проката определяется по формуле: M = 0.006165 × d², где d — номинальный диаметр стержня в миллиметрах. Плотность стали принята за 7850 кг/м³ согласно ГОСТ 34028-2016."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Почему фактический вес металлопроката может отличаться от ГОСТ на 3–5%?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Стандарты ГОСТ 34028-2016 и ГОСТ 8645-68 допускают технологические предельные отклонения по массе 1 метра от ±3% до ±8% в зависимости от диаметра и толщины стенки. Это обусловлено допустимым износом прокатных валков на металлургическом комбинате."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как проверить профильную трубу на складе и не купить тонкостенную трубу ТУ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Для проверки необходимо использовать штангенциркуль, проводя замер толщины стенки не по торцевому заусенцу, оставленному пилой, а на зачищенном участке. Также точный метод — взвесить 6-метровый хлыст и сравнить фактическую массу с ГОСТом."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="sb-header">
+    <div class="container sb-header-inner">
+      <div class="sb-nav-left">
+        <!-- 36px Burger Toggle -->
+        <button type="button" class="sb-catalog-toggle" id="sb-catalog-toggle" aria-label="Открыть меню каталога">
+          <svg class="icon" viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <a href="/" class="sb-logo-link" title="Стройбаза на Монтажной">
+          <img src="logo.png" alt="Логотип Стройбаза на Монтажной" class="sb-logo-img" width="120" height="34" onerror="this.style.display='none'">
+          <div class="sb-logo-text">
+            <span class="sb-logo-title">СТРОЙБАЗА<span>.НСК</span></span>
+            <span class="sb-logo-subtitle">Монтажная, 10</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Links -->
+      <nav class="sb-desktop-nav" aria-label="Основная навигация">
+        <a href="/" class="sb-nav-link">Главная</a>
+        <a href="armatura.html" class="sb-nav-link">Арматура</a>
+        <a href="truby.html" class="sb-nav-link">Профильная труба</a>
+        <a href="tsement-m500.html" class="sb-nav-link">Цемент М500</a>
+        <a href="#calculator" class="sb-nav-link active">Калькулятор веса</a>
+        <a href="#tables" class="sb-nav-link">Таблицы ГОСТ</a>
+      </nav>
+
+      <!-- Header Right: Phone & Call Button -->
+      <div class="sb-header-right">
+        <div class="sb-header-phone">
+          <a href="tel:+79887328161" class="sb-phone-val">+7 (988) 732-81-61</a>
+          <span class="sb-phone-label"><span class="sb-phone-dot"></span> Склад открыт: Пн–Сб 8–18</span>
+        </div>
+
+        <!-- 36px Call Button -->
+        <a href="tel:+79887328161" class="sb-btn-call" aria-label="Позвонить на стройбазу">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="sb-drawer-overlay" id="sb-drawer-overlay"></div>
+  <aside class="sb-drawer" id="sb-drawer">
+    <div class="sb-drawer-header">
+      <div class="sb-logo-title">МЕНЮ<span> КАТАЛОГА</span></div>
+      <button type="button" class="sb-drawer-close" id="sb-drawer-close" aria-label="Закрыть меню">
+        <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="sb-drawer-links">
+      <a href="/" class="sb-drawer-link">Главная база</a>
+      <a href="armatura.html" class="sb-drawer-link">Арматура А500С / А240</a>
+      <a href="truby.html" class="sb-drawer-link">Профильные трубы ГОСТ</a>
+      <a href="tsement-m500.html" class="sb-drawer-link">Цемент Новороссийский М500</a>
+      <a href="#calculator" class="sb-drawer-link">Онлайн калькулятор веса</a>
+      <a href="#tables" class="sb-drawer-link">Сводные таблицы ГОСТ</a>
+      <a href="#expert-seo" class="sb-drawer-link">Инженерный справочник</a>
+    </div>
+    <div class="sb-drawer-footer">
+      <p style="font-size: 0.8rem; color: var(--gold); margin-bottom: 6px;">Склад в Невинномысске:</p>
+      <p style="font-size: 0.85rem; color: #fff; margin-bottom: 12px;">ул. Монтажная, д. 10</p>
+      <a href="tel:+79887328161" class="sb-btn-order" style="width: 100%; justify-content: center; text-decoration: none;">
+        Позвонить менеджеру
+      </a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Breadcrumbs -->
+    <div class="container">
+      <nav class="sb-breadcrumbs" aria-label="Хлебные крошки">
+        <ol class="sb-bc-list">
+          <li class="sb-bc-item"><a href="/">Главная</a></li>
+          <li class="sb-bc-sep">/</li>
+          <li class="sb-bc-item"><span>Сервисы и расчеты</span></li>
+          <li class="sb-bc-sep">/</li>
+          <li class="sb-bc-item sb-bc-current" aria-current="page">Инженерный справочник ГОСТ</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="sb-hero">
+      <div class="container">
+        <div class="sb-hero-badge">
+          <svg class="icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          Стандартизация ГОСТ РФ • Склад на Монтажной 10
+        </div>
+        <h1 class="sb-hero-h1">
+          Инженерный справочник ГОСТ и <span>онлайн-калькулятор веса проката</span>
+        </h1>
+        <p class="sb-hero-desc">
+          Официальные нормативные данные теоретической массы арматуры, профильных труб и железобетонных изделий. Контрольный замер толщины стенки штангенциркулем при отгрузке, электронные поверенные весы и честный пересчет метров в тонны на складе в Невинномысске.
+        </p>
+
+        <!-- Feature Pills -->
+        <div class="sb-hero-features">
+          <div class="sb-feature-pill">
+            <svg class="icon sb-feature-pill-icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <div class="sb-feature-pill-text"><strong>Строго по ГОСТу</strong>: А500С (34028-2016), трубы (8645-68 / 8639-82)</div>
+          </div>
+          <div class="sb-feature-pill">
+            <svg class="icon sb-feature-pill-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <div class="sb-feature-pill-text"><strong>Контроль штангенциркулем</strong>: отсутствие облегченных ТУ-стенок</div>
+          </div>
+          <div class="sb-feature-pill">
+            <svg class="icon sb-feature-pill-icon" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            <div class="sb-feature-pill-text"><strong>Отгрузка в день заказа</strong>: собственным манипулятором по краю</div>
+          </div>
+        </div>
+
+        <!-- Quick Nav Chips -->
+        <div class="sb-chips-nav" aria-label="Быстрый переход по справочнику">
+          <a href="#rebar-table" class="sb-chip">Вес арматуры ГОСТ 34028</a>
+          <a href="#pipe-table" class="sb-chip">Вес профильной трубы ГОСТ 8645</a>
+          <a href="#fbs-table" class="sb-chip">Вес блоков ФБС</a>
+          <a href="#calculator" class="sb-chip">Конвертер метры ⇄ тонны</a>
+          <a href="armatura.html" class="sb-chip catalog-chip">Каталог арматуры →</a>
+          <a href="truby.html" class="sb-chip catalog-chip">Каталог труб →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="sb-section" id="calculator">
+      <div class="container">
+        <div class="sb-section-head">
+          <h2 class="sb-section-title">
+            <svg class="icon" style="color: var(--gold);" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="14.01"></line><line x1="8" y1="14" x2="8" y2="14.01"></line><line x1="12" y1="14" x2="12" y2="14.01"></line><line x1="16" y1="18" x2="16" y2="18.01"></line><line x1="8" y1="18" x2="8" y2="18.01"></line><line x1="12" y1="18" x2="12" y2="18.01"></line></svg>
+            Двунаправленный онлайн-конвертер: Метры ⇄ Тонны ⇄ Килограммы
+          </h2>
+          <p class="sb-section-subtitle">
+            Введите количество метров или требуемый вес партии — система мгновенно пересчитает параметры по ГОСТовской плотности и покажет ориентировочную стоимость со склада на ул. Монтажная, 10.
+          </p>
+        </div>
+
+        <div class="sb-calc-card">
+          <div class="sb-calc-grid">
+            <!-- Calculator Inputs -->
+            <div class="sb-calc-inputs">
+              <!-- Item Select -->
+              <div class="sb-form-group">
+                <label for="metal-select" class="sb-label">Выберите типоразмер металлопроката</label>
+                <select id="metal-select" class="sb-select">
+                  <optgroup label="Арматура рифленая А500С / А240 (ГОСТ 34028-2016)">
+                    <option value="rebar-6" data-weight="0.222" data-price="21" data-name="Арматура 6 мм (А240/А500С)">Арматура 6 мм — 0.222 кг/м (21 ₽/м)</option>
+                    <option value="rebar-8" data-weight="0.395" data-price="30" data-name="Арматура 8 мм (А500С)">Арматура 8 мм — 0.395 кг/м (30 ₽/м)</option>
+                    <option value="rebar-10" data-weight="0.617" data-price="45" data-name="Арматура 10 мм (А500С)">Арматура 10 мм — 0.617 кг/м (45 ₽/м)</option>
+                    <option value="rebar-12" data-weight="0.888" data-price="56" data-name="Арматура 12 мм (Флагман А500С)" selected>★ Арматура 12 мм (Флагман) — 0.888 кг/м (56 ₽/м)</option>
+                    <option value="rebar-14" data-weight="1.210" data-price="76" data-name="Арматура 14 мм (А500С)">Арматура 14 мм — 1.210 кг/м (76 ₽/м)</option>
+                    <option value="rebar-16" data-weight="1.580" data-price="98" data-name="Арматура 16 мм (А500С)">Арматура 16 мм — 1.580 кг/м (98 ₽/м)</option>
+                  </optgroup>
+                  <optgroup label="Профильные трубы (ГОСТ 8645-68 / 8639-82)">
+                    <option value="pipe-40-20-2" data-weight="1.70" data-price="115" data-name="Труба проф. 40х20х2.0 мм">Труба 40х20х2.0 — 1.70 кг/м (115 ₽/м)</option>
+                    <option value="pipe-40-40-2" data-weight="2.35" data-price="160" data-name="Труба проф. 40х40х2.0 мм">Труба 40х40х2.0 — 2.35 кг/м (160 ₽/м)</option>
+                    <option value="pipe-60-40-3" data-weight="4.30" data-price="260" data-name="Труба проф. 60х40х3.0 мм (усил.)">Труба 60х40х3.0 усил. — 4.30 кг/м (260 ₽/м)</option>
+                    <option value="pipe-60-60-3" data-weight="5.25" data-price="330" data-name="Труба проф. 60х60х3.0 мм">Труба 60х60х3.0 — 5.25 кг/м (330 ₽/м)</option>
+                    <option value="pipe-80-80-3" data-weight="7.10" data-price="460" data-name="Труба проф. 80х80х3.0 мм">Труба 80х80х3.0 — 7.10 кг/м (460 ₽/м)</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <!-- Dual Inputs: Meters vs Tons/Kg -->
+              <div class="sb-input-row">
+                <div class="sb-form-group">
+                  <label for="calc-meters" class="sb-label">Длина (Метры погонные)</label>
+                  <div class="sb-input-wrap">
+                    <input type="number" id="calc-meters" class="sb-input has-unit" min="0" step="any" value="100" placeholder="Например: 100">
+                    <span class="sb-input-unit">пог. м</span>
+                  </div>
+                </div>
+
+                <div class="sb-form-group">
+                  <label for="calc-tons" class="sb-label">Масса партии (Тонны)</label>
+                  <div class="sb-input-wrap">
+                    <input type="number" id="calc-tons" class="sb-input has-unit" min="0" step="any" placeholder="0.000">
+                    <span class="sb-input-unit">тн</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sb-form-group">
+                <label for="calc-kg" class="sb-label">Или масса партии (Килограммы)</label>
+                <div class="sb-input-wrap">
+                  <input type="number" id="calc-kg" class="sb-input has-unit" min="0" step="any" placeholder="0.0">
+                  <span class="sb-input-unit">кг</span>
+                </div>
+              </div>
+
+              <!-- Quick Presets -->
+              <div>
+                <span style="font-size: 0.78rem; color: var(--text-muted); margin-right: 6px;">Быстрый выбор:</span>
+                <div class="sb-quick-presets">
+                  <button type="button" class="sb-preset-btn" data-add-m="50">+50 м</button>
+                  <button type="button" class="sb-preset-btn" data-add-m="100">+100 м</button>
+                  <button type="button" class="sb-preset-btn" data-add-m="500">+500 м</button>
+                  <button type="button" class="sb-preset-btn" data-set-t="1">Ровно 1 тонна</button>
+                  <button type="button" class="sb-preset-btn" id="btn-calc-reset">Сбросить</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Summary Box -->
+            <div class="sb-calc-summary">
+              <div>
+                <div class="sb-summary-header">
+                  <div class="sb-summary-title">Текущая позиция расчета</div>
+                  <div class="sb-summary-item-name" id="res-item-name">Арматура 12 мм (Флагман А500С)</div>
+                </div>
+
+                <div class="sb-results-list">
+                  <div class="sb-result-box">
+                    <div class="sb-rb-label">Теоретический вес 1 м</div>
+                    <div class="sb-rb-val" id="res-unit-weight">0.888 кг</div>
+                  </div>
+                  <div class="sb-result-box">
+                    <div class="sb-rb-label">Метров в 1 тонне</div>
+                    <div class="sb-rb-val" id="res-meters-in-ton">1 126 м</div>
+                  </div>
+                  <div class="sb-result-box">
+                    <div class="sb-rb-label">Итоговая масса (кг)</div>
+                    <div class="sb-rb-val highlight" id="res-total-kg">88.8 кг</div>
+                  </div>
+                  <div class="sb-result-box">
+                    <div class="sb-rb-label">Итоговая масса (тонн)</div>
+                    <div class="sb-rb-val highlight" id="res-total-tons">0.089 т</div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="sb-total-cost-box">
+                  <div class="sb-total-cost-label">Ориентировочная сумма со склада в Невинномысске</div>
+                  <div class="sb-total-cost-val" id="res-total-price">5 600 ₽</div>
+                </div>
+
+                <div class="sb-calc-actions">
+                  <a href="https://wa.me/79887328161?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB%D0%BE%D0%BF%D1%80%D0%BE%D0%BA%D0%B0%D1%82%20%D1%81%D0%BE%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B0%20%D0%BD%D0%B0%20%D0%9C%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BD%D0%BE%D0%B9%2010" target="_blank" rel="noopener" class="sb-btn-order">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    Быстрый заказ через WhatsApp
+                  </a>
+                  <p class="sb-calc-disclaimer">Резка в размер на складе • Доставка манипулятором по Ставропольскому краю</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Master Tables Section with Tabs -->
+    <section class="sb-section" id="tables">
+      <div class="container">
+        <div class="sb-section-head">
+          <h2 class="sb-section-title">
+            <svg class="icon" style="color: var(--gold);" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Официальные сводные таблицы ГОСТ
+          </h2>
+          <p class="sb-section-subtitle">
+            Нормативы массы 1 погонного метра, количество метров в тонне и базовый складской прайс базы на ул. Монтажная, 10 (г. Невинномысск). Для мобильных устройств таблицы поддерживают плавную горизонтальную прокрутку.
+          </p>
+        </div>
+
+        <div class="sb-tabs-wrapper">
+          <!-- Navigation Tabs -->
+          <div class="sb-tabs-nav" role="tablist">
+            <button class="sb-tab-btn active" data-tab="tab-rebar" role="tab" aria-selected="true" id="tab-btn-rebar">
+              <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+              Арматура (ГОСТ 34028)
+            </button>
+            <button class="sb-tab-btn" data-tab="tab-pipes" role="tab" aria-selected="false" id="tab-btn-pipes">
+              <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+              Профильные трубы (ГОСТ 8645)
+            </button>
+            <button class="sb-tab-btn" data-tab="tab-fbs" role="tab" aria-selected="false" id="tab-btn-fbs">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+              Блоки ФБС и Шлакоблок
+            </button>
+            <button class="sb-tab-btn" data-tab="tab-cement" role="tab" aria-selected="false" id="tab-btn-cement">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              Цемент М500 / Нормы бетона
+            </button>
+          </div>
+
+          <!-- TAB 1: Арматура -->
+          <div class="sb-tab-pane active" id="tab-rebar" role="tabpanel" aria-labelledby="tab-btn-rebar">
+            <div class="sb-table-card" id="rebar-table">
+              <div class="sb-table-header-meta">
+                <div>
+                  <strong style="color: #ffffff;">Стальная арматура периодического и гладкого профиля</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Классы прочности А500С, А400, А240 в стержнях по 11.7 м и бухтах</div>
+                </div>
+                <span class="sb-gost-badge">ГОСТ 34028-2016</span>
+              </div>
+              <div class="sb-table-wrap">
+                <table class="sb-data-table">
+                  <thead>
+                    <tr>
+                      <th>Диаметр (ном.)</th>
+                      <th>Площадь сечения</th>
+                      <th>Теор. вес 1 м</th>
+                      <th>Метров в 1 т</th>
+                      <th>Предельный допуск</th>
+                      <th>Складская цена</th>
+                      <th>Действие</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="strong">6 мм (А240/А500С)</td>
+                      <td class="mono">0.283 см²</td>
+                      <td class="mono">0.222 кг</td>
+                      <td class="mono">4 504 м</td>
+                      <td>± 8.0 %</td>
+                      <td class="strong" style="color: var(--gold-light);">21 ₽ / м</td>
+                      <td><button type="button" class="sb-btn-table-action" onclick="setCalcItem('rebar-6')">В калькулятор</button></td>
+                    </tr>
+                    <tr>
+                      <td class="strong">8 мм (А500С)</td>
+                      <td class="mono">0.503 см²</td>
+                      <td class="mono">0.395 кг</td>
+                      <td class="mono">2 531 м</td>
+                      <td>± 8.0 %</td>
+                      <td class="strong" style="color: var(--gold-light);">30 ₽ / м</td>
+                      <td><button type="button" class="sb-btn-table-action" onclick="setCalcItem('rebar-8')">В калькулятор</button></td>
+                    </tr>
+                    <tr>
+                      <td class="strong">10 мм (А500С)</td>
+                      <td class="mono">0.785 см²</td>
+                      <td class="mono">0.617 кг</td>
+                      <td class="mono">1 620 м</td>
+                      <td>± 5.0 %</td>
+                      <td class="strong" style="color: var(--gold-light);">45 ₽ / м</td>
+                      <td><button type="button" class="sb-btn-table-action" onclick="setCalcItem('rebar-10')">В калькулятор</button></td>
+                    </tr>
+                    <tr>
+                      <td class="strong">
+                        12 мм (А500С)
+                        <span class="sb-flagship-tag">ХИТ</span>
+                      </td>
+                      <td class="mono">1.131 см²</td>
+                      <td class="mono">0.888 кг</td>
+                      <td class="mono">1 126 м</td>
+                      <td>± 5.0 %</td>
+                      <td class="strong" style="color: var(--gold-light);">56 ₽ / м</td>
+                      <td><button type="button" class="sb-btn-table-action" onclick="setCalcItem('rebar-12')">В калькулятор</button></td>
+                    </tr>
+                    <tr>
+                      <td class="strong">14 мм (А500С)</td>
+                      <td class="mono">1.539 см²</td>
+                      <td class="mono">1.210 кг</td>
+                      <td class="mono">826 м</td>
+                      <td>± 5.0 %</td>
+                      <td class="strong" style="color: var(--gold-light);">76 ₽ / м</td>
+                      <td><button type="button" class="sb-btn-table-action" onclick="setCalcItem('rebar-14')">В калькулятор</button></td>
+                    </tr>
+                    <tr>
+                      <td class="strong">16 мм (А500С)</td>
+                      <td class="mono">2.011 см²</td>
+                      <td class="mono">1.580 кг</td>
+                      <td class="mono">633 м</td>
+                      <td>± 5.0 %</td>
+                      <td class="strong" style="color: var(--gold-light);">98 ₽ / м</td>
+                      <td><button type="button" class="sb-btn-table-action" onclick="setCalcItem('rebar-16')">В калькулятор</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: Профильные трубы -->
+          <div class="sb-tab-pane" id="tab-pipes" role="tabpanel" aria-labelledby="tab-btn-pipes">
+            <div class="sb-table-card" id="pipe-table">
+              <div class="sb-table-header-meta">
+                <div>
+                  <strong style="color: #ffffff;">Трубы стальные профильные электросварные прямошовные</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Сталь Ст3сп/пс, длина хлыстов 6.0 м, замер стенки без обмана</div>
+                </div>
+                <span class="sb-gost-badge">ГОСТ 8645-68 / ГОСТ 8639-82</span>
+              </div>
+              <div class="sb-table-wrap">
+                <table class="sb-data-table">
+                  <thead>
+                    <tr>
+                      <th>Сечение трубы</th>
+                      <th>Стенка (s)</th>
+                      <th>Теор. вес 1 м</th>
+                      <th>Метров в 1 т</th>
+                      <th>Марка стали</th>
+                      <th>Складская цена</th>
+                      <th>Применение</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="strong">40 × 20 мм</td>
+                      <td class="mono">2.0 мм</td>
+                      <td class="mono">1.70 кг</td>
+                      <td class="mono">588 м</td>
+                      <td>Ст3сп / Ст3пс</td>
+                      <td class="strong" style="color: var(--gold-light);">115 ₽ / м</td>
+                      <td>Заборы, лаги, каркасы ворот</td>
+                    </tr>
+                    <tr>
+                      <td class="strong">40 × 40 мм</td>
+                      <td class="mono">2.0 мм</td>
+                      <td class="mono">2.35 кг</td>
+                      <td class="mono">425 м</td>
+                      <td>Ст3сп / Ст3пс</td>
+                      <td class="strong" style="color: var(--gold-light);">160 ₽ / м</td>
+                      <td>Столбы легкие, теплицы, беседки</td>
+                    </tr>
+                    <tr>
+                      <td class="strong">60 × 40 мм <span class="sb-flagship-tag">Усиленная</span></td>
+                      <td class="mono">3.0 мм</td>
+                      <td class="mono">4.30 кг</td>
+                      <td class="mono">232 м</td>
+                      <td>Ст3сп / Ст3пс</td>
+                      <td class="strong" style="color: var(--gold-light);">260 ₽ / м</td>
+                      <td>Калитки, прогоны кровли, навесы</td>
+                    </tr>
+                    <tr>
+                      <td class="strong">60 × 60 мм</td>
+                      <td class="mono">3.0 мм</td>
+                      <td class="mono">5.25 кг</td>
+                      <td class="mono">190 м</td>
+                      <td>Ст3сп / Ст3пс</td>
+                      <td class="strong" style="color: var(--gold-light);">330 ₽ / м</td>
+                      <td>Опорные столбы, фермы перекрытия</td>
+                    </tr>
+                    <tr>
+                      <td class="strong">80 × 80 мм</td>
+                      <td class="mono">3.0 мм</td>
+                      <td class="mono">7.10 кг</td>
+                      <td class="mono">140 м</td>
+                      <td>Ст3сп / Ст3пс</td>
+                      <td class="strong" style="color: var(--gold-light);">460 ₽ / м</td>
+                      <td>Несущие колонны ангаров, каркасы</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: Блоки ФБС и Шлакоблок -->
+          <div class="sb-tab-pane" id="tab-fbs" role="tabpanel" aria-labelledby="tab-btn-fbs">
+            <div class="sb-table-card" id="fbs-table">
+              <div class="sb-table-header-meta">
+                <div>
+                  <strong style="color: #ffffff;">Фундаментные блоки сплошные (ФБС) и стеновые камни</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Тяжелый бетон B7.5 - B12.5, монтажные петли из гладкой стали А240</div>
+                </div>
+                <span class="sb-gost-badge">ГОСТ 13579-78 / ГОСТ 6133-2019</span>
+              </div>
+              <div class="sb-table-wrap">
+                <table class="sb-data-table">
+                  <thead>
+                    <tr>
+                      <th>Марка изделия</th>
+                      <th>Размеры (Д×Ш×В)</th>
+                      <th>Справочная масса</th>
+                      <th>Объем бетона</th>
+                      <th>Класс бетона</th>
+                      <th>Цена со склада</th>
+                      <th>Назначение</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="strong">ФБС 24.3.6</td>
+                      <td class="mono">2380 × 300 × 580 мм</td>
+                      <td class="mono">~ 970 кг (0.97 т)</td>
+                      <td class="mono">0.406 м³</td>
+                      <td>B7.5 (M100)</td>
+                      <td class="strong" style="color: var(--gold-light);">2 600 ₽ / шт</td>
+                      <td>Ленточный фундамент под легкие стены</td>
+                    </tr>
+                    <tr>
+                      <td class="strong">ФБС 24.4.6</td>
+                      <td class="mono">2380 × 400 × 580 мм</td>
+                      <td class="mono">~ 1 300 кг (1.30 т)</td>
+                      <td class="mono">0.543 м³</td>
+                      <td>B7.5 (M100)</td>
+                      <td class="strong" style="color: var(--gold-light);">2 800 ₽ / шт</td>
+                      <td>Цокольные этажи, несущие стены коттеджей</td>
+                    </tr>
+                    <tr>
+                      <td class="strong">Шлакоблок стеновой</td>
+                      <td class="mono">390 × 190 × 190 мм</td>
+                      <td class="mono">~ 18.0 кг</td>
+                      <td class="mono">0.014 м³</td>
+                      <td>M75 (пропарка)</td>
+                      <td class="strong" style="color: var(--gold-light);">48 ₽ / шт</td>
+                      <td>Кладка несущих стен гаражей, хозблоков</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 4: Цемент М500 и нормы расхода -->
+          <div class="sb-tab-pane" id="tab-cement" role="tabpanel" aria-labelledby="tab-btn-cement">
+            <div class="sb-table-card">
+              <div class="sb-table-header-meta">
+                <div>
+                  <strong style="color: #ffffff;">Цемент Новороссийский ЦЕМ I 42,5Н (М500 Д0) и рецептуры бетона</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Заводская фасовка в мешках по 50 кг, паллеты в термоусадочной пленке</div>
+                </div>
+                <span class="sb-gost-badge">ГОСТ 31108-2020 / ГОСТ 27006-86</span>
+              </div>
+              <div class="sb-table-wrap">
+                <table class="sb-data-table">
+                  <thead>
+                    <tr>
+                      <th>Марка бетона (готового)</th>
+                      <th>Расход цемента М500</th>
+                      <th>Пропорция (Ц : Песок : Щебень)</th>
+                      <th>Водоцементное отношение</th>
+                      <th>Объем замеса на 1 мешок (50 кг)</th>
+                      <th>Базовая цена цемента</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="strong">Бетон М150 (В12.5)</td>
+                      <td class="mono">260 кг / м³</td>
+                      <td class="mono">1 : 3.5 : 5.7</td>
+                      <td>0.75 - 0.80</td>
+                      <td>~ 0.19 м³ (190 л)</td>
+                      <td rowspan="4" style="vertical-align: middle; border-left: 1px solid rgba(255,255,255,0.06);">
+                        <div style="font-size: 1.1rem; font-weight: 800; color: var(--gold-light);">570 ₽ / мешок</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Поддон 30 шт (1.5 т): 17 100 ₽</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="strong">Бетон М200 (В15)</td>
+                      <td class="mono">310 кг / м³</td>
+                      <td class="mono">1 : 2.8 : 4.8</td>
+                      <td>0.65 - 0.70</td>
+                      <td>~ 0.16 м³ (160 л)</td>
+                    </tr>
+                    <tr>
+                      <td class="strong">Бетон М250 (В20)</td>
+                      <td class="mono">350 кг / м³</td>
+                      <td class="mono">1 : 2.4 : 3.9</td>
+                      <td>0.58 - 0.62</td>
+                      <td>~ 0.14 м³ (140 л)</td>
+                    </tr>
+                    <tr>
+                      <td class="strong">Бетон М300 (В22.5)</td>
+                      <td class="mono">390 кг / м³</td>
+                      <td class="mono">1 : 1.9 : 3.4</td>
+                      <td>0.50 - 0.55</td>
+                      <td>~ 0.13 м³ (128 л)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expert Engineering Section (SEO) -->
+    <section class="sb-expert-section" id="expert-seo">
+      <div class="container">
+        <div class="sb-section-head">
+          <h2 class="sb-section-title">
+            <svg class="icon" style="color: var(--gold);" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            Инженерная экспертиза: расчеты, допуски и стандарты
+          </h2>
+          <p class="sb-section-subtitle">
+            Технические памятки инженера ПТО, снабженца и частного застройщика при приемке металлопроката на объектах Ставрополья.
+          </p>
+        </div>
+
+        <div class="sb-expert-grid">
+          <!-- Card 1 -->
+          <div class="sb-expert-card">
+            <div class="sb-expert-card-icon">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </div>
+            <h3 class="sb-expert-card-title">Формулы теоретического расчета массы</h3>
+            <p class="sb-expert-card-text">
+              Масса погонного метра вычисляется исходя из нормативной плотности стали 7850 кг/м³. Для круглой арматуры площадь круга умножается на плотность. Для профильных труб учитывается толщина стенки и внешний периметр сечения с коэффициентом скругления углов.
+            </p>
+            <div class="sb-formula-box">
+              <strong>Арматура:</strong> m = 0.006165 × d² [кг/м]<br>
+              <strong>Труба:</strong> m = 0.0157 × s × (A + B - 2.86s) [кг/м]
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="sb-expert-card">
+            <div class="sb-expert-card-icon">
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            </div>
+            <h3 class="sb-expert-card-title">Допустимые отклонения по ГОСТ</h3>
+            <p class="sb-expert-card-text">
+              В металлургии не существует абсолютного нуля погрешности. Согласно ГОСТ 34028-2016, отклонение фактической массы 1 метра стержней от номинальной допускается в пределах от ±5% (для d ≥ 10 мм) до ±8% (для тонких диаметров 6–8 мм). Это обусловлено износом калибров валков стана.
+            </p>
+            <div class="sb-formula-box">
+              ГОСТ 34028: d=12мм → допуск ±5%<br>
+              Норма веса 12мм: от 0.843 до 0.932 кг/м
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="sb-expert-card">
+            <div class="sb-expert-card-icon">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            </div>
+            <h3 class="sb-expert-card-title">Как отличить ГОСТ от ТУ (чек-лист)</h3>
+            <p class="sb-expert-card-text">
+              Недобросовестные поставщики продают трубу со стенкой 1.5 мм как «двушку». <strong>Правило замера:</strong> никогда не меряйте штангенциркулем торец среза — абразивный круг создает заусенец, искусственно увеличивающий толщину до +0.3 мм. Зачистите напильником или взвесьте 6-метровый хлыст целиком!
+            </p>
+            <div class="sb-formula-box">
+              Труба 40х20х2.0 (ГОСТ, 6м) = 10.2 кг<br>
+              Труба 40х20х1.5 (ТУ, 6м) = всего 7.9 кг (-23% металла!)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalog Interlinking Section -->
+    <section class="sb-section">
+      <div class="container">
+        <div class="sb-section-head">
+          <h2 class="sb-section-title">
+            <svg class="icon" style="color: var(--gold);" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            Товарные каталоги стройбазы на Монтажной 10
+          </h2>
+          <p class="sb-section-subtitle">
+            Выберите необходимый вид продукции для перехода к подробному складскому прайсу, выбору длин и бронированию партии.
+          </p>
+        </div>
+
+        <div class="sb-catalog-links">
+          <!-- Card Rebar -->
+          <div class="sb-cat-link-card">
+            <div>
+              <h3 class="sb-cat-link-title">Сортовой прокат: Арматура А500С</h3>
+              <p class="sb-cat-link-desc">
+                Диаметры 6, 8, 10, 12, 14, 16 мм в наличии. Прутки по 11.7 м и резка в размер заказчика. Сертификаты Северсталь и НЛМК.
+              </p>
+            </div>
+            <a href="armatura.html" class="sb-cat-link-btn">
+              Перейти в каталог арматуры
+              <svg class="icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+
+          <!-- Card Pipes -->
+          <div class="sb-cat-link-card">
+            <div>
+              <h3 class="sb-cat-link-title">Трубы профильные и круглые</h3>
+              <p class="sb-cat-link-desc">
+                Квадратные и прямоугольные сечения от 15х15 до 100х100 мм со стенкой от 1.5 до 4.0 мм. Идеальная геометрия для заборов и металлоконструкций.
+              </p>
+            </div>
+            <a href="truby.html" class="sb-cat-link-btn">
+              Заказать профильную трубу
+              <svg class="icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+
+          <!-- Card Cement -->
+          <div class="sb-cat-link-card">
+            <div>
+              <h3 class="sb-cat-link-title">Цемент Новороссийск М500 Д0</h3>
+              <p class="sb-cat-link-desc">
+                Мешки по 50 кг и поддоны по 30 шт (1.5 т). Свежая поставка каждую неделю. Хранение в сухом крытом ангаре без комков и слеживания.
+              </p>
+            </div>
+            <a href="tsement-m500.html" class="sb-cat-link-btn">
+              Купить цемент М500 со склада
+              <svg class="icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="sb-section sb-faq-section">
+      <div class="container">
+        <div class="sb-section-head">
+          <h2 class="sb-section-title">
+            <svg class="icon" style="color: var(--gold);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            Часто задаваемые вопросы по нормам и весу металла
+          </h2>
+        </div>
+
+        <div class="sb-faq-list">
+          <div class="sb-faq-item active">
+            <div class="sb-faq-question">
+              <span>Сколько метров арматуры 12 мм содержится в 1 тонне?</span>
+              <svg class="icon sb-faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="sb-faq-answer">
+              По ГОСТ 34028-2016 теоретическая масса одного погонного метра арматуры диаметром 12 мм составляет 0.888 кг. Соответственно, в 1 тонне (1000 кг) содержится: 1000 / 0.888 ≈ <strong>1126.13 метров</strong> (или около 96 стержней стандартной заводской длины 11.7 м).
+            </div>
+          </div>
+
+          <div class="sb-faq-item">
+            <div class="sb-faq-question">
+              <span>Можно ли на стройбазе в Невинномысске порезать арматуру и трубы под размер прицепа?</span>
+              <svg class="icon sb-faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="sb-faq-answer">
+              Да, на нашей базе на ул. Монтажная, 10 оборудован пост механической резки абразивными станками и газовой резки. Мы бесплатно или по минимальному тарифу нарежем 11.7-метровый или 6-метровый металлопрокат пополам (по 3 или 5.85 м), либо в точные размеры вашего фундамента или каркаса.
+            </div>
+          </div>
+
+          <div class="sb-faq-item">
+            <div class="sb-faq-question">
+              <span>Как производится отгрузка: по метрам или через взвешивание на автовесах?</span>
+              <svg class="icon sb-faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="sb-faq-answer">
+              В розницу металлопрокат и трубы отпускаются строго поштучно и погонными метрами с пересчетом по прозрачной шкале. Оптовые партии от 1 тонны отгружаются через поверенные крановые и платформенные электронные весы с выдачей накладной и заводского сертификата соответствия.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warehouse & Geo Block -->
+    <section class="sb-section">
+      <div class="container">
+        <div class="sb-wh-block">
+          <div class="sb-wh-grid">
+            <div class="sb-wh-info">
+              <h3>Склад металлопроката и стройматериалов</h3>
+              <div class="sb-wh-details">
+                <div class="sb-wh-detail-row">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <div><strong>Адрес:</strong> г. Невинномысск, ул. Монтажная, д. 10 (район промзоны)</div>
+                </div>
+                <div class="sb-wh-detail-row">
+                  <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                  <div><strong>Доставка:</strong> Невинномысск, Кочубеевское, Ивановское, Барсуковская, Эркен-Шахар</div>
+                </div>
+                <div class="sb-wh-detail-row">
+                  <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <div><strong>График:</strong> Понедельник — Суббота с 08:00 до 18:00, Воскресенье — выходной</div>
+                </div>
+              </div>
+              <div class="sb-wh-badges">
+                <span class="sb-wh-badge">Электронные крановые весы</span>
+                <span class="sb-wh-badge">Манипулятор 5 и 10 тонн</span>
+                <span class="sb-wh-badge">Оплата с НДС / без НДС / терминал</span>
+              </div>
+            </div>
+
+            <div style="background: rgba(7, 8, 12, 0.6); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; text-align: center;">
+              <div style="font-size: 0.85rem; color: var(--gold); text-transform: uppercase; font-weight: 700; margin-bottom: 8px;">Быстрая консультация инженера склада</div>
+              <div style="font-size: 1.5rem; font-family: var(--font-heading); font-weight: 800; color: #fff; margin-bottom: 12px;">+7 (988) 732-81-61</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">
+                Сообщите метраж или тоннаж — мастер сразу рассчитает наличие хлыстов нужной длины и стоимость доставки на ваш объект.
+              </p>
+              <a href="tel:+79887328161" class="sb-btn-order" style="width: 100%;">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Соединить с отделом сбыта
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="sb-footer">
+    <div class="container">
+      <div class="sb-footer-grid">
+        <div class="sb-footer-col">
+          <div class="sb-logo-title" style="margin-bottom: 8px;">СТРОЙБАЗА<span>.НСК</span></div>
+          <p style="font-size: 0.82rem; color: #a1a1aa; line-height: 1.5; margin-bottom: 12px;">
+            Стройбаза на Монтажной (ИП Кардава Т.К.). Официальный поставщик металлопроката, арматуры по ГОСТ 34028-2016, профильных труб и новороссийского цемента М500 в Невинномысске и Ставропольском крае.
+          </p>
+          <div style="font-size: 0.8rem; color: #71717a;">
+            ИНН / ОГРНИП склада на Монтажной 10 • Вся продукция сертифицирована.
+          </div>
+        </div>
+
+        <div class="sb-footer-col">
+          <h4>Разделы каталога</h4>
+          <ul class="sb-footer-links">
+            <li><a href="armatura.html">Арматура рифленая А500С</a></li>
+            <li><a href="truby.html">Профильная труба ГОСТ</a></li>
+            <li><a href="tsement-m500.html">Цемент М500 (Новороссийск)</a></li>
+            <li><a href="#tables">Блоки фундаментные ФБС</a></li>
+            <li><a href="#calculator">Калькулятор металла онлайн</a></li>
+          </ul>
+        </div>
+
+        <div class="sb-footer-col">
+          <h4>Контакты и склад</h4>
+          <ul class="sb-footer-links">
+            <li style="color: #fff;">ул. Монтажная, д. 10, Невинномысск</li>
+            <li><a href="tel:+79887328161" style="color: var(--gold); font-weight: 700;">+7 (988) 732-81-61</a></li>
+            <li>WhatsApp: <a href="https://wa.me/79887328161">+7 (988) 732-81-61</a></li>
+            <li>Пн–Сб: с 08:00 до 18:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sb-footer-bottom">
+        <div>© 2026 Стройбаза на Монтажной (stroybazansk.ru). Все права защищены.</div>
+        <div>Инженерный справочник стандартов ГОСТ 34028-2016, ГОСТ 8645-68.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1. Mobile Drawer Navigation
+      const catalogToggle = document.getElementById('sb-catalog-toggle');
+      const drawer = document.getElementById('sb-drawer');
+      const drawerOverlay = document.getElementById('sb-drawer-overlay');
+      const drawerClose = document.getElementById('sb-drawer-close');
+
+      function openDrawer() {
+        drawer.classList.add('active');
+        drawerOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('active');
+        drawerOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (catalogToggle) catalogToggle.addEventListener('click', openDrawer);
+      if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+      if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+
+      // Close drawer on link click
+      const drawerLinks = document.querySelectorAll('.sb-drawer-link');
+      drawerLinks.forEach(link => {
+        link.addEventListener('click', closeDrawer);
+      });
+
+      // 2. Tab Navigation
+      const tabButtons = document.querySelectorAll('.sb-tab-btn');
+      const tabPanes = document.querySelectorAll('.sb-tab-pane');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          tabButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-selected', 'false');
+          });
+          tabPanes.forEach(pane => pane.classList.remove('active'));
+
+          button.classList.add('active');
+          button.setAttribute('aria-selected', 'true');
+          const targetId = button.getAttribute('data-tab');
+          const targetPane = document.getElementById(targetId);
+          if (targetPane) {
+            targetPane.classList.add('active');
+          }
+        });
+      });
+
+      // 3. Calculator Elements & Bidirectional Logic
+      const metalSelect = document.getElementById('metal-select');
+      const inputMeters = document.getElementById('calc-meters');
+      const inputTons = document.getElementById('calc-tons');
+      const inputKg = document.getElementById('calc-kg');
+
+      // Result elements
+      const resItemName = document.getElementById('res-item-name');
+      const resUnitWeight = document.getElementById('res-unit-weight');
+      const resMetersInTon = document.getElementById('res-meters-in-ton');
+      const resTotalKg = document.getElementById('res-total-kg');
+      const resTotalTons = document.getElementById('res-total-tons');
+      const resTotalPrice = document.getElementById('res-total-price');
+
+      function getSelectedMetal() {
+        const option = metalSelect.options[metalSelect.selectedIndex];
+        return {
+          weight: parseFloat(option.getAttribute('data-weight')),
+          price: parseFloat(option.getAttribute('data-price')),
+          name: option.getAttribute('data-name')
+        };
+      }
+
+      function formatNumber(num, decimals = 2) {
+        return num.toLocaleString('ru-RU', {
+          minimumFractionDigits: decimals,
+          maximumFractionDigits: decimals
+        });
+      }
+
+      function updateCalculatorFromMeters() {
+        const metal = getSelectedMetal();
+        const meters = parseFloat(inputMeters.value) || 0;
+
+        const totalKg = meters * metal.weight;
+        const totalTons = totalKg / 1000;
+        const totalPrice = meters * metal.price;
+        const metersInTon = metal.weight > 0 ? (1000 / metal.weight) : 0;
+
+        // Sync weight inputs without triggering endless recursive loops
+        inputTons.value = totalTons > 0 ? totalTons.toFixed(4) : '';
+        inputKg.value = totalKg > 0 ? totalKg.toFixed(2) : '';
+
+        // Display results
+        resItemName.textContent = metal.name;
+        resUnitWeight.textContent = `${metal.weight.toFixed(3)} кг`;
+        resMetersInTon.textContent = `${Math.round(metersInTon).toLocaleString('ru-RU')} м`;
+        resTotalKg.textContent = `${formatNumber(totalKg, 2)} кг`;
+        resTotalTons.textContent = `${formatNumber(totalTons, 3)} т`;
+        resTotalPrice.textContent = `${Math.round(totalPrice).toLocaleString('ru-RU')} ₽`;
+      }
+
+      function updateCalculatorFromTons() {
+        const metal = getSelectedMetal();
+        const tons = parseFloat(inputTons.value) || 0;
+
+        const totalKg = tons * 1000;
+        const meters = metal.weight > 0 ? (totalKg / metal.weight) : 0;
+        const totalPrice = meters * metal.price;
+        const metersInTon = metal.weight > 0 ? (1000 / metal.weight) : 0;
+
+        inputMeters.value = meters > 0 ? meters.toFixed(2) : '';
+        inputKg.value = totalKg > 0 ? totalKg.toFixed(2) : '';
+
+        resItemName.textContent = metal.name;
+        resUnitWeight.textContent = `${metal.weight.toFixed(3)} кг`;
+        resMetersInTon.textContent = `${Math.round(metersInTon).toLocaleString('ru-RU')} м`;
+        resTotalKg.textContent = `${formatNumber(totalKg, 2)} кг`;
+        resTotalTons.textContent = `${formatNumber(tons, 3)} т`;
+        resTotalPrice.textContent = `${Math.round(totalPrice).toLocaleString('ru-RU')} ₽`;
+      }
+
+      function updateCalculatorFromKg() {
+        const metal = getSelectedMetal();
+        const kg = parseFloat(inputKg.value) || 0;
+
+        const totalTons = kg / 1000;
+        const meters = metal.weight > 0 ? (kg / metal.weight) : 0;
+        const totalPrice = meters * metal.price;
+        const metersInTon = metal.weight > 0 ? (1000 / metal.weight) : 0;
+
+        inputMeters.value = meters > 0 ? meters.toFixed(2) : '';
+        inputTons.value = totalTons > 0 ? totalTons.toFixed(4) : '';
+
+        resItemName.textContent = metal.name;
+        resUnitWeight.textContent = `${metal.weight.toFixed(3)} кг`;
+        resMetersInTon.textContent = `${Math.round(metersInTon).toLocaleString('ru-RU')} м`;
+        resTotalKg.textContent = `${formatNumber(kg, 2)} кг`;
+        resTotalTons.textContent = `${formatNumber(totalTons, 3)} т`;
+        resTotalPrice.textContent = `${Math.round(totalPrice).toLocaleString('ru-RU')} ₽`;
+      }
+
+      // Event listeners
+      metalSelect.addEventListener('change', updateCalculatorFromMeters);
+      inputMeters.addEventListener('input', updateCalculatorFromMeters);
+      inputTons.addEventListener('input', updateCalculatorFromTons);
+      inputKg.addEventListener('input', updateCalculatorFromKg);
+
+      // Presets
+      document.querySelectorAll('[data-add-m]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const add = parseFloat(btn.getAttribute('data-add-m')) || 0;
+          const current = parseFloat(inputMeters.value) || 0;
+          inputMeters.value = current + add;
+          updateCalculatorFromMeters();
+        });
+      });
+
+      document.querySelectorAll('[data-set-t]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const t = parseFloat(btn.getAttribute('data-set-t')) || 1;
+          inputTons.value = t;
+          updateCalculatorFromTons();
+        });
+      });
+
+      const resetBtn = document.getElementById('btn-calc-reset');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          inputMeters.value = 100;
+          updateCalculatorFromMeters();
+        });
+      }
+
+      // Global helper to switch to item from tables
+      window.setCalcItem = function (val) {
+        metalSelect.value = val;
+        // Switch to rebar tab or scroll to calculator
+        const calcElement = document.getElementById('calculator');
+        if (calcElement) {
+          calcElement.scrollIntoView({ behavior: 'smooth' });
+        }
+        updateCalculatorFromMeters();
+      };
+
+      // 4. FAQ Accordion Toggle
+      const faqItems = document.querySelectorAll('.sb-faq-item');
+      faqItems.forEach(item => {
+        const q = item.querySelector('.sb-faq-question');
+        q.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          faqItems.forEach(i => i.classList.remove('active'));
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+
+      // Initial calc trigger
+      updateCalculatorFromMeters();
+    });
+  </script>
+</body>
+</html>
