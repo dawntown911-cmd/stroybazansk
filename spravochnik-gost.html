@@ -2570,102 +2570,79 @@
     </div>
   </main>
 
-  <!-- Spiderweb Matrix Footer -->
-  <footer class="footer" id="contacts">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <a href="index.html" class="logo" style="margin-bottom: 16px;">
-            <img src="logo.png" alt="Стройбаза на Монтажной" class="site-logo-img">
-            <div class="logo-text">
-              <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
-              <span class="logo-subtitle">Невинномысск • stroybazansk.ru</span>
-            </div>
-          </a>
-          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; max-width: 320px;">
-            Оптово-розничный склад металлопроката, ЖБИ и стройматериалов в г. Невинномысск (ИП Кардава Т.К.). Официальный инженерный справочник ГОСТ РФ. Прямые поставки арматуры А500С, профильных труб, цемента Новороссийск М500 и блоков ФБС. Срочная доставка манипулятором и Газелями с оплатой при выгрузке.
-          </p>
-          <div style="font-size: 0.78rem; color: var(--text-dark); margin-top: 10px;">
-            ИНН / ОГРНИП склада на ул. Монтажная, 10 • Вся продукция сертифицирована по ГОСТ.
-          </div>
-        </div>
+  <!-- ЕДИНЫЙ ЭТАЛОННЫЙ ФУТЕР (10 ИЗ 10 НА ВСЕХ СТРАНИЦАХ) -->
+    <footer class="site-footer" style="margin-top: 60px; background: #07080c; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 50px 0 25px; font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;">
+        <div class="container" style="max-width: 1340px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;">
+            
+            <!-- Основная 4-колоночная сетка -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 36px; margin-bottom: 40px; align-items: start;">
+                
+                <!-- Колонка 1: О базе -->
+                <div>
+                    <a href="index.html" style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; text-decoration: none;">
+                        <img src="logo.png" alt="Стройбаза на Монтажной" width="34" height="34" style="border-radius: 8px; flex-shrink: 0;" onerror="if(!this.tried){this.tried=true; this.src='logo.PNG';}">
+                        <strong style="color: #ffffff; font-size: 1.05rem; font-weight: 800; letter-spacing: -0.01em;">Стройбаза на Монтажной</strong>
+                    </a>
+                    <p style="color: #9ca3af; font-size: 0.85rem; line-height: 1.6; margin: 0 0 14px;">
+                        Оптово-розничный склад металлопроката, цемента и ЖБИ в Невинномысске (ИП Кардава Т.К.). Честный ГОСТ с контролем толщины штангенциркулем. Доставка за 1.5 часа, оплата при выгрузке.
+                    </p>
+                    <div style="color: #d6bd7a; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; background: rgba(214, 189, 122, 0.08); padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(214, 189, 122, 0.2);">
+                        📍 г. Невинномысск, ул. Монтажная, 10
+                    </div>
+                </div>
 
-        <div class="footer-col">
-          <h5>Каталог металлопроката и ЖБИ</h5>
-          <ul class="footer-links">
-            <li><a href="armatura.html">Арматура строительная А500С (6–20 мм)</a></li>
-            <li><a href="truby.html">Трубы профильные ГОСТ (40х20–80х80)</a></li>
-            <li><a href="tsement-m500.html">Цемент Новороссийский М500 Д0</a></li>
-            <li><a href="fbs-shlakoblok.html">Фундаментные блоки ФБС 24.3.6 / 24.4.6</a></li>
-            <li><a href="fbs-shlakoblok.html#shlakoblok">Шлакоблок стеновой 390х190х190</a></li>
-            <li><a href="koltsa-zhbi.html">Кольца ЖБИ для септиков и колодцев</a></li>
-          </ul>
-        </div>
+                <!-- Колонка 2: Каталог продукции -->
+                <div>
+                    <span style="color: #d6bd7a; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 16px;">Каталог стройматериалов</span>
+                    <nav style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem;">
+                        <a href="armatura.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Арматура строительная (6–20 мм)</a>
+                        <a href="truby.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Профильные трубы ГОСТ</a>
+                        <a href="tsement-m500.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Цемент Новороссийский М500</a>
+                        <a href="fbs-shlakoblok.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Блоки ФБС и шлакоблок</a>
+                        <a href="koltsa-zhbi.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Кольца ЖБИ для септиков</a>
+                    </nav>
+                </div>
 
-        <div class="footer-col">
-          <h5>Сервисы и справочники</h5>
-          <ul class="footer-links">
-            <li><a href="spravochnik-gost.html">Инженерный справочник ГОСТ РФ</a></li>
-            <li><a href="#calculator">Конвертер веса: метры ⇄ тонны ⇄ кг</a></li>
-            <li><a href="#tables">Сводные таблицы массы проката</a></li>
-            <li><a href="armatura.html#calculator">Калькулятор веса арматуры</a></li>
-            <li><a href="truby.html#calculator">Калькулятор профильных труб</a></li>
-            <li><a href="tsement-m500.html#calculator">Калькулятор пропорций бетона</a></li>
-            <li><a href="index.html#manipulator">Услуги манипулятора 15 тонн</a></li>
-          </ul>
-        </div>
+                <!-- Колонка 3: Сервисы и расчеты -->
+                <div>
+                    <span style="color: #d6bd7a; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 16px;">Сервисы и расчеты</span>
+                    <nav style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem;">
+                        <a href="spravochnik-gost.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Инженерный справочник ГОСТ</a>
+                        <a href="zadachi-stroyki.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">14 готовых расчетов стройки</a>
+                        <a href="index.html#kalkulyator" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Калькулятор навеса и забора</a>
+                        <a href="uslugi-manipulyatora.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Доставка манипулятором 15т</a>
+                        <a href="opt-b2b.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Условия прорабам и B2B</a>
+                    </nav>
+                </div>
 
-        <div class="footer-col">
-          <h5>Контакты и отгрузка</h5>
-          <div class="footer-contacts-list">
-            <div class="footer-contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-              <span>г. Невинномысск, ул. Монтажная, д. 10</span>
+                <!-- Колонка 4: Отдел продаж -->
+                <div>
+                    <span style="color: #d6bd7a; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 16px;">Отдел продаж</span>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <a href="tel:+79887328161" style="color: #ffffff; font-size: 1.15rem; font-weight: 800; text-decoration: none; letter-spacing: -0.01em;">+7 (988) 732-81-61</a>
+                        <span style="color: #9ca3af; font-size: 0.82rem;">Пн–Сб: 8:00 – 18:00, Вс: выходной</span>
+                        
+                        <!-- Красивые цветные кнопки мессенджеров -->
+                        <div style="display: flex; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/79887328161" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; padding: 7px 14px; background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.4); color: #4ade80; border-radius: 9999px; font-weight: 700; font-size: 0.78rem; text-decoration: none;">
+                                WhatsApp
+                            </a>
+                            <a href="https://t.me/TimurSB" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; padding: 7px 14px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; border-radius: 9999px; font-weight: 700; font-size: 0.78rem; text-decoration: none;">
+                                Telegram
+                            </a>
+                        </div>
+                        <a href="mailto:stroybazansk@mail.ru" style="color: #6b7280; font-size: 0.8rem; text-decoration: none; margin-top: 6px;">stroybazansk@mail.ru</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:+79887328161" style="color: #fff; font-weight: 700;">+7 (988) 732-81-61</a>
-            </div>
-            <div class="footer-contact-item">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-              <a href="https://wa.me/79887328161" target="_blank" rel="noopener" style="color: #25d366; font-weight: 600;">Написать в WhatsApp</a>
-            </div>
-            <div class="footer-contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>Пн–Сб: 8:00 – 18:00 (Вс: отгрузка по согласованию)</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Quick SEO Tags Matrix -->
-      <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 24px 0 16px; margin-top: 20px;">
-        <div style="font-size: 0.8rem; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.04em;">
-          Нормативные таблицы и стандарты металлобазы:
+            <!-- Нижняя планка (Copyright) -->
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: #6b7280;">
+                <span>© 2026 Стройбаза на Монтажной (stroybazansk.ru). Все права защищены.</span>
+                <span>Склад металлопроката по Ставропольскому краю: <a href="https://metall-26.ru" target="_blank" rel="noopener" style="color: #d6bd7a; text-decoration: underline;">metall-26.ru</a></span>
+            </div>
         </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 0.82rem; color: var(--text-muted);">
-          <a href="spravochnik-gost.html#calculator" style="color: var(--text-main); text-decoration: underline;">Вес 1 метра арматуры 12 мм</a> •
-          <a href="spravochnik-gost.html#calculator" style="color: var(--text-main); text-decoration: underline;">Вес метра трубы 40х20х2</a> •
-          <a href="spravochnik-gost.html#calculator" style="color: var(--text-main); text-decoration: underline;">Вес метра трубы 60х40х3</a> •
-          <a href="spravochnik-gost.html#calculator" style="color: var(--text-main); text-decoration: underline;">Метров в тонне арматуры 10 мм</a> •
-          <a href="spravochnik-gost.html#calculator" style="color: var(--text-main); text-decoration: underline;">Метров в тонне трубы 80х80х3</a> •
-          <a href="armatura.html" style="color: var(--text-main); text-decoration: underline;">Арматура рифленая А500С</a> •
-          <a href="armatura.html" style="color: var(--text-main); text-decoration: underline;">Катанка 6 мм гладкая А240</a> •
-          <a href="truby.html" style="color: var(--text-main); text-decoration: underline;">Труба профильная ГОСТ 8645-68</a> •
-          <a href="tsement-m500.html" style="color: var(--text-main); text-decoration: underline;">Цемент Новороссийск 50 кг</a> •
-          <a href="fbs-shlakoblok.html#fbs-24-4-6" style="color: var(--text-main); text-decoration: underline;">Блоки ФБС 24.4.6 масса</a> •
-          <a href="fbs-shlakoblok.html#fbs-24-3-6" style="color: var(--text-main); text-decoration: underline;">Блоки ФБС 24.3.6 вес</a> •
-          <a href="fbs-shlakoblok.html#shlakoblok" style="color: var(--text-main); text-decoration: underline;">Шлакоблок 390х190х190 ГОСТ 6133</a> •
-          <a href="index.html#manipulator" style="color: var(--accent-green); text-decoration: underline;">Доставка манипулятором по Невинномысску</a>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>© 2026 Стройбаза на Монтажной (stroybazansk.ru). Все права защищены. г. Невинномысск.</div>
-        <div>Инженерно-технический справочник металлопроката и ЖБИ. ГОСТ 34028-2016, ГОСТ 8645-68, ГОСТ 13579-78.</div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
   <!-- Off-Canvas Drawer Menu -->
   <div class="sb-drawer-overlay" id="sbDrawerOverlay"></div>
