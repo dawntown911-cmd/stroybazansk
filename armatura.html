@@ -3628,68 +3628,76 @@
     </div>
   </main>
 
-  <!-- ЕДИНЫЙ УНИВЕРСАЛЬНЫЙ ФУТЕР ДЛЯ ВСЕХ СТРАНИЦ -->
-    <footer class="site-footer" style="margin-top: 50px; background: rgba(7, 8, 12, 0.98); border-top: 1px solid var(--border); padding: 50px 0 25px;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; margin-bottom: 40px;">
+  <!-- ЕДИНЫЙ ЭТАЛОННЫЙ ФУТЕР (10 ИЗ 10 НА ВСЕХ СТРАНИЦАХ) -->
+    <footer class="site-footer" style="margin-top: 60px; background: #07080c; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 50px 0 25px; font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;">
+        <div class="container" style="max-width: 1340px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;">
+            
+            <!-- Основная 4-колоночная сетка -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 36px; margin-bottom: 40px; align-items: start;">
                 
                 <!-- Колонка 1: О базе -->
                 <div>
                     <a href="index.html" style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; text-decoration: none;">
-                        <img src="logo.png" alt="Стройбаза на Монтажной" width="34" height="34" style="border-radius: 8px;" onerror="if(!this.tried){this.tried=true; this.src='logo.PNG';}">
-                        <strong style="color: #fff; font-size: 1.05rem;">Стройбаза на Монтажной</strong>
+                        <img src="logo.png" alt="Стройбаза на Монтажной" width="34" height="34" style="border-radius: 8px; flex-shrink: 0;" onerror="if(!this.tried){this.tried=true; this.src='logo.PNG';}">
+                        <strong style="color: #ffffff; font-size: 1.05rem; font-weight: 800; letter-spacing: -0.01em;">Стройбаза на Монтажной</strong>
                     </a>
-                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.5; margin: 0 0 12px;">
-                        База металлопроката, цемента и ЖБИ в Невинномысске (ИП Кардава Т.К.). Честный ГОСТ с контролем толщины штангенциркулем. Доставка за 1.5 часа, оплата при выгрузке.
+                    <p style="color: #9ca3af; font-size: 0.85rem; line-height: 1.6; margin: 0 0 14px;">
+                        Оптово-розничный склад металлопроката, цемента и ЖБИ в Невинномысске (ИП Кардава Т.К.). Честный ГОСТ с контролем толщины штангенциркулем. Доставка за 1.5 часа, оплата при выгрузке.
                     </p>
-                    <div style="color: var(--accent); font-size: 0.82rem; font-weight: 700;">
+                    <div style="color: #d6bd7a; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; background: rgba(214, 189, 122, 0.08); padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(214, 189, 122, 0.2);">
                         📍 г. Невинномысск, ул. Монтажная, 10
                     </div>
                 </div>
 
                 <!-- Колонка 2: Каталог продукции -->
                 <div>
-                    <strong style="color: var(--accent); font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 14px;">Каталог стройматериалов</strong>
-                    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.86rem;">
-                        <a href="armatura.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Арматура строительная (6–20 мм)</a>
-                        <a href="truby.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Профильные трубы ГОСТ</a>
-                        <a href="tsement-m500.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Цемент Новороссийский М500</a>
-                        <a href="fbs-shlakoblok.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Блоки ФБС и шлакоблок</a>
-                        <a href="koltsa-zhbi.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Кольца ЖБИ для септиков</a>
-                    </div>
+                    <span style="color: #d6bd7a; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 16px;">Каталог стройматериалов</span>
+                    <nav style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem;">
+                        <a href="armatura.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Арматура строительная (6–20 мм)</a>
+                        <a href="truby.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Профильные трубы ГОСТ</a>
+                        <a href="tsement-m500.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Цемент Новороссийский М500</a>
+                        <a href="fbs-shlakoblok.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Блоки ФБС и шлакоблок</a>
+                        <a href="koltsa-zhbi.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Кольца ЖБИ для септиков</a>
+                    </nav>
                 </div>
 
                 <!-- Колонка 3: Сервисы и расчеты -->
                 <div>
-                    <strong style="color: var(--accent); font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 14px;">Сервисы и расчеты</strong>
-                    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.86rem;">
-                        <a href="spravochnik-gost.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Инженерный справочник ГОСТ</a>
-                        <a href="zadachi-stroyki.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• 14 готовых расчетов стройки</a>
-                        <a href="index.html#kalkulyator" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Калькулятор навеса и забора</a>
-                        <a href="uslugi-manipulyatora.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Доставка манипулятором 15т</a>
-                        <a href="opt-b2b.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Условия прорабам и B2B</a>
-                    </div>
+                    <span style="color: #d6bd7a; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 16px;">Сервисы и расчеты</span>
+                    <nav style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem;">
+                        <a href="spravochnik-gost.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Инженерный справочник ГОСТ</a>
+                        <a href="zadachi-stroyki.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">14 готовых расчетов стройки</a>
+                        <a href="index.html#kalkulyator" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Калькулятор навеса и забора</a>
+                        <a href="uslugi-manipulyatora.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Доставка манипулятором 15т</a>
+                        <a href="opt-b2b.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Условия прорабам и B2B</a>
+                    </nav>
                 </div>
 
-                <!-- Колонка 4: Контакты -->
+                <!-- Колонка 4: Отдел продаж -->
                 <div>
-                    <strong style="color: var(--accent); font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 14px;">Отдел продаж</strong>
-                    <div style="font-size: 0.86rem; color: var(--muted); display: flex; flex-direction: column; gap: 8px;">
-                        <a href="tel:+79887328161" style="color: #fff; font-size: 1.05rem; font-weight: 800;">+7 (988) 732-81-61</a>
-                        <span>Пн–Сб: 8:00 – 18:00, Вс: выходной</span>
-                        <div style="display: flex; gap: 8px; margin-top: 6px;">
-                            <a href="https://wa.me/79887328161" target="_blank" rel="noopener" class="btn btn-wa" style="height: 32px; padding: 0 10px; font-size: 0.76rem;">WhatsApp</a>
-                            <a href="https://t.me/TimurSB" target="_blank" rel="noopener" class="btn btn-tg" style="height: 32px; padding: 0 10px; font-size: 0.76rem;">Telegram</a>
+                    <span style="color: #d6bd7a; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 16px;">Отдел продаж</span>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <a href="tel:+79887328161" style="color: #ffffff; font-size: 1.15rem; font-weight: 800; text-decoration: none; letter-spacing: -0.01em;">+7 (988) 732-81-61</a>
+                        <span style="color: #9ca3af; font-size: 0.82rem;">Пн–Сб: 8:00 – 18:00, Вс: выходной</span>
+                        
+                        <!-- Красивые цветные кнопки мессенджеров -->
+                        <div style="display: flex; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/79887328161" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; padding: 7px 14px; background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.4); color: #4ade80; border-radius: 9999px; font-weight: 700; font-size: 0.78rem; text-decoration: none;">
+                                WhatsApp
+                            </a>
+                            <a href="https://t.me/TimurSB" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; padding: 7px 14px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; border-radius: 9999px; font-weight: 700; font-size: 0.78rem; text-decoration: none;">
+                                Telegram
+                            </a>
                         </div>
-                        <a href="mailto:stroybazansk@mail.ru" style="color: var(--soft); font-size: 0.8rem; margin-top: 4px;">stroybazansk@mail.ru</a>
+                        <a href="mailto:stroybazansk@mail.ru" style="color: #6b7280; font-size: 0.8rem; text-decoration: none; margin-top: 6px;">stroybazansk@mail.ru</a>
                     </div>
                 </div>
             </div>
 
             <!-- Нижняя планка (Copyright) -->
-            <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: var(--soft);">
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: #6b7280;">
                 <span>© 2026 Стройбаза на Монтажной (stroybazansk.ru). Все права защищены.</span>
-                <span>Склад металлопроката по Ставропольскому краю: <a href="https://metall-26.ru" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">metall-26.ru</a></span>
+                <span>Склад металлопроката по Ставропольскому краю: <a href="https://metall-26.ru" target="_blank" rel="noopener" style="color: #d6bd7a; text-decoration: underline;">metall-26.ru</a></span>
             </div>
         </div>
     </footer>
