@@ -755,6 +755,137 @@
     margin: 8px 0 14px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
+    /* ==========================================================================
+   КОРЗИНА И ОФОРМЛЕНИЕ ЗАКАЗА (ТЕМНАЯ ТЕМА STROYBAZANSK)
+   ========================================================================== */
+#cart-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%);
+    color: #07080c;
+    padding: 12px 22px;
+    border-radius: 9999px;
+    font-weight: 800;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(214, 189, 122, 0.35);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+#cart-float:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(214, 189, 122, 0.5);
+}
+
+/* Модальное окно корзины */
+#cart-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.cart-modal-box {
+    background: #0f111a;
+    border: 1px solid var(--border-glow);
+    border-radius: 20px;
+    max-width: 520px;
+    width: 100%;
+    padding: 26px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-sizing: border-box;
+    color: #f4f4f5;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+.cart-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #71717a;
+    transition: color 0.2s;
+    line-height: 1;
+}
+.cart-close-btn:hover { color: #fff; }
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 13.5px;
+}
+.cart-total-row {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 16px 0 20px;
+    text-align: right;
+    color: #fff;
+}
+.cart-total-row span {
+    color: var(--accent);
+    font-size: 22px;
+}
+
+.cart-form-group {
+    margin-bottom: 14px;
+}
+.cart-form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #d1d5db;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+.cart-input {
+    width: 100%;
+    height: 44px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    padding: 0 14px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.cart-input:focus { border-color: var(--accent); }
+
+.cart-submit-btn {
+    width: 100%;
+    height: 48px;
+    background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%);
+    color: #07080c;
+    border: none;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 15px;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+}
+.cart-submit-btn:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
     </style>
 
     <script type="application/ld+json">
@@ -2776,6 +2907,129 @@
             document.getElementById('cb-success').style.display = 'none';
         }
 
+    // ==========================================================================
+// ЛОГИКА ОФОРМЛЕНИЯ ЗАКАЗА И КОРЗИНЫ
+// ==========================================================================
+var cart = JSON.parse(localStorage.getItem('sb_cart') || '[]');
+updateCartUI();
+
+function addToCart(name, price, qty) {
+    var q = parseInt(qty) || 1;
+    cart.push({ title: name, price: price, qty: q });
+    localStorage.setItem('sb_cart', JSON.stringify(cart));
+    updateCartUI();
+    openCart();
+}
+
+function updateCartUI() {
+    var count = 0;
+    for (var i = 0; i < cart.length; i++) { count += cart[i].qty; }
+    var el = document.getElementById('cart-count');
+    if (el) el.innerText = count;
+}
+
+function openCart() {
+    var modal = document.getElementById('cart-modal');
+    var div = document.getElementById('cart-items');
+    if (!modal || !div) return;
+
+    modal.style.display = 'flex';
+    document.getElementById('order-form').style.display = 'block';
+    document.getElementById('order-success').style.display = 'none';
+
+    if (cart.length === 0) {
+        div.innerHTML = '<p style="color:#71717a; text-align:center; margin:20px 0;">Ваша корзина пуста</p>';
+        document.getElementById('cart-total').innerText = '0';
+        return;
+    }
+
+    var h = '';
+    var tot = 0;
+    for (var i = 0; i < cart.length; i++) {
+        var s = cart[i].price * cart[i].qty;
+        tot += s;
+        h += '<div class="cart-item-row">' +
+             '<div><b style="color:#fff;">' + cart[i].title + '</b><br><span style="color:#71717a; font-size:12px;">' + cart[i].qty + ' шт × ' + cart[i].price + ' ₽</span></div>' +
+             '<div style="display:flex; align-items:center; gap:10px;"><b style="color:var(--accent);">' + s.toLocaleString('ru-RU') + ' ₽</b><span onclick="delCartItem(' + i + ')" style="color:#ef4444; cursor:pointer; font-weight:bold; font-size:18px;">✕</span></div>' +
+             '</div>';
+    }
+    div.innerHTML = h;
+    document.getElementById('cart-total').innerText = tot.toLocaleString('ru-RU');
+}
+
+function delCartItem(idx) {
+    cart.splice(idx, 1);
+    localStorage.setItem('sb_cart', JSON.stringify(cart));
+    updateCartUI();
+    openCart();
+}
+
+function closeCart() {
+    var modal = document.getElementById('cart-modal');
+    if (modal) modal.style.display = 'none';
+}
+
+function submitOrder(e) {
+    e.preventDefault();
+    if (cart.length === 0) return;
+
+    var num = Math.floor(1000 + Math.random() * 9000);
+    var name = document.getElementById('cust-name').value;
+    var phone = document.getElementById('cust-phone').value;
+    var addr = document.getElementById('cust-addr').value || 'Не указан';
+    var delivEl = document.querySelector('input[name="cart-delivery"]:checked');
+    var payEl = document.querySelector('input[name="cart-payment"]:checked');
+    var deliv = delivEl ? delivEl.value : 'Доставка';
+    var pay = payEl ? payEl.value : 'Оплата при получении';
+
+    var tot = 0;
+    var itemsText = '';
+    for (var i = 0; i < cart.length; i++) {
+        var s = cart[i].price * cart[i].qty;
+        tot += s;
+        itemsText += '- ' + cart[i].title + ': ' + cart[i].qty + ' шт. (' + s + ' ₽)\n';
+    }
+
+    var tgMsg = "🛒 НОВЫЙ ЗАКАЗ С САЙТА stroybazansk.ru!\n\n" +
+                "Заказ: №СБ-" + num + "\n" +
+                "👤 Клиент: " + name + "\n" +
+                "📞 Телефон: " + phone + "\n" +
+                "📍 Адрес: " + addr + "\n" +
+                "🚚 Получение: " + deliv + "\n" +
+                "💳 Оплата: " + pay + "\n" +
+                "---------------------------\n" +
+                itemsText +
+                "---------------------------\n" +
+                "ИТОГО: " + tot.toLocaleString('ru-RU') + " руб.";
+
+    // Отправка в Telegram
+    fetch("https://api.telegram.org/bot8986406404:AAE6S2SU891B1KCyByQwi3RC3N7ITQ-w7s4/sendMessage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: "1988546771", text: tgMsg })
+    }).catch(function(err) { console.log(err); });
+
+    document.getElementById('order-num').innerText = num;
+    document.getElementById('order-form').style.display = 'none';
+
+    var waText = encodeURIComponent("Здравствуйте! Оформил заказ №СБ-" + num + " на stroybazansk.ru:\n" + itemsText + "Итого: " + tot + " ₽\nИмя: " + name + ", Телефон: " + phone + ", Адрес: " + addr);
+    document.getElementById('wa-btn-container').innerHTML = 
+        '<a href="https://wa.me/79887328161?text=' + waText + '" target="_blank" style="display:block; background:#22c55e; color:#fff; padding:12px; border-radius:10px; text-decoration:none; font-weight:bold; font-size:14px;">' +
+        '💬 Продублировать заказ в WhatsApp базы' +
+        '</a>';
+
+    document.getElementById('order-success').style.display = 'block';
+
+    cart = [];
+    localStorage.removeItem('sb_cart');
+    updateCartUI();
+}
+
+// Закрытие по клику вне окна
+window.addEventListener('click', function(e) {
+    var modal = document.getElementById('cart-modal');
+    if (e.target === modal) closeCart();
+});
     </script>
 
     <!-- Rambler Counter -->
@@ -2862,5 +3116,79 @@ if (mobileAssortBtn) {
             <path d="M18 15l-6-6-6 6"/>
         </svg>
     </a>
+<!-- ПЛАВАЮЩАЯ КНОПКА КОРЗИНЫ -->
+<div id="cart-float" onclick="openCart()">
+    🛒 Корзина (<span id="cart-count">0</span>)
+</div>
+
+<!-- МОДАЛЬНОЕ ОКНО ОФОРМЛЕНИЯ ЗАКАЗА ПО ТРЕБОВАНИЯМ ЯНДЕКСА -->
+<div id="cart-modal">
+    <div class="cart-modal-box">
+        <span class="cart-close-btn" onclick="closeCart()">✕</span>
+        <h2 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 800; color: #fff;">🛒 Оформление заказа</h2>
+        
+        <!-- Список товаров в корзине -->
+        <div id="cart-items"></div>
+        
+        <div class="cart-total-row">
+            Итого к оплате: <span id="cart-total">0</span> ₽
+        </div>
+
+        <form id="order-form" onsubmit="submitOrder(event)">
+            <div class="cart-form-group">
+                <div style="font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 8px; text-transform: uppercase;">Способ получения:</div>
+                <label>
+                    <input type="radio" name="cart-delivery" value="Доставка автотранспортом базы на объект" checked> 
+                    🚚 Доставка автотранспортом базы на объект по краю
+                </label>
+                <label>
+                    <input type="radio" name="cart-delivery" value="Самовывоз: Невинномысск, ул. Монтажная, 10"> 
+                    📍 Самовывоз со склада: г. Невинномысск, ул. Монтажная, 10 (Бесплатно)
+                </label>
+            </div>
+
+            <div class="cart-form-group">
+                <div style="font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 8px; text-transform: uppercase;">Способ оплаты:</div>
+                <label>
+                    <input type="radio" name="cart-payment" value="Оплата водителю при получении (наличные или карта)" checked> 
+                    💵 Оплата водителю при получении (наличные или карта)
+                </label>
+                <label>
+                    <input type="radio" name="cart-payment" value="Безналичный расчет для организаций (по счету)"> 
+                    📄 Безналичный расчет для организаций (по счету)
+                </label>
+            </div>
+
+            <div class="cart-form-group">
+                <div style="font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 8px; text-transform: uppercase;">Данные получателя:</div>
+                <input required type="text" id="cust-name" class="cart-input" placeholder="Ваше имя">
+                <input required type="tel" id="cust-phone" class="cart-input" placeholder="Номер телефона (+7...)">
+                <input type="text" id="cust-addr" class="cart-input" placeholder="Адрес доставки (город, улица, дом)">
+            </div>
+
+            <label style="font-size: 11px; color: #71717a; display: flex; align-items: flex-start; gap: 8px; margin-bottom: 16px;">
+                <input type="checkbox" checked required style="margin-top: 2px;"> 
+                <span>Согласен на обработку персональных данных в соответствии с 152-ФЗ РФ</span>
+            </label>
+
+            <button type="submit" class="cart-submit-btn">
+                ✅ Подтвердить и оформить заказ
+            </button>
+        </form>
+
+        <!-- Экран успеха после отправки -->
+        <div id="order-success" style="display: none; text-align: center; padding: 20px 0;">
+            <div style="font-size: 48px; color: #4ade80; margin-bottom: 10px;">✔</div>
+            <h3 style="color: #fff; margin: 0 0 8px; font-size: 18px;">Заказ №<span id="order-num"></span> успешно оформлен!</h3>
+            <p style="color: #9ca3af; font-size: 13.5px; line-height: 1.5; margin: 0 0 16px;">
+                Товары зарезервированы на складе (ул. Монтажная, 10). Менеджер свяжется с вами для подтверждения доставки.
+            </p>
+            <div id="wa-btn-container" style="margin-bottom: 14px;"></div>
+            <button type="button" onclick="closeCart()" style="background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.15); padding: 10px 24px; border-radius: 9999px; font-weight: 700; cursor: pointer;">
+                Закрыть
+            </button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
