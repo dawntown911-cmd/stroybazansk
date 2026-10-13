@@ -1327,6 +1327,45 @@
         border-radius: 8px !important;
       }
     }
+  /* Точная центровка и фиксация квадратной кнопки звонка на телефоне */
+    @media (max-width: 640px) {
+      .phone-block {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .phone-number {
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        max-width: 38px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 8px !important;
+        background: rgba(214, 189, 122, 0.15) !important;
+        border: 1px solid var(--border-gold) !important;
+        display: block !important;
+        position: relative !important;
+        overflow: hidden !important;
+        text-indent: -9999px !important; /* Убирает пустое место от скрытых цифр */
+        font-size: 0 !important;
+        line-height: 0 !important;
+      }
+      .phone-number::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important; /* Идеальный центр */
+        width: 18px !important;
+        height: 18px !important;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f3e5b8' stroke-width='2.2'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E") no-repeat center !important;
+        background-size: contain !important;
+        display: block !important;
+      }
+    }
   </style>
 </head>
 <body>
