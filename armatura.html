@@ -1238,6 +1238,95 @@
     .cart-input { width: 100%; height: 42px; background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; color: #fff; font-size: 14px; padding: 0 12px; margin-bottom: 8px; outline: none; box-sizing: border-box; }
     .cart-input:focus { border-color: var(--gold); }
     .cart-submit-btn { width: 100%; height: 46px; background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%); color: #07080c; border: none; border-radius: 10px; font-weight: 800; font-size: 15px; cursor: pointer; }
+  /* ==========================================================================
+       ИСПРАВЛЕНИЕ АДАПТИВА ШАПКИ И БЛОКА ГАРАНТИЙ ДЛЯ ТЕЛЕФОНОВ
+       ========================================================================== */
+    .trust-markers-title {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 12px !important;
+      margin-bottom: 18px !important;
+    }
+    .trust-markers-title svg {
+      color: var(--gold) !important;
+      flex-shrink: 0 !important;
+      margin-top: 2px !important;
+    }
+    .trust-title-text strong {
+      display: block !important;
+      font-family: var(--font-heading) !important;
+      font-size: 0.95rem !important;
+      color: var(--gold-light) !important;
+      font-weight: 700 !important;
+      line-height: 1.25 !important;
+      letter-spacing: 0.03em !important;
+      text-transform: uppercase !important;
+    }
+    .trust-title-text span {
+      display: block !important;
+      font-size: 0.8rem !important;
+      color: var(--text-muted) !important;
+      margin-top: 3px !important;
+    }
+
+    @media (max-width: 640px) {
+      .trust-markers-panel {
+        padding: 16px 14px !important;
+      }
+      .header-container {
+        padding: 8px 12px !important;
+        gap: 8px !important;
+      }
+      .logo {
+        gap: 8px !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+      }
+      .site-logo-img {
+        height: 28px !important;
+        width: auto !important;
+      }
+      .logo-title {
+        font-size: 0.8rem !important;
+        line-height: 1.15 !important;
+        white-space: nowrap !important;
+      }
+      .logo-title span {
+        display: inline !important;
+      }
+      .header-actions {
+        gap: 6px !important;
+        flex-shrink: 0 !important;
+      }
+      /* На телефоне длинный номер превращается в стильную золотую кнопку звонка */
+      .phone-number {
+        width: 38px !important;
+        height: 38px !important;
+        padding: 0 !important;
+        border-radius: 8px !important;
+        background: rgba(214, 189, 122, 0.15) !important;
+        border: 1px solid var(--border-gold) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 0 !important;
+      }
+      .phone-number::before {
+        content: '';
+        width: 17px;
+        height: 17px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f3e5b8' stroke-width='2'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E") no-repeat center;
+        background-size: contain;
+        display: block;
+      }
+      .btn-wa-header {
+        width: 38px !important;
+        height: 38px !important;
+        padding: 0 !important;
+        justify-content: center !important;
+        border-radius: 8px !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1386,8 +1475,11 @@
         <!-- Коммерческий блок доверия E-E-A-T (синхронизирован с index.html) -->
         <div class="trust-markers-panel">
           <div class="trust-markers-title">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Гарантии склада на ул. Монтажная, 10 • ИП Кардава Т.К. (ИНН 263119933162)
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div class="trust-title-text">
+              <strong>Гарантии склада на Монтажной, 10</strong>
+              <span>ИП Кардава Т.К. • ИНН 263119933162</span>
+            </div>
           </div>
 
           <div class="trust-markers-grid">
