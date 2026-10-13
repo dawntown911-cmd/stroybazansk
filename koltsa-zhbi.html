@@ -41,6 +41,7 @@
       --gold-light: #f3e5b8;
       --gold-dark: #a98f48;
       --gold-gradient: linear-gradient(135deg, #d6bd7a 0%, #f5e7be 50%, #bfa157 100%);
+      --accent: #d6bd7a;
       
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
@@ -112,6 +113,32 @@
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 20px;
+    }
+
+    /* Кнопки стилей .btn и .btn-primary для корзины */
+    .btn {
+      height: 44px;
+      padding: 0 20px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%);
+      color: #07080c;
+      border: none;
+    }
+    .btn-primary:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(214, 189, 122, 0.35);
     }
 
     /* ==========================================================================
@@ -1698,6 +1725,138 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ==========================================================================
+       КОРЗИНА И ОФОРМЛЕНИЕ ЗАКАЗА (ТЕМНАЯ ТЕМА STROYBAZANSK)
+       ========================================================================== */
+    #cart-float {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%);
+        color: #07080c;
+        padding: 12px 22px;
+        border-radius: 9999px;
+        font-weight: 800;
+        font-size: 15px;
+        cursor: pointer;
+        box-shadow: 0 8px 30px rgba(214, 189, 122, 0.35);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    #cart-float:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(214, 189, 122, 0.5);
+    }
+
+    /* Модальное окно корзины */
+    #cart-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.82);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+    .cart-modal-box {
+        background: #0f111a;
+        border: 1px solid var(--border-gold);
+        border-radius: 20px;
+        max-width: 520px;
+        width: 100%;
+        padding: 26px;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        box-sizing: border-box;
+        color: #f4f4f5;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    }
+    .cart-close-btn {
+        position: absolute;
+        top: 16px;
+        right: 18px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #71717a;
+        transition: color 0.2s;
+        line-height: 1;
+    }
+    .cart-close-btn:hover { color: #fff; }
+
+    .cart-item-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 13.5px;
+    }
+    .cart-total-row {
+        font-size: 18px;
+        font-weight: 800;
+        margin: 16px 0 20px;
+        text-align: right;
+        color: #fff;
+    }
+    .cart-total-row span {
+        color: var(--gold);
+        font-size: 22px;
+    }
+
+    .cart-form-group {
+        margin-bottom: 14px;
+    }
+    .cart-form-group label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: #d1d5db;
+        margin-bottom: 8px;
+        cursor: pointer;
+    }
+    .cart-input {
+        width: 100%;
+        height: 44px;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+        color: #fff;
+        font-size: 14px;
+        padding: 0 14px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+    .cart-input:focus { border-color: var(--gold); }
+
+    .cart-submit-btn {
+        width: 100%;
+        height: 48px;
+        background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%);
+        color: #07080c;
+        border: none;
+        border-radius: 12px;
+        font-weight: 800;
+        font-size: 15px;
+        cursor: pointer;
+        transition: opacity 0.2s, transform 0.15s;
+    }
+    .cart-submit-btn:hover {
+        opacity: 0.92;
+        transform: translateY(-1px);
+    }
   </style>
 
   <!-- ==========================================================================
@@ -2082,10 +2241,9 @@
             </div>
 
             <div class="card-actions">
-              <a href="https://wa.me/79887328161?text=Здравствуйте!%20Хочу%20заказать%20кольца%20КС%2015.9%20с%20монтажом%20в%20яму" target="_blank" rel="noopener" class="btn-card-wa" style="background: #25d366; color: #07080c; font-weight: 700;">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                В WhatsApp
-              </a>
+              <button type="button" onclick="addToCart('Кольцо стеновое КС 15.9 (1.5 м)', 3900, 1)" class="btn btn-primary" style="display:inline-flex; align-items:center; justify-content:center; gap:6px; font-weight:700; font-size:0.85rem; border-radius:10px; cursor:pointer;">
+                  🛒 В корзину
+              </button>
               <a href="tel:+79887328161" class="btn-card-call">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 Позвонить
@@ -2146,10 +2304,9 @@
             </div>
 
             <div class="card-actions">
-              <a href="https://wa.me/79887328161?text=Здравствуйте!%20Хочу%20заказать%20кольца%20КС%2010.9%20в%20Невинномысске" target="_blank" rel="noopener" class="btn-card-wa">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                В WhatsApp
-              </a>
+              <button type="button" onclick="addToCart('Кольцо стеновое КС 10.9 (1.0 м)', 3100, 1)" class="btn btn-primary" style="display:inline-flex; align-items:center; justify-content:center; gap:6px; font-weight:700; font-size:0.85rem; border-radius:10px; cursor:pointer;">
+                  🛒 В корзину
+              </button>
               <a href="tel:+79887328161" class="btn-card-call">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 Позвонить
@@ -2210,10 +2367,9 @@
             </div>
 
             <div class="card-actions">
-              <a href="https://wa.me/79887328161?text=Здравствуйте!%20Хочу%20заказать%20кольца%20КС%2020.9%20в%20Невинномысске" target="_blank" rel="noopener" class="btn-card-wa">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                В WhatsApp
-              </a>
+              <button type="button" onclick="addToCart('Кольцо стеновое КС 20.9 (2.0 м)', 6200, 1)" class="btn btn-primary" style="display:inline-flex; align-items:center; justify-content:center; gap:6px; font-weight:700; font-size:0.85rem; border-radius:10px; cursor:pointer;">
+                  🛒 В корзину
+              </button>
               <a href="tel:+79887328161" class="btn-card-call">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 Позвонить
@@ -2272,10 +2428,9 @@
             </div>
 
             <div class="card-actions">
-              <a href="https://wa.me/79887328161?text=Здравствуйте!%20Интересуют%20крышки%20перекрытия%20ПП%20для%20колец" target="_blank" rel="noopener" class="btn-card-wa">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                В WhatsApp
-              </a>
+              <button type="button" onclick="addToCart('Плита перекрытия ПП-10 (Крышка с люком)', 2400, 1)" class="btn btn-primary" style="display:inline-flex; align-items:center; justify-content:center; gap:6px; font-weight:700; font-size:0.85rem; border-radius:10px; cursor:pointer;">
+                  🛒 В корзину
+              </button>
               <a href="tel:+79887328161" class="btn-card-call">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 Позвонить
@@ -2333,10 +2488,9 @@
             </div>
 
             <div class="card-actions">
-              <a href="https://wa.me/79887328161?text=Здравствуйте!%20Интересуют%20днища%20ПН%20для%20септика" target="_blank" rel="noopener" class="btn-card-wa">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                В WhatsApp
-              </a>
+              <button type="button" onclick="addToCart('Плита низа ПН-10 (Монолитное дно)', 2400, 1)" class="btn btn-primary" style="display:inline-flex; align-items:center; justify-content:center; gap:6px; font-weight:700; font-size:0.85rem; border-radius:10px; cursor:pointer;">
+                  🛒 В корзину
+              </button>
               <a href="tel:+79887328161" class="btn-card-call">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 Позвонить
@@ -2395,10 +2549,9 @@
             </div>
 
             <div class="card-actions">
-              <a href="https://wa.me/79887328161?text=Здравствуйте!%20Интересуют%20полимерпесчаные%20люки" target="_blank" rel="noopener" class="btn-card-wa">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                В WhatsApp
-              </a>
+              <button type="button" onclick="addToCart('Люк полимерпесчаный садовый (1.5 т)', 1350, 1)" class="btn btn-primary" style="display:inline-flex; align-items:center; justify-content:center; gap:6px; font-weight:700; font-size:0.85rem; border-radius:10px; cursor:pointer;">
+                  🛒 В корзину
+              </button>
               <a href="tel:+79887328161" class="btn-card-call">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 Позвонить
@@ -2410,7 +2563,7 @@
       </div>
     </section>
 
-    <!-- ==========================================================================
+<!-- ==========================================================================
        INTERACTIVE CALCULATOR: RESIDENTS ⇄ SEPTIC SPECIFICATION
        ========================================================================== -->
     <section class="calc-section" id="calculator">
@@ -2907,6 +3060,7 @@
             </div>
         </div>
     </footer>
+
   <!-- ==========================================================================
        CATALOG DRAWER MODAL (МЕНЮ-ШТОРКА)
        ========================================================================== -->
@@ -3028,7 +3182,7 @@
   </div>
 
   <!-- ==========================================================================
-       JAVASCRIPT: DRAWER, CALCULATOR LOGIC & INTERACTIVE FILTERS
+       JAVASCRIPT: DRAWER, CALCULATOR LOGIC & CART LOGIC
        ========================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -3259,6 +3413,218 @@
         });
       });
     });
+
+    // ==========================================================================
+    // ЛОГИКА ОФОРМЛЕНИЯ ЗАКАЗА И КОРЗИНЫ
+    // ==========================================================================
+    var cart = JSON.parse(localStorage.getItem('sb_cart') || '[]');
+    updateCartUI();
+
+    function addToCart(name, price, qty) {
+        var q = parseInt(qty) || 1;
+        cart.push({ title: name, price: price, qty: q });
+        localStorage.setItem('sb_cart', JSON.stringify(cart));
+        updateCartUI();
+        openCart();
+    }
+
+    function updateCartUI() {
+        var count = 0;
+        for (var i = 0; i < cart.length; i++) { count += cart[i].qty; }
+        var el = document.getElementById('cart-count');
+        if (el) el.innerText = count;
+    }
+
+    function openCart() {
+        var modal = document.getElementById('cart-modal');
+        var div = document.getElementById('cart-items');
+        if (!modal || !div) return;
+
+        modal.style.display = 'flex';
+        document.getElementById('order-form').style.display = 'block';
+        document.getElementById('order-success').style.display = 'none';
+
+        if (cart.length === 0) {
+            div.innerHTML = '<p style="color:#71717a; text-align:center; margin:20px 0;">Ваша корзина пуста</p>';
+            document.getElementById('cart-total').innerText = '0';
+            return;
+        }
+
+        var h = '';
+        var tot = 0;
+        for (var i = 0; i < cart.length; i++) {
+            var s = cart[i].price * cart[i].qty;
+            tot += s;
+            h += '<div class="cart-item-row">' +
+                 '<div><b style="color:#fff;">' + cart[i].title + '</b><br><span style="color:#71717a; font-size:12px;">' + cart[i].qty + ' шт × ' + cart[i].price + ' ₽</span></div>' +
+                 '<div style="display:flex; align-items:center; gap:10px;"><b style="color:var(--gold);">' + s.toLocaleString('ru-RU') + ' ₽</b><span onclick="delCartItem(' + i + ')" style="color:#ef4444; cursor:pointer; font-weight:bold; font-size:18px;">✕</span></div>' +
+                 '</div>';
+        }
+        div.innerHTML = h;
+        document.getElementById('cart-total').innerText = tot.toLocaleString('ru-RU');
+    }
+
+    function delCartItem(idx) {
+        cart.splice(idx, 1);
+        localStorage.setItem('sb_cart', JSON.stringify(cart));
+        updateCartUI();
+        openCart();
+    }
+
+    function closeCart() {
+        var modal = document.getElementById('cart-modal');
+        if (modal) modal.style.display = 'none';
+    }
+
+    function submitOrder(e) {
+        e.preventDefault();
+        if (cart.length === 0) return;
+
+        var num = Math.floor(1000 + Math.random() * 9000);
+        var name = document.getElementById('cust-name').value;
+        var phone = document.getElementById('cust-phone').value;
+        var addr = document.getElementById('cust-addr').value || 'Не указан';
+        var delivEl = document.querySelector('input[name="cart-delivery"]:checked');
+        var payEl = document.querySelector('input[name="cart-payment"]:checked');
+        var deliv = delivEl ? delivEl.value : 'Доставка';
+        var pay = payEl ? payEl.value : 'Оплата при получении';
+
+        var tot = 0;
+        var itemsText = '';
+        for (var i = 0; i < cart.length; i++) {
+            var s = cart[i].price * cart[i].qty;
+            tot += s;
+            itemsText += '- ' + cart[i].title + ': ' + cart[i].qty + ' шт. (' + s + ' ₽)\n';
+        }
+
+        var tgMsg = "🛒 НОВЫЙ ЗАКАЗ С САЙТА stroybazansk.ru!\n\n" +
+                    "Заказ: №СБ-" + num + "\n" +
+                    "👤 Клиент: " + name + "\n" +
+                    "📞 Телефон: " + phone + "\n" +
+                    "📍 Адрес: " + addr + "\n" +
+                    "🚚 Получение: " + deliv + "\n" +
+                    "💳 Оплата: " + pay + "\n" +
+                    "---------------------------\n" +
+                    itemsText +
+                    "---------------------------\n" +
+                    "ИТОГО: " + tot.toLocaleString('ru-RU') + " руб.";
+
+        // Безотказная отправка в Google Таблицу и Telegram
+    const GOOGLE_URL = "https://script.google.com/macros/s/AKfycbwJYhnZdgVJFjzk2L7kFlD-GD90Sy7p03V0NKmxp-1KAJM_sPAI1_Agc9jQwyB0HgiEGA/exec";
+
+    fetch(GOOGLE_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            type: "order",
+            orderNum: num,
+            name: name,
+            phone: phone,
+            address: addr,
+            delivery: deliv,
+            payment: pay,
+            items: itemsText,
+            total: tot.toLocaleString('ru-RU')
+        })
+    }).catch(function(err) { console.log(err); });
+
+        document.getElementById('order-num').innerText = num;
+        document.getElementById('order-form').style.display = 'none';
+
+        var waText = encodeURIComponent("Здравствуйте! Оформил заказ №СБ-" + num + " на stroybazansk.ru:\n" + itemsText + "Итого: " + tot + " ₽\nИмя: " + name + ", Телефон: " + phone + ", Адрес: " + addr);
+        document.getElementById('wa-btn-container').innerHTML = 
+            '<a href="https://wa.me/79887328161?text=' + waText + '" target="_blank" style="display:block; background:#22c55e; color:#fff; padding:12px; border-radius:10px; text-decoration:none; font-weight:bold; font-size:14px;">' +
+            '💬 Продублировать заказ в WhatsApp базы' +
+            '</a>';
+
+        document.getElementById('order-success').style.display = 'block';
+
+        cart = [];
+        localStorage.removeItem('sb_cart');
+        updateCartUI();
+    }
+
+    // Закрытие по клику вне окна
+    window.addEventListener('click', function(e) {
+        var modal = document.getElementById('cart-modal');
+        if (e.target === modal) closeCart();
+    });
   </script>
+
+  <!-- ПЛАВАЮЩАЯ КНОПКА КОРЗИНЫ -->
+  <div id="cart-float" onclick="openCart()">
+      🛒 Корзина (<span id="cart-count">0</span>)
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО ОФОРМЛЕНИЯ ЗАКАЗА ПО ТРЕБОВАНИЯМ ЯНДЕКСА -->
+  <div id="cart-modal">
+      <div class="cart-modal-box">
+          <span class="cart-close-btn" onclick="closeCart()">✕</span>
+          <h2 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 800; color: #fff;">🛒 Оформление заказа</h2>
+          
+          <!-- Список товаров в корзине -->
+          <div id="cart-items"></div>
+          
+          <div class="cart-total-row">
+              Итого к оплате: <span id="cart-total">0</span> ₽
+          </div>
+
+          <form id="order-form" onsubmit="submitOrder(event)">
+              <div class="cart-form-group">
+                  <div style="font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 8px; text-transform: uppercase;">Способ получения:</div>
+                  <label>
+                      <input type="radio" name="cart-delivery" value="Доставка манипулятором базы на объект" checked> 
+                      🚚 Доставка манипулятором с монтажом стрелой в котлован
+                  </label>
+                  <label>
+                      <input type="radio" name="cart-delivery" value="Самовывоз: Невинномысск, ул. Монтажная, 10"> 
+                      📍 Самовывоз со склада: г. Невинномысск, ул. Монтажная, 10 (Бесплатно)
+                  </label>
+              </div>
+
+              <div class="cart-form-group">
+                  <div style="font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 8px; text-transform: uppercase;">Способ оплаты:</div>
+                  <label>
+                      <input type="radio" name="cart-payment" value="Оплата водителю при получении (наличные или карта)" checked> 
+                      💵 Оплата водителю после опускания в яму (наличные/перевод)
+                  </label>
+                  <label>
+                      <input type="radio" name="cart-payment" value="Безналичный расчет для организаций (по счету)"> 
+                      📄 Безналичный расчет для организаций (по счету)
+                  </label>
+              </div>
+
+              <div class="cart-form-group">
+                  <div style="font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 8px; text-transform: uppercase;">Данные получателя:</div>
+                  <input required type="text" id="cust-name" class="cart-input" placeholder="Ваше имя">
+                  <input required type="tel" id="cust-phone" class="cart-input" placeholder="Номер телефона (+7...)">
+                  <input type="text" id="cust-addr" class="cart-input" placeholder="Адрес доставки (город, улица, СНТ)">
+              </div>
+
+              <label style="font-size: 11px; color: #71717a; display: flex; align-items: flex-start; gap: 8px; margin-bottom: 16px;">
+                  <input type="checkbox" checked required style="margin-top: 2px;"> 
+                  <span>Согласен на обработку персональных данных в соответствии с 152-ФЗ РФ</span>
+              </label>
+
+              <button type="submit" class="cart-submit-btn">
+                  ✅ Подтвердить и оформить заказ
+              </button>
+          </form>
+
+          <!-- Экран успеха после отправки -->
+          <div id="order-success" style="display: none; text-align: center; padding: 20px 0;">
+              <div style="font-size: 48px; color: #4ade80; margin-bottom: 10px;">✔</div>
+              <h3 style="color: #fff; margin: 0 0 8px; font-size: 18px;">Заказ №<span id="order-num"></span> успешно оформлен!</h3>
+              <p style="color: #9ca3af; font-size: 13.5px; line-height: 1.5; margin: 0 0 16px;">
+                  Кольца и комплектующие зарезервированы на складе (ул. Монтажная, 10). Менеджер свяжется с вами для согласования времени манипулятора.
+              </p>
+              <div id="wa-btn-container" style="margin-bottom: 14px;"></div>
+              <button type="button" onclick="closeCart()" style="background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.15); padding: 10px 24px; border-radius: 9999px; font-weight: 700; cursor: pointer;">
+                  Закрыть
+              </button>
+          </div>
+      </div>
+  </div>
 </body>
 </html>
