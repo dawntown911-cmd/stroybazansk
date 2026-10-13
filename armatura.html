@@ -4185,12 +4185,25 @@
                     "---------------------------\n" +
                     "ИТОГО: " + tot.toLocaleString('ru-RU') + " руб.";
 
-        // Отправка в Telegram
-        fetch("https://api.telegram.org/bot8986406404:AAE6S2SU891B1KCyByQwi3RC3N7ITQ-w7s4/sendMessage", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ chat_id: "1988546771", text: tgMsg })
-        }).catch(function(err) { console.log(err); });
+        // Безотказная отправка в Google Таблицу и Telegram
+    const GOOGLE_URL = "ВСТАВЬТЕ_СЮДА_ВАШ_URL_ИЗ_ШАГА_1";
+
+    fetch(GOOGLE_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            type: "order",
+            orderNum: num,
+            name: name,
+            phone: phone,
+            address: addr,
+            delivery: deliv,
+            payment: pay,
+            items: itemsText,
+            total: tot.toLocaleString('ru-RU')
+        })
+    }).catch(function(err) { console.log(err); });
 
         document.getElementById('order-num').innerText = num;
         document.getElementById('order-form').style.display = 'none';
