@@ -300,17 +300,29 @@
       display: block;
     }
 
+    /* ИСПРАВЛЕННАЯ КНОПКА WHATSAPP */
     .btn-wa-header {
       background: #25d366;
       color: #fff;
-      padding: 9px 15px;
+      padding: 8px 14px;
       border-radius: var(--radius-sm);
       font-size: 0.85rem;
       font-weight: 600;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 7px;
+      text-decoration: none;
+      flex-shrink: 0;
+      white-space: nowrap;
       transition: var(--transition);
+    }
+
+    .btn-wa-header svg {
+      width: 17px;
+      height: 17px;
+      fill: currentColor;
+      flex-shrink: 0;
+      display: block;
     }
 
     .btn-wa-header:hover {
@@ -352,10 +364,20 @@
         order: 3 !important;
         gap: 6px !important;
       }
-      .header-actions .btn-wa-header span { display: none !important; }
+      /* ИСПРАВЛЕНИЕ: скрываем только текст, кнопка остается аккуратным квадратом 36х36 с иконкой по центру */
       .header-actions .btn-wa-header {
-        padding: 6px 8px !important;
+        width: 36px !important;
         height: 36px !important;
+        padding: 0 !important;
+        justify-content: center !important;
+        border-radius: 8px !important;
+      }
+      .header-actions .btn-wa-header .btn-wa-text {
+        display: none !important;
+      }
+      .header-actions .btn-wa-header svg {
+        width: 18px !important;
+        height: 18px !important;
       }
       .header-actions .phone-number {
         font-size: 0.80rem !important;
@@ -774,6 +796,8 @@
       align-items: center;
       justify-content: center;
       padding: 0 16px;
+      box-sizing: border-box;
+      overflow: hidden;
     }
 
     .card-title {
@@ -917,150 +941,661 @@
       color: #07080c;
       box-shadow: var(--shadow-gold);
     }
-  /* ==========================================================================
-       СТИЛИ КОРЗИНЫ И КНОПКИ ЗАКАЗА
-       ========================================================================== */
-    #cart-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%);
-      color: #07080c;
-      padding: 12px 22px;
-      border-radius: 9999px;
-      font-weight: 800;
-      font-size: 15px;
-      cursor: pointer;
-      box-shadow: 0 8px 30px rgba(214, 189, 122, 0.35);
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+  </style>
 
-    #cart-float:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(214, 189, 122, 0.5);
-    }
+  <!-- ==========================================================================
+       SCHEMA.ORG STRUCTURED DATA (JSON-LD)
+       ========================================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "https://stroybazansk.ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Профильные трубы в Невинномысске",
+            "item": "https://stroybazansk.ru/truby.html"
+          }
+        ]
+      },
+      {
+        "@type": "HardwareStore",
+        "@id": "https://stroybazansk.ru/#store",
+        "name": "Стройбаза на Монтажной",
+        "legalName": "Индивидуальный предприниматель Кардава Тимур Кукуриевич",
+        "taxID": "263119933162",
+        "identifier": "326265100122423",
+        "image": "https://stroybazansk.ru/logo.png",
+        "url": "https://stroybazansk.ru/",
+        "telephone": "+7-988-732-81-61",
+        "priceRange": "RUB",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Монтажная, д. 10",
+          "addressLocality": "Невинномысск",
+          "addressRegion": "Ставропольский край",
+          "postalCode": "357100",
+          "addressCountry": "RU"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 44.6435,
+          "longitude": 41.9355
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "08:00",
+            "closes": "18:00"
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "name": "Профильные стальные трубы в Невинномысске (ГОСТ 8645-68 / 8639-82)",
+        "description": "Прямоугольные и квадратные трубы от 20х20 до 80х80 мм со стенкой 1.5, 2.0 и 3.0 мм. Честный ГОСТ, контрольный замер штангенциркулем при клиенте, резка пополам, быстрая доставка Газелями и манипулятором по Невинномысску и Ставропольскому краю.",
+        "image": "https://stroybazansk.ru/logo.png",
+        "category": "Металлопрокат / Профильные трубы",
+        "brand": {
+          "@type": "Brand",
+          "name": "Стройбаза на Монтажной"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "68",
+          "highPrice": "460",
+          "priceCurrency": "RUB",
+          "offerCount": "6",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://stroybazansk.ru/#store"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
 
-    #cart-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.82);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      z-index: 10000;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      box-sizing: border-box;
-    }
+  <!-- ==========================================================================
+       TOP INFORMATIONAL BAR
+       ========================================================================== -->
+  <div class="topbar">
+    <div class="container topbar-container">
+      <div class="topbar-info">
+        <div class="topbar-item">
+          <span>📍 г. Невинномысск, ул. Монтажная, 10</span>
+        </div>
+        <div class="topbar-item">
+          <span>⏰ Пн–Сб: 08:00 – 18:00</span>
+        </div>
+        <div class="topbar-item">
+          <span class="topbar-badge">Склад открыт • Честная стенка по ГОСТу</span>
+        </div>
+      </div>
+      <div class="topbar-info">
+        <div class="topbar-item">
+          <span>🚚 Доставка за 1.5–2 ч манипулятором и Газелями</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    .cart-modal-box {
-      background: #0f111a;
-      border: 1px solid var(--border-gold-bright);
-      border-radius: 20px;
-      max-width: 520px;
-      width: 100%;
-      padding: 26px;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-      box-sizing: border-box;
-      color: #f4f4f5;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-    }
+  <!-- ==========================================================================
+       MAIN HEADER
+       ========================================================================== -->
+  <header class="header">
+    <div class="container header-container">
+      <button class="catalog-btn sb-catalog-toggle" id="sbCatalogOpenBtn" type="button" aria-label="Открыть каталог стройматериалов">
+        <span>☰</span>
+        <span class="sb-catalog-btn-text">Каталог</span>
+      </button>
 
-    .cart-close-btn {
-      position: absolute;
-      top: 16px;
-      right: 18px;
-      font-size: 24px;
-      cursor: pointer;
-      color: #71717a;
-      transition: color 0.2s;
-      line-height: 1;
-    }
+      <a href="index.html" class="logo" title="Стройбаза на Монтажной">
+        <img src="logo.png" alt="Стройбаза на Монтажной" class="site-logo-img">
+        <div class="logo-text">
+          <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
+          <span class="logo-subtitle">Невинномысск • Металлопрокат</span>
+        </div>
+      </a>
 
-    .cart-close-btn:hover { color: #fff; }
+      <nav class="header-nav">
+        <a href="#calculator" class="nav-link">Калькулятор веса</a>
+        <a href="#gost-table" class="nav-link">Таблица ГОСТ</a>
+        <a href="#expert-advice" class="nav-link">Ветровые нагрузки</a>
+        <a href="#contacts" class="nav-link">Контакты склада</a>
+      </nav>
 
-    .cart-item-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 13.5px;
-    }
+      <div class="header-actions">
+        <div class="phone-block">
+          <a href="tel:+79887328161" class="phone-number">+7 (988) 732-81-61</a>
+          <span class="phone-hint">Оплата строго при выгрузке</span>
+        </div>
+        <!-- ИСПРАВЛЕННАЯ ССЫЛКА НА WHATSAPP -->
+        <a href="https://wa.me/79887328161?text=Здравствуйте!%20Интересует%20профильная%20труба%20со%20склада%20в%20Невинномысске" target="_blank" rel="noopener" class="btn-wa-header" title="Написать в WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.44 0-2.86-.38-4.11-1.1l-.29-.17-3.12.82.83-3.04-.19-.3a8.2 8.2 0 0 1-1.26-4.45c0-4.54 3.69-8.24 8.24-8.24m4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.01-1.24-.74-.66-1.24-1.48-1.39-1.73-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8 2.53 1.09 2.53.73 2.99.69.45-.05 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29"/></svg>
+          <span class="btn-wa-text">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
 
-    .cart-total-row {
-      font-size: 18px;
-      font-weight: 800;
-      margin: 16px 0 20px;
-      text-align: right;
-      color: #fff;
-    }
+  <!-- ==========================================================================
+       BREADCRUMBS
+       ========================================================================== -->
+  <div class="breadcrumbs-bar">
+    <div class="container">
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Главная</a></li>
+        <li class="breadcrumbs-separator">/</li>
+        <li><a href="index.html#catalog">Каталог металлопроката</a></li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-current">Профильные трубы в Невинномысске</li>
+      </ul>
+    </div>
+  </div>
 
-    .cart-total-row span {
-      color: var(--gold);
-      font-size: 22px;
-    }
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION (H1 & TRUST BADGES)
+         ========================================================================== -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-badge-wrap">
+          <span class="hero-tag">Металлобаза №1 в Невинномысске</span>
+          <span class="hero-tag" style="border-color: rgba(16, 185, 129, 0.4); color: var(--accent-green);">ГОСТ 8645-68 и ГОСТ 8639-82</span>
+        </div>
 
-    .cart-form-group {
-      margin-bottom: 14px;
-    }
+        <h1 class="hero-title">
+          Профильные стальные трубы в Невинномысске <span>(ГОСТ 8645-68 / 8639-82)</span>
+        </h1>
 
-    .cart-form-group label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      color: #d1d5db;
-      margin-bottom: 8px;
-      cursor: pointer;
-    }
+        <p class="hero-desc">
+          Прямые поставки прямоугольной и квадратной профильной трубы от <strong>40х20 до 80х80 мм</strong> со склада на ул. Монтажная, 10. Без заниженного «минусового ТУ»: честная стенка 2.0 и 3.0 мм с запасом прочности под ветровые нагрузки региона («армавирец» до 28 м/с).
+        </p>
 
-    .cart-input {
-      width: 100%;
-      height: 44px;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 10px;
-      color: #fff;
-      font-size: 14px;
-      padding: 0 14px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-      outline: none;
-      transition: border-color 0.2s;
-    }
+        <!-- COMMERCIAL TRUST BADGES -->
+        <div class="trust-badges-bar">
+          <div class="trust-badges-header">
+            <span class="trust-badges-header-dot"></span>
+            Гарантии качества металлопроката на ул. Монтажная, 10
+          </div>
+          <div class="trust-badges-grid">
+            <div class="trust-badge-item">
+              <span class="trust-badge-check">✓</span>
+              <span><strong>Честная толщина стенки 2.0 и 3.0 мм:</strong> контрольный замер штангенциркулем при вас</span>
+            </div>
+            <div class="trust-badge-item">
+              <span class="trust-badge-check">✓</span>
+              <span><strong>В наличии более 25 000 метров:</strong> ходовые сечения отгружаем в день обращения</span>
+            </div>
+            <div class="trust-badge-item">
+              <span class="trust-badge-check">✓</span>
+              <span><strong>Бесплатная резка хлыстов 6 м пополам:</strong> по 3 м для быстрой перевозки в прицепе</span>
+            </div>
+            <div class="trust-badge-item">
+              <span class="trust-badge-check">✓</span>
+              <span><strong>Оплата водителю строго при получении:</strong> наличные, перевод или безнал с НДС</span>
+            </div>
+          </div>
+        </div>
 
-    .cart-input:focus { border-color: var(--gold); }
+        <!-- 4 USP PILLS -->
+        <div class="hero-advantages">
+          <div class="adv-pill">
+            <div class="adv-pill-icon">💵</div>
+            <div>
+              <div class="adv-pill-title">Оплата строго при выгрузке</div>
+              <div class="adv-pill-sub">Без риска: проверка толщины штангенциркулем перед расчетом на объекте.</div>
+            </div>
+          </div>
 
-    .cart-submit-btn {
-      width: 100%;
-      height: 48px;
-      background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%);
-      color: #07080c;
-      border: none;
-      border-radius: 12px;
-      font-weight: 800;
-      font-size: 15px;
-      cursor: pointer;
-      transition: opacity 0.2s, transform 0.15s;
-    }
+          <div class="adv-pill">
+            <div class="adv-pill-icon">✂️</div>
+            <div>
+              <div class="adv-pill-title">Бесплатная резка пополам</div>
+              <div class="adv-pill-sub">Хлысты 6.0 м режем по 3.0 м бесплатно для экономии на длинномерном транспорте.</div>
+            </div>
+          </div>
 
-    .cart-submit-btn:hover {
-      opacity: 0.92;
-      transform: translateY(-1px);
-    }
+          <div class="adv-pill">
+            <div class="adv-pill-icon">🚚</div>
+            <div>
+              <div class="adv-pill-title">Срочная доставка от 1.5 ч</div>
+              <div class="adv-pill-sub">Газели 6м (от 1000 ₽) и манипуляторы 15т по Невинномысску и Кочубеевскому району.</div>
+            </div>
+          </div>
 
-    /* ==========================================================================
-       СТИЛИ КАЛЬКУЛЯТОРА
-       ========================================================================== */
+          <div class="adv-pill">
+            <div class="adv-pill-icon">📐</div>
+            <div>
+              <div class="adv-pill-title">Замер штангенциркулем</div>
+              <div class="adv-pill-sub">Выдаем поверенный прибор: лично контролируйте толщину стенки перед оплатой.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FILTER CHIPS -->
+        <div class="chips-section">
+          <div class="chips-label">
+            Быстрый выбор по сечениям и назначению:
+          </div>
+          <div class="chips-scroll-wrap" id="chipsNav">
+            <button class="chip-btn active" data-filter="all">Все позиции <span class="chip-counter">6</span></button>
+            <button class="chip-btn" data-filter="40x20">⚡ 40х20 лаги для забора</button>
+            <button class="chip-btn" data-filter="40x40">40х40 столбы</button>
+            <button class="chip-btn" data-filter="60x40">60х40 фермы навеса</button>
+            <button class="chip-btn" data-filter="60x60">60х60 стойки</button>
+            <button class="chip-btn" data-filter="80x80">80х80 мощная воротная</button>
+            <button class="chip-btn" data-filter="rect">Прямоугольная ГОСТ 8645</button>
+            <button class="chip-btn" data-filter="square">Квадратная ГОСТ 8639</button>
+            <a href="#calculator" class="chip-btn" style="border-color: rgba(214,189,122,0.5); color: var(--gold-light);">🧮 Калькулятор веса</a>
+            <a href="#gost-table" class="chip-btn" style="border-color: rgba(56,189,248,0.4); color: var(--accent-blue);">📋 Таблица ГОСТ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PRODUCT CARDS CATALOG
+         ========================================================================== -->
+    <section class="catalog-section" id="catalog">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Каталог профильных труб <span>в наличии</span></h2>
+            <p class="section-subtitle">Цены склада на Монтажной 10 актуальны на сегодня. Оплата при выгрузке!</p>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">
+            Хлысты: <strong>6.0 м</strong> (резка пополам <strong>3.0 м бесплатно</strong>)
+          </div>
+        </div>
+
+        <div class="catalog-grid" id="productsGrid">
+
+          <!-- CARD 1: 40x20x2.0 -->
+          <article class="product-card" data-size="40x20" data-type="rect" data-tags="40x20 rect">
+            <div class="card-top">
+              <div class="card-badge-group">
+                <span class="badge-standard">ГОСТ 8645-68</span>
+                <span class="badge-standard">Стенка 2.0 мм</span>
+              </div>
+              <span class="stock-indicator">В наличии • 1 800 м</span>
+            </div>
+
+            <!-- АДАПТИВНАЯ РАМКА РАЗРЕЗА ТРУБЫ -->
+            <div class="card-visual">
+              <svg width="100%" height="44" viewBox="0 0 240 40" preserveAspectRatio="xMidYMid meet" style="display:block; max-width: 100%;">
+                <rect x="10" y="6" width="220" height="28" rx="4" fill="rgba(20,24,36,0.95)" stroke="#d6bd7a" stroke-width="3.5"/>
+                <text x="120" y="24" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" text-anchor="middle">40 × 20 × 2.0 мм</text>
+              </svg>
+            </div>
+
+            <h3 class="card-title">Труба 40х20х2.0 мм</h3>
+            <div class="card-purpose">Прожилины (лаги) забора из профлиста, кровельная обрешетка</div>
+
+            <div class="card-specs">
+              <div class="spec-item">
+                <span class="spec-key">Теорет. вес 1 м</span>
+                <span class="spec-val">1.70 кг</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Метров в тонне</span>
+                <span class="spec-val">≈ 588 м</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Вес хлыста 6.0 м</span>
+                <span class="spec-val">10.20 кг</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Хлыст 6 метров</span>
+                <span class="spec-val">690 ₽</span>
+              </div>
+            </div>
+
+            <div class="card-price-box">
+              <div class="price-row-main">
+                <div class="price-meter-val">115 ₽<small>/ метр</small></div>
+                <div class="price-ton-wrap">
+                  <div class="price-ton-val"><strong>67 600 ₽</strong> / т</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-actions-duo">
+              <button type="button" onclick="addToCart('Труба 40х20х2.0 мм (ГОСТ 8645-68)', 115, 1)" class="btn-card-cart">
+                🛒 В корзину
+              </button>
+              <a href="tel:+79887328161" class="btn-card-call">
+                📞 Позвонить
+              </a>
+            </div>
+          </article>
+
+          <!-- CARD 2: 40x40x2.0 -->
+          <article class="product-card" data-size="40x40" data-type="square" data-tags="40x40 square">
+            <div class="card-top">
+              <div class="card-badge-group">
+                <span class="badge-standard">ГОСТ 8639-82</span>
+                <span class="badge-standard">Стенка 2.0 мм</span>
+              </div>
+              <span class="stock-indicator">В наличии • 1 200 м</span>
+            </div>
+
+            <!-- АДАПТИВНАЯ РАМКА РАЗРЕЗА ТРУБЫ -->
+            <div class="card-visual">
+              <svg width="100%" height="48" viewBox="0 0 240 44" preserveAspectRatio="xMidYMid meet" style="display:block; max-width: 100%;">
+                <rect x="10" y="4" width="220" height="36" rx="4" fill="rgba(20,24,36,0.95)" stroke="#d6bd7a" stroke-width="3.5"/>
+                <text x="120" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" text-anchor="middle">40 × 40 × 2.0 мм</text>
+              </svg>
+            </div>
+
+            <h3 class="card-title">Труба 40х40х2.0 мм</h3>
+            <div class="card-purpose">Опорные столбы забора до 1.8м, калитки, легкие каркасы</div>
+
+            <div class="card-specs">
+              <div class="spec-item">
+                <span class="spec-key">Теорет. вес 1 м</span>
+                <span class="spec-val">2.35 кг</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Метров в тонне</span>
+                <span class="spec-val">≈ 425 м</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Вес хлыста 6.0 м</span>
+                <span class="spec-val">14.10 кг</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Хлыст 6 метров</span>
+                <span class="spec-val">960 ₽</span>
+              </div>
+            </div>
+
+            <div class="card-price-box">
+              <div class="price-row-main">
+                <div class="price-meter-val">160 ₽<small>/ метр</small></div>
+                <div class="price-ton-wrap">
+                  <div class="price-ton-val"><strong>68 000 ₽</strong> / т</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-actions-duo">
+              <button type="button" onclick="addToCart('Труба 40х40х2.0 мм (ГОСТ 8639-82)', 160, 1)" class="btn-card-cart">
+                🛒 В корзину
+              </button>
+              <a href="tel:+79887328161" class="btn-card-call">
+                📞 Позвонить
+              </a>
+            </div>
+          </article>
+
+          <!-- CARD 3: 60x40x3.0 (ИСПРАВЛЕНА РАМКА — БОЛЬШЕ НЕ ВЫЛЕЗАЕТ) -->
+          <article class="product-card flagship" data-size="60x40" data-type="rect" data-tags="60x40 rect hit">
+            <div class="card-top">
+              <div class="card-badge-group">
+                <span class="badge-flagship">★ Хит для навесов</span>
+                <span class="badge-standard">ГОСТ 8645-68</span>
+              </div>
+              <span class="stock-indicator">В наличии • 950 м</span>
+            </div>
+
+            <div class="card-visual" style="border-color: rgba(214,189,122,0.35);">
+              <svg width="100%" height="48" viewBox="0 0 240 44" preserveAspectRatio="xMidYMid meet" style="display:block; max-width: 100%;">
+                <rect x="6" y="4" width="228" height="36" rx="5" fill="rgba(20,24,36,0.95)" stroke="#d6bd7a" stroke-width="5"/>
+                <text x="120" y="26" fill="#f5e7be" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" text-anchor="middle">60 × 40 × 3.0 мм (Усил.)</text>
+              </svg>
+            </div>
+
+            <h3 class="card-title">Труба 60х40х3.0 мм (Усиленная)</h3>
+            <div class="card-purpose">Стропильные фермы навесов, столбы забора 2+ метра, ворота</div>
+
+            <div class="card-specs">
+              <div class="spec-item">
+                <span class="spec-key">Теорет. вес 1 м</span>
+                <span class="spec-val" style="color: var(--gold-light);">4.30 кг</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Метров в тонне</span>
+                <span class="spec-val">≈ 232 м</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Вес хлыста 6.0 м</span>
+                <span class="spec-val">25.80 кг</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Хлыст 6 метров</span>
+                <span class="spec-val" style="color: var(--accent-green);">1 560 ₽</span>
+              </div>
+            </div>
+
+            <div class="card-price-box">
+              <div class="price-row-main">
+                <div class="price-meter-val" style="color: #fff; text-shadow: 0 0 20px rgba(214,189,122,0.4);">
+                  260 ₽<small>/ метр</small>
+                </div>
+                <div class="price-ton-wrap">
+                  <div class="price-ton-val"><strong style="color: var(--gold-light);">60 300 ₽</strong> / т</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-actions-duo">
+              <button type="button" onclick="addToCart('Труба 60х40х3.0 мм Усиленная (ГОСТ 8645-68)', 260, 1)" class="btn-card-cart">
+                🛒 В корзину
+              </button>
+              <a href="tel:+79887328161" class="btn-card-call">
+                📞 Позвонить
+              </a>
+            </div>
+          </article>
+
+          <!-- CARD 4: 60x60x3.0 -->
+          <article class="product-card" data-size="60x60" data-type="square" data-tags="60x60 square">
+            <div class="card-top">
+              <div class="card-badge-group">
+                <span class="badge-standard">ГОСТ 8639-82</span>
+                <span class="badge-standard">Стенка 3.0 мм</span>
+              </div>
+              <span class="stock-indicator">В наличии • 840 м</span>
+            </div>
+
+            <!-- АДАПТИВНАЯ РАМКА РАЗРЕЗА ТРУБЫ -->
+            <div class="card-visual">
+              <svg width="100%" height="48" viewBox="0 0 240 44" preserveAspectRatio="xMidYMid meet" style="display:block; max-width: 100%;">
+                <rect x="8" y="4" width="224" height="36" rx="4" fill="rgba(20,24,36,0.95)" stroke="#d6bd7a" stroke-width="5"/>
+                <text x="120" y="26" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" text-anchor="middle">60 × 60 × 3.0 мм</text>
+              </svg>
+            </div>
+
+            <h3 class="card-title">Труба 60х60х3.0 мм</h3>
+            <div class="card-purpose">Силовые стойки навесов, опоры террас, каркасы ангаров</div>
+
+            <div class="card-specs">
+              <div class="spec-item">
+                <span class="spec-key">Теорет. вес 1 м</span>
+                <span class="spec-val">5.25 кг</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Метров в тонне</span>
+                <span class="spec-val">≈ 190 м</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Вес хлыста 6.0 м</span>
+                <span class="spec-val">31.50 кг</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Хлыст 6 метров</span>
+                <span class="spec-val">1 980 ₽</span>
+              </div>
+            </div>
+
+            <div class="card-price-box">
+              <div class="price-row-main">
+                <div class="price-meter-val">330 ₽<small>/ метр</small></div>
+                <div class="price-ton-wrap">
+                  <div class="price-ton-val"><strong>62 700 ₽</strong> / т</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-actions-duo">
+              <button type="button" onclick="addToCart('Труба 60х60х3.0 мм (ГОСТ 8639-82)', 330, 1)" class="btn-card-cart">
+                🛒 В корзину
+              </button>
+              <a href="tel:+79887328161" class="btn-card-call">
+                📞 Позвонить
+              </a>
+            </div>
+          </article>
+
+          <!-- CARD 5: 80x80x3.0 -->
+          <article class="product-card" data-size="80x80" data-type="square" data-tags="80x80 square">
+            <div class="card-top">
+              <div class="card-badge-group">
+                <span class="badge-standard">ГОСТ 8639-82</span>
+                <span class="badge-standard">Стенка 3.0 мм Мощная</span>
+              </div>
+              <span class="stock-indicator">В наличии • 620 м</span>
+            </div>
+
+            <!-- АДАПТИВНАЯ РАМКА РАЗРЕЗА ТРУБЫ -->
+            <div class="card-visual">
+              <svg width="100%" height="52" viewBox="0 0 240 46" preserveAspectRatio="xMidYMid meet" style="display:block; max-width: 100%;">
+                <rect x="6" y="3" width="228" height="40" rx="5" fill="rgba(20,24,36,0.95)" stroke="#d6bd7a" stroke-width="6"/>
+                <text x="120" y="27" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" text-anchor="middle">80 × 80 × 3.0 мм (Мощная)</text>
+              </svg>
+            </div>
+
+            <h3 class="card-title">Труба 80х80х3.0 мм</h3>
+            <div class="card-purpose">Опорные колонны больших автонавесов, столбы ворот</div>
+
+            <div class="card-specs">
+              <div class="spec-item">
+                <span class="spec-key">Теорет. вес 1 м</span>
+                <span class="spec-val">7.10 кг</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Метров в тонне</span>
+                <span class="spec-val">≈ 140 м</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Вес хлыста 6.0 м</span>
+                <span class="spec-val">42.60 кг</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Хлыст 6 метров</span>
+                <span class="spec-val">2 760 ₽</span>
+              </div>
+            </div>
+
+            <div class="card-price-box">
+              <div class="price-row-main">
+                <div class="price-meter-val">460 ₽<small>/ метр</small></div>
+                <div class="price-ton-wrap">
+                  <div class="price-ton-val"><strong>64 400 ₽</strong> / т</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-actions-duo">
+              <button type="button" onclick="addToCart('Труба 80х80х3.0 мм Мощная (ГОСТ 8639-82)', 460, 1)" class="btn-card-cart">
+                🛒 В корзину
+              </button>
+              <a href="tel:+79887328161" class="btn-card-call">
+                📞 Позвонить
+              </a>
+            </div>
+          </article>
+
+          <!-- CARD 6: 20x20x1.5 -->
+          <article class="product-card" data-size="20x20" data-type="square" data-tags="20x20 square">
+            <div class="card-top">
+              <div class="card-badge-group">
+                <span class="badge-standard">ГОСТ 8639-82</span>
+                <span class="badge-standard">Стенка 1.5 мм</span>
+              </div>
+              <span class="stock-indicator">В наличии • 2 100 м</span>
+            </div>
+
+            <!-- АДАПТИВНАЯ РАМКА РАЗРЕЗА ТРУБЫ -->
+            <div class="card-visual">
+              <svg width="100%" height="40" viewBox="0 0 240 36" preserveAspectRatio="xMidYMid meet" style="display:block; max-width: 100%;">
+                <rect x="14" y="6" width="212" height="24" rx="3" fill="rgba(20,24,36,0.95)" stroke="#d6bd7a" stroke-width="2.5"/>
+                <text x="120" y="22" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" text-anchor="middle">20 × 20 × 1.5 мм</text>
+              </svg>
+            </div>
+
+            <h3 class="card-title">Труба 20х20х1.5 мм</h3>
+            <div class="card-purpose">Решетки, перила, кованые элементы, внутреннее наполнение</div>
+
+            <div class="card-specs">
+              <div class="spec-item">
+                <span class="spec-key">Теорет. вес 1 м</span>
+                <span class="spec-val">0.85 кг</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Метров в тонне</span>
+                <span class="spec-val">≈ 1 176 м</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Вес хлыста 6.0 м</span>
+                <span class="spec-val">5.10 кг</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Хлыст 6 метров</span>
+                <span class="spec-val">408 ₽</span>
+              </div>
+            </div>
+
+            <div class="card-price-box">
+              <div class="price-row-main">
+                <div class="price-meter-val">68 ₽<small>/ метр</small></div>
+                <div class="price-ton-wrap">
+                  <div class="price-ton-val"><strong>79 900 ₽</strong> / т</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-actions-duo">
+              <button type="button" onclick="addToCart('Труба 20х20х1.5 мм (ГОСТ 8639-82)', 68, 1)" class="btn-card-cart">
+                🛒 В корзину
+              </button>
+              <a href="tel:+79887328161" class="btn-card-call">
+                📞 Позвонить
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+<!-- ==========================================================================
+       СТИЛИ ДЛЯ КОМПОНЕНТОВ ВТОРОЙ ЧАСТИ (КАЛЬКУЛЯТОР, ТАБЛИЦА, ПТО, КОРЗИНА)
+       ========================================================================== -->
+  <style>
+    /* СТИЛИ КАЛЬКУЛЯТОРА */
     .calc-section {
       padding: 50px 0;
       position: relative;
@@ -1319,9 +1854,7 @@
       gap: 6px;
     }
 
-    /* ==========================================================================
-       СТИЛИ ТАБЛИЦЫ ГОСТ
-       ========================================================================== */
+    /* СТИЛИ ТАБЛИЦЫ ГОСТ */
     .table-section {
       padding: 40px 0;
     }
@@ -1403,9 +1936,7 @@
       gap: 10px;
     }
 
-    /* ==========================================================================
-       СТИЛИ ЭКСПЕРТНЫХ СТАТЕЙ И ТРАСТ-БАННЕРА
-       ========================================================================== */
+    /* СТИЛИ ЭКСПЕРТНЫХ СТАТЕЙ И ТРАСТ-БАННЕРА */
     .expert-section { padding: 40px 0; }
 
     .expert-grid {
@@ -1508,9 +2039,7 @@
       line-height: 1.45;
     }
 
-    /* ==========================================================================
-       СТИЛИ КАРТОЧЕК ПАСПОРТОВ ПТО
-       ========================================================================== */
+    /* СТИЛИ ПАСПОРТОВ ПТО */
     .pto-expert-wrap {
       color: #f4f4f5;
       font-family: var(--font-body);
@@ -1814,9 +2343,7 @@
       color: #07080c;
     }
 
-    /* ==========================================================================
-       СТИЛИ ШТОРКИ (DRAWER)
-       ========================================================================== */
+    /* СТИЛИ ШТОРКИ (DRAWER) */
     .sb-drawer-overlay {
       position: fixed;
       top: 0;
@@ -1968,643 +2495,146 @@
       text-align: center;
       text-decoration: none;
     }
+
+    /* СТИЛИ КОРЗИНЫ */
+    #cart-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%);
+      color: #07080c;
+      padding: 12px 22px;
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 8px 30px rgba(214, 189, 122, 0.35);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    #cart-float:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(214, 189, 122, 0.5);
+    }
+
+    #cart-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+
+    .cart-modal-box {
+      background: #0f111a;
+      border: 1px solid var(--border-gold-bright);
+      border-radius: 20px;
+      max-width: 520px;
+      width: 100%;
+      padding: 26px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-sizing: border-box;
+      color: #f4f4f5;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    }
+
+    .cart-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #71717a;
+      transition: color 0.2s;
+      line-height: 1;
+    }
+
+    .cart-close-btn:hover { color: #fff; }
+
+    .cart-item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 13.5px;
+    }
+
+    .cart-total-row {
+      font-size: 18px;
+      font-weight: 800;
+      margin: 16px 0 20px;
+      text-align: right;
+      color: #fff;
+    }
+
+    .cart-total-row span {
+      color: var(--gold);
+      font-size: 22px;
+    }
+
+    .cart-form-group {
+      margin-bottom: 14px;
+    }
+
+    .cart-form-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #d1d5db;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .cart-input {
+      width: 100%;
+      height: 44px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 14px;
+      padding: 0 14px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .cart-input:focus { border-color: var(--gold); }
+
+    .cart-submit-btn {
+      width: 100%;
+      height: 48px;
+      background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%);
+      color: #07080c;
+      border: none;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .cart-submit-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
   </style>
-
-  <!-- ==========================================================================
-       SCHEMA.ORG STRUCTURED DATA (JSON-LD)
-       ========================================================================== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Главная",
-            "item": "https://stroybazansk.ru/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Профильные трубы в Невинномысске",
-            "item": "https://stroybazansk.ru/truby.html"
-          }
-        ]
-      },
-      {
-        "@type": "HardwareStore",
-        "@id": "https://stroybazansk.ru/#store",
-        "name": "Стройбаза на Монтажной",
-        "legalName": "Индивидуальный предприниматель Кардава Тимур Кукуриевич",
-        "taxID": "263119933162",
-        "identifier": "326265100122423",
-        "image": "https://stroybazansk.ru/logo.png",
-        "url": "https://stroybazansk.ru/",
-        "telephone": "+7-988-732-81-61",
-        "priceRange": "RUB",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "ул. Монтажная, д. 10",
-          "addressLocality": "Невинномысск",
-          "addressRegion": "Ставропольский край",
-          "postalCode": "357100",
-          "addressCountry": "RU"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 44.6435,
-          "longitude": 41.9355
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday"
-            ],
-            "opens": "08:00",
-            "closes": "18:00"
-          }
-        ]
-      },
-      {
-        "@type": "Product",
-        "name": "Профильные стальные трубы в Невинномысске (ГОСТ 8645-68 / 8639-82)",
-        "description": "Прямоугольные и квадратные трубы от 20х20 до 80х80 мм со стенкой 1.5, 2.0 и 3.0 мм. Честный ГОСТ, контрольный замер штангенциркулем при клиенте, резка пополам, быстрая доставка Газелями и манипулятором по Невинномысску и Ставропольскому краю.",
-        "image": "https://stroybazansk.ru/logo.png",
-        "category": "Металлопрокат / Профильные трубы",
-        "brand": {
-          "@type": "Brand",
-          "name": "ГОСТ РФ"
-        },
-        "offers": {
-          "@type": "AggregateOffer",
-          "lowPrice": "68",
-          "highPrice": "460",
-          "priceCurrency": "RUB",
-          "offerCount": "6",
-          "priceValidUntil": "2026-12-31",
-          "availability": "https://schema.org/InStock",
-          "seller": {
-            "@id": "https://stroybazansk.ru/#store"
-          }
-        }
-      }
-    ]
-  }
-  </script>
-</head>
-<body>
-
-  <!-- ==========================================================================
-       TOP INFORMATIONAL BAR
-       ========================================================================== -->
-  <div class="topbar">
-    <div class="container topbar-container">
-      <div class="topbar-info">
-        <div class="topbar-item">
-          <span>📍 г. Невинномысск, ул. Монтажная, 10</span>
-        </div>
-        <div class="topbar-item">
-          <span>⏰ Пн–Сб: 08:00 – 18:00</span>
-        </div>
-        <div class="topbar-item">
-          <span class="topbar-badge">Склад открыт • Честная стенка по ГОСТу</span>
-        </div>
-      </div>
-      <div class="topbar-info">
-        <div class="topbar-item">
-          <span>🚚 Доставка за 1.5–2 ч манипулятором и Газелями</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       MAIN HEADER
-       ========================================================================== -->
-  <header class="header">
-    <div class="container header-container">
-      <button class="catalog-btn sb-catalog-toggle" id="sbCatalogOpenBtn" type="button" aria-label="Открыть каталог стройматериалов">
-        <span>☰</span>
-        <span class="sb-catalog-btn-text">Каталог</span>
-      </button>
-
-      <a href="index.html" class="logo" title="Стройбаза на Монтажной">
-        <img src="logo.png" alt="Стройбаза на Монтажной" class="site-logo-img">
-        <div class="logo-text">
-          <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
-          <span class="logo-subtitle">Невинномысск • Металлопрокат</span>
-        </div>
-      </a>
-
-      <nav class="header-nav">
-        <a href="#calculator" class="nav-link">Калькулятор веса</a>
-        <a href="#gost-table" class="nav-link">Таблица ГОСТ</a>
-        <a href="#expert-advice" class="nav-link">Ветровые нагрузки</a>
-        <a href="#contacts" class="nav-link">Контакты склада</a>
-      </nav>
-
-      <div class="header-actions">
-        <div class="phone-block">
-          <a href="tel:+79887328161" class="phone-number">+7 (988) 732-81-61</a>
-          <span class="phone-hint">Оплата строго при выгрузке</span>
-        </div>
-        <a href="https://wa.me/79887328161?text=Здравствуйте!%20Интересует%20профильная%20труба%20со%20склада%20в%20Невинномысске" target="_blank" rel="noopener" class="btn-wa-header" title="Написать в WhatsApp">
-          <span>💬</span>
-          <span>WhatsApp</span>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- ==========================================================================
-       BREADCRUMBS
-       ========================================================================== -->
-  <div class="breadcrumbs-bar">
-    <div class="container">
-      <ul class="breadcrumbs">
-        <li><a href="index.html">Главная</a></li>
-        <li class="breadcrumbs-separator">/</li>
-        <li><a href="index.html#catalog">Каталог металлопроката</a></li>
-        <li class="breadcrumbs-separator">/</li>
-        <li class="breadcrumbs-current">Профильные трубы в Невинномысске</li>
-      </ul>
-    </div>
-  </div>
-
-  <main>
-    <!-- ==========================================================================
-         HERO SECTION (H1 & TRUST BADGES)
-         ========================================================================== -->
-    <section class="hero-section">
-      <div class="container">
-        <div class="hero-badge-wrap">
-          <span class="hero-tag">Металлобаза №1 в Невинномысске</span>
-          <span class="hero-tag" style="border-color: rgba(16, 185, 129, 0.4); color: var(--accent-green);">ГОСТ 8645-68 и ГОСТ 8639-82</span>
-        </div>
-
-        <h1 class="hero-title">
-          Профильные стальные трубы в Невинномысске <span>(ГОСТ 8645-68 / 8639-82)</span>
-        </h1>
-
-        <p class="hero-desc">
-          Прямые поставки прямоугольной и квадратной профильной трубы от <strong>40х20 до 80х80 мм</strong> со склада на ул. Монтажная, 10. Без заниженного «минусового ТУ»: честная стенка 2.0 и 3.0 мм с запасом прочности под ветровые нагрузки региона («армавирец» до 28 м/с).
-        </p>
-
-        <!-- COMMERCIAL TRUST BADGES -->
-        <div class="trust-badges-bar">
-          <div class="trust-badges-header">
-            <span class="trust-badges-header-dot"></span>
-            Гарантии качества металлопроката на ул. Монтажная, 10
-          </div>
-          <div class="trust-badges-grid">
-            <div class="trust-badge-item">
-              <span class="trust-badge-check">✓</span>
-              <span><strong>Честная толщина стенки 2.0 и 3.0 мм:</strong> контрольный замер штангенциркулем при вас</span>
-            </div>
-            <div class="trust-badge-item">
-              <span class="trust-badge-check">✓</span>
-              <span><strong>В наличии более 25 000 метров:</strong> ходовые сечения отгружаем в день обращения</span>
-            </div>
-            <div class="trust-badge-item">
-              <span class="trust-badge-check">✓</span>
-              <span><strong>Бесплатная резка хлыстов 6 м пополам:</strong> по 3 м для быстрой перевозки в прицепе</span>
-            </div>
-            <div class="trust-badge-item">
-              <span class="trust-badge-check">✓</span>
-              <span><strong>Оплата водителю строго при получении:</strong> наличные, перевод или безнал с НДС</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4 USP PILLS -->
-        <div class="hero-advantages">
-          <div class="adv-pill">
-            <div class="adv-pill-icon">💵</div>
-            <div>
-              <div class="adv-pill-title">Оплата строго при выгрузке</div>
-              <div class="adv-pill-sub">Без риска: проверка толщины штангенциркулем перед расчетом на объекте.</div>
-            </div>
-          </div>
-
-          <div class="adv-pill">
-            <div class="adv-pill-icon">✂️</div>
-            <div>
-              <div class="adv-pill-title">Бесплатная резка пополам</div>
-              <div class="adv-pill-sub">Хлысты 6.0 м режем по 3.0 м бесплатно для экономии на длинномерном транспорте.</div>
-            </div>
-          </div>
-
-          <div class="adv-pill">
-            <div class="adv-pill-icon">🚚</div>
-            <div>
-              <div class="adv-pill-title">Срочная доставка от 1.5 ч</div>
-              <div class="adv-pill-sub">Газели 6м (от 1000 ₽) и манипуляторы 15т по Невинномысску и Кочубеевскому району.</div>
-            </div>
-          </div>
-
-          <div class="adv-pill">
-            <div class="adv-pill-icon">📐</div>
-            <div>
-              <div class="adv-pill-title">Замер штангенциркулем</div>
-              <div class="adv-pill-sub">Выдаем поверенный прибор: лично контролируйте толщину стенки перед оплатой.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- FILTER CHIPS -->
-        <div class="chips-section">
-          <div class="chips-label">
-            Быстрый выбор по сечениям и назначению:
-          </div>
-          <div class="chips-scroll-wrap" id="chipsNav">
-            <button class="chip-btn active" data-filter="all">Все позиции <span class="chip-counter">6</span></button>
-            <button class="chip-btn" data-filter="40x20">⚡ 40х20 лаги для забора</button>
-            <button class="chip-btn" data-filter="40x40">40х40 столбы</button>
-            <button class="chip-btn" data-filter="60x40">60х40 фермы навеса</button>
-            <button class="chip-btn" data-filter="60x60">60х60 стойки</button>
-            <button class="chip-btn" data-filter="80x80">80х80 мощная воротная</button>
-            <button class="chip-btn" data-filter="rect">Прямоугольная ГОСТ 8645</button>
-            <button class="chip-btn" data-filter="square">Квадратная ГОСТ 8639</button>
-            <a href="#calculator" class="chip-btn" style="border-color: rgba(214,189,122,0.5); color: var(--gold-light);">🧮 Калькулятор веса</a>
-            <a href="#gost-table" class="chip-btn" style="border-color: rgba(56,189,248,0.4); color: var(--accent-blue);">📋 Таблица ГОСТ</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         PRODUCT CARDS CATALOG
-         ========================================================================== -->
-    <section class="catalog-section" id="catalog">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">Каталог профильных труб <span>в наличии</span></h2>
-            <p class="section-subtitle">Цены склада на Монтажной 10 актуальны на сегодня. Оплата при выгрузке!</p>
-          </div>
-          <div style="font-size: 0.85rem; color: var(--text-muted);">
-            Хлысты: <strong>6.0 м</strong> (резка пополам <strong>3.0 м бесплатно</strong>)
-          </div>
-        </div>
-
-        <div class="catalog-grid" id="productsGrid">
-
-          <!-- CARD 1: 40x20x2.0 -->
-          <article class="product-card" data-size="40x20" data-type="rect" data-tags="40x20 rect">
-            <div class="card-top">
-              <div class="card-badge-group">
-                <span class="badge-standard">ГОСТ 8645-68</span>
-                <span class="badge-standard">Стенка 2.0 мм</span>
-              </div>
-              <span class="stock-indicator">В наличии • 1 800 м</span>
-            </div>
-
-            <div class="card-visual">
-              <div style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: #fff; border: 2px solid #d6bd7a; padding: 10px 24px; border-radius: 6px; background: rgba(20,24,36,0.9);">
-                40 × 20 × 2.0 мм
-              </div>
-            </div>
-
-            <h3 class="card-title">Труба 40х20х2.0 мм</h3>
-            <div class="card-purpose">Прожилины (лаги) забора из профлиста, кровельная обрешетка</div>
-
-            <div class="card-specs">
-              <div class="spec-item">
-                <span class="spec-key">Теорет. вес 1 м</span>
-                <span class="spec-val">1.70 кг</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Метров в тонне</span>
-                <span class="spec-val">≈ 588 м</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Вес хлыста 6.0 м</span>
-                <span class="spec-val">10.20 кг</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Хлыст 6 метров</span>
-                <span class="spec-val">690 ₽</span>
-              </div>
-            </div>
-
-            <div class="card-price-box">
-              <div class="price-row-main">
-                <div class="price-meter-val">115 ₽<small>/ метр</small></div>
-                <div class="price-ton-wrap">
-                  <div class="price-ton-val"><strong>67 600 ₽</strong> / т</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-actions-duo">
-              <button type="button" onclick="addToCart('Труба 40х20х2.0 мм (ГОСТ 8645-68)', 115, 1)" class="btn-card-cart">
-                🛒 В корзину
-              </button>
-              <a href="tel:+79887328161" class="btn-card-call">
-                📞 Позвонить
-              </a>
-            </div>
-          </article>
-
-          <!-- CARD 2: 40x40x2.0 -->
-          <article class="product-card" data-size="40x40" data-type="square" data-tags="40x40 square">
-            <div class="card-top">
-              <div class="card-badge-group">
-                <span class="badge-standard">ГОСТ 8639-82</span>
-                <span class="badge-standard">Стенка 2.0 мм</span>
-              </div>
-              <span class="stock-indicator">В наличии • 1 200 м</span>
-            </div>
-
-            <div class="card-visual">
-              <div style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: #fff; border: 2px solid #d6bd7a; padding: 10px 24px; border-radius: 6px; background: rgba(20,24,36,0.9);">
-                40 × 40 × 2.0 мм
-              </div>
-            </div>
-
-            <h3 class="card-title">Труба 40х40х2.0 мм</h3>
-            <div class="card-purpose">Опорные столбы забора до 1.8м, калитки, легкие каркасы</div>
-
-            <div class="card-specs">
-              <div class="spec-item">
-                <span class="spec-key">Теорет. вес 1 м</span>
-                <span class="spec-val">2.35 кг</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Метров в тонне</span>
-                <span class="spec-val">≈ 425 м</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Вес хлыста 6.0 м</span>
-                <span class="spec-val">14.10 кг</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Хлыст 6 метров</span>
-                <span class="spec-val">960 ₽</span>
-              </div>
-            </div>
-
-            <div class="card-price-box">
-              <div class="price-row-main">
-                <div class="price-meter-val">160 ₽<small>/ метр</small></div>
-                <div class="price-ton-wrap">
-                  <div class="price-ton-val"><strong>68 000 ₽</strong> / т</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-actions-duo">
-              <button type="button" onclick="addToCart('Труба 40х40х2.0 мм (ГОСТ 8639-82)', 160, 1)" class="btn-card-cart">
-                🛒 В корзину
-              </button>
-              <a href="tel:+79887328161" class="btn-card-call">
-                📞 Позвонить
-              </a>
-            </div>
-          </article>
-
-          <!-- CARD 3: 60x40x3.0 (FLAGSHIP HIT) -->
-          <article class="product-card flagship" data-size="60x40" data-type="rect" data-tags="60x40 rect hit">
-            <div class="card-top">
-              <div class="card-badge-group">
-                <span class="badge-flagship">★ Хит для навесов</span>
-                <span class="badge-standard">ГОСТ 8645-68</span>
-              </div>
-              <span class="stock-indicator">В наличии • 950 м</span>
-            </div>
-
-            <div class="card-visual" style="border-color: rgba(214,189,122,0.35);">
-              <div style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: #f5e7be; border: 3px solid #d6bd7a; padding: 10px 20px; border-radius: 6px; background: rgba(20,24,36,0.9);">
-                60 × 40 × 3.0 мм (Усил.)
-              </div>
-            </div>
-
-            <h3 class="card-title">Труба 60х40х3.0 мм (Усиленная)</h3>
-            <div class="card-purpose">Стропильные фермы навесов, столбы забора 2+ метра, ворота</div>
-
-            <div class="card-specs">
-              <div class="spec-item">
-                <span class="spec-key">Теорет. вес 1 м</span>
-                <span class="spec-val" style="color: var(--gold-light);">4.30 кг</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Метров в тонне</span>
-                <span class="spec-val">≈ 232 м</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Вес хлыста 6.0 м</span>
-                <span class="spec-val">25.80 кг</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Хлыст 6 метров</span>
-                <span class="spec-val" style="color: var(--accent-green);">1 560 ₽</span>
-              </div>
-            </div>
-
-            <div class="card-price-box">
-              <div class="price-row-main">
-                <div class="price-meter-val" style="color: #fff; text-shadow: 0 0 20px rgba(214,189,122,0.4);">
-                  260 ₽<small>/ метр</small>
-                </div>
-                <div class="price-ton-wrap">
-                  <div class="price-ton-val"><strong style="color: var(--gold-light);">60 300 ₽</strong> / т</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-actions-duo">
-              <button type="button" onclick="addToCart('Труба 60х40х3.0 мм Усиленная (ГОСТ 8645-68)', 260, 1)" class="btn-card-cart">
-                🛒 В корзину
-              </button>
-              <a href="tel:+79887328161" class="btn-card-call">
-                📞 Позвонить
-              </a>
-            </div>
-          </article>
-
-          <!-- CARD 4: 60x60x3.0 -->
-          <article class="product-card" data-size="60x60" data-type="square" data-tags="60x60 square">
-            <div class="card-top">
-              <div class="card-badge-group">
-                <span class="badge-standard">ГОСТ 8639-82</span>
-                <span class="badge-standard">Стенка 3.0 мм</span>
-              </div>
-              <span class="stock-indicator">В наличии • 840 м</span>
-            </div>
-
-            <div class="card-visual">
-              <div style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: #fff; border: 2px solid #d6bd7a; padding: 10px 24px; border-radius: 6px; background: rgba(20,24,36,0.9);">
-                60 × 60 × 3.0 мм
-              </div>
-            </div>
-
-            <h3 class="card-title">Труба 60х60х3.0 мм</h3>
-            <div class="card-purpose">Силовые стойки навесов, опоры террас, каркасы ангаров</div>
-
-            <div class="card-specs">
-              <div class="spec-item">
-                <span class="spec-key">Теорет. вес 1 м</span>
-                <span class="spec-val">5.25 кг</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Метров в тонне</span>
-                <span class="spec-val">≈ 190 м</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Вес хлыста 6.0 м</span>
-                <span class="spec-val">31.50 кг</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Хлыст 6 метров</span>
-                <span class="spec-val">1 980 ₽</span>
-              </div>
-            </div>
-
-            <div class="card-price-box">
-              <div class="price-row-main">
-                <div class="price-meter-val">330 ₽<small>/ метр</small></div>
-                <div class="price-ton-wrap">
-                  <div class="price-ton-val"><strong>62 700 ₽</strong> / т</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-actions-duo">
-              <button type="button" onclick="addToCart('Труба 60х60х3.0 мм (ГОСТ 8639-82)', 330, 1)" class="btn-card-cart">
-                🛒 В корзину
-              </button>
-              <a href="tel:+79887328161" class="btn-card-call">
-                📞 Позвонить
-              </a>
-            </div>
-          </article>
-
-          <!-- CARD 5: 80x80x3.0 -->
-          <article class="product-card" data-size="80x80" data-type="square" data-tags="80x80 square">
-            <div class="card-top">
-              <div class="card-badge-group">
-                <span class="badge-standard">ГОСТ 8639-82</span>
-                <span class="badge-standard">Стенка 3.0 мм Мощная</span>
-              </div>
-              <span class="stock-indicator">В наличии • 620 м</span>
-            </div>
-
-            <div class="card-visual">
-              <div style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: #fff; border: 3px solid #d6bd7a; padding: 10px 20px; border-radius: 6px; background: rgba(20,24,36,0.9);">
-                80 × 80 × 3.0 мм (Мощная)
-              </div>
-            </div>
-
-            <h3 class="card-title">Труба 80х80х3.0 мм</h3>
-            <div class="card-purpose">Опорные колонны больших автонавесов, столбы ворот</div>
-
-            <div class="card-specs">
-              <div class="spec-item">
-                <span class="spec-key">Теорет. вес 1 м</span>
-                <span class="spec-val">7.10 кг</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Метров в тонне</span>
-                <span class="spec-val">≈ 140 м</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Вес хлыста 6.0 м</span>
-                <span class="spec-val">42.60 кг</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Хлыст 6 метров</span>
-                <span class="spec-val">2 760 ₽</span>
-              </div>
-            </div>
-
-            <div class="card-price-box">
-              <div class="price-row-main">
-                <div class="price-meter-val">460 ₽<small>/ метр</small></div>
-                <div class="price-ton-wrap">
-                  <div class="price-ton-val"><strong>64 400 ₽</strong> / т</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-actions-duo">
-              <button type="button" onclick="addToCart('Труба 80х80х3.0 мм Мощная (ГОСТ 8639-82)', 460, 1)" class="btn-card-cart">
-                🛒 В корзину
-              </button>
-              <a href="tel:+79887328161" class="btn-card-call">
-                📞 Позвонить
-              </a>
-            </div>
-          </article>
-
-          <!-- CARD 6: 20x20x1.5 -->
-          <article class="product-card" data-size="20x20" data-type="square" data-tags="20x20 square">
-            <div class="card-top">
-              <div class="card-badge-group">
-                <span class="badge-standard">ГОСТ 8639-82</span>
-                <span class="badge-standard">Стенка 1.5 мм</span>
-              </div>
-              <span class="stock-indicator">В наличии • 2 100 м</span>
-            </div>
-
-            <div class="card-visual">
-              <div style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: #fff; border: 2px solid #d6bd7a; padding: 10px 24px; border-radius: 6px; background: rgba(20,24,36,0.9);">
-                20 × 20 × 1.5 мм
-              </div>
-            </div>
-
-            <h3 class="card-title">Труба 20х20х1.5 мм</h3>
-            <div class="card-purpose">Решетки, перила, кованые элементы, внутреннее наполнение</div>
-
-            <div class="card-specs">
-              <div class="spec-item">
-                <span class="spec-key">Теорет. вес 1 м</span>
-                <span class="spec-val">0.85 кг</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Метров в тонне</span>
-                <span class="spec-val">≈ 1 176 м</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Вес хлыста 6.0 м</span>
-                <span class="spec-val">5.10 кг</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-key">Хлыст 6 метров</span>
-                <span class="spec-val">408 ₽</span>
-              </div>
-            </div>
-
-            <div class="card-price-box">
-              <div class="price-row-main">
-                <div class="price-meter-val">68 ₽<small>/ метр</small></div>
-                <div class="price-ton-wrap">
-                  <div class="price-ton-val"><strong>79 900 ₽</strong> / т</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-actions-duo">
-              <button type="button" onclick="addToCart('Труба 20х20х1.5 мм (ГОСТ 8639-82)', 68, 1)" class="btn-card-cart">
-                🛒 В корзину
-              </button>
-              <a href="tel:+79887328161" class="btn-card-call">
-                📞 Позвонить
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
 
     <!-- ==========================================================================
          ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР: МЕТРЫ ⇄ ТОННЫ ⇄ ХЛЫСТЫ 6.0 М
@@ -3918,4 +3948,5 @@
   </script>
 </body>
 </html>
+
 
