@@ -309,6 +309,7 @@
       display: flex;
       align-items: center;
       gap: 14px;
+      flex-shrink: 0 !important;
     }
 
     .phone-block {
@@ -332,24 +333,39 @@
       font-size: 0.7rem;
       color: var(--accent-green);
       display: block;
+      white-space: nowrap;
     }
 
+    /* КНОПКА WHATSAPP В ШАПКЕ */
     .btn-wa-header {
       background: #25d366;
       color: #07080c;
-      padding: 9px 15px;
+      padding: 0 15px;
+      height: 38px;
       border-radius: var(--radius-sm);
       font-size: 0.85rem;
       font-weight: 700;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      gap: 7px;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      text-decoration: none;
       transition: var(--transition);
     }
 
     .btn-wa-header:hover {
       filter: brightness(1.1);
       transform: translateY(-1px);
+    }
+
+    .btn-wa-header svg {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+      fill: currentColor;
+      display: block;
     }
 
     @media (min-width: 993px) {
@@ -893,7 +909,7 @@
       background: var(--accent-green);
     }
 
-    /* Компактный CSS-макет мешка вместо тяжелых SVG */
+    /* Компактный CSS-макет мешка */
     .bag-preview-box {
       height: 100px;
       background: linear-gradient(135deg, rgba(20, 24, 38, 0.8), rgba(10, 13, 20, 0.95));
@@ -1068,7 +1084,7 @@
       box-shadow: var(--shadow-gold);
     }
 
-    /* Мобильная шапка */
+    /* Мобильная шапка: фикс центровки и отсутствие сплющивания */
     @media (max-width: 992px) {
       .header-nav { display: none !important; }
       .header-container {
@@ -1113,13 +1129,25 @@
         order: 3 !important;
         display: flex !important;
         align-items: center !important;
-        gap: 6px !important;
+        gap: 8px !important;
         flex-shrink: 0 !important;
       }
-      .header-actions .btn-wa-header span { display: none !important; }
       .header-actions .btn-wa-header {
-        padding: 6px 8px !important;
+        width: 36px !important;
         height: 36px !important;
+        min-width: 36px !important;
+        padding: 0 !important;
+        border-radius: 8px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      .header-actions .btn-wa-header span {
+        display: none !important;
+      }
+      .header-actions .btn-wa-header svg {
+        width: 19px !important;
+        height: 19px !important;
       }
       .header-actions .phone-number {
         font-size: 0.80rem !important;
@@ -1215,7 +1243,7 @@
               "name": "Цемент Новороссийский М500 Д0 (ЦЕМ I 42,5Н) 50 кг",
               "price": "570.00",
               "priceCurrency": "RUB",
-              "priceValidUntil": "2026-12-31",
+              "priceValidUntil": "2027-12-31",
               "availability": "https://schema.org/InStock",
               "seller": { "@id": "https://stroybazansk.ru/#store" }
             },
@@ -1224,12 +1252,41 @@
               "name": "Цемент Новороссийский М500 Д20 (ЦЕМ II/А-Ш 42,5Н) 50 кг",
               "price": "570.00",
               "priceCurrency": "RUB",
-              "priceValidUntil": "2026-12-31",
+              "priceValidUntil": "2027-12-31",
               "availability": "https://schema.org/InStock",
               "seller": { "@id": "https://stroybazansk.ru/#store" }
             }
           ]
         }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Как отличить оригинальный цемент ОАО «Новоросцемент» от подделки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Заводской новороссийский цемент фасуется исключительно в трехслойные клапанные мешки с микроперфорацией. На боку мешка нанесена четкая лазерная заводская маркировка с датой, номером смены и точным временем фасовки. В мешках с базы на Монтажной 10 ровно 50.0 кг смеси без добавления золы и минерального порошка."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Сколько мешков цемента М500 на одном поддоне и сколько он весит?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "На стандартном европоддоне уложено ровно 30 заводских мешков по 50 кг. Общий вес составляет 1.5 тонны (1500 кг). Поддон герметично упакован в заводскую термоусадочную пленку для защиты от влаги."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как выполняется выгрузка манипулятором и возможна ли оплата при получении?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Доставка осуществляется манипулятором 15 т со стрелой 5 т или Газелями. Стрела позволяет подать поддон через забор или прямо к котловану. Оплата производится водителю строго по факту выгрузки и проверки мешков (наличными, картой или по счету)."
+            }
+          }
+        ]
       }
     ]
   }
@@ -1292,6 +1349,9 @@
           <span class="phone-hint">Оплата строго при выгрузке</span>
         </div>
         <a href="https://wa.me/79887328161?text=Здравствуйте!%20Интересует%20цемент%20М500%20со%20склада%20в%20Невинномысске" target="_blank" rel="noopener" class="btn-wa-header" title="Написать в WhatsApp">
+          <svg viewBox="0 0 24 24">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.12.82.83-3.04-.19-.3a8.13 8.13 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24z"/>
+          </svg>
           <span>WhatsApp</span>
         </a>
       </div>
@@ -2091,6 +2151,52 @@
             </div>
             <a href="fbs-shlakoblok.html#shlakoblok" class="btn-card-call" style="width: 100%;">Шлакоблоки и ФБС →</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ВИДИМЫЙ БЛОК FAQ ДЛЯ ПОСЕТИТЕЛЕЙ И ПОИСКОВЫХ СИСТЕМ
+         ====================================================================== -->
+    <section class="table-section" style="padding-top: 10px;">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Часто задаваемые вопросы <span>по цементу М500</span></h2>
+            <p class="section-subtitle">Ответы службы контроля качества и отдела логистики склада на Монтажной, 10</p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px; max-width: 900px;">
+          <details style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 16px 20px; cursor: pointer;">
+            <summary style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>1. Как отличить оригинальный цемент ОАО «Новоросцемент» от подделки?</span>
+              <span style="color: var(--gold); font-size: 1.2rem;">↓</span>
+            </summary>
+            <p style="font-size: 0.9rem; color: #9ca3af; margin-top: 12px; line-height: 1.6;">
+              Заводской новороссийский цемент фасуется исключительно в трехслойные клапанные мешки с микроперфорацией. На боковой стороне нанесена лазерная маркировка с датой, номером смены и точным временем фасовки. В мешках со склада на Монтажной 10 гарантирован честный вес ровно 50.0 кг и отсутствие кустарных добавок (доменной пыли, золы-уноса). К каждой партии прилагается официальный паспорт качества завода.
+            </p>
+          </details>
+
+          <details style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 16px 20px; cursor: pointer;">
+            <summary style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>2. Сколько мешков цемента М500 в одном поддоне и сколько он весит?</span>
+              <span style="color: var(--gold); font-size: 1.2rem;">↓</span>
+            </summary>
+            <p style="font-size: 0.9rem; color: #9ca3af; margin-top: 12px; line-height: 1.6;">
+              На стандартном заводском европоддоне уложено ровно 30 мешков по 50 кг. Общий вес цемента составляет 1.5 тонны (1500 кг). Поддон герметично упакован в плотную термоусадочную пленку, которая защищает мешки от атмосферной влаги и пыли при перевозке.
+            </p>
+          </details>
+
+          <details style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 16px 20px; cursor: pointer;">
+            <summary style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>3. Как осуществляется доставка манипулятором и возможна ли оплата при выгрузке?</span>
+              <span style="color: var(--gold); font-size: 1.2rem;">↓</span>
+            </summary>
+            <p style="font-size: 0.9rem; color: #9ca3af; margin-top: 12px; line-height: 1.6;">
+              Доставка выполняется собственным транспортом базы: Газелями (до 40 мешков) или тяжелым манипулятором 15 тонн со стрелой 5 тонн (до 10 поддонов за рейс). Стрела позволяет аккуратно выгрузить поддоны через забор, в котлован или прямо к бетономешалке. Оплата производится строго водителю после выгрузки и осмотра мешков (наличными, переводом или по безналичному расчету).
+            </p>
+          </details>
         </div>
       </div>
     </section>
