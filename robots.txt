@@ -1,21 +1,36 @@
-# Разрешение для всех поисковиков
+# robots.txt для stroybazansk.ru (Стройбаза на Монтажной 10, Невинномысск)
+# Стандарт RFC 9309
+
 User-agent: *
 Allow: /
+Disallow: /*?*
 
-# Яндекс и Нейро
+# Яндекс, Яндекс Бот и Яндекс Нейро
 User-agent: Yandex
 Allow: /
+Allow: /*.pdf
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.css
+Allow: /*.js
+Disallow: /*?*
 
 # Googlebot и Gemini
 User-agent: Googlebot
 Allow: /
+Allow: /*.pdf
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.css
+Allow: /*.js
+Disallow: /*?*
 
-# Apple Intelligence и Siri
+# Apple Intelligence и Siri Search
 User-agent: Applebot
 User-agent: Applebot-Extended
 Allow: /
 
-# ChatGPT (OpenAI - поиск и ответы)
+# OpenAI / ChatGPT (поиск, ответы и обучение)
 User-agent: GPTBot
 User-agent: OAI-SearchBot
 Allow: /
@@ -24,13 +39,14 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-# Claude (Anthropic)
+# Anthropic / Claude
 User-agent: ClaudeBot
 Allow: /
 
-# Grok (xAI)
+# xAI / Grok
 User-agent: GrokBot
 Allow: /
 
-# Главная карта сайта
+# Главное зеркало и карта сайта
+Host: https://stroybazansk.ru
 Sitemap: https://stroybazansk.ru/sitemap.xml
