@@ -1553,6 +1553,293 @@
             </div>
         </section>
 
+        <!-- ========================================== -->
+        <!-- ОФИЦИАЛЬНЫЕ ДОКУМЕНТЫ И СЕРТИФИКАТЫ БАЗЫ -->
+        <!-- ========================================== -->
+        <section class="sb-b2b-docs" id="official-docs">
+          <style>
+            .sb-b2b-docs {
+              background-color: #07080c;
+              padding: 50px 0 20px;
+              font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+              color: #f4f4f5;
+            }
+            .sb-docs-container {
+              width: min(1340px, calc(100% - 32px));
+              margin: 0 auto;
+            }
+            .sb-docs-header {
+              margin-bottom: 32px;
+              text-align: left;
+            }
+            .sb-docs-tag {
+              display: inline-block;
+              font-size: 11px;
+              font-weight: 700;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+              color: #d6bd7a;
+              background: rgba(214, 189, 122, 0.1);
+              border: 1px solid rgba(214, 189, 122, 0.25);
+              padding: 4px 10px;
+              border-radius: 9999px;
+              margin-bottom: 12px;
+            }
+            .sb-docs-title {
+              font-size: clamp(22px, 3.5vw, 32px);
+              font-weight: 800;
+              color: #ffffff;
+              margin: 0 0 10px 0;
+              line-height: 1.25;
+            }
+            .sb-docs-subtitle {
+              font-size: 14.5px;
+              color: #a1a1aa;
+              margin: 0;
+              max-width: 820px;
+              line-height: 1.55;
+            }
+            .sb-docs-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 22px;
+            }
+            .sb-doc-card {
+              background: rgba(15, 17, 26, 0.75);
+              border: 1px solid rgba(214, 189, 122, 0.22);
+              border-radius: 16px;
+              padding: 24px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+              backdrop-filter: blur(10px);
+            }
+            .sb-doc-card:hover {
+              transform: translateY(-3px);
+              border-color: rgba(214, 189, 122, 0.5);
+              box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+            }
+            .sb-card-top {
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              margin-bottom: 16px;
+            }
+            .sb-pdf-icon {
+              flex-shrink: 0;
+              width: 44px;
+              height: 48px;
+              background: #181b24;
+              border: 1px solid rgba(214, 189, 122, 0.3);
+              border-radius: 8px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              color: #d6bd7a;
+              font-size: 10px;
+              font-weight: 800;
+              line-height: 1;
+            }
+            .sb-pdf-icon span {
+              font-size: 18px;
+              margin-bottom: 2px;
+            }
+            .sb-card-meta { flex: 1; }
+            .sb-file-name {
+              font-size: 16px;
+              font-weight: 700;
+              color: #ffffff;
+              margin: 0 0 4px 0;
+              line-height: 1.3;
+            }
+            .sb-file-sub {
+              font-size: 11.5px;
+              color: #a1a1aa;
+            }
+            .sb-specs-list {
+              list-style: none;
+              padding: 0;
+              margin: 0 0 20px 0;
+              border-top: 1px dashed rgba(255, 255, 255, 0.1);
+              padding-top: 14px;
+              font-size: 13px;
+              line-height: 1.7;
+              color: #d4d4d8;
+            }
+            .sb-specs-list li {
+              display: flex;
+              justify-content: space-between;
+              gap: 10px;
+            }
+            .sb-specs-label { color: #8b8f9a; }
+            .sb-specs-val {
+              color: #f4f4f5;
+              font-weight: 500;
+              text-align: right;
+            }
+            .sb-badge-gold {
+              color: #d6bd7a !important;
+              font-weight: 700;
+            }
+            .sb-card-actions {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+            }
+            .sb-btn-download {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              background: #d6bd7a;
+              color: #07080c;
+              font-weight: 700;
+              font-size: 13.5px;
+              padding: 11px 16px;
+              border-radius: 9999px;
+              text-decoration: none;
+              transition: background 0.15s ease, transform 0.15s ease;
+            }
+            .sb-btn-download:hover {
+              background: #ebd89e;
+              transform: translateY(-1px);
+            }
+            .sb-btn-wa {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              background: rgba(34, 197, 94, 0.12);
+              color: #4ade80;
+              border: 1px solid rgba(34, 197, 94, 0.35);
+              font-weight: 600;
+              font-size: 13px;
+              padding: 10px 14px;
+              border-radius: 9999px;
+              text-decoration: none;
+              transition: all 0.15s ease;
+            }
+            .sb-btn-wa:hover {
+              background: rgba(34, 197, 94, 0.22);
+              border-color: #4ade80;
+              color: #ffffff;
+            }
+            .sb-doc-footer-note {
+              margin-top: 24px;
+              font-size: 12.5px;
+              color: #71717a;
+              text-align: center;
+            }
+          </style>
+
+          <div class="sb-docs-container">
+            <div class="sb-docs-header">
+              <span class="sb-docs-tag">Официальный документооборот</span>
+              <h2 class="sb-docs-title">Коммерческие предложения и сертификаты базы</h2>
+              <p class="sb-docs-subtitle">
+                Прямые поставки металлопроката и цемента со склада: г. Невинномысск, ул. Монтажная, 10 (ИП Кардава Т.К.). Фиксация объемов, отгрузка с электронных весов, работа за наличный и безналичный расчет (+7%).
+              </p>
+            </div>
+
+            <div class="sb-docs-grid">
+              <!-- КАРТОЧКА 1: МЕТАЛЛОПРОКАТ -->
+              <article class="sb-doc-card">
+                <div>
+                  <div class="sb-card-top">
+                    <div class="sb-pdf-icon">
+                      <span>🗎</span>
+                      PDF
+                    </div>
+                    <div class="sb-card-meta">
+                      <h3 class="sb-file-name">КП: Профтруба и Арматура А500С</h3>
+                      <div class="sb-file-sub">kp-truba-armatura-nevinnomyssk.pdf</div>
+                    </div>
+                  </div>
+                  <ul class="sb-specs-list">
+                    <li><span class="sb-specs-label">Стандарты:</span> <span class="sb-specs-val">ГОСТ 34028-2016, 8645/8639</span></li>
+                    <li><span class="sb-specs-label">Длины проката:</span> <span class="sb-specs-val">Хлысты 6.0 м и 5.85 м</span></li>
+                    <li><span class="sb-specs-label">Условия оплаты:</span> <span class="sb-specs-val sb-badge-gold">Наличный / Безнал +7%</span></li>
+                    <li><span class="sb-specs-label">Резка / Склад:</span> <span class="sb-specs-val">Пополам бесплатно / Монтажная, 10</span></li>
+                  </ul>
+                </div>
+                <div class="sb-card-actions">
+                  <a href="kp-truba-armatura-nevinnomyssk.pdf" download class="sb-btn-download">
+                    📥 Скачать КП по металлу (PDF)
+                  </a>
+                  <a href="https://wa.me/79887328161?text=Здравствуйте!%20Интересует%20опт%20по%20КП%20на%20арматуру%20и%20профтрубу" target="_blank" rel="noopener" class="sb-btn-wa">
+                    💬 Запросить счет в WhatsApp
+                  </a>
+                </div>
+              </article>
+
+              <!-- КАРТОЧКА 2: ЦЕМЕНТ М500 -->
+              <article class="sb-doc-card">
+                <div>
+                  <div class="sb-card-top">
+                    <div class="sb-pdf-icon">
+                      <span>🗎</span>
+                      PDF
+                    </div>
+                    <div class="sb-card-meta">
+                      <h3 class="sb-file-name">КП: Цемент М500 Новороссийск</h3>
+                      <div class="sb-file-sub">kp-tsement-m500-nevinnomyssk.pdf</div>
+                    </div>
+                  </div>
+                  <ul class="sb-specs-list">
+                    <li><span class="sb-specs-label">Марка / Тара:</span> <span class="sb-specs-val">М500 Д0 / Д20, мешки 50 кг</span></li>
+                    <li><span class="sb-specs-label">Фасовка палеты:</span> <span class="sb-specs-val">30 мешков (1.5 тонны)</span></li>
+                    <li><span class="sb-specs-label">Оптовая цена:</span> <span class="sb-specs-val sb-badge-gold">570 ₽ / мешок (нал/безнал +7%)</span></li>
+                    <li><span class="sb-specs-label">Отгрузка:</span> <span class="sb-specs-val">Складская база, манипулятор</span></li>
+                  </ul>
+                </div>
+                <div class="sb-card-actions">
+                  <a href="kp-tsement-m500-nevinnomyssk.pdf" download class="sb-btn-download">
+                    📥 Скачать КП на цемент (PDF)
+                  </a>
+                  <a href="https://wa.me/79887328161?text=Здравствуйте!%20Хочу%20заказать%20палету%20цемента%20М500%20по%20570р" target="_blank" rel="noopener" class="sb-btn-wa">
+                    💬 Запросить счет в WhatsApp
+                  </a>
+                </div>
+              </article>
+
+              <!-- КАРТОЧКА 3: ПАСПОРТ ЗАВОДА НОВОРОСЦЕМЕНТ -->
+              <article class="sb-doc-card">
+                <div>
+                  <div class="sb-card-top">
+                    <div class="sb-pdf-icon" style="border-color: rgba(37, 211, 102, 0.4);">
+                      <span>🛡️</span>
+                      ОТК
+                    </div>
+                    <div class="sb-card-meta">
+                      <h3 class="sb-file-name">Паспорт качества: Новоросцемент</h3>
+                      <div class="sb-file-sub">pasport-kachestva-tsement-novoroscement.pdf</div>
+                    </div>
+                  </div>
+                  <ul class="sb-specs-list">
+                    <li><span class="sb-specs-label">Производитель:</span> <span class="sb-specs-val">Завод «Первомайский»</span></li>
+                    <li><span class="sb-specs-label">Партия / Отгрузка:</span> <span class="sb-specs-val">№1162 от 07.07.2026</span></li>
+                    <li><span class="sb-specs-label">Прочность (акт.):</span> <span class="sb-specs-val sb-badge-gold">52.6 МПа (ЦЕМ I 42,5Н)</span></li>
+                    <li><span class="sb-specs-label">Сертификат:</span> <span class="sb-specs-val">РОСС RU C-RU.СЛ02.В.00813/25</span></li>
+                  </ul>
+                </div>
+                <div class="sb-card-actions">
+                  <a href="pasport-kachestva-tsement-novoroscement.pdf" target="_blank" rel="noopener" class="sb-btn-download" style="background:#202433; color:#f4f4f5; border:1px solid rgba(214,189,122,0.35);">
+                    🔍 Открыть скан лаборатории
+                  </a>
+                  <a href="https://wa.me/79887328161?text=Здравствуйте!%20Пришлите%20сертификаты%20на%20поставляемую%20партию" target="_blank" rel="noopener" class="sb-btn-wa">
+                    💬 Запросить документы
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="sb-doc-footer-note">
+              * Все документы заверены оригинальной круглой печатью ИП Кардава Т.К. и лабораторией завода-изготовителя. Предоставляем полный пакет бухгалтерских документов (УПД/Торг-12).
+            </div>
+          </div>
+        </section>
         <!-- ПЕРЕЛИНКОВКА НА КАТАЛОГИ БАЗЫ -->
         <section class="section" style="background: rgba(0, 0, 0, 0.2);">
             <div class="container">
