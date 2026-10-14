@@ -24,7 +24,7 @@
 
   <style>
     /* ==========================================================================
-       CSS RESET & VARIABLES (ТЕМНАЯ ТЕМА STROYBAZANSK)
+       CSS RESET & VARIABLES
        ========================================================================== */
     :root {
       --bg-dark: #07080c;
@@ -125,9 +125,7 @@
       padding: 0 20px;
     }
 
-    /* ==========================================================================
-       BUTTON UTILITIES
-       ========================================================================== */
+    /* BUTTONS */
     .btn {
       height: 44px;
       padding: 0 20px;
@@ -154,9 +152,7 @@
       box-shadow: 0 4px 16px rgba(214, 189, 122, 0.4);
     }
 
-    /* ==========================================================================
-       TOP BAR & HEADER
-       ========================================================================== */
+    /* TOPBAR & HEADER */
     .topbar {
       background: rgba(11, 13, 20, 0.95);
       border-bottom: 1px solid var(--border-subtle);
@@ -196,22 +192,6 @@
       border-radius: 20px;
       font-weight: 600;
       font-size: 0.75rem;
-    }
-
-    .topbar-badge::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--accent-green);
-      border-radius: 50%;
-      display: inline-block;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
-      100% { opacity: 1; transform: scale(1); }
     }
 
     .header {
@@ -280,9 +260,7 @@
       gap: 6px;
     }
 
-    .nav-link:hover, .nav-link.active {
-      color: var(--gold);
-    }
+    .nav-link:hover { color: var(--gold); }
 
     .catalog-btn {
       display: inline-flex;
@@ -325,9 +303,7 @@
       white-space: nowrap;
     }
 
-    .phone-number:hover {
-      color: var(--gold);
-    }
+    .phone-number:hover { color: var(--gold); }
 
     .phone-hint {
       font-size: 0.7rem;
@@ -336,11 +312,11 @@
       white-space: nowrap;
     }
 
-    /* КНОПКА WHATSAPP В ШАПКЕ */
+    /* ФИКС КНОПКИ WHATSAPP (НЕ СПЛЮЩИВАЕТСЯ) */
     .btn-wa-header {
       background: #25d366;
       color: #07080c;
-      padding: 0 15px;
+      padding: 0 16px;
       height: 38px;
       border-radius: var(--radius-sm);
       font-size: 0.85rem;
@@ -375,25 +351,18 @@
       .header-actions { order: 4; }
     }
 
-    /* ==========================================================================
-       DRAWER MENU (БОКОВАЯ ШТОРКА НАВИГАЦИИ)
-       ========================================================================== */
+    /* DRAWER MENU */
     .sb-drawer-overlay {
       position: fixed;
       inset: 0;
       background: rgba(4, 5, 8, 0.75);
       backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
       z-index: 999;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: opacity 0.3s, visibility 0.3s;
     }
-
-    .sb-drawer-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
+    .sb-drawer-overlay.active { opacity: 1; visibility: visible; }
 
     .sb-drawer {
       position: fixed;
@@ -409,14 +378,9 @@
       flex-direction: column;
       transform: translateX(-100%);
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 10px 0 30px rgba(0, 0, 0, 0.7);
       overflow-y: auto;
-      overscroll-behavior: contain;
     }
-
-    .sb-drawer.active {
-      transform: translateX(0);
-    }
+    .sb-drawer.active { transform: translateX(0); }
 
     .sb-drawer-head {
       display: flex;
@@ -426,21 +390,8 @@
       border-bottom: 1px solid var(--border-subtle);
       background: rgba(7, 8, 12, 0.95);
     }
-
-    .sb-drawer-title {
-      font-family: var(--font-heading);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .sb-drawer-title span {
-      color: var(--gold);
-    }
-
+    .sb-drawer-title { font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .sb-drawer-title span { color: var(--gold); }
     .sb-drawer-close {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border-subtle);
@@ -448,43 +399,11 @@
       width: 34px;
       height: 34px;
       border-radius: 8px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       cursor: pointer;
-      transition: var(--transition);
     }
-
-    .sb-drawer-close:hover {
-      background: rgba(239, 68, 68, 0.15);
-      border-color: rgba(239, 68, 68, 0.4);
-      color: var(--accent-red);
-    }
-
-    .sb-drawer-body {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      flex: 1;
-    }
-
-    .sb-drawer-group-title {
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .sb-drawer-nav {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
+    .sb-drawer-body { padding: 20px; display: flex; flex-direction: column; gap: 24px; flex: 1; }
+    .sb-drawer-group-title { font-size: 0.76rem; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 10px; }
+    .sb-drawer-nav { list-style: none; display: flex; flex-direction: column; gap: 5px; }
     .sb-drawer-link {
       display: flex;
       align-items: center;
@@ -493,598 +412,240 @@
       border-radius: var(--radius-sm);
       color: var(--text-main);
       font-size: 0.92rem;
-      font-weight: 500;
-      transition: var(--transition);
       background: rgba(255, 255, 255, 0.02);
-      border: 1px solid transparent;
     }
-
     .sb-drawer-link:hover, .sb-drawer-link.active {
       background: rgba(214, 189, 122, 0.12);
-      border-color: var(--border-gold);
       color: var(--gold-light);
-      transform: translateX(4px);
     }
+    .sb-drawer-link-badge { font-size: 0.72rem; padding: 2px 7px; border-radius: 10px; background: rgba(214, 189, 122, 0.2); color: var(--gold); }
+    .sb-drawer-contacts { padding: 16px 20px; background: rgba(7, 8, 12, 0.95); border-top: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 12px; }
+    .sb-drawer-phone { font-weight: 700; font-size: 1.05rem; }
+    .sb-drawer-btn-wa { background: #25d366; color: #07080c; font-weight: 700; padding: 10px; border-radius: var(--radius-sm); text-align: center; }
 
-    .sb-drawer-link-badge {
-      font-size: 0.72rem;
-      padding: 2px 7px;
-      border-radius: 10px;
-      background: rgba(214, 189, 122, 0.2);
-      color: var(--gold);
-      font-weight: 600;
-    }
+    /* BREADCRUMBS */
+    .breadcrumbs-bar { padding: 16px 0 6px; }
+    .breadcrumbs { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--text-dark); list-style: none; }
+    .breadcrumbs a:hover { color: var(--gold); }
+    .breadcrumbs-current { color: var(--gold); font-weight: 500; }
 
-    .sb-drawer-contacts {
-      padding: 16px 20px;
-      background: rgba(7, 8, 12, 0.95);
-      border-top: 1px solid var(--border-subtle);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+    /* HERO & TRUST BADGES */
+    .hero-section { padding: 24px 0 32px; }
+    .hero-badge-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+    .hero-tag { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; background: rgba(214, 189, 122, 0.12); border: 1px solid var(--border-gold); color: var(--gold); }
+    .hero-title { font-family: var(--font-heading); font-size: clamp(1.85rem, 4vw, 2.85rem); font-weight: 800; line-height: 1.15; margin-bottom: 16px; color: #fff; }
+    .hero-title span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 860px; line-height: 1.65; margin-bottom: 24px; }
 
-    .sb-drawer-phone {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--text-main);
+    .trust-grid-top { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin: 22px 0 30px; }
+    .trust-chip { background: rgba(18, 21, 32, 0.85); border: 1px solid rgba(214, 189, 122, 0.25); border-radius: 12px; padding: 12px 14px; display: flex; align-items: flex-start; gap: 10px; }
+    .trust-chip:hover { border-color: rgba(214, 189, 122, 0.6); transform: translateY(-2px); }
+    .trust-chip-badge { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: rgba(214, 189, 122, 0.15); color: #d6bd7a; font-size: 13px; font-weight: 800; flex-shrink: 0; margin-top: 2px; }
+    .trust-chip-title { font-size: 0.88rem; font-weight: 700; color: #ffffff; line-height: 1.3; margin-bottom: 2px; }
+    .trust-chip-desc { font-size: 0.76rem; color: #9ca3af; line-height: 1.4; }
+
+    /* CHIPS FILTER */
+    .chips-section { margin-bottom: 32px; }
+    .chips-label { font-size: 0.8rem; text-transform: uppercase; color: var(--text-dark); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .chips-scroll-wrap { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; }
+    .chip-btn { white-space: nowrap; background: rgba(18, 21, 32, 0.7); border: 1px solid var(--border-subtle); color: var(--text-muted); padding: 9px 18px; border-radius: 30px; font-size: 0.86rem; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
+    .chip-btn:hover { border-color: var(--border-gold); color: #fff; background: rgba(26, 31, 46, 0.9); }
+    .chip-btn.active { background: rgba(214, 189, 122, 0.16); border-color: var(--gold); color: var(--gold-light); font-weight: 600; }
+    .chip-counter { background: rgba(255, 255, 255, 0.1); font-size: 0.72rem; padding: 2px 7px; border-radius: 10px; color: var(--text-main); }
+
+    /* PRODUCT CARDS */
+    .catalog-section { padding: 10px 0 60px; }
+    .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 26px; flex-wrap: wrap; gap: 16px; }
+    .section-title { font-family: var(--font-heading); font-size: 1.65rem; font-weight: 700; color: #fff; }
+    .section-title span { color: var(--gold); }
+    .section-subtitle { font-size: 0.88rem; color: var(--text-muted); margin-top: 4px; }
+    .catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+    .product-card { background: var(--bg-surface); backdrop-filter: blur(14px); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; position: relative; box-shadow: var(--shadow-card); }
+    .product-card:hover { border-color: var(--border-gold-bright); transform: translateY(-4px); }
+    .product-card.flagship { border-color: var(--border-gold); background: linear-gradient(180deg, rgba(214, 189, 122, 0.08) 0%, rgba(15, 17, 26, 0.85) 40%); }
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; gap: 10px; }
+    .card-badge-group { display: flex; flex-wrap: wrap; gap: 6px; }
+    .badge-flagship { background: linear-gradient(135deg, #d6bd7a, #a98f48); color: #07080c; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; }
+    .badge-standard { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-muted); font-size: 0.72rem; padding: 3px 8px; border-radius: 4px; }
+    .stock-indicator { display: inline-flex; align-items: center; gap: 5px; font-size: 0.74rem; font-weight: 600; color: var(--accent-green); background: var(--accent-green-bg); padding: 3px 9px; border-radius: 20px; }
+    .stock-indicator::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-green); }
+
+    .bag-preview-box { height: 100px; background: linear-gradient(135deg, rgba(20, 24, 38, 0.8), rgba(10, 13, 20, 0.95)); border-radius: var(--radius-md); border: 1px solid rgba(214, 189, 122, 0.3); margin-bottom: 18px; display: flex; flex-direction: column; justify-content: center; padding: 12px 18px; position: relative; }
+    .bag-preview-box.emerald-theme { border-color: rgba(16, 185, 129, 0.35); background: linear-gradient(135deg, rgba(16, 32, 28, 0.8), rgba(8, 18, 15, 0.95)); }
+    .bag-header-txt { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: var(--gold); margin-bottom: 2px; }
+    .bag-main-txt { font-family: var(--font-heading); font-size: 1.35rem; font-weight: 900; color: #ffffff; line-height: 1.1; }
+    .bag-sub-txt { font-size: 0.74rem; color: var(--text-muted); font-weight: 600; }
+    .bag-weight-pill { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: rgba(214, 189, 122, 0.15); border: 1px solid var(--border-gold); color: var(--gold-light); padding: 6px 12px; border-radius: 6px; font-weight: 800; font-size: 0.88rem; }
+    .card-title { font-family: var(--font-heading); font-size: 1.28rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .card-purpose { font-size: 0.82rem; color: var(--gold); font-weight: 500; margin-bottom: 16px; min-height: 20px; }
+    .card-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; background: rgba(11, 13, 20, 0.5); border-radius: var(--radius-sm); padding: 12px; border: 1px solid rgba(255, 255, 255, 0.03); }
+    .spec-item { display: flex; flex-direction: column; }
+    .spec-key { font-size: 0.72rem; color: var(--text-dark); text-transform: uppercase; }
+    .spec-val { font-size: 0.88rem; color: var(--text-main); font-weight: 600; }
+    .card-price-box { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border-subtle); margin-bottom: 18px; }
+    .price-row-main { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 4px; }
+    .price-meter-val { font-family: var(--font-heading); font-size: 1.95rem; font-weight: 800; color: var(--gold-light); }
+    .price-meter-val small { font-size: 1rem; color: var(--text-muted); margin-left: 2px; }
+    .price-ton-wrap { text-align: right; }
+    .price-ton-val { font-size: 0.88rem; color: var(--text-muted); font-weight: 600; }
+    .card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn-card-call { background: rgba(214, 189, 122, 0.1); border: 1px solid var(--border-gold); color: var(--gold-light); border-radius: var(--radius-sm); padding: 11px 12px; font-size: 0.86rem; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+    .btn-card-call:hover { background: var(--gold); color: #07080c; }
+
+    /* ==========================================================================
+       СТИЛИ КАЛЬКУЛЯТОРА
+       ========================================================================== */
+    .calc-section { padding: 50px 0; }
+    .calc-card { background: linear-gradient(135deg, rgba(18, 21, 32, 0.95), rgba(12, 14, 22, 0.92)); border: 1px solid var(--border-gold); border-radius: var(--radius-xl); padding: clamp(20px, 4vw, 40px); box-shadow: var(--shadow-card); }
+    .calc-header { margin-bottom: 26px; }
+    .calc-badge { display: inline-block; background: rgba(214, 189, 122, 0.14); color: var(--gold); padding: 4px 12px; border-radius: 4px; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+    .calc-title { font-family: var(--font-heading); font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .calc-desc { font-size: 0.95rem; color: var(--text-muted); }
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    @media (max-width: 960px) { .calc-grid { grid-template-columns: 1fr; } }
+    .calc-inputs { display: flex; flex-direction: column; gap: 18px; }
+    .calc-group { display: flex; flex-direction: column; gap: 8px; }
+    .calc-label { font-size: 0.85rem; font-weight: 600; color: #fff; display: flex; justify-content: space-between; }
+    .calc-label-hint { font-size: 0.76rem; color: var(--text-dark); font-weight: normal; }
+    .calc-select, .calc-input { width: 100%; background: var(--bg-input); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: var(--radius-sm); color: #fff; padding: 12px 16px; font-size: 0.95rem; outline: none; }
+    .calc-select:focus, .calc-input:focus { border-color: var(--gold); }
+    .mode-switch-wrap { display: grid; grid-template-columns: 1fr 1fr; background: rgba(11, 13, 20, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-sm); padding: 4px; gap: 4px; }
+    .mode-btn { background: transparent; border: none; color: var(--text-muted); padding: 8px; font-size: 0.85rem; font-weight: 600; border-radius: 6px; cursor: pointer; }
+    .mode-btn.active { background: rgba(214, 189, 122, 0.2); color: var(--gold-light); border: 1px solid var(--border-gold); }
+    .cutting-option { background: rgba(11, 13, 20, 0.6); border: 1px dashed rgba(214, 189, 122, 0.25); border-radius: var(--radius-sm); padding: 12px 16px; display: flex; align-items: center; gap: 12px; cursor: pointer; }
+    .cutting-option input { width: 18px; height: 18px; accent-color: var(--gold); }
+    .cutting-option-text { font-size: 0.84rem; color: #fff; }
+    .cutting-option-text span { display: block; font-size: 0.74rem; color: var(--accent-green); }
+    .calc-results-card { background: rgba(11, 13, 20, 0.85); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+    .calc-res-row { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    .calc-res-key { font-size: 0.88rem; color: var(--text-muted); }
+    .calc-res-val { font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: #fff; }
+    .calc-total-box { background: linear-gradient(135deg, rgba(214, 189, 122, 0.12), rgba(214, 189, 122, 0.03)); border: 1px solid var(--border-gold); border-radius: var(--radius-md); padding: 16px; text-align: center; }
+    .calc-total-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
+    .calc-total-sum { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: var(--gold-light); line-height: 1; }
+    .calc-total-sum small { font-size: 1.1rem; color: var(--gold); }
+    .calc-order-btn { width: 100%; background: #25d366; color: #07080c; border: none; padding: 13px 20px; border-radius: var(--radius-sm); font-size: 0.95rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+    .calc-guarantee { font-size: 0.76rem; color: var(--text-dark); text-align: center; }
+
+    /* ==========================================================================
+       СТИЛИ ТАБЛИЦ ГОСТ
+       ========================================================================== */
+    .table-section { padding: 40px 0; }
+    .table-wrapper { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow-x: auto; }
+    .gost-table { width: 100%; border-collapse: collapse; text-align: left; min-width: 720px; font-size: 0.9rem; }
+    .gost-table th { background: rgba(11, 13, 20, 0.9); color: var(--gold); padding: 14px 18px; font-family: var(--font-heading); font-weight: 700; font-size: 0.84rem; text-transform: uppercase; border-bottom: 2px solid var(--border-gold); }
+    .gost-table td { padding: 14px 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-main); }
+    .gost-table tr:hover td { background: rgba(214, 189, 122, 0.04); }
+    .diam-cell { font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .diam-badge { width: 24px; height: 24px; background: rgba(214, 189, 122, 0.15); border: 1px solid var(--border-gold); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; color: var(--gold); }
+    .price-cell { font-weight: 700; color: var(--gold-light); }
+    .table-footer-note { padding: 12px 18px; font-size: 0.78rem; color: var(--text-muted); background: rgba(11, 13, 20, 0.6); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+    /* ==========================================================================
+       СТИЛИ ЭКСПЕРТНЫХ СТАТЕЙ И ПАСПОРТОВ
+       ========================================================================== */
+    .expert-section { padding: 40px 0; }
+    .expert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+    .expert-card { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 26px; display: flex; flex-direction: column; }
+    .expert-card:hover { border-color: var(--border-gold); }
+    .expert-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .expert-text { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+    .expert-highlight { background: rgba(11, 13, 20, 0.7); border-left: 3px solid var(--gold); padding: 12px 14px; border-radius: 0 8px 8px 0; font-size: 0.85rem; color: var(--text-main); margin-top: auto; }
+
+    .pto-expert-wrap { color: #f4f4f5; margin: 30px 0; }
+    .pto-section-head { margin-bottom: 24px; }
+    .pto-badge { display: inline-block; background: rgba(214, 189, 122, 0.12); border: 1px solid rgba(214, 189, 122, 0.35); color: #d6bd7a; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; margin-bottom: 8px; }
+    .pto-title { font-family: var(--font-heading); font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 800; color: #fff; }
+    .pto-title span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .pto-subtitle { color: #9ca3af; font-size: 0.92rem; margin-top: 4px; }
+    .passports-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+    .pass-card { background: rgba(15, 17, 26, 0.78); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 22px; display: flex; flex-direction: column; }
+    .pass-card.flagship-card { border-color: rgba(214, 189, 122, 0.4); background: linear-gradient(180deg, rgba(214, 189, 122, 0.08) 0%, rgba(15, 17, 26, 0.85) 35%); }
+    .pass-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; gap: 8px; }
+    .pass-title-group { display: flex; align-items: baseline; gap: 8px; }
+    .pass-diam-num { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: #fff; }
+    .pass-diam-label { font-size: 0.84rem; color: #d6bd7a; font-weight: 600; }
+    .pass-badge { font-size: 0.72rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
+    .pass-badge-gold { background: linear-gradient(135deg, #d6bd7a, #a98f48); color: #07080c; }
+    .pass-badge-std { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); color: #9ca3af; }
+    .pass-specs-bar { display: grid; grid-template-columns: repeat(3, 1fr); background: rgba(8, 10, 16, 0.7); border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 10px; padding: 10px; margin-bottom: 14px; text-align: center; }
+    .pass-spec-col { display: flex; flex-direction: column; }
+    .pass-spec-key { font-size: 0.68rem; color: #71717a; text-transform: uppercase; }
+    .pass-spec-val { font-size: 0.88rem; font-weight: 700; color: #e4e4e7; }
+    .pass-content-title { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #d6bd7a; margin-bottom: 6px; }
+    .pass-text { font-size: 0.88rem; color: #a1a1aa; line-height: 1.55; margin-bottom: 12px; }
+    .pass-use-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .pass-use-item { font-size: 0.84rem; color: #d4d4d8; display: flex; align-items: flex-start; gap: 7px; }
+    .pass-use-item::before { content: "•"; color: #d6bd7a; font-weight: bold; }
+    .pass-bottom { margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.06); display: flex; justify-content: space-between; align-items: center; }
+    .pass-price-main { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: #fff; }
+    .pass-price-main small { font-size: 0.8rem; color: #9ca3af; }
+    .pass-price-ton { font-size: 0.74rem; color: #a1a1aa; }
+    .pass-btn-wa { background: rgba(37, 211, 102, 0.12); border: 1px solid rgba(37, 211, 102, 0.35); color: #25d366; padding: 8px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; text-decoration: none; }
+
+    .trust-banner { margin: 30px 0; background: linear-gradient(135deg, rgba(22, 26, 38, 0.95), rgba(11, 13, 20, 0.95)); border: 1px solid var(--border-gold); border-radius: var(--radius-xl); padding: 30px; }
+    .trust-banner-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .trust-item { display: flex; gap: 14px; }
+    .trust-num { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: var(--gold); }
+    .trust-content h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .trust-content p { font-size: 0.84rem; color: var(--text-muted); }
+
+    /* ==========================================================================
+       СТИЛИ МОДАЛЬНОГО ОКНА КОРЗИНЫ (СТРОГО DISPLAY: NONE)
+       ========================================================================== */
+    #cart-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%);
+      color: #07080c;
+      padding: 12px 22px;
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 8px 30px rgba(214, 189, 122, 0.35);
+      z-index: 999;
       display: flex;
       align-items: center;
       gap: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
     }
-
-    .sb-drawer-btn-wa {
-      background: #25d366;
-      color: #07080c;
-      font-weight: 700;
-      padding: 10px 14px;
-      border-radius: var(--radius-sm);
-      text-align: center;
-      display: flex;
+    #cart-modal {
+      display: none; /* СТРОГО СКРЫТО ДО КЛИКА */
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 10000;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      transition: var(--transition);
+      padding: 16px;
+      box-sizing: border-box;
     }
-
-    /* ==========================================================================
-       BREADCRUMBS
-       ========================================================================== */
-    .breadcrumbs-bar {
-      padding: 16px 0 6px;
-    }
-
-    .breadcrumbs {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.82rem;
-      color: var(--text-dark);
-      flex-wrap: wrap;
-      list-style: none;
-    }
-
-    .breadcrumbs li {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .breadcrumbs a {
-      color: var(--text-muted);
-    }
-
-    .breadcrumbs a:hover {
-      color: var(--gold);
-    }
-
-    .breadcrumbs-separator {
-      color: var(--text-dark);
-      font-size: 0.75rem;
-    }
-
-    .breadcrumbs-current {
-      color: var(--gold);
-      font-weight: 500;
-    }
-
-    /* ==========================================================================
-       HERO & TRUST BADGES
-       ========================================================================== */
-    .hero-section {
-      padding: 24px 0 32px;
-    }
-
-    .hero-badge-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-    }
-
-    .hero-tag {
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 4px 12px;
-      border-radius: 4px;
-      background: rgba(214, 189, 122, 0.12);
+    .cart-modal-box {
+      background: #0f111a;
       border: 1px solid var(--border-gold);
-      color: var(--gold);
-    }
-
-    .hero-title {
-      font-family: var(--font-heading);
-      font-size: clamp(1.85rem, 4vw, 2.85rem);
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
+      border-radius: 20px;
+      max-width: 500px;
+      width: 100%;
+      padding: 24px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
       color: #fff;
     }
+    .cart-close-btn { position: absolute; top: 16px; right: 18px; font-size: 24px; cursor: pointer; color: #71717a; }
+    .cart-item-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 13.5px; }
+    .cart-total-row { font-size: 18px; font-weight: 800; margin: 16px 0; text-align: right; }
+    .cart-total-row span { color: var(--gold); }
+    .cart-form-group { margin-bottom: 14px; }
+    .cart-form-group label { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #d1d5db; margin-bottom: 6px; cursor: pointer; }
+    .cart-input { width: 100%; height: 42px; background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; color: #fff; font-size: 14px; padding: 0 12px; margin-bottom: 8px; outline: none; }
+    .cart-submit-btn { width: 100%; height: 46px; background: linear-gradient(135deg, #f0e4be 0%, #d6bd7a 100%); color: #07080c; border: none; border-radius: 10px; font-weight: 800; font-size: 15px; cursor: pointer; }
 
-    .hero-title span {
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-desc {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      max-width: 860px;
-      line-height: 1.65;
-      margin-bottom: 24px;
-    }
-
-    /* 6 TRUST BADGES CSS GRID */
-    .trust-grid-top {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 12px;
-      margin: 22px 0 30px;
-    }
-
-    .trust-chip {
-      background: rgba(18, 21, 32, 0.85);
-      border: 1px solid rgba(214, 189, 122, 0.25);
-      border-radius: 12px;
-      padding: 12px 14px;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .trust-chip:hover {
-      border-color: rgba(214, 189, 122, 0.6);
-      transform: translateY(-2px);
-    }
-
-    .trust-chip-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: rgba(214, 189, 122, 0.15);
-      color: #d6bd7a;
-      font-size: 13px;
-      font-weight: 800;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .trust-chip-title {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 1.3;
-      margin-bottom: 2px;
-    }
-
-    .trust-chip-desc {
-      font-size: 0.76rem;
-      color: #9ca3af;
-      line-height: 1.4;
-    }
-
-    /* ==========================================================================
-       CHIPS FILTER
-       ========================================================================== */
-    .chips-section {
-      margin-bottom: 32px;
-    }
-
-    .chips-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-dark);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .chips-scroll-wrap {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      padding-bottom: 10px;
-      scrollbar-width: thin;
-      scrollbar-color: var(--border-gold) transparent;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .chips-scroll-wrap::-webkit-scrollbar {
-      height: 5px;
-    }
-
-    .chips-scroll-wrap::-webkit-scrollbar-thumb {
-      background: var(--border-gold);
-      border-radius: 4px;
-    }
-
-    .chip-btn {
-      white-space: nowrap;
-      background: rgba(18, 21, 32, 0.7);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-muted);
-      padding: 9px 18px;
-      border-radius: 30px;
-      font-size: 0.86rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .chip-btn:hover {
-      border-color: var(--border-gold);
-      color: var(--text-main);
-      background: rgba(26, 31, 46, 0.9);
-    }
-
-    .chip-btn.active {
-      background: rgba(214, 189, 122, 0.16);
-      border-color: var(--gold);
-      color: var(--gold-light);
-      font-weight: 600;
-      box-shadow: 0 0 16px rgba(214, 189, 122, 0.15);
-    }
-
-    .chip-counter {
-      background: rgba(255, 255, 255, 0.1);
-      font-size: 0.72rem;
-      padding: 2px 7px;
-      border-radius: 10px;
-      color: var(--text-main);
-    }
-
-    /* ==========================================================================
-       PRODUCT CARDS CATALOG
-       ========================================================================== */
-    .catalog-section {
-      padding: 10px 0 60px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 26px;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .section-title {
-      font-family: var(--font-heading);
-      font-size: 1.65rem;
-      font-weight: 700;
-      color: var(--text-main);
-      letter-spacing: -0.01em;
-    }
-
-    .section-title span {
-      color: var(--gold);
-    }
-
-    .section-subtitle {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    .catalog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 24px;
-    }
-
-    .product-card {
-      background: var(--bg-surface);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      transition: var(--transition);
-      box-shadow: var(--shadow-card);
-      overflow: hidden;
-    }
-
-    .product-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, transparent, transparent);
-      transition: var(--transition);
-    }
-
-    .product-card:hover {
-      border-color: var(--border-gold-bright);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.8), var(--shadow-glow);
-    }
-
-    .product-card:hover::before {
-      background: var(--gold-gradient);
-    }
-
-    .product-card.flagship {
-      border-color: var(--border-gold);
-      background: linear-gradient(180deg, rgba(214, 189, 122, 0.08) 0%, rgba(15, 17, 26, 0.85) 40%);
-    }
-
-    .product-card.flagship::before {
-      background: var(--gold-gradient);
-    }
-
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 16px;
-      gap: 10px;
-    }
-
-    .card-badge-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .badge-flagship {
-      background: linear-gradient(135deg, #d6bd7a, #a98f48);
-      color: #07080c;
-      font-weight: 800;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 3px 8px;
-      border-radius: 4px;
-    }
-
-    .badge-standard {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--text-muted);
-      font-size: 0.72rem;
-      padding: 3px 8px;
-      border-radius: 4px;
-    }
-
-    .stock-indicator {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 0.74rem;
-      font-weight: 600;
-      color: var(--accent-green);
-      background: var(--accent-green-bg);
-      padding: 3px 9px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-
-    .stock-indicator::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent-green);
-    }
-
-    /* Компактный CSS-макет мешка */
-    .bag-preview-box {
-      height: 100px;
-      background: linear-gradient(135deg, rgba(20, 24, 38, 0.8), rgba(10, 13, 20, 0.95));
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(214, 189, 122, 0.3);
-      margin-bottom: 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 12px 18px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .bag-preview-box.emerald-theme {
-      border-color: rgba(16, 185, 129, 0.35);
-      background: linear-gradient(135deg, rgba(16, 32, 28, 0.8), rgba(8, 18, 15, 0.95));
-    }
-
-    .bag-header-txt {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 2px;
-    }
-
-    .bag-main-txt {
-      font-family: var(--font-heading);
-      font-size: 1.35rem;
-      font-weight: 900;
-      color: #ffffff;
-      line-height: 1.1;
-    }
-
-    .bag-sub-txt {
-      font-size: 0.74rem;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    .bag-weight-pill {
-      position: absolute;
-      right: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(214, 189, 122, 0.15);
-      border: 1px solid var(--border-gold);
-      color: var(--gold-light);
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-weight: 800;
-      font-size: 0.88rem;
-    }
-
-    .card-title {
-      font-family: var(--font-heading);
-      font-size: 1.28rem;
-      font-weight: 700;
-      color: var(--text-main);
-      line-height: 1.3;
-      margin-bottom: 4px;
-    }
-
-    .card-purpose {
-      font-size: 0.82rem;
-      color: var(--gold);
-      font-weight: 500;
-      margin-bottom: 16px;
-      min-height: 20px;
-    }
-
-    .card-specs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 20px;
-      background: rgba(11, 13, 20, 0.5);
-      border-radius: var(--radius-sm);
-      padding: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.03);
-    }
-
-    .spec-item {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .spec-key {
-      font-size: 0.72rem;
-      color: var(--text-dark);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .spec-val {
-      font-size: 0.88rem;
-      color: var(--text-main);
-      font-weight: 600;
-    }
-
-    .card-price-box {
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid var(--border-subtle);
-      margin-bottom: 18px;
-    }
-
-    .price-row-main {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 4px;
-    }
-
-    .price-meter-val {
-      font-family: var(--font-heading);
-      font-size: 1.95rem;
-      font-weight: 800;
-      color: var(--gold-light);
-      line-height: 1;
-      letter-spacing: -0.02em;
-    }
-
-    .price-meter-val small {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      margin-left: 2px;
-    }
-
-    .price-ton-wrap {
-      text-align: right;
-    }
-
-    .price-ton-val {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    .price-ton-val strong {
-      color: var(--text-main);
-    }
-
-    .card-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .btn-card-call {
-      background: rgba(214, 189, 122, 0.1);
-      border: 1px solid var(--border-gold);
-      color: var(--gold-light);
-      border-radius: var(--radius-sm);
-      padding: 11px 12px;
-      font-size: 0.86rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .btn-card-call:hover {
-      background: var(--gold);
-      color: #07080c;
-      box-shadow: var(--shadow-gold);
-    }
-
-    /* Мобильная шапка: фикс центровки и отсутствие сплющивания */
+    /* МОБИЛЬНАЯ АДАПТАЦИЯ ШАПКИ */
     @media (max-width: 992px) {
       .header-nav { display: none !important; }
       .header-container {
@@ -1243,7 +804,7 @@
               "name": "Цемент Новороссийский М500 Д0 (ЦЕМ I 42,5Н) 50 кг",
               "price": "570.00",
               "priceCurrency": "RUB",
-              "priceValidUntil": "2027-12-31",
+              "priceValidUntil": "2026-12-31",
               "availability": "https://schema.org/InStock",
               "seller": { "@id": "https://stroybazansk.ru/#store" }
             },
@@ -1252,7 +813,7 @@
               "name": "Цемент Новороссийский М500 Д20 (ЦЕМ II/А-Ш 42,5Н) 50 кг",
               "price": "570.00",
               "priceCurrency": "RUB",
-              "priceValidUntil": "2027-12-31",
+              "priceValidUntil": "2026-12-31",
               "availability": "https://schema.org/InStock",
               "seller": { "@id": "https://stroybazansk.ru/#store" }
             }
@@ -1443,9 +1004,7 @@
           </div>
         </div>
 
-        <!-- ==========================================================================
-             FILTER CHIPS
-             ========================================================================== -->
+        <!-- FILTER CHIPS -->
         <div class="chips-section">
           <div class="chips-label">
             <span>⚡</span> Быстрый выбор по марке и назначению:
@@ -1491,7 +1050,6 @@
               <span class="stock-indicator">В наличии • 120 т</span>
             </div>
 
-            <!-- Легкий CSS макет мешка -->
             <div class="bag-preview-box">
               <div class="bag-header-txt">ОАО «НОВОРОСЦЕМЕНТ»</div>
               <div class="bag-main-txt">М500 Д0</div>
@@ -1552,7 +1110,6 @@
               <span class="stock-indicator">В наличии • 95 т</span>
             </div>
 
-            <!-- Легкий CSS макет мешка -->
             <div class="bag-preview-box emerald-theme">
               <div class="bag-header-txt" style="color: #34d399;">ОАО «НОВОРОСЦЕМЕНТ»</div>
               <div class="bag-main-txt">М500 Д20</div>
@@ -1605,7 +1162,7 @@
       </div>
     </section>
 
-<!-- ==========================================================================
+    <!-- ==========================================================================
          INTERACTIVE CALCULATOR: CONCRETE M3 ⇄ BAGS ⇄ TONS
          ========================================================================== -->
     <section class="calc-section" id="calculator">
@@ -1817,7 +1374,6 @@
         </div>
 
         <div class="expert-grid">
-          <!-- Статья 1: Д0 vs Д20 -->
           <article class="expert-card">
             <h3 class="expert-title">Д0 против Д20: в чем принципиальная разница?</h3>
             <p class="expert-text">
@@ -1831,7 +1387,6 @@
             </div>
           </article>
 
-          <!-- Статья 2: Сейсмика Невинномысска -->
           <article class="expert-card">
             <h3 class="expert-title">Особенности бетонирования в Невинномысске</h3>
             <p class="expert-text">
@@ -1851,7 +1406,6 @@
             </div>
           </article>
 
-          <!-- Статья 3: Защита от подделок -->
           <article class="expert-card">
             <h3 class="expert-title">Осторожно, фальсификат! 5 признаков оригинала</h3>
             <p class="expert-text">
@@ -2208,7 +1762,6 @@
   <footer class="site-footer" style="margin-top: 60px; background: #07080c; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 50px 0 25px; font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;">
       <div class="container" style="max-width: 1340px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;">
           
-          <!-- Основная 4-колоночная сетка -->
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 36px; margin-bottom: 40px; align-items: start;">
               
               <!-- Колонка 1: О базе -->
@@ -2229,11 +1782,11 @@
               <div>
                   <span style="color: #d6bd7a; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 16px;">Каталог стройматериалов</span>
                   <nav style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem;">
-                      <a href="armatura.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Арматура строительная (6–20 мм)</a>
-                      <a href="truby.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Профильные трубы ГОСТ</a>
-                      <a href="tsement-m500.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Цемент Новороссийский М500</a>
-                      <a href="fbs-shlakoblok.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Блоки ФБС и шлакоблок</a>
-                      <a href="koltsa-zhbi.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Кольца ЖБИ для септиков</a>
+                      <a href="armatura.html" style="color: #d1d5db; text-decoration: none;">Арматура строительная (6–20 мм)</a>
+                      <a href="truby.html" style="color: #d1d5db; text-decoration: none;">Профильные трубы ГОСТ</a>
+                      <a href="tsement-m500.html" style="color: #d1d5db; text-decoration: none;">Цемент Новороссийский М500</a>
+                      <a href="fbs-shlakoblok.html" style="color: #d1d5db; text-decoration: none;">Блоки ФБС и шлакоблок</a>
+                      <a href="koltsa-zhbi.html" style="color: #d1d5db; text-decoration: none;">Кольца ЖБИ для септиков</a>
                   </nav>
               </div>
 
@@ -2241,11 +1794,11 @@
               <div>
                   <span style="color: #d6bd7a; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 16px;">Сервисы и расчеты</span>
                   <nav style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem;">
-                      <a href="spravochnik-gost.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Инженерный справочник ГОСТ</a>
-                      <a href="zadachi-stroyki.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">14 готовых расчетов стройки</a>
-                      <a href="index.html#kalkulyator" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Калькулятор навеса и забора</a>
-                      <a href="uslugi-manipulyatora.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Доставка манипулятором 15т</a>
-                      <a href="opt-b2b.html" style="color: #d1d5db; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#d6bd7a'" onmouseout="this.style.color='#d1d5db'">Условия прорабам и B2B</a>
+                      <a href="spravochnik-gost.html" style="color: #d1d5db; text-decoration: none;">Инженерный справочник ГОСТ</a>
+                      <a href="zadachi-stroyki.html" style="color: #d1d5db; text-decoration: none;">14 готовых расчетов стройки</a>
+                      <a href="index.html#kalkulyator" style="color: #d1d5db; text-decoration: none;">Калькулятор навеса и забора</a>
+                      <a href="uslugi-manipulyatora.html" style="color: #d1d5db; text-decoration: none;">Доставка манипулятором 15т</a>
+                      <a href="opt-b2b.html" style="color: #d1d5db; text-decoration: none;">Условия прорабам и B2B</a>
                   </nav>
               </div>
 
@@ -2256,7 +1809,6 @@
                       <a href="tel:+79887328161" style="color: #ffffff; font-size: 1.15rem; font-weight: 800; text-decoration: none; letter-spacing: -0.01em;">+7 (988) 732-81-61</a>
                       <span style="color: #9ca3af; font-size: 0.82rem;">Пн–Сб: 8:00 – 18:00, Вс: выходной</span>
                       
-                      <!-- Кнопки мессенджеров -->
                       <div style="display: flex; gap: 8px; margin-top: 8px;">
                           <a href="https://wa.me/79887328161" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; padding: 7px 14px; background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.4); color: #4ade80; border-radius: 9999px; font-weight: 700; font-size: 0.78rem; text-decoration: none;">
                               WhatsApp
@@ -2270,7 +1822,6 @@
               </div>
           </div>
 
-          <!-- Нижняя планка (Copyright) -->
           <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: #6b7280;">
               <span>© 2026 Стройбаза на Монтажной (stroybazansk.ru). Все права защищены.</span>
               <span>Склад металлопроката по Ставропольскому краю: <a href="https://metall-26.ru" target="_blank" rel="noopener" style="color: #d6bd7a; text-decoration: underline;">metall-26.ru</a></span>
@@ -2336,50 +1887,24 @@
       <div>
         <div class="sb-drawer-group-title">Калькуляторы и справочники</div>
         <ul class="sb-drawer-nav">
-          <li>
-            <a href="#calculator" class="sb-drawer-link">
-              <span>Калькулятор бетона и мешков</span>
-            </a>
-          </li>
-          <li>
-            <a href="#gost-table" class="sb-drawer-link">
-              <span>Таблица ГОСТ 31108-2020</span>
-            </a>
-          </li>
-          <li>
-            <a href="#expert-advice" class="sb-drawer-link">
-              <span>Пропорции замеса в ведрах</span>
-            </a>
-          </li>
-          <li>
-            <a href="armatura.html#calculator" class="sb-drawer-link">
-              <span>Калькулятор веса арматуры</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.html#manipulator" class="sb-drawer-link">
-              <span>Аренда манипулятора 15 т (стрела 5 т)</span>
-            </a>
-          </li>
+          <li><a href="#calculator" class="sb-drawer-link">Калькулятор бетона и мешков</a></li>
+          <li><a href="#gost-table" class="sb-drawer-link">Таблица ГОСТ 31108-2020</a></li>
+          <li><a href="#expert-advice" class="sb-drawer-link">Пропорции замеса в ведрах</a></li>
+          <li><a href="armatura.html#calculator" class="sb-drawer-link">Калькулятор веса арматуры</a></li>
+          <li><a href="index.html#manipulator" class="sb-drawer-link">Аренда манипулятора 15 т</a></li>
         </ul>
       </div>
     </div>
 
     <div class="sb-drawer-contacts">
-      <div style="font-size: 0.82rem; color: var(--text-muted);">
-        📍 г. Невинномысск, ул. Монтажная, 10
-      </div>
-      <a href="tel:+79887328161" class="sb-drawer-phone">
-        📞 +7 (988) 732-81-61
-      </a>
-      <a href="https://wa.me/79887328161?text=Здравствуйте!%20Интересует%20цемент%20М500%20со%20склада%20в%20Невинномысске" target="_blank" rel="noopener" class="sb-drawer-btn-wa">
-        💬 Написать в WhatsApp
-      </a>
+      <div style="font-size: 0.82rem; color: var(--text-muted);">📍 г. Невинномысск, ул. Монтажная, 10</div>
+      <a href="tel:+79887328161" class="sb-drawer-phone">📞 +7 (988) 732-81-61</a>
+      <a href="https://wa.me/79887328161?text=Здравствуйте!%20Интересует%20цемент%20М500%20со%20склада%20в%20Невинномысске" target="_blank" rel="noopener" class="sb-drawer-btn-wa">💬 Написать в WhatsApp</a>
     </div>
   </aside>
 
   <!-- ==========================================================================
-       ПЛАВАЮЩАЯ КНОПКА КОРЗИНЫ И МОДАЛЬНОЕ ОКНО ОФОРМЛЕНИЯ ЗАКАЗА
+       ПЛАВАЮЩАЯ КНОПКА И МОДАЛЬНОЕ ОКНО КОРЗИНЫ
        ========================================================================== -->
   <div id="cart-float" onclick="openCart()">
     🛒 Корзина (<span id="cart-count">0</span>)
@@ -2390,7 +1915,6 @@
       <span class="cart-close-btn" onclick="closeCart()">✕</span>
       <h2 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 800; color: #fff;">🛒 Оформление заказа</h2>
       
-      <!-- Список товаров в корзине -->
       <div id="cart-items"></div>
       
       <div class="cart-total-row">
@@ -2439,7 +1963,6 @@
         </button>
       </form>
 
-      <!-- Экран успеха после отправки -->
       <div id="order-success" style="display: none; text-align: center; padding: 20px 0;">
         <div style="font-size: 48px; color: #4ade80; margin-bottom: 10px;">✔</div>
         <h3 style="color: #fff; margin: 0 0 8px; font-size: 18px;">Заказ №<span id="order-num"></span> успешно оформлен!</h3>
@@ -2455,11 +1978,10 @@
   </div>
 
   <!-- ==========================================================================
-       JAVASCRIPT: CALCULATOR LOGIC, CHIP FILTERS, DRAWER MENU & КОРЗИНА
+       JAVASCRIPT
        ========================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // 1. Инженерные пропорции компонентов бетона на 1 м³
       const mixData = {
         m300: { cementKg: 350, sandT: 0.65, gravelT: 1.15, mark: 'М500 Д0 (ЦЕМ I 42,5Н)', gravel: true },
         m250: { cementKg: 310, sandT: 0.71, gravelT: 1.15, mark: 'М500 Д0 (ЦЕМ I 42,5Н)', gravel: true },
@@ -2467,9 +1989,8 @@
         m150: { cementKg: 230, sandT: 0.95, gravelT: 0,    mark: 'М500 Д20 (ЦЕМ II/А-Ш)', gravel: false }
       };
 
-      const bagPrice = 570; // 570 рублей за мешок 50 кг
+      const bagPrice = 570;
 
-      // 2. DOM-элементы калькулятора
       const calcPurpose        = document.getElementById('calcPurpose');
       const calcValue          = document.getElementById('calcValue');
       const calcInputLabel     = document.getElementById('calcInputLabel');
@@ -2486,9 +2007,8 @@
       const resPriceTotal      = document.getElementById('resPriceTotal');
       const calcWaBtn          = document.getElementById('calcWaBtn');
 
-      let currentMode = 'volume'; // 'volume' | 'bags'
+      let currentMode = 'volume';
 
-      // Переключение режима расчета
       btnModeVolume.addEventListener('click', function() {
         if (currentMode === 'volume') return;
         currentMode = 'volume';
@@ -2511,7 +2031,6 @@
         updateCalculator();
       });
 
-      // Пересчет калькулятора
       function updateCalculator() {
         const purpose = calcPurpose.value;
         const mix = mixData[purpose];
@@ -2551,7 +2070,6 @@
 
         const totalPrice = totalBags * bagPrice;
 
-        // Обновление интерфейса
         resMarkText.textContent = mix.mark;
         resBagsVal.textContent = totalBags + ' мешков (' + totalTons + ' т)';
         resPalletsVal.textContent = palletsStr;
@@ -2566,7 +2084,6 @@
 
         resPriceTotal.innerHTML = totalPrice.toLocaleString('ru-RU') + ' <small>₽</small>';
 
-        // Ссылка на WhatsApp с готовым расчетом
         const deliveryMsg = calcDeliveryOption.checked ? ' с доставкой манипулятором 15 т' : ' самовывоз с ул. Монтажная, 10';
         const purposeText = calcPurpose.options[calcPurpose.selectedIndex].text;
 
@@ -2588,7 +2105,6 @@
 
       updateCalculator();
 
-      // 3. Фильтрация карточек по чипам
       const filterButtons = document.querySelectorAll('#chipsNav .chip-btn[data-filter]');
       const productCards = document.querySelectorAll('.product-card[data-cement]');
 
@@ -2611,7 +2127,6 @@
         });
       });
 
-      // 4. Логика боковой шторки навигации (Drawer Menu)
       const drawerOpenBtn   = document.getElementById('drawerOpenBtn');
       const drawerCloseBtn  = document.getElementById('drawerCloseBtn');
       const sbDrawer        = document.getElementById('sbDrawer');
@@ -2650,9 +2165,7 @@
       updateCartUI();
     });
 
-    // ==========================================================================
-    // ЛОГИКА ОФОРМЛЕНИЯ ЗАКАЗА И КОРЗИНЫ
-    // ==========================================================================
+    // КОРЗИНА
     var cart = JSON.parse(localStorage.getItem('sb_cart') || '[]');
     updateCartUI();
 
@@ -2733,7 +2246,6 @@
             itemsText += '- ' + cart[i].title + ': ' + cart[i].qty + ' шт. (' + s + ' ₽)\n';
         }
 
-        // Отправка в Google Таблицу и Telegram
         const GOOGLE_URL = "https://script.google.com/macros/s/AKfycbwJYhnZdgVJFjzk2L7kFlD-GD90Sy7p03V0NKmxp-1KAJM_sPAI1_Agc9jQwyB0HgiEGA/exec";
 
         fetch(GOOGLE_URL, {
