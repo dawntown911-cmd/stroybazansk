@@ -1765,6 +1765,232 @@
         </div>
       </div>
     </section>
+  <!-- ======================================================== -->
+    <!-- ПОДТВЕРЖДЕНИЕ ЗАВОДСКОГО КАЧЕСТВА И СКАЧИВАНИЕ ПАСПОРТА -->
+    <!-- ======================================================== -->
+    <section class="sb-cert-block" id="certificates" aria-label="Заводское качество цемента">
+      <style>
+        .sb-cert-block {
+          padding: 40px 0 20px;
+          font-family: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+          color: #f4f4f5;
+        }
+        .sb-cert-wrap {
+          background: rgba(15, 17, 26, 0.85);
+          border: 1px solid rgba(214, 189, 122, 0.3);
+          border-radius: 20px;
+          padding: clamp(20px, 4vw, 34px);
+          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+          backdrop-filter: blur(12px);
+        }
+        .sb-cert-top-row {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          gap: 16px;
+          margin-bottom: 24px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .sb-cert-title-group h2 {
+          font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+          font-size: clamp(20px, 3vw, 26px);
+          font-weight: 800;
+          color: #ffffff;
+          margin: 0 0 6px 0;
+          line-height: 1.25;
+        }
+        .sb-cert-title-group p {
+          font-size: 14px;
+          color: #a1a1aa;
+          margin: 0;
+          line-height: 1.5;
+        }
+        .sb-lab-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: rgba(214, 189, 122, 0.12);
+          border: 1px solid #d6bd7a;
+          color: #d6bd7a;
+          padding: 8px 14px;
+          border-radius: 9999px;
+          font-size: 13px;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+        .sb-cert-cards-duo {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+          gap: 20px;
+        }
+        .sb-cert-mini-card {
+          background: #0d0f17;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 14px;
+          padding: 22px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .sb-cert-mini-card:hover {
+          border-color: rgba(214, 189, 122, 0.45);
+          transform: translateY(-2px);
+        }
+        .sb-cert-mini-header {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 14px;
+        }
+        .sb-cert-mini-header h3 {
+          margin: 0;
+          font-size: 16.5px;
+          color: #ffffff;
+          font-weight: 700;
+        }
+        .sb-cert-data {
+          font-size: 13px;
+          color: #a1a1aa;
+          line-height: 1.65;
+          margin-bottom: 18px;
+        }
+        .sb-cert-data strong {
+          color: #f4f4f5;
+        }
+        .sb-cert-data .highlight {
+          color: #d6bd7a;
+          font-weight: 700;
+        }
+        .sb-btn-download-gold {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          width: 100%;
+          background: #d6bd7a;
+          color: #07080c;
+          font-weight: 700;
+          font-size: 13.5px;
+          padding: 11px 16px;
+          border-radius: 9999px;
+          text-decoration: none;
+          box-sizing: border-box;
+          transition: background 0.15s ease, transform 0.15s ease;
+        }
+        .sb-btn-download-gold:hover {
+          background: #ebd89e;
+          transform: translateY(-1px);
+        }
+        .sb-btn-outline-doc {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          width: 100%;
+          background: transparent;
+          color: #d6bd7a;
+          border: 1px solid #d6bd7a;
+          font-weight: 700;
+          font-size: 13.5px;
+          padding: 11px 16px;
+          border-radius: 9999px;
+          text-decoration: none;
+          box-sizing: border-box;
+          transition: background 0.2s, color 0.2s, transform 0.15s;
+        }
+        .sb-btn-outline-doc:hover {
+          background: #d6bd7a;
+          color: #07080c;
+          transform: translateY(-1px);
+        }
+      </style>
+
+      <div class="container">
+        <div class="sb-cert-wrap">
+          <div class="sb-cert-top-row">
+            <div class="sb-cert-title-group">
+              <h2>Подтвержденное заводское качество ОАО «Новоросцемент»</h2>
+              <p>Прямой заводской привоз без посредников и примесей шлака. Мешки 50 кг на европоддонах (1.5 т).</p>
+            </div>
+            <div class="sb-lab-pill">
+              <span>✓</span> Фактическая активность 52.6 МПа (выше ГОСТ)
+            </div>
+          </div>
+
+          <div class="sb-cert-cards-duo">
+            <!-- КАРТОЧКА 1: КП НА ЦЕМЕНТ -->
+            <div class="sb-cert-mini-card">
+              <div>
+                <div class="sb-cert-mini-header">
+                  <span style="font-size: 26px;">📋</span>
+                  <div>
+                    <h3>Официальное КП на цемент</h3>
+                    <small style="color:#71717a;">Для снабженцев, прорабов и частников</small>
+                  </div>
+                </div>
+                <div class="sb-cert-data">
+                  • Марка: <strong>М500 Д0 / Д20 (ГОСТ 31108-2020)</strong><br>
+                  • Цена: <span class="highlight">570 ₽ / мешок</span> (17 100 ₽ / поддон 30 шт)<br>
+                  • Форма оплаты: <strong>Наличный / Безнал +7%</strong><br>
+                  • Склад отгрузки: <strong>г. Невинномысск, ул. Монтажная, 10</strong>
+                </div>
+              </div>
+              <a href="kp-tsement-m500-nevinnomyssk.pdf" download class="sb-btn-download-gold">
+                📥 Скачать коммерческое предложение (PDF)
+              </a>
+            </div>
+
+            <!-- КАРТОЧКА 2: СКАН ПАСПОРТА КАЧЕСТВА -->
+            <div class="sb-cert-mini-card">
+              <div>
+                <div class="sb-cert-mini-header">
+                  <span style="font-size: 26px;">🔬</span>
+                  <div>
+                    <h3>Заводской паспорт качества</h3>
+                    <small style="color:#71717a;">Лаборатория завода «Первомайский»</small>
+                  </div>
+                </div>
+                <div class="sb-cert-data">
+                  • Партия: <strong>№1162 (отгрузка 07.07.2026)</strong><br>
+                  • Сертификат соответствия: <strong>РОСС RU C-RU.СЛ02.В.00813/25</strong><br>
+                  • Предел прочности: <span class="highlight">52.6 МПа</span> (норматив 42.5 МПа)<br>
+                  • Контроль: <strong>Оригинальная синяя печать ОТК завода</strong>
+                </div>
+              </div>
+              <a href="pasport-kachestva-tsement-novoroscement.pdf" target="_blank" rel="noopener" class="sb-btn-outline-doc">
+                🔍 Открыть скан паспорта завода (PDF)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Микроразметка Schema.org для поисковиков -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "DigitalDocument",
+        "name": "Паспорт качества цемента ОАО Новоросцемент (партия 1162)",
+        "description": "Официальный заводской скан паспорта качества на портландцемент ЦЕМ I 42,5Н завода Первомайский (ОАО Новоросцемент). Прочность при сжатии 52.6 МПа.",
+        "encodingFormat": "application/pdf",
+        "url": "https://stroybazansk.ru/pasport-kachestva-tsement-novoroscement.pdf",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Стройбаза на Монтажной",
+          "telephone": "+7-988-732-81-61",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Монтажная, д. 10",
+            "addressLocality": "Невинномысск",
+            "addressCountry": "RU"
+          }
+        }
+      }
+      </script>
+    </section>
   </main>
 
   <!-- ==========================================================================
