@@ -1771,91 +1771,132 @@
     <section class="sb-cert-block" id="certificates" aria-label="Заводское качество цемента">
       <style>
         .sb-cert-block {
-          padding: 40px 0 20px;
-          font-family: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+          padding: 30px 0 50px;
+          font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
           color: #f4f4f5;
         }
         .sb-cert-wrap {
-          background: rgba(15, 17, 26, 0.85);
+          background: rgba(15, 17, 26, 0.88);
           border: 1px solid rgba(214, 189, 122, 0.3);
-          border-radius: 20px;
-          padding: clamp(20px, 4vw, 34px);
+          border-radius: 18px;
+          padding: 24px;
           box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
           backdrop-filter: blur(12px);
+          text-align: left;
+          box-sizing: border-box;
         }
         .sb-cert-top-row {
           display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          align-items: center;
-          gap: 16px;
-          margin-bottom: 24px;
-          padding-bottom: 20px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+          margin-bottom: 20px;
+          padding-bottom: 18px;
           border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        @media (min-width: 768px) {
+          .sb-cert-top-row {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .sb-cert-wrap {
+            padding: 32px;
+          }
         }
         .sb-cert-title-group h2 {
           font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-          font-size: clamp(20px, 3vw, 26px);
+          font-size: clamp(19px, 4vw, 25px);
           font-weight: 800;
           color: #ffffff;
           margin: 0 0 6px 0;
           line-height: 1.25;
+          text-align: left;
         }
         .sb-cert-title-group p {
-          font-size: 14px;
+          font-size: 13.5px;
           color: #a1a1aa;
           margin: 0;
           line-height: 1.5;
+          text-align: left;
         }
         .sb-lab-pill {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
+          gap: 6px;
           background: rgba(214, 189, 122, 0.12);
           border: 1px solid #d6bd7a;
           color: #d6bd7a;
-          padding: 8px 14px;
-          border-radius: 9999px;
-          font-size: 13px;
+          padding: 6px 12px;
+          border-radius: 8px;
+          font-size: 12.5px;
           font-weight: 700;
-          white-space: nowrap;
+          line-height: 1.35;
+          max-width: 100%;
+          box-sizing: border-box;
         }
         .sb-cert-cards-duo {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-          gap: 20px;
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        @media (min-width: 768px) {
+          .sb-cert-cards-duo {
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+          }
         }
         .sb-cert-mini-card {
           background: #0d0f17;
           border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 14px;
-          padding: 22px;
+          padding: 18px 16px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          transition: border-color 0.2s ease, transform 0.2s ease;
-        }
-        .sb-cert-mini-card:hover {
-          border-color: rgba(214, 189, 122, 0.45);
-          transform: translateY(-2px);
+          text-align: left;
+          box-sizing: border-box;
         }
         .sb-cert-mini-header {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           gap: 12px;
           margin-bottom: 14px;
+          text-align: left;
+        }
+        .sb-icon-box {
+          width: 38px;
+          height: 38px;
+          background: rgba(214, 189, 122, 0.1);
+          border: 1px solid rgba(214, 189, 122, 0.25);
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 20px;
+          flex-shrink: 0;
         }
         .sb-cert-mini-header h3 {
-          margin: 0;
-          font-size: 16.5px;
+          margin: 0 0 3px 0;
+          font-size: 16px;
           color: #ffffff;
           font-weight: 700;
+          line-height: 1.3;
+          text-align: left;
+        }
+        .sb-cert-mini-header small {
+          display: block;
+          color: #71717a;
+          font-size: 12px;
+          line-height: 1.3;
+          text-align: left;
         }
         .sb-cert-data {
           font-size: 13px;
           color: #a1a1aa;
-          line-height: 1.65;
+          line-height: 1.6;
           margin-bottom: 18px;
+          text-align: left;
         }
         .sb-cert-data strong {
           color: #f4f4f5;
@@ -1868,47 +1909,49 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 8px;
+          text-align: center;
+          gap: 6px;
           width: 100%;
           background: #d6bd7a;
           color: #07080c;
           font-weight: 700;
-          font-size: 13.5px;
-          padding: 11px 16px;
-          border-radius: 9999px;
+          font-size: 13px;
+          line-height: 1.3;
+          padding: 12px 14px;
+          border-radius: 10px;
           text-decoration: none;
           box-sizing: border-box;
-          transition: background 0.15s ease, transform 0.15s ease;
+          transition: background 0.15s ease;
         }
         .sb-btn-download-gold:hover {
           background: #ebd89e;
-          transform: translateY(-1px);
         }
         .sb-btn-outline-doc {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 8px;
+          text-align: center;
+          gap: 6px;
           width: 100%;
           background: transparent;
           color: #d6bd7a;
           border: 1px solid #d6bd7a;
           font-weight: 700;
-          font-size: 13.5px;
-          padding: 11px 16px;
-          border-radius: 9999px;
+          font-size: 13px;
+          line-height: 1.3;
+          padding: 11px 14px;
+          border-radius: 10px;
           text-decoration: none;
           box-sizing: border-box;
-          transition: background 0.2s, color 0.2s, transform 0.15s;
+          transition: background 0.15s ease, color 0.15s ease;
         }
         .sb-btn-outline-doc:hover {
           background: #d6bd7a;
           color: #07080c;
-          transform: translateY(-1px);
         }
       </style>
 
-      <div class="container">
+      <div class="container" style="padding-left: 12px; padding-right: 12px;">
         <div class="sb-cert-wrap">
           <div class="sb-cert-top-row">
             <div class="sb-cert-title-group">
@@ -1916,7 +1959,7 @@
               <p>Прямой заводской привоз без посредников и примесей шлака. Мешки 50 кг на европоддонах (1.5 т).</p>
             </div>
             <div class="sb-lab-pill">
-              <span>✓</span> Фактическая активность 52.6 МПа (выше ГОСТ)
+              <span>✓</span> Активность 52.6 МПа (выше нормы ГОСТ)
             </div>
           </div>
 
@@ -1925,15 +1968,15 @@
             <div class="sb-cert-mini-card">
               <div>
                 <div class="sb-cert-mini-header">
-                  <span style="font-size: 26px;">📋</span>
+                  <div class="sb-icon-box">📋</div>
                   <div>
                     <h3>Официальное КП на цемент</h3>
-                    <small style="color:#71717a;">Для снабженцев, прорабов и частников</small>
+                    <small>Для снабженцев, прорабов и частников</small>
                   </div>
                 </div>
                 <div class="sb-cert-data">
                   • Марка: <strong>М500 Д0 / Д20 (ГОСТ 31108-2020)</strong><br>
-                  • Цена: <span class="highlight">570 ₽ / мешок</span> (17 100 ₽ / поддон 30 шт)<br>
+                  • Цена: <span class="highlight">570 ₽ / мешок</span> (17 100 ₽ / поддон)<br>
                   • Форма оплаты: <strong>Наличный / Безнал +7%</strong><br>
                   • Склад отгрузки: <strong>г. Невинномысск, ул. Монтажная, 10</strong>
                 </div>
@@ -1947,17 +1990,17 @@
             <div class="sb-cert-mini-card">
               <div>
                 <div class="sb-cert-mini-header">
-                  <span style="font-size: 26px;">🔬</span>
+                  <div class="sb-icon-box">🔬</div>
                   <div>
                     <h3>Заводской паспорт качества</h3>
-                    <small style="color:#71717a;">Лаборатория завода «Первомайский»</small>
+                    <small>Лаборатория завода «Первомайский»</small>
                   </div>
                 </div>
                 <div class="sb-cert-data">
-                  • Партия: <strong>№1162 (отгрузка 07.07.2026)</strong><br>
-                  • Сертификат соответствия: <strong>РОСС RU C-RU.СЛ02.В.00813/25</strong><br>
-                  • Предел прочности: <span class="highlight">52.6 МПа</span> (норматив 42.5 МПа)<br>
-                  • Контроль: <strong>Оригинальная синяя печать ОТК завода</strong>
+                  • Номер партии: <strong>№1162 (отгрузка 07.07.2026)</strong><br>
+                  • Сертификат: <strong>РОСС RU C-RU.СЛ02.В.00813/25</strong><br>
+                  • Предел прочности: <span class="highlight">52.6 МПа</span> (норма 42.5)<br>
+                  • Контроль: <strong>Оригинальная синяя печать ОТК</strong>
                 </div>
               </div>
               <a href="pasport-kachestva-tsement-novoroscement.pdf" target="_blank" rel="noopener" class="sb-btn-outline-doc">
@@ -1968,7 +2011,7 @@
         </div>
       </div>
 
-      <!-- Микроразметка Schema.org для поисковиков -->
+      <!-- Schema.org DigitalDocument -->
       <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -1990,6 +2033,7 @@
         }
       }
       </script>
+    </section>
     </section>
   </main>
 
