@@ -1,52 +1,138 @@
-# robots.txt для stroybazansk.ru (Стройбаза на Монтажной 10, Невинномысск)
-# Стандарт RFC 9309
+# ==============================================================================
+# robots.txt для stroybazansk.ru («Стройбаза на Монтажной 10», Невинномысск)
+# Стандарт: RFC 9309 | Оптимизировано для SEO, GEO, AEO и RAG-агентов
+# ==============================================================================
 
+# ------------------------------------------------------------------------------
+# 1. ОБЩИЕ ПРАВИЛА ДЛЯ ВСЕХ ПОИСКОВЫХ СИСТЕМ (Default Fallback Group)
+# ------------------------------------------------------------------------------
 User-agent: *
 Allow: /
-Disallow: /*?*
 
-# Яндекс, Яндекс Бот и Яндекс Нейро
+# Запрет служебных системных путей и приватных пользовательских данных
+Disallow: /admin/
+Disallow: /bitrix/
+Disallow: /wp-admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /order/
+Disallow: /search/
+Disallow: /api/
+
+# Запрет технических параметров отслеживания при сохранении статики
+Disallow: /*?utm_*
+Disallow: /*?yclid=*
+Disallow: /*?gclid=*
+Disallow: /*?fbclid=*
+Disallow: /*?openstat=*
+Disallow: /*?from=*
+Disallow: /*?session_id=*
+
+# Явное открытие всех медиа-ресурсов, шрифтов и стилей для корректного рендеринга DOM
+Allow: /*.css*
+Allow: /*.js*
+Allow: /*.png*
+Allow: /*.jpg*
+Allow: /*.jpeg*
+Allow: /*.webp*
+Allow: /*.svg*
+Allow: /*.pdf*
+Allow: /*.woff*
+Allow: /*.woff2*
+
+# ------------------------------------------------------------------------------
+# 2. КЛАССИЧЕСКИЕ ПОИСКОВЫЕ СИСТЕМЫ (Яндекс, Google, Bing)
+# ------------------------------------------------------------------------------
 User-agent: Yandex
+User-agent: YandexBot
+User-agent: YandexDirect
+User-agent: YandexRenderResourcesBot
 Allow: /
-Allow: /*.pdf
-Allow: /*.png
-Allow: /*.jpg
-Allow: /*.css
-Allow: /*.js
-Disallow: /*?*
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /order/
+Disallow: /search/
+Allow: /*.css*
+Allow: /*.js*
+Allow: /*.png*
+Allow: /*.jpg*
+Allow: /*.webp*
+Allow: /*.svg*
+Allow: /*.woff2*
+# Управление динамическими параметрами без вырезания посадочных страниц из индекса
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&openstat /
 
-# Googlebot и Gemini
 User-agent: Googlebot
+User-agent: Bingbot
 Allow: /
-Allow: /*.pdf
-Allow: /*.png
-Allow: /*.jpg
-Allow: /*.css
-Allow: /*.js
-Disallow: /*?*
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /order/
+Disallow: /search/
+Disallow: /*?utm_*
+Disallow: /*?gclid=*
+Allow: /*.css*
+Allow: /*.js*
+Allow: /*.png*
+Allow: /*.jpg*
+Allow: /*.webp*
+Allow: /*.svg*
+Allow: /*.woff2*
+
+# ------------------------------------------------------------------------------
+# 3. ПОИСКОВЫЕ RAG-СИСТЕМЫ И ЖИВЫЕ AI-АССИСТЕНТЫ (Приоритет: Прямой поиск / Цитирование)
+# ------------------------------------------------------------------------------
+# OpenAI (ChatGPT Search и реалтайм-клики пользователей)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+
+# Perplexity AI (Поисковый агент)
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+
+# Anthropic Claude (Живой поиск в диалогах)
+User-agent: Claude-Web
+Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
 
 # Apple Intelligence и Siri Search
 User-agent: Applebot
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
 
-# OpenAI / ChatGPT (поиск, ответы и обучение)
-User-agent: GPTBot
-User-agent: OAI-SearchBot
-Allow: /
-
-# Perplexity AI
-User-agent: PerplexityBot
-Allow: /
-
-# Anthropic / Claude
-User-agent: ClaudeBot
-Allow: /
-
-# xAI / Grok
+# xAI Grok
 User-agent: GrokBot
 Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
 
-# Главное зеркало и карта сайта
-Host: https://stroybazansk.ru
+# ------------------------------------------------------------------------------
+# 4. БОТЫ СБОРА ДАННЫХ И ОБУЧЕНИЯ МОДЕЛЕЙ (Формирование Knowledge Graph)
+# ------------------------------------------------------------------------------
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+
+# ------------------------------------------------------------------------------
+# 5. ИНДЕКСНЫЕ КАРТЫ САЙТА (SITEMAP)
+# ------------------------------------------------------------------------------
 Sitemap: https://stroybazansk.ru/sitemap.xml
