@@ -1935,10 +1935,12 @@
     </header>
 
     <main id="top">
-        <section class="hero">
+        <section class="hero" style="padding-top: 35px;">
             <div class="container hero-content">
-                <div class="badge"><span class="badge-dot"></span> Склад открыт • Невинномысск</div>
-                <div class="badge" style="margin-left: 6px;"><time datetime="2026-10-25">Прайс обновлен: 25 октября 2026 г.</time></div>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-bottom: 14px;">
+                    <div class="badge"><span class="badge-dot"></span> Склад открыт • Невинномысск</div>
+                    <div class="badge"><time datetime="2026-10-25">Прайс обновлен: 25 октября 2026 г.</time></div>
+                </div>
                 <h1>Арматура, профильные трубы, цемент и ЖБИ со склада</h1>
                 <p class="hero-lead">Металлопрокат по ГОСТу с контролем толщины стенки, Новороссийский цемент М500, ФБС, кольца и шлакоблок. Бесплатный расчет каркасов навесов, заборов и фундаментов за 5 минут.</p>
                 <div class="hero-actions">
@@ -2466,7 +2468,7 @@
     </div>
 
         <!-- ЧИСТЫЙ ЕДИНЫЙ ФУТЕР БЕЗ ПЕРЕСПАМА -->
-    <footer class="site-footer" style="margin-top: 50px; background: rgba(7, 8, 12, 0.98); border-top: 1px solid var(--border); padding: 50px 0 25px;">
+    <footer class="site-footer" style="margin-top: 50px; background: rgba(7, 8, 12, 0.98); border-top: 1px solid var(--border); padding: 50px 0 100px;">
         <div class="container">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; margin-bottom: 40px;">
                 
@@ -2530,11 +2532,11 @@
                 </div>
             </div>
 
-            <!-- Нижняя планка с сигналами доверия, ссылками на документы и автором E-E-A-T -->
-            <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: var(--soft);">
-                <div>
-                    <span>© 2026 Стройбаза на Монтажной (stroybazansk.ru). Все права защищены.</span>
-                    <div style="margin-top: 6px; display: flex; gap: 14px; flex-wrap: wrap;">
+            <!-- Нижняя планка: аккуратное выравнивание и защита от наезда корзины -->
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; font-size: 0.82rem; color: var(--soft);">
+                <div style="max-width: 620px;">
+                    <div>© 2026 Стройбаза на Монтажной (stroybazansk.ru). Все права защищены.</div>
+                    <div style="margin-top: 8px; display: flex; gap: 12px 18px; flex-wrap: wrap; font-size: 0.8rem;">
                         <a href="about.html" style="color: var(--muted); text-decoration: underline;">О компании</a>
                         <a href="blog.html" style="color: var(--muted); text-decoration: underline;">Блог и статьи</a>
                         <a href="contacts.html" style="color: var(--muted); text-decoration: underline;">Контакты склада</a>
@@ -2542,11 +2544,16 @@
                         <a href="terms.html" style="color: var(--muted); text-decoration: underline;">Условия оферты</a>
                     </div>
                 </div>
-                <div style="text-align: right;">
-                    <span itemprop="author" itemscope itemtype="https://schema.org/Person">Руководитель базы: <strong itemprop="name" style="color:#fff;">Кардава Т. К.</strong></span><br>
-                    <span>Склад металлопроката: <a href="https://metall-26.ru" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">metall-26.ru</a></span>
+                <div style="font-size: 0.82rem; line-height: 1.6;">
+                    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        Руководитель базы: <strong itemprop="name" style="color: #fff;">Кардава Т. К.</strong>
+                    </div>
+                    <div>
+                        Склад металлопроката: <a href="https://metall-26.ru" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">metall-26.ru ↗</a>
+                    </div>
                 </div>
             </div>
+        </div>
     </footer>
 
     <!-- Затемняющий оверлей с размытием -->
