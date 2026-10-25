@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-10-25 18:00">
+  <shop>
+    <name>Стройбаза на Монтажной</name>
+    <company>ИП Кардава Тимур Кукуриевич</company>
+    <url>https://stroybazansk.ru/</url>
+    <currencies>
+      <currency id="RUR" rate="1"/>
+    </currencies>
+    
+    <categories>
+      <category id="1">Черный металлопрокат</category>
+      <category id="11" parentId="1">Арматура строительная</category>
+      <category id="12" parentId="1">Трубы профильные</category>
+      <category id="2">Цемент и смеси</category>
+      <category id="3">Кирпич и блоки</category>
+      <category id="4">ЖБИ</category>
+      <category id="5">Грузоперевозки</category>
+    </categories>
+
+    <offers>
+      <!-- ==================== АРМАТУРА СТРОИТЕЛЬНАЯ ==================== -->
+      <!-- 1. Арматура 12 мм (Флагман) -->
+      <offer id="ARM-12-A500C" group_id="ARM-A500C" available="true">
+        <name>Арматура рифленая 12 мм А500С ГОСТ 34028-2016 (хлыст 11.7 м / резка 0 ₽)</name>
+        <url>https://stroybazansk.ru/armatura-12mm.html</url>
+        <price>56</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>11</categoryId>
+        <picture>https://stroybazansk.ru/armatura-2.jpg</picture>
+        <picture>https://stroybazansk.ru/armatura.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendor>Северсталь / НЛМК</vendor>
+        <vendorCode>ARM-12-A500C</vendorCode>
+        <description><![CDATA[
+Капитальная рифленая арматура диаметром 12 мм класса прочности А500С по ГОСТ 34028-2016 со склада в Невинномысске (ул. Монтажная, 10). 
+Золотой стандарт для ленточных фундаментов, монолитных плит, армопояса и колонн.
+• Честный ГОСТ: вес 1 метра — 0.888 кг (в 1 тонне ~1 126 м). Контрольный замер штангенциркулем при клиенте.
+• Длина хлыста: 11.7 м. Бесплатная резка пополам (по 5.85 м) для перевозки в 6-метровой Газели.
+• Оптовая цена за тонну: 48 700 ₽.
+• Доставка: удлиненной Газелью и манипулятором 15т за 1.5–2 часа по Невинномысску и краю. Оплата водителю строго при выгрузке!
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Диаметр">12 мм</param>
+        <param name="Класс стали">А500С</param>
+        <param name="Стандарт">ГОСТ 34028-2016</param>
+        <param name="Вес 1 метра">0.888 кг</param>
+        <param name="Длина хлыста">11.7 м</param>
+        <param name="Единица измерения">м</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- 2. Арматура 10 мм -->
+      <offer id="ARM-10-A500C" group_id="ARM-A500C" available="true">
+        <name>Арматура рифленая 10 мм А500С ГОСТ 34028-2016 для армопояса</name>
+        <url>https://stroybazansk.ru/armatura-10mm.html</url>
+        <price>45</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>11</categoryId>
+        <picture>https://stroybazansk.ru/armatura-4.jpg</picture>
+        <picture>https://stroybazansk.ru/armatura.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendor>Северсталь / НЛМК</vendor>
+        <vendorCode>ARM-10-A500C</vendorCode>
+        <description><![CDATA[
+Строительная рифленая стальная арматура 10 мм А500С по ГОСТ со склада в Невинномысске.
+Оптимальный диаметр для вязки монолитного сейсмопояса под плиты перекрытия и мауэрлат, верхних поясов ленточных фундаментов и плитных стяжек.
+• Характеристики: вес 1 метра — 0.617 кг (1 620 м в тонне).
+• Заводские хлысты 11.7 м. Бесплатный рез пополам (по 5.85 м).
+• Цена за тонну: 51 500 ₽.
+• Быстрая доставка в день заказа. Оплата водителю при выгрузке (нал, перевод, б/н без НДС).
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Диаметр">10 мм</param>
+        <param name="Класс стали">А500С</param>
+        <param name="Стандарт">ГОСТ 34028-2016</param>
+        <param name="Вес 1 метра">0.617 кг</param>
+        <param name="Длина хлыста">11.7 м</param>
+        <param name="Единица измерения">м</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- 3. Арматура 8 мм -->
+      <offer id="ARM-08-A500C" group_id="ARM-A500C" available="true">
+        <name>Арматура рифленая 8 мм А500С ГОСТ 34028-2016 для стяжки и отмостки</name>
+        <url>https://stroybazansk.ru/armatura-8mm.html</url>
+        <price>30</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>11</categoryId>
+        <picture>https://stroybazansk.ru/armatura-1.jpg</picture>
+        <picture>https://stroybazansk.ru/armatura.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendor>Северсталь / НЛМК</vendor>
+        <vendorCode>ARM-08-A500C</vendorCode>
+        <description><![CDATA[
+Рифленая арматура 8 мм класса А500С ГОСТ 34028-2016 со склада базы на ул. Монтажная, 10.
+Идеальна для армирования стяжек теплого пола, бетонных отмосток вокруг дома, садовых дорожек и изготовления силовых хомутов.
+• Вес 1 метра: 0.395 кг (в 1 тонне ~2 531 м).
+• Длина хлыста: 11.7 м. Бесплатная резка по 5.85 м.
+• Цена за тонну: 53 000 ₽.
+• Доставка Газелью по Невинномысску от 1000 ₽. Оплата на объекте.
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Диаметр">8 мм</param>
+        <param name="Класс стали">А500С</param>
+        <param name="Стандарт">ГОСТ 34028-2016</param>
+        <param name="Вес 1 метра">0.395 кг</param>
+        <param name="Длина хлыста">11.7 м</param>
+        <param name="Единица измерения">м</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- 4. Арматура 6 мм (Катанка) -->
+      <offer id="ARM-06-A240" group_id="ARM-A500C" available="true">
+        <name>Арматура стальная 6 мм (катанка) А240 / А500С ГОСТ для хомутов</name>
+        <url>https://stroybazansk.ru/armatura-6mm.html</url>
+        <price>21</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>11</categoryId>
+        <picture>https://stroybazansk.ru/armatura.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendor>Северсталь / НЛМК</vendor>
+        <vendorCode>ARM-06-A240</vendorCode>
+        <description><![CDATA[
+Гладкая и рифленая стальная арматура 6 мм со склада в Невинномысске.
+Легко гнется на 180° в прямоугольные рамки (хомуты) без микротрещин. Незаменима для пространственной фиксации продольной рабочей арматуры 12–16 мм в лентах фундаментов, колоннах и армопоясе.
+• Вес 1 метра: 0.222 кг (4 504 м в тонне).
+• Отгрузка: прутки 6 м и бухты. Резка пополам бесплатно.
+• Цена за тонну: 59 000 ₽. Оплата при выгрузке.
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Диаметр">6 мм</param>
+        <param name="Класс стали">А240 / А500С</param>
+        <param name="Стандарт">ГОСТ 34028-2016</param>
+        <param name="Вес 1 метра">0.222 кг</param>
+        <param name="Единица измерения">м</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- ==================== ПРОФИЛЬНЫЕ ТРУБЫ ==================== -->
+      <!-- 5. Труба 40х20х2.0 -->
+      <offer id="TRB-40-20-2" group_id="TRB-PROF" available="true">
+        <name>Труба профильная 40х20х2.0 мм ГОСТ 8645-68 (хлыст 6 м / для забора)</name>
+        <url>https://stroybazansk.ru/truba-40x20x2.html</url>
+        <price>115</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>12</categoryId>
+        <picture>https://stroybazansk.ru/truba.jpg</picture>
+        <picture>https://stroybazansk.ru/truba-1.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendor>Северсталь</vendor>
+        <vendorCode>TRB-40-20-2</vendorCode>
+        <description><![CDATA[
+Стальная прямоугольная труба 40х20х2.0 мм со строгим соблюдением ГОСТ 8645-68 со склада на ул. Монтажная, 10.
+Самый востребованный прокат для заборных лаг (прожилин) под профнастил и евроштакетник, обрешетки навесов, теплиц и калиток.
+• Честная стенка 2.0 мм — саморезы сидят мертво, металл не сминается от ветра. Замер штангенциркулем при вас.
+• Вес 1 метра: 1.70 кг (хлыст 6 м — 10.2 кг, 690 ₽/шт).
+• Бесплатная резка пополам (по 3 м) под легковой прицеп. Доставка от 1.5 часов. Оплата водителю.
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Сечение">40х20 мм</param>
+        <param name="Толщина стенки">2.0 мм</param>
+        <param name="Стандарт">ГОСТ 8645-68</param>
+        <param name="Длина хлыста">6.0 м</param>
+        <param name="Вес 1 метра">1.70 кг</param>
+        <param name="Единица измерения">м</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- 6. Труба 40х40х2.0 -->
+      <offer id="TRB-40-40-2" group_id="TRB-PROF" available="true">
+        <name>Труба профильная 40х40х2.0 мм ГОСТ 8639-82 (столбы забора, хлыст 6 м)</name>
+        <url>https://stroybazansk.ru/truba-40x40x2.html</url>
+        <price>160</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>12</categoryId>
+        <picture>https://stroybazansk.ru/truba-1.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendor>Северсталь</vendor>
+        <vendorCode>TRB-40-40-2</vendorCode>
+        <description><![CDATA[
+Квадратная электросварная профильная труба 40х40х2.0 мм по ГОСТ 8639-82.
+Надежная основа для заборных столбов высотой до 1.8–2.0 м, рам входных калиток, каркасов беседок и ограждений.
+• Честная стенка 2.0 мм без минусового допуска ТУ.
+• Вес 1 метра: 2.35 кг (хлыст 6 м — 14.1 кг, 960 ₽/шт).
+• Бесплатная резка пополам (по 3 м).
+• Срочная доставка удлиненной Газелью 6.1 м по Невинномысску и Кочубеевскому району. Оплата при выгрузке.
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Сечение">40х40 мм</param>
+        <param name="Толщина стенки">2.0 мм</param>
+        <param name="Стандарт">ГОСТ 8639-82</param>
+        <param name="Длина хлыста">6.0 м</param>
+        <param name="Вес 1 метра">2.35 кг</param>
+        <param name="Единица измерения">м</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- 7. Труба 60х40х3.0 -->
+      <offer id="TRB-60-40-3" group_id="TRB-PROF" available="true">
+        <name>Труба профильная 60х40х3.0 мм усиленная ГОСТ 8645-68 (для ферм навеса)</name>
+        <url>https://stroybazansk.ru/truba-60x40x3.html</url>
+        <price>260</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>12</categoryId>
+        <picture>https://stroybazansk.ru/truba-2.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendor>Северсталь</vendor>
+        <vendorCode>TRB-60-40-3</vendorCode>
+        <description><![CDATA[
+Толстостенная усиленная прямоугольная труба 60х40х3.0 мм по ГОСТ 8645-68.
+Специально для жестких стропильных ферм автонавесов, каркасов распашных/откатных ворот и заборных столбов при шквальных ветрах («армавирец» до 28 м/с).
+• Стенка 3.0 мм — не прогорает при сварке, держит снеговые мешки до 150 кг/м².
+• Вес 1 метра: 4.30 кг (хлыст 6 м — 25.8 кг, 1 560 ₽/шт).
+• Резка в размер или пополам бесплатно. Доставка за 1.5–2 часа.
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Сечение">60х40 мм</param>
+        <param name="Толщина стенки">3.0 мм (усиленная)</param>
+        <param name="Стандарт">ГОСТ 8645-68</param>
+        <param name="Длина хлыста">6.0 м</param>
+        <param name="Вес 1 метра">4.30 кг</param>
+        <param name="Единица измерения">м</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- 8. Труба 80х80х3.0 -->
+      <offer id="TRB-80-80-3" group_id="TRB-PROF" available="true">
+        <name>Труба профильная 80х80х3.0 мм несущая ГОСТ 8639-82 (колонны навеса и ворот)</name>
+        <url>https://stroybazansk.ru/truba-80x80x3.html</url>
+        <price>460</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>12</categoryId>
+        <picture>https://stroybazansk.ru/truba-4.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendor>Северсталь</vendor>
+        <vendorCode>TRB-80-80-3</vendorCode>
+        <description><![CDATA[
+Мощная квадратная несущая труба 80х80х3.0 мм по ГОСТ 8639-82 со склада базы в Невинномысске.
+Применяется для главных опорных стоек больших автонавесов (на 2 авто), несущих ворот под распашные створки и колонн легких ангаров.
+• Высокая несущая способность на продольный изгиб.
+• Вес 1 метра: 7.10 кг (хлыст 6 м — 42.6 кг, 2 760 ₽/шт).
+• Бесплатная механизированная погрузка автопогрузчиком за 5 минут. Доставка манипулятором или удлиненной Газелью.
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Сечение">80х80 мм</param>
+        <param name="Толщина стенки">3.0 мм</param>
+        <param name="Стандарт">ГОСТ 8639-82</param>
+        <param name="Длина хлыста">6.0 м</param>
+        <param name="Вес 1 метра">7.10 кг</param>
+        <param name="Единица измерения">м</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- ==================== ЦЕМЕНТ НОВОРОССИЙСКИЙ ==================== -->
+      <!-- 9. Цемент М500 Д0 -->
+      <offer id="CEM-M500-D0" group_id="CEM-NOVOROS" available="true">
+        <name>Цемент Новороссийский М500 Д0 (ЦЕМ I 42,5Н) 50 кг ОАО Новоросцемент</name>
+        <url>https://stroybazansk.ru/tsement-m500-d0.html</url>
+        <price>570</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://stroybazansk.ru/cement.jpg</picture>
+        <picture>https://stroybazansk.ru/cement-6.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendor>ОАО Новоросцемент</vendor>
+        <vendorCode>CEM-M500-D0</vendorCode>
+        <description><![CDATA[
+Заводской бездобавочный портландцемент М500 Д0 (ЦЕМ I 42,5Н) завода «Первомайский» (ОАО «Новоросцемент») в мешках по 50 кг со склада в Невинномысске.
+100% чистый клинкер без минеральных примесей. Максимальный предел прочности при сжатии (52.6 МПа по паспорту лаборатории).
+• Применение: монолитные фундаменты, сейсмопояса, армопояса под мауэрлат, плиты перекрытия, ответственные ЖБИ.
+• Сухое крытое хранение на Монтажной, 10 — мешки свежие, рассыпчатые, без комков.
+• На поддоне: 30 мешков (1.5 т) в заводской термопленке — 17 100 ₽/поддон.
+• Быстрая погрузка каром. Доставка манипулятором с разгрузкой стрелой 5т. Оплата водителю!
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Марка">М500 Д0 (ЦЕМ I 42,5Н)</param>
+        <param name="Производитель">ОАО Новоросцемент</param>
+        <param name="Стандарт">ГОСТ 31108-2020</param>
+        <param name="Вес мешка">50 кг</param>
+        <param name="Единица измерения">упак</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- 10. Цемент М500 Д20 -->
+      <offer id="CEM-M500-D20" group_id="CEM-NOVOROS" available="true">
+        <name>Цемент Новороссийский М500 Д20 (ЦЕМ II/А-Ш 42,5Н) 50 кг пластичный</name>
+        <url>https://stroybazansk.ru/tsement-m500-d20.html</url>
+        <price>570</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://stroybazansk.ru/cement-1.jpg</picture>
+        <picture>https://stroybazansk.ru/cement.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendor>ОАО Новоросцемент</vendor>
+        <vendorCode>CEM-M500-D20</vendorCode>
+        <description><![CDATA[
+Пластичный универсальный портландцемент М500 Д20 (ЦЕМ II/А-Ш 42,5Н) ОАО «Новоросцемент» в мешках по 50 кг.
+Содержит до 20% гранулированного шлака, что обеспечивает превосходную пластичность и трещиностойкость раствора.
+• Идеален для: стяжки пола, теплого пола, бетонной отмостки, штукатурки, кладки шлакоблока и кирпича, бетонирования заборных столбов.
+• Раствор не оседает в корыте и не дает высолов.
+• Цена: 570 ₽/мешок (17 100 ₽ за поддон 30 шт). Оплата при получении.
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Марка">М500 Д20 (ЦЕМ II/А-Ш 42,5Н)</param>
+        <param name="Производитель">ОАО Новоросцемент</param>
+        <param name="Стандарт">ГОСТ 31108-2020</param>
+        <param name="Вес мешка">50 кг</param>
+        <param name="Единица измерения">упак</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- ==================== БЛОКИ ФБС И ШЛАКОБЛОК ==================== -->
+      <!-- 11. ФБС 24.4.6 -->
+      <offer id="FBS-24-4-6" group_id="FBS-BLOCKS" available="true">
+        <name>Блок фундаментный ФБС 24.4.6 ГОСТ 13579-78 (с монтажом в котлован)</name>
+        <url>https://stroybazansk.ru/bloki-fbs-24-4-6.html</url>
+        <price>2800</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://stroybazansk.ru/fbs-1.jpg</picture>
+        <picture>https://stroybazansk.ru/fbs.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendorCode>FBS-24-4-6</vendorCode>
+        <description><![CDATA[
+Заводские фундаментные стеновые блоки ФБС 24.4.6 по ГОСТ 13579-78 со склада в Невинномысске.
+Толщина 400 мм — идеальная опора под кладку стен из кирпича, газобетона и пеплоблока.
+• Размеры: 2380×400×580 мм. Вес блока: ~1 300 кг (объем бетона 0.543 м³). Тяжелый бетон М100 (В7.5-В12.5), пропарка.
+• Монтаж без автокрана: наш тяжелый манипулятор 15т со стрелой 5т привезет блоки и сам смонтирует их прямо в траншею по разметке (экономия до 10 000 ₽ на отдельном автокране!).
+• Вместимость борта: до 10–12 блоков за рейс. Оплата по факту монтажа.
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Размеры">2380х400х580 мм</param>
+        <param name="Масса">1 300 кг</param>
+        <param name="Класс бетона">В7.5 - В12.5</param>
+        <param name="Стандарт">ГОСТ 13579-78</param>
+        <param name="Единица измерения">шт</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- 12. ФБС 24.3.6 -->
+      <offer id="FBS-24-3-6" group_id="FBS-BLOCKS" available="true">
+        <name>Блок фундаментный ФБС 24.3.6 ГОСТ 13579-78 (с монтажом в котлован)</name>
+        <url>https://stroybazansk.ru/bloki-fbs-24-3-6.html</url>
+        <price>2600</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://stroybazansk.ru/fbs.jpg</picture>
+        <picture>https://stroybazansk.ru/fbs-1.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendorCode>FBS-24-3-6</vendorCode>
+        <description><![CDATA[
+Стеновые фундаментные блоки ФБС 24.3.6 по ГОСТ 13579-78 со склада ЖБИ в Невинномысске (ул. Монтажная, 10).
+Толщина 300 мм: для ленточных фундаментов гаражей, бань, хозпостроек, одноэтажных домов и внутренних перегородок цокольных этажей.
+• Размеры: 2380×300×580 мм. Вес: ~970 кг. Пропаренный тяжелый бетон, надежные монтажные петли.
+• Монтаж стрелой манипулятора 5 тонн прямо в траншею без вызова автокрана.
+• Оплата водителю строго при выгрузке.
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Размеры">2380х300х580 мм</param>
+        <param name="Масса">970 кг</param>
+        <param name="Класс бетона">В7.5 - В12.5</param>
+        <param name="Стандарт">ГОСТ 13579-78</param>
+        <param name="Единица измерения">шт</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- 13. Шлакоблок 390х190х190 -->
+      <offer id="SHLAK-390-190" available="true">
+        <name>Шлакоблок стеновой четырехпустотный 390х190х190 мм М75 пропаренный</name>
+        <url>https://stroybazansk.ru/shlakoblok.html</url>
+        <price>48</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://stroybazansk.ru/shlakoblok.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendorCode>SHLAK-390-190</vendorCode>
+        <description><![CDATA[
+Стеновой четырехпустотный шлакоблок 390х190х190 мм камерной пропарки со склада в Невинномысске.
+ГОСТ 6133-2019, марка прочности М75–М100. Плотный, с четкими геометрическими гранями, не осыпается, отлично держит крепеж.
+• Назначение: несущие стены гаражей, сараев, производственных цехов, цокольные этажи, заборы.
+• Характеристики: вес 17.5–18.0 кг. В 1 м³ — 71.4 шт. На поддоне — 60–75 шт.
+• Бесплатная погрузка вилочным погрузчиком за 5 минут. Доставка Газелями и манипулятором. Оплата при получении.
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Размеры">390х190х190 мм</param>
+        <param name="Марка прочности">М75 - М100</param>
+        <param name="Стандарт">ГОСТ 6133-2019</param>
+        <param name="Единица измерения">шт</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- ==================== КОЛЬЦА ЖБИ ДЛЯ СЕПТИКА ==================== -->
+      <!-- 14. Кольцо КС 15.9 -->
+      <offer id="KS-15-9" group_id="KS-ZHBI" available="true">
+        <name>Кольцо ЖБИ стеновое КС 15.9 (1.5 м) ГОСТ 8020-90 (монтаж манипулятором в яму)</name>
+        <url>https://stroybazansk.ru/koltsa-zhbi.html</url>
+        <price>3900</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>https://stroybazansk.ru/kolca-2.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendorCode>KS-15-9</vendorCode>
+        <description><![CDATA[
+Железобетонное колодезное кольцо КС 15.9 по ГОСТ 8020-90 со склада на ул. Монтажная, 10.
+Золотой стандарт автономной канализации и септиков для частного дома на 3–5 человек.
+• Размеры: внутренний диаметр 1 500 мм, высота 900 мм, стенка 90 мм.
+• Полезный объем: 1.59 м³. Вес: ~1 000 кг (1.0 т).
+• Бетон: тяжелый вибропрессованный М200-М300 с водонепроницаемостью W4 (защита от грунтовых вод).
+• Монтаж под ключ: манипулятор 15т опускает кольца, днище ПН 15 и крышку ПП 15 прямо в котлован по уровню без отдельного крана. Оплата по факту!
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Диаметр внутренний">1500 мм</param>
+        <param name="Высота">900 мм</param>
+        <param name="Объем">1.59 м³</param>
+        <param name="Масса">1000 кг</param>
+        <param name="Стандарт">ГОСТ 8020-90</param>
+        <param name="Единица измерения">шт</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- 15. Кольцо КС 10.9 -->
+      <offer id="KS-10-9" group_id="KS-ZHBI" available="true">
+        <name>Кольцо ЖБИ стеновое КС 10.9 (1.0 м) ГОСТ 8020-90 для скважин и септиков</name>
+        <url>https://stroybazansk.ru/koltsa-zhbi.html</url>
+        <price>3100</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>https://stroybazansk.ru/kolca-1.jpg</picture>
+        <delivery>true</delivery>
+        <pickup>true</pickup>
+        <vendorCode>KS-10-9</vendorCode>
+        <description><![CDATA[
+Бетонное кольцо КС 10.9 по ГОСТ 8020-90 для питьевых колодцев, кессонов скважин, дренажа и переливных резервуаров септиков.
+• Размеры: внутренний диаметр 1 000 мм, высота 900 мм, толщина стенки 80 мм.
+• Объем: 0.71 м³. Масса: ~600 кг.
+• В наличии также днища ПН 10 и плиты перекрытия ПП 10 с отверстием под люк.
+• Доставка и монтаж манипулятором базы. Оплата при получении.
+        ]]></description>
+        <param name="Тип">Товар</param>
+        <param name="Диаметр внутренний">1000 мм</param>
+        <param name="Высота">900 мм</param>
+        <param name="Объем">0.71 м³</param>
+        <param name="Масса">600 кг</param>
+        <param name="Стандарт">ГОСТ 8020-90</param>
+        <param name="Единица измерения">шт</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- ==================== СПЕЦТЕХНИКА И ДОСТАВКА ==================== -->
+      <!-- 16. Аренда манипулятора 15т -->
+      <offer id="SRV-MANIPULATOR" available="true">
+        <name>Аренда манипулятора 15 тонн (стрела 5 тонн) с монтажом ЖБИ в котлован</name>
+        <url>https://stroybazansk.ru/uslugi-manipulyatora.html</url>
+        <price>3000</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://stroybazansk.ru/tech-1.jpg</picture>
+        <delivery>true</delivery>
+        <vendorCode>SRV-MANIP-15T</vendorCode>
+        <description><![CDATA[
+Услуги тяжелого манипулятора со склада на Монтажной 10 по Невинномысску, Кочубеевскому району и Ставропольскому краю.
+• Грузоподъемность борта: 15 тонн (длина кузова 6.5 м).
+• Стрела: грузоподъемность до 5 тонн, вылет 10 метров.
+• Выполняем профессиональный монтаж блоков ФБС прямо в траншею и колодезных колец септика в яму по уровню за 1.5–2 часа без вызова отдельного автокрана (экономия от 8 000 ₽).
+• Минимальный рейс по городу: от 5 000 ₽. Почасовая аренда: 3 000 ₽/час. Расчет на объекте.
+        ]]></description>
+        <param name="Тип">Услуга</param>
+        <param name="Грузоподъемность борта">15 тонн</param>
+        <param name="Грузоподъемность стрелы">5 тонн</param>
+        <param name="Вылет стрелы">10 метров</param>
+        <param name="Единица измерения">ч</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+
+      <!-- 17. Доставка Газелью 6м -->
+      <offer id="SRV-GAZELLE-6M" available="true">
+        <name>Доставка стройматериалов удлиненной Газелью 6 метров (до 2 тонн)</name>
+        <url>https://stroybazansk.ru/uslugi-manipulyatora.html</url>
+        <price>1000</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://stroybazansk.ru/tech-2.jpg</picture>
+        <delivery>true</delivery>
+        <vendorCode>SRV-GAZ-6M</vendorCode>
+        <description><![CDATA[
+Оперативная доставка металлопроката и цемента удлиненной бортовой Газелью 6.1 м по Невинномысску.
+• Кузов 6.1 метра: хлысты арматуры и профильных труб перевозятся целиком без прогиба и без опасного свеса.
+• Грузоподъемность: до 2 000 кг (до 40 мешков цемента М500).
+• Подача машины за 1–1.5 часа с момента заказа. Бесплатная резка хлыстов на базе пополам.
+• Тариф по городу: от 1 000 ₽. Оплата водителю при выгрузке.
+        ]]></description>
+        <param name="Тип">Услуга</param>
+        <param name="Длина кузова">6.1 метра</param>
+        <param name="Грузоподъемность">2 тонны</param>
+        <param name="Единица измерения">рейс</param>
+        <param name="НДС">Без НДС</param>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
