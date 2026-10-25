@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rsl xmlns="https://rslstandard.org/rsl" version="1.0">
+  <content url="https://stroybazansk.ru/" server="https://api.rslcollective.org">
+    <license>
+      <permits type="usage">all</permits>
+      <permits type="usage">ai-train</permits>
+      <permits type="usage">ai-index</permits>
+      <permits type="usage">ai-search</permits>
+    </license>
+  </content>
+</rsl>
