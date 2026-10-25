@@ -136,3 +136,4 @@ Disallow: /checkout/
 # 5. ИНДЕКСНЫЕ КАРТЫ САЙТА (SITEMAP)
 # ------------------------------------------------------------------------------
 Sitemap: https://stroybazansk.ru/sitemap.xml
+License: https://stroybazansk.ru/license.xml
