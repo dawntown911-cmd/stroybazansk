@@ -8,6 +8,7 @@
 # ------------------------------------------------------------------------------
 User-agent: *
 Allow: /
+License: https://stroybazansk.ru/license.xml
 
 # Запрет служебных системных путей и приватных пользовательских данных
 Disallow: /admin/
@@ -136,4 +137,3 @@ Disallow: /checkout/
 # 5. ИНДЕКСНЫЕ КАРТЫ САЙТА (SITEMAP)
 # ------------------------------------------------------------------------------
 Sitemap: https://stroybazansk.ru/sitemap.xml
-License: https://stroybazansk.ru/license.xml
