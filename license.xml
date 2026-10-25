@@ -5,4 +5,9 @@
       <permits type="usage">all</permits>
     </license>
   </content>
+  <content url="https://stroybazansk.ru/">
+    <license>
+      <permits type="usage">all</permits>
+    </license>
+  </content>
 </rsl>
