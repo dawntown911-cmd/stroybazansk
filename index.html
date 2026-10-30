@@ -47,7 +47,6 @@
           "worksFor": { "@id": "https://stroybazansk.ru/#store" },
           "knowsAbout": ["ГОСТ 34028-2016", "Профильные трубы", "Арматурные каркасы", "Цемент М500"]
         },
-        {
           {
           "@type": "Product",
           "@id": "https://stroybazansk.ru/#flagship-rebar",
@@ -71,8 +70,44 @@
             "url": "https://stroybazansk.ru/armatura-12mm.html",
             "priceCurrency": "RUB",
             "price": "56.00",
-            "availability": "https://schema.org/InStock",
+            "validFrom": "2026-01-01",
             "priceValidUntil": "2027-12-31",
+            "availability": "https://schema.org/InStock",
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": "RU",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+              "merchantReturnDays": 14,
+              "returnMethod": "https://schema.org/ReturnInStore",
+              "returnFees": "https://schema.org/FreeReturn"
+            },
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "1000",
+                "currency": "RUB"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "RU"
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 1,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 1,
+                  "maxValue": 2,
+                  "unitCode": "DAY"
+                }
+              }
+            },
             "seller": { "@id": "https://stroybazansk.ru/#store" }
           }
         },
