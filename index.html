@@ -2510,94 +2510,315 @@
         </div>
     </div>
 
-        <!-- ЧИСТЫЙ ЕДИНЫЙ ФУТЕР БЕЗ ПЕРЕСПАМА -->
-    <footer class="site-footer" style="margin-top: 50px; background: rgba(7, 8, 12, 0.98); border-top: 1px solid var(--border); padding: 50px 0 100px;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; margin-bottom: 40px;">
-                
-                <!-- Колонка 1: О базе -->
-                <div>
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
-                        <img src="logo.png" alt="Стройбаза на Монтажной" width="34" height="34" style="border-radius: 8px;" onerror="if(!this.tried){this.tried=true; this.src='logo.PNG';}">
-                        <strong style="color: #fff; font-size: 1.05rem;">Стройбаза на Монтажной</strong>
-                    </div>
-                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.5; margin: 0 0 12px;">
-                        База металлопроката, цемента и ЖБИ в Невинномысске (Индивидуальный предприниматель Кардава Тимур Кукуриевич, ИНН 263119933162, ОГРНИП 326265100122423). Честный ГОСТ с контролем толщины штангенциркулем. Доставка за 1.5 часа, оплата при выгрузке.
-                    </p>
-                    <div style="color: var(--accent); font-size: 0.82rem; font-weight: 700;">
-                        📍 г. Невинномысск, ул. Монтажная, 10
-                    </div>
-                    <div style="margin-top: 14px;">
-                        <a class="zchbLink" href="https://zachestnyibiznes.ru/company/ip/326265100122423_263119933162?w=1" target="_blank" rel="noopener" title="Проверка контрагента ИП Кардава Т.К. на портале ЗАЧЕСТНЫЙБИЗНЕС">
-                            <div class="zchbWidgetSmall">
-                                <div class="zchbHead zchbSmall"><big>Мы&nbsp;&ndash;&nbsp;<span>ЗА</span>ЧЕСТНЫЙБИЗНЕС</big></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+        <!-- ==========================================================================
+     НОВЫЙ ПРЕМИАЛЬНЫЙ ФУТЕР (СТИЛЬ ATWINTA x СТРОЙБАЗА)
+     ========================================================================== -->
+<style>
+  .site-footer-v2 {
+    background: #06070a;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: #a1a1aa;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-top: 60px;
+    padding: 60px 0 95px; /* Запас снизу под плавающую корзину */
+    position: relative;
+  }
+  .sf-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr 1.15fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+  .sf-brand-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    text-decoration: none;
+  }
+  .sf-brand-header strong {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .sf-about-text {
+    font-size: 0.84rem;
+    color: #8b8d98;
+    line-height: 1.6;
+    margin: 0 0 16px;
+  }
+  .sf-address-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: rgba(214, 189, 122, 0.07);
+    border: 1px solid rgba(214, 189, 122, 0.2);
+    padding: 6px 12px;
+    border-radius: 8px;
+  }
+  .sf-col-title {
+    color: #f4f4f5;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sf-col-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+  .sf-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sf-nav-link {
+    color: #9496a1;
+    text-decoration: none;
+    font-size: 0.86rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+  .sf-nav-link:hover {
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+  .sf-contacts-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sf-phone {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+  }
+  .sf-phone:hover {
+    color: var(--accent);
+  }
+  .sf-hours {
+    font-size: 0.82rem;
+    color: #71717a;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sf-hours::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ade80;
+    display: inline-block;
+  }
+  .sf-messengers-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .sf-messengers-row .btn {
+    height: 36px;
+    padding: 0 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 8px;
+  }
+  .sf-email-link {
+    color: #8b8d98;
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: color 0.2s;
+  }
+  .sf-email-link:hover {
+    color: #fff;
+  }
+  
+  /* Нижняя строка: юридическая информация и копирайт */
+  .sf-bottom-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 0.82rem;
+    color: #71717a;
+  }
+  .sf-legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .sf-legal-links a {
+    color: #8b8d98;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .sf-legal-links a:hover {
+    color: var(--accent);
+  }
+  .sf-partner-box {
+    text-align: right;
+    line-height: 1.7;
+  }
+  .sf-partner-box a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+  .sf-partner-box a:hover {
+    opacity: 0.85;
+  }
+  .sf-verify-wrap {
+    margin-top: 14px;
+    display: inline-block;
+  }
+  .sf-verify-wrap a {
+    text-decoration: none;
+  }
 
-                <!-- Колонка 2: Каталог продукции -->
-                <div>
-                    <strong style="color: var(--accent); font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 14px;">Каталог стройматериалов</strong>
-                    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.86rem;">
-                        <a href="armatura.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Арматура строительная (6–20 мм)</a>
-                        <a href="truby.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Профильные трубы ГОСТ</a>
-                        <a href="tsement-m500.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Цемент Новороссийский М500</a>
-                        <a href="fbs-shlakoblok.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Блоки ФБС и шлакоблок</a>
-                        <a href="koltsa-zhbi.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Кольца ЖБИ для септиков</a>
-                    </div>
-                </div>
+  /* Адаптивность для планшетов и мобильных */
+  @media (max-width: 1024px) {
+    .sf-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .sf-partner-box {
+      text-align: left;
+    }
+  }
+  @media (max-width: 640px) {
+    .site-footer-v2 {
+      padding: 44px 0 110px;
+    }
+    .sf-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .sf-bottom-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .sf-legal-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+</style>
 
-                <!-- Колонка 3: Сервисы и расчеты -->
-                <div>
-                    <strong style="color: var(--accent); font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 14px;">Сервисы и расчеты</strong>
-                    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.86rem;">
-                        <a href="spravochnik-gost.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Инженерный справочник ГОСТ</a>
-                        <a href="zadachi-stroyki.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• 14 готовых расчетов стройки</a>
-                        <a href="#kalkulyator" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Калькулятор навеса и забора</a>
-                        <a href="uslugi-manipulyatora.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Доставка манипулятором 15т</a>
-                        <a href="opt-b2b.html" style="color: var(--muted); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">• Условия прорабам и B2B</a>
-                    </div>
-                </div>
-
-                <!-- Колонка 4: Контакты -->
-                <div>
-                    <strong style="color: var(--accent); font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 14px;">Отдел продаж</strong>
-                    <div style="font-size: 0.86rem; color: var(--muted); display: flex; flex-direction: column; gap: 8px;">
-                        <a href="tel:+79887328161" style="color: #fff; font-size: 1.05rem; font-weight: 800;">+7 (988) 732-81-61</a>
-                        <span>Пн–Сб: 8:00 – 18:00, Вс: выходной</span>
-                        <div style="display: flex; gap: 8px; margin-top: 6px;">
-                            <a href="https://wa.me/79887328161" target="_blank" rel="noopener" class="btn btn-wa" style="height: 32px; padding: 0 10px; font-size: 0.76rem;">WhatsApp</a>
-                            <a href="https://t.me/TimurSB" target="_blank" rel="noopener" class="btn btn-tg" style="height: 32px; padding: 0 10px; font-size: 0.76rem;">Telegram</a>
-                        </div>
-                        <a href="mailto:stroybazansk@mail.ru" style="color: var(--soft); font-size: 0.8rem; margin-top: 4px;">stroybazansk@mail.ru</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Нижняя планка: аккуратное выравнивание и защита от наезда корзины -->
-            <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; font-size: 0.82rem; color: var(--soft);">
-                <div style="max-width: 620px;">
-                    <div>© 2026 Стройбаза на Монтажной (stroybazansk.ru). Все права защищены.</div>
-                    <div style="margin-top: 8px; display: flex; gap: 12px 18px; flex-wrap: wrap; font-size: 0.8rem;">
-                        <a href="about.html" style="color: var(--muted); text-decoration: underline;">О компании</a>
-                        <a href="blog.html" style="color: var(--muted); text-decoration: underline;">Блог и статьи</a>
-                        <a href="contacts.html" style="color: var(--muted); text-decoration: underline;">Контакты склада</a>
-                        <a href="privacy.html" style="color: var(--muted); text-decoration: underline;">Политика конфиденциальности</a>
-                        <a href="terms.html" style="color: var(--muted); text-decoration: underline;">Условия оферты</a>
-                    </div>
-                </div>
-                <div style="font-size: 0.82rem; line-height: 1.6;">
-                    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-                        Руководитель базы: <strong itemprop="name" style="color: #fff;">Кардава Т. К.</strong>
-                    </div>
-                    <div>
-                        Склад металлопроката: <a href="https://metall-26.ru" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">metall-26.ru ↗</a>
-                    </div>
-                </div>
-            </div>
+<footer class="site-footer-v2">
+  <div class="container">
+    <div class="sf-grid">
+      
+      <!-- Колонка 1: О базе и реквизиты -->
+      <div>
+        <a href="#top" class="sf-brand-header">
+          <img src="logo.png" alt="Стройбаза на Монтажной" width="36" height="36" style="border-radius: 8px; object-fit: contain;" onerror="if(!this.tried){this.tried=true; this.src='logo.PNG';}">
+          <strong>Стройбаза на Монтажной</strong>
+        </a>
+        <p class="sf-about-text">
+          База металлопроката, цемента и ЖБИ в Невинномысске (Индивидуальный предприниматель Кардава Тимур Кукуриевич, ИНН 263119933162, ОГРНИП 326265100122423). Честный ГОСТ с контролем толщины штангенциркулем. Доставка за 1.5 часа, оплата при выгрузке.
+        </p>
+        <div class="sf-address-badge">
+          <span>📍 г. Невинномысск, ул. Монтажная, 10</span>
         </div>
-    </footer>
+        <div class="sf-verify-wrap">
+          <a class="zchbLink" href="https://zachestnyibiznes.ru/company/ip/326265100122423_263119933162?w=1" target="_blank" rel="noopener" title="Проверка контрагента ИП Кардава Т.К. на портале ЗАЧЕСТНЫЙБИЗНЕС">
+            <div class="zchbWidgetSmall">
+              <div class="zchbHead zchbSmall"><big>Мы&nbsp;&ndash;&nbsp;<span>ЗА</span>ЧЕСТНЫЙБИЗНЕС</big></div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Колонка 2: Каталог стройматериалов -->
+      <div>
+        <div class="sf-col-title">Каталог продукции</div>
+        <nav class="sf-nav-list">
+          <a href="armatura.html" class="sf-nav-link">Арматура строительная (6–20 мм)</a>
+          <a href="truby.html" class="sf-nav-link">Профильные трубы ГОСТ</a>
+          <a href="tsement-m500.html" class="sf-nav-link">Цемент Новороссийский М500</a>
+          <a href="fbs-shlakoblok.html" class="sf-nav-link">Блоки ФБС и шлакоблок</a>
+          <a href="koltsa-zhbi.html" class="sf-nav-link">Кольца ЖБИ для септиков</a>
+        </nav>
+      </div>
+
+      <!-- Колонка 3: Сервисы и расчеты -->
+      <div>
+        <div class="sf-col-title">Сервисы и расчеты</div>
+        <nav class="sf-nav-list">
+          <a href="spravochnik-gost.html" class="sf-nav-link">Инженерный справочник ГОСТ</a>
+          <a href="zadachi-stroyki.html" class="sf-nav-link">14 готовых расчетов стройки</a>
+          <a href="#kalkulyator" class="sf-nav-link">Калькулятор навеса и забора</a>
+          <a href="uslugi-manipulyatora.html" class="sf-nav-link">Доставка манипулятором 15т</a>
+          <a href="opt-b2b.html" class="sf-nav-link">Условия прорабам и B2B</a>
+        </nav>
+      </div>
+
+      <!-- Колонка 4: Отдел продаж и контакты -->
+      <div>
+        <div class="sf-col-title">Отдел продаж</div>
+        <div class="sf-contacts-card">
+          <a href="tel:+79887328161" class="sf-phone">+7 (988) 732-81-61</a>
+          <div class="sf-hours">Пн–Сб: 8:00 – 18:00, Вс: выходной</div>
+          <div class="sf-messengers-row">
+            <a href="https://wa.me/79887328161" target="_blank" rel="noopener" class="btn btn-wa">WhatsApp</a>
+            <a href="https://t.me/TimurSB" target="_blank" rel="noopener" class="btn btn-tg">Telegram</a>
+          </div>
+          <a href="mailto:stroybazansk@mail.ru" class="sf-email-link">✉ stroybazansk@mail.ru</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Нижняя полоса -->
+    <div class="sf-bottom-bar">
+      <div>
+        <div>© 2026 Стройбаза на Монтажной (stroybazansk.ru). Все права защищены.</div>
+        <div class="sf-legal-links">
+          <a href="about.html">О компании</a>
+          <a href="blog.html">Блог и статьи</a>
+          <a href="contacts.html">Контакты склада</a>
+          <a href="privacy.html">Политика конфиденциальности</a>
+          <a href="terms.html">Условия оферты</a>
+        </div>
+      </div>
+
+      <div class="sf-partner-box">
+        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+          Руководитель базы: <strong itemprop="name" style="color: #fff;">Кардава Т. К.</strong>
+        </div>
+        <div>
+          Склад металлопроката: <a href="https://metall-26.ru" target="_blank" rel="noopener">metall-26.ru ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
     <!-- Затемняющий оверлей с размытием -->
     <div class="sb-drawer-overlay" id="sbDrawerOverlay" aria-hidden="true"></div>
