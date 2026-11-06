@@ -2511,242 +2511,301 @@
     </div>
 
         <!-- ==========================================================================
-     НОВЫЙ ПРЕМИАЛЬНЫЙ ФУТЕР (СТИЛЬ ATWINTA x СТРОЙБАЗА)
+     АРХИТЕКТУРНЫЙ ФУТЕР В СТИЛЕ ATWINTA x STROYBAZAV
      ========================================================================== -->
 <style>
-  .site-footer-v2 {
-    background: #06070a;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    color: #a1a1aa;
-    font-size: 0.88rem;
-    line-height: 1.6;
-    margin-top: 60px;
-    padding: 60px 0 95px; /* Запас снизу под плавающую корзину */
+  .atw-footer {
+    background: #050608;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    color: #71717a;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    margin-top: 70px;
+    padding: 64px 0 100px; /* Запас под плавающую корзину */
     position: relative;
   }
-  .sf-grid {
-    display: grid;
-    grid-template-columns: 1.35fr 1fr 1fr 1.15fr;
-    gap: 40px;
-    margin-bottom: 48px;
+  .atw-container {
+    width: min(var(--max-w, 1340px), calc(100% - 40px));
+    margin: 0 auto;
   }
-  .sf-brand-header {
+  .atw-grid {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr 1fr 1.15fr;
+    gap: 48px;
+    margin-bottom: 52px;
+  }
+  
+  /* Колонка 1: Бренд и разложенные реквизиты */
+  .atw-brand {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
     text-decoration: none;
   }
-  .sf-brand-header strong {
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 800;
+  .atw-brand img {
+    border-radius: 8px;
+    object-fit: contain;
+  }
+  .atw-brand strong {
+    color: #f4f4f5;
+    font-size: 1.05rem;
+    font-weight: 700;
     letter-spacing: -0.01em;
   }
-  .sf-about-text {
-    font-size: 0.84rem;
-    color: #8b8d98;
-    line-height: 1.6;
-    margin: 0 0 16px;
-  }
-  .sf-address-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.82rem;
+  .atw-lead-desc {
+    color: #d4d4d8;
+    font-size: 0.92rem;
     font-weight: 600;
-    color: var(--accent);
-    background: rgba(214, 189, 122, 0.07);
-    border: 1px solid rgba(214, 189, 122, 0.2);
-    padding: 6px 12px;
-    border-radius: 8px;
+    line-height: 1.45;
+    margin-bottom: 12px;
   }
-  .sf-col-title {
-    color: #f4f4f5;
-    font-size: 0.78rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin: 0 0 20px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .sf-col-title::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.06);
-  }
-  .sf-nav-list {
+  .atw-features-box {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-  }
-  .sf-nav-link {
-    color: #9496a1;
-    text-decoration: none;
-    font-size: 0.86rem;
-    transition: color 0.2s ease, transform 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-  }
-  .sf-nav-link:hover {
-    color: var(--accent);
-    transform: translateX(4px);
-  }
-  .sf-contacts-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 14px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .sf-phone {
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    transition: color 0.2s ease;
-  }
-  .sf-phone:hover {
-    color: var(--accent);
-  }
-  .sf-hours {
+    gap: 6px;
+    border-left: 2px solid rgba(214, 189, 122, 0.4);
+    padding-left: 12px;
+    margin-bottom: 16px;
     font-size: 0.82rem;
+    color: #a1a1aa;
+  }
+  .atw-legal-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.75rem;
+    line-height: 1.5;
     color: #71717a;
+    margin-bottom: 16px;
+    font-family: inherit;
+  }
+  .atw-address-line {
+    font-size: 0.8rem;
+    color: #a1a1aa;
     display: flex;
     align-items: center;
     gap: 6px;
+    margin-bottom: 14px;
   }
-  .sf-hours::before {
+  .atw-zchb-wrap {
+    display: inline-block;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+  .atw-zchb-wrap:hover {
+    opacity: 1;
+  }
+
+  /* Заголовки колонок в стиле Atwinta (индекс + тонкая линия) */
+  .atw-col-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #71717a;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .atw-col-label span {
+    color: var(--accent, #d6bd7a);
+    font-size: 0.68rem;
+  }
+
+  /* Ссылки меню */
+  .atw-nav-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .atw-nav-item {
+    color: #a1a1aa;
+    text-decoration: none;
+    font-size: 0.86rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+  }
+  .atw-nav-item:hover {
+    color: #fff;
+    transform: translateX(4px);
+  }
+
+  /* Колонка контактов */
+  .atw-contacts-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .atw-phone-link {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #f4f4f5;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: color 0.2s;
+    width: fit-content;
+  }
+  .atw-phone-link:hover {
+    color: var(--accent, #d6bd7a);
+  }
+  .atw-workhours {
+    font-size: 0.8rem;
+    color: #71717a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .atw-workhours::before {
     content: "";
     width: 6px;
     height: 6px;
     border-radius: 50%;
     background: #4ade80;
-    display: inline-block;
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.4);
   }
-  .sf-messengers-row {
+  .atw-messengers-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
-    margin-top: 4px;
+    margin-top: 2px;
   }
-  .sf-messengers-row .btn {
-    height: 36px;
-    padding: 0 10px;
+  .atw-messengers-grid .btn {
+    height: 38px;
     font-size: 0.8rem;
     font-weight: 700;
     border-radius: 8px;
   }
-  .sf-email-link {
-    color: #8b8d98;
+  .atw-email {
+    color: #71717a;
     text-decoration: none;
     font-size: 0.82rem;
     transition: color 0.2s;
+    width: fit-content;
   }
-  .sf-email-link:hover {
-    color: #fff;
+  .atw-email:hover {
+    color: #d4d4d8;
   }
-  
-  /* Нижняя строка: юридическая информация и копирайт */
-  .sf-bottom-bar {
+
+  /* Нижняя строка: юр. информация и копирайт без ярких вспышек */
+  .atw-bottom-bar {
     border-top: 1px solid rgba(255, 255, 255, 0.06);
-    padding-top: 24px;
+    padding-top: 28px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
-    gap: 18px;
-    font-size: 0.82rem;
+    gap: 20px;
+    font-size: 0.8rem;
     color: #71717a;
   }
-  .sf-legal-links {
+  .atw-bottom-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .atw-policy-links {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    margin-top: 8px;
   }
-  .sf-legal-links a {
+  .atw-policy-links a {
+    color: #71717a;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .atw-policy-links a:hover {
+    color: #d4d4d8;
+  }
+  .atw-bottom-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    line-height: 1.5;
+  }
+  /* Гасим ядовитый белый цвет у руководителя: теперь он благородно-серый */
+  .atw-author-meta {
+    color: #71717a;
+  }
+  .atw-author-meta strong {
+    color: #a1a1aa !important;
+    font-weight: 600;
+  }
+  .atw-partner-link a {
     color: #8b8d98;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.2s;
   }
-  .sf-legal-links a:hover {
-    color: var(--accent);
-  }
-  .sf-partner-box {
-    text-align: right;
-    line-height: 1.7;
-  }
-  .sf-partner-box a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-    transition: opacity 0.2s;
-  }
-  .sf-partner-box a:hover {
-    opacity: 0.85;
-  }
-  .sf-verify-wrap {
-    margin-top: 14px;
-    display: inline-block;
-  }
-  .sf-verify-wrap a {
-    text-decoration: none;
+  .atw-partner-link a:hover {
+    color: var(--accent, #d6bd7a);
   }
 
-  /* Адаптивность для планшетов и мобильных */
+  /* Респонсив */
   @media (max-width: 1024px) {
-    .sf-grid {
+    .atw-grid {
       grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      gap: 36px;
     }
-    .sf-partner-box {
+    .atw-bottom-right {
       text-align: left;
     }
   }
   @media (max-width: 640px) {
-    .site-footer-v2 {
-      padding: 44px 0 110px;
+    .atw-footer {
+      padding: 48px 0 115px;
     }
-    .sf-grid {
+    .atw-grid {
       grid-template-columns: 1fr;
-      gap: 28px;
+      gap: 32px;
     }
-    .sf-bottom-bar {
+    .atw-bottom-bar {
       flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
+      gap: 18px;
     }
-    .sf-legal-links {
+    .atw-policy-links {
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
   }
 </style>
 
-<footer class="site-footer-v2">
-  <div class="container">
-    <div class="sf-grid">
-      
-      <!-- Колонка 1: О базе и реквизиты -->
+<footer class="atw-footer">
+  <div class="atw-container">
+    <div class="atw-grid">
+
+      <!-- Колонка 1: О базе и реквизиты (аккуратно декомпозированы) -->
       <div>
-        <a href="#top" class="sf-brand-header">
-          <img src="logo.png" alt="Стройбаза на Монтажной" width="36" height="36" style="border-radius: 8px; object-fit: contain;" onerror="if(!this.tried){this.tried=true; this.src='logo.PNG';}">
+        <a href="#top" class="atw-brand">
+          <img src="logo.png" alt="Стройбаза на Монтажной" width="34" height="34" onerror="if(!this.tried){this.tried=true; this.src='logo.PNG';}">
           <strong>Стройбаза на Монтажной</strong>
         </a>
-        <p class="sf-about-text">
-          База металлопроката, цемента и ЖБИ в Невинномысске (Индивидуальный предприниматель Кардава Тимур Кукуриевич, ИНН 263119933162, ОГРНИП 326265100122423). Честный ГОСТ с контролем толщины штангенциркулем. Доставка за 1.5 часа, оплата при выгрузке.
-        </p>
-        <div class="sf-address-badge">
-          <span>📍 г. Невинномысск, ул. Монтажная, 10</span>
+
+        <!-- 1. Главная суть -->
+        <div class="atw-lead-desc">
+          База металлопроката, цемента и ЖБИ в Невинномысске
         </div>
-        <div class="sf-verify-wrap">
+
+        <!-- 2. Преимущества сервиса -->
+        <div class="atw-features-box">
+          <div>Честный ГОСТ с контролем толщины штангенциркулем.</div>
+          <div>Доставка за 1.5 часа, оплата при выгрузке.</div>
+        </div>
+
+        <!-- 3. Официальные реквизиты в спокойном юридическом блоке -->
+        <div class="atw-legal-card">
+          (Индивидуальный предприниматель Кардава Тимур Кукуриевич, ИНН 263119933162, ОГРНИП 326265100122423).
+        </div>
+
+        <div class="atw-address-line">
+          📍 г. Невинномысск, ул. Монтажная, 10
+        </div>
+
+        <div class="atw-zchb-wrap">
           <a class="zchbLink" href="https://zachestnyibiznes.ru/company/ip/326265100122423_263119933162?w=1" target="_blank" rel="noopener" title="Проверка контрагента ИП Кардава Т.К. на портале ЗАЧЕСТНЫЙБИЗНЕС">
             <div class="zchbWidgetSmall">
               <div class="zchbHead zchbSmall"><big>Мы&nbsp;&ndash;&nbsp;<span>ЗА</span>ЧЕСТНЫЙБИЗНЕС</big></div>
@@ -2757,49 +2816,49 @@
 
       <!-- Колонка 2: Каталог стройматериалов -->
       <div>
-        <div class="sf-col-title">Каталог продукции</div>
-        <nav class="sf-nav-list">
-          <a href="armatura.html" class="sf-nav-link">Арматура строительная (6–20 мм)</a>
-          <a href="truby.html" class="sf-nav-link">Профильные трубы ГОСТ</a>
-          <a href="tsement-m500.html" class="sf-nav-link">Цемент Новороссийский М500</a>
-          <a href="fbs-shlakoblok.html" class="sf-nav-link">Блоки ФБС и шлакоблок</a>
-          <a href="koltsa-zhbi.html" class="sf-nav-link">Кольца ЖБИ для септиков</a>
+        <div class="atw-col-label"><span>// 01</span> Каталог стройматериалов</div>
+        <nav class="atw-nav-col">
+          <a href="armatura.html" class="atw-nav-item">Арматура строительная (6–20 мм)</a>
+          <a href="truby.html" class="atw-nav-item">Профильные трубы ГОСТ</a>
+          <a href="tsement-m500.html" class="atw-nav-item">Цемент Новороссийский М500</a>
+          <a href="fbs-shlakoblok.html" class="atw-nav-item">Блоки ФБС и шлакоблок</a>
+          <a href="koltsa-zhbi.html" class="atw-nav-item">Кольца ЖБИ для септиков</a>
         </nav>
       </div>
 
       <!-- Колонка 3: Сервисы и расчеты -->
       <div>
-        <div class="sf-col-title">Сервисы и расчеты</div>
-        <nav class="sf-nav-list">
-          <a href="spravochnik-gost.html" class="sf-nav-link">Инженерный справочник ГОСТ</a>
-          <a href="zadachi-stroyki.html" class="sf-nav-link">14 готовых расчетов стройки</a>
-          <a href="#kalkulyator" class="sf-nav-link">Калькулятор навеса и забора</a>
-          <a href="uslugi-manipulyatora.html" class="sf-nav-link">Доставка манипулятором 15т</a>
-          <a href="opt-b2b.html" class="sf-nav-link">Условия прорабам и B2B</a>
+        <div class="atw-col-label"><span>// 02</span> Сервисы и расчеты</div>
+        <nav class="atw-nav-col">
+          <a href="spravochnik-gost.html" class="atw-nav-item">Инженерный справочник ГОСТ</a>
+          <a href="zadachi-stroyki.html" class="atw-nav-item">14 готовых расчетов стройки</a>
+          <a href="#kalkulyator" class="atw-nav-item">Калькулятор навеса и забора</a>
+          <a href="uslugi-manipulyatora.html" class="atw-nav-item">Доставка манипулятором 15т</a>
+          <a href="opt-b2b.html" class="atw-nav-item">Условия прорабам и B2B</a>
         </nav>
       </div>
 
-      <!-- Колонка 4: Отдел продаж и контакты -->
+      <!-- Колонка 4: Отдел продаж -->
       <div>
-        <div class="sf-col-title">Отдел продаж</div>
-        <div class="sf-contacts-card">
-          <a href="tel:+79887328161" class="sf-phone">+7 (988) 732-81-61</a>
-          <div class="sf-hours">Пн–Сб: 8:00 – 18:00, Вс: выходной</div>
-          <div class="sf-messengers-row">
+        <div class="atw-col-label"><span>// 03</span> Отдел продаж</div>
+        <div class="atw-contacts-panel">
+          <a href="tel:+79887328161" class="atw-phone-link">+7 (988) 732-81-61</a>
+          <div class="atw-workhours">Пн–Сб: 8:00 – 18:00, Вс: выходной</div>
+          <div class="atw-messengers-grid">
             <a href="https://wa.me/79887328161" target="_blank" rel="noopener" class="btn btn-wa">WhatsApp</a>
             <a href="https://t.me/TimurSB" target="_blank" rel="noopener" class="btn btn-tg">Telegram</a>
           </div>
-          <a href="mailto:stroybazansk@mail.ru" class="sf-email-link">✉ stroybazansk@mail.ru</a>
+          <a href="mailto:stroybazansk@mail.ru" class="atw-email">stroybazansk@mail.ru</a>
         </div>
       </div>
 
     </div>
 
-    <!-- Нижняя полоса -->
-    <div class="sf-bottom-bar">
-      <div>
+    <!-- Нижняя планка в единой сдержанной тональности -->
+    <div class="atw-bottom-bar">
+      <div class="atw-bottom-left">
         <div>© 2026 Стройбаза на Монтажной (stroybazansk.ru). Все права защищены.</div>
-        <div class="sf-legal-links">
+        <div class="atw-policy-links">
           <a href="about.html">О компании</a>
           <a href="blog.html">Блог и статьи</a>
           <a href="contacts.html">Контакты склада</a>
@@ -2808,12 +2867,12 @@
         </div>
       </div>
 
-      <div class="sf-partner-box">
-        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-          Руководитель базы: <strong itemprop="name" style="color: #fff;">Кардава Т. К.</strong>
+      <div class="atw-bottom-right">
+        <div class="atw-author-meta" itemprop="author" itemscope itemtype="https://schema.org/Person">
+          Руководитель базы: <strong itemprop="name">Кардава Т. К.</strong>
         </div>
-        <div>
-          Склад металлопроката 1: <a href="https://metall-26.ru" target="_blank" rel="noopener">metall-26.ru ↗</a>
+        <div class="atw-partner-link">
+          Склад металлопроката: <a href="https://metall-26.ru" target="_blank" rel="noopener">metall-26.ru ↗</a>
         </div>
       </div>
     </div>
