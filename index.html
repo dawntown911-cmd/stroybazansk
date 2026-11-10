@@ -710,12 +710,13 @@
         .sb-drawer {
           position: fixed; top: 0; left: 0; bottom: 0; width: min(var(--sb-drawer-width), 100vw);
           background: var(--sb-card-bg); border-right: 1px solid var(--sb-border-subtle); transform: translateX(-100%);
-          transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1); z-index: 9999; display: flex;
+          transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.38s; z-index: 9999; display: flex;
           flex-direction: column; box-shadow: 12px 0 40px rgba(0, 0, 0, 0.7); box-sizing: border-box;
+          visibility: hidden;
         }
         body.sb-drawer-is-open { overflow: hidden !important; touch-action: none; }
         body.sb-drawer-is-open .sb-drawer-overlay { opacity: 1; visibility: visible; }
-        body.sb-drawer-is-open .sb-drawer { transform: translateX(0); }
+        body.sb-drawer-is-open .sb-drawer { transform: translateX(0); visibility: visible; }
         .sb-drawer-header {
           display: flex; align-items: center; justify-content: space-between; padding: 18px 20px;
           border-bottom: 1px solid var(--sb-border-subtle); background: rgba(7, 8, 12, 0.95); flex-shrink: 0;
@@ -2212,22 +2213,22 @@
                         <div class="calc-inputs">
                             <div class="input-row">
                                 <div class="input-group">
-                                    <label>Длина навеса (м)</label>
-                                    <input type="number" id="canopy-length" class="calc-field" value="6" min="2" max="30" step="0.5" oninput="calculateCanopy()">
+                                    <label for="canopy-length">Длина навеса (м)</label>
+                                    <input type="number" id="canopy-length" class="calc-field" value="6" min="2" max="30" step="0.5" oninput="calculateCanopy()" aria-label="Длина навеса в метрах">
                                 </div>
                                 <div class="input-group">
-                                    <label>Ширина навеса (м)</label>
-                                    <input type="number" id="canopy-width" class="calc-field" value="4" min="2" max="15" step="0.5" oninput="calculateCanopy()">
+                                    <label for="canopy-width">Ширина навеса (м)</label>
+                                    <input type="number" id="canopy-width" class="calc-field" value="4" min="2" max="15" step="0.5" oninput="calculateCanopy()" aria-label="Ширина навеса в метрах">
                                 </div>
                             </div>
                             <div class="input-row">
                                 <div class="input-group">
-                                    <label>Высота стоек (м)</label>
-                                    <input type="number" id="canopy-height" class="calc-field" value="2.5" min="2" max="6" step="0.1" oninput="calculateCanopy()">
+                                    <label for="canopy-height">Высота стоек (м)</label>
+                                    <input type="number" id="canopy-height" class="calc-field" value="2.5" min="2" max="6" step="0.1" oninput="calculateCanopy()" aria-label="Высота стоек в метрах">
                                 </div>
                                 <div class="input-group">
-                                    <label>Труба на столбы</label>
-                                    <select id="canopy-pillar-type" class="calc-field" onchange="calculateCanopy()">
+                                    <label for="canopy-pillar-type">Труба на столбы</label>
+                                    <select id="canopy-pillar-type" class="calc-field" onchange="calculateCanopy()" aria-label="Тип трубы на столбы">
                                         <option value="60" selected>60×40×3 мм (260 ₽/м)</option>
                                         <option value="80">80×80×3 мм мощная (460 ₽/м)</option>
                                     </select>
@@ -2257,25 +2258,25 @@
                         <div class="calc-inputs">
                             <div class="input-row">
                                 <div class="input-group">
-                                    <label>Общая длина забора (м)</label>
-                                    <input type="number" id="fence-length" class="calc-field" value="30" min="5" max="500" step="1" oninput="calculateFence()">
+                                    <label for="fence-length">Общая длина забора (м)</label>
+                                    <input type="number" id="fence-length" class="calc-field" value="30" min="5" max="500" step="1" oninput="calculateFence()" aria-label="Общая длина забора в метрах">
                                 </div>
                                 <div class="input-group">
-                                    <label>Высота забора (м)</label>
-                                    <input type="number" id="fence-height" class="calc-field" value="2.0" min="1.2" max="3" step="0.1" oninput="calculateFence()">
+                                    <label for="fence-height">Высота забора (м)</label>
+                                    <input type="number" id="fence-height" class="calc-field" value="2.0" min="1.2" max="3" step="0.1" oninput="calculateFence()" aria-label="Высота забора в метрах">
                                 </div>
                             </div>
                             <div class="input-row">
                                 <div class="input-group">
-                                    <label>Количество лаг</label>
-                                    <select id="fence-rails" class="calc-field" onchange="calculateFence()">
+                                    <label for="fence-rails">Количество лаг</label>
+                                    <select id="fence-rails" class="calc-field" onchange="calculateFence()" aria-label="Количество рядов лаг">
                                         <option value="2" selected>2 ряда (до 1.8 м)</option>
                                         <option value="3">3 ряда (от 2.0 м)</option>
                                     </select>
                                 </div>
                                 <div class="input-group">
-                                    <label>Труба на столбы</label>
-                                    <select id="fence-pillar-type" class="calc-field" onchange="calculateFence()">
+                                    <label for="fence-pillar-type">Труба на столбы</label>
+                                    <select id="fence-pillar-type" class="calc-field" onchange="calculateFence()" aria-label="Тип трубы на столбы забора">
                                         <option value="40" selected>40×40×2 мм (160 ₽/м)</option>
                                         <option value="60">60×40×3 мм (260 ₽/м)</option>
                                     </select>
@@ -2304,12 +2305,12 @@
                         <div class="calc-inputs">
                             <div class="input-row">
                                 <div class="input-group">
-                                    <label>Периметр ленты (м)</label>
-                                    <input type="number" id="found-perimeter" class="calc-field" value="40" min="10" max="500" step="1" oninput="calculateFoundation()">
+                                    <label for="found-perimeter">Периметр ленты (м)</label>
+                                    <input type="number" id="found-perimeter" class="calc-field" value="40" min="10" max="500" step="1" oninput="calculateFoundation()" aria-label="Периметр ленточного фундамента">
                                 </div>
                                 <div class="input-group">
-                                    <label>Рабочая арматура</label>
-                                    <select id="found-arm-dia" class="calc-field" onchange="calculateFoundation()">
+                                    <label for="found-arm-dia">Рабочая арматура</label>
+                                    <select id="found-arm-dia" class="calc-field" onchange="calculateFoundation()" aria-label="Диаметр рабочей арматуры">
                                         <option value="12" selected>12 мм А500С (56 ₽/м)</option>
                                         <option value="10">10 мм А500С (45 ₽/м)</option>
                                     </select>
@@ -2317,15 +2318,15 @@
                             </div>
                             <div class="input-row">
                                 <div class="input-group">
-                                    <label>Прутков продольных</label>
-                                    <select id="found-bars" class="calc-field" onchange="calculateFoundation()">
+                                    <label for="found-bars">Прутков продольных</label>
+                                    <select id="found-bars" class="calc-field" onchange="calculateFoundation()" aria-label="Количество продольных прутков">
                                         <option value="4" selected>4 прутка</option>
                                         <option value="6">6 прутков</option>
                                     </select>
                                 </div>
                                 <div class="input-group">
-                                    <label>Хомуты</label>
-                                    <select id="found-clamps-dia" class="calc-field" onchange="calculateFoundation()">
+                                    <label for="found-clamps-dia">Хомуты</label>
+                                    <select id="found-clamps-dia" class="calc-field" onchange="calculateFoundation()" aria-label="Диаметр арматуры на хомуты">
                                         <option value="6" selected>6 мм (21 ₽/м)</option>
                                         <option value="8">8 мм (30 ₽/м)</option>
                                     </select>
@@ -2473,8 +2474,10 @@
                 <p>Оставьте номер телефона и имя — мы перезвоним вам в течение 5 минут, ответим на вопросы и рассчитаем заказ по оптовой цене.</p>
 
                 <form class="callback-form" id="callbackForm" onsubmit="handleCallback(event)">
-                    <input type="text" id="cb-name" class="callback-input" placeholder="Как к вам обращаться?" required>
-                    <input type="tel" id="cb-phone" class="callback-input" placeholder="+7 (900) 000-00-00" required>
+                    <label for="cb-name" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Ваше имя</label>
+                    <input type="text" id="cb-name" class="callback-input" placeholder="Как к вам обращаться?" aria-label="Ваше имя" required>
+                    <label for="cb-phone" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Номер телефона</label>
+                    <input type="tel" id="cb-phone" class="callback-input" placeholder="+7 (900) 000-00-00" aria-label="Номер телефона" required>
                     <button type="submit" class="btn btn-primary">Перезвонить за 5 минут</button>
                 </form>
                 
@@ -2886,7 +2889,7 @@
 
     <!-- Выезжающая панель-шторка (Drawer) -->
     <!-- Выезжающая панель-шторка (Drawer с чистыми рабочими ссылками) -->
-<aside class="sb-drawer" id="sbDrawerMenu" aria-label="Боковое меню навигации и каталог" aria-hidden="true">
+<aside class="sb-drawer" id="sbDrawerMenu" aria-label="Боковое меню навигации и каталог" aria-hidden="true" inert>
   <!-- 1. Шапка меню -->
   <div class="sb-drawer-header">
     <div class="sb-drawer-brand">
@@ -3476,6 +3479,7 @@ window.addEventListener('click', function(e) {
         document.body.classList.add('sb-drawer-is-open');
         openBtn.setAttribute('aria-expanded', 'true');
         drawer.setAttribute('aria-hidden', 'false');
+        drawer.removeAttribute('inert');
         overlay.setAttribute('aria-hidden', 'false');
         closeBtn.focus();
       }
@@ -3484,6 +3488,7 @@ window.addEventListener('click', function(e) {
         document.body.classList.remove('sb-drawer-is-open');
         openBtn.setAttribute('aria-expanded', 'false');
         drawer.setAttribute('aria-hidden', 'true');
+        drawer.setAttribute('inert', '');
         overlay.setAttribute('aria-hidden', 'true');
         openBtn.focus();
       }
