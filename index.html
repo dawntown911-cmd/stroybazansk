@@ -1995,7 +1995,8 @@
                 <div class="hero-widget">
                     <div class="widget-title">⚡ Быстрый экспресс-расчет стоимости со склада</div>
                     <div class="widget-grid">
-                        <select class="widget-select" id="calc-item">
+                        <label for="calc-item" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Выберите позицию</label>
+                        <select class="widget-select" id="calc-item" aria-label="Выберите стройматериал">
                             <option value="56">Арматура 12 мм А500С (56 ₽/м)</option>
                             <option value="45">Арматура 10 мм А500С (45 ₽/м)</option>
                             <option value="30">Арматура 8 мм А500С (30 ₽/м)</option>
@@ -2009,7 +2010,8 @@
                             <option value="2600">Блок ФБС 24.3.6 (2 600 ₽/шт)</option>
                             <option value="2800">Блок ФБС 24.4.6 (2 800 ₽/шт)</option>
                         </select>
-                        <input type="number" class="widget-input" id="calc-qty" value="100" placeholder="Кол-во">
+                        <label for="calc-qty" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Количество</label>
+                        <input type="number" class="widget-input" id="calc-qty" value="100" placeholder="Кол-во" aria-label="Количество товара">
                         <div style="font-weight: 800; color: var(--accent); font-size: 1.1rem;" id="calc-total">5 600 ₽</div>
                         <a class="btn btn-primary" href="tel:+79887328161">Заказать</a>
                     </div>
@@ -2499,9 +2501,9 @@
                 </button>
             </div>
             <div class="album-view">
-                <button class="album-nav album-prev" onclick="prevPhoto()">‹</button>
+                <button class="album-nav album-prev" onclick="prevPhoto()" aria-label="Предыдущее фото">‹</button>
                 <img id="albumImg" src="" alt="Фото альбома">
-                <button class="album-nav album-next" onclick="nextPhoto()">›</button>
+                <button class="album-nav album-next" onclick="nextPhoto()" aria-label="Следующее фото">›</button>
             </div>
             <div class="album-footer">
                 <span id="albumCounter">Фото 1 из 1</span>
@@ -3421,37 +3423,44 @@ window.addEventListener('click', function(e) {
 });
     </script>
 
-    <!-- Rambler Counter -->
+    <!-- Умная отложенная аналитика без торможения ПК -->
     <script>
-        (function (w, d, c) {
-            (w[c] = w[c] || []).push(function() {
-                var options = { project: 7751868 };
-                try { w.top100Counter = new top100(options); } catch(e) { }
+        let analyticsInit = false;
+        function startAnalytics() {
+            if (analyticsInit) return;
+            analyticsInit = true;
+
+            // Яндекс.Метрика (с выключенным вебвизором, чтобы не вешать процессор)
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(112839345, "init", {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: false
             });
-            var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); };
-            s.type = "text/javascript"; s.async = true;
-            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//st.top100.ru/top100/top100.js";
-            if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
-        })(window, document, "_top100q");
-    </script>
-    <noscript><img src="//counter.rambler.ru/top100.cnt?pid=7751868" alt="Топ-100"></noscript>
 
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-       m[i].l=1*new Date();
-       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            // Рамблер Топ-100
+            (function (w, d, c) {
+                (w[c] = w[c] || []).push(function() {
+                    try { w.top100Counter = new top100({ project: 7751868 }); } catch(e) {}
+                });
+                var n = d.getElementsByTagName("script")[0], s = d.createElement("script");
+                s.type = "text/javascript"; s.async = true;
+                s.src = "https://st.top100.ru/top100/top100.js";
+                n.parentNode.insertBefore(s, n);
+            })(window, document, "_top100q");
+        }
 
-       ym(112839345, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-       });
+        // Запуск только по первому скроллу/клику или через 2.5 секунды
+        ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(ev => {
+            window.addEventListener(ev, startAnalytics, { once: true, passive: true });
+        });
+        setTimeout(startAnalytics, 2500);
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/112839345" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
     <!-- Скрипт управления шторкой каталога -->
     <script>
