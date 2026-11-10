@@ -31,9 +31,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="icon" type="image/png" href="favicon.PNG">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;600;700&display=swap"></noscript>
+    
     <!-- Schema.org: Единый граф с Организацией, Основателем (Person) и FAQ -->
     <script type="application/ld+json">
     {
@@ -1924,8 +1925,7 @@
       ]
     }
     </script>
-<!-- Скрипт верификации ЗАЧЕСТНЫЙБИЗНЕС -->
-    <script src="https://zachestnyibiznes.ru/js/zchb-widget.js"></script>
+    
 </head>
 <body>
     <div class="glow-bg"><div class="glow-top"></div><div class="glow-bottom"></div></div>
@@ -2457,8 +2457,8 @@
                 </div>
                 <div>
                     <div class="map-wrap">
-                        <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=237893630120" title="Стройбаза на Монтажной"></iframe>
-                    </div>
+    <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=237893630120" title="Стройбаза на Монтажной" width="100%" height="440" loading="lazy" style="border:0;"></iframe>
+</div>
                 </div>
             </div>
         </section>
@@ -3579,5 +3579,7 @@ if (mobileAssortBtn) {
         </div>
     </div>
 </div>
+<!-- Скрипт верификации ЗАЧЕСТНЫЙБИЗНЕС (загружается в фоне) -->
+    <script defer src="https://zachestnyibiznes.ru/js/zchb-widget.js"></script>
 </body>
 </html>
