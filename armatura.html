@@ -26,7 +26,8 @@
   <!-- Шрифты -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
 
   <!-- Schema.org Граф: связка со складом index.html, хлебные крошки, Product и FAQ -->
   <script type="application/ld+json">
@@ -178,8 +179,8 @@
       --gold-gradient: linear-gradient(135deg, #d6bd7a 0%, #f5e7be 50%, #bfa157 100%);
       
       --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --text-dark: #6b7280;
+      --text-muted: #a1a1aa;
+      --text-dark: #a1a1aa;
       
       --accent-green: #10b981;
       --accent-green-bg: rgba(16, 185, 129, 0.12);
@@ -1190,10 +1191,17 @@
     .sb-drawer {
       position: fixed; top: 0; left: 0; bottom: 0; width: 340px; max-width: 86vw;
       background: #090b12; border-right: 1px solid var(--border-gold); z-index: 999;
-      transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
       display: flex; flex-direction: column; box-shadow: 12px 0 35px rgba(0, 0, 0, 0.85);
+      visibility: hidden;
     }
-    .sb-drawer.active { transform: translateX(0); }
+    .sb-drawer.active { transform: translateX(0); visibility: visible; }
+    
+    /* Защита от сдвига верстки (CLS = 0) */
+    .header { min-height: 60px; }
+    @media (max-width: 768px) {
+      .topbar { display: none !important; } /* На смартфонах длинная полоса не будет прыгать и ломаться на 4 строки */
+    }
     .sb-drawer-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border-bottom: 1px solid var(--border-subtle); background: rgba(15, 17, 26, 0.95); }
     .sb-drawer-title { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 800; color: #fff; }
     .sb-drawer-title span { color: var(--gold); }
@@ -1416,7 +1424,7 @@
       </button>
 
       <a href="index.html" class="logo" title="Стройбаза на Монтажной">
-        <img src="logo.png" alt="Стройбаза на Монтажной" class="site-logo-img" onerror="if(!this.tried){this.tried=true; this.src='logo.PNG';}">
+        <img src="logo.png" alt="Стройбаза на Монтажной" width="40" height="40" style="aspect-ratio: 1/1;" class="site-logo-img" onerror="if(!this.tried){this.tried=true; this.src='logo.PNG';}">
         <div class="logo-text">
           <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
           <span class="logo-subtitle">Невинномысск • Металлопрокат</span>
@@ -3033,7 +3041,7 @@
                 Telegram
               </a>
             </div>
-            <a href="mailto:stroybazansk@mail.ru" style="color: #6b7280; font-size: 0.8rem; text-decoration: none; margin-top: 6px;">stroybazansk@mail.ru</a>
+            <a href="mailto:stroybazansk@mail.ru" style="color: #a1a1aa; font-size: 0.8rem; text-decoration: underline; margin-top: 6px;">stroybazansk@mail.ru</a>
           </div>
         </div>
       </div>
@@ -3065,7 +3073,7 @@
        OFF-CANVAS ШТОРКА МЕНЮ (DRAWER)
        ========================================================================== -->
   <div class="sb-drawer-overlay" id="sbDrawerOverlay"></div>
-  <aside class="sb-drawer" id="sbDrawer" aria-hidden="true" role="dialog" aria-label="Каталог стройматериалов">
+  <aside class="sb-drawer" id="sbDrawer" aria-hidden="true" role="dialog" aria-label="Каталог стройматериалов" inert>
     <div class="sb-drawer-header">
       <div class="sb-drawer-title">
         <span>СТРОЙБАЗА</span> НА МОНТАЖНОЙ
@@ -3375,6 +3383,7 @@
         drawerOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
         drawer.setAttribute('aria-hidden', 'false');
+        drawer.removeAttribute('inert');
       }
 
       function closeDrawer() {
@@ -3383,6 +3392,7 @@
         drawerOverlay.classList.remove('active');
         document.body.style.overflow = '';
         drawer.setAttribute('aria-hidden', 'true');
+        drawer.setAttribute('inert', '');
       }
 
       if (drawerOpenBtn) drawerOpenBtn.addEventListener('click', openDrawer);
