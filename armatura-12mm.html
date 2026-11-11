@@ -1415,18 +1415,12 @@
     }
     .sb-drawer-overlay.active { opacity: 1; visibility: visible; }
     .sb-drawer {
-  position: fixed; top: 0; left: 0; bottom: 0; width: 340px; max-width: 86vw;
-  background: #090b12; border-right: 1px solid var(--border-gold); z-index: 999;
-  transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
-  display: flex; flex-direction: column; box-shadow: 12px 0 35px rgba(0, 0, 0, 0.85);
-  visibility: hidden;
-}
-.sb-drawer.active { transform: translateX(0); visibility: visible; }
-
-/* Защита от сдвига верстки (CLS = 0) */
-.header, .site-header { min-height: 60px; }
-img { max-width: 100%; height: auto; }
-.site-logo-img, .brand img { width: 40px; height: 40px; aspect-ratio: 1/1; }
+      position: fixed; top: 0; left: 0; bottom: 0; width: 340px; max-width: 86vw;
+      background: #090b12; border-right: 1px solid var(--border-gold); z-index: 999;
+      transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex; flex-direction: column; box-shadow: 12px 0 35px rgba(0, 0, 0, 0.85);
+    }
+    .sb-drawer.active { transform: translateX(0); }
     .sb-drawer-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border-bottom: 1px solid var(--border-subtle); background: rgba(15, 17, 26, 0.95); }
     .sb-drawer-title { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 800; color: #fff; }
     .sb-drawer-title span { color: var(--gold); }
@@ -1552,7 +1546,7 @@ img { max-width: 100%; height: auto; }
       </button>
 
       <a href="index.html" class="logo" title="Стройбаза на Монтажной">
-        <img src="armatura-2.jpg" alt="Арматура 12 мм А500С" style="aspect-ratio: 16/9; width: 100%;" loading="eager" fetchpriority="high">
+        <img src="logo.png" alt="Стройбаза на Монтажной" class="site-logo-img" onerror="if(!this.tried){this.tried=true; this.src='logo.PNG';}">
         <div class="logo-text">
           <span class="logo-title">СТРОЙБАЗА <span>НА МОНТАЖНОЙ</span></span>
           <span class="logo-subtitle">Невинномысск • Металлопрокат</span>
@@ -2140,7 +2134,7 @@ img { max-width: 100%; height: auto; }
 
   <!-- ВЫДВИЖНОЕ МЕНЮ (DRAWER) -->
   <div class="sb-drawer-overlay" id="sbDrawerOverlay"></div>
-  <aside class="sb-drawer" id="sbDrawer" aria-hidden="true" role="dialog" aria-label="Каталог стройматериалов" inert>
+  <aside class="sb-drawer" id="sbDrawer" aria-hidden="true" role="dialog" aria-label="Каталог стройматериалов">
     <div class="sb-drawer-header">
       <div class="sb-drawer-title">
         <span>СТРОЙБАЗА</span> НА МОНТАЖНОЙ
@@ -2377,7 +2371,6 @@ img { max-width: 100%; height: auto; }
         drawer.classList.add('active');
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
-        drawer.removeAttribute('inert');
       }
 
       function closeDrawer() {
@@ -2385,7 +2378,6 @@ img { max-width: 100%; height: auto; }
         drawer.classList.remove('active');
         overlay.classList.remove('active');
         document.body.style.overflow = '';
-        drawer.setAttribute('inert', '');
       }
 
       if (openBtn) openBtn.addEventListener('click', openDrawer);
