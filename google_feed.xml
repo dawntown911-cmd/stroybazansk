@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+  <channel>
+    <title>Стройбаза на Монтажной — Каталог металлопроката и стройматериалов</title>
+    <link>https://stroybazansk.ru</link>
+    <description>Металлопрокат ГОСТ, цемент Новороссийский М500, блоки ФБС и шлакоблок со склада в г. Невинномысск, ул. Монтажная, 10</description>
+
+    <!-- 1. АРМАТУРА 12 ММ -->
+    <item>
+      <g:id>armatura-12mm</g:id>
+      <g:title>Арматура строительная 12 мм А500С рифленая ГОСТ 34028-2016 (1 п.м)</g:title>
+      <g:description>Стальной рифленый прокат А500С диаметром 12 мм по ГОСТ 34028-2016 для ленточных фундаментов, монолитных плит и ростверков. Вес 1 п.м: 0.888 кг, длина хлыста 11.7 м (резка по 5.85 м). Отгрузка со склада в Невинномысске.</g:description>
+      <g:link>https://stroybazansk.ru/armatura-12mm.html</g:link>
+      <g:image_link>https://stroybazansk.ru/armatura-2.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>56.00 RUB</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Стройбаза на Монтажной</g:brand>
+      <g:mpn>ГОСТ-34028-12</g:mpn>
+      <g:google_product_category>503777</g:google_product_category>
+      <g:product_type>Металлопрокат &gt; Арматура строительная</g:product_type>
+    </item>
+
+    <!-- 2. АРМАТУРА 10 ММ -->
+    <item>
+      <g:id>armatura-10mm</g:id>
+      <g:title>Арматура строительная 10 мм А500С рифленая ГОСТ 34028-2016 (1 п.м)</g:title>
+      <g:description>Горячекатаная свариваемая рифленая арматура А500С диаметром 10 мм по ГОСТ 34028-2016 для сейсмопоясов, армопоясов и фундаментов. Вес 1 п.м: 0.617 кг, хлысты 11.7 м. Контроль диаметра штангенциркулем на складе.</g:description>
+      <g:link>https://stroybazansk.ru/armatura-10mm.html</g:link>
+      <g:image_link>https://stroybazansk.ru/armatura-4.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>45.00 RUB</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Стройбаза на Монтажной</g:brand>
+      <g:mpn>ГОСТ-34028-10</g:mpn>
+      <g:google_product_category>503777</g:google_product_category>
+      <g:product_type>Металлопрокат &gt; Арматура строительная</g:product_type>
+    </item>
+
+    <!-- 3. АРМАТУРА 8 ММ -->
+    <item>
+      <g:id>armatura-8mm</g:id>
+      <g:title>Арматура строительная 8 мм А500С рифленая ГОСТ 34028-2016 (1 п.м)</g:title>
+      <g:description>Стальная рифленая арматура А500С диаметром 8 мм по ГОСТ 34028-2016 для армирования отмостки, стяжки пола по грунту и хомутов. Вес 1 п.м: 0.395 кг, хлысты 11.7 м. Отгрузка со склада в Невинномысске.</g:description>
+      <g:link>https://stroybazansk.ru/armatura-8mm.html</g:link>
+      <g:image_link>https://stroybazansk.ru/armatura-1.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>30.00 RUB</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Стройбаза на Монтажной</g:brand>
+      <g:mpn>ГОСТ-34028-8</g:mpn>
+      <g:google_product_category>503777</g:google_product_category>
+      <g:product_type>Металлопрокат &gt; Арматура строительная</g:product_type>
+    </item>
+
+    <!-- 4. АРМАТУРА 6 ММ -->
+    <item>
+      <g:id>armatura-6mm</g:id>
+      <g:title>Арматура 6 мм (катанка) А240/А500С ГОСТ 34028-2016 (1 п.м)</g:title>
+      <g:description>Стальная горячекатаная катанка класса А240 и рифленая арматура 6 мм по ГОСТ 34028-2016 для гибки хомутов, рамок армопояса и сеток. Вес 1 п.м: 0.222 кг, отгрузка прямыми прутками по 6 м.</g:description>
+      <g:link>https://stroybazansk.ru/armatura-6mm.html</g:link>
+      <g:image_link>https://stroybazansk.ru/armatura.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>21.00 RUB</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Стройбаза на Монтажной</g:brand>
+      <g:mpn>ГОСТ-34028-6</g:mpn>
+      <g:google_product_category>503777</g:google_product_category>
+      <g:product_type>Металлопрокат &gt; Арматура строительная</g:product_type>
+    </item>
+
+    <!-- 5. ТРУБА 40х20х2 -->
+    <item>
+      <g:id>truba-40x20x2</g:id>
+      <g:title>Труба профильная прямоугольная 40х20х2.0 мм ГОСТ 8645-68 (1 п.м)</g:title>
+      <g:description>Стальная электросварная профильная труба 40х20 мм с толщиной стенки 2.0 мм по ГОСТ 8645-68. Для заборных лаг, обрешетки навесов и металлокаркасов. Вес 1 п.м: 1.70 кг, длина хлыста 6.0 м.</g:description>
+      <g:link>https://stroybazansk.ru/truba-40x20x2.html</g:link>
+      <g:image_link>https://stroybazansk.ru/truba.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>115.00 RUB</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Стройбаза на Монтажной</g:brand>
+      <g:mpn>ГОСТ-8645-40-20-2</g:mpn>
+      <g:google_product_category>115</g:google_product_category>
+      <g:product_type>Металлопрокат &gt; Трубы профильные</g:product_type>
+    </item>
+
+    <!-- 6. ТРУБА 40х40х2 -->
+    <item>
+      <g:id>truba-40x40x2</g:id>
+      <g:title>Труба профильная квадратная 40х40х2.0 мм ГОСТ 8639-82 (1 п.м)</g:title>
+      <g:description>Квадратная профильная труба 40х40 мм с толщиной стенки 2.0 мм по ГОСТ 8639-82. Применяется для столбов заборов, рам калиток, беседок и каркасов. Вес 1 п.м: 2.35 кг, длина хлыста 6.0 м.</g:description>
+      <g:link>https://stroybazansk.ru/truba-40x40x2.html</g:link>
+      <g:image_link>https://stroybazansk.ru/truba-1.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>160.00 RUB</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Стройбаза на Монтажной</g:brand>
+      <g:mpn>ГОСТ-8639-40-40-2</g:mpn>
+      <g:google_product_category>115</g:google_product_category>
+      <g:product_type>Металлопрокат &gt; Трубы профильные</g:product_type>
+    </item>
+
+    <!-- 7. ТРУБА 60х40х3 -->
+    <item>
+      <g:id>truba-60x40x3</g:id>
+      <g:title>Труба профильная прямоугольная 60х40х3.0 мм ГОСТ 8645-68 (1 п.м)</g:title>
+      <g:description>Усиленная толстостенная профильная труба 60х40 мм со стенкой 3.0 мм по ГОСТ 8645-68. Для стропильных ферм автонавесов, столбов заборов и каркасов ворот. Вес 1 п.м: 4.30 кг, длина хлыста 6.0 м.</g:description>
+      <g:link>https://stroybazansk.ru/truba-60x40x3.html</g:link>
+      <g:image_link>https://stroybazansk.ru/truba-2.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>260.00 RUB</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Стройбаза на Монтажной</g:brand>
+      <g:mpn>ГОСТ-8645-60-40-3</g:mpn>
+      <g:google_product_category>115</g:google_product_category>
+      <g:product_type>Металлопрокат &gt; Трубы профильные</g:product_type>
+    </item>
+
+    <!-- 8. ТРУБА 80х80х3 -->
+    <item>
+      <g:id>truba-80x80x3</g:id>
+      <g:title>Труба профильная квадратная 80х80х3.0 мм ГОСТ 8639-82 (1 п.м)</g:title>
+      <g:description>Несущая стальная профильная труба 80х80 мм с толщиной стенки 3.0 мм по ГОСТ 8639-82. Для опорных колонн больших навесов и столбов распашных/откатных ворот. Вес 1 п.м: 7.10 кг, хлысты 6.0 м.</g:description>
+      <g:link>https://stroybazansk.ru/truba-80x80x3.html</g:link>
+      <g:image_link>https://stroybazansk.ru/truba-4.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>460.00 RUB</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Стройбаза на Монтажной</g:brand>
+      <g:mpn>ГОСТ-8639-80-80-3</g:mpn>
+      <g:google_product_category>115</g:google_product_category>
+      <g:product_type>Металлопрокат &gt; Трубы профильные</g:product_type>
+    </item>
+
+    <!-- 9. ЦЕМЕНТ М500 Д0 -->
+    <item>
+      <g:id>tsement-m500-d0</g:id>
+      <g:title>Цемент Новороссийский М500 Д0 (ЦЕМ I 42,5Н) мешок 50 кг ГОСТ 31108-2020</g:title>
+      <g:description>Заводской бездобавочный портландцемент ОАО Новоросцемент М500 Д0 (ЦЕМ I 42,5Н) по ГОСТ 31108-2020 в трехслойных мешках по 50 кг. Чистый клинкер для монолитных фундаментов, плит перекрытий и сейсмопоясов. Хранение в сухом крытом складе.</g:description>
+      <g:link>https://stroybazansk.ru/tsement-m500-d0.html</g:link>
+      <g:image_link>https://stroybazansk.ru/cement.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>570.00 RUB</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Новоросцемент</g:brand>
+      <g:mpn>ГОСТ-31108-Д0-50</g:mpn>
+      <g:google_product_category>115</g:google_product_category>
+      <g:product_type>Стройматериалы &gt; Цемент М500</g:product_type>
+    </item>
+
+    <!-- 10. ЦЕМЕНТ М500 Д20 -->
+    <item>
+      <g:id>tsement-m500-d20</g:id>
+      <g:title>Цемент Новороссийский М500 Д20 (ЦЕМ II/А-Ш 42,5Н) мешок 50 кг ГОСТ 31108-2020</g:title>
+      <g:description>Заводской портландцемент ОАО Новоросцемент М500 Д20 (ЦЕМ II/А-Ш 42,5Н) по ГОСТ 31108-2020 в мешках по 50 кг. Пластичный состав для кладки шлакоблока и кирпича, стяжек полов, отмостки и штукатурных работ.</g:description>
+      <g:link>https://stroybazansk.ru/tsement-m500.html</g:link>
+      <g:image_link>https://stroybazansk.ru/cement-1.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>570.00 RUB</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Новоросцемент</g:brand>
+      <g:mpn>ГОСТ-31108-Д20-50</g:mpn>
+      <g:google_product_category>115</g:google_product_category>
+      <g:product_type>Стройматериалы &gt; Цемент М500</g:product_type>
+    </item>
+
+    <!-- 11. БЛОК ФБС 24.4.6 -->
+    <item>
+      <g:id>bloki-fbs-24-4-6</g:id>
+      <g:title>Блок фундаментный ФБС 24.4.6 (2380х400х580 мм) ГОСТ 13579-78</g:title>
+      <g:description>Железобетонный фундаментный блок ФБС 24.4.6 по ГОСТ 13579-78 из тяжелого пропаренного бетона. Габариты 2380х400х580 мм, вес 1300 кг, объем 0.543 м3. Для сборных фундаментов и стен подвалов с монтажом манипулятором.</g:description>
+      <g:link>https://stroybazansk.ru/bloki-fbs-24-4-6.html</g:link>
+      <g:image_link>https://stroybazansk.ru/fbs-1.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>2800.00 RUB</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Стройбаза на Монтажной</g:brand>
+      <g:mpn>ФБС-24-4-6-ГОСТ</g:mpn>
+      <g:google_product_category>115</g:google_product_category>
+      <g:product_type>ЖБИ &gt; Блоки ФБС</g:product_type>
+    </item>
+
+    <!-- 12. БЛОК ФБС 24.3.6 -->
+    <item>
+      <g:id>bloki-fbs-24-3-6</g:id>
+      <g:title>Блок фундаментный ФБС 24.3.6 (2380х300х580 мм) ГОСТ 13579-78</g:title>
+      <g:description>Железобетонный фундаментный блок ФБС 24.3.6 по ГОСТ 13579-78 из тяжелого пропаренного бетона. Габариты 2380х300х580 мм, вес 970 кг, объем 0.406 м3. Для фундаментов гаражей, бань, хозпостроек и перегородок подвалов.</g:description>
+      <g:link>https://stroybazansk.ru/bloki-fbs-24-3-6.html</g:link>
+      <g:image_link>https://stroybazansk.ru/fbs.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>2600.00 RUB</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Стройбаза на Монтажной</g:brand>
+      <g:mpn>ФБС-24-3-6-ГОСТ</g:mpn>
+      <g:google_product_category>115</g:google_product_category>
+      <g:product_type>ЖБИ &gt; Блоки ФБС</g:product_type>
+    </item>
+
+    <!-- 13. ШЛАКОБЛОК -->
+    <item>
+      <g:id>shlakoblok-390x190x190</g:id>
+      <g:title>Шлакоблок стеновой 390х190х190 мм М75 ГОСТ 6133-2019</g:title>
+      <g:description>Заводской пропаренный четырехпустотный вибропрессованный стеновой шлакоблок 390х190х190 мм марки прочности М75 по ГОСТ 6133-2019. Вес 18 кг, пустотность 33%. Для возведения гаражей, хозблоков и несущих стен.</g:description>
+      <g:link>https://stroybazansk.ru/shlakoblok.html</g:link>
+      <g:image_link>https://stroybazansk.ru/shlakoblok.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>48.00 RUB</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Стройбаза на Монтажной</g:brand>
+      <g:mpn>ГОСТ-6133-390-190</g:mpn>
+      <g:google_product_category>115</g:google_product_category>
+      <g:product_type>Стройматериалы &gt; Стеновые блоки</g:product_type>
+    </item>
+
+  </channel>
+</rss>
